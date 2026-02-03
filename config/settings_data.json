@@ -450,10 +450,10 @@
       "scheme-0d176e0c-302a-4603-a896-02ea6619e393": {
         "settings": {
           "background": "#464646",
-          "foreground_heading": "#ffffff",
-          "foreground": "#ffffff",
-          "primary": "#ffffff",
-          "primary_hover": "#ffffff",
+          "foreground_heading": "#fdfdfd",
+          "foreground": "#fdfdfd",
+          "primary": "#fdfdfd",
+          "primary_hover": "#fdfdfd",
           "border": "#00000000",
           "shadow": "#000000",
           "primary_button_background": "#000000",
