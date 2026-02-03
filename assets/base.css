@@ -4037,3 +4037,9 @@ text-component {
     font-size: max(1rem, 100%);
   }
 }
+
+/* Custom Dr martens */
+.button, .button-secondary {
+    font-weight: 800;
+    font-stretch: 112.5%;
+}

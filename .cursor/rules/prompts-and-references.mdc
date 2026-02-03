@@ -26,6 +26,10 @@ The prompts and references directories contain documentation and guides for AI a
 
 Do not wait for the user to suggest documentation updates. Proactively maintaining these living documents is part of completing any task.
 
+## Development standards and README
+
+Todo desarrollo nuevo debe documentarse en el [README](mdc:README.md) (sección Changelog / Desarrollos) y, si aplica, en Cursor rules o en `.cursor/prompts/` / `.cursor/references/`. Los requisitos completos (buenas prácticas, mantenibilidad, performance Shopify, Core Web Vitals, accesibilidad) están en [development-standards.mdc](mdc:.cursor/rules/development-standards.mdc).
+
 ## Purpose
 
 These documentation files serve as:

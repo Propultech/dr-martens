@@ -3,6 +3,7 @@
 [Getting started](#getting-started) |
 [Staying up to date with Horizon changes](#staying-up-to-date-with-horizon-changes) |
 [Developer tools](#developer-tools) |
+[Development standards and documentation](#development-standards-and-documentation) |
 [Contributing](#contributing) |
 [License](#license)
 
@@ -81,7 +82,35 @@ You can follow the [theme check documentation](https://shopify.dev/docs/storefro
 
 #### Shopify/theme-check-action
 
-Horizon runs [Theme Check](#Theme-Check) on every commit via [Shopify/theme-check-action](https://github.com/Shopify/theme-check-action).
+Horizon runs [Theme Check](#theme-check) on every commit via [Shopify/theme-check-action](https://github.com/Shopify/theme-check-action).
+
+## Development standards and documentation
+
+Todos los desarrollos nuevos en este theme deben documentarse aquí y en las Cursor rules para mantener el contexto en el tiempo.
+
+### Documentación de cada desarrollo
+
+- **README:** Registrar en la sección [Changelog / Desarrollos](#changelog--desarrollos) qué se implementó, en qué archivos y cualquier decisión relevante.
+- **Cursor rules:** Si un desarrollo introduce patrones o convenciones que deban respetarse después, crear o actualizar reglas en `.cursor/rules/` (o en `.cursor/prompts/` / `.cursor/references/`). No esperar a que lo pida alguien; es parte de cerrar el desarrollo.
+
+### Requisitos de calidad
+
+Cada desarrollo debe cumplir:
+
+1. **Buenas prácticas y mantenibilidad:** Código limpio, DRY/KISS, respeto a las reglas del theme (Liquid, sections, blocks, snippets). Sin `console.log` innecesarios ni TODOs vagos.
+2. **Performance (Shopify):** Liquid eficiente, JavaScript como mejora progresiva, imágenes con `loading="lazy"` y tamaños adecuados, CSS y recursos solo donde se necesiten. Ver [Shopify – Performance best practices](https://shopify.dev/docs/storefronts/themes/best-practices/performance).
+3. **Core Web Vitals:** Cuidar LCP (≤2,5 s), INP/FID (JS no bloqueante) y CLS (dimensiones de imágenes y fuentes, evitar desplazamientos de layout).
+4. **Accesibilidad:** Cumplir con las reglas de accesibilidad del proyecto (headings, landmarks, contraste, imágenes/alt, formularios, foco y teclado, etc.). Ver las reglas en `.cursor/rules/*-accessibility.mdc` y `global-accessibility-standards.mdc`.
+
+La regla detallada para el equipo y para agentes de IA es [.cursor/rules/development-standards.mdc](.cursor/rules/development-standards.mdc).
+
+### Changelog / Desarrollos
+
+_Registrar aquí cada desarrollo significativo: fecha, descripción breve, archivos principales y, si aplica, enlace a regla o referencia._
+
+| Fecha       | Desarrollo | Archivos / Notas |
+|------------|------------|------------------|
+| 2025-02-03 | Estándares de desarrollo: documentación en README, Cursor rule `development-standards.mdc` (buenas prácticas, performance Shopify, Core Web Vitals, accesibilidad). | README.md, .cursor/rules/development-standards.mdc |
 
 ## Contributing
 

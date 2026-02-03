@@ -1,0 +1,72 @@
+---
+description: Estándares de desarrollo, documentación, performance, Core Web Vitals y accesibilidad para todo desarrollo nuevo en el theme
+globs:
+alwaysApply: true
+---
+# Estándares de desarrollo – Dr. Martens Theme
+
+Todo desarrollo nuevo en el theme debe cumplir con esta regla y las reglas específicas (Liquid, sections, blocks, snippets, CSS, JS, accesibilidad). La documentación y las Cursor rules se actualizan en cada desarrollo para persistir el contexto en el futuro.
+
+## 1. Documentación obligatoria
+
+**Cada desarrollo nuevo debe:**
+
+1. **README:** Documentar en [README.md](mdc:README.md) en la sección correspondiente:
+   - Qué se implementó o cambió (feature, fix, refactor).
+   - Dónde está el código relevante (secciones, bloques, snippets, assets).
+   - Comportamiento esperado o decisiones de diseño si aplica.
+
+2. **Cursor rules:** Si el desarrollo introduce patrones, límites o convenciones que deban respetarse después:
+   - Crear o actualizar una regla en `.cursor/rules/` (o un archivo en `.cursor/prompts/` o `.cursor/references/`).
+   - No esperar a que lo pida el usuario: actualizar la documentación como parte de cerrar el desarrollo.
+
+3. **Documentos vivos:** Según [prompts-and-references.mdc](mdc:.cursor/rules/prompts-and-references.mdc), al descubrir un patrón, trampa o solución mejor, actualizar de inmediato el archivo correspondiente (README, rule o reference).
+
+## 2. Buenas prácticas y mantenibilidad
+
+- **DRY / KISS:** Evitar duplicación; preferir snippets y bloques reutilizables. Lógica simple y legible.
+- **Código limpio:** Nombres claros, funciones acotadas, comentarios solo donde aporten (objetivo de un bloque/función, no lo obvio).
+- **Estructura del theme:** Respetar [liquid.mdc](mdc:.cursor/rules/liquid.mdc), [sections.mdc](mdc:.cursor/rules/sections.mdc), [blocks.mdc](mdc:.cursor/rules/blocks.mdc), [snippets.mdc](mdc:.cursor/rules/snippets.mdc). No editar `{% schema %}` en .liquid si el proyecto usa schemas en `schemas/` + build.
+- **Sin artefactos de desarrollo:** No `console.log` innecesarios ni TODOs vagos. Si algo queda pendiente, documentarlo en README o en una issue/task.
+- **Testing y edge cases:** En código crítico, considerar casos límite; si hay tests, nombres descriptivos y cobertura de esos casos.
+
+## 3. Performance (Shopify y temas)
+
+Referencia: [Shopify – Performance best practices](https://shopify.dev/docs/storefronts/themes/best-practices/performance).
+
+- **Liquid:** Reducir complejidad en templates; evitar loops o asignaciones innecesarias que impacten TTFB.
+- **JavaScript:** Usar como mejora progresiva; priorizar HTML/CSS. Bundles minificados pequeños (Shopify recomienda ≤16 KB cuando sea posible). Evitar colisiones de nombres (scope de función).
+- **Imágenes:** `loading="lazy"` donde corresponda; usar filtros `image_url` con anchos adecuados; considerar `srcset`/responsive cuando aplique.
+- **CSS:** Estilos acotados por sección/bloque; evitar CSS que bloquee el render sin necesidad. Ver [css-standards.mdc](mdc:.cursor/rules/css-standards.mdc) si está disponible.
+- **Recursos:** No cargar JS/CSS que no se use en la página; usar `{% section %}` y bloques para cargar solo lo necesario.
+
+## 4. Core Web Vitals
+
+- **LCP (Largest Contentful Paint):** Objetivo ≤2,5 s. Priorizar contenido above-the-fold; imágenes críticas con dimensiones y preload si aplica; reducir bloqueos de render.
+- **INP / FID (responsiveness):** Evitar tareas JS largas en el main thread; delegación de eventos y handlers ligeros.
+- **CLS (Cumulative Layout Shift):** Reservar espacio para imágenes y medios (width/height, aspect-ratio); evitar inyección de contenido que desplace el layout; fuentes con `font-display` adecuado.
+- **Medición:** Validar con Lighthouse (y RUM si está disponible) en páginas clave (home, producto, colección).
+
+## 5. Accesibilidad web
+
+Todo desarrollo debe ser accesible. Las reglas en `.cursor/rules/*-accessibility.mdc` y estándares globales aplican siempre. Checklist mínimo:
+
+- **Estructura:** Un h1 por página; jerarquía de headings (h1→h6) sin saltos; landmarks (header, main, nav, footer) y una sola instancia de main/footer/banner cuando corresponda.
+- **Contraste:** Cumplir WCAG 2.2 1.4.3 (texto) y 1.4.11 (componentes). Ver [color-contrast-accessibility.mdc](mdc:.cursor/rules/color-contrast-accessibility.mdc).
+- **Imágenes y medios:** Alt significativo en imágenes informativas; `alt=""` + `aria-hidden` en decorativas. Ver [image-alt-text-accessibility.mdc](mdc:.cursor/rules/image-alt-text-accessibility.mdc).
+- **Formularios:** Labels asociados, errores con `aria-describedby`/`aria-invalid`, mensajes de éxito/error anunciables. Ver [form-accessibility.mdc](mdc:.cursor/rules/form-accessibility.mdc).
+- **Focus y teclado:** Orden de foco lógico; indicadores de foco visibles (`:focus-visible`); sin `tabindex` positivos. Ver [focus-order-and-styles-accessibility.mdc](mdc:.cursor/rules/focus-order-and-styles-accessibility.mdc).
+- **Otros:** Lenguaje en `<html lang="">`; skip link; evitar `title` como única etiqueta en controles. Ver [global-accessibility-standards.mdc](mdc:.cursor/rules/global-accessibility-standards.mdc).
+
+Si el desarrollo incluye componentes concretos (acordeón, modal, carrusel, tabs, etc.), aplicar la regla de accesibilidad correspondiente en `.cursor/rules/`.
+
+## 6. Resumen para cada desarrollo
+
+Antes de dar por cerrado un desarrollo:
+
+1. ¿Está documentado en README (y en prompts/references si aplica)?
+2. ¿Se crearon o actualizaron Cursor rules si hace falta?
+3. ¿Se respetan buenas prácticas y reglas del theme (Liquid, sections, blocks, snippets)?
+4. ¿Se consideró performance (Liquid, JS, imágenes, CSS)?
+5. ¿Se consideraron Core Web Vitals (LCP, INP, CLS)?
+6. ¿Se cumplen los estándares de accesibilidad aplicables?
