@@ -1,5 +1,11 @@
 {% style %}
   {%- liquid
+    comment
+      Semi-expanded stretch (112.5%) para heading, subheading y accent sin cargar variante extra de la fuente.
+      Para deshabilitar: cambiar a 'normal'.
+    endcomment
+    assign font_stretch_heading_subheading_accent = '112.5%'
+
     assign rendered_fonts = ''
 
     assign primary_font = settings.type_body_font
@@ -167,6 +173,11 @@
     --font-accent--family: {{ settings.type_accent_font.family }}, {{ settings.type_accent_font.fallback_families }};
     --font-accent--style: {{ settings.type_accent_font.style }};
     --font-accent--weight: {{ settings.type_accent_font.weight }};
+
+    /* Font stretch: semi-expanded para heading/subheading/accent (deshabilitar con font_stretch_heading_subheading_accent = 'normal' en Liquid) */
+    --font-heading--stretch: {{ font_stretch_heading_subheading_accent }};
+    --font-subheading--stretch: {{ font_stretch_heading_subheading_accent }};
+    --font-accent--stretch: {{ font_stretch_heading_subheading_accent }};
 
     /* Margin sizes */
     --font-h1--spacing: 0.25em;
@@ -336,10 +347,12 @@
           assign preset_font = '--font-[preset_font]--family' | replace: '[preset_font]', settings[preset_font_id]
           assign preset_style = '--font-[preset_font]--style' | replace: '[preset_font]', settings[preset_font_id]
           assign preset_weight = '--font-[preset_font]--weight' | replace: '[preset_font]', settings[preset_font_id]
+          assign preset_stretch = '--font-[preset_font]--stretch' | replace: '[preset_font]', settings[preset_font_id]
           assign preset_case = 'type_case_[preset_name]' | replace: '[preset_name]', preset_name
           assign preset_letter_spacing = 'type_letter_spacing_[preset_name]' | replace: '[preset_name]', preset_name
 
           echo '--font-[preset_name]--weight: var([preset_weight]);' | replace: '[preset_name]', preset_name | replace: '[preset_weight]', preset_weight
+          echo '--font-[preset_name]--stretch: var([preset_stretch]);' | replace: '[preset_name]', preset_name | replace: '[preset_stretch]', preset_stretch
           echo '--font-[preset_name]--letter-spacing: var(--letter-spacing--[preset_letter_spacing]);' | replace: '[preset_name]', preset_name | replace: '[preset_letter_spacing]', settings[preset_letter_spacing]
         endif
 

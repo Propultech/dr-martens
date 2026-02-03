@@ -824,6 +824,7 @@ h1,
   font-family: var(--font-h1--family);
   font-style: var(--font-h1--style);
   font-weight: var(--font-h1--weight);
+  font-stretch: var(--font-h1--stretch, normal);
   font-size: var(--font-h1--size);
   line-height: var(--font-h1--line-height);
   letter-spacing: var(--font-h1--letter-spacing);
@@ -845,6 +846,7 @@ h2,
   font-family: var(--font-h2--family);
   font-style: var(--font-h2--style);
   font-weight: var(--font-h2--weight);
+  font-stretch: var(--font-h2--stretch, normal);
   font-size: var(--font-h2--size);
   line-height: var(--font-h2--line-height);
   letter-spacing: var(--font-h2--letter-spacing);
@@ -867,6 +869,7 @@ h3,
   font-family: var(--font-h3--family);
   font-style: var(--font-h3--style);
   font-weight: var(--font-h3--weight);
+  font-stretch: var(--font-h3--stretch, normal);
   font-size: var(--font-h3--size);
   line-height: var(--font-h3--line-height);
   letter-spacing: var(--font-h3--letter-spacing);
@@ -888,6 +891,7 @@ h4,
   font-family: var(--font-h4--family);
   font-style: var(--font-h4--style);
   font-weight: var(--font-h4--weight);
+  font-stretch: var(--font-h4--stretch, normal);
   font-size: var(--font-h4--size);
   line-height: var(--font-h4--line-height);
   letter-spacing: var(--font-h4--letter-spacing);
@@ -909,6 +913,7 @@ h5,
   font-family: var(--font-h5--family);
   font-style: var(--font-h5--style);
   font-weight: var(--font-h5--weight);
+  font-stretch: var(--font-h5--stretch, normal);
   font-size: var(--font-h5--size);
   line-height: var(--font-h5--line-height);
   letter-spacing: var(--font-h5--letter-spacing);
@@ -930,6 +935,7 @@ h6,
   font-family: var(--font-h6--family);
   font-style: var(--font-h6--style);
   font-weight: var(--font-h6--weight);
+  font-stretch: var(--font-h6--stretch, normal);
   font-size: var(--font-h6--size);
   line-height: var(--font-h6--line-height);
   letter-spacing: var(--font-h6--letter-spacing);
