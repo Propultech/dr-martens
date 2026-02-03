@@ -46,6 +46,12 @@ class HeaderComponent extends Component {
   #lastScrollTop = 0;
 
   /**
+   * Whether the search toggle is active. When true, skip scroll updates to preserve sticky state
+   * @type {boolean}
+   */
+  searchToggling = false;
+
+  /**
    * A timeout to allow for hiding animation, when sticky behavior is 'scroll-up'
    * @type {number | null}
    */
@@ -142,6 +148,9 @@ class HeaderComponent extends Component {
   };
 
   #updateScrollState = () => {
+    // Skip update during search toggle to preserve sticky state
+    if (this.searchToggling) return;
+
     const stickyMode = this.getAttribute('sticky');
     if (!this.#offscreen && stickyMode !== 'always') return;
 
