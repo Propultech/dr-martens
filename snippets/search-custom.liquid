@@ -38,83 +38,125 @@
 -%}
 
 {%- if should_render_button_desktop -%}
-<search-custom-component class="search-custom-wrapper{% if class != blank %} {{ class | strip }}{% endif %}" data-unique-id="{{ section_id }}">
-  {%- comment -%} Mobile: Toggle button only (panel rendered separately in header row) {%- endcomment -%}
-  <button
-    type="button"
-    class="search-custom-mobile__trigger color-{{ color_scheme }} desktop:hidden"
-    aria-label="{{ 'content.search_input_label' | t }}"
-    aria-expanded="false"
-    aria-controls="search-custom-mobile-panel-{{ section_id }}"
-    ref="mobileTrigger"
+  <search-custom-component
+    class="search-custom-wrapper{% if class != blank %} {{ class | strip }}{% endif %}"
+    data-unique-id="{{ section_id }}"
   >
-    <span class="search-custom-mobile__icon search-custom-mobile__icon--search" aria-hidden="true" ref="searchIcon">
-      {{ 'icon-search.svg' | inline_asset_content }}
-    </span>
-    <span class="search-custom-mobile__icon search-custom-mobile__icon--close" aria-hidden="true" ref="closeIcon" hidden>
-      {{ 'icon-close.svg' | inline_asset_content }}
-    </span>
-  </button>
-
-  {%- comment -%} Desktop: Inline search {%- endcomment -%}
-  <div class="search-custom-desktop color-{{ color_scheme }} mobile:hidden">
-    <predictive-search-component
-      class="predictive-search-component"
-      data-section-id="search-custom-desktop-{{ section_id }}"
+    {%- comment -%} Mobile: Toggle button only (panel rendered separately in header row) {%- endcomment -%}
+    <button
+      type="button"
+      class="search-custom-mobile__trigger color-{{ color_scheme }} desktop:hidden"
+      aria-label="{{ 'content.search_input_label' | t }}"
+      aria-expanded="false"
+      aria-controls="search-custom-mobile-panel-{{ section_id }}"
+      ref="mobileTrigger"
     >
-      <form action="{{ routes.search_url }}" method="get" role="search" class="search-custom-form">
-        <div class="search-custom-input-wrapper">
-          <span class="search-custom-icon search-custom-icon--search" aria-hidden="true">
-            {{ 'icon-search.svg' | inline_asset_content }}
-          </span>
+      <span class="search-custom-mobile__icon search-custom-mobile__icon--search" aria-hidden="true" ref="searchIcon">
+        {{ 'icon-search.svg' | inline_asset_content }}
+      </span>
+      <span
+        class="search-custom-mobile__icon search-custom-mobile__icon--close"
+        aria-hidden="true"
+        ref="closeIcon"
+        hidden
+      >
+        {{ 'icon-close.svg' | inline_asset_content }}
+      </span>
+    </button>
 
-          <button
-            type="reset"
-            ref="resetButton"
-            class="search-custom-clear"
-            aria-label="{{ 'actions.clear' | t }}"
-            hidden
-          >
-            <span class="svg-wrapper" aria-hidden="true">
-              {{ 'icon-close.svg' | inline_asset_content }}
+    {%- comment -%} Desktop: Inline search {%- endcomment -%}
+    <div class="search-custom-desktop color-{{ color_scheme }} mobile:hidden">
+      <predictive-search-component
+        class="predictive-search-component"
+        data-section-id="search-custom-desktop-{{ section_id }}"
+        data-testid="search-component--desktop"
+        role="search"
+        aria-label="{{ 'content.search_input_label' | t }}"
+      >
+        <form
+          action="{{ routes.search_url }}"
+          method="get"
+          role="search"
+          class="search-custom-form"
+          ref="form"
+          on:keydown="/onSearchKeyDown"
+        >
+          <div class="search-custom-input-wrapper">
+            <span class="search-custom-icon search-custom-icon--search" aria-hidden="true">
+              {{ 'icon-search.svg' | inline_asset_content }}
             </span>
-          </button>
 
-          <label for="search-custom-desktop-input-{{ section_id }}" class="visually-hidden">
-            {{ 'content.search_input_label' | t }}
-          </label>
+            <button
+              type="reset"
+              ref="resetButton"
+              class="search-custom-clear"
+              aria-label="{{ 'actions.clear' | t }}"
+              hidden
+            >
+              <span class="svg-wrapper" aria-hidden="true">
+                {{ 'icon-close.svg' | inline_asset_content }}
+              </span>
+            </button>
 
-          <input
-            id="search-custom-desktop-input-{{ section_id }}"
-            ref="searchInput"
-            type="search"
-            name="q"
-            value="{{ search.terms | escape }}"
-            placeholder="{{ placeholder_text }}"
-            class="search-custom-input"
-            role="combobox"
-            aria-expanded="false"
-            aria-owns="search-custom-desktop-results-{{ section_id }}"
-            aria-controls="search-custom-desktop-results-{{ section_id }}"
-            aria-haspopup="listbox"
-            aria-autocomplete="list"
-            autocomplete="off"
-          />
+            <label for="search-custom-desktop-input-{{ section_id }}" class="visually-hidden">
+              {{ 'content.search_input_label' | t }}
+            </label>
+
+            <input
+              id="search-custom-desktop-input-{{ section_id }}"
+              ref="searchInput"
+              type="search"
+              name="q"
+              value="{{ search.terms | escape }}"
+              placeholder="{{ placeholder_text }}"
+              class="search-custom-input"
+              role="combobox"
+              aria-expanded="false"
+              aria-owns="search-custom-desktop-results-{{ section_id }}"
+              aria-controls="search-custom-desktop-results-{{ section_id }}"
+              aria-haspopup="listbox"
+              aria-autocomplete="list"
+              autocomplete="off"
+              on:input="/search"
+              on:keydown="/onSearchKeyDown"
+            >
+          </div>
+
+          <input name="options[prefix]" type="hidden" value="last">
+        </form>
+
+        <div
+          id="search-custom-desktop-results-{{ section_id }}"
+          ref="predictiveSearchResults"
+          class="search-custom-results"
+          tabindex="-1"
+          hidden
+          data-search-results
+        >
+          {% render 'predictive-search-empty-state',
+            load_empty_state: true,
+            shadow_opacity: 0.1,
+            products_test_id: 'products-list-default--modal'
+          %}
+
+
+          <div class="predictive-search-results__inner">
+            <!-- Aquí se mostrarán los resultados dinámicamente -->
+          </div>
+
+          <div class="predictive-search-form__footer">
+            <button
+              class="button button-primary predictive-search__search-button"
+              ref="viewAllButton"
+            >
+              {{ 'content.search_results_view_all' | t }}
+            </button>
+          </div>
         </div>
 
-        <input name="options[prefix]" type="hidden" value="last" />
-      </form>
-
-      <div
-        id="search-custom-desktop-results-{{ section_id }}"
-        ref="predictiveSearchResults"
-        class="search-custom-results"
-        tabindex="-1"
-        hidden
-      ></div>
-    </predictive-search-component>
-  </div>
-</search-custom-component>
+      </predictive-search-component>
+    </div>
+  </search-custom-component>
 {%- endif -%}
 
 {%- if should_render_mobile_panel -%}
@@ -126,141 +168,162 @@
     ref="mobilePanel"
     data-mobile-panel="true"
   >
-  <predictive-search-component
-    class="predictive-search-component"
-    data-section-id="search-custom-mobile-{{ section_id }}"
-  >
-    <form action="{{ routes.search_url }}" method="get" role="search" class="search-custom-form">
-      <div class="search-custom-input-wrapper">
-        <label for="search-custom-mobile-input-{{ section_id }}" class="visually-hidden">
-          {{ 'content.search_input_label' | t }}
-        </label>
+    <predictive-search-component
+      class="predictive-search-component"
+      data-section-id="search-custom-mobile-{{ section_id }}"
+    >
+      <form action="{{ routes.search_url }}" method="get" role="search" class="search-custom-form">
+        <div class="search-custom-input-wrapper">
+          <label for="search-custom-mobile-input-{{ section_id }}" class="visually-hidden">
+            {{ 'content.search_input_label' | t }}
+          </label>
 
-        <button
-          type="reset"
-          ref="resetButton"
-          class="search-custom-reset"
-          aria-label="{{ 'actions.clear' | t }}"
-          hidden
-        >
+          <button
+            type="reset"
+            ref="resetButton"
+            class="search-custom-reset"
+            aria-label="{{ 'actions.clear' | t }}"
+            hidden
+          >
             <span class="svg-wrapper" aria-hidden="true">
-                {{ 'icon-close.svg' | inline_asset_content }}
+              {{ 'icon-close.svg' | inline_asset_content }}
             </span>
-        </button>
+          </button>
 
-        <span class="search-custom-button" aria-hidden="false" ref="searchIcon">
+          <span class="search-custom-button" aria-hidden="false" ref="searchIcon">
             {{ 'icon-search.svg' | inline_asset_content }}
-        </span>
+          </span>
 
-        <input
-          id="search-custom-mobile-input-{{ section_id }}"
-          ref="searchInput"
-          type="search"
-          name="q"
-          value="{{ search.terms | escape }}"
-          placeholder="{{ placeholder_text }}"
-          class="search-custom-input"
-          role="combobox"
-          aria-expanded="false"
-          aria-owns="search-custom-mobile-results-{{ section_id }}"
-          aria-controls="search-custom-mobile-results-{{ section_id }}"
-          aria-haspopup="listbox"
-          aria-autocomplete="list"
-          autocomplete="off"
-        />
+          <input
+            id="search-custom-mobile-input-{{ section_id }}"
+            ref="searchInput"
+            type="search"
+            name="q"
+            value="{{ search.terms | escape }}"
+            placeholder="{{ placeholder_text }}"
+            class="search-custom-input"
+            role="combobox"
+            aria-expanded="false"
+            aria-owns="search-custom-mobile-results-{{ section_id }}"
+            aria-controls="search-custom-mobile-results-{{ section_id }}"
+            aria-haspopup="listbox"
+            aria-autocomplete="list"
+            autocomplete="off"
+          >
+        </div>
 
-      </div>
+        <input name="options[prefix]" type="hidden" value="last">
+      </form>
 
-      <input name="options[prefix]" type="hidden" value="last" />
-    </form>
-
-    <div
-      id="search-custom-mobile-results-{{ section_id }}"
-      ref="predictiveSearchResults"
-      class="search-custom-results"
-      tabindex="-1"
-      hidden
-    ></div>
-  </predictive-search-component>
-</div>
+      <div
+        id="search-custom-mobile-results-{{ section_id }}"
+        ref="predictiveSearchResults"
+        class="search-custom-results"
+        tabindex="-1"
+        hidden
+      ></div>
+    </predictive-search-component>
+  </div>
 {%- endif -%}
 
 {% stylesheet %}
-.header-search-custom {
+  .header-search-custom {
     .visually-hidden {
-        position: absolute !important;
-        height: 0px;
-        width: 0px;
-        overflow: hidden;
-        clip: rect(1px, 1px, 1px, 1px);
-        white-space: nowrap;
-        visibility: hidden;
+      position: absolute !important;
+      height: 0px;
+      width: 0px;
+      overflow: hidden;
+      clip: rect(1px, 1px, 1px, 1px);
+      white-space: nowrap;
+      visibility: hidden;
     }
 
     .search-custom-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .search-custom-form {
         display: flex;
         align-items: center;
-        justify-content: center;
+        height: 40px;
+        width: clamp(300px, 27.5vw, 396px);
+        background-color: var(--color-background);
+        padding: 6px;
 
-        .search-custom-form {
-            display: flex;
-            align-items: center;
-            height: 40px;
-            width: clamp(300px, 27.5vw, 396px);
-            background-color: var(--color-background);
-            padding: 6px;
+        .search-custom-input-wrapper {
+          display: flex;
+          gap: 6px;
+          position: relative;
+          width: 100%;
 
-            .search-custom-input-wrapper {
-                display: flex;
-                gap: 6px;
-                position: relative;
-                width: 100%;
+          .search-custom-icon {
+            display: block;
+            width: 28px;
+            height: 28px;
+          }
 
-                .search-custom-icon {
-                    display: block;
-                    width: 28px;
-                    height: 28px;
-                }
-
-                &:has(.search-custom-clear:not([hidden])) {
-                    .search-custom-icon {
-                        display: none;
-                    }
-                }
-
-                .search-custom-clear {
-                    background-color: transparent;
-                    border: none;
-                    cursor: pointer;
-                    padding: 0;
-                    color: var(--color-foreground);
-                    width: 28px;
-                    height: 28px;
-                }
-
-                .search-custom-input {
-                    background-color: var(--color-background);
-                    color: var(--color-foreground);
-                    border: none;
-                    font-size: 16px;
-                    line-height: normal;
-                    flex: 1;
-
-                    &:focus {
-                        outline: none;
-                    }
-
-                    &::placeholder {
-                        color: var(--color-foreground);
-                    }
-                }
+          &:has(.search-custom-clear:not([hidden])) {
+            .search-custom-icon {
+              display: none;
             }
-        }
-    }
-}
+          }
 
-/* mobile  */
-.search-custom-mobile__trigger {
+          .search-custom-clear {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            color: var(--color-foreground);
+            width: 28px;
+            height: 28px;
+          }
+
+          .search-custom-input {
+            background-color: var(--color-background);
+            color: var(--color-foreground);
+            border: none;
+            font-size: 16px;
+            line-height: normal;
+            flex: 1;
+
+            &:focus {
+              outline: none;
+            }
+
+            &::placeholder {
+              color: var(--color-foreground);
+            }
+          }
+        }
+      }
+    }
+
+    .predictive-search-component {
+      display: flex;
+      flex-flow: column;
+      position: relative;
+
+      .search-custom-results {
+        width: 100%;
+        position: absolute;
+        top: 40px;
+        background: var(--color-foreground);
+
+        .predictive-search-results__inner {
+          color: var(--color-background);
+
+          .resource-card__content,
+          .paragraph {
+            color: var(--color-background);
+          }
+        }
+      }
+    }
+  }
+
+  /* mobile  */
+  .search-custom-mobile__trigger {
     background-color: transparent;
     border: none;
     cursor: pointer;
@@ -272,33 +335,33 @@
     justify-content: center;
 
     &:focus {
-        outline: none;
-        background-color: transparent;
+      outline: none;
+      background-color: transparent;
     }
 
     .search-custom-mobile__icon {
-        display: block;
-        color: var(--color-foreground);
-        width: 28px;
-        height: 28px;
+      display: block;
+      color: var(--color-foreground);
+      width: 28px;
+      height: 28px;
 
-        &.search-custom-mobile__icon--close {
-            width: 20px;
-            height: 20px;
-        }
+      &.search-custom-mobile__icon--close {
+        width: 20px;
+        height: 20px;
+      }
 
-        &[hidden] {
-            display: none;
-        }
+      &[hidden] {
+        display: none;
+      }
 
-        svg {
-            width: 100%;
-            height: 100%;
-        }
+      svg {
+        width: 100%;
+        height: 100%;
+      }
     }
-}
+  }
 
-.header__row--mobile {
+  .header__row--mobile {
     background-color: black;
     display: grid;
     grid-template-rows: 1fr;
@@ -306,70 +369,69 @@
     transition: grid-template-rows 0.4s ease, display 0.4s allow-discrete;
 
     &:has(.search-custom-mobile-panel[hidden]) {
-        grid-template-rows: 0fr;
+      grid-template-rows: 0fr;
     }
 
     > div {
-        padding: 0 var(--page-margin);
-        background-color: transparent;
-        overflow: hidden;
+      padding: 0 var(--page-margin);
+      background-color: transparent;
+      overflow: hidden;
     }
 
     .search-custom-mobile-panel {
-        display: block;
-        opacity: 1;
-        transition: opacity 0.2s ease, display 0.4s allow-discrete;
+      display: block;
+      opacity: 1;
+      transition: opacity 0.2s ease, display 0.4s allow-discrete;
 
-        &[hidden] {
-            display: none;
-            opacity: 0;
-        }
+      &[hidden] {
+        display: none;
+        opacity: 0;
+      }
 
-        @starting-style {
-            opacity: 0;
-        }
+      @starting-style {
+        opacity: 0;
+      }
     }
 
     .predictive-search-component,
     .search-custom-form {
-        width: 100%;
-        background-color: transparent;
+      width: 100%;
+      background-color: transparent;
     }
 
     .search-custom-input-wrapper {
-        display: flex;
-        width: 100%;
-        gap: 6px;
-        align-items: center;
-        justify-content: center;
+      display: flex;
+      width: 100%;
+      gap: 6px;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--color-foreground);
+
+      .search-custom-button {
+        display: block;
+        width: 28px;
+        height: 28px;
+        color: var(--color-background);
+      }
+
+      .search-custom-input {
         background-color: var(--color-foreground);
+        color: var(--color-background);
+        border: none;
+        font-size: 16px;
+        line-height: normal;
+        flex: 1;
+        height: 54px;
+        border-radius: 0;
 
-        .search-custom-button {
-            display: block;
-            width: 28px;
-            height: 28px;
-            color: var(--color-background);
+        &:focus {
+          outline: none;
         }
 
-        .search-custom-input {
-            background-color: var(--color-foreground);
-            color: var(--color-background);
-            border: none;
-            font-size: 16px;
-            line-height: normal;
-            flex: 1;
-            height: 54px;
-            border-radius: 0;
-
-            &:focus {
-                outline: none;
-            }
-
-            &::placeholder {
-                color: var(--color-background);
-            }
+        &::placeholder {
+          color: var(--color-background);
         }
+      }
     }
-}
-
+  }
 {% endstylesheet %}
