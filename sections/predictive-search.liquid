@@ -42,31 +42,36 @@
             {% assign shared_results_index = shared_results_index
               | plus: predictive_search.resources.collections.size
             %}
-            <ul
+            <div class="predictive-search-results__queries" id="predictive-search-queries">
+              <h4 class="predictive-search-results__title">
+                {{ 'content.search_results_resource_queries' | t }}
+              </h4>
+              <ul
               class="predictive-search-results__list predictive-search-results__wrapper predictive-search-results__wrapper-queries list-unstyled"
               role="listbox"
               aria-labelledby="predictive-search-queries"
-            >
-              {%- for resource in predictive_search.resources.queries -%}
-                <li
-                  class="predictive-search-results__card--query"
-                  ref="resultsItems[]"
-                  data-search-result-index="search-results-{{ shared_results_index | plus: forloop.index }}"
-                  on:keydown="/onSearchKeyDown"
-                >
-                  <a
-                    class="pills__pill predictive-search-results__pill"
-                    href="{{ resource.url }}"
+              >
+                {%- for resource in predictive_search.resources.queries -%}
+                  <li
+                    class="predictive-search-results__card--query"
+                    ref="resultsItems[]"
+                    data-search-result-index="search-results-{{ shared_results_index | plus: forloop.index }}"
+                    on:keydown="/onSearchKeyDown"
                   >
-                    <span
-                      aria-label="{{ resource.text }}"
+                    <a
+                      class="pills__pill predictive-search-results__pill"
+                      href="{{ resource.url }}"
                     >
-                      {{ resource.styled_text }}
-                    </span>
-                  </a>
-                </li>
-              {% endfor %}
-            </ul>
+                      <span
+                        aria-label="{{ resource.text }}"
+                      >
+                        {{ resource.styled_text }}
+                      </span>
+                    </a>
+                  </li>
+                {% endfor %}
+              </ul>
+            </div>
           {% endif %}
           {% if predictive_search.resources.products.size > 0 %}
             {%- liquid

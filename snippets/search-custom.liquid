@@ -68,7 +68,7 @@
     <div class="search-custom-desktop color-{{ color_scheme }} mobile:hidden">
       <predictive-search-component
         class="predictive-search-component"
-        data-section-id="search-custom-desktop-{{ section_id }}"
+        data-section-id="predictive-search"
         data-testid="search-component--desktop"
         role="search"
         aria-label="{{ 'content.search_input_label' | t }}"
@@ -78,6 +78,7 @@
           method="get"
           role="search"
           class="search-custom-form"
+          id="search-custom-form-desktop-{{ section_id }}"
           ref="form"
           on:keydown="/onSearchKeyDown"
         >
@@ -92,6 +93,7 @@
               class="search-custom-clear"
               aria-label="{{ 'actions.clear' | t }}"
               hidden
+              on:click="/resetSearch"
             >
               <span class="svg-wrapper" aria-hidden="true">
                 {{ 'icon-close.svg' | inline_asset_content }}
@@ -102,12 +104,13 @@
               {{ 'content.search_input_label' | t }}
             </label>
 
+            {% comment %} in case of pass search {{ search.terms | escape }} {% endcomment %}
             <input
               id="search-custom-desktop-input-{{ section_id }}"
               ref="searchInput"
               type="search"
               name="q"
-              value="{{ search.terms | escape }}"
+              value=""
               placeholder="{{ placeholder_text }}"
               class="search-custom-input"
               role="combobox"
@@ -125,35 +128,34 @@
           <input name="options[prefix]" type="hidden" value="last">
         </form>
 
-        <div
-          id="search-custom-desktop-results-{{ section_id }}"
-          ref="predictiveSearchResults"
-          class="search-custom-results"
-          tabindex="-1"
-          hidden
-          data-search-results
-        >
-          {% render 'predictive-search-empty-state',
-            load_empty_state: true,
-            shadow_opacity: 0.1,
-            products_test_id: 'products-list-default--modal'
-          %}
-
-
-          <div class="predictive-search-results__inner">
-            <!-- Aquí se mostrarán los resultados dinámicamente -->
+        <div class="predictive-search-form__content-wrapper">
+          <div
+            id="search-custom-desktop-results-{{ section_id }}"
+            ref="predictiveSearchResults"
+            class="search-custom-results"
+            tabindex="-1"
+            hidden
+            data-search-results
+            scroll-lock
+          >
+            {% render 'predictive-search-empty-state',
+              load_empty_state: true,
+              shadow_opacity: 0.1,
+              products_test_id: 'products-list-default--modal'
+            %}
           </div>
 
           <div class="predictive-search-form__footer">
             <button
               class="button button-primary predictive-search__search-button"
+              type="submit"
+              form="search-custom-form-desktop-{{ section_id }}"
               ref="viewAllButton"
             >
               {{ 'content.search_results_view_all' | t }}
             </button>
           </div>
         </div>
-
       </predictive-search-component>
     </div>
   </search-custom-component>
@@ -170,11 +172,22 @@
   >
     <predictive-search-component
       class="predictive-search-component"
-      data-section-id="search-custom-mobile-{{ section_id }}"
+      data-section-id="predictive-search"
+      data-testid="search-component--desktop"
+      role="search"
+      aria-label="{{ 'content.search_input_label' | t }}"
     >
-      <form action="{{ routes.search_url }}" method="get" role="search" class="search-custom-form">
+      <form
+        action="{{ routes.search_url }}"
+        method="get"
+        role="search"
+        class="search-custom-form"
+        id="search-custom-form-mobile-{{ section_id }}"
+        ref="form"
+        on:keydown="/onSearchKeyDown"
+      >
         <div class="search-custom-input-wrapper">
-          <label for="search-custom-mobile-input-{{ section_id }}" class="visually-hidden">
+          <label for="search-custom-mobile-input-{{ section_id }}" aria-hidden="true" class="visually-hidden">
             {{ 'content.search_input_label' | t }}
           </label>
 
@@ -184,6 +197,7 @@
             class="search-custom-reset"
             aria-label="{{ 'actions.clear' | t }}"
             hidden
+            on:click="/resetSearch"
           >
             <span class="svg-wrapper" aria-hidden="true">
               {{ 'icon-close.svg' | inline_asset_content }}
@@ -209,19 +223,42 @@
             aria-haspopup="listbox"
             aria-autocomplete="list"
             autocomplete="off"
+            on:input="/search"
+            on:keydown="/onSearchKeyDown"
           >
         </div>
 
         <input name="options[prefix]" type="hidden" value="last">
       </form>
 
-      <div
-        id="search-custom-mobile-results-{{ section_id }}"
-        ref="predictiveSearchResults"
-        class="search-custom-results"
-        tabindex="-1"
-        hidden
-      ></div>
+      <div class="predictive-search-form__content-wrapper">
+        <div
+          id="search-custom-mobile-results-{{ section_id }}"
+          ref="predictiveSearchResults"
+          class="search-custom-results"
+          tabindex="-1"
+          hidden
+          data-search-results
+          scroll-lock
+        >
+          {% render 'predictive-search-empty-state',
+            load_empty_state: true,
+            shadow_opacity: 0.1,
+            products_test_id: 'products-list-default--modal'
+          %}
+        </div>
+
+        <div class="predictive-search-form__footer">
+          <button
+            class="button button-primary predictive-search__search-button"
+            type="submit"
+            form="search-custom-form-mobile-{{ section_id }}"
+            ref="viewAllButton"
+          >
+            {{ 'content.search_results_view_all' | t }}
+          </button>
+        </div>
+      </div>
     </predictive-search-component>
   </div>
 {%- endif -%}
@@ -304,19 +341,44 @@
       flex-flow: column;
       position: relative;
 
-      .search-custom-results {
+      .predictive-search-form__content-wrapper {
         width: 100%;
         position: absolute;
         top: 40px;
+        display: flex;
+        opacity: 1;
         background: var(--color-foreground);
+        transform: translateY(0);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        box-shadow: var(--shadow-popover);
+        max-height: 70dvh;
 
-        .predictive-search-results__inner {
-          color: var(--color-background);
+        @starting-style {
+          opacity: 0;
+          transform: translateY(-10px);
+        }
 
-          .resource-card__content,
-          .paragraph {
-            color: var(--color-background);
+        &:has(.predictive-search-results__inner[data-search-results]):not(:has(.predictive-search-results__no-results)) {
+          padding: 0 0 80px;
+        }
+
+        &:has(.search-custom-results[hidden]) {
+          display: none;
+          opacity: 0;
+        }
+
+        .predictive-search-form__footer {
+          transition: height 0s, opacity .2s ease, display 0s allow-discrete;
+
+          @starting-style {
+            opacity: 0;
+            height: 0;
           }
+        }
+
+        .search-custom-results {
+          overflow-y: auto;
+          scrollbar-width: none;
         }
       }
     }
@@ -361,11 +423,10 @@
     }
   }
 
-  .header__row--mobile {
-    background-color: black;
+  .header__row--mobile.header__row--search {
+    background-color: var(--color-variant-text);
     display: grid;
     grid-template-rows: 1fr;
-    overflow: hidden;
     transition: grid-template-rows 0.4s ease, display 0.4s allow-discrete;
 
     &:has(.search-custom-mobile-panel[hidden]) {
@@ -375,21 +436,48 @@
     > div {
       padding: 0 var(--page-margin);
       background-color: transparent;
-      overflow: hidden;
     }
 
     .search-custom-mobile-panel {
       display: block;
       opacity: 1;
-      transition: opacity 0.2s ease, display 0.4s allow-discrete;
+      transition: height 0s ,opacity .0s ease, display .5s allow-discrete ease;
 
       &[hidden] {
         display: none;
         opacity: 0;
+        height: 0;
       }
 
       @starting-style {
         opacity: 0;
+        height: 0;
+      }
+    }
+
+    .predictive-search-component {
+      position: relative;
+      display: flex;
+      flex-flow: column;
+      gap: 10px;
+
+      .predictive-search-form__content-wrapper {
+        position: relative;
+        max-height: 62dvh;
+        z-index: 0;
+        overflow-y: auto;
+        scrollbar-width: none;
+        background-color: var(--color-foreground);
+
+        .predictive-search-form__footer {
+          position: relative;
+          transition: opacity .2s ease, display .5s allow-discrete;
+          margin: 10px 0 0;
+
+          @starting-style {
+            opacity: 0;
+          }
+        }
       }
     }
 
@@ -411,12 +499,30 @@
         display: block;
         width: 28px;
         height: 28px;
-        color: var(--color-background);
+        color: var(--color-variant-text);
+      }
+
+      &:has(.search-custom-reset:not([hidden])) {
+        .search-custom-button {
+          display: none;
+        }
+      }
+
+      .search-custom-reset {
+        position: relative;
+        top: 2px;
+        width: 28px;
+        height: 28px;
+        color: var(--color-variant-text);
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+        padding: 0;
       }
 
       .search-custom-input {
         background-color: var(--color-foreground);
-        color: var(--color-background);
+        color: var(--color-variant-text);
         border: none;
         font-size: 16px;
         line-height: normal;
@@ -434,4 +540,159 @@
       }
     }
   }
+
+  /* search response */
+  .header__row--mobile.header__row--search,
+  .header-search-custom {
+    .predictive-search-form__content-wrapper {
+      .predictive-search-form__footer {
+        display: none;
+        opacity: 0;
+      }
+
+      &:has(.predictive-search-results__inner[data-search-results]):not(:has(.predictive-search-results__no-results)) {
+        .predictive-search-form__footer {
+          display: block;
+          opacity: 1;
+        }
+      }
+
+      .predictive-search-results__inner {
+        color: var(--color-variant-text);
+        padding: 0;
+        scrollbar-width: none;
+
+        .resource-card__content,
+        .paragraph {
+          color: var(--color-variant-text);
+        }
+
+        .predictive-search-results__products,
+        .predictive-search-results__list {
+          padding: 0;
+
+          .predictive-search-results__resource-header {
+            padding: 0;
+            height: auto;
+          }
+
+          slideshow-container {
+            padding: 0;
+          }
+        }
+
+        .predictive-search-results__list {
+          grid-template-columns: repeat(1, 1fr);
+          gap: 0;
+        }
+
+        /* query */
+        .predictive-search-results__wrapper-queries {
+          flex-flow: column;
+
+          .predictive-search-results__card--query {
+            border-bottom: 1px solid var(--color-variant-text);
+
+            &:last-child {
+              border-bottom: none;
+            }
+
+            &:active {
+              transform: scale(1);
+            }
+          }
+
+          .predictive-search-results__pill {
+            color: var(--color-variant-text);
+            margin: 0;
+            padding: var(--padding-sm);
+
+            &:hover {
+              transform: scale(1);
+              box-shadow: none;
+              background-color: var(--card-bg-hover);
+            }
+
+            mark {
+              color: var(--color-variant-text);
+              font-weight: bold;
+            }
+          }
+        }
+
+        /* product */
+        .predictive-search-results__card--product {
+          border-bottom: 1px solid var(--color-variant-text);
+          padding: var(--padding-sm);
+
+          &:last-child {
+            border-bottom: none;
+          }
+
+          &:hover {
+            padding: var(--padding-sm);
+            margin: 0;
+          }
+
+          &:active {
+            transform: scale(1);
+          }
+
+          .resource-card {
+            flex-flow: row;
+            gap: var(--gap-md);
+
+            .resource-card__media {
+              flex: 0 0 80px;
+              display: flex;
+              position: relative;
+            }
+
+            .resource-card__content {
+              padding: var(--gap-md) 0 0;
+
+              .resource-card__title {
+                text-transform: uppercase;
+                font-weight: bolder;
+                -webkit-line-clamp: 1;
+                line-clamp: 1;
+              }
+            }
+          }
+        }
+
+        /* collections & pages */
+        .predictive-search-results__wrapper {
+          slideshow-slides {
+            padding: var(--padding-xl) var(--padding-sm) var(--padding-xl);
+          }
+
+          .predictive-search-results__card:not(.predictive-search-results__card--product) {
+            border: none;
+            background-color: var(--card-bg-hover);
+
+            &:hover {
+              opacity: .8;
+            }
+          }
+        }
+
+        /* title */
+        .predictive-search-results__title {
+          text-transform: uppercase;
+          background-color: var(--color-variant-hover-text);
+          font-weight: bolder;
+          outline: 1px solid var(--color-variant-text);
+          padding: 3px 5px;
+          margin: 0;
+          line-height: normal;
+
+          .predictive-search-results__clear {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
 {% endstylesheet %}

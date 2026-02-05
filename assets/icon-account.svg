@@ -1,1 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="6.5" r="2.75" stroke="currentColor" stroke-width="var(--icon-stroke-width)"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="var(--icon-stroke-width)" d="m5.172 14.591-.437.786a.588.588 0 0 0 .514.873h9.502a.588.588 0 0 0 .514-.873l-.437-.786a5.523 5.523 0 0 0-9.656 0"/></svg>
+<svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" fill="none">
+
+ <g>
+  <title>Layer 1</title>
+  <path id="svg_1" stroke-miterlimit="10" stroke-width="0" fill="currentColor" d="m13.86945,10.85149c-0.99366,0.96257 -2.35985,1.55253 -3.88128,1.55253c-1.52147,0 -2.88768,-0.58996 -3.88128,-1.58354c-2.94977,0.43472 -4.81278,1.55253 -4.87488,3.97441l0,4.44014c0,0.4037 0.34155,0.74521 0.74521,0.74521l16.05289,0c0.4037,0 0.74521,-0.3415 0.74521,-0.74521l0,-4.44014c-0.06211,-2.45298 -1.89403,-3.50867 -4.90588,-3.94339z"/>
+  <path id="svg_2" stroke-miterlimit="10" stroke-width="0" fill="currentColor" d="m10.00364,11.20645c3.08673,0 5.58905,-2.50224 5.58905,-5.58899c0,-3.08673 -2.50232,-5.58903 -5.58905,-5.58903c-3.0867,0 -5.58899,2.5023 -5.58899,5.58903c0,3.08675 2.5023,5.58899 5.58899,5.58899z"/>
+ </g>
+</svg>
