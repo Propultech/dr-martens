@@ -1,8 +1,8 @@
 {% liquid
-  assign order = 'logo,menu,localization,search,mobile_search,actions'
+  assign order = 'logo,menu,localization,search,mobile_search,search_custom,actions'
 
   if shop.customer_accounts_enabled
-    assign order = 'mobile_search,logo,menu,localization,search,actions'
+    assign order = 'mobile_search,logo,menu,localization,search,search_custom,actions'
   endif
 
   assign rows = 'top,bottom' | split: ','
@@ -69,23 +69,23 @@
   if section.settings.localization_position == 'left'
     if section.settings.search_position == 'left'
       if shop.customer_accounts_enabled
-        assign order = 'mobile_search,logo,search,localization,menu,actions'
+        assign order = 'mobile_search,logo,search,localization,menu,search_custom,actions'
       else
-        assign order = 'logo,search,localization,menu,mobile_search,actions'
+        assign order = 'logo,search,localization,menu,mobile_search,search_custom,actions'
       endif
     else
       if shop.customer_accounts_enabled
-        assign order = 'mobile_search,logo,localization,menu,search,actions'
+        assign order = 'mobile_search,logo,localization,menu,search,search_custom,actions'
       else
-        assign order = 'logo,localization,menu,search,mobile_search,actions'
+        assign order = 'logo,localization,menu,search,mobile_search,search_custom,actions'
       endif
     endif
   else
     if section.settings.search_position == 'left'
       if shop.customer_accounts_enabled
-        assign order = 'mobile_search,logo,search,menu,localization,actions'
+        assign order = 'mobile_search,logo,search,menu,localization,search_custom,actions'
       else
-        assign order = 'logo,search,menu,localization,mobile_search,actions'
+        assign order = 'logo,search,menu,localization,mobile_search,search_custom,actions'
       endif
     endif
   endif
@@ -164,6 +164,40 @@
     assign class = class | append: ' ' | append: collapse_header_paddings_class
   endif
 %}
+
+{%- comment -%} # Custom Search {%- endcomment -%}
+{%- capture search_custom -%}
+  {%- if section.settings.show_search_custom -%}
+    <script src="{{ 'predictive-search.js' | asset_url }}" type="module"></script>
+    <script src="{{ 'search-custom.js' | asset_url }}" type="module"></script>
+
+    <div class="header-search-custom">
+      {%- render 'search-custom',
+        placeholder: section.settings.search_custom_placeholder,
+        class: 'header-search-custom__inner',
+        color_scheme: section.settings.search_custom_color_scheme,
+        unique_id: 'header',
+        mode: 'button-desktop'
+      -%}
+    </div>
+  {%- endif -%}
+{%- endcapture -%}
+
+{%- capture search_custom_mobile_panel -%}
+  {%- if section.settings.show_search_custom -%}
+    {%- render 'search-custom',
+      placeholder: section.settings.search_custom_placeholder,
+      unique_id: 'header',
+      color_scheme: section.settings.search_custom_color_scheme,
+      mode: 'panel'
+    -%}
+  {%- endif -%}
+{%- endcapture -%}
+
+{%- liquid
+  # Check if search custom is enabled
+  assign has_search_custom = section.settings.show_search_custom
+-%}
 
 {% capture localization_markup %}
   {% liquid
@@ -330,7 +364,8 @@
         actions: actions,
         localization: localization_markup,
         search: search,
-        mobile_search: mobile_search
+        mobile_search: mobile_search,
+        search_custom: search_custom
       %}
     {% endcapture %}
 
@@ -349,6 +384,13 @@
       </div>
     {% endif %}
   {% endfor %}
+
+  {%- comment -%} Mobile search panel row (only visible when search is active) {%- endcomment -%}
+  {% if has_search_custom %}
+    <div class="header__row header__row--mobile header__row--search desktop:hidden" id="header-mobile-search-row">
+      {{ search_custom_mobile_panel }}
+    </div>
+  {% endif %}
 
   {% if navigation_bar != blank %}
     <div class="header__row header__row--mobile desktop:hidden color-{{ section.settings.color_scheme_bottom }}">
@@ -873,6 +915,51 @@
       ],
       "default": "top",
       "visible_if": "{{ section.settings.show_search }}"
+    },
+    {
+      "type": "header",
+      "content": "t:names.search_custom"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_search_custom",
+      "label": "t:names.show_search_custom",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "search_custom_placeholder",
+      "label": "t:settings.product_custom_property.placeholder_text",
+      "default": "Busca botas, zapatos, sandalias y más",
+      "visible_if": "{{ section.settings.show_search_custom }}"
+    },
+    {
+      "type": "color_scheme",
+      "id": "search_custom_color_scheme",
+      "label": "t:settings.color_scheme",
+      "default": "scheme-1",
+      "visible_if": "{{ section.settings.show_search_custom }}"
+    },
+    {
+      "type": "select",
+      "id": "search_custom_position",
+      "label": "t:settings.position",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:options.left"
+        },
+        {
+          "value": "center",
+          "label": "t:options.center"
+        },
+        {
+          "value": "right",
+          "label": "t:options.right"
+        }
+      ],
+      "default": "right",
+      "visible_if": "{{ section.settings.show_search_custom }}"
     },
     {
       "type": "header",
