@@ -94,6 +94,17 @@
     "variant_button_radius": 2,
     "variant_button_width": "default-width-buttons",
     "button_font_weight_secondary": "default",
+    "sections": {
+      "password-footer": {
+        "type": "password-footer",
+        "custom_css": [
+          ".password-enter.color-scheme-1 {display: none;}"
+        ],
+        "settings": {
+          "color_scheme": ""
+        }
+      }
+    },
     "content_for_index": [],
     "color_schemes": {
       "scheme-1": {
@@ -454,7 +465,7 @@
           "foreground": "#fdfdfd",
           "primary": "#fdfdfd",
           "primary_hover": "#fdfdfd",
-          "border": "#00000000",
+          "border": "rgba(0,0,0,0)",
           "shadow": "#000000",
           "primary_button_background": "#000000",
           "primary_button_text": "#ffffff",
