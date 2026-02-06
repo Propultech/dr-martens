@@ -827,7 +827,8 @@
     left: 0;
     top: 0;
     padding: 0;
-    background-color: var(--color-background);
+    background-color: var(--color-foreground); /* background-color: var(--color-background); */
+    color: var(--color-background);
     overflow: auto;
     display: flex;
     border-right: var(--style-border-drawer);
@@ -1020,11 +1021,11 @@
     font-size: var(--menu-top-level-font-size);
     line-height: var(--menu-top-level-font-line-height);
     text-transform: var(--menu-top-level-font-case);
-    color: var(--menu-top-level-font-color);
+    color: var(--menu-top-level-font-color-mobile);
     justify-content: space-between;
 
     &:hover {
-      color: var(--menu-top-level-font-color);
+      color: var(--menu-top-level-font-color-mobile);
     }
   }
 
@@ -1032,9 +1033,9 @@
     font-family: var(--menu-parent-font-family);
     font-style: var(--menu-parent-font-style);
     font-weight: var(--menu-parent-font-weight);
-    font-size: var(--menu-parent-font-size);
+    font-size: var(--menu-parent-font-size-mobile);
     line-height: var(--menu-parent-font-line-height);
-    text-transform: var(--menu-parent-font-case);
+    text-transform: initial; /* text-transform: var(--menu-parent-font-case); */
     color: var(--menu-parent-font-color);
 
     &:hover {
@@ -1045,10 +1046,10 @@
   .menu-drawer__menu-item--child {
     font-family: var(--menu-child-font-family);
     font-style: var(--menu-child-font-style);
-    font-weight: var(--menu-child-font-weight);
+    font-weight: normal; /* font-weight: var(--menu-child-font-weight); */
     font-size: var(--menu-child-font-size);
     line-height: var(--menu-child-font-line-height);
-    text-transform: var(--menu-child-font-case);
+    text-transform: initial; /* text-transform: var(--menu-parent-font-case); */
     color: var(--menu-child-font-color);
 
     &:hover {
@@ -1142,7 +1143,7 @@
     padding: var(--padding-md) var(--padding-xl);
     border: none;
     align-items: center;
-    color: var(--color-foreground);
+    color: var(--color-background);
     background-color: transparent;
     text-align: left;
     text-decoration: none;
@@ -1191,7 +1192,7 @@
     top: 0;
     height: 100dvh;
     left: 0;
-    background-color: var(--color-background);
+    background-color: var(--color-foreground);
     z-index: var(--layer-flat);
     transform: translateX(-5%);
     visibility: hidden;
