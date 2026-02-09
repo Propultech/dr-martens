@@ -809,10 +809,10 @@
   },
   "platform_customizations": {
     "custom_css": [
-      "/* FORCE COLOR FOR ITEMS IN THE MENU *//* SALE */.menu-list__item.sale,.menu-list__link-title.sale,.menu-drawer__menu-item-text.wrap-text.sale {color: #E8368C;}",
-      "/* NUEVOS */.menu-list__item.nuevos,.menu-list__link-title.nuevos,.menu-drawer__menu-item-text.wrap-text.nuevos {color: #FEDB03;}",
-      "/* made-in-england */.menu-list__item.made-in-england,.menu-list__link-title.made-in-england,.menu-drawer__menu-item-text.wrap-text.made-in-england {color: #BB172F;}",
-      "/* ofertas-mujer */.menu-list__item.ofertas-mujer,.menu-list__link-title.ofertas-mujer,.menu-drawer__menu-item-text.wrap-text.ofertas-mujer {color: #E8368C;}"
+      "/* FORCE COLOR FOR ITEMS IN THE MENU *//* SALE */.menu-list__item.sale,.menu-list__link-title.sale,.mega-menu__link-title.wrap-text.sale,.menu-drawer__menu-item-text.wrap-text.sale {color: #E8368C;}",
+      "/* NUEVOS */.menu-list__item.nuevos,.menu-list__link-title.nuevos,.mega-menu__link-title.wrap-text.nuevos,.menu-drawer__menu-item-text.wrap-text.nuevos {color: #FEDB03;}",
+      "/* made-in-england */.menu-list__item.made-in-england,.menu-list__link-title.made-in-england,.mega-menu__link-title.wrap-text.made-in-england,.menu-drawer__menu-item-text.wrap-text.made-in-england {color: #BB172F;}",
+      "/* ofertas-mujer */.menu-list__item.ofertas-mujer,.menu-list__link-title.ofertas-mujer,.mega-menu__link-title.wrap-text.ofertas-mujer,.menu-drawer__menu-item-text.wrap-text.ofertas-mujer {color: #E8368C;}"
     ]
   }
 }
