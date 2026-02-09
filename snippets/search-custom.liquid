@@ -65,7 +65,7 @@
     </button>
 
     {%- comment -%} Desktop: Inline search {%- endcomment -%}
-    <div class="search-custom-desktop color-{{ color_scheme }} mobile:hidden">
+    <div class="search-custom-desktop color-{{ color_scheme }} mobile:hidden" data-search-visible="false">
       <predictive-search-component
         class="predictive-search-component"
         data-section-id="predictive-search"
@@ -336,6 +336,14 @@
       }
     }
 
+    .search-custom-desktop[data-search-visible='false'] .predictive-search-form__content-wrapper {
+      display: none !important;
+      opacity: 0 !important;
+      pointer-events: none !important;
+      transform: translateY(-10px);
+      visibility: hidden;
+    }
+
     .predictive-search-component {
       display: flex;
       flex-flow: column;
@@ -472,7 +480,7 @@
         .predictive-search-form__footer {
           position: relative;
           transition: opacity .2s ease, display .5s allow-discrete;
-          margin: 10px 0 0;
+          margin: 10px 0 10px;
 
           @starting-style {
             opacity: 0;

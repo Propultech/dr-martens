@@ -40,7 +40,7 @@
                 <a
                   href="{{ link.url }}"
                   id="MenuItem-{{ link.handle }}"
-                  class="menu-list__item"
+                  class="menu-list__item {{ link.title | handleize }}"
                   {% if link.current %}
                     aria-current="page"
                   {% endif %}
@@ -89,19 +89,19 @@
           on:pointerenter="/activate"
           on:pointerleave="/deactivate"
         >
-          <a
-            href="{{ link.url }}"
-            data-skip-node-update="true"
-            class="menu-list__link{% if link.active %} menu-list__link--active{% endif %}"
-            {%- if link.links != blank -%}
-              aria-controls="submenu-{{ forloop.index }}"
-              aria-haspopup="true"
-              aria-expanded="false"
-            {%- endif -%}
-            ref="menuitem"
-          >
-            <span class="menu-list__link-title">{{- link.title -}}</span>
-          </a>
+            <a
+              href="{{ link.url }}"
+              data-skip-node-update="true"
+              class="menu-list__link{% if link.active %} menu-list__link--active{% endif %}"
+              {%- if link.links != blank -%}
+                aria-controls="submenu-{{ forloop.index }}"
+                aria-haspopup="true"
+                aria-expanded="false"
+              {%- endif -%}
+              ref="menuitem"
+            >
+              <span class="menu-list__link-title {{ link.title | handleize }}">{{- link.title -}}</span>
+            </a>
           {%- if link.links != blank -%}
             <div class="menu-list__submenu{{ color_scheme_classes }}" ref="submenu[]">
               <div
@@ -143,7 +143,7 @@
         on:pointerleave="/deactivate"
       >
         <button role="menuitem" class="button menu-list__link button-unstyled">
-          <span class="menu-list__link-title">{{ 'actions.more' | t }}</span>
+          <span class="menu-list__link-title {{ 'actions.more' | t | handleize }}">{{ 'actions.more' | t }}</span>
         </button>
       </li>
     {% endcapture %}
@@ -196,7 +196,7 @@
 
     & li {
       width: max-content;
-      padding-block: var(--padding-sm);
+      padding: 15px 0 15px;
     }
 
     & li:first-of-type {
@@ -209,6 +209,10 @@
 
     & a {
       color: var(--color-foreground);
+      font-weight: 800;
+      font-size: var(--font-size--sm);
+      letter-spacing: 0.25px;
+      text-transform: uppercase;
     }
   }
 
@@ -216,7 +220,6 @@
     position: relative;
     overflow-x: auto;
     mask-image: linear-gradient(to right, transparent, #000 20px, #000 calc(100% - 20px), transparent);
-    padding-block: var(--padding-2xs);
   }
 
   header-menu {
@@ -473,7 +476,7 @@
     overflow-y: auto;
     overflow-x: hidden;
     scrollbar-width: thin;
-    scrollbar-color: rgb(var(--color-variant-text-rgb) / var(--opacity-40)) transparent;
+    scrollbar-color: rgb(var(--color-foreground-rgb) / var(--opacity-40)) transparent;
   }
 
   .menu-list__list-item:is([slot='overflow']) {
@@ -500,7 +503,7 @@
       grid-area: right;
       grid-row-end: span calc(var(--overflow-count) + 1);
       padding-inline-start: var(--menu-horizontal-gap);
-      background-color: var(--color-foreground);
+      background-color: var(--color-variant-background);
 
       .menu-list__submenu-inner {
         padding-block-start: 0;
@@ -528,7 +531,7 @@
     flex-wrap: wrap;
     opacity: var(--submenu-content-opacity);
     transition: var(--submenu-content-animation);
-    background-color: var(--color-foreground);
+    background-color: var(--color-variant-background);
   }
 
   .mega-menu__link {
@@ -880,9 +883,27 @@
         {
           "value": "featured_collections",
           "label": "t:options.featured_collections"
+        },
+        {
+          "value": "featured_static_menu",
+          "label": "t:options.featured_static_menu"
         }
       ],
       "default": "collection_images"
+    },
+    {
+      "type": "link_list",
+      "id": "featured_static_menu_menu",
+      "label": "t:settings.menu",
+      "default": "main-menu",
+      "visible_if": "{{ block.settings.menu_style == 'featured_static_menu' }}"
+    },
+    {
+      "type": "color_scheme",
+      "id": "featured_static_menu_color_scheme",
+      "label": "t:settings.color_scheme",
+      "default": "primary",
+      "visible_if": "{{ block.settings.menu_style == 'featured_static_menu' }}"
     },
     {
       "type": "select",
@@ -935,7 +956,7 @@
       "step": 1,
       "unit": "px",
       "default": 0,
-      "visible_if": "{{ block.settings.menu_style != 'text' }}"
+      "visible_if": "{{ block.settings.menu_style != 'text' and block.settings.menu_style != 'featured_static_menu' }}"
     },
     {
       "type": "header",

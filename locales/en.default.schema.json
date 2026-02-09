@@ -521,6 +521,7 @@
     "facebook": "Facebook",
     "featured_collections": "Featured collections",
     "featured_products": "Featured products",
+    "featured_static_menu": "Featured static menu",
     "fill": "Fill",
     "fire": "Fire",
     // Layout option for content sizing behavior
@@ -815,6 +816,8 @@
     "collection_title_case": "Collection title case",
     "color": "Color",
     "color_scheme": "Color scheme",
+    "color_scheme_1": "Color scheme 1",
+    "color_scheme_2": "Color scheme 2",
     "colors": "Colors",
     "columns": "Columns",
     // Layout container block name for grouping other blocks
@@ -958,6 +961,8 @@
     "media_type": "Media type",
     "media_width": "Media width",
     "menu": "Menu",
+    "menu_1": "Menu 1",
+    "menu_2": "Menu 2",
     "minimum_height": "Minimum height",
     "mobile_card_size": "Mobile card size",
     "mobile_columns": "Mobile columns",
