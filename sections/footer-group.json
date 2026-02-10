@@ -329,7 +329,7 @@
                 "accordion_row_XV6tr8": {
                   "type": "_accordion-row",
                   "settings": {
-                    "heading": "Sobre nosotros",
+                    "heading": "INFORMACIÓN ÚTIL",
                     "open_by_default": true,
                     "icon": "none",
                     "width": 20
@@ -392,7 +392,7 @@
                 "accordion_row_mgHwRn": {
                   "type": "_accordion-row",
                   "settings": {
-                    "heading": "Sobre nosotros",
+                    "heading": "CORPORATIVO YLEGAL",
                     "open_by_default": true,
                     "icon": "none",
                     "width": 20
