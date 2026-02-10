@@ -646,12 +646,12 @@
         style="--menu-drawer-animation-index: {{ linklist.links.size }};"
       >
         {% liquid
-          assign show_language = section.settings.show_language
+          assign show_language = settings.localization_show_language
           if localization.available_languages.size <= 1
             assign show_language = false
           endif
 
-          assign show_country = section.settings.show_country
+          assign show_country = settings.localization_show_country
           if localization.available_countries.size <= 1
             assign show_country = false
           endif
@@ -665,7 +665,7 @@
               assign flag_shadow_size = 2
             endif
 
-            assign localization_font = '--menu-localization-font: var(--font-[localization_font]--family); ' | replace: '[localization_font]', section.settings.localization_font
+            assign localization_font = '--menu-localization-font: var(--font-[localization_font]--family); ' | replace: '[localization_font]', settings.localization_font
             assign color_shadow = '--color-shadow: rgb(var(--color-foreground-rgb) / var(--opacity-10-25));'
             assign form_style = localization_font | append: color_shadow
           %}
@@ -695,7 +695,7 @@
                   <div class="drawer-localization__button--label h6">
                     {%- if show_country -%}
                       <div class="mobile-localization mobile-localization--country link link--text">
-                        {%- if section.settings.country_selector_style == true -%}
+                        {%- if settings.country_selector_style == true -%}
                           <span
                             class="icon-flag"
                             style="

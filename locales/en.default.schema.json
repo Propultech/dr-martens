@@ -29,7 +29,8 @@
     "product_list": "Featured collection",
     "other_sections": "Other",
     "storytelling": "Storytelling",
-    "text": "Text"
+    "text": "Text",
+    "utilities": "Utilities"
   },
   "content": {
     "visible_if_collection_has_more_products": "Visible if collection has more products than shown",
@@ -83,6 +84,7 @@
     "link_padding": "Link padding",
     "localization": "Localization",
     "logo": "Logo",
+    "localization_region_and_language": "Region and language",
     "manage_customer_accounts": "[Manage visibility](/admin/settings/customer_accounts) in customer account settings. Legacy accounts not supported.",
     "manage_policies": "[Manage policies](/admin/settings/legal)",
     "manage_store_name": "[Manage store name](/admin/settings/general?edit=storeName)",
@@ -226,6 +228,8 @@
     "logo_height": "Only affects header logo",
     "manage_countries_regions": "[Manage countries/regions](/admin/settings/markets)",
     "manage_languages": "[Manage languages](/admin/settings/languages)",
+    "localization_settings_global": "Localization visibility and typography are managed in [theme settings](/editor?context=theme&category=localization).",
+    "localization_redirects": "Enter ISO_CODE|URL pairs, separated by enter or one per line ( Ex: ES|https://example.com.es ).",
     "transparent_background": "Review each template where transparent background is applied for readability",
     "video_alt_text": "Describe the video for assistive tech users",
     "video_autoplay": "Videos will be muted by default",
@@ -335,6 +339,7 @@
     "large_logo": "Large logo",
     "layered_slideshow": "Layered slideshow",
     "list_items": "List items",
+    "localization": "Localization",
     "local_pickup": "Local pickup",
     "logo": "Logo",
     "logo_and_favicon": "Logo and favicon",
@@ -927,6 +932,7 @@
     "items_to_show": "Items to show",
     "label": "Label",
     "language_selector": "Language selector",
+    "localization_country_redirects": "Country redirect rules",
     "large": "Large",
     "layout": "Layout",
     "layout_gap": "Layout gap",

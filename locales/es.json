@@ -315,6 +315,10 @@
   "fields": {
     "separator": "a"
   },
+  "info": {
+    "localization_settings_global": "Localization visibility and typography are managed in [theme settings](/editor?context=theme&category=localization).",
+    "localization_redirects": "Introduce pares CODIGO_ISO|URL, separados por enter o uno por linea ( Ej: ES|https://example.com.es ).",
+  },
   "blogs": {
     "article": {
       "comment_author_separator": "•",
