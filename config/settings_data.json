@@ -10,8 +10,8 @@
 {
   "current": {
     "logo": "shopify://shop_images/drm-logo-desktop.svg",
-    "logo_height": 48,
-    "logo_height_mobile": 28,
+    "logo_height": 51,
+    "logo_height_mobile": 51,
     "favicon": "shopify://shop_images/favicon.png",
     "type_body_font": "archivo_n4",
     "type_subheading_font": "archivo_narrow_n7",
