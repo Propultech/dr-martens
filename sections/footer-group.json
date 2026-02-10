@@ -244,83 +244,68 @@
               },
               "blocks": {}
             },
-            "text_3cLd39": {
-              "type": "text",
-              "name": "t:names.text",
+            "accordion_QzPcNe": {
+              "type": "accordion",
+              "name": "t:names.accordion",
               "settings": {
-                "text": "<h3>SOBRE NOSOTROS</h3><ul><li><a href=\"#\" title=\"#\">HISTORIA</a></li><li><a href=\"#\" title=\"#\">EMPLEOS</a></li><li><a href=\"#\" title=\"#\">GUÍAS</a></li><li><a href=\"#\" title=\"#\">PRENSA</a></li><li><a href=\"#\" title=\"#\">ENCUENTRA TU TIENDA</a></li><li><a href=\"#\" title=\"#\">SOSTENIBILIDAD</a></li><li><a href=\"#\" title=\"#\">RESEÑAS</a></li></ul>",
-                "width": "fit-content",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "rte",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "var(--color-foreground)",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
+                "icon": "caret",
+                "dividers": false,
+                "type_preset": "h6",
+                "inherit_color_scheme": true,
+                "color_scheme": "",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0,
                 "padding-block-start": 0,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
-              "blocks": {}
-            },
-            "text_73PJHL": {
-              "type": "text",
-              "name": "t:names.text",
-              "settings": {
-                "text": "<h3>SOBRE NOSOTROS</h3><ul><li><a href=\"#\" title=\"#\">HISTORIA</a></li><li><a href=\"#\" title=\"#\">EMPLEOS</a></li><li><a href=\"#\" title=\"#\">GUÍAS</a></li><li><a href=\"#\" title=\"#\">PRENSA</a></li><li><a href=\"#\" title=\"#\">ENCUENTRA TU TIENDA</a></li><li><a href=\"#\" title=\"#\">SOSTENIBILIDAD</a></li><li><a href=\"#\" title=\"#\">RESEÑAS</a></li></ul>",
-                "width": "fit-content",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "rte",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "var(--color-foreground)",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
+              "blocks": {
+                "accordion_row_zQwqrH": {
+                  "type": "_accordion-row",
+                  "settings": {
+                    "heading": "Sobre nosotros",
+                    "open_by_default": true,
+                    "icon": "none",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "text_AVE3Fn": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<ul><li><a href=\"#\" title=\"HISTORIA\">HISTORIA</a></li><li><a href=\"#\" title=\"EMPLEOS\">EMPLEOS</a></li><li><a href=\"#\" title=\"GUÍAS\">GUÍAS</a></li><li><a href=\"#\" title=\"PRENSA\">PRENSA</a></li><li><a href=\"#\" title=\"ENCUENTRA TU TIENDA\">ENCUENTRA TU TIENDA</a></li><li><a href=\"#\" title=\"SOSTENIBILIDAD\">SOSTENIBILIDAD</a></li><li><a href=\"#\" title=\"RESEÑAS\">RESEÑAS</a></li></ul>",
+                        "width": "100%",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "type_preset": "rte",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "var(--color-foreground)",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text_AVE3Fn"
+                  ]
+                }
               },
-              "blocks": {}
-            },
-            "text_rpANWL": {
-              "type": "text",
-              "name": "t:names.text",
-              "settings": {
-                "text": "<h3>SOBRE NOSOTROS</h3><ul><li><a href=\"#\" title=\"#\">HISTORIA</a></li><li><a href=\"#\" title=\"#\">EMPLEOS</a></li><li><a href=\"#\" title=\"#\">GUÍAS</a></li><li><a href=\"#\" title=\"#\">PRENSA</a></li><li><a href=\"#\" title=\"#\">ENCUENTRA TU TIENDA</a></li><li><a href=\"#\" title=\"#\">SOSTENIBILIDAD</a></li><li><a href=\"#\" title=\"#\">RESEÑAS</a></li></ul>",
-                "width": "fit-content",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "rte",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "var(--color-foreground)",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
+              "block_order": [
+                "accordion_row_zQwqrH"
+              ]
             },
             "group_YgEkNW": {
               "type": "group",
@@ -561,9 +546,7 @@
           },
           "block_order": [
             "text_HHLf7w",
-            "text_3cLd39",
-            "text_73PJHL",
-            "text_rpANWL",
+            "accordion_QzPcNe",
             "group_YgEkNW"
           ]
         }
