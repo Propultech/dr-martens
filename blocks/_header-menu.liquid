@@ -40,7 +40,7 @@
                 <a
                   href="{{ link.url }}"
                   id="MenuItem-{{ link.handle }}"
-                  class="menu-list__item"
+                  class="menu-list__item {{ link.title | handleize }}"
                   {% if link.current %}
                     aria-current="page"
                   {% endif %}
@@ -89,19 +89,19 @@
           on:pointerenter="/activate"
           on:pointerleave="/deactivate"
         >
-          <a
-            href="{{ link.url }}"
-            data-skip-node-update="true"
-            class="menu-list__link{% if link.active %} menu-list__link--active{% endif %}"
-            {%- if link.links != blank -%}
-              aria-controls="submenu-{{ forloop.index }}"
-              aria-haspopup="true"
-              aria-expanded="false"
-            {%- endif -%}
-            ref="menuitem"
-          >
-            <span class="menu-list__link-title">{{- link.title -}}</span>
-          </a>
+            <a
+              href="{{ link.url }}"
+              data-skip-node-update="true"
+              class="menu-list__link{% if link.active %} menu-list__link--active{% endif %}"
+              {%- if link.links != blank -%}
+                aria-controls="submenu-{{ forloop.index }}"
+                aria-haspopup="true"
+                aria-expanded="false"
+              {%- endif -%}
+              ref="menuitem"
+            >
+              <span class="menu-list__link-title {{ link.title | handleize }}">{{- link.title -}}</span>
+            </a>
           {%- if link.links != blank -%}
             <div class="menu-list__submenu{{ color_scheme_classes }}" ref="submenu[]">
               <div
@@ -143,7 +143,7 @@
         on:pointerleave="/deactivate"
       >
         <button role="menuitem" class="button menu-list__link button-unstyled">
-          <span class="menu-list__link-title">{{ 'actions.more' | t }}</span>
+          <span class="menu-list__link-title {{ 'actions.more' | t | handleize }}">{{ 'actions.more' | t }}</span>
         </button>
       </li>
     {% endcapture %}
@@ -196,7 +196,7 @@
 
     & li {
       width: max-content;
-      padding-block: var(--padding-sm);
+      padding: 15px 0 15px;
     }
 
     & li:first-of-type {
@@ -209,6 +209,10 @@
 
     & a {
       color: var(--color-foreground);
+      font-weight: 800;
+      font-size: var(--font-size--sm);
+      letter-spacing: 0.25px;
+      text-transform: uppercase;
     }
   }
 
@@ -216,7 +220,6 @@
     position: relative;
     overflow-x: auto;
     mask-image: linear-gradient(to right, transparent, #000 20px, #000 calc(100% - 20px), transparent);
-    padding-block: var(--padding-2xs);
   }
 
   header-menu {
@@ -246,6 +249,14 @@
 
   .menu-drawer__featured-content-list-item--product {
     width: 35cqi;
+
+    .resource-card__content {
+      color: var(--color-variant-text);
+      .resource-card__title,
+      .paragraph {
+        color: var(--color-variant-text);
+      }
+    }
   }
 
   .menu-drawer__featured-content-list-item--collection img.resource-card__image {
@@ -293,11 +304,34 @@
     text-decoration: none;
     display: flex;
     min-height: var(--minimum-touch-target);
-    align-items: center;
+    flex-flow: column;
+    align-items: baseline;
+    justify-content: center;
+
+    .menu-list__link-title {
+      position: relative;
+      &::after {
+        content: '';
+        display: block;
+        width: 0;
+        height: 3px;
+        background-color: var(--color-primary);
+        opacity: 0;
+        transition: opacity var(--animation-speed) var(--animation-easing), width var(--animation-speed) var(--animation-easing);
+        position: absolute;
+        bottom: 0;
+      }
+    }
 
     &:hover,
-    &:focus {
+    &:focus,
+    &[aria-expanded='true'] {
       color: var(--menu-top-level-font-color);
+
+      .menu-list__link-title::after {
+        opacity: 1;
+        width: 100%;
+      }
     }
 
     @media screen and (min-width: 750px) {
@@ -469,6 +503,7 @@
       grid-area: right;
       grid-row-end: span calc(var(--overflow-count) + 1);
       padding-inline-start: var(--menu-horizontal-gap);
+      background-color: var(--color-variant-background);
 
       .menu-list__submenu-inner {
         padding-block-start: 0;
@@ -496,24 +531,27 @@
     flex-wrap: wrap;
     opacity: var(--submenu-content-opacity);
     transition: var(--submenu-content-animation);
+    background-color: var(--color-variant-background);
   }
 
   .mega-menu__link {
     font-family: var(--menu-child-font-family);
     font-style: var(--menu-child-font-style);
-    font-weight: var(--menu-child-font-weight);
+    font-weight: normal; /* font-weight: var(--menu-child-font-weight); */
     font-size: var(--menu-child-font-size);
     line-height: var(--menu-child-font-line-height);
-    text-transform: var(--menu-child-font-case);
+    text-transform: initial; /* text-transform: var(--menu-child-font-case); */
     color: var(--menu-child-font-color);
     white-space: normal;
     text-decoration: none;
     display: inline-flex;
-    padding: var(--padding-2xs) 0;
+    padding: 0 0 20px; /* padding: var(--padding-2xs) 0; */
     transition: color var(--animation-speed) var(--animation-easing);
 
     &:hover {
       color: var(--menu-child-active-font-color);
+      text-decoration: underline;
+      text-decoration-color: var(--menu-child-active-font-color);
     }
   }
 
@@ -523,7 +561,7 @@
     font-weight: var(--menu-parent-font-weight);
     font-size: var(--menu-parent-font-size);
     line-height: var(--menu-parent-font-line-height);
-    text-transform: var(--menu-parent-font-case);
+    text-transform: initial; /* text-transform: var(--menu-parent-font-case); */
     color: var(--menu-parent-font-color);
 
     &:hover {
@@ -581,10 +619,11 @@
   }
 
   .mega-menu__grid {
-    display: grid;
+    display: block; /* display: grid; */
     grid-template-columns: repeat(var(--menu-columns-tablet), minmax(0, 1fr));
     gap: var(--menu-vertical-gap) var(--menu-horizontal-gap);
     width: 100%;
+    padding: var(--page-margin) 0;
 
     @media screen and (min-width: 990px) {
       grid-template-columns: repeat(var(--menu-columns-desktop), minmax(0, 1fr));
@@ -593,6 +632,14 @@
 
   .mega-menu__column {
     grid-column: span 1;
+    break-inside: avoid;
+    margin-bottom: 33px;
+
+    &:not(:has(.mega-menu__link--parent)) {
+      .mega-menu__link-title {
+        font-weight: bold;
+      }
+    }
   }
 
   .mega-menu__column--span-2 {
@@ -642,10 +689,15 @@
   }
 
   .mega-menu__list {
-    display: grid;
+    /* Original code display: grid;
     grid-template-columns: subgrid;
     grid-column: span var(--menu-columns-tablet);
+    gap: var(--menu-vertical-gap) var(--menu-horizontal-gap); */
+
+    display: block;
     gap: var(--menu-vertical-gap) var(--menu-horizontal-gap);
+    column-count: 5;
+    column-width: 200px;
 
     @media screen and (min-width: 990px) {
       grid-column: span var(--menu-columns-desktop);
@@ -831,9 +883,27 @@
         {
           "value": "featured_collections",
           "label": "t:options.featured_collections"
+        },
+        {
+          "value": "featured_static_menu",
+          "label": "t:options.featured_static_menu"
         }
       ],
       "default": "collection_images"
+    },
+    {
+      "type": "link_list",
+      "id": "featured_static_menu_menu",
+      "label": "t:settings.menu",
+      "default": "main-menu",
+      "visible_if": "{{ block.settings.menu_style == 'featured_static_menu' }}"
+    },
+    {
+      "type": "color_scheme",
+      "id": "featured_static_menu_color_scheme",
+      "label": "t:settings.color_scheme",
+      "default": "primary",
+      "visible_if": "{{ block.settings.menu_style == 'featured_static_menu' }}"
     },
     {
       "type": "select",
@@ -886,7 +956,7 @@
       "step": 1,
       "unit": "px",
       "default": 0,
-      "visible_if": "{{ block.settings.menu_style != 'text' }}"
+      "visible_if": "{{ block.settings.menu_style != 'text' and block.settings.menu_style != 'featured_static_menu' }}"
     },
     {
       "type": "header",
