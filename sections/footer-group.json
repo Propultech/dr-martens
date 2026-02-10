@@ -7,19 +7,16 @@
  * made to this file may be overwritten.
  * ------------------------------------------------------------
  */
- {
+{
   "type": "footer",
   "name": "t:names.footer",
   "sections": {
-    "footer": {
+    "footer_GADbec": {
       "type": "footer",
       "blocks": {
-        "group_wErUQf": {
+        "group_9H7Vei": {
           "type": "group",
-          "name": "Join our email list",
           "settings": {
-            "link": "",
-            "open_in_new_tab": false,
             "content_direction": "column",
             "vertical_on_mobile": true,
             "horizontal_alignment": "flex-start",
@@ -43,28 +40,29 @@
             "border_width": 1,
             "border_opacity": 100,
             "border_radius": 0,
-            "placeholder": "",
             "toggle_overlay": false,
             "overlay_color": "#00000026",
             "overlay_style": "solid",
             "gradient_direction": "to top",
+            "link": "",
+            "open_in_new_tab": false,
+            "placeholder": "",
             "padding-block-start": 0,
             "padding-block-end": 0,
             "padding-inline-start": 0,
             "padding-inline-end": 0
           },
           "blocks": {
-            "text_pF6rVi": {
+            "text_QYdCbY": {
               "type": "text",
-              "name": "Heading",
               "settings": {
-                "text": "<h2>Join our email list</h2>",
+                "text": "<p>Únete a nuestro NEWSLETTER</p>",
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "left",
                 "type_preset": "h3",
                 "font": "var(--font-body--family)",
-                "font_size": "",
+                "font_size": "1rem",
                 "line_height": "normal",
                 "letter_spacing": "normal",
                 "case": "none",
@@ -80,17 +78,42 @@
               },
               "blocks": {}
             },
-            "text_HafH7P": {
+            "text_E9kwPV": {
               "type": "text",
-              "name": "Text",
               "settings": {
-                "text": "<p>Get exclusive deals and early access to new products.</p>",
+                "text": "<p>15% off para nuevos miembros</p>",
                 "width": "100%",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "custom",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-primary)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "text_Cbd7KT": {
+              "type": "text",
+              "name": "t:names.text",
+              "settings": {
+                "text": "<p>Me gustaría saber de:</p>",
+                "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
                 "type_preset": "rte",
                 "font": "var(--font-body--family)",
-                "font_size": "",
+                "font_size": "1rem",
                 "line_height": "normal",
                 "letter_spacing": "normal",
                 "case": "none",
@@ -108,41 +131,262 @@
             }
           },
           "block_order": [
-            "text_pF6rVi",
-            "text_HafH7P"
+            "text_QYdCbY",
+            "text_E9kwPV",
+            "text_Cbd7KT"
           ]
         },
-        "email-signup_HafH7P": {
+        "email_signup_Gp6Uwe": {
           "type": "email-signup",
-          "name": "Email Signup",
           "settings": {
-            "width": "fill"
-          }
+            "width": "fill",
+            "custom_width": 100,
+            "inherit_color_scheme": false,
+            "color_scheme": "scheme-70fcf3e8-9125-4a2d-b779-8a99fbdecaf5",
+            "heading": "",
+            "heading_preset": "h3",
+            "border_style": "none",
+            "border_width": 1,
+            "border_radius": 0,
+            "input_type_preset": "",
+            "style_class": "button",
+            "display_type": "text",
+            "label": "SUSCRIBIRSE",
+            "integrated_button": false,
+            "button_type_preset": "paragraph",
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
         }
       },
       "block_order": [
-        "group_wErUQf",
-        "email-signup_HafH7P"
+        "group_9H7Vei",
+        "email_signup_Gp6Uwe"
       ],
-      "name": "t:names.footer",
+      "name": "subscribe",
       "settings": {
         "section_width": "page-width",
         "gap": 20,
-        "color_scheme": "scheme-5",
+        "color_scheme": "scheme-70fcf3e8-9125-4a2d-b779-8a99fbdecaf5",
+        "padding-block-start": 36,
+        "padding-block-end": 36
+      }
+    },
+    "footer_y7PUEG": {
+      "type": "footer",
+      "blocks": {
+        "group_RxTrqa": {
+          "type": "group",
+          "name": "t:names.group",
+          "settings": {
+            "content_direction": "row",
+            "vertical_on_mobile": true,
+            "horizontal_alignment": "flex-start",
+            "vertical_alignment": "center",
+            "align_baseline": false,
+            "horizontal_alignment_flex_direction_column": "flex-start",
+            "vertical_alignment_flex_direction_column": "center",
+            "gap": 12,
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "custom_height": 100,
+            "inherit_color_scheme": true,
+            "color_scheme": "",
+            "background_media": "none",
+            "video_position": "cover",
+            "background_image_position": "cover",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "toggle_overlay": false,
+            "overlay_color": "#00000026",
+            "overlay_style": "solid",
+            "gradient_direction": "to top",
+            "link": "",
+            "open_in_new_tab": false,
+            "placeholder": "",
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "text_HHLf7w": {
+              "type": "text",
+              "name": "t:names.text",
+              "settings": {
+                "text": "<ul><li><a href=\"/customer_authentication\" title=\"iniciar sesión - registro\">Iniciar sesión / Registrarse</a></li><li><a href=\"#\" title=\"encuentra tu tienda\">Encuentra tu tienda</a></li></ul>",
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "text_3cLd39": {
+              "type": "text",
+              "name": "t:names.text",
+              "settings": {
+                "text": "<h3>SOBRE NOSOTROS</h3><ul><li><a href=\"#\" title=\"#\">HISTORIA</a></li><li><a href=\"#\" title=\"#\">EMPLEOS</a></li><li><a href=\"#\" title=\"#\">GUÍAS</a></li><li><a href=\"#\" title=\"#\">PRENSA</a></li><li><a href=\"#\" title=\"#\">ENCUENTRA TU TIENDA</a></li><li><a href=\"#\" title=\"#\">SOSTENIBILIDAD</a></li><li><a href=\"#\" title=\"#\">RESEÑAS</a></li></ul>",
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "text_73PJHL": {
+              "type": "text",
+              "name": "t:names.text",
+              "settings": {
+                "text": "<h3>SOBRE NOSOTROS</h3><ul><li><a href=\"#\" title=\"#\">HISTORIA</a></li><li><a href=\"#\" title=\"#\">EMPLEOS</a></li><li><a href=\"#\" title=\"#\">GUÍAS</a></li><li><a href=\"#\" title=\"#\">PRENSA</a></li><li><a href=\"#\" title=\"#\">ENCUENTRA TU TIENDA</a></li><li><a href=\"#\" title=\"#\">SOSTENIBILIDAD</a></li><li><a href=\"#\" title=\"#\">RESEÑAS</a></li></ul>",
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "text_rpANWL": {
+              "type": "text",
+              "name": "t:names.text",
+              "settings": {
+                "text": "<h3>SOBRE NOSOTROS</h3><ul><li><a href=\"#\" title=\"#\">HISTORIA</a></li><li><a href=\"#\" title=\"#\">EMPLEOS</a></li><li><a href=\"#\" title=\"#\">GUÍAS</a></li><li><a href=\"#\" title=\"#\">PRENSA</a></li><li><a href=\"#\" title=\"#\">ENCUENTRA TU TIENDA</a></li><li><a href=\"#\" title=\"#\">SOSTENIBILIDAD</a></li><li><a href=\"#\" title=\"#\">RESEÑAS</a></li></ul>",
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "group_YgEkNW": {
+              "type": "group",
+              "name": "t:names.group",
+              "settings": {
+                "content_direction": "column",
+                "vertical_on_mobile": true,
+                "horizontal_alignment": "flex-start",
+                "vertical_alignment": "center",
+                "align_baseline": false,
+                "horizontal_alignment_flex_direction_column": "flex-start",
+                "vertical_alignment_flex_direction_column": "center",
+                "gap": 12,
+                "width": "fill",
+                "custom_width": 100,
+                "width_mobile": "fill",
+                "custom_width_mobile": 100,
+                "height": "fit",
+                "custom_height": 100,
+                "inherit_color_scheme": true,
+                "color_scheme": "",
+                "background_media": "none",
+                "video_position": "cover",
+                "background_image_position": "cover",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0,
+                "toggle_overlay": false,
+                "overlay_color": "#00000026",
+                "overlay_style": "solid",
+                "gradient_direction": "to top",
+                "link": "",
+                "open_in_new_tab": false,
+                "placeholder": "",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "text_HHLf7w",
+            "text_3cLd39",
+            "text_73PJHL",
+            "text_rpANWL",
+            "group_YgEkNW"
+          ]
+        }
+      },
+      "block_order": [
+        "group_RxTrqa"
+      ],
+      "name": "Footer Links",
+      "settings": {
+        "section_width": "page-width",
+        "gap": 20,
+        "color_scheme": "scheme-1",
         "padding-block-start": 36,
         "padding-block-end": 36
       }
     },
     "utilities": {
       "type": "footer-utilities",
-      "settings": {
-        "section_width": "page-width",
-        "gap": 24,
-        "divider_thickness": 1,
-        "color_scheme": "scheme-5",
-        "padding-block-start": 12,
-        "padding-block-end": 16
-      },
       "blocks": {
         "copyright": {
           "type": "footer-copyright",
@@ -150,35 +394,55 @@
             "show_powered_by": true,
             "font_size": "0.75rem",
             "case": "none"
-          }
+          },
+          "blocks": {}
         },
         "policy_list": {
           "type": "footer-policy-list",
           "settings": {
             "font_size": "0.75rem",
             "case": "none"
-          }
+          },
+          "blocks": {}
         },
         "social_icons": {
           "type": "social-links",
           "settings": {
             "facebook_url": "https://www.facebook.com",
             "instagram_url": "https://www.instagram.com",
+            "youtube_url": "https://www.youtube.com",
             "tiktok_url": "https://www.tiktok.com",
             "twitter_url": "https://www.twitter.com",
-            "youtube_url": "https://www.youtube.com"
-          }
+            "threads_url": "",
+            "linkedin_url": "",
+            "bluesky_url": "",
+            "snapchat_url": "",
+            "pinterest_url": "",
+            "tumblr_url": "",
+            "vimeo_url": "",
+            "custom_url": ""
+          },
+          "blocks": {}
         }
       },
       "block_order": [
         "copyright",
         "policy_list",
         "social_icons"
-      ]
+      ],
+      "settings": {
+        "section_width": "page-width",
+        "gap": 24,
+        "divider_thickness": 1,
+        "color_scheme": "scheme-5",
+        "padding-block-start": 12,
+        "padding-block-end": 16
+      }
     }
   },
   "order": [
-    "footer",
+    "footer_GADbec",
+    "footer_y7PUEG",
     "utilities"
   ]
 }
