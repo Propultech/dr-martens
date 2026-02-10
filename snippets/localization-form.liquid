@@ -35,11 +35,13 @@
 
   assign aliases_us = 'us,usa,america,united states of america'
   assign aliases_uk = 'uk,gb,great britain'
+  assign redirect_lines = settings.localization_country_redirects | default: ''
 %}
 <localization-form-component
   ref="localizationForm"
   data-label-results-count="{{ 'accessibility.country_results_count' | t: count: '[count]' }}"
   data-show-filter="{{ show_country_filter }}"
+  data-country-redirect-lines='{{ redirect_lines | escape }}'
   style="{{ form_style }}"
 >
   {% assign localization_label = 'content.localization_region_and_language' | t %}

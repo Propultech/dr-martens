@@ -345,6 +345,93 @@
     ]
   },
   {
+    "name": "t:names.localization",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "t:info.localization_settings_global"
+      },
+      {
+        "type": "checkbox",
+        "id": "localization_show_country",
+        "label": "t:settings.country_region",
+        "info": "t:info.manage_countries_regions",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "country_selector_style",
+        "label": "t:settings.flag",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "localization_show_language",
+        "label": "t:settings.language_selector",
+        "info": "t:info.manage_languages",
+        "default": true
+      },
+      {
+        "type": "select",
+        "id": "localization_font",
+        "label": "t:settings.font",
+        "options": [
+          {
+            "value": "heading",
+            "label": "t:options.heading"
+          },
+          {
+            "value": "subheading",
+            "label": "t:options.subheading"
+          },
+          {
+            "value": "body",
+            "label": "t:options.body"
+          },
+          {
+            "value": "accent",
+            "label": "t:options.accent"
+          }
+        ],
+        "default": "heading"
+      },
+      {
+        "type": "select",
+        "id": "localization_font_size",
+        "label": "t:settings.size",
+        "options": [
+          {
+            "value": "0.625rem",
+            "label": "10px"
+          },
+          {
+            "value": "0.75rem",
+            "label": "12px"
+          },
+          {
+            "value": "0.875rem",
+            "label": "14px"
+          },
+          {
+            "value": "1rem",
+            "label": "16px"
+          },
+          {
+            "value": "1.125rem",
+            "label": "18px"
+          }
+        ],
+        "default": "1rem"
+      },
+      {
+        "type": "textarea",
+        "id": "localization_country_redirects",
+        "label": "t:settings.localization_country_redirects",
+        "info": "t:info.localization_redirects",
+      }
+    ]
+  },
+  {
     "name": "t:names.typography",
     "settings": [
       {
@@ -1568,7 +1655,6 @@
         ],
         "default": "body"
       },
-
       {
         "type": "select",
         "id": "button_text_case_primary",
@@ -1625,7 +1711,6 @@
         ],
         "default": "body"
       },
-
       {
         "type": "select",
         "id": "button_text_case_secondary",
@@ -1764,7 +1849,6 @@
         "info": "t:info.checkout_buttons",
         "default": true
       },
-
       {
         "type": "url",
         "id": "empty_cart_button_link",

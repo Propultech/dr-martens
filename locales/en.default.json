@@ -309,6 +309,10 @@
     "recipient_form_error": "There was an error with the form submission",
     "product_custom_property_character_count": "{{ used_chars }}/{{ max_chars }} characters used"
   },
+  "info": {
+    "localization_settings_global": "Localization visibility and typography are managed in [theme settings](/editor?context=theme&category=localization).",
+    "localization_redirects": "Enter ISO_CODE|URL pairs, separated by enter or one per line ( Ex: ES|https://example.com.es ).",
+  },
   "fields": {
     // Separates min and max values in price range filter
     "separator": "to"
