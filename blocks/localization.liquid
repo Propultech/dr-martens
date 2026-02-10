@@ -87,46 +87,11 @@
 
 {{ localization_markup | strip }}
 
-{% if request.design_mode %}
-  <p class="localization-block__notice text text--xsmall">
-    {{ 'info.localization_settings_global' | t }}
-  </p>
-{% endif %}
-
 {% schema %}
 {
   "name": "t:content.localization_region_and_language",
   "tag": null,
   "settings": [
-    {
-      "type": "text",
-      "id": "localization_style",
-      "label": "Localization style",
-      "default": "group",
-      "info": "This string namespaces IDs inside the component."
-    },
-    {
-      "type": "select",
-      "id": "localization_position",
-      "label": "t:settings.position",
-      "options": [
-        {
-          "value": "left",
-          "label": "t:options.left"
-        },
-        {
-          "value": "right",
-          "label": "t:options.right"
-        }
-      ],
-      "default": "right"
-    },
-    {
-      "type": "textarea",
-      "id": "form_style",
-      "label": "Custom inline styles",
-      "info": "Paste CSS declarations to be added directly on the wrapper."
-    }
   ],
   "presets": [
     {

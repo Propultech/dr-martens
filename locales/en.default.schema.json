@@ -29,7 +29,8 @@
     "product_list": "Featured collection",
     "other_sections": "Other",
     "storytelling": "Storytelling",
-    "text": "Text"
+    "text": "Text",
+    "utilities": "Utilities"
   },
   "content": {
     "visible_if_collection_has_more_products": "Visible if collection has more products than shown",
