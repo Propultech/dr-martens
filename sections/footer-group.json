@@ -307,6 +307,132 @@
                 "accordion_row_zQwqrH"
               ]
             },
+            "accordion_bEWjPm": {
+              "type": "accordion",
+              "name": "t:names.accordion",
+              "settings": {
+                "icon": "caret",
+                "dividers": false,
+                "type_preset": "h6",
+                "inherit_color_scheme": true,
+                "color_scheme": "",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {
+                "accordion_row_XV6tr8": {
+                  "type": "_accordion-row",
+                  "settings": {
+                    "heading": "Sobre nosotros",
+                    "open_by_default": true,
+                    "icon": "none",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "text_exWfNR": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<ul><li><a href=\"#\" title=\"HISTORIA\">HISTORIA</a></li><li><a href=\"#\" title=\"EMPLEOS\">EMPLEOS</a></li><li><a href=\"#\" title=\"GUÍAS\">GUÍAS</a></li><li><a href=\"#\" title=\"PRENSA\">PRENSA</a></li><li><a href=\"#\" title=\"ENCUENTRA TU TIENDA\">ENCUENTRA TU TIENDA</a></li><li><a href=\"#\" title=\"SOSTENIBILIDAD\">SOSTENIBILIDAD</a></li><li><a href=\"#\" title=\"RESEÑAS\">RESEÑAS</a></li></ul>",
+                        "width": "100%",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "type_preset": "rte",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "var(--color-foreground)",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text_exWfNR"
+                  ]
+                }
+              },
+              "block_order": [
+                "accordion_row_XV6tr8"
+              ]
+            },
+            "accordion_qVciBX": {
+              "type": "accordion",
+              "name": "t:names.accordion",
+              "settings": {
+                "icon": "caret",
+                "dividers": false,
+                "type_preset": "h6",
+                "inherit_color_scheme": true,
+                "color_scheme": "",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {
+                "accordion_row_mgHwRn": {
+                  "type": "_accordion-row",
+                  "settings": {
+                    "heading": "Sobre nosotros",
+                    "open_by_default": true,
+                    "icon": "none",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "text_6KtPNV": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<ul><li><a href=\"#\" title=\"HISTORIA\">HISTORIA</a></li><li><a href=\"#\" title=\"EMPLEOS\">EMPLEOS</a></li><li><a href=\"#\" title=\"GUÍAS\">GUÍAS</a></li><li><a href=\"#\" title=\"PRENSA\">PRENSA</a></li><li><a href=\"#\" title=\"ENCUENTRA TU TIENDA\">ENCUENTRA TU TIENDA</a></li><li><a href=\"#\" title=\"SOSTENIBILIDAD\">SOSTENIBILIDAD</a></li><li><a href=\"#\" title=\"RESEÑAS\">RESEÑAS</a></li></ul>",
+                        "width": "100%",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "type_preset": "rte",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "var(--color-foreground)",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text_6KtPNV"
+                  ]
+                }
+              },
+              "block_order": [
+                "accordion_row_mgHwRn"
+              ]
+            },
             "group_YgEkNW": {
               "type": "group",
               "name": "t:names.group",
@@ -547,6 +673,8 @@
           "block_order": [
             "text_HHLf7w",
             "accordion_QzPcNe",
+            "accordion_bEWjPm",
+            "accordion_qVciBX",
             "group_YgEkNW"
           ]
         }
