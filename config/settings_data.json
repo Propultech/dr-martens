@@ -13,6 +13,7 @@
     "logo_height": 51,
     "logo_height_mobile": 51,
     "favicon": "shopify://shop_images/favicon.png",
+    "localization_country_redirects": "CL|https://www.google.com\nAR|https://www.google.com/search?q=argentina",
     "type_body_font": "archivo_n4",
     "type_subheading_font": "archivo_narrow_n7",
     "type_heading_font": "archivo_black_n4",

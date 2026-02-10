@@ -805,6 +805,12 @@
               },
               "blocks": {}
             },
+            "localization_pxEHj9": {
+              "type": "localization",
+              "name": "t:content.localization_region_and_language",
+              "settings": {},
+              "blocks": {}
+            },
             "social_links_zHhiW4": {
               "type": "social-links",
               "name": "t:names.social_media_links",
@@ -854,6 +860,7 @@
           },
           "block_order": [
             "text_8jzniX",
+            "localization_pxEHj9",
             "social_links_zHhiW4",
             "text_ezBWNN"
           ]
