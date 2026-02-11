@@ -298,7 +298,7 @@
         "horizontal_alignment_flex_direction_column": "flex-start",
         "vertical_alignment_flex_direction_column": "center",
         "gap": 16,
-        "section_width": "page-width",
+        "section_width": "full-width",
         "section_height": "medium",
         "section_height_custom": 100,
         "color_scheme": "scheme-70fcf3e8-9125-4a2d-b779-8a99fbdecaf5",
