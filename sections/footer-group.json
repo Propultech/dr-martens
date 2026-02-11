@@ -312,7 +312,7 @@
                   "type": "_accordion-row",
                   "settings": {
                     "heading": "Sobre nosotros",
-                    "open_by_default": true,
+                    "open_by_default": false,
                     "icon": "none",
                     "width": 20
                   },
@@ -375,7 +375,7 @@
                   "type": "_accordion-row",
                   "settings": {
                     "heading": "INFORMACIÓN ÚTIL",
-                    "open_by_default": true,
+                    "open_by_default": false,
                     "icon": "none",
                     "width": 20
                   },
@@ -438,7 +438,7 @@
                   "type": "_accordion-row",
                   "settings": {
                     "heading": "CORPORATIVO Y LEGAL",
-                    "open_by_default": true,
+                    "open_by_default": false,
                     "icon": "none",
                     "width": 20
                   },
