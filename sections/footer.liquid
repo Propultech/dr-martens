@@ -179,6 +179,8 @@
 
         .group-block-content {
           align-items: var(--footer-end-group-block-content__align-items, --horizontal-alignment);
+          gap: var(--footer-end-group-block-content__gap, --gap);
+          flex-flow: var(--footer-end-group-block-content__flex-flow, --flex-direction);
         }
 
         dropdown-localization-component {
@@ -223,6 +225,8 @@
       --dropdown-localization-component__display: none;
       --rte-formatter-last-of-type__display: none;
       --footer-end-group-block-content__align-items: center;
+      --footer-end-group-block-content__gap: 10px;
+      --footer-end-group-block-content__flex-flow: column-reverse;
     }
   }
 
