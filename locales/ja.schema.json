@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin language editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "names": {
     "404": "404",
@@ -525,7 +534,7 @@
       "heading": "見出し",
       "description": "説明",
       "key": "プロパティ名",
-      "key_info": "ブロックごとに一意にする必要があります。カート、チェックアウト、注文詳細に表示されます。",
+      "key_info": "カート、チェックアウト、注文詳細に表示されるため、空白にすることはできず、各ブロックで固有である必要があります。",
       "placeholder_text": "プレースホルダーテキスト",
       "default_heading": "商品をカスタマイズする",
       "default_placeholder": "特別な指示を入力してください",

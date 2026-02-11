@@ -9,46 +9,18 @@
  */
 {
   "type": "header",
-  "name": "t:names.header",
+  "name": "Header",
   "sections": {
     "header_announcements_9jGBFp": {
       "type": "header-announcements",
       "blocks": {
-        "announcement_VBCdxk": {
-          "type": "_announcement",
-          "name": "t:names.announcement",
-          "settings": {
-            "text": "Anuncio gancho comercial 3",
-            "link": "",
-            "font": "var(--font-body--family)",
-            "font_size": "0.875rem",
-            "weight": "",
-            "letter_spacing": "normal",
-            "case": "none"
-          },
-          "blocks": {}
-        },
-        "announcement_WKPVta": {
-          "type": "_announcement",
-          "name": "t:names.announcement",
-          "settings": {
-            "text": "Anuncio gancho comercial 2",
-            "link": "",
-            "font": "var(--font-body--family)",
-            "font_size": "0.875rem",
-            "weight": "",
-            "letter_spacing": "normal",
-            "case": "none"
-          },
-          "blocks": {}
-        },
         "announcement_BxgCk9": {
           "type": "_announcement",
           "settings": {
-            "text": "Anuncio gancho comercial 1",
+            "text": "Welcome to our store",
             "link": "",
-            "font": "var(--font-body--family)",
-            "font_size": "0.875rem",
+            "font": "var(--font-subheading--family)",
+            "font_size": "0.75rem",
             "weight": "",
             "letter_spacing": "normal",
             "case": "none"
@@ -57,15 +29,13 @@
         }
       },
       "block_order": [
-        "announcement_VBCdxk",
-        "announcement_WKPVta",
         "announcement_BxgCk9"
       ],
       "name": "t:names.announcement_bar",
       "settings": {
         "speed": 5,
         "section_width": "page-width",
-        "color_scheme": "scheme-0e168b94-9192-4d2e-b401-8176729933de",
+        "color_scheme": "scheme-1",
         "divider_width": 1,
         "padding-block-start": 15,
         "padding-block-end": 15
@@ -91,18 +61,18 @@
           "static": true,
           "settings": {
             "menu": "main-menu",
-            "color_scheme": "scheme-70fcf3e8-9125-4a2d-b779-8a99fbdecaf5",
+            "color_scheme": "",
             "type_font_primary_size": "0.875rem",
             "menu_font_style": "inverse",
-            "type_font_primary_link": "accent",
-            "type_case_primary_link": "uppercase",
+            "type_font_primary_link": "body",
+            "type_case_primary_link": "none",
             "menu_style": "featured_products",
             "featured_products_aspect_ratio": "4 / 5",
             "featured_collections_aspect_ratio": "16 / 9",
             "image_border_radius": 0,
-            "navigation_bar": true,
-            "color_scheme_navigation_bar": "scheme-70fcf3e8-9125-4a2d-b779-8a99fbdecaf5",
-            "drawer_accordion": true,
+            "navigation_bar": false,
+            "color_scheme_navigation_bar": "",
+            "drawer_accordion": false,
             "drawer_accordion_expand_first": false,
             "drawer_dividers": false
           },
@@ -113,27 +83,23 @@
         "logo_position": "left",
         "menu_position": "left",
         "menu_row": "top",
-        "show_search": false,
+        "show_search": true,
         "search_position": "right",
         "search_row": "top",
-        "show_search_custom": true,
-        "search_custom_placeholder": "Busca botas, zapatos, sandalias y más",
-        "search_custom_color_scheme": "scheme-0d176e0c-302a-4603-a896-02ea6619e393",
-        "search_custom_position": "right",
-        "show_country": false,
+        "show_country": true,
         "country_selector_style": false,
-        "show_language": false,
+        "show_language": true,
         "localization_font": "heading",
         "localization_font_size": "0.875rem",
         "localization_position": "right",
         "localization_row": "top",
         "section_width": "page-width",
         "section_height": "standard",
-        "enable_sticky_header": "scroll-up",
+        "enable_sticky_header": "always",
         "divider_width": 0,
         "divider_size": "page-width",
         "border_width": 0,
-        "color_scheme_top": "scheme-70fcf3e8-9125-4a2d-b779-8a99fbdecaf5",
+        "color_scheme_top": "scheme-1",
         "color_scheme_bottom": "",
         "color_scheme_transparent": "scheme-6",
         "enable_transparent_header_home": false,

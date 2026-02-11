@@ -1,3 +1,4 @@
+
 <script
   src="{{ 'product-recommendations.js' | asset_url }}"
   type="module"
@@ -166,25 +167,6 @@
     {%- endif -%}
   </div>
 </product-recommendations>
-
-{% stylesheet %}
-  .product-recommendations__skeleton-item {
-    aspect-ratio: 3 / 4;
-    background-color: var(--color-foreground);
-    opacity: var(--skeleton-opacity);
-    border-radius: 4px;
-  }
-
-  @media screen and (max-width: 749px) {
-    .product-recommendations__skeleton-item:nth-child(2n + 1) {
-      display: none;
-    }
-  }
-
-  product-recommendations:has([data-has-recommendations='false']) {
-    display: none;
-  }
-{% endstylesheet %}
 
 {% schema %}
 {

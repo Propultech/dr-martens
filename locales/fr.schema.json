@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin language editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "names": {
     "404": "404",
@@ -525,7 +534,7 @@
       "heading": "Titre",
       "description": "Description",
       "key": "Nom de la propriété",
-      "key_info": "Doit être unique pour chaque bloc. S'affiche dans le panier, sur la page de paiement et dans les détails de la commande.",
+      "key_info": "Ne peut être vide et doit être unique pour chaque bloc. S’affiche dans le panier, au moment du paiement et dans les détails de la commande.",
       "placeholder_text": "Texte de l'espace réservé",
       "default_heading": "Personnalisez votre produit",
       "default_placeholder": "Saisissez vos instructions spéciales",

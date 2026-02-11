@@ -1,5 +1,5 @@
 import { Component } from '@theme/component';
-import { onDocumentLoaded, changeMetaThemeColor } from '@theme/utilities';
+import { onDocumentLoaded, changeMetaThemeColor, setHeaderMenuStyle } from '@theme/utilities';
 
 /**
  * @typedef {Object} HeaderComponentRefs
@@ -46,12 +46,6 @@ class HeaderComponent extends Component {
   #lastScrollTop = 0;
 
   /**
-   * Whether the search toggle is active. When true, skip scroll updates to preserve sticky state
-   * @type {boolean}
-   */
-  searchToggling = false;
-
-  /**
    * A timeout to allow for hiding animation, when sticky behavior is 'scroll-up'
    * @type {number | null}
    */
@@ -62,12 +56,6 @@ class HeaderComponent extends Component {
    * @type {number | null}
    */
   #scrollRafId = null;
-
-  /**
-   * The duration to wait for hiding animation, when sticky behavior is 'scroll-up'
-   * @constant {number}
-   */
-  #animationDelay = 150;
 
   /**
    * Keeps the global `--header-height` custom property up to date,
@@ -128,14 +116,11 @@ class HeaderComponent extends Component {
    */
   #updateMenuVisibility(hideMenu) {
     if (hideMenu) {
-      this.refs.headerDrawerContainer.classList.remove('desktop:hidden');
       this.#menuDrawerHiddenWidth = window.innerWidth;
-      this.refs.headerMenu.classList.add('hidden');
     } else {
-      this.refs.headerDrawerContainer.classList.add('desktop:hidden');
       this.#menuDrawerHiddenWidth = null;
-      this.refs.headerMenu.classList.remove('hidden');
     }
+    setHeaderMenuStyle();
   }
 
   #handleWindowScroll = () => {
@@ -148,9 +133,6 @@ class HeaderComponent extends Component {
   };
 
   #updateScrollState = () => {
-    // Skip update during search toggle to preserve sticky state
-    if (this.searchToggling) return;
-
     const stickyMode = this.getAttribute('sticky');
     if (!this.#offscreen && stickyMode !== 'always') return;
 
@@ -178,8 +160,6 @@ class HeaderComponent extends Component {
     }
 
     if (isScrollingUp) {
-      this.removeAttribute('data-animating');
-
       if (isAtTop) {
         // reset sticky state when header is scrolled up to natural position
         this.#offscreen = false;
@@ -192,13 +172,8 @@ class HeaderComponent extends Component {
       }
     } else if (this.dataset.stickyState === 'active') {
       this.dataset.scrollDirection = 'none';
-      // delay transitioning to idle hidden state for hiding animation
-      this.setAttribute('data-animating', '');
 
-      this.#timeout = setTimeout(() => {
-        this.dataset.stickyState = 'idle';
-        this.removeAttribute('data-animating');
-      }, this.#animationDelay);
+      this.dataset.stickyState = 'idle';
     } else {
       this.dataset.scrollDirection = 'none';
       this.dataset.stickyState = 'idle';

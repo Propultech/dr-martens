@@ -1,14 +1,1 @@
-<svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" fill="none">
-
- <g>
-  <title>Layer 1</title>
-  <path stroke="currentColor" id="svg_1" stroke-miterlimit="10" stroke-width="1.5" d="m4.08333,3.50113l11.68355,0c0.26826,0 0.47694,0.20864 0.47694,0.44707l0.8643,14.90253"/>
-  <path stroke="currentColor" id="svg_2" stroke-miterlimit="10" stroke-width="1.5" d="m6.46772,3.50113l-2.29499,0c-0.20864,0 -0.38746,0.14902 -0.38746,0.35766l-0.89415,14.99194"/>
-  <path stroke="currentColor" id="svg_3" stroke-miterlimit="10" stroke-width="1.5" d="m2.33857,18.85136l15.32286,0"/>
-  <path stroke="currentColor" id="svg_4" stroke-miterlimit="10" stroke-width="1.5" d="m13.56135,3.4117c-0.62587,-1.46045 -1.9671,-2.47382 -3.54678,-2.47382c-1.57967,0 -2.89108,1.01337 -3.5468,2.47382l7.09358,0z"/>
-  <path stroke="currentColor" id="svg_5" stroke-miterlimit="10" stroke-width="1.5" d="m8.79273,10.95272l2.41424,0c0.05959,0 0.11918,0.05967 0.11918,0.11925l0,2.41421c0,0.05959 -0.05959,0.11925 -0.11918,0.11925l-2.41424,0c-0.0596,0 -0.11921,-0.05967 -0.11921,-0.11925l0,-2.41421c0,-0.08942 0.05961,-0.11925 0.11921,-0.11925z"/>
-  <path stroke="currentColor" id="svg_6" stroke-miterlimit="10" stroke-width="1.5" d="m10.81945,10.89305l0.86438,-2.62289c0,-0.0298 -0.02983,-0.08941 -0.05967,-0.08941l-3.30834,0c-0.0298,0 -0.08941,0.0298 -0.0596,0.08941l0.86435,2.62289c0,0.02975 0.0298,0.05959 0.05961,0.05959l1.57969,0c0.02975,-0.02983 0.05959,-0.05959 0.05959,-0.05959z"/>
-  <path stroke="currentColor" id="svg_7" stroke-miterlimit="10" stroke-width="1.5" d="m3.51707,7.61439l1.52006,1.87775c0.05961,0.05959 0.14902,0.11918 0.23844,0.11918l3.01032,0"/>
-  <path stroke="currentColor" id="svg_8" stroke-miterlimit="10" stroke-width="1.5" d="m16.33349,7.61439l-1.52,1.84792c-0.05967,0.05959 -0.14909,0.11918 -0.23843,0.11918l-3.01032,0"/>
- </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="var(--icon-stroke-width)" d="M3.392 6.875h13.216v8.016c0 .567-.224 1.112-.624 1.513-.4.402-.941.627-1.506.627H5.522a2.13 2.13 0 0 1-1.506-.627 2.15 2.15 0 0 1-.624-1.513zM8.818 2.969h2.333c.618 0 1.211.247 1.649.686a2.35 2.35 0 0 1 .683 1.658v1.562H6.486V5.313c0-.622.246-1.218.683-1.658a2.33 2.33 0 0 1 1.65-.686"/></svg>

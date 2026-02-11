@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin language editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "names": {
     "404": "404",
@@ -525,7 +534,7 @@
       "heading": "Overskrift",
       "description": "Beskrivelse",
       "key": "Egenskapsnavn",
-      "key_info": "Må være unik for hver blokk. Vises i handlekurv, kasse og bestillingsinformasjon.",
+      "key_info": "Kan ikke være tomt og må være unikt for hver blokk. Vises i handlekurven, kassen og bestillingsdetaljene.",
       "placeholder_text": "Plassholdertekst",
       "default_heading": "Tilpass produktet ditt",
       "default_placeholder": "Angi spesielle instruksjoner",

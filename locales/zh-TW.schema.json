@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin language editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "names": {
     "404": "404",
@@ -525,7 +534,7 @@
       "heading": "標題",
       "description": "說明",
       "key": "屬性名稱",
-      "key_info": "每個區塊必須唯一。會顯示在購物車、結帳頁面與訂單詳情。",
+      "key_info": "不得留白，且不得在各區塊間重複。會顯示在購物車、結帳頁面與訂單詳情中。",
       "placeholder_text": "預留文字",
       "default_heading": "自訂您的產品",
       "default_placeholder": "輸入您的特別指示",

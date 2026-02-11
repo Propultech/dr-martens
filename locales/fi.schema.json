@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin language editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "names": {
     "404": "404",
@@ -525,7 +534,7 @@
       "heading": "Otsikko",
       "description": "Kuvaus",
       "key": "Ominaisuuden nimi",
-      "key_info": "On oltava yksilöllinen jokaiselle lohkolle. Näkyy ostoskorissa, kassalla ja tilauksen tiedoissa.",
+      "key_info": "Ei saa olla tyhjä, ja sen on oltava yksilöllinen kullekin lohkolle. Näkyy ostoskorissa, kassalla ja tilauksen tiedoissa.",
       "placeholder_text": "Paikkamerkkiteksti",
       "default_heading": "Mukauta tuotettasi",
       "default_placeholder": "Kirjoita erityisohjeet",

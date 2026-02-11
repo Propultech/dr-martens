@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin language editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "names": {
     "404": "404",
@@ -525,7 +534,7 @@
       "heading": "หัวเรื่อง",
       "description": "คำอธิบาย",
       "key": "ชื่อคุณสมบัติ",
-      "key_info": "ต้องไม่ซ้ำกันในแต่ละบล็อก จะแสดงในตะกร้าสินค้า การชำระเงิน และรายละเอียดคำสั่งซื้อ",
+      "key_info": "ต้องไม่เว้นว่างและต้องไม่ซ้ำกันในแต่ละบล็อก จะแสดงในตะกร้าสินค้า การชำระเงิน และรายละเอียดคำสั่งซื้อ",
       "placeholder_text": "ข้อความตัวยึดตำแหน่ง",
       "default_heading": "ปรับแต่งสินค้าของคุณ",
       "required": "ต้องป้อนข้อมูลเพื่อเพิ่มรายการลงในตะกร้าสินค้า",

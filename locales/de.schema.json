@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin language editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "names": {
     "404": "404",
@@ -525,7 +534,7 @@
       "heading": "Überschrift",
       "description": "Beschreibung",
       "key": "Eigenschaftsname",
-      "key_info": "Muss für jeden Block eindeutig sein. Wird im Warenkorb, im Checkout und in den Bestelldetails angezeigt.",
+      "key_info": "Darf nicht leer sein und muss für jeden Block einzigartig sein. Wird im Warenkorb, im Checkout und in den Bestelldetails angezeigt.",
       "placeholder_text": "Platzhaltertext",
       "default_heading": "Passe dein Produkt an",
       "default_placeholder": "Gib deine speziellen Anweisungen ein",

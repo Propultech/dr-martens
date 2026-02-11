@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin language editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "names": {
     "404": "404",
@@ -525,7 +534,7 @@
       "heading": "Intestazione",
       "description": "Descrizione",
       "key": "Nome proprietà",
-      "key_info": "Deve essere univoco per ogni blocco. Viene mostrato nel carrello, al check-out e nei dettagli dell'ordine.",
+      "key_info": "Non può essere vuoto e deve essere univoco per ogni blocco. Viene visualizzato nel carrello, al check-out e nei dettagli dell’ordine.",
       "placeholder_text": "Testo segnaposto",
       "default_heading": "Personalizza il tuo prodotto",
       "default_placeholder": "Inserisci le tue istruzioni speciali",
@@ -818,7 +827,7 @@
     "below_image": "Sotto l'immagine",
     "button_primary": "Pulsante principale",
     "button_secondary": "Pulsante secondario",
-    "hidden": "Nascosto",
+    "hidden": "Non in elenco",
     "on_image": "Sull'immagine",
     "spotlight": "Spotlight",
     "compact": "Compatto",

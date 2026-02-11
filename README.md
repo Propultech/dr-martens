@@ -110,6 +110,7 @@ _Registrar aquí cada desarrollo significativo: fecha, descripción breve, archi
 
 | Fecha       | Desarrollo | Archivos / Notas |
 |------------|------------|------------------|
+| 2025-02-11 | Combined Listings en PLP: al cambiar color (producto hijo) en la grilla se actualizan sin redirigir imagen, precio y precio tachado. Se amplió `section-rendering-product-card` con card-gallery y se ajusta el morph para reemplazar `product-card__content` cuando es combined listing. El filtro por color (mostrar hijo en vez de padre) no es factible desde el theme. | sections/section-rendering-product-card.liquid, snippets/card-gallery.liquid, assets/variant-picker.js |
 | 2025-02-03 | Estándares de desarrollo: documentación en README, Cursor rule `development-standards.mdc` (buenas prácticas, performance Shopify, Core Web Vitals, accesibilidad). | README.md, .cursor/rules/development-standards.mdc |
 
 ## Contributing

@@ -15,7 +15,7 @@
 {% assign product_card_size = product_card_size | strip %}
 
 {% style %}
-  @media (min-width: 750px) {
+  @media screen and (min-width: 750px) {
     {% case section.settings.layout_type %}
       {% when 'grid' %}
         .product-grid--{{ section.id }}:is(.product-grid--grid) {
@@ -217,15 +217,5 @@
 
   .main-collection-grid__empty-title {
     margin: 0;
-  }
-
-  .collection-wrapper--full-width .main-collection-grid__title {
-    margin-left: var(--page-margin);
-  }
-
-  .collection-wrapper--full-width-on-mobile .main-collection-grid__title {
-    @media screen and (max-width: 749px) {
-      margin-left: var(--page-margin);
-    }
   }
 {% endstylesheet %}

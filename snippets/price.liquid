@@ -83,7 +83,7 @@
     {% endif %}
     <span role="group">
       <span class="visually-hidden">{{ 'content.price_range' | t }}&nbsp;</span>
-      <span class="price price-range price--large">{{ price_min }} - {{ price_max }}</span>
+      <span class="price">{{ price_min }} - {{ price_max }}</span>
     </span>
   {% else %}
     {% comment %} Standard pricing display {% endcomment %}
@@ -122,5 +122,5 @@
   {%- endif -%}
 </div>
 {%- if has_volume_pricing -%}
-  <small class="volume-pricing-note">{{ 'content.volume_pricing_available' | t }}</small>
+  <small ref="volumePricingNote" class="volume-pricing-note">{{ 'content.volume_pricing_available' | t }}</small>
 {%- endif -%}

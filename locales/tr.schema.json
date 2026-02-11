@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin language editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "names": {
     "404": "404",
@@ -525,7 +534,7 @@
       "heading": "Başlık",
       "description": "Açıklama",
       "key": "Özellik adı",
-      "key_info": "Her blok için benzersiz olmalıdır. Sepette, ödeme sayfasında ve sipariş ayrıntılarında gösterilir.",
+      "key_info": "Boş bırakılamaz ve her blok için benzersiz olmalıdır. Sepette, ödeme sayfasında ve sipariş bilgilerinde gösterilir.",
       "placeholder_text": "Yer tutucu metin",
       "default_heading": "Ürününüzü özelleştirin",
       "default_placeholder": "Özel talimatlarınızı girin",

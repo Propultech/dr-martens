@@ -1,3 +1,4 @@
+
 {%- doc -%}
   Renders a header menu block.
 
@@ -7,21 +8,17 @@
 
 {% liquid
   assign block_settings = block.settings
-  assign animation_speed = 200
 %}
 
 {% case variant %}
   {% when 'mobile' %}
     <div
-      class="header__drawer desktop:hidden"
+      class="header__drawer"
       ref="headerDrawerContainer"
+      data-hydration-key="header-drawer-mobile"
       {{ block.shopify_attributes }}
     >
-      {% render 'header-drawer',
-        class: 'header__drawer--mobile',
-        linklist: block_settings.menu,
-        data_header_drawer_type: 'mobile-drawer'
-      %}
+      {% render 'header-drawer', linklist: block_settings.menu, data_header_drawer_type: 'mobile-drawer' %}
     </div>
 
   {% when 'navigation_bar' %}
@@ -29,6 +26,7 @@
       <div
         class="menu-list menu-list--mobile{% if transparent == blank %} color-{{ block_settings.color_scheme_navigation_bar }}{% endif %}"
         style="--menu-horizontal-gap: 15px; --mobile-nav-margin: auto;"
+        data-hydration-key="header-menu-mobile-navigation-bar"
       >
         <div class="menu-list__scroll-container">
           <ul
@@ -142,7 +140,7 @@
         on:pointerenter="/activate"
         on:pointerleave="/deactivate"
       >
-        <button role="menuitem" class="button menu-list__link button-unstyled">
+        <button role="menuitem" class="menu-list__link button-unstyled">
           <span class="menu-list__link-title">{{ 'actions.more' | t }}</span>
         </button>
       </li>
@@ -150,27 +148,24 @@
 
     <header-menu
       ref="headerMenu"
-      class="header-menu mobile:hidden"
-      data-animation-delay="{{ animation_speed }}"
+      class="header-menu"
       {{ block.shopify_attributes }}
-      style="--submenu-animation-speed: {{ animation_speed }}ms;"
+      data-hydration-key="header-menu"
     >
       <div class="header-menu__inner">
-        <nav header-menu>
-          <div
-            class="menu-list"
-            style="{% render 'menu-font-styles', settings: block_settings %}"
-          >
-            {% assign class = 'overflow-menu' | append: color_scheme_classes %}
-            {% render 'overflow-list',
-              class: class,
-              ref: 'overflowMenu',
-              children: children,
-              minimum-items: 2,
-              data-testid: 'header-menu-overflow-list',
-              attributes: 'data-skip-node-update'
-            %}
-          </div>
+        <nav
+          class="menu-list"
+          style="{% render 'menu-font-styles', settings: block_settings %}"
+        >
+          {% assign class = 'overflow-menu' | append: color_scheme_classes %}
+          {% render 'overflow-list',
+            class: class,
+            ref: 'overflowMenu',
+            children: children,
+            minimum-items: 2,
+            data-testid: 'header-menu-overflow-list',
+            attributes: 'data-skip-node-update'
+          %}
         </nav>
       </div>
 
@@ -219,10 +214,6 @@
     padding-block: var(--padding-2xs);
   }
 
-  header-menu {
-    width: 100%;
-  }
-
   /* Drawer menu featured content */
   .menu-drawer__featured-content {
     z-index: var(--layer-base);
@@ -265,6 +256,7 @@
     --menu-vertical-gap: var(--gap-xl);
 
     display: flex;
+    height: 100%;
   }
 
   .menu-list__list {
@@ -275,6 +267,9 @@
   .menu-list__list-item {
     flex-shrink: 0;
     white-space: nowrap;
+    display: flex;
+    align-items: center;
+    height: 100%;
   }
 
   .menu-list__list-item[aria-hidden='true'] {
@@ -285,7 +280,6 @@
     font-family: var(--menu-top-level-font-family);
     font-style: var(--menu-top-level-font-style);
     font-weight: var(--menu-top-level-font-weight);
-    font-stretch: var(--menu-top-level-font-stretch, normal);
     font-size: var(--menu-top-level-font-size);
     line-height: var(--menu-top-level-font-line-height);
     text-transform: var(--menu-top-level-font-case);
@@ -293,8 +287,11 @@
     transition: color var(--animation-speed) var(--animation-easing);
     text-decoration: none;
     display: flex;
-    min-height: var(--minimum-touch-target);
-    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+    height: 100%;
+    margin-block: 0;
 
     &:hover,
     &:focus {
@@ -306,10 +303,31 @@
     }
   }
 
+  .menu-list__link-title {
+    padding-inline: calc(var(--gap-xl) / 2);
+  }
+  [slot='overflow'] .menu-list__link-title {
+    padding-inline: 0;
+  }
+
+  .menu-list__list-item:not([slot='overflow']) {
+    flex-direction: column;
+  }
+  .menu-list__list-item:not([slot='overflow'])::after {
+    content: '';
+    width: 100%;
+    height: var(--header-padding);
+    margin-bottom: calc(-1 * var(--header-padding));
+  }
+
+  [slot='overflow'] > .menu-list__link::after {
+    content: none;
+  }
+
   /*
-      High specificity selectors to subdue non-hovered links without javascript.
-      If the need for js-generated `hovered` and `focused` classes arises for another reason we can simplify these.
-    */
+        High specificity selectors to subdue non-hovered links without javascript.
+        If the need for js-generated `hovered` and `focused` classes arises for another reason we can simplify these.
+      */
   .menu-list:where(:has(.menu-list__list-item:hover)),
   .menu-list:where(:has(.menu-list__list-item:focus-within)),
   .menu-list:where(:has(.menu-list__list-item:not([aria-hidden='true']) .menu-list__link--active)) {
@@ -329,7 +347,8 @@
     /* Make sure focus outline is not cut off by overflow hidden */
     --focus-outline-size: calc(var(--focus-outline-offset) + var(--focus-outline-width));
 
-    gap: 0 var(--menu-horizontal-gap);
+    gap: 0;
+    margin-inline: calc(-1 * var(--menu-horizontal-gap) / 2);
   }
 
   .overflow-menu {
@@ -398,16 +417,6 @@
     --submenu-content-opacity: 1;
 
     visibility: visible;
-  }
-
-  .menu-list__list-item:has([data-animating]) > .menu-list__submenu {
-    --submenu-content-opacity: 0;
-
-    visibility: visible;
-
-    &::before {
-      height: 0;
-    }
   }
 
   .menu-list__submenu-inner,
@@ -482,12 +491,11 @@
     }
   }
 
+  .header-menu {
+    height: 100%;
+  }
   .header-menu[data-overflow-expanded='true'] .menu-list__list-item:where([slot='overflow']) .menu-list__link {
     --submenu-content-opacity: 1;
-  }
-
-  .menu-list__list-item:where([slot='overflow']):has([data-animating]) > .menu-list__link {
-    --submenu-content-opacity: 0;
   }
 
   .menu-list__submenu-inner {
@@ -503,7 +511,6 @@
     font-family: var(--menu-child-font-family);
     font-style: var(--menu-child-font-style);
     font-weight: var(--menu-child-font-weight);
-    font-stretch: var(--menu-child-font-stretch, normal);
     font-size: var(--menu-child-font-size);
     line-height: var(--menu-child-font-line-height);
     text-transform: var(--menu-child-font-case);
@@ -523,7 +530,6 @@
     font-family: var(--menu-parent-font-family);
     font-style: var(--menu-parent-font-style);
     font-weight: var(--menu-parent-font-weight);
-    font-stretch: var(--menu-parent-font-stretch, normal);
     font-size: var(--menu-parent-font-size);
     line-height: var(--menu-parent-font-line-height);
     text-transform: var(--menu-parent-font-case);
@@ -680,18 +686,6 @@
     --menu-child-font-size: var(--font-size--xl);
 
     width: 200px;
-  }
-
-  .mega-menu__more-list-item .mega-menu__link {
-    color: rgb(var(--menu-top-level-font-color-rgb) / var(--opacity-subdued-text));
-  }
-
-  .mega-menu__more-list-item:where(:hover, .active) .mega-menu__link {
-    color: var(--menu-top-level-font-color);
-  }
-
-  .mega-menu__more-list-item[aria-hidden='true'] {
-    display: none;
   }
 
   .mega-menu__submenu {
