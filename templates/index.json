@@ -643,7 +643,7 @@
               "type": "text",
               "name": "t:names.text",
               "settings": {
-                "text": "<h3>Compra por colección</h3>",
+                "text": "<h3>Hecho para destacar</h3>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
