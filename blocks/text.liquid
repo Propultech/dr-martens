@@ -169,6 +169,10 @@
           "label": "24px"
         },
         {
+          "value": "1.875rem",
+          "label": "30px"
+        },
+        {
           "value": "2rem",
           "label": "32px"
         },
@@ -207,6 +211,88 @@
       ],
       "default": "1rem",
       "visible_if": "{{ block.settings.type_preset == 'custom' }}"
+    },
+    {
+      "type": "select",
+      "id": "font_size_mobile",
+      "label": "Tamaño móvil",
+      "options": [
+        {
+          "value": "",
+          "label": "t:options.default"
+        },
+        {
+          "value": "0.625rem",
+          "label": "10px"
+        },
+        {
+          "value": "0.75rem",
+          "label": "12px"
+        },
+        {
+          "value": "0.875rem",
+          "label": "14px"
+        },
+        {
+          "value": "1rem",
+          "label": "16px"
+        },
+        {
+          "value": "1.125rem",
+          "label": "18px"
+        },
+        {
+          "value": "1.25rem",
+          "label": "20px"
+        },
+        {
+          "value": "1.5rem",
+          "label": "24px"
+        },
+        {
+          "value": "1.875rem",
+          "label": "30px"
+        },
+        {
+          "value": "2rem",
+          "label": "32px"
+        },
+        {
+          "value": "2.5rem",
+          "label": "40px"
+        },
+        {
+          "value": "3rem",
+          "label": "48px"
+        },
+        {
+          "value": "3.5rem",
+          "label": "56px"
+        },
+        {
+          "value": "4.5rem",
+          "label": "72px"
+        },
+        {
+          "value": "5.5rem",
+          "label": "88px"
+        },
+        {
+          "value": "7.5rem",
+          "label": "120px"
+        },
+        {
+          "value": "9.5rem",
+          "label": "152px"
+        },
+        {
+          "value": "11.5rem",
+          "label": "184px"
+        }
+      ],
+      "default": "",
+      "visible_if": "{{ block.settings.type_preset == 'custom' }}",
+      "info": "Solo se aplica cuando el preset es Personalizado."
     },
     {
       "type": "select",
@@ -309,6 +395,18 @@
       "visible_if": "{{ block.settings.type_preset != 'rte' }}"
     },
     {
+      "type": "color",
+      "id": "italic_color",
+      "label": "Color de cursiva",
+      "info": "Aplica color a <em> o <i>."
+    },
+    {
+      "type": "color",
+      "id": "strong_color",
+      "label": "Color para negrita",
+      "info": "Aplica color a <strong> o <b>."
+    },
+    {
       "type": "header",
       "content": "t:content.appearance"
     },
@@ -335,6 +433,26 @@
       "max": 50,
       "step": 1,
       "visible_if": "{{ block.settings.background }}"
+    },
+    {
+      "type": "select",
+      "id": "visibility",
+      "label": "t:content.visibility",
+      "options": [
+        {
+          "value": "all",
+          "label": "t:content.visibility_all"
+        },
+        {
+          "value": "desktop",
+          "label": "t:content.visibility_desktop"
+        },
+        {
+          "value": "mobile",
+          "label": "t:content.visibility_mobile"
+        }
+      ],
+      "default": "all"
     },
     {
       "type": "header",
@@ -379,6 +497,61 @@
       "step": 1,
       "unit": "px",
       "default": 0
+    },
+    {
+      "type": "header",
+      "content": "Rellenos móviles"
+    },
+    {
+      "type": "checkbox",
+      "id": "mobile_padding_override",
+      "label": "Personalizar relleno en móvil",
+      "default": false,
+      "info": "Los valores siguientes reemplazan el relleno de escritorio cuando el ancho es menor a 750px."
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start-mobile",
+      "label": "Arriba (móvil)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0,
+      "visible_if": "{{ block.settings.mobile_padding_override }}"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end-mobile",
+      "label": "Abajo (móvil)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0,
+      "visible_if": "{{ block.settings.mobile_padding_override }}"
+    },
+    {
+      "type": "range",
+      "id": "padding-inline-start-mobile",
+      "label": "Izquierda (móvil)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0,
+      "visible_if": "{{ block.settings.mobile_padding_override }}"
+    },
+    {
+      "type": "range",
+      "id": "padding-inline-end-mobile",
+      "label": "Derecha (móvil)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0,
+      "visible_if": "{{ block.settings.mobile_padding_override }}"
     }
   ],
   "presets": [

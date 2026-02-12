@@ -45,6 +45,11 @@
     if is_rte
       echo ' rte '
     endif
+    if block_settings.visibility == 'desktop'
+      echo ' hidden--mobile '
+    elsif block_settings.visibility == 'mobile'
+      echo ' hidden--desktop '
+    endif
   endcapture
 %}
 
@@ -60,6 +65,18 @@
     --max-width: var(--max-width--{{ type }}-{{ block_settings.max_width }});
     {% if text_width == "100%" %}
       --text-align: {{ block_settings.alignment }};
+    {% endif %}
+    {% if block_settings.italic_color %}
+      --text-italic-color: {{ block_settings.italic_color }};
+    {% endif %}
+    {% if block_settings.strong_color %}
+      --text-strong-color: {{ block_settings.strong_color }};
+    {% endif %}
+    {% if block_settings.mobile_padding_override %}
+      --padding-block-start-mobile: {{ block_settings['padding-block-start-mobile'] | default: 0 }}px;
+      --padding-block-end-mobile: {{ block_settings['padding-block-end-mobile'] | default: 0 }}px;
+      --padding-inline-start-mobile: {{ block_settings['padding-inline-start-mobile'] | default: 0 }}px;
+      --padding-inline-end-mobile: {{ block_settings['padding-inline-end-mobile'] | default: 0 }}px;
     {% endif %}
     {% if block_settings.background %}
       --text-background-color: {{ block_settings.background_color | default: 'rgb(255 255 255 / 1.0)' }};
@@ -123,6 +140,10 @@
     display: flex;
     flex-direction: column;
     align-items: var(--horizontal-alignment);
+    --padding-block-start-base: var(--padding-block-start, 0px);
+    --padding-block-end-base: var(--padding-block-end, 0px);
+    --padding-inline-start-base: var(--padding-inline-start, 0px);
+    --padding-inline-end-base: var(--padding-inline-end, 0px);
   }
 
   .text-block > * {
@@ -212,8 +233,27 @@
     padding-inline-end: max(var(--text-padding), var(--padding-inline-end, 0));
   }
 
+  @media screen and (max-width: 749px) {
+    .text-block {
+      --padding-block-start: var(--padding-block-start-mobile, var(--padding-block-start-base));
+      --padding-block-end: var(--padding-block-end-mobile, var(--padding-block-end-base));
+      --padding-inline-start: var(--padding-inline-start-mobile, var(--padding-inline-start-base));
+      --padding-inline-end: var(--padding-inline-end-mobile, var(--padding-inline-end-base));
+    }
+  }
+
   .custom-color,
   .custom-color > :is(h1, h2, h3, h4, h5, h6, p, *) {
     color: var(--color);
+  }
+
+  .text-block strong,
+  .text-block b {
+    color: var(--text-strong-color, inherit);
+  }
+
+  .text-block em,
+  .text-block i {
+    color: var(--text-italic-color, inherit);
   }
 {% endstylesheet %}
