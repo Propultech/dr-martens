@@ -660,6 +660,7 @@
                       "type": "image",
                       "name": "t:names.image",
                       "settings": {
+                        "image": "shopify://shop_images/icon-mastercard.svg",
                         "link": "",
                         "image_ratio": "adapt",
                         "width": "fill",
@@ -682,6 +683,7 @@
                       "type": "image",
                       "name": "t:names.image",
                       "settings": {
+                        "image": "shopify://shop_images/icon-visa.svg",
                         "link": "",
                         "image_ratio": "adapt",
                         "width": "fill",
@@ -704,6 +706,7 @@
                       "type": "image",
                       "name": "t:names.image",
                       "settings": {
+                        "image": "shopify://shop_images/icon-master.svg",
                         "link": "",
                         "image_ratio": "adapt",
                         "width": "fill",
@@ -726,6 +729,7 @@
                       "type": "image",
                       "name": "t:names.image",
                       "settings": {
+                        "image": "shopify://shop_images/icon-americanexpres.svg",
                         "link": "",
                         "image_ratio": "adapt",
                         "width": "fill",
@@ -748,6 +752,7 @@
                       "type": "image",
                       "name": "t:names.image",
                       "settings": {
+                        "image": "shopify://shop_images/icon-martenscard.svg",
                         "link": "",
                         "image_ratio": "adapt",
                         "width": "fill",
