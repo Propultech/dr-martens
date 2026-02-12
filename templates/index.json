@@ -135,7 +135,7 @@
                 "font_size_mobile": "1.875rem",
                 "line_height": "tight",
                 "letter_spacing": "loose",
-                "case": "none",
+                "case": "uppercase",
                 "wrap": "pretty",
                 "color": "var(--color-primary)",
                 "italic_color": "",
