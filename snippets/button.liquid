@@ -22,7 +22,15 @@
     {{ block_settings.style_class }}
     {{ block_settings.style_class }}--{{ block.id }}
   "
-  style="{% render 'size-style', settings: block_settings %}"
+  style="
+    {% render 'size-style', settings: block_settings %}
+    {% if block_settings.font_size_desktop %}
+      --button-block-font-size: {{ block_settings.font_size_desktop }};
+    {% endif %}
+    {% if block_settings.font_size_mobile %}
+      --button-block-font-size-mobile: {{ block_settings.font_size_mobile }};
+    {% endif %}
+  "
   {%- if block_settings.open_in_new_tab -%}
     target="_blank"
     rel="noopener noreferrer"

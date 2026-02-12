@@ -59,6 +59,27 @@
         --font-size: {{ settings.font_size }};
       {%- endif -%}
     {%- endif -%}
+    {%- if settings.font_size_mobile != blank -%}
+      {%- liquid
+        assign mobile_font_size_rem = settings.font_size_mobile | split: 'rem' | first | times: 1.0
+        assign fluid_size_cutoff_rem = 3.0
+
+        if mobile_font_size_rem >= fluid_size_cutoff_rem
+          assign target_viewport = 1400
+          assign mobile_vw_value = mobile_font_size_rem | times: 16 | divided_by: target_viewport | times: 100
+
+          assign mobile_scale_factor = mobile_font_size_rem | divided_by: fluid_size_cutoff_rem
+          assign mobile_base_min_rem = 3.0
+          assign mobile_scaling_bonus_rem = mobile_scale_factor | minus: 1 | times: 0.25
+          assign mobile_dynamic_min_rem = mobile_base_min_rem | plus: mobile_scaling_bonus_rem
+        endif
+      -%}
+      {%- if mobile_font_size_rem >= fluid_size_cutoff_rem -%}
+        --font-size-mobile: clamp({{ mobile_dynamic_min_rem }}rem, {{ mobile_vw_value }}vw, {{ settings.font_size_mobile }});
+      {%- else -%}
+        --font-size-mobile: {{ settings.font_size_mobile }};
+      {%- endif -%}
+    {%- endif -%}
     {%- if settings.weight != blank -%}
       --font-weight: {{ settings.weight }};
     {% else %}
