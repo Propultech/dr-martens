@@ -247,6 +247,50 @@
       "step": 1,
       "unit": "px",
       "default": 0
+    },
+    {
+      "type": "header",
+      "content": "Rellenos móviles"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start-mobile",
+      "label": "Arriba (móvil)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end-mobile",
+      "label": "Abajo (móvil)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-inline-start-mobile",
+      "label": "Izquierda (móvil)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-inline-end-mobile",
+      "label": "Derecha (móvil)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
     }
   ],
   "presets": [
@@ -269,7 +313,9 @@
               }
             }
           },
-          "block_order": ["text-1"]
+          "block_order": [
+            "text-1"
+          ]
         },
         "row-2": {
           "type": "_accordion-row",
@@ -285,7 +331,9 @@
               }
             }
           },
-          "block_order": ["text-1"]
+          "block_order": [
+            "text-1"
+          ]
         },
         "row-3": {
           "type": "_accordion-row",
@@ -301,10 +349,16 @@
               }
             }
           },
-          "block_order": ["text-1"]
+          "block_order": [
+            "text-1"
+          ]
         }
       },
-      "block_order": ["row-1", "row-2", "row-3"]
+      "block_order": [
+        "row-1",
+        "row-2",
+        "row-3"
+      ]
     }
   ]
 }

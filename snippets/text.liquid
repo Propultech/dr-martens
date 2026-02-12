@@ -50,6 +50,9 @@
     elsif block_settings.visibility == 'mobile'
       echo ' hidden--desktop '
     endif
+    if block_settings.line_highlight
+      echo ' text-block--line-highlight '
+    endif
   endcapture
 %}
 
@@ -82,6 +85,9 @@
       --text-background-color: {{ block_settings.background_color | default: 'rgb(255 255 255 / 1.0)' }};
       --text-corner-radius: {{ block_settings.corner_radius }}px;
       --text-padding: max(var(--padding-2xs), calc((var(--text-corner-radius) + var(--padding-xs)) * (1 - cos(45deg))));
+    {% endif %}
+    {% if block_settings.line_highlight %}
+      --line-highlight-color: {{ block_settings.background_color | default: 'var(--color-primary)' }};
     {% endif %}
   "
 
@@ -231,6 +237,19 @@
     padding-block-end: max(var(--text-padding), var(--padding-block-end, 0));
     padding-inline-start: max(var(--text-padding), var(--padding-inline-start, 0));
     padding-inline-end: max(var(--text-padding), var(--padding-inline-end, 0));
+  }
+
+  .text-block--line-highlight {
+    display: block;
+    align-items: flex-start;
+  }
+
+  .text-block--line-highlight > * {
+    display: inline;
+    background-color: var(--line-highlight-color, var(--color-primary));
+    padding: 0 5px;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
   }
 
   @media screen and (max-width: 749px) {

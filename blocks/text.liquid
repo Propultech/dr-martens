@@ -417,12 +417,19 @@
       "default": false
     },
     {
+      "type": "checkbox",
+      "id": "line_highlight",
+      "label": "Resaltar por línea",
+      "default": false,
+      "info": "Usa el color de fondo para aplicar un fondo por línea y fuerza display:block cuando está activo."
+    },
+    {
       "type": "color",
       "id": "background_color",
       "label": "t:settings.background_color",
       "alpha": true,
       "default": "#00000026",
-      "visible_if": "{{ block.settings.background }}"
+      "visible_if": "{{ block.settings.background or block.settings.line_highlight }}"
     },
     {
       "type": "range",

@@ -2304,11 +2304,11 @@ product-price.text-block:is(.h1, .h2, .h3, .h4, .h5, .h6)>*:not(.tax-note) {
   /* Must disable this, when you use these with calc and another unit type, things break — see logo.liquid */
   /* stylelint-disable length-zero-no-unit */
   --padding-block: 0px;
-  --padding-block-start: var(--padding-block, 0px);
-  --padding-block-end: var(--padding-block, 0px);
+  --padding-block-start-base: var(--padding-block, 0px);
+  --padding-block-end-base: var(--padding-block, 0px);
   --padding-inline: 0px;
-  --padding-inline-start: var(--padding-inline, 0px);
-  --padding-inline-end: var(--padding-inline, 0px);
+  --padding-inline-start-base: var(--padding-inline, 0px);
+  --padding-inline-end-base: var(--padding-inline, 0px);
   --margin-block: 0px;
   --margin-block-start: var(--margin-block, 0px);
   --margin-block-end: var(--margin-block, 0px);
@@ -2319,10 +2319,30 @@ product-price.text-block:is(.h1, .h2, .h3, .h4, .h5, .h6)>*:not(.tax-note) {
 
 .spacing-style,
 .inherit-spacing {
+  --padding-block-start: var(--padding-block-start-base, var(--padding-block, 0px));
+  --padding-block-end: var(--padding-block-end-base, var(--padding-block, 0px));
+  --padding-inline-start: var(--padding-inline-start-base, var(--padding-inline, 0px));
+  --padding-inline-end: var(--padding-inline-end-base, var(--padding-inline, 0px));
+  --padding-block-start-mobile: initial;
+  --padding-block-end-mobile: initial;
+  --padding-inline-start-mobile: initial;
+  --padding-inline-end-mobile: initial;
+
   padding-block: calc(var(--padding-block-start) + var(--section-top-offset, 0px)) var(--padding-block-end);
   padding-inline: var(--padding-inline-start) var(--padding-inline-end);
   margin-block: var(--margin-block-start) var(--margin-block-end);
   margin-inline: var(--margin-inline-start) var(--margin-inline-end);
+}
+
+@media screen and (max-width: 749px) {
+
+  .spacing-style,
+  .inherit-spacing {
+    --padding-block-start: var(--padding-block-start-mobile, var(--padding-block-start-base, var(--padding-block, 0px)));
+    --padding-block-end: var(--padding-block-end-mobile, var(--padding-block-end-base, var(--padding-block, 0px)));
+    --padding-inline-start: var(--padding-inline-start-mobile, var(--padding-inline-start-base, var(--padding-inline, 0px)));
+    --padding-inline-end: var(--padding-inline-end-mobile, var(--padding-inline-end-base, var(--padding-inline, 0px)));
+  }
 }
 
 /* Size style */
