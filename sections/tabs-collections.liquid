@@ -1,0 +1,196 @@
+{{ 'tabs-collections.css' | asset_url | stylesheet_tag }}
+{{ 'tabs-collection.js' | asset_url | script_tag }}
+
+<div class="section-background color-{{ section.settings.color_scheme }}"></div>
+<div
+  class="
+    section
+    section--{{ section.settings.section_width }}
+    color-{{ section.settings.color_scheme }}
+    tabs-collections
+    tabs-collections--align-{{ section.settings.content_alignment }}
+    spacing-style
+  "
+  style="{% render 'spacing-style', settings: section.settings %}"
+  {{ section.shopify_attributes }}
+>
+  {% if section.settings.heading != blank %}
+    <h2 class="tc-heading">{{ section.settings.heading | escape }}</h2>
+  {% endif %}
+
+  <div class="tc-tabs">
+    <div class="tc-tablist" role="tablist" aria-label="{{ section.settings.heading | escape }}">
+      {%- assign tabs = section.blocks | where: 'type', '_tab' -%}
+      {%- for bl in tabs -%}
+        <button
+          id="tab-{{ bl.id }}"
+          class="tc-tab{% if forloop.first %} is-active{% endif %}"
+          role="tab"
+          aria-controls="panel-{{ bl.id }}"
+          aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"
+          tabindex="{% if forloop.first %}0{% else %}-1{% endif %}"
+        >
+          {{ bl.settings.label | default: 'Tab' | escape }}
+        </button>
+      {%- endfor -%}
+    </div>
+
+    <div class="tc-panels">
+      {%- content_for 'blocks' -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Tabs de colecciones",
+  "class": "section-wrapper",
+  "blocks": [{ "type": "_tab" }],
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Título",
+      "default": "Categorías populares"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Esquema de color",
+      "default": "scheme-1"
+    },
+    {
+      "type": "select",
+      "id": "section_width",
+      "label": "Ancho",
+      "options": [
+        { "value": "page-width", "label": "Página" },
+        { "value": "full-width", "label": "Completo" }
+      ],
+      "default": "page-width"
+    },
+    {
+      "type": "select",
+      "id": "content_alignment",
+      "label": "Alineación de contenido (título y tabs)",
+      "options": [
+        { "value": "left", "label": "Izquierda" },
+        { "value": "center", "label": "Centro" }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "header",
+      "content": "Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "Arriba",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "Abajo",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding-inline-start",
+      "label": "Izquierda",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-inline-end",
+      "label": "Derecha",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "Rellenos móviles"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start-mobile",
+      "label": "Arriba (móvil)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end-mobile",
+      "label": "Abajo (móvil)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-inline-start-mobile",
+      "label": "Izquierda (móvil)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-inline-end-mobile",
+      "label": "Derecha (móvil)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    }
+  ],
+  "presets": [
+    {
+      "name": "Tabs de colecciones",
+      "blocks": {
+        "tab_1": {
+          "type": "_tab",
+          "settings": {
+            "label": "Hombre",
+            "columns": 4,
+            "mobile_columns": 2
+          }
+        },
+        "tab_2": {
+          "type": "_tab",
+          "settings": {
+            "label": "Mujer",
+            "columns": 4,
+            "mobile_columns": 2
+          }
+        }
+      },
+      "block_order": ["tab_1", "tab_2"]
+    }
+  ]
+}
+{% endschema %}

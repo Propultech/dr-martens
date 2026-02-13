@@ -384,7 +384,7 @@ p:empty {
 .page-width-normal,
 .page-width-narrow,
 .page-width-content {
-  --page-margin: 16px;
+  --page-margin: 15px;
 }
 
 @media screen and (min-width: 750px) {
@@ -393,7 +393,7 @@ p:empty {
   .page-width-normal,
   .page-width-narrow,
   .page-width-content {
-    --page-margin: 40px;
+    --page-margin: 60px;
   }
 }
 
@@ -3649,6 +3649,7 @@ slideshow-arrows .slideshow-control.slideshow-control--style-none {
   }
 }
 
+
 .resource-list {
   --resource-list-mobile-gap-max: 9999px;
   --resource-list-column-gap: min(var(--resource-list-column-gap-desktop), var(--resource-list-mobile-gap-max));
@@ -3658,10 +3659,12 @@ slideshow-arrows .slideshow-control.slideshow-control--style-none {
 
   @media screen and (max-width: 749px) {
     --resource-list-mobile-gap-max: 12px;
+    --resource-list-column-gap: var(--resource-list-column-gap-mobile, min(var(--resource-list-column-gap-desktop), var(--resource-list-mobile-gap-max)));
   }
 
   @container resource-list (max-width: 749px) {
     --resource-list-mobile-gap-max: 12px;
+    --resource-list-column-gap: var(--resource-list-column-gap-mobile, min(var(--resource-list-column-gap-desktop), var(--resource-list-mobile-gap-max)));
   }
 }
 
@@ -3747,15 +3750,15 @@ slideshow-arrows .slideshow-control.slideshow-control--style-none {
 
 @container resource-list-carousel (max-width: 749px) {
   .resource-list__carousel .resource-list__slide {
-    --slide-width: clamp(150px, var(--mobile-card-size, 60cqw), var(--slide-width-max));
+    --slide-width: clamp(150px, var(--mobile-card-size, 60cqw), var(--slide-width-max-mobile, 9999px));
   }
 }
 
 @container resource-list-carousel (min-width: 750px) {
   .resource-list__carousel .resource-list__slide {
     --section-slide-width: calc((100% - (var(--resource-list-column-gap) * (var(--column-count) - 1)) - var(--peek-next-slide-size)) / var(--column-count));
-    --fallback-slide-width: clamp(150px, var(--mobile-card-size, 60cqw), var(--slide-width-max));
-    --slide-width: var(--section-slide-width, var(--fallback-slide-width));
+    --fallback-slide-width: clamp(150px, var(--mobile-card-size, 60cqw), var(--slide-width-max-desktop, 9999px));
+    --slide-width: min(var(--section-slide-width), var(--slide-width-max-desktop, 9999px));
   }
 }
 

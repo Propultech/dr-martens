@@ -1,0 +1,202 @@
+{%- liquid
+  assign tabs = section.blocks | where: 'type', '_tab'
+  assign first_tab = tabs | first
+  assign is_first = false
+  if first_tab and block.id == first_tab.id
+    assign is_first = true
+  endif
+-%}
+
+<button
+  type="button"
+  class="tc-tab-seed"
+  data-tab-id="tab-{{ block.id }}"
+  data-panel-id="panel-{{ block.id }}"
+  data-label="{{ block.settings.label | default: 'Tab' | escape }}"
+  data-active="{% if is_first %}1{% else %}0{% endif %}"
+  hidden
+></button>
+
+<div
+  id="panel-{{ block.id }}"
+  class="tc-panel{% if is_first %} is-active{% endif %}"
+  role="tabpanel"
+  aria-labelledby="tab-{{ block.id }}"
+  tabindex="0"
+  {{ block.shopify_attributes }}
+>
+  {%- assign collection_list = block.settings.collection_list -%}
+
+  {%- if collection_list != blank -%}
+    {% capture list_items %}
+      {% for collection in collection_list %}
+        <div class="resource-list__item">
+          {%- assign image = collection.image | default: collection.products.first.featured_image -%}
+          {% capture card_image %}
+            {% if image != blank %}
+             <div class="image-block__image-container">
+               <img
+                  src="{{ image | image_url: width: 600 }}"
+                  alt="{{ collection.title | escape }}"
+                  class="image-block__image"
+                  loading="lazy"
+                  width="600"
+                  height="{{ 600 | divided_by: image.aspect_ratio | ceil }}"
+                >
+             </div>
+            {% else %}
+               {{ 'collection-1' | placeholder_svg_tag: 'image-block__image placeholder-svg' }}
+            {% endif %}
+          {% endcapture %}
+
+          {% capture children %}
+             <div class="collection-card__text">
+               <h3 class="h4">{{ collection.title }}</h3>
+               {%- if collection.description != blank -%}
+                 <div class="rte">{{ collection.description | strip_html | truncatewords: 20 }}</div>
+               {%- endif -%}
+               <a href="{{ collection.url }}" class="button button--primary">{{ block.settings.button_text | default: 'Ver colección' }}</a>
+             </div>
+          {% endcapture %}
+
+          {% render 'collection-card',
+            card_image: card_image,
+            children: children,
+            collection: collection,
+            section: section,
+            block: block
+          %}
+        </div>
+      {% endfor %}
+    {% endcapture %}
+
+    {% assign list_items_array = list_items | split: '<div class="resource-list__item">' %}
+    {% comment %} Remove empty first element from split {% endcomment %}
+    {% assign cleaned_items = '' %}
+    {% for item in list_items_array %}
+      {% if item != blank %}
+        {% assign full_item = '<div class="resource-list__item">' | append: item %}
+        {% if cleaned_items == '' %}
+          {% assign cleaned_items = full_item %}
+        {% else %}
+          {% assign cleaned_items = cleaned_items | append: '|||' | append: full_item %}
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+    {% assign slides_array = cleaned_items | split: '|||' %}
+
+    <div
+      class="resource-list resource-list__carousel force-full-width"
+      style="
+        --resource-list-column-gap-desktop: {{ block.settings.columns_gap }}px;
+        --resource-list-column-gap-mobile: {{ block.settings.mobile_columns_gap }}px;
+        --column-count: {{ block.settings.columns }};
+        --column-count-mobile: {{ block.settings.mobile_columns }};
+        --mobile-card-size: 76cqw;
+        --slide-width-max-desktop: 388px;
+        --slide-width-max-mobile: 268px;
+      "
+    >
+      {% render 'resource-list-carousel',
+        slides: slides_array,
+        slide_count: collection_list.count,
+        settings: block.settings,
+        ref: 'tabCarousel'
+      %}
+    </div>
+  {%- endif -%}
+</div>
+
+{% schema %}
+{
+  "name": "Tab",
+  "settings": [
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Etiqueta del tab",
+      "default": "Hombre"
+    },
+    {
+      "type": "collection_list",
+      "id": "collection_list",
+      "label": "Colecciones"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Texto del botón",
+      "default": "Comprar ahora"
+    },
+    {
+      "type": "header",
+      "content": "Configuración del Slider"
+    },
+    {
+      "type": "range",
+      "id": "columns_gap",
+      "label": "Espaciado (Gap) Desktop",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "default": 20,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_columns_gap",
+      "label": "Espaciado (Gap) Móvil",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "default": 20,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "columns",
+      "label": "Elementos por fila (Desktop)",
+      "min": 1,
+      "max": 6,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "mobile_columns",
+      "label": "Elementos por fila (Móvil)",
+      "min": 1,
+      "max": 3,
+      "step": 1,
+      "default": 2
+    },
+    {
+      "type": "header",
+      "content": "Flechas"
+    },
+    {
+      "type": "select",
+      "id": "icons_style",
+      "label": "Estilo de flecha",
+      "options": [
+        { "value": "arrow", "label": "Flecha" },
+        { "value": "chevron", "label": "Chevron" },
+        { "value": "caret", "label": "Caret" }
+      ],
+      "default": "arrow"
+    },
+    {
+      "type": "select",
+      "id": "icons_shape",
+      "label": "Fondo de flecha",
+      "options": [
+        { "value": "none", "label": "Ninguno" },
+        { "value": "circle", "label": "Círculo" },
+        { "value": "square", "label": "Cuadrado" }
+      ],
+      "default": "circle"
+    }
+  ],
+  "presets": [{ "name": "Tab" }]
+}
+{% endschema %}
