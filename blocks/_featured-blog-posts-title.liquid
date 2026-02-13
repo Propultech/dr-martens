@@ -12,7 +12,6 @@
   {% content_for 'block', type: '_featured-blog-posts-title', id: 'blog-title' %}
 {%- enddoc -%}
 
-
 {% liquid
   if closest.blog != blank
     assign blog_title = closest.blog.title
@@ -27,12 +26,21 @@
   <h3>{{ blog_title }}</h3>
 {% endcapture %}
 
-{% render 'text', fallback_text: blog_title_text, block: block %}
+{% if block.settings.show_title %}
+  {% render 'text', fallback_text: blog_title_text, block: block %}
+{% endif %}
 
 {% schema %}
 {
   "name": "t:names.title",
   "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_title",
+      "label": "Mostrar título",
+      "default": true,
+      "info": "Activa o desactiva la visualización del título"
+    },
     {
       "type": "richtext",
       "id": "text",
