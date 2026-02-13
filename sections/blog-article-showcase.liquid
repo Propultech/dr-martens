@@ -52,6 +52,12 @@
     {% endcase -%}
   "
 >
+  {% if section.settings.title != blank %}
+    <div class="blog-article-showcase__header {{ section.settings.heading_alignment }}">
+      <h2 class="blog-article-showcase__section-title h3">{{ section.settings.title }}</h2>
+    </div>
+  {% endif %}
+
   <div class="blog-article-showcase__inner">
     {%- comment -%} Media Block {%- endcomment -%}
     {% if section.settings.show_image %}
@@ -125,6 +131,34 @@
 </div>
 
 {% stylesheet %}
+  .blog-article-showcase__header {
+    width: 100%;
+    margin: var(--blog-article-showcase-header__margin, 0 0 20px);
+  }
+
+  .blog-article-showcase__header.text-center {
+    text-align: center;
+  }
+
+  .blog-article-showcase__header.text-left {
+    text-align: left;
+  }
+
+  .blog-article-showcase__section-title {
+    margin: 0;
+  }
+
+  .blog-article-showcase__section-title.h3 {
+    font-family: var(--font-body--family);
+    color: var(--color-foreground);
+    font-size: var(--font-size--h3);
+    font-style: normal;
+    font-weight: var(--font-accent--weight);
+    line-height: 22px;
+    letter-spacing: 0.25px;
+    text-transform: uppercase;
+  }
+
   .blog-article-showcase__inner {
     display: grid;
     gap: var(--gap-mobile);
@@ -135,6 +169,10 @@
   }
 
   @media screen and (min-width: 750px) {
+    .blog-article-showcase__header {
+      --blog-article-showcase-header__margin: 0 0 30px;
+    }
+
     .blog-article-showcase__inner {
       gap: var(--gap-desktop);
       grid-template-columns: 3.5fr 2.5fr;
@@ -198,7 +236,7 @@
   }
 
   .blog-article-showcase__title {
-    font-family: var(--font-accent--family);
+    font-family: var(--font-body--family);
     font-size: var(--font-size--md);
     font-weight: var(--font-accent--weight);
     letter-spacing: 0.25px;
@@ -231,7 +269,7 @@
   }
 
   .blog-article-showcase__excerpt {
-    font-family: var(--font-accent--family);
+    font-family: var(--font-body--family);
     font-size: var(--font-size--sm);
     font-weight: var(--font-accent--weight);
     letter-spacing: 0.25px;
@@ -266,6 +304,28 @@
       "type": "article",
       "id": "article",
       "label": "Artículo del blog"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Título de la sección",
+      "default": "Historias de DR. MARTENS"
+    },
+    {
+      "type": "select",
+      "id": "heading_alignment",
+      "label": "Alineación del título",
+      "options": [
+        {
+          "value": "text-left",
+          "label": "Izquierda"
+        },
+        {
+          "value": "text-center",
+          "label": "Centro"
+        }
+      ],
+      "default": "text-left"
     },
     {
       "type": "header",
