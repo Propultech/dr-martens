@@ -57,7 +57,7 @@
     /* Ensure the localization block is above the custom footer content */
     dropdown-localization-component {
       .dropdown-localization__button {
-          padding: 0;
+        padding: 0;
       }
 
       .localization-wrapper {
@@ -99,7 +99,6 @@
           }
 
           > .text-block {
-
             ul {
               display: flex;
               flex-flow: column;
@@ -177,9 +176,9 @@
         padding: var(--footer_content__padding, 18px 35px);
 
         .group-block-content {
-          align-items: var(--footer-end-group-block-content__align-items, --horizontal-alignment);
-          gap: var(--footer-end-group-block-content__gap, --gap);
-          flex-flow: var(--footer-end-group-block-content__flex-flow, --flex-direction);
+          align-items: var(--footer-end-group-block-content__align-items, var(--vertical-alignment));
+          gap: var(--footer-end-group-block-content__gap, var(--gap));
+          flex-flow: var(--footer-end-group-block-content__flex-flow, var(--flex-direction));
         }
 
         dropdown-localization-component {
@@ -319,9 +318,7 @@
     }
   ],
   "enabled_on": {
-    "groups": [
-      "footer"
-    ]
+    "groups": ["footer"]
   },
   "settings": [
     {
@@ -467,10 +464,7 @@
               }
             }
           },
-          "block_order": [
-            "newsletter-heading",
-            "newsletter-text"
-          ]
+          "block_order": ["newsletter-heading", "newsletter-text"]
         },
         "newsletter-form": {
           "type": "email-signup",
@@ -479,10 +473,7 @@
           }
         }
       },
-      "block_order": [
-        "newsletter-group",
-        "newsletter-form"
-      ]
+      "block_order": ["newsletter-group", "newsletter-form"]
     }
   ]
 }
