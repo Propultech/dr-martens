@@ -336,7 +336,7 @@
       "block_order": [
         "group_7qxgBz"
       ],
-      "name": "Hero - TOP",
+      "name": "Hero - Top",
       "settings": {
         "media_type_1": "image",
         "image_1": "shopify://shop_images/fondo_home.gif",
@@ -1131,7 +1131,7 @@
       "block_order": [
         "group_rLCEYE"
       ],
-      "name": "t:names.hero",
+      "name": "Hero - Center",
       "settings": {
         "media_type_1": "image",
         "image_1": "shopify://shop_images/hero_center_home.jpg",
