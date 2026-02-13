@@ -1387,6 +1387,36 @@
         "padding-inline-start-mobile": 0,
         "padding-inline-end-mobile": 0
       }
+    },
+    "blog_article_showcase_dVq7q9": {
+      "type": "blog-article-showcase",
+      "name": "Artículo de Blog",
+      "settings": {
+        "article": "news/rewair-x-depop",
+        "title": "Historias de DR. MARTENS",
+        "heading_alignment": "text-left",
+        "show_image": true,
+        "show_title": true,
+        "show_subtitle": false,
+        "subtitle": "HISTORIAS DE DR. MARTENS",
+        "show_author": false,
+        "show_date": false,
+        "show_excerpt": true,
+        "show_button": true,
+        "button_text": "DESCUBRE MÁS",
+        "button_style": "link",
+        "media_position": "left",
+        "media_width": "wide",
+        "media_height": "auto",
+        "gap_desktop": 44,
+        "gap_mobile": 20,
+        "section_width": "page-width",
+        "color_scheme": "scheme-397490af-ec3d-4e12-a4e1-10901b3baade",
+        "padding-block-start": 50,
+        "padding-block-end": 20,
+        "padding-block-start-mobile": 35,
+        "padding-block-end-mobile": 40
+      }
     }
   },
   "order": [
@@ -1396,6 +1426,7 @@
     "tabs_collections_CWqwz6",
     "product_list_aLBdAE",
     "hero_9gdi7R",
-    "product_list_3JCKYP"
+    "product_list_3JCKYP",
+    "blog_article_showcase_dVq7q9"
   ]
 }
