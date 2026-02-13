@@ -1360,6 +1360,7 @@
           ]
         }
       },
+      "disabled": true,
       "name": "THE STYLE EDIT",
       "settings": {
         "collection": "",
