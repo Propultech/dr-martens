@@ -95,6 +95,16 @@
       <h4>{{ title }}</h4>
       {{ details }}
       {{ description }}
+      {% if block_settings.read_more_text != blank %}
+        <a
+          class="featured-blog-posts-card__read-more"
+          {% unless onboarding %}
+            href="{{ article.url }}"
+          {% endunless %}
+        >
+          {{ block_settings.read_more_text }}
+        </a>
+      {% endif %}
     </div>
   </div>
 </div>
@@ -145,6 +155,18 @@
   .featured-blog-posts-card__content h4 {
     margin: 0;
   }
+
+  .featured-blog-posts-card__read-more {
+    display: inline-block;
+    margin-top: 5px;
+    font-size: var(--font-size--md);
+    font-weight: var(--font-accent--weight);
+    text-transform: uppercase;
+    letter-spacing: 0.25px;
+    color: var(--color-foreground);
+    line-height: 18px;
+    text-decoration: none;
+  }
 {% endstylesheet %}
 
 {% schema %}
@@ -155,6 +177,13 @@
     {
       "type": "header",
       "content": "t:content.text"
+    },
+    {
+      "type": "text",
+      "id": "read_more_text",
+      "label": "Texto del enlace",
+      "default": "Leer ahora",
+      "info": "Texto que aparecerá en el enlace al final de la tarjeta"
     },
     {
       "type": "select",
