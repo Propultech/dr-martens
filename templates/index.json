@@ -563,18 +563,18 @@
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "left",
-                "type_preset": "h5",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
+                "type_preset": "custom",
+                "font": "var(--font-accent--family)",
+                "font_size": "0.875rem",
+                "line_height": "tight",
                 "letter_spacing": "normal",
-                "case": "none",
+                "case": "uppercase",
                 "wrap": "pretty",
                 "color": "var(--color-foreground)",
                 "background": false,
                 "background_color": "#00000026",
                 "corner_radius": 0,
-                "padding-block-start": 4,
+                "padding-block-start": 0,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
@@ -588,7 +588,7 @@
                 "show_sale_price_first": true,
                 "show_installments": false,
                 "show_tax_info": false,
-                "type_preset": "paragraph",
+                "type_preset": "custom",
                 "width": "100%",
                 "alignment": "left",
                 "font": "var(--font-body--family)",
@@ -597,7 +597,7 @@
                 "letter_spacing": "normal",
                 "case": "none",
                 "color": "var(--color-foreground)",
-                "padding-block-start": 0,
+                "padding-block-start": 5,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0,
@@ -642,6 +642,112 @@
         "padding-inline-end": 35,
         "padding-block-start-mobile": 20,
         "padding-block-end-mobile": 46,
+        "padding-inline-start-mobile": 0,
+        "padding-inline-end-mobile": 0
+      }
+    },
+    "tabs_collections_CWqwz6": {
+      "type": "tabs-collections",
+      "blocks": {
+        "tab_VxtYRi": {
+          "type": "_tab",
+          "settings": {
+            "label": "Hombre",
+            "collection_list": [
+              "botas",
+              "tall-boots-copia",
+              "botas-copia",
+              "dm-s-shoes-copia"
+            ],
+            "button_text": "Comprar ahora",
+            "columns_gap": 20,
+            "mobile_columns_gap": 20,
+            "columns": 3,
+            "mobile_columns": 2,
+            "icons_style": "chevron",
+            "icons_shape": "none"
+          },
+          "blocks": {}
+        },
+        "tab_HjHNna": {
+          "type": "_tab",
+          "settings": {
+            "label": "Mujer",
+            "collection_list": [
+              "botas",
+              "tall-boots-copia",
+              "botas-copia",
+              "dm-s-shoes-copia"
+            ],
+            "button_text": "Comprar ahora",
+            "columns_gap": 20,
+            "mobile_columns_gap": 20,
+            "columns": 3,
+            "mobile_columns": 2,
+            "icons_style": "chevron",
+            "icons_shape": "none"
+          },
+          "blocks": {}
+        },
+        "tab_rYkFQB": {
+          "type": "_tab",
+          "settings": {
+            "label": "Unisex",
+            "collection_list": [
+              "botas",
+              "tall-boots-copia",
+              "botas-copia",
+              "dm-s-shoes-copia"
+            ],
+            "button_text": "Comprar ahora",
+            "columns_gap": 20,
+            "mobile_columns_gap": 20,
+            "columns": 3,
+            "mobile_columns": 2,
+            "icons_style": "chevron",
+            "icons_shape": "none"
+          },
+          "blocks": {}
+        },
+        "tab_a6Ca6J": {
+          "type": "_tab",
+          "settings": {
+            "label": "Kids",
+            "collection_list": [
+              "botas",
+              "tall-boots-copia",
+              "botas-copia",
+              "dm-s-shoes-copia"
+            ],
+            "button_text": "Comprar ahora",
+            "columns_gap": 20,
+            "mobile_columns_gap": 20,
+            "columns": 3,
+            "mobile_columns": 2,
+            "icons_style": "chevron",
+            "icons_shape": "none"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "tab_VxtYRi",
+        "tab_HjHNna",
+        "tab_rYkFQB",
+        "tab_a6Ca6J"
+      ],
+      "name": "Tabs de colecciones",
+      "settings": {
+        "heading": "Hecho para destacar",
+        "color_scheme": "scheme-f48d3ffd-3906-441c-a0dc-7151306deb8a",
+        "section_width": "page-width",
+        "content_alignment": "left",
+        "padding-block-start": 0,
+        "padding-block-end": 94,
+        "padding-inline-start": 0,
+        "padding-inline-end": 0,
+        "padding-block-start-mobile": 0,
+        "padding-block-end-mobile": 69,
         "padding-inline-start-mobile": 0,
         "padding-inline-end-mobile": 0
       }
@@ -1939,6 +2045,7 @@
     "section_eMhXmK",
     "hero_nDerYx",
     "product_list_fa6P9H",
+    "tabs_collections_CWqwz6",
     "hero_9gdi7R",
     "product_list_3JCKYP",
     "section_gzG6zz"
