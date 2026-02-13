@@ -73,7 +73,7 @@
               "name": "t:names.popup_link",
               "settings": {
                 "behavior": "default",
-                "heading": "Más información",
+                "heading": "Tabla de talles",
                 "type_preset": "",
                 "padding-block-start": 0,
                 "padding-block-end": 0,
