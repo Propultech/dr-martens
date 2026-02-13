@@ -863,7 +863,7 @@
               "type": "_product-list-text",
               "name": "t:names.collection_title",
               "settings": {
-                "text": "<h3>ESTILOS POPULARES</h3>",
+                "text": "<h3>CLÁSICOS</h3>",
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "center",
