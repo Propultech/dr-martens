@@ -85,7 +85,7 @@
                   "type": "page",
                   "name": "t:names.page",
                   "settings": {
-                    "page": "contact",
+                    "page": "guia-de-tallas",
                     "inherit_color_scheme": true,
                     "color_scheme": "",
                     "background": false,
@@ -96,62 +96,10 @@
                     "padding-inline-end": 0
                   },
                   "blocks": {}
-                },
-                "text_3ERd4U": {
-                  "type": "text",
-                  "settings": {
-                    "text": "<h2>¿Cuál es la política de devoluciones?</h2>",
-                    "width": "fit-content",
-                    "max_width": "normal",
-                    "alignment": "left",
-                    "type_preset": "rte",
-                    "font": "var(--font-body--family)",
-                    "font_size": "1rem",
-                    "line_height": "normal",
-                    "letter_spacing": "normal",
-                    "case": "none",
-                    "wrap": "pretty",
-                    "color": "var(--color-foreground)",
-                    "background": false,
-                    "background_color": "#00000026",
-                    "corner_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 16,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
-                  },
-                  "blocks": {}
-                },
-                "text_dEkVJQ": {
-                  "type": "text",
-                  "settings": {
-                    "text": "<p>Nuestro objetivo es que cada cliente quede totalmente satisfecho con su compra. Si no es así, cuéntanoslo y haremos todo lo posible para solucionarlo.</p>",
-                    "width": "fit-content",
-                    "max_width": "normal",
-                    "alignment": "left",
-                    "type_preset": "rte",
-                    "font": "var(--font-body--family)",
-                    "font_size": "1rem",
-                    "line_height": "normal",
-                    "letter_spacing": "normal",
-                    "case": "none",
-                    "wrap": "pretty",
-                    "color": "var(--color-foreground)",
-                    "background": false,
-                    "background_color": "#00000026",
-                    "corner_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
-                  },
-                  "blocks": {}
                 }
               },
               "block_order": [
-                "page_VnPirf",
-                "text_3ERd4U",
-                "text_dEkVJQ"
+                "page_VnPirf"
               ]
             },
             "popup_link_rMdiEq": {
