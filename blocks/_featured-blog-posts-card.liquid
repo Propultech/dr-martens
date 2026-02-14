@@ -92,7 +92,15 @@
     {% endif %}
 
     <div class="featured-blog-posts-card__content layout-panel-flex--column">
-      <h4>{{ title }}</h4>
+      <h4
+        style="
+          {% if block_settings.title_background != blank %}background-color: {{ block_settings.title_background }};{% endif %}
+          {% if block_settings.title_color != blank %}color: {{ block_settings.title_color }};{% endif %}
+          {% if block_settings.title_background != blank %}padding: 0 5px; width: fit-content;{% endif %}
+        "
+      >
+        {{ title }}
+      </h4>
       {{ details }}
       {{ description }}
       {% if block_settings.read_more_text != blank %}
@@ -177,6 +185,20 @@
     {
       "type": "header",
       "content": "t:content.text"
+    },
+    {
+      "type": "header",
+      "content": "Título"
+    },
+    {
+      "type": "color",
+      "id": "title_background",
+      "label": "Color de fondo del título"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Color de texto del título"
     },
     {
       "type": "text",
