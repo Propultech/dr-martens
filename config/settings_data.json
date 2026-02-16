@@ -96,6 +96,17 @@
     "variant_button_radius": 2,
     "variant_button_width": "default-width-buttons",
     "button_font_weight_secondary": "default",
+    "sections": {
+      "password-footer": {
+        "type": "password-footer",
+        "custom_css": [
+          ".password-enter.color-scheme-1 {display: none;}"
+        ],
+        "settings": {
+          "color_scheme": ""
+        }
+      }
+    },
     "content_for_index": [],
     "color_schemes": {
       "scheme-1": {

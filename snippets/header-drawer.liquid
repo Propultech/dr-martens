@@ -1100,6 +1100,7 @@
     font-family: var(--menu-top-level-font-family);
     font-style: var(--menu-top-level-font-style);
     font-weight: var(--menu-top-level-font-weight);
+    font-stretch: var(--menu-top-level-font-stretch, normal);
     font-size: var(--menu-top-level-font-size);
     line-height: var(--menu-top-level-font-line-height);
     text-transform: var(--menu-top-level-font-case);
@@ -1115,7 +1116,8 @@
     font-family: var(--menu-parent-font-family);
     font-style: var(--menu-parent-font-style);
     font-weight: var(--menu-parent-font-weight);
-    font-size: var(--menu-parent-font-size-mobile);
+    font-stretch: var(--menu-parent-font-stretch, normal);
+    font-size: var(--menu-parent-font-size);
     line-height: var(--menu-parent-font-line-height);
     text-transform: initial; /* text-transform: var(--menu-parent-font-case); */
     color: var(--menu-parent-font-color);
@@ -1128,7 +1130,8 @@
   .menu-drawer__menu-item--child {
     font-family: var(--menu-child-font-family);
     font-style: var(--menu-child-font-style);
-    font-weight: normal; /* font-weight: var(--menu-child-font-weight); */
+    font-weight: var(--menu-child-font-weight);
+    font-stretch: var(--menu-child-font-stretch, normal);
     font-size: var(--menu-child-font-size);
     line-height: var(--menu-child-font-line-height);
     text-transform: initial; /* text-transform: var(--menu-parent-font-case); */
