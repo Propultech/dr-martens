@@ -14,18 +14,20 @@
     "divider_Pk4BXt": {
       "type": "divider",
       "custom_css": [
-        "hr {display: none}"
+        "span {display: none;}",
+        "div {display: none;}",
+        "@media screen and (max-width: 750px) {div {display: block; }}"
       ],
       "name": "t:names.divider_section",
       "settings": {
-        "color_scheme": "scheme-385b1161-68c1-4d9f-a958-2cbee667047e",
+        "color_scheme": "scheme-60aa71c6-7abe-4eab-8b23-c4c7555080f4",
         "section_width": "full-width",
         "thickness": 0.5,
         "corner_radius": "square",
         "width_percent": 100,
         "alignment_horizontal": "center",
-        "padding-block-start": 16,
-        "padding-block-end": 16,
+        "padding-block-start": 0,
+        "padding-block-end": 0,
         "padding-block-start-mobile": 0,
         "padding-block-end-mobile": 0,
         "padding-inline-start-mobile": 0,
