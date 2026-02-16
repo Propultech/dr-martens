@@ -16,11 +16,11 @@
       "custom_css": [
         "span {display: none;}",
         "div {display: none;}",
-        "@media screen and (max-width: 750px) {div {display: block; height: 40px }}"
+        "@media screen and (max-width: 750px) {div {display: block; height: 40px; }}"
       ],
       "name": "t:names.divider_section",
       "settings": {
-        "color_scheme": "scheme-60aa71c6-7abe-4eab-8b23-c4c7555080f4",
+        "color_scheme": "scheme-d834ac77-589c-4d43-b03b-5c648d2fcf65",
         "section_width": "full-width",
         "thickness": 0.5,
         "corner_radius": "square",
