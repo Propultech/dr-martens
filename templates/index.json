@@ -86,10 +86,10 @@
         "padding-inline-end-mobile": 0
       }
     },
-    "hero_nDerYx": {
+    "hero_CKYTDh": {
       "type": "hero",
       "blocks": {
-        "group_7qxgBz": {
+        "group_qqzHkn": {
           "type": "group",
           "name": "t:names.group",
           "settings": {
@@ -127,13 +127,13 @@
             "padding-block-end": 0,
             "padding-inline-start": 100,
             "padding-inline-end": 0,
-            "padding-block-start-mobile": 0,
-            "padding-block-end-mobile": 0,
-            "padding-inline-start-mobile": 0,
-            "padding-inline-end-mobile": 0
+            "padding-block-start-mobile": 75,
+            "padding-block-end-mobile": 54,
+            "padding-inline-start-mobile": 30,
+            "padding-inline-end-mobile": 30
           },
           "blocks": {
-            "text_x8YQfB": {
+            "text_ihKXnH": {
               "type": "text",
               "settings": {
                 "text": "<p>SALE</p>",
@@ -143,7 +143,7 @@
                 "type_preset": "custom",
                 "font": "var(--font-accent--family)",
                 "font_size": "7.5rem",
-                "font_size_mobile": "",
+                "font_size_mobile": "1.875rem",
                 "line_height": "tight",
                 "letter_spacing": "loose",
                 "case": "uppercase",
@@ -168,7 +168,7 @@
               },
               "blocks": {}
             },
-            "text_h8rbpw": {
+            "text_yUeEGf": {
               "type": "text",
               "name": "t:names.text",
               "settings": {
@@ -179,14 +179,14 @@
                 "type_preset": "custom",
                 "font": "var(--font-accent--family)",
                 "font_size": "1.875rem",
-                "font_size_mobile": "",
+                "font_size_mobile": "1.875rem",
                 "line_height": "tight",
                 "letter_spacing": "normal",
                 "case": "uppercase",
                 "wrap": "pretty",
                 "color": "var(--color-foreground)",
                 "italic_color": "",
-                "strong_color": "",
+                "strong_color": "#fedb00",
                 "background": false,
                 "line_highlight": false,
                 "background_color": "#00000026",
@@ -204,7 +204,7 @@
               },
               "blocks": {}
             },
-            "text_UydG4G": {
+            "text_FjzALt": {
               "type": "text",
               "name": "t:names.text",
               "settings": {
@@ -215,7 +215,7 @@
                 "type_preset": "custom",
                 "font": "var(--font-body--family)",
                 "font_size": "1rem",
-                "font_size_mobile": "",
+                "font_size_mobile": "1rem",
                 "line_height": "tight",
                 "letter_spacing": "normal",
                 "case": "uppercase",
@@ -240,7 +240,7 @@
               },
               "blocks": {}
             },
-            "group_JiK8g8": {
+            "group_kbefPD": {
               "type": "group",
               "name": "t:names.group",
               "settings": {
@@ -284,7 +284,7 @@
                 "padding-inline-end-mobile": 0
               },
               "blocks": {
-                "button_t36Ea6": {
+                "button_8fPygy": {
                   "type": "button",
                   "name": "t:names.button",
                   "settings": {
@@ -296,12 +296,12 @@
                     "custom_width": 100,
                     "width_mobile": "fit-content",
                     "custom_width_mobile": 100,
-                    "font_size_desktop": "",
-                    "font_size_mobile": ""
+                    "font_size_desktop": "1.25rem",
+                    "font_size_mobile": "1.25rem"
                   },
                   "blocks": {}
                 },
-                "button_zFGPBy": {
+                "button_6nK3er": {
                   "type": "button",
                   "name": "t:names.button",
                   "settings": {
@@ -313,28 +313,28 @@
                     "custom_width": 100,
                     "width_mobile": "fit-content",
                     "custom_width_mobile": 100,
-                    "font_size_desktop": "",
-                    "font_size_mobile": ""
+                    "font_size_desktop": "1.25rem",
+                    "font_size_mobile": "1.25rem"
                   },
                   "blocks": {}
                 }
               },
               "block_order": [
-                "button_t36Ea6",
-                "button_zFGPBy"
+                "button_8fPygy",
+                "button_6nK3er"
               ]
             }
           },
           "block_order": [
-            "text_x8YQfB",
-            "text_h8rbpw",
-            "text_UydG4G",
-            "group_JiK8g8"
+            "text_ihKXnH",
+            "text_yUeEGf",
+            "text_FjzALt",
+            "group_kbefPD"
           ]
         }
       },
       "block_order": [
-        "group_7qxgBz"
+        "group_qqzHkn"
       ],
       "name": "Hero - Top",
       "settings": {
@@ -1595,7 +1595,7 @@
   },
   "order": [
     "section_eMhXmK",
-    "hero_nDerYx",
+    "hero_CKYTDh",
     "product_list_fa6P9H",
     "tabs_collections_CWqwz6",
     "product_list_aLBdAE",
