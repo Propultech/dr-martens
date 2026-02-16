@@ -75,6 +75,7 @@ select {
 /* Editorial layout */
 .resource-list:not(.hidden--desktop) .collection-card--flexible-aspect-ratio,
 .resource-list:not(.hidden--desktop) .blog-post-card--flexible-aspect-ratio {
+
   .collection-card__image,
   .featured-blog-posts-card__image,
   .blog-placeholder-svg {
@@ -165,6 +166,7 @@ select {
 }
 
 @media (any-pointer: fine) and (prefers-reduced-motion: no-preference) {
+
   .card-hover-effect-lift .product-card:hover,
   .card-hover-effect-lift .collection-card:hover,
   .card-hover-effect-lift .resource-card:hover,
@@ -274,7 +276,7 @@ p:empty {
 }
 
 :first-child:is(p, h1, h2, h3, h4, h5, h6),
-:first-child:empty + :where(p, h1, h2, h3, h4, h5, h6) {
+:first-child:empty+ :where(p, h1, h2, h3, h4, h5, h6) {
   margin-block-start: 0;
 }
 
@@ -382,15 +384,16 @@ p:empty {
 .page-width-normal,
 .page-width-narrow,
 .page-width-content {
-  --page-margin: 16px;
+  --page-margin: 15px;
 }
 
 @media screen and (min-width: 750px) {
+
   .page-width-wide,
   .page-width-normal,
   .page-width-narrow,
   .page-width-content {
-    --page-margin: 40px;
+    --page-margin: 60px;
   }
 }
 
@@ -422,19 +425,14 @@ p:empty {
    full-width background image even if the section content is constrained by the page width. Do not try
    to rewrite this to max-width: --page-width; margin: 0 auto;, it doesn't work. */
 .section {
-  --full-page-grid-central-column-width: min(
-    var(--page-width) - var(--page-margin) * 2,
-    calc(100% - var(--page-margin) * 2)
-  );
+  --full-page-grid-central-column-width: min(var(--page-width) - var(--page-margin) * 2,
+      calc(100% - var(--page-margin) * 2));
   --full-page-grid-margin: minmax(var(--page-margin), 1fr);
-  --full-page-grid-with-margins: var(--full-page-grid-margin) var(--full-page-grid-central-column-width)
-    var(--full-page-grid-margin);
+  --full-page-grid-with-margins: var(--full-page-grid-margin) var(--full-page-grid-central-column-width) var(--full-page-grid-margin);
 
   /* Utility variable gives the grid's first column width. Provides an offset width for components like carousels */
-  --util-page-margin-offset: max(
-    var(--page-margin),
-    calc((100% - min(var(--page-content-width), 100% - var(--page-margin) * 2)) / 2)
-  );
+  --util-page-margin-offset: max(var(--page-margin),
+      calc((100% - min(var(--page-content-width), 100% - var(--page-margin) * 2)) / 2));
 
   /* Offset for full-width sections to account for the page margin,
   used for Marquee — note that --util-page-margin-offset doesn't work here */
@@ -452,7 +450,7 @@ p:empty {
 }
 
 /* Place all direct children in the center column by default */
-.section > * {
+.section>* {
   grid-column: 2;
 }
 
@@ -473,28 +471,28 @@ p:empty {
 }
 
 /* For page-width sections, all content goes in the center column */
-.section--page-width > * {
+.section--page-width>* {
   grid-column: 2;
 }
 
 /* For full-width sections, content spans all columns */
-.section--full-width > * {
+.section--full-width>* {
   grid-column: 1 / -1;
 }
 
 @media screen and (max-width: 749px) {
-  .section--mobile-full-width > * {
+  .section--mobile-full-width>* {
     grid-column: 1 / -1;
   }
 }
 
 /* Some page-width sections should still extend all the way to the right edge of the page, e.g. collection carousel */
-.section--page-width.section--full-width-right > * {
+.section--page-width.section--full-width-right>* {
   grid-column: 2 / 4;
 }
 
 /* For full-width sections with margin, content still spans full width but with space on the sides */
-.section--full-width.section--full-width-margin > * {
+.section--full-width.section--full-width-margin>* {
   grid-column: 1 / -1;
 
   @media screen and (min-width: 750px) {
@@ -504,7 +502,7 @@ p:empty {
 }
 
 /* Some section content break out to full width of the page */
-.section > .force-full-width {
+.section>.force-full-width {
   grid-column: 1 / -1;
 }
 
@@ -539,6 +537,7 @@ p:empty {
 }
 
 @media screen and (max-width: 749px) {
+
   .hidden--mobile,
   .mobile\:hidden {
     /* stylelint-disable-next-line declaration-no-important */
@@ -547,6 +546,7 @@ p:empty {
 }
 
 @media screen and (min-width: 750px) {
+
   .hidden--desktop,
   .desktop\:hidden {
     /* stylelint-disable-next-line declaration-no-important */
@@ -620,11 +620,8 @@ p:empty {
 @media screen and (min-width: 1400px) {
   .grid {
     grid-template-columns:
-      1fr repeat(
-        var(--centered-column-number),
-        minmax(0, calc((var(--page-width) - var(--page-margin) * 2) / var(--centered-column-number)))
-      )
-      1fr;
+      1fr repeat(var(--centered-column-number),
+        minmax(0, calc((var(--page-width) - var(--page-margin) * 2) / var(--centered-column-number)))) 1fr;
   }
 }
 
@@ -751,7 +748,7 @@ p:empty {
   height: var(--icon-size-xs);
 }
 
-.svg-wrapper > svg {
+.svg-wrapper>svg {
   width: var(--icon-size-sm);
   height: var(--icon-size-sm);
 }
@@ -791,7 +788,7 @@ slideshow-component [data-placeholder='true'] * {
 /* Base text and heading styles */
 body,
 .paragraph:not(.button),
-.paragraph > * {
+.paragraph>* {
   font-family: var(--font-paragraph--family);
   font-style: var(--font-paragraph--style);
   font-weight: var(--font-paragraph--weight);
@@ -804,6 +801,7 @@ body,
 
 /* Ensure inputs with type presets maintain minimum 16px on mobile to prevent iOS zoom */
 @media screen and (max-width: 1200px) {
+
   input.paragraph.paragraph,
   input.paragraph.paragraph:not([type]),
   textarea.paragraph.paragraph,
@@ -812,7 +810,7 @@ body,
   }
 }
 
-.paragraph > small {
+.paragraph>small {
   font-size: smaller;
 }
 
@@ -820,7 +818,7 @@ body,
 
 h1,
 .h1.h1,
-.text-block.h1 > * {
+.text-block.h1>* {
   font-family: var(--font-h1--family);
   font-style: var(--font-h1--style);
   font-weight: var(--font-h1--weight);
@@ -833,6 +831,7 @@ h1,
 }
 
 @media screen and (max-width: 1200px) {
+
   input.h1.h1,
   textarea.h1.h1,
   select.h1.h1 {
@@ -842,7 +841,7 @@ h1,
 
 h2,
 .h2.h2,
-.text-block.h2 > * {
+.text-block.h2>* {
   font-family: var(--font-h2--family);
   font-style: var(--font-h2--style);
   font-weight: var(--font-h2--weight);
@@ -855,6 +854,7 @@ h2,
 }
 
 @media screen and (max-width: 1200px) {
+
   input.h2.h2,
   textarea.h2.h2,
   select.h2.h2 {
@@ -865,7 +865,7 @@ h2,
 h3,
 .h3,
 .h3.h3,
-.text-block.h3 > * {
+.text-block.h3>* {
   font-family: var(--font-h3--family);
   font-style: var(--font-h3--style);
   font-weight: var(--font-h3--weight);
@@ -878,6 +878,7 @@ h3,
 }
 
 @media screen and (max-width: 1200px) {
+
   input.h3,
   textarea.h3,
   select.h3 {
@@ -887,7 +888,7 @@ h3,
 
 h4,
 .h4.h4,
-.text-block.h4 > * {
+.text-block.h4>* {
   font-family: var(--font-h4--family);
   font-style: var(--font-h4--style);
   font-weight: var(--font-h4--weight);
@@ -900,6 +901,7 @@ h4,
 }
 
 @media screen and (max-width: 1200px) {
+
   input.h4.h4,
   textarea.h4.h4,
   select.h4.h4 {
@@ -909,7 +911,7 @@ h4,
 
 h5,
 .h5.h5,
-.text-block.h5 > * {
+.text-block.h5>* {
   font-family: var(--font-h5--family);
   font-style: var(--font-h5--style);
   font-weight: var(--font-h5--weight);
@@ -922,6 +924,7 @@ h5,
 }
 
 @media screen and (max-width: 1200px) {
+
   input.h5.h5,
   textarea.h5.h5,
   select.h5.h5 {
@@ -931,7 +934,7 @@ h5,
 
 h6,
 .h6.h6,
-.text-block.h6 > * {
+.text-block.h6>* {
   font-family: var(--font-h6--family);
   font-style: var(--font-h6--style);
   font-weight: var(--font-h6--weight);
@@ -944,6 +947,7 @@ h6,
 }
 
 @media screen and (max-width: 1200px) {
+
   input.h6.h6,
   textarea.h6.h6,
   select.h6.h6 {
@@ -971,15 +975,13 @@ a {
     color var(--animation-speed) var(--animation-easing);
 }
 
-:is(h1, h2, h3, h4, h5, h6, p) > a:hover {
+:is(h1, h2, h3, h4, h5, h6, p)>a:hover {
   --button-color: var(--color, var(--color-primary-hover));
 }
 
 /* Add underline to text using our paragraph styles only. */
 p:not(.h1, .h2, .h3, .h4, .h5, .h6) a:where(:not(.button, .button-primary, .button-secondary)),
-.rte
-  :is(p, ul, ol, table):not(.h1, .h2, .h3, .h4, .h5, .h6)
-  a:where(:not(.button, .button-primary, .button-secondary)) {
+.rte :is(p, ul, ol, table):not(.h1, .h2, .h3, .h4, .h5, .h6) a:where(:not(.button, .button-primary, .button-secondary)) {
   text-decoration-color: currentcolor;
 
   &:hover {
@@ -1002,7 +1004,7 @@ details:not([open]) .summary-open {
   display: none;
 }
 
-details[open] > summary .icon-animated > svg {
+details[open]>summary .icon-animated>svg {
   transform: rotate(180deg);
 }
 
@@ -1012,17 +1014,17 @@ summary::-webkit-details-marker {
 }
 
 /* When header is transparent, pull the first main content section up to sit under the floating header */
-body:has(.header[transparent]) .content-for-layout > .shopify-section:first-child {
+body:has(.header[transparent]) .content-for-layout>.shopify-section:first-child {
   margin-top: calc(var(--header-group-height) * -1);
 }
 
-body:has(.header[transparent]) #header-group > .header-section {
+body:has(.header[transparent]) #header-group>.header-section {
   z-index: var(--layer-sticky);
 }
 
 /* All other header group content should be beneath the floating header,
 but above the rest of the page content */
-body:has(.header[transparent]) #header-group > *:not(.header-section) {
+body:has(.header[transparent]) #header-group>*:not(.header-section) {
   z-index: calc(var(--layer-sticky) - 1);
 }
 
@@ -1104,13 +1106,13 @@ body:has(.header[transparent]) #header-group > *:not(.header-section) {
   }
 }
 
-.product-grid__card .group-block > * {
+.product-grid__card .group-block>* {
   @media screen and (max-width: 749px) {
     flex-direction: column;
   }
 }
 
-ul[product-grid-view='zoom-out'] .product-grid__card > * {
+ul[product-grid-view='zoom-out'] .product-grid__card>* {
   display: none;
 }
 
@@ -1118,21 +1120,17 @@ ul[product-grid-view='zoom-out'] .product-grid__card .card-gallery {
   display: block;
 }
 
-[product-grid-view='zoom-out']
-  .card-gallery
-  > :is(quick-add-component, .product-badges, slideshow-component > slideshow-controls) {
+[product-grid-view='zoom-out'] .card-gallery> :is(quick-add-component, .product-badges, slideshow-component > slideshow-controls) {
   display: none;
 }
 
-ul[product-grid-view='zoom-out'] .card-gallery > img {
+ul[product-grid-view='zoom-out'] .card-gallery>img {
   display: block;
 }
 
 [product-grid-view='zoom-out'] {
-  --product-grid-columns-desktop: repeat(
-    10,
-    minmax(clamp(50px, calc(100% - 9 * var(--product-grid-gap)) / 10, 80px), 1fr)
-  );
+  --product-grid-columns-desktop: repeat(10,
+      minmax(clamp(50px, calc(100% - 9 * var(--product-grid-gap)) / 10, 80px), 1fr));
 }
 
 .product-grid-view-zoom-out--details {
@@ -1155,15 +1153,15 @@ ul[product-grid-view='zoom-out'] .card-gallery > img {
   font-weight: 400;
 }
 
-.product-grid-view-zoom-out--details > span.h6,
-.product-grid-view-zoom-out--details > div.h6 > product-price {
+.product-grid-view-zoom-out--details>span.h6,
+.product-grid-view-zoom-out--details>div.h6>product-price {
   display: inline-block;
   line-height: 0;
   margin-top: var(--margin-2xs);
 }
 
-.product-grid-view-zoom-out--details > span.h6 > *,
-.product-grid-view-zoom-out--details > div.h6 > * > * {
+.product-grid-view-zoom-out--details>span.h6>*,
+.product-grid-view-zoom-out--details>div.h6>*>* {
   line-height: 1.2;
 }
 
@@ -1261,18 +1259,18 @@ results-list[initialized] {
   width: 100%;
 }
 
-.text-block > *:first-child,
-.text-block > *:first-child:empty + * {
+.text-block>*:first-child,
+.text-block>*:first-child:empty+* {
   margin-block-start: 0;
 }
 
-.text-block > *:last-child,
-.text-block > *:has(+ *:last-child:empty) {
+.text-block>*:last-child,
+.text-block>*:has(+ *:last-child:empty) {
   margin-block-end: 0;
 }
 
 /* This is to deal with the margin applied to the p when custom styles are enabled. The p isn't the first child anymore due to the style tag */
-.text-block > style + * {
+.text-block>style+* {
   margin-block-start: 0;
 }
 
@@ -1328,6 +1326,7 @@ results-list[initialized] {
   --dialog-drawer-opening-animation: move-and-fade;
   --dialog-drawer-closing-animation: move-and-fade;
 }
+
 /* stylelint-enable value-keyword-case */
 
 .dialog-drawer[open] {
@@ -1377,8 +1376,9 @@ button.shopify-payment-button__button--unbranded {
   border: none;
   font-family: var(--font-paragraph--family);
   font-style: var(--font-paragraph--style);
-  font-size: var(--font-paragraph--size);
-  line-height: var(--font-paragraph--line-height);
+  font-size: var(--button-block-font-size, var(--font-paragraph--size));
+  line-height: normal;
+  letter-spacing: 0.25px;
   margin-block: 0;
   transition: color var(--animation-speed) var(--animation-easing),
     box-shadow var(--animation-speed) var(--animation-easing),
@@ -1409,6 +1409,16 @@ button.shopify-payment-button__button--unbranded {
 button.shopify-payment-button__button--unbranded {
   font-family: var(--button-font-family-primary);
   text-transform: var(--button-text-case-primary);
+}
+
+@media screen and (max-width: 749px) {
+
+  .button,
+  .button-secondary,
+  button.shopify-payment-button__button--unbranded {
+    font-size: var(--button-block-font-size-mobile,
+        var(--button-block-font-size, var(--font-paragraph--size)));
+  }
 }
 
 textarea,
@@ -1542,8 +1552,7 @@ shopify-accelerated-checkout-cart {
   --shopify-accelerated-checkout-button-block-size: var(--height-buy-buttons);
 }
 
-.product-form-buttons:has(.add-to-cart-button.button-secondary)
-  :is(shopify-accelerated-checkout, shopify-accelerated-checkout-cart) {
+.product-form-buttons:has(.add-to-cart-button.button-secondary) :is(shopify-accelerated-checkout, shopify-accelerated-checkout-cart) {
   --shopify-accelerated-checkout-button-border-radius: var(--style-border-radius-buttons-secondary);
   --shopify-accelerated-checkout-button-block-size: var(--height-buy-buttons);
 }
@@ -1590,14 +1599,14 @@ summary .icon-plus :is(.horizontal, .vertical),
   opacity: 1;
 }
 
-details[open] > summary .icon-plus .horizontal,
-.details-open > summary .icon-plus .horizontal,
+details[open]>summary .icon-plus .horizontal,
+.details-open>summary .icon-plus .horizontal,
 .show-more:where([data-expanded='true']) .show-more__button .icon-plus .horizontal {
   transform: rotate(90deg);
 }
 
-details[open] > summary .icon-plus .vertical,
-.details-open > summary .icon-plus .vertical,
+details[open]>summary .icon-plus .vertical,
+.details-open>summary .icon-plus .vertical,
 .show-more:where([data-expanded='true']) .show-more__button .icon-plus .vertical {
   transform: rotate(90deg);
   opacity: 0;
@@ -1622,7 +1631,7 @@ media-gallery {
   }
 }
 
-:not(.dialog-zoomed-gallery) > .product-media-container {
+:not(.dialog-zoomed-gallery)>.product-media-container {
   /* width and overflow forces children to shrink to parent width */
   --slide-width: round(up, 100%, 1px);
 
@@ -1887,7 +1896,7 @@ zoom-dialog dialog {
 }
 
 /* If the product media is already providing an image cover, hide images provided by sibling deferred-media */
-.product-media__image ~ * .deferred-media__poster-image {
+.product-media__image~* .deferred-media__poster-image {
   display: none;
 }
 
@@ -1908,7 +1917,7 @@ zoom-dialog dialog {
 product-model model-viewer,
 /* Media that have a poster button sibling providing the size should be absolute-positioned.
 Otherwise, it should be a block to rely on its own size */
-:is(deferred-media, product-model) > .deferred-media__poster-button ~ *:not(template) {
+:is(deferred-media, product-model)>.deferred-media__poster-button~*:not(template) {
   display: block;
   position: absolute;
   top: 0;
@@ -1933,16 +1942,14 @@ slideshow-slide .shopify-model-viewer-ui__controls-area.shopify-model-viewer-ui_
 }
 
 @media screen and (max-width: 749px) {
-  slideshow-component:has(:not(.mobile\:hidden) :is(.slideshow-controls__dots, .slideshow-controls__counter))
-    .shopify-model-viewer-ui__controls-area {
+  slideshow-component:has(:not(.mobile\:hidden) :is(.slideshow-controls__dots, .slideshow-controls__counter)) .shopify-model-viewer-ui__controls-area {
     /* Position the controls just above the counter */
     bottom: calc(var(--minimum-touch-target) + var(--padding-sm));
   }
 }
 
 @media screen and (min-width: 750px) {
-  slideshow-component:has(:not(.desktop\:hidden) :is(.slideshow-controls__dots, .slideshow-controls__counter))
-    .shopify-model-viewer-ui__controls-area {
+  slideshow-component:has(:not(.desktop\:hidden) :is(.slideshow-controls__dots, .slideshow-controls__counter)) .shopify-model-viewer-ui__controls-area {
     /* Position the controls just above the counter */
     bottom: calc(var(--minimum-touch-target) + var(--padding-sm));
   }
@@ -1962,6 +1969,7 @@ slideshow-slide .shopify-model-viewer-ui__controls-area.shopify-model-viewer-ui_
 }
 
 deferred-media {
+
   /* The overflow hidden in the deferred-media won't let the button show the focus ring */
   &:has(:focus-visible) {
     outline: var(--focus-outline-width) solid currentcolor;
@@ -2048,7 +2056,7 @@ deferred-media[class] :is(.deferred-media__poster-button img, .deferred-media__p
   padding: var(--padding-md);
 }
 
-.button-shopify-xr > svg {
+.button-shopify-xr>svg {
   width: var(--icon-size-sm);
   height: var(--icon-size-sm);
   margin-inline-end: var(--margin-md);
@@ -2061,8 +2069,10 @@ deferred-media[class] :is(.deferred-media__poster-button img, .deferred-media__p
 /* Swatches */
 .swatch {
   --color-border: rgb(var(--color-foreground-rgb) / var(--style-border-swatch-opacity));
-  --min-width-unitless: 15.9999; /* want to avoid division by 0 */
-  --min-height-unitless: 15.9999; /* want to avoid division by 0 */
+  --min-width-unitless: 15.9999;
+  /* want to avoid division by 0 */
+  --min-height-unitless: 15.9999;
+  /* want to avoid division by 0 */
   --min-height: 16px;
   --min-width: 16px;
 
@@ -2091,27 +2101,19 @@ deferred-media[class] :is(.deferred-media__poster-button img, .deferred-media__p
     We also want the result to always be smaller than the input (pdp > everywhere else)
     by some scaling factor.
   */
-  --offset-scaled-width: calc(
-    var(--scaling-factor) * var(--offset-swatch-width) / var(--offset-swatch-height) * var(--offset-max-swatch-size)
-  );
-  --offset-scaled-height: calc(
-    var(--scaling-factor) * var(--offset-swatch-height) / var(--offset-swatch-width) * var(--offset-max-swatch-size)
-  );
+  --offset-scaled-width: calc(var(--scaling-factor) * var(--offset-swatch-width) / var(--offset-swatch-height) * var(--offset-max-swatch-size));
+  --offset-scaled-height: calc(var(--scaling-factor) * var(--offset-swatch-height) / var(--offset-swatch-width) * var(--offset-max-swatch-size));
   --offset-max-swatch-size: calc(var(--max-swatch-size) - var(--min-width));
 
   /* width = min(m + sU, (m + s * W'/H' * M'), M) */
-  --swatch-width: min(
-    calc(var(--min-width) + var(--scaling-factor) * var(--offset-swatch-width) * 1px),
-    calc(var(--min-width) + var(--offset-scaled-width)),
-    var(--max-swatch-size)
-  );
+  --swatch-width: min(calc(var(--min-width) + var(--scaling-factor) * var(--offset-swatch-width) * 1px),
+      calc(var(--min-width) + var(--offset-scaled-width)),
+      var(--max-swatch-size));
 
   /* height = min(m + sV, (m + s * H'/W' * M'), M) */
-  --swatch-height: min(
-    calc(var(--min-height) + var(--scaling-factor) * var(--offset-swatch-height) * 1px),
-    calc(var(--min-height) + var(--offset-scaled-height)),
-    var(--max-swatch-size)
-  );
+  --swatch-height: min(calc(var(--min-height) + var(--scaling-factor) * var(--offset-swatch-height) * 1px),
+      calc(var(--min-height) + var(--offset-scaled-height)),
+      var(--max-swatch-size));
 
   display: block;
   background: var(--swatch-background);
@@ -2182,8 +2184,9 @@ deferred-media[class] :is(.deferred-media__poster-button img, .deferred-media__p
 }
 
 @media screen and (min-width: 750px) {
+
   .sticky-content--desktop,
-  .sticky-content--desktop.full-height--desktop > .group-block {
+  .sticky-content--desktop.full-height--desktop>.group-block {
     position: sticky;
     top: var(--sticky-header-offset, 0);
     z-index: var(--layer-flat);
@@ -2208,7 +2211,7 @@ deferred-media[class] :is(.deferred-media__poster-button img, .deferred-media__p
   color: rgb(var(--color-foreground-rgb) / var(--opacity-subdued-text));
 }
 
-product-price.text-block:is(.h1, .h2, .h3, .h4, .h5, .h6) > *:not(.tax-note) {
+product-price.text-block:is(.h1, .h2, .h3, .h4, .h5, .h6)>*:not(.tax-note) {
   margin-block: 0;
 }
 
@@ -2301,11 +2304,11 @@ product-price.text-block:is(.h1, .h2, .h3, .h4, .h5, .h6) > *:not(.tax-note) {
   /* Must disable this, when you use these with calc and another unit type, things break — see logo.liquid */
   /* stylelint-disable length-zero-no-unit */
   --padding-block: 0px;
-  --padding-block-start: var(--padding-block, 0px);
-  --padding-block-end: var(--padding-block, 0px);
+  --padding-block-start-base: var(--padding-block, 0px);
+  --padding-block-end-base: var(--padding-block, 0px);
   --padding-inline: 0px;
-  --padding-inline-start: var(--padding-inline, 0px);
-  --padding-inline-end: var(--padding-inline, 0px);
+  --padding-inline-start-base: var(--padding-inline, 0px);
+  --padding-inline-end-base: var(--padding-inline, 0px);
   --margin-block: 0px;
   --margin-block-start: var(--margin-block, 0px);
   --margin-block-end: var(--margin-block, 0px);
@@ -2316,10 +2319,30 @@ product-price.text-block:is(.h1, .h2, .h3, .h4, .h5, .h6) > *:not(.tax-note) {
 
 .spacing-style,
 .inherit-spacing {
+  --padding-block-start: var(--padding-block-start-base, var(--padding-block, 0px));
+  --padding-block-end: var(--padding-block-end-base, var(--padding-block, 0px));
+  --padding-inline-start: var(--padding-inline-start-base, var(--padding-inline, 0px));
+  --padding-inline-end: var(--padding-inline-end-base, var(--padding-inline, 0px));
+  --padding-block-start-mobile: initial;
+  --padding-block-end-mobile: initial;
+  --padding-inline-start-mobile: initial;
+  --padding-inline-end-mobile: initial;
+
   padding-block: calc(var(--padding-block-start) + var(--section-top-offset, 0px)) var(--padding-block-end);
   padding-inline: var(--padding-inline-start) var(--padding-inline-end);
   margin-block: var(--margin-block-start) var(--margin-block-end);
   margin-inline: var(--margin-inline-start) var(--margin-inline-end);
+}
+
+@media screen and (max-width: 749px) {
+
+  .spacing-style,
+  .inherit-spacing {
+    --padding-block-start: var(--padding-block-start-mobile, var(--padding-block-start-base, var(--padding-block, 0px)));
+    --padding-block-end: var(--padding-block-end-mobile, var(--padding-block-end-base, var(--padding-block, 0px)));
+    --padding-inline-start: var(--padding-inline-start-mobile, var(--padding-inline-start-base, var(--padding-inline, 0px)));
+    --padding-inline-end: var(--padding-inline-end-mobile, var(--padding-inline-end-base, var(--padding-inline, 0px)));
+  }
 }
 
 /* Size style */
@@ -2335,7 +2358,7 @@ product-price.text-block:is(.h1, .h2, .h3, .h4, .h5, .h6) > *:not(.tax-note) {
 
 /* Custom Typography style */
 .custom-typography,
-.custom-typography > * {
+.custom-typography>* {
   font-family: var(--font-family);
   font-weight: var(--font-weight);
   text-transform: var(--text-transform);
@@ -2361,12 +2384,20 @@ product-price.text-block:is(.h1, .h2, .h3, .h4, .h5, .h6) > *:not(.tax-note) {
 }
 
 .custom-font-size,
-.custom-font-size > * {
+.custom-font-size>* {
   font-size: var(--font-size);
 }
 
+@media screen and (max-width: 749px) {
+
+  .custom-font-size,
+  .custom-font-size>* {
+    font-size: var(--font-size-mobile, var(--font-size));
+  }
+}
+
 .custom-font-weight,
-.custom-font-weight > * {
+.custom-font-weight>* {
   font-weight: var(--weight);
 }
 
@@ -2416,19 +2447,19 @@ product-price.text-block:is(.h1, .h2, .h3, .h4, .h5, .h6) > *:not(.tax-note) {
   .layout-panel-flex--row:not(.mobile-column) {
     flex-wrap: var(--flex-wrap-mobile);
 
-    > .menu {
+    >.menu {
       flex: 1 1 min-content;
     }
 
-    > .text-block {
+    >.text-block {
       flex: 1 1 var(--max-width--display-tight);
     }
 
-    > .image-block {
+    >.image-block {
       flex: 1 1 var(--size-style-width-mobile-min);
     }
 
-    > .button {
+    >.button {
       flex: 0 0 fit-content;
     }
   }
@@ -2500,7 +2531,7 @@ product-price.text-block:is(.h1, .h2, .h3, .h4, .h5, .h6) > *:not(.tax-note) {
   }
 
   :first-child:is(p, h1, h2, h3, h4, h5, h6),
-  :first-child:empty + :is(p, h1, h2, h3, h4, h5, h6) {
+  :first-child:empty+ :is(p, h1, h2, h3, h4, h5, h6) {
     margin-block-start: 0;
   }
 
@@ -2599,17 +2630,17 @@ product-price.text-block:is(.h1, .h2, .h3, .h4, .h5, .h6) > *:not(.tax-note) {
     outline: none;
   }
 
-  &:focus-visible + .checkbox__label .icon-checkmark {
+  &:focus-visible+.checkbox__label .icon-checkmark {
     outline: var(--focus-outline-width) solid currentcolor;
     outline-offset: var(--focus-outline-offset);
   }
 
-  &:checked + .checkbox__label .icon-checkmark {
+  &:checked+.checkbox__label .icon-checkmark {
     background-color: var(--color-foreground);
     border-color: var(--color-foreground);
   }
 
-  &:disabled + .checkbox__label .icon-checkmark {
+  &:disabled+.checkbox__label .icon-checkmark {
     background-color: var(--input-disabled-background-color);
     border-color: var(--input-disabled-border-color);
   }
@@ -2645,7 +2676,7 @@ product-price.text-block:is(.h1, .h2, .h3, .h4, .h5, .h6) > *:not(.tax-note) {
   transition: opacity var(--animation-speed) var(--animation-easing);
 }
 
-.checkbox__input:disabled + .checkbox__label {
+.checkbox__input:disabled+.checkbox__label {
   color: var(--input-disabled-text-color);
 }
 
@@ -2812,7 +2843,7 @@ product-price.text-block:is(.h1, .h2, .h3, .h4, .h5, .h6) > *:not(.tax-note) {
   }
 }
 
-.pills__pill > .svg-wrapper {
+.pills__pill>.svg-wrapper {
   --close-icon-opacity: 0.4;
   --icon-stroke-width: 1px;
 
@@ -3089,6 +3120,7 @@ fly-to-cart.fly-to-cart--sticky {
 }
 
 @keyframes thumbnail-selected {
+
   0%,
   100% {
     box-shadow: 0 0 0 2px transparent;
@@ -3179,7 +3211,8 @@ fly-to-cart.fly-to-cart--sticky {
   position: absolute;
   z-index: var(--layer-lowest);
   inset: 0;
-  clip-path: inset(-50px 0 0 0); /* stylelint-disable-line */
+  clip-path: inset(-50px 0 0 0);
+  /* stylelint-disable-line */
 }
 
 @media (min-width: 750px) {
@@ -3194,7 +3227,8 @@ fly-to-cart.fly-to-cart--sticky {
   position: absolute;
   z-index: var(--layer-lowest);
   inset: 0;
-  clip-path: inset(0 0 -50px 0); /* stylelint-disable-line */
+  clip-path: inset(0 0 -50px 0);
+  /* stylelint-disable-line */
 }
 
 @media (min-width: 750px) {
@@ -3210,11 +3244,11 @@ fly-to-cart.fly-to-cart--sticky {
   aspect-ratio: var(--size-style-aspect-ratio, auto);
 }
 
-:not(deferred-media) > .video-placeholder-wrapper {
+:not(deferred-media)>.video-placeholder-wrapper {
   width: var(--video-placeholder-width);
 }
 
-.video-placeholder-wrapper > * {
+.video-placeholder-wrapper>* {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -3358,12 +3392,10 @@ slideshow-slide.product-media-container--tallest {
 }
 
 @media screen and (max-width: 749px) {
+
   /* Media gallery has a peeking slide on the right side always, and on the left side when the current slide is the last one */
-  .media-gallery--hint
-    :is(
-      slideshow-slide:has(+ slideshow-slide[aria-hidden='false']:last-of-type),
-      slideshow-slide[aria-hidden='false'] + slideshow-slide
-    ) {
+  .media-gallery--hint :is(slideshow-slide:has(+ slideshow-slide[aria-hidden='false']:last-of-type),
+    slideshow-slide[aria-hidden='false'] + slideshow-slide) {
     content-visibility: auto;
 
     slideshow-component[actioned] & {
@@ -3377,11 +3409,8 @@ slideshow-slide.product-media-container--tallest {
  * Card galleries preview the next or previous images on 'pointerenter', so we
  * try to kick load them beforehand (they are lazy loaded otherwise).
  */
-:is(.resource-list__carousel, .card-gallery)
-  :is(
-    slideshow-slide:has(+ slideshow-slide[aria-hidden='false']),
-    slideshow-slide[aria-hidden='false'] + slideshow-slide
-  ) {
+:is(.resource-list__carousel, .card-gallery) :is(slideshow-slide:has(+ slideshow-slide[aria-hidden='false']),
+  slideshow-slide[aria-hidden='false'] + slideshow-slide) {
   content-visibility: auto;
 
   slideshow-component[actioned] & {
@@ -3393,7 +3422,7 @@ slideshow-slide.product-media-container--tallest {
  * Be specific about HTML children structure to avoid targeting nested slideshows.
  * Ensure that the content is 'visible' while scrolling instead of 'auto' to avoid issues in Safari.
  */
-slideshow-component:is([dragging], [transitioning], :hover) > slideshow-container > slideshow-slides > slideshow-slide {
+slideshow-component:is([dragging], [transitioning], :hover)>slideshow-container>slideshow-slides>slideshow-slide {
   content-visibility: visible;
 }
 
@@ -3465,13 +3494,13 @@ slideshow-container {
 
 slideshow-component:is([autoplay]) {
   &:is([paused]) {
-    .icon-play > svg {
+    .icon-play>svg {
       display: block;
     }
   }
 
   &:not([paused]) {
-    .icon-pause > svg {
+    .icon-pause>svg {
       display: block;
     }
   }
@@ -3542,11 +3571,7 @@ slideshow-arrows .slideshow-control.slideshow-control--style-none {
   }
 }
 
-:not(.media-gallery--carousel)
-  > :is(slideshow-component:hover, slideshow-component:focus-within):not(:has(slideshow-controls:hover))
-  > slideshow-container
-  > slideshow-arrows
-  .slideshow-control {
+:not(.media-gallery--carousel)> :is(slideshow-component:hover, slideshow-component:focus-within):not(:has(slideshow-controls:hover))>slideshow-container>slideshow-arrows .slideshow-control {
   animation: arrowsSlideIn var(--animation-speed) var(--animation-easing) forwards;
 }
 
@@ -3609,11 +3634,10 @@ slideshow-arrows .slideshow-control.slideshow-control--style-none {
   display: none;
 }
 
-.section-resource-list.section--full-width product-card-link > .group-block,
-.section-carousel.section--full-width product-card-link > .group-block {
+.section-resource-list.section--full-width product-card-link>.group-block,
+.section-carousel.section--full-width product-card-link>.group-block {
   @media screen and (max-width: 749px) {
-    padding-inline: max(var(--padding-xs), var(--padding-inline-start))
-      max(var(--padding-xs), var(--padding-inline-end));
+    padding-inline: max(var(--padding-xs), var(--padding-inline-start)) max(var(--padding-xs), var(--padding-inline-end));
   }
 }
 
@@ -3625,6 +3649,7 @@ slideshow-arrows .slideshow-control.slideshow-control--style-none {
   }
 }
 
+
 .resource-list {
   --resource-list-mobile-gap-max: 9999px;
   --resource-list-column-gap: min(var(--resource-list-column-gap-desktop), var(--resource-list-mobile-gap-max));
@@ -3634,10 +3659,12 @@ slideshow-arrows .slideshow-control.slideshow-control--style-none {
 
   @media screen and (max-width: 749px) {
     --resource-list-mobile-gap-max: 12px;
+    --resource-list-column-gap: var(--resource-list-column-gap-mobile, min(var(--resource-list-column-gap-desktop), var(--resource-list-mobile-gap-max)));
   }
 
   @container resource-list (max-width: 749px) {
     --resource-list-mobile-gap-max: 12px;
+    --resource-list-column-gap: var(--resource-list-column-gap-mobile, min(var(--resource-list-column-gap-desktop), var(--resource-list-mobile-gap-max)));
   }
 }
 
@@ -3723,18 +3750,15 @@ slideshow-arrows .slideshow-control.slideshow-control--style-none {
 
 @container resource-list-carousel (max-width: 749px) {
   .resource-list__carousel .resource-list__slide {
-    --slide-width: clamp(150px, var(--mobile-card-size, 60cqw), var(--slide-width-max));
+    --slide-width: clamp(150px, var(--mobile-card-size, 60cqw), var(--slide-width-max-mobile, 9999px));
   }
 }
 
 @container resource-list-carousel (min-width: 750px) {
   .resource-list__carousel .resource-list__slide {
-    --section-slide-width: calc(
-      (100% - (var(--resource-list-column-gap) * (var(--column-count) - 1)) - var(--peek-next-slide-size)) /
-        var(--column-count)
-    );
-    --fallback-slide-width: clamp(150px, var(--mobile-card-size, 60cqw), var(--slide-width-max));
-    --slide-width: var(--section-slide-width, var(--fallback-slide-width));
+    --section-slide-width: calc((100% - (var(--resource-list-column-gap) * (var(--column-count) - 1)) - var(--peek-next-slide-size)) / var(--column-count));
+    --fallback-slide-width: clamp(150px, var(--mobile-card-size, 60cqw), var(--slide-width-max-desktop, 9999px));
+    --slide-width: min(var(--section-slide-width), var(--slide-width-max-desktop, 9999px));
   }
 }
 
@@ -3785,15 +3809,15 @@ slideshow-arrows .slideshow-control.slideshow-control--style-none {
 }
 
 /* Flex behavior for width variants */
-.layout-panel-flex--row > .group-block--width-fit {
+.layout-panel-flex--row>.group-block--width-fit {
   flex: 0;
 }
 
-.layout-panel-flex--row > .group-block--width-fill {
+.layout-panel-flex--row>.group-block--width-fill {
   flex: 1;
 }
 
-.layout-panel-flex--row > .group-block--width-custom {
+.layout-panel-flex--row>.group-block--width-custom {
   flex-basis: var(--size-style-width);
 }
 
@@ -3808,20 +3832,21 @@ slideshow-arrows .slideshow-control.slideshow-control--style-none {
 }
 
 /* Flex behavior for height variants */
-.layout-panel-flex--column > .group-block--height-fit {
+.layout-panel-flex--column>.group-block--height-fit {
   flex: 0 1 auto;
 }
 
-.layout-panel-flex--column > .group-block--height-fill {
+.layout-panel-flex--column>.group-block--height-fill {
   flex: 1;
 }
 
-.layout-panel-flex--column > .group-block--height-custom {
+.layout-panel-flex--column>.group-block--height-custom {
   flex-basis: var(--size-style-height);
 }
 
 accordion-custom {
   details {
+
     &::details-content,
     .details-content {
       block-size: 0;
@@ -3841,6 +3866,7 @@ accordion-custom {
     }
 
     &:not([open]) {
+
       &::details-content,
       .details-content {
         padding-block: 0;
@@ -3848,6 +3874,7 @@ accordion-custom {
     }
 
     &[open] {
+
       &::details-content,
       .details-content {
         opacity: 1;
@@ -3897,12 +3924,10 @@ text-component {
     opacity: 0;
     transition: opacity var(--animation-speed-slow) var(--animation-easing);
     pointer-events: none;
-    background-image: linear-gradient(
-      -85deg,
-      var(--shimmer-text-color) 10%,
-      var(--shimmer-color-light) 50%,
-      var(--shimmer-text-color) 90%
-    );
+    background-image: linear-gradient(-85deg,
+        var(--shimmer-text-color) 10%,
+        var(--shimmer-color-light) 50%,
+        var(--shimmer-text-color) 90%);
     background-clip: text;
     background-size: 200% 100%;
     background-position: 100% 0;
@@ -4015,6 +4040,7 @@ text-component {
 
 /* Prevent iOS zoom on input focus by ensuring minimum 16px font size on mobile */
 @media screen and (max-width: 1200px) {
+
   input,
   textarea,
   select,
@@ -4045,7 +4071,8 @@ text-component {
 }
 
 /* Custom Dr martens */
-.button, .button-secondary {
-    font-weight: 800;
-    font-stretch: 112.5%;
+.button,
+.button-secondary {
+  font-weight: 800;
+  font-stretch: 112.5%;
 }

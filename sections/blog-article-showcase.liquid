@@ -1,0 +1,577 @@
+{% liquid
+  assign article = section.settings.article
+
+  if article == blank
+    assign onboarding = true
+    assign display_title = 'placeholders.blog_post_title' | t
+    assign display_author = 'placeholders.blog_post_author' | t
+    assign display_date = 'placeholders.blog_post_date' | t
+    assign display_excerpt = 'placeholders.blog_post_description' | t
+  else
+    assign onboarding = false
+    assign display_title = article.title
+    assign display_author = article.author
+    assign display_date = article.published_at
+    assign display_excerpt = article.excerpt_or_content | strip_html | truncatewords: 40
+  endif
+
+  assign media_class_modifier = 'blog-article-showcase--' | append: section.settings.media_width
+
+  if section.settings.media_position == 'right'
+    assign media_class_modifier = media_class_modifier | append: ' blog-article-showcase--media-right'
+  endif
+
+  assign button_class = 'button'
+  if section.settings.button_style == 'button-secondary'
+    assign button_class = 'button-secondary'
+  elsif section.settings.button_style == 'link'
+    assign button_class = 'link'
+  endif
+%}
+
+<div class="section-background color-{{ section.settings.color_scheme }}"></div>
+<div
+  class="section section--{{ section.settings.section_width }} blog-article-showcase color-{{ section.settings.color_scheme }} spacing-style {{ media_class_modifier }}"
+  data-testid="blog-article-showcase"
+  style="
+    {%- render 'spacing-style', settings: section.settings %}
+    --media-height: {{ section.settings.media_height }};
+    --gap-desktop: {{ section.settings.gap_desktop }}px;
+    --gap-mobile: {{ section.settings.gap_mobile }}px;
+    {%- case section.settings.media_height %}
+      {% when '50svh' %}
+        --media-height-mobile: 30svh;
+      {% when '60svh' %}
+        --media-height-mobile: 50svh;
+      {% when '80svh' %}
+        --media-height-mobile: 70svh;
+      {% when '100svh' %}
+        --media-height-mobile: 100svh;
+      {% else %}
+        --media-height-mobile: auto;
+    {% endcase -%}
+  "
+>
+  {% if section.settings.title != blank %}
+    <div class="blog-article-showcase__header {{ section.settings.heading_alignment }}">
+      <h2 class="blog-article-showcase__section-title h3">{{ section.settings.title }}</h2>
+    </div>
+  {% endif %}
+
+  <div class="blog-article-showcase__inner">
+    {%- comment -%} Media Block {%- endcomment -%}
+    {% if section.settings.show_image %}
+      <div class="blog-article-showcase__media">
+        {% if onboarding or article.image %}
+          <div class="blog-article-showcase__image-wrapper">
+            {% if onboarding %}
+              {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+            {% else %}
+              <img
+                srcset="
+                  {{ article.image | image_url: width: 350 }} 350w,
+                  {{ article.image | image_url: width: 750 }} 750w,
+                  {{ article.image | image_url: width: 1100 }} 1100w,
+                  {{ article.image | image_url: width: 1500 }} 1500w
+                "
+                src="{{ article.image | image_url: width: 1100 }}"
+                loading="lazy"
+                width="{{ article.image.width }}"
+                height="{{ article.image.height }}"
+                alt="{{ article.image.alt | escape }}"
+                class="blog-article-showcase__image"
+              >
+            {% endif %}
+          </div>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    {%- comment -%} Content Block {%- endcomment -%}
+    <div class="blog-article-showcase__content">
+      <div class="blog-article-showcase__content-inner">
+        {% if section.settings.show_title %}
+          <h2 class="blog-article-showcase__title">{{ display_title }}</h2>
+        {% endif %}
+
+        {% if section.settings.show_subtitle and section.settings.subtitle != blank %}
+          <p class="blog-article-showcase__subtitle">{{ section.settings.subtitle }}</p>
+        {% endif %}
+
+        {% if section.settings.show_date or section.settings.show_author %}
+          <div class="blog-article-showcase__meta">
+            {% if section.settings.show_author %}
+              <span class="blog-article-showcase__author">{{ display_author }}</span>
+            {% endif %}
+            {% if section.settings.show_date %}
+              <time datetime="{{ display_date | date: '%Y-%m-%dT%H:%M:%SZ' }}">
+                {{ display_date | date: '%d de %B de %Y' }}
+              </time>
+            {% endif %}
+          </div>
+        {% endif %}
+
+        {% if section.settings.show_excerpt %}
+          <div class="blog-article-showcase__excerpt">
+            {{ display_excerpt }}
+          </div>
+        {% endif %}
+
+        {% if section.settings.show_button and section.settings.button_text != blank %}
+          <a
+            href="{% if onboarding %}#{% else %}{{ article.url }}{% endif %}"
+            class="blog-article-showcase__button {{ button_class }}"
+          >
+            {{ section.settings.button_text }}
+          </a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% stylesheet %}
+  .blog-article-showcase__header {
+    width: 100%;
+    margin: var(--blog-article-showcase-header__margin, 0 0 20px);
+  }
+
+  .blog-article-showcase__header.text-center {
+    text-align: center;
+  }
+
+  .blog-article-showcase__header.text-left {
+    text-align: left;
+  }
+
+  .blog-article-showcase__section-title {
+    margin: 0;
+  }
+
+  .blog-article-showcase__section-title.h3 {
+    font-family: var(--font-body--family);
+    color: var(--color-foreground);
+    font-size: var(--font-size--h3);
+    font-style: normal;
+    font-weight: var(--font-accent--weight);
+    line-height: 22px;
+    letter-spacing: 0.25px;
+    text-transform: uppercase;
+  }
+
+  .blog-article-showcase__inner {
+    display: grid;
+    gap: var(--gap-mobile);
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'media'
+      'content';
+  }
+
+  @media screen and (min-width: 750px) {
+    .blog-article-showcase__header {
+      --blog-article-showcase-header__margin: 0 0 30px;
+    }
+
+    .blog-article-showcase__inner {
+      gap: var(--gap-desktop);
+      grid-template-columns: 3.5fr 2.5fr;
+      grid-template-areas: 'media content';
+    }
+
+    .blog-article-showcase--medium .blog-article-showcase__inner {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .blog-article-showcase--narrow .blog-article-showcase__inner {
+      grid-template-columns: 1fr 2fr;
+    }
+
+    .blog-article-showcase--media-right .blog-article-showcase__inner {
+      grid-template-areas: 'content media';
+      grid-template-columns: 2.5fr 3.5fr;
+    }
+
+    .blog-article-showcase--media-right.blog-article-showcase--medium .blog-article-showcase__inner {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .blog-article-showcase--media-right.blog-article-showcase--narrow .blog-article-showcase__inner {
+      grid-template-columns: 2fr 1fr;
+    }
+  }
+
+  .blog-article-showcase__media {
+    grid-area: media;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .blog-article-showcase__image-wrapper {
+    height: var(--media-height-mobile, auto);
+    width: 100%;
+  }
+
+  @media screen and (min-width: 750px) {
+    .blog-article-showcase__image-wrapper {
+      height: var(--media-height, 80svh);
+    }
+  }
+
+  .blog-article-showcase__image,
+  .blog-article-showcase__image-wrapper svg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .blog-article-showcase__content {
+    grid-area: content;
+    display: flex;
+    align-items: center;
+  }
+
+  .blog-article-showcase__content-inner {
+    width: 100%;
+  }
+
+  .blog-article-showcase__title {
+    font-family: var(--font-body--family);
+    font-size: var(--font-size--md);
+    font-weight: var(--font-accent--weight);
+    letter-spacing: 0.25px;
+    line-height: 18px;
+    margin: var(--blog-article-showcase-title__margin, 0 0 15px);
+    color: var(--color-foreground-heading);
+    text-transform: uppercase;
+  }
+
+  .blog-article-showcase__subtitle {
+    font-size: var(--font-size--lg);
+    font-weight: var(--font-accent--weight);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 0 0 16px;
+    color: var(--color-foreground);
+  }
+
+  .blog-article-showcase__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    font-size: var(--font-size--sm);
+    color: var(--color-foreground);
+    margin: 0 0 20px;
+  }
+
+  .blog-article-showcase__author {
+    font-weight: var(--font-accent--weight);
+  }
+
+  .blog-article-showcase__excerpt {
+    font-family: var(--font-body--family);
+    font-size: var(--font-size--sm);
+    font-weight: var(--font-accent--weight);
+    letter-spacing: 0.25px;
+    line-height: 16px;
+    margin: var(--blog-article-showcase-title__margin, 0 0 15px);
+    color: var(--color-foreground-heading);
+    text-transform: uppercase;
+  }
+
+  .blog-article-showcase__button {
+    display: inline-block;
+    text-decoration: none;
+  }
+
+  @media screen and (max-width: 750px) {
+    .blog-article-showcase__inner {
+      --blog-article-showcase-title__margin: 0 0 5px;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Artículo de Blog",
+  "tag": "section",
+  "class": "blog-article-showcase-section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "article",
+      "id": "article",
+      "label": "Artículo del blog"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Título de la sección",
+      "default": "Historias de DR. MARTENS"
+    },
+    {
+      "type": "select",
+      "id": "heading_alignment",
+      "label": "Alineación del título",
+      "options": [
+        {
+          "value": "text-left",
+          "label": "Izquierda"
+        },
+        {
+          "value": "text-center",
+          "label": "Centro"
+        }
+      ],
+      "default": "text-left"
+    },
+    {
+      "type": "header",
+      "content": "Contenido"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_image",
+      "label": "Mostrar imagen",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_title",
+      "label": "Mostrar título",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_subtitle",
+      "label": "Mostrar subtítulo personalizado",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtítulo",
+      "default": "HISTORIAS DE DR. MARTENS",
+      "visible_if": "{{ section.settings.show_subtitle }}"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_author",
+      "label": "Mostrar autor",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_date",
+      "label": "Mostrar fecha",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_excerpt",
+      "label": "Mostrar extracto",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_button",
+      "label": "Mostrar botón",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Texto del botón",
+      "default": "DESCUBRE MÁS",
+      "visible_if": "{{ section.settings.show_button }}"
+    },
+    {
+      "type": "select",
+      "id": "button_style",
+      "label": "Estilo del botón",
+      "options": [
+        {
+          "value": "button",
+          "label": "Primario"
+        },
+        {
+          "value": "button-secondary",
+          "label": "Secundario"
+        },
+        {
+          "value": "link",
+          "label": "Enlace"
+        }
+      ],
+      "default": "button",
+      "visible_if": "{{ section.settings.show_button }}"
+    },
+    {
+      "type": "header",
+      "content": "Diseño"
+    },
+    {
+      "type": "select",
+      "id": "media_position",
+      "label": "Posición de la imagen",
+      "options": [
+        {
+          "value": "left",
+          "label": "Izquierda"
+        },
+        {
+          "value": "right",
+          "label": "Derecha"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "select",
+      "id": "media_width",
+      "label": "Ancho de la imagen",
+      "options": [
+        {
+          "value": "narrow",
+          "label": "Estrecho"
+        },
+        {
+          "value": "medium",
+          "label": "Medio"
+        },
+        {
+          "value": "wide",
+          "label": "Ancho"
+        }
+      ],
+      "default": "wide"
+    },
+    {
+      "type": "select",
+      "id": "media_height",
+      "label": "Altura de la imagen",
+      "options": [
+        {
+          "value": "auto",
+          "label": "Automática"
+        },
+        {
+          "value": "50svh",
+          "label": "Pequeña"
+        },
+        {
+          "value": "60svh",
+          "label": "Media"
+        },
+        {
+          "value": "80svh",
+          "label": "Grande"
+        },
+        {
+          "value": "100svh",
+          "label": "Pantalla completa"
+        }
+      ],
+      "default": "60svh"
+    },
+    {
+      "type": "range",
+      "id": "gap_desktop",
+      "label": "Espacio entre imagen y texto (Escritorio)",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "gap_mobile",
+      "label": "Espacio entre imagen y texto (Móvil)",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "select",
+      "id": "section_width",
+      "label": "Ancho de la sección",
+      "options": [
+        {
+          "value": "page-width",
+          "label": "Ancho de página"
+        },
+        {
+          "value": "full-width",
+          "label": "Ancho completo"
+        }
+      ],
+      "default": "page-width"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Esquema de color",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "Relleno"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "Arriba",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "Abajo",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "header",
+      "content": "Rellenos móviles"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start-mobile",
+      "label": "Arriba (móvil)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end-mobile",
+      "label": "Abajo (móvil)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 32
+    }
+  ],
+  "presets": [
+    {
+      "name": "Artículo de Blog",
+      "category": "Narrativa"
+    }
+  ]
+}
+{% endschema %}

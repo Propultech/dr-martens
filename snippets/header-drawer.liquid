@@ -126,7 +126,7 @@
                         id="HeaderDrawer-{{ link.handle }}"
                         class="menu-drawer__menu-item menu-drawer__menu-item--mainlist menu-drawer__animated-element focus-inset"
                       >
-                        <span class="menu-drawer__menu-item-text wrap-text">{{ link.title | escape }}</span>
+                        <span class="menu-drawer__menu-item-text wrap-text {{ link.title | handleize }}">{{ link.title | escape }}</span>
                         <span class="svg-wrapper icon-plus">
                           {{- 'icon-plus.svg' | inline_asset_content -}}
                         </span>
@@ -167,7 +167,7 @@
                                   sizes: 'auto, 400px'
                                 %}
                               {% endif %}
-                              <span class="menu-drawer__menu-item-text wrap-text">{{ childlink.title | escape }}</span>
+                              <span class="menu-drawer__menu-item-text wrap-text {{ childlink.title | handleize }}">{{ childlink.title | escape }}</span>
                             </a>
                           </li>
                         {%- endfor -%}
@@ -178,16 +178,16 @@
                   {%- comment -%}
                     Flat menus for links with children, in menus with fewer than 3 levels of links
                   {%- endcomment -%}
-                  <a
-                    id="HeaderDrawer-{{ link.handle }}"
-                    href="{{ link.url }}"
-                    class="menu-drawer__menu-item menu-drawer__menu-item--mainlist menu-drawer__animated-element focus-inset{% if link.current %} menu-drawer__menu-item--active{% endif %}"
-                    {% if link.current %}
-                      aria-current="page"
-                    {% endif %}
-                  >
-                    <span class="menu-drawer__menu-item-text wrap-text">{{ link.title | escape }}</span>
-                  </a>
+                    <a
+                      id="HeaderDrawer-{{ link.handle }}"
+                      href="{{ link.url }}"
+                      class="menu-drawer__menu-item menu-drawer__menu-item--mainlist menu-drawer__animated-element focus-inset{% if link.current %} menu-drawer__menu-item--active{% endif %}"
+                      {% if link.current %}
+                        aria-current="page"
+                      {% endif %}
+                    >
+                      <span class="menu-drawer__menu-item-text wrap-text {{ link.title | handleize }}">{{ link.title | escape }}</span>
+                    </a>
                   {% liquid
                     assign render_link_image = false
                     if block_settings.menu_style == 'collection_images'
@@ -220,7 +220,7 @@
                               sizes: 'auto, 400px'
                             %}
                           {% endif %}
-                          <span class="menu-drawer__menu-item-text wrap-text">{{ childlink.title | escape }}</span>
+                          <span class="menu-drawer__menu-item-text wrap-text {{ childlink.title | handleize }}">{{ childlink.title | escape }}</span>
                         </a>
                       </li>
                     {%- endfor -%}
@@ -237,7 +237,7 @@
                       aria-current="page"
                     {% endif %}
                   >
-                    <span class="menu-drawer__menu-item-text wrap-text">{{ link.title | escape }}</span>
+                            <span class="menu-drawer__menu-item-text wrap-text {{ link.title | handleize }}">{{ link.title | escape }}</span>
                   </a>
                 {% endif %}
               </li>
@@ -266,7 +266,7 @@
                       class="menu-drawer__menu-item menu-drawer__menu-item--mainlist menu-drawer__animated-element focus-inset{% if link.child_active %} menu-drawer__menu-item--active{% endif %}"
                       on:click="header-drawer/open"
                     >
-                      <span class="menu-drawer__menu-item-text wrap-text">{{ link.title | escape }}</span>
+                      <span class="menu-drawer__menu-item-text wrap-text {{ link.title | handleize }}">{{ link.title | escape }}</span>
                       <span class="svg-wrapper icon-caret icon-caret--forward">
                         {{- 'icon-caret.svg' | inline_asset_content -}}
                       </span>
@@ -288,7 +288,7 @@
                             <span class="svg-wrapper icon-caret icon-caret--backward">
                               {{- 'icon-caret.svg' | inline_asset_content -}}
                             </span>
-                            <span class="menu-drawer__menu-item-text wrap-text">{{ link.title | escape }}</span>
+                            <span class="menu-drawer__menu-item-text wrap-text {{ link.title | handleize }}">{{ link.title | escape }}</span>
                           </button>
                           <button
                             class="button button-unstyled close-button menu-drawer__close-button"
@@ -348,7 +348,7 @@
                                       sizes: 'auto, 400px'
                                     %}
                                   {% endif %}
-                                  <span class="menu-drawer__menu-item-text wrap-text">
+                                  <span class="menu-drawer__menu-item-text wrap-text {{ childlink.title | handleize }}">
                                     {{- childlink.title | escape -}}
                                   </span>
                                 </a>
@@ -372,7 +372,7 @@
                                         id="HeaderDrawer-{{ link.handle }}-{{ childlink.handle }}"
                                         class="menu-drawer__menu-item menu-drawer__menu-item--parent focus-inset"
                                       >
-                                        <span class="menu-drawer__menu-item-text wrap-text">
+                                        <span class="menu-drawer__menu-item-text wrap-text {{ childlink.title | handleize }}">
                                           {{- childlink.title | escape -}}
                                         </span>
                                         <span class="svg-wrapper icon-plus">
@@ -415,7 +415,7 @@
                                                   sizes: 'auto, 400px'
                                                 %}
                                               {% endif %}
-                                              <span class="menu-drawer__menu-item-text wrap-text">
+                                              <span class="menu-drawer__menu-item-text wrap-text {{ grandchildlink.title | handleize }}">
                                                 {{- grandchildlink.title | escape -}}
                                               </span>
                                             </a>
@@ -433,7 +433,7 @@
                                     href="{{ childlink.url }}"
                                     class="menu-drawer__menu-item menu-drawer__menu-item--parent focus-inset{% if childlink.current %} menu-drawer__menu-item--active{% endif %}"
                                   >
-                                    <span class="menu-drawer__menu-item-text wrap-text">
+                                    <span class="menu-drawer__menu-item-text wrap-text {{ childlink.title | handleize }}">
                                       {{- childlink.title | escape -}}
                                     </span>
                                   </a>
@@ -473,7 +473,7 @@
                                               sizes: 'auto, 400px'
                                             %}
                                           {% endif %}
-                                          <span class="menu-drawer__menu-item-text wrap-text">
+                                          <span class="menu-drawer__menu-item-text wrap-text {{ grandchildlink.title | handleize }}">
                                             {{- grandchildlink.title | escape -}}
                                           </span>
                                         </a>
@@ -551,7 +551,7 @@
                       aria-current="page"
                     {% endif %}
                   >
-                    <span class="menu-drawer__menu-item-text wrap-text">{{ link.title | escape }}</span>
+                    <span class="menu-drawer__menu-item-text wrap-text {{ link.title | handleize }}">{{ link.title | escape }}</span>
                   </a>
                 {%- endif -%}
               </li>
@@ -559,17 +559,99 @@
           {% endif %}
         </ul>
       </nav>
+
+      {% if block_settings.menu_style == 'featured_static_menu' and block_settings.featured_static_menu_menu.links != blank %}
+        <div class="menu-drawer__static-section color-{{ block_settings.featured_static_menu_color_scheme }}">
+          <div class="menu-drawer__static-inner">
+            <ul class="menu-drawer__static-menu list-unstyled" role="list">
+              {% for link in block_settings.featured_static_menu_menu.links %}
+                <li class="menu-drawer__static-menu-item">
+                  {% if link.links != blank %}
+                    <details class="menu-drawer__menu-container menu-drawer__menu-container--static">
+                        <summary
+                          class="menu-drawer__menu-item menu-drawer__menu-item--mainlist menu-drawer__animated-element focus-inset"
+                          aria-expanded="false"
+                          on:click="header-drawer/open"
+                        >
+                          <span class="menu-drawer__menu-item-text wrap-text {{ link.title | handleize }}">{{ link.title | escape }}</span>
+                        <span class="svg-wrapper icon-caret icon-caret--forward">
+                          {{- 'icon-caret.svg' | inline_asset_content -}}
+                        </span>
+                      </summary>
+                      <div
+                        class="menu-drawer__submenu has-submenu gradient motion-reduce"
+                        tabindex="-1"
+                        style="--menu-drawer-animation-index: {{ forloop.index }};"
+                      >
+                        <div class="menu-drawer__inner-submenu">
+                          <div class="menu-drawer__nav-buttons">
+                            <button
+                              class="button menu-drawer__back-button focus-inset"
+                              aria-expanded="true"
+                              on:click="header-drawer/back"
+                            >
+                              <span class="svg-wrapper icon-caret icon-caret--backward">
+                                {{- 'icon-caret.svg' | inline_asset_content -}}
+                              </span>
+                              <span class="menu-drawer__menu-item-text wrap-text {{ link.title | handleize }}">{{ link.title | escape }}</span>
+                            </button>
+                            <button
+                              class="button button-unstyled close-button menu-drawer__close-button"
+                              type="button"
+                              aria-label="{{ 'actions.close' | t }}"
+                              on:click="header-drawer/close"
+                            >
+                              <span class="svg-wrapper header-drawer-icon header-drawer-icon--close">
+                                {{- 'icon-close.svg' | inline_asset_content -}}
+                              </span>
+                            </button>
+                          </div>
+                          <ul
+                            class="menu-drawer__menu menu-drawer__menu--childlist"
+                            role="list"
+                            tabindex="-1"
+                          >
+                            {% for childlink in link.links %}
+                              <li class="menu-drawer__list-item">
+                                <a
+                                  href="{{ childlink.url }}"
+                                  class="menu-drawer__menu-item menu-drawer__menu-item--child focus-inset{% if childlink.current %} menu-drawer__menu-item--active{% endif %}"
+                                  {% if childlink.current %}aria-current="page"{% endif %}
+                                >
+                                  <span class="menu-drawer__menu-item-text wrap-text {{ childlink.title | handleize }}">{{ childlink.title | escape }}</span>
+                                </a>
+                              </li>
+                            {% endfor %}
+                          </ul>
+                        </div>
+                      </div>
+                    </details>
+                  {% else %}
+                    <a
+                      href="{{ link.url }}"
+                      class="menu-drawer__menu-item menu-drawer__menu-item--mainlist"
+                      {% if link.current %}aria-current="page"{% endif %}
+                    >
+                      <span class="menu-drawer__menu-item-text wrap-text {{ link.title | handleize }}">{{ link.title | escape }}</span>
+                    </a>
+                  {% endif %}
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      {% endif %}
       <div
         class="menu-drawer__utility-links menu-drawer__animated-element"
         style="--menu-drawer-animation-index: {{ linklist.links.size }};"
       >
         {% liquid
-          assign show_language = section.settings.show_language
+          assign show_language = settings.localization_show_language
           if localization.available_languages.size <= 1
             assign show_language = false
           endif
 
-          assign show_country = section.settings.show_country
+          assign show_country = settings.localization_show_country
           if localization.available_countries.size <= 1
             assign show_country = false
           endif
@@ -583,7 +665,7 @@
               assign flag_shadow_size = 2
             endif
 
-            assign localization_font = '--menu-localization-font: var(--font-[localization_font]--family); ' | replace: '[localization_font]', section.settings.localization_font
+            assign localization_font = '--menu-localization-font: var(--font-[localization_font]--family); ' | replace: '[localization_font]', settings.localization_font
             assign color_shadow = '--color-shadow: rgb(var(--color-foreground-rgb) / var(--opacity-10-25));'
             assign form_style = localization_font | append: color_shadow
           %}
@@ -613,7 +695,7 @@
                   <div class="drawer-localization__button--label h6">
                     {%- if show_country -%}
                       <div class="mobile-localization mobile-localization--country link link--text">
-                        {%- if section.settings.country_selector_style == true -%}
+                        {%- if settings.country_selector_style == true -%}
                           <span
                             class="icon-flag"
                             style="
@@ -624,7 +706,7 @@
                           ></span>
                         {%- endif -%}
                         <span class="currency-code">
-                          {{- localization.country.currency.iso_code -}}
+                          {{- localization.country.name -}}
                         </span>
                       </div>
                     {%- endif -%}
@@ -827,7 +909,8 @@
     left: 0;
     top: 0;
     padding: 0;
-    background-color: var(--color-background);
+    background-color: var(--color-variant-background); /* background-color: var(--color-background); */
+    color: var(--color-variant-text);
     overflow: auto;
     display: flex;
     border-right: var(--style-border-drawer);
@@ -943,7 +1026,7 @@
   }
 
   .menu-drawer__list-item--deep:not(.menu-drawer__list-item--divider) .menu-drawer__menu {
-    margin-block-start: -0.3rem;
+    margin-block-start: 0;
   }
 
   .menu-drawer__list-item--flat.menu-drawer__list-item--divider .menu-drawer__menu {
@@ -956,12 +1039,12 @@
 
   .menu-drawer__menu > .menu-drawer__list-item {
     display: flex;
-    min-height: calc(2 * var(--padding-lg) + var(--icon-size-xs));
+    min-height: calc(2 * var(--padding-lg) + var(--icon-size-xs) - 0.225rem);
   }
 
   .menu-drawer__list-item--deep .menu-drawer__list-item,
   .menu-drawer__list-item--flat .menu-drawer__list-item {
-    min-height: auto;
+    /* min-height: auto; */
   }
 
   .menu-drawer__menu .menu-drawer__list-item--flat {
@@ -1013,7 +1096,7 @@
   }
 
   .menu-drawer__menu-item--mainlist {
-    min-height: calc(2 * var(--padding-lg) + var(--icon-size-xs));
+    min-height: calc(2 * var(--padding-lg) + var(--icon-size-xs) - 0.225rem);
     font-family: var(--menu-top-level-font-family);
     font-style: var(--menu-top-level-font-style);
     font-weight: var(--menu-top-level-font-weight);
@@ -1021,11 +1104,11 @@
     font-size: var(--menu-top-level-font-size);
     line-height: var(--menu-top-level-font-line-height);
     text-transform: var(--menu-top-level-font-case);
-    color: var(--menu-top-level-font-color);
+    color: var(--menu-top-level-font-color-mobile);
     justify-content: space-between;
 
     &:hover {
-      color: var(--menu-top-level-font-color);
+      color: var(--menu-top-level-font-color-mobile);
     }
   }
 
@@ -1036,7 +1119,7 @@
     font-stretch: var(--menu-parent-font-stretch, normal);
     font-size: var(--menu-parent-font-size);
     line-height: var(--menu-parent-font-line-height);
-    text-transform: var(--menu-parent-font-case);
+    text-transform: initial; /* text-transform: var(--menu-parent-font-case); */
     color: var(--menu-parent-font-color);
 
     &:hover {
@@ -1051,7 +1134,7 @@
     font-stretch: var(--menu-child-font-stretch, normal);
     font-size: var(--menu-child-font-size);
     line-height: var(--menu-child-font-line-height);
-    text-transform: var(--menu-child-font-case);
+    text-transform: initial; /* text-transform: var(--menu-parent-font-case); */
     color: var(--menu-child-font-color);
 
     &:hover {
@@ -1063,6 +1146,7 @@
     display: flex;
     width: 100%;
     padding-inline-end: 0;
+    min-height: calc(2 * var(--padding-lg) + var(--icon-size-xs) - 0.225rem);
   }
 
   .menu-drawer__list-item--deep .menu-drawer__menu,
@@ -1145,7 +1229,7 @@
     padding: var(--padding-md) var(--padding-xl);
     border: none;
     align-items: center;
-    color: var(--color-foreground);
+    color: var(--color-variant-text);
     background-color: transparent;
     text-align: left;
     text-decoration: none;
@@ -1174,7 +1258,6 @@
     width: fit-content;
     height: fit-content;
     margin: 0;
-    padding-block: var(--padding-lg);
     padding-inline-start: var(--padding-xl);
     flex-shrink: 0;
   }
@@ -1194,7 +1277,7 @@
     top: 0;
     height: 100dvh;
     left: 0;
-    background-color: var(--color-background);
+    background-color: var(--color-variant-background);
     z-index: var(--layer-flat);
     transform: translateX(-5%);
     visibility: hidden;
@@ -1211,10 +1294,69 @@
   .menu-drawer__utility-links {
     display: flex;
     flex-direction: column;
+    padding: 0 15px 20px;
+    background-color: var(--color-background);
+    animation: none !important; /* override default animation */
+    margin-top: -1px;
+
+    &::before {
+      content: '';
+      display: block;
+      height: 1px;
+      background-color: var(--color-variant-background);
+      width: 100%;
+      margin: 16px 0;
+    }
+  }
+
+  .menu-drawer__static-section {
+    border-top: var(--style-border-drawer);
+    padding: 20px 15px 0;
+    margin-top: auto;
+  }
+
+  .menu-drawer__static-inner {
+    display: flex;
+    flex-direction: column;
+    gap: var(--padding-xs);
+  }
+
+  .menu-drawer__static-menu {
+    list-style: none;
+    margin: 0;
     padding: 0;
-    margin-block: auto var(--padding-sm);
-    margin-inline-start: var(--padding-xl);
-    background-color: rgb(var(--color-foreground) 0.03);
+    display: flex;
+    flex-direction: column;
+    gap: var(--padding-3xs);
+  }
+
+  .menu-drawer__static-menu-item .menu-drawer__menu-item {
+    padding: 0;
+    font-size: var(--font-size--md);
+    text-transform: uppercase;
+    min-height: 38px;
+    align-items: baseline;
+  }
+
+  .menu-drawer__static-menu-item details {
+    margin-inline: calc(-1 * var(--drawer-padding));
+    padding: 0 var(--drawer-padding);
+  }
+
+  .menu-drawer__static-menu-item summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    padding: 0;
+  }
+
+  .menu-drawer__static-menu-item summary .svg-wrapper {
+    transition: transform var(--animation-speed) var(--animation-easing);
+  }
+
+  .menu-drawer__static-menu-item details[open] summary .svg-wrapper {
+    transform: rotate(90deg);
   }
 
   .menu-drawer__account {

@@ -67,8 +67,12 @@
         "section_width": "page-width",
         "color_scheme": "scheme-0e168b94-9192-4d2e-b401-8176729933de",
         "divider_width": 1,
-        "padding-block-start": 15,
-        "padding-block-end": 15
+        "padding-block-start": 8,
+        "padding-block-end": 8,
+        "padding-block-start-mobile": 6,
+        "padding-block-end-mobile": 6,
+        "padding-inline-start-mobile": 0,
+        "padding-inline-end-mobile": 0
       }
     },
     "header_section": {
@@ -82,7 +86,11 @@
             "padding-block-start": 0,
             "padding-block-end": 0,
             "padding-inline-start": 0,
-            "padding-inline-end": 0
+            "padding-inline-end": 0,
+            "padding-block-start-mobile": 0,
+            "padding-block-end-mobile": 0,
+            "padding-inline-start-mobile": 0,
+            "padding-inline-end-mobile": 0
           },
           "blocks": {}
         },
@@ -96,7 +104,9 @@
             "menu_font_style": "inverse",
             "type_font_primary_link": "accent",
             "type_case_primary_link": "uppercase",
-            "menu_style": "featured_products",
+            "menu_style": "featured_static_menu",
+            "featured_static_menu_menu": "mobile-menu-hamburger",
+            "featured_static_menu_color_scheme": "scheme-70fcf3e8-9125-4a2d-b779-8a99fbdecaf5",
             "featured_products_aspect_ratio": "4 / 5",
             "featured_collections_aspect_ratio": "16 / 9",
             "image_border_radius": 0,
@@ -120,11 +130,6 @@
         "search_custom_placeholder": "Busca botas, zapatos, sandalias y más",
         "search_custom_color_scheme": "scheme-0d176e0c-302a-4603-a896-02ea6619e393",
         "search_custom_position": "right",
-        "show_country": false,
-        "country_selector_style": false,
-        "show_language": false,
-        "localization_font": "heading",
-        "localization_font_size": "0.875rem",
         "localization_position": "right",
         "localization_row": "top",
         "section_width": "page-width",

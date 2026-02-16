@@ -19,12 +19,24 @@ import { isClickedOutside, normalizeString, onAnimationEnd } from '@theme/utilit
  * @extends {Component<FormRefs>}
  */
 class LocalizationFormComponent extends Component {
+  #countryRedirects = /** @type {Record<string, string>} */ ({});
+  /** @type {string} */
+  #defaultFormAction = '';
+  /** @type {string} */
+  #defaultFormMethod = '';
+
   connectedCallback() {
     super.connectedCallback();
 
     this.refs.search && this.refs.search.addEventListener('keydown', this.#onSearchKeyDown);
     this.refs.countryList && this.refs.countryList.addEventListener('keydown', this.#onContainerKeyDown);
     this.refs.countryList && this.refs.countryList.addEventListener('scroll', this.#onCountryListScroll);
+
+    const form = this.refs.form;
+    this.#defaultFormAction = form?.getAttribute('action') ?? form?.action ?? '';
+    this.#defaultFormMethod = form?.getAttribute('method') ?? form?.method ?? '';
+    const redirectData = this.dataset.countryRedirects ?? this.dataset.countryRedirectLines;
+    this.#countryRedirects = this.#parseCountryRedirects(redirectData);
 
     // Resizing the language input can be expensive for browsers that don't support field-sizing: content.
     // Spliting it into separate tasks at least helps when there are multiple localization forms on the page.
@@ -44,7 +56,7 @@ class LocalizationFormComponent extends Component {
    * @param {KeyboardEvent} event - The event object.
    */
   #onContainerKeyDown = (event) => {
-    const { countryInput, countryListItems, form } = this.refs;
+    const { countryInput, countryListItems } = this.refs;
 
     switch (event.key) {
       case 'ArrowUp':
@@ -63,8 +75,9 @@ class LocalizationFormComponent extends Component {
         const focusedItem = countryListItems.find((item) => item.getAttribute('aria-selected') === 'true');
 
         if (focusedItem) {
-          countryInput.value = focusedItem.dataset.value ?? '';
-          form.submit();
+          const isoCode = focusedItem.dataset.value ?? '';
+          countryInput.value = isoCode;
+          this.#submitFormWithCountryRedirect(isoCode);
         }
         break;
       }
@@ -93,10 +106,11 @@ class LocalizationFormComponent extends Component {
    */
   selectCountry = (countryName, event) => {
     event.preventDefault();
-    const { countryInput, form } = this.refs;
+    const { countryInput } = this.refs;
 
+    const isoCode = countryName ?? '';
     countryInput.value = countryName;
-    form?.submit();
+    this.#submitFormWithCountryRedirect(isoCode);
   };
 
   /**
@@ -105,14 +119,114 @@ class LocalizationFormComponent extends Component {
    * @param {Event} event - The event object.
    */
   changeLanguage(event) {
-    const { form, languageInput } = this.refs;
+    const { languageInput, countryInput } = this.refs;
     const value = event.target instanceof HTMLSelectElement ? event.target.value : null;
 
     if (value) {
       languageInput.value = value;
       this.resizeLanguageInput();
-      form.submit();
+      this.#submitFormWithCountryRedirect(countryInput?.value);
     }
+  }
+
+  /**
+   * @param {string | undefined} value
+   * @returns {Record<string, string>}
+   */
+  #parseCountryRedirects(value) {
+    const stringValue = value == null ? '' : String(value);
+    const trimmedValue = stringValue.trim();
+
+    if (!trimmedValue) return {};
+
+    const isJsonCandidate = trimmedValue.startsWith('{') || trimmedValue.startsWith('[');
+
+    if (isJsonCandidate) {
+      try {
+        const parsed = JSON.parse(trimmedValue);
+
+        if (Array.isArray(parsed)) {
+          return parsed
+            .map((line) => line?.toString().trim())
+            .filter((line) => line)
+            .map((line) => {
+              const [iso, ...rest] = line.split('|');
+              const target = rest.join('|').trim();
+              return [iso?.trim().toUpperCase() ?? '', target];
+            })
+            .filter(([iso, target]) => iso && target)
+            .reduce((acc, [iso, target]) => {
+              const safeIso = iso;
+              const safeTarget = target;
+              if (!safeIso || !safeTarget) return acc;
+              acc[safeIso] = safeTarget;
+              return acc;
+            }, /** @type {Record<string, string>} */({}));
+        }
+
+        if (parsed && typeof parsed === 'object') {
+          return Object.fromEntries(
+            Object.entries(parsed)
+              .filter(([key]) => key)
+              .map(([key, target]) => [key.toUpperCase(), String(target)])
+          );
+        }
+      } catch (error) {
+        if (typeof console !== 'undefined' && console.warn) {
+          console.warn('LocalizationFormComponent: invalid country redirect map', error);
+        }
+      }
+    }
+
+    return this.#parseCountryRedirectLines(trimmedValue);
+  }
+
+  /**
+   * @param {string} value
+   */
+  #parseCountryRedirectLines(value) {
+    return String(value)
+      .split(/\r?\n/)
+      .map((line) => line.trim())
+      .filter((line) => line)
+      .map((line) => {
+        const [iso, ...rest] = line.split('|');
+        const target = rest.join('|').trim();
+        return [iso?.trim().toUpperCase() ?? '', target];
+      })
+      .filter(([iso, target]) => iso && target)
+      .reduce((acc, [iso, target]) => {
+        const safeIso = iso;
+        const safeTarget = target;
+        if (!safeIso || !safeTarget) return acc;
+        acc[safeIso] = safeTarget;
+        return acc;
+      }, /** @type {Record<string, string>} */({}));
+  }
+
+  /**
+   * @param {string | null | undefined} countryCode
+   */
+  #submitFormWithCountryRedirect(countryCode) {
+    const { form } = this.refs;
+
+    if (!form) return;
+
+    const normalizedCountry = (countryCode ?? '').toUpperCase();
+    const redirectUrl = normalizedCountry ? this.#countryRedirects[normalizedCountry] : undefined;
+    const baseAction = this.#defaultFormAction || form.action;
+
+    if (redirectUrl) {
+      window.location.assign(redirectUrl);
+      return;
+    }
+
+    if (this.#defaultFormMethod) {
+      form.method = this.#defaultFormMethod;
+    }
+
+    form.action = baseAction;
+    form.submit();
   }
 
   resizeLanguageInput() {
@@ -497,7 +611,6 @@ class DropdownLocalizationComponent extends Component {
  * @typedef {object} DrawerRefs
  * @property {HTMLDialogElement} dialog - The dialog element.
  * @property {LocalizationFormComponent} localizationForm - The localization form component.
- *
  * @extends {Component<DrawerRefs>}
  */
 class DrawerLocalizationComponent extends Component {

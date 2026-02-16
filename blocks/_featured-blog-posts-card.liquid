@@ -92,9 +92,27 @@
     {% endif %}
 
     <div class="featured-blog-posts-card__content layout-panel-flex--column">
-      <h4>{{ title }}</h4>
+      <h4
+        style="
+          {% if block_settings.title_background != blank %}background-color: {{ block_settings.title_background }};{% endif %}
+          {% if block_settings.title_color != blank %}color: {{ block_settings.title_color }};{% endif %}
+          {% if block_settings.title_background != blank %}padding: 0 5px; width: fit-content;{% endif %}
+        "
+      >
+        {{ title }}
+      </h4>
       {{ details }}
       {{ description }}
+      {% if block_settings.read_more_text != blank %}
+        <a
+          class="featured-blog-posts-card__read-more"
+          {% unless onboarding %}
+            href="{{ article.url }}"
+          {% endunless %}
+        >
+          {{ block_settings.read_more_text }}
+        </a>
+      {% endif %}
     </div>
   </div>
 </div>
@@ -145,6 +163,18 @@
   .featured-blog-posts-card__content h4 {
     margin: 0;
   }
+
+  .featured-blog-posts-card__read-more {
+    display: inline-block;
+    margin-top: 5px;
+    font-size: var(--font-size--md);
+    font-weight: var(--font-accent--weight);
+    text-transform: uppercase;
+    letter-spacing: 0.25px;
+    color: var(--color-foreground);
+    line-height: 18px;
+    text-decoration: none;
+  }
 {% endstylesheet %}
 
 {% schema %}
@@ -155,6 +185,27 @@
     {
       "type": "header",
       "content": "t:content.text"
+    },
+    {
+      "type": "header",
+      "content": "Título"
+    },
+    {
+      "type": "color",
+      "id": "title_background",
+      "label": "Color de fondo del título"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Color de texto del título"
+    },
+    {
+      "type": "text",
+      "id": "read_more_text",
+      "label": "Texto del enlace",
+      "default": "Leer ahora",
+      "info": "Texto que aparecerá en el enlace al final de la tarjeta"
     },
     {
       "type": "select",
@@ -289,6 +340,50 @@
       "type": "range",
       "id": "padding-inline-end",
       "label": "t:settings.right",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "Rellenos móviles"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start-mobile",
+      "label": "Arriba (móvil)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end-mobile",
+      "label": "Abajo (móvil)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-inline-start-mobile",
+      "label": "Izquierda (móvil)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-inline-end-mobile",
+      "label": "Derecha (móvil)",
       "min": 0,
       "max": 100,
       "step": 1,

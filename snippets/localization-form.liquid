@@ -35,11 +35,13 @@
 
   assign aliases_us = 'us,usa,america,united states of america'
   assign aliases_uk = 'uk,gb,great britain'
+  assign redirect_lines = settings.localization_country_redirects | default: ''
 %}
 <localization-form-component
   ref="localizationForm"
   data-label-results-count="{{ 'accessibility.country_results_count' | t: count: '[count]' }}"
   data-show-filter="{{ show_country_filter }}"
+  data-country-redirect-lines='{{ redirect_lines | escape }}'
   style="{{ form_style }}"
 >
   {% assign localization_label = 'content.localization_region_and_language' | t %}
@@ -460,11 +462,11 @@
 
     .country {
       flex: 1;
-      color: var(--color-foreground);
+      color: var(--color-variant-text);
     }
 
     &:hover {
-      background-color: rgb(var(--color-foreground-rgb) / var(--opacity-8));
+      background-color: rgb(var(--color-variant-hover-text-rgb) / var(--opacity-8));
     }
 
     &[aria-current='true'] {
@@ -477,17 +479,17 @@
   .localization-form__list-item#no-results-message {
     grid-template-columns: 1fr;
     text-align: center;
-    color: rgb(var(--color-foreground-rgb) / var(--opacity-subdued-text));
+    color: rgb(var(--color-variant-text-rgb) / var(--opacity-subdued-text));
   }
 
   .is-searching .localization-form__list-item .country {
-    color: rgb(var(--color-foreground-rgb) / var(--opacity-80));
+    color: rgb(var(--color-variant-text-rgb) / var(--opacity-80));
   }
 
   .localization-form__list-item .country mark {
     font-weight: 500;
     background: none;
-    color: var(--color-foreground);
+    color: var(--color-variant-text);
   }
 
   .country-filter {
@@ -528,12 +530,12 @@
 
   .language-selector__label {
     flex-shrink: 0;
-    color: rgb(var(--color-foreground-rgb) / var(--opacity-subdued-text));
+    color: rgb(var(--color-variant-text-rgb) / var(--opacity-subdued-text));
   }
 
   .localization-form__select {
     border: none;
-    color: var(--color-foreground);
+    color: var(--color-variant-text);
     appearance: none;
     background-color: var(--color-input-background);
     padding-block: var(--padding-3xs);
@@ -600,6 +602,7 @@
 
   .localization-form__list-item[aria-current='true'] .svg-wrapper.icon-checkmark {
     visibility: visible;
+    color: var(--color-primary-button-text);
   }
 
   .country-filter__input {
@@ -607,7 +610,7 @@
     height: 44px;
     font-size: var(--font-size-lg);
     padding: var(--padding-md) var(--padding-lg) var(--padding-md) calc(var(--margin-md) + var(--padding-xl));
-    border: 1px solid var(--color-foreground);
+    border: 1px solid var(--color-variant-border);
     color: var(--color-input-text);
     background-color: var(--color-input-background);
     outline-offset: -1px;
@@ -667,7 +670,7 @@
     padding: 0;
     position: relative;
     text-decoration: none;
-    height: 44px;
+    height: 22px;
 
     &:hover {
       color: var(--color-foreground);
@@ -675,6 +678,7 @@
   }
 
   .drawer-localization .drawer-localization__button .icon-caret {
+    display: none;
     width: fit-content;
     height: fit-content;
     margin: 0;
@@ -770,9 +774,20 @@
   .drawer-localization .mobile-localization,
   .drawer-localization .drawer-localization__button--label {
     display: flex;
-    gap: var(--gap-xs);
+    gap: 4px;
     margin-block: 0;
     align-items: center;
+    margin-left: 5px;
+
+    &:hover {
+      color: var(--color-foreground);
+    }
+
+    .currency-code {
+      font-size: var(--font-size--md);
+      font-weight: normal;
+      letter-spacing: 0.25px;
+    }
   }
 
   .drawer-localization__button--label.h6 {
