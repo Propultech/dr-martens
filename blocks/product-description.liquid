@@ -1,12 +1,274 @@
 {% liquid
-  assign product = block.settings.product
-  if request.visual_preview_mode and product == blank
-    assign product = collections.all.products.first
-    assign text = product.description
+  assign description_html = ''
+
+  if block.settings.text != blank
+    assign description_html = block.settings.text
+  endif
+
+  if request.visual_preview_mode and description_html == blank
+    assign preview_product = collections.all.products.first
+    if preview_product
+      assign description_html = preview_product.description
+    endif
+  endif
+
+  assign description_plain = description_html | strip_html | replace: '&nbsp;', ' ' | strip
+  assign description_display_mode = block.settings.description_display_mode | default: 'normal'
+  assign description_preview_lines = block.settings.description_preview_lines | default: 3
+  assign description_preview_limit = description_preview_lines | times: 90
+  assign description_preview_heading = ''
+  assign description_preview_body_plain = description_plain
+  assign heading_chunk = ''
+  assign description_preview_needs_truncation = false
+  assign show_description_preview_modal = false
+  if description_display_mode == 'excerpt_modal' and description_plain != blank
+    assign show_description_preview_modal = true
+  endif
+
+  if description_html contains '<h1'
+    assign heading_chunk = description_html | split: '<h1' | slice: 1, 1 | first | split: '</h1>' | first
+  elsif description_html contains '<h2'
+    assign heading_chunk = description_html | split: '<h2' | slice: 1, 1 | first | split: '</h2>' | first
+  elsif description_html contains '<h3'
+    assign heading_chunk = description_html | split: '<h3' | slice: 1, 1 | first | split: '</h3>' | first
+  elsif description_html contains '<h4'
+    assign heading_chunk = description_html | split: '<h4' | slice: 1, 1 | first | split: '</h4>' | first
+  elsif description_html contains '<h5'
+    assign heading_chunk = description_html | split: '<h5' | slice: 1, 1 | first | split: '</h5>' | first
+  elsif description_html contains '<h6'
+    assign heading_chunk = description_html | split: '<h6' | slice: 1, 1 | first | split: '</h6>' | first
+  endif
+
+  if heading_chunk != blank
+    assign heading_inner_html = heading_chunk | split: '>' | slice: 1, 50 | join: '>'
+    assign description_preview_heading = heading_inner_html | strip_html | split: '<' | first | split: '&lt;' | first | strip
+  endif
+
+  if description_preview_heading != blank
+    assign description_preview_body_plain = description_plain | remove_first: description_preview_heading | strip
+  endif
+
+  assign description_preview_text = description_preview_body_plain | strip_newlines | replace: '  ', ' ' | strip
+  if description_preview_text.size > description_preview_limit
+    assign description_preview_text = description_preview_text | truncate: description_preview_limit, '...'
+    assign description_preview_needs_truncation = true
+  endif
+
+  assign visibility_class = ''
+  if block.settings.visibility == 'desktop'
+    assign visibility_class = ' hidden--mobile'
+  elsif block.settings.visibility == 'mobile'
+    assign visibility_class = ' hidden--desktop'
   endif
 %}
 
-{% render 'text', fallback_text: text, block: block %}
+{% if show_description_preview_modal %}
+  <script
+    src="{{ 'dialog.js' | asset_url }}"
+    type="module"
+  ></script>
+{% endif %}
+
+{% if show_description_preview_modal %}
+  {% liquid
+    assign description_modal_button_label = block.settings.description_preview_button_label | strip
+    if description_modal_button_label == blank
+      assign description_modal_button_label = 'content.read_more' | t
+    endif
+  %}
+  <div
+    class="product-description__container product-description__container--{{ block.settings.description_content_width | default: 'contained' }}{{ visibility_class }}"
+  >
+    <div
+      class="product-description__excerpt"
+      style="
+        {% render 'spacing-padding', settings: block.settings %}
+        {% render 'typography-style', settings: block.settings %}
+      "
+    >
+    {% if description_preview_heading != blank %}
+      <h3 class="product-description__preview-heading">{{ description_preview_heading | escape }}</h3>
+    {% endif %}
+    <div class="product-description__preview-row">
+      <span class="product-description__preview-text">{{ description_preview_text }}</span>
+      {% if description_preview_needs_truncation %}
+        <dialog-component class="product-description__dialog product-description__dialog--inline">
+        <button
+          class="button button-unstyled product-description__preview-button"
+          type="button"
+          on:click="/showDialog"
+        >
+          {{ description_modal_button_label }}
+          <span class="svg-wrapper">{{ 'icon-chevron-right.svg' | inline_asset_content }}</span>
+        </button>
+        <dialog
+          ref="dialog"
+          class="dialog-modal product-description__modal color-{{ settings.popover_color_scheme }}{% if block.settings.description_modal_behavior == 'drawer' %} product-description__modal--drawer dialog-drawer dialog-drawer--right{% endif %}"
+          scroll-lock
+          aria-label="{{ closest.product.title | default: shop.name | escape }}"
+        >
+          <div class="rte product-description__modal-content">
+            {{ description_html }}
+          </div>
+          <button
+            type="button"
+            class="button button-unstyled close-button product-description__modal-close"
+            aria-label="{{ 'actions.close' | t }}"
+            on:click="/closeDialog"
+          >
+            <span class="visually-hidden">{{ 'actions.close' | t }}</span>
+            {{ 'icon-close.svg' | inline_asset_content }}
+          </button>
+        </dialog>
+      </dialog-component>
+      {% endif %}
+    </div>
+    </div>
+  </div>
+{% else %}
+  <div class="product-description__container product-description__container--{{ block.settings.description_content_width | default: 'contained' }}{{ visibility_class }}">
+    {% render 'text', fallback_text: description_html, block: block %}
+  </div>
+{% endif %}
+
+{% style %}
+  .product-description__container {
+    width: 100%;
+  }
+
+  .product-description__container--contained {
+    max-width: var(--narrow-content-width);
+  }
+
+  .product-description__container--full {
+    margin: 0 calc(var(--page-margin) * -1);
+    width: calc(100% + (var(--page-margin) * 2));
+  }
+
+  .product-description__excerpt {
+    width: 100%;
+    padding: 30px var(--page-margin) 23px;
+    border-top: 20px solid #E3E3E3;
+    border-bottom: 20px solid #E3E3E3;
+  }
+
+  .product-description__preview-heading {
+    margin: 0 0 12px;
+    font-family: var(--font-body--family);
+    font-size: var(--font-size--sm);
+    font-weight: var(--font-accent--weight, 800);
+    line-height: 18px;
+    letter-spacing: .25px;
+    text-transform: uppercase;
+  }
+
+  .product-description__preview-row {
+    font-size: var(--font-paragraph--size);
+    line-height: 137.5%;
+  }
+
+  .product-description__preview-text {
+    margin: 0;
+    text-wrap: pretty;
+  }
+
+  .product-description__dialog--inline {
+    display: inline;
+  }
+
+  .product-description__preview-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+    margin-inline-start: var(--gap-3xs);
+    font-weight: var(--font-subheading--weight);
+    font-size: var(--font-size--md);
+    text-decoration: underline;
+    text-transform: none;
+    font-family: var(--font-body--family);
+    font-stretch: normal;
+
+    .svg-wrapper {
+      width: 8px;
+      height: 20px;
+    }
+  }
+
+  .product-description__modal:not(.product-description__modal--drawer) {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    border-radius: var(--style-border-radius-popover);
+    border: var(--style-border-popover);
+    box-shadow: var(--shadow-popover);
+    width: min(680px, calc(100vw - var(--padding-xl) * 2));
+    max-height: var(--modal-max-height);
+    padding: var(--padding-xl);
+  }
+
+  .product-description__modal--drawer {
+    background-color: var(--color-variant-background);
+    color: var(--color-variant-text);
+    border: var(--style-border-popover);
+    border-radius: 0;
+    box-shadow: var(--shadow-popover);
+    position: fixed;
+    width: var(--sidebar-width);
+    max-width: 95vw;
+    height: 100%;
+    margin: 0 0 0 auto;
+    padding: 60px 20px 60px;
+  }
+
+  .product-description__modal--drawer:modal {
+    max-height: 100dvh;
+  }
+
+  .product-description__modal--drawer[open] {
+    --start-x: 100%;
+    --end-x: 0px;
+    --start-opacity: 1;
+  }
+
+  .product-description__modal--drawer[open].dialog-closing {
+    --start-x: 0px;
+    --end-x: 100%;
+    --start-opacity: 1;
+    --end-opacity: 1;
+  }
+
+  .product-description__modal:not(.product-description__modal--drawer)[open] {
+    animation: modalSlideInTop var(--animation-speed) var(--animation-easing) forwards;
+  }
+
+  .product-description__modal:not(.product-description__modal--drawer).dialog-closing {
+    animation: modalSlideOutTop var(--animation-speed) var(--animation-easing) forwards;
+  }
+
+  .product-description__modal-content {
+    padding-right: var(--padding-xl);
+
+    > h3 {
+      margin: 0 0 8px;
+      padding: 0 0 8px;
+    }
+
+    > div {
+      margin: 0 0 16px;
+      padding: 0 0 16px;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    > h3:first-of-type {
+      border-bottom: 1px solid var(--color-border);
+    }
+  }
+
+  .product-description__modal-close {
+    top: var(--margin-2xs);
+    right: var(--margin-2xs);
+  }
+{% endstyle %}
 
 {% schema %}
 {
@@ -20,7 +282,97 @@
     },
     {
       "type": "header",
+      "content": "Resumen y modal"
+    },
+    {
+      "type": "select",
+      "id": "description_display_mode",
+      "label": "Modo de descripción",
+      "options": [
+        {
+          "value": "normal",
+          "label": "Normal"
+        },
+        {
+          "value": "excerpt_modal",
+          "label": "Resumen + modal"
+        }
+      ],
+      "default": "normal"
+    },
+    {
+      "type": "range",
+      "id": "description_preview_lines",
+      "label": "Líneas visibles",
+      "min": 1,
+      "max": 50,
+      "step": 1,
+      "default": 3,
+      "visible_if": "{{ block.settings.description_display_mode == 'excerpt_modal' }}"
+    },
+    {
+      "type": "select",
+      "id": "description_modal_behavior",
+      "label": "Tipo de modal",
+      "options": [
+        {
+          "value": "drawer",
+          "label": "Lateral derecho"
+        },
+        {
+          "value": "centered",
+          "label": "Centrado"
+        }
+      ],
+      "default": "drawer",
+      "visible_if": "{{ block.settings.description_display_mode == 'excerpt_modal' }}"
+    },
+    {
+      "type": "text",
+      "id": "description_preview_button_label",
+      "label": "Texto del botón",
+      "default": "Leer más",
+      "visible_if": "{{ block.settings.description_display_mode == 'excerpt_modal' }}"
+    },
+    {
+      "type": "header",
       "content": "t:content.layout"
+    },
+    {
+      "type": "select",
+      "id": "description_content_width",
+      "label": "Ancho del contenido",
+      "options": [
+        {
+          "value": "contained",
+          "label": "Contenida"
+        },
+        {
+          "value": "full",
+          "label": "Página completa"
+        }
+      ],
+      "default": "contained"
+    },
+    {
+      "type": "select",
+      "id": "visibility",
+      "label": "Visibilidad",
+      "options": [
+        {
+          "value": "",
+          "label": "Desktop y móvil"
+        },
+        {
+          "value": "desktop",
+          "label": "Solo desktop"
+        },
+        {
+          "value": "mobile",
+          "label": "Solo móvil"
+        }
+      ],
+      "default": ""
     },
     {
       "type": "select",
@@ -392,10 +744,7 @@
   "presets": [
     {
       "name": "t:names.product_description",
-      "category": "t:categories.product",
-      "settings": {
-        "text": "{{ closest.product.description }}"
-      }
+      "category": "t:categories.product"
     }
   ]
 }

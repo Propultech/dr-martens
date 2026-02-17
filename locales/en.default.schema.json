@@ -127,6 +127,7 @@
     "resource_reference_product_title": "Displays title from parent product",
     "resource_reference_product_variant_picker": "Displays variants from parent product",
     "resource_reference_product_custom_property": "Add customizable input fields to collect custom information that will be added to this order line item, later visible in the order details.",
+    "read_more": "Read more...",
     "search": "Search",
     "section_layout": "Section layout",
     "section_link": "Section link",

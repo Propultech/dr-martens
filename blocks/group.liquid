@@ -2,7 +2,13 @@
   {% content_for 'blocks' %}
 {% endcapture %}
 
-{% render 'group', children: children, settings: block.settings, shopify_attributes: block.shopify_attributes %}
+{% render 'group',
+  children: children,
+  settings: block.settings,
+  shopify_attributes: block.shopify_attributes,
+  group_id: block.id,
+  custom_css: block.settings.custom_css
+%}
 
 {% schema %}
 {
@@ -39,6 +45,26 @@
         }
       ],
       "default": "column"
+    },
+    {
+      "type": "select",
+      "id": "visibility",
+      "label": "Visibilidad",
+      "options": [
+        {
+          "value": "",
+          "label": "Desktop y móvil"
+        },
+        {
+          "value": "desktop",
+          "label": "Solo desktop"
+        },
+        {
+          "value": "mobile",
+          "label": "Solo móvil"
+        }
+      ],
+      "default": ""
     },
     {
       "type": "checkbox",
@@ -539,6 +565,16 @@
       "step": 1,
       "unit": "px",
       "default": 0
+    },
+    {
+      "type": "header",
+      "content": "CSS personalizado"
+    },
+    {
+      "type": "textarea",
+      "id": "custom_css",
+      "label": "CSS del contenedor",
+      "info": "Se aplica solo a este group. Puedes usar declaraciones (background: #111;) o selectores internos (h3 { color: red; }).",
     }
   ],
   "presets": [

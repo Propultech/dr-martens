@@ -1,0 +1,1031 @@
+{%- comment -%}
+  Lógica de visibilidad: Si la section no está en el template, no se renderiza.
+  Estas opciones permiten controlar la visibilidad cuando la section SÍ está en el template.
+{%- endcomment -%}
+{% assign show_breadcrumbs = false %}
+{% if template.name == 'collection' and section.settings.show_on_collection %}
+  {% assign show_breadcrumbs = true %}
+{% elsif template.name == 'product' and section.settings.show_on_product %}
+  {% assign show_breadcrumbs = true %}
+{% endif %}
+
+{% if show_breadcrumbs %}
+  {% assign menu_handle = section.settings.menu | default: 'main-menu' %}
+  {% assign nav = linklists[menu_handle] %}
+
+  {%- comment -%}
+    1) Determinar colección "base" para el breadcrumb
+    Excluimos la colección "all" (collections/all) que es especial de Shopify
+  {%- endcomment -%}
+  {% assign target_collection = nil %}
+  {% assign target_collection_url = '' %}
+  {% assign all_collection_url = '/collections/all' %}
+
+  {% if template.name == 'collection' %}
+    {%- comment -%} En páginas de colección, solo excluir si es "all" {%- endcomment -%}
+    {% unless collection.url == all_collection_url %}
+      {% assign target_collection = collection %}
+      {% assign target_collection_url = collection.url %}
+    {% endunless %}
+  {% elsif template.name == 'product' %}
+    {%- comment -%}
+      En productos, buscar la primera colección que:
+      1. No sea "all"
+      2. Esté en el menú (prioridad)
+      Si ninguna está en el menú, usar la primera que no sea "all"
+    {%- endcomment -%}
+    {% assign best_collection = nil %}
+    {% assign best_collection_url = '' %}
+
+    {% if collection and collection.url != all_collection_url %}
+      {% assign best_collection = collection %}
+      {% assign best_collection_url = collection.url %}
+    {% elsif product.collections.size > 0 %}
+      {%- comment -%}
+        Buscar la colección más específica (mayor profundidad en el menú)
+        Priorizar nivel 3 > nivel 2 > nivel 1
+      {%- endcomment -%}
+      {% assign best_collection_depth = 0 %}
+
+      {% for product_collection in product.collections %}
+        {% unless product_collection.url == all_collection_url %}
+          {% if nav and nav.links != blank %}
+            {%- comment -%} Verificar profundidad máxima en el menú (buscar en todos los niveles) {%- endcomment -%}
+            {% assign collection_depth = 0 %}
+
+            {%- comment -%} Buscar en todos los niveles para encontrar la profundidad máxima {%- endcomment -%}
+            {% for link in nav.links %}
+              {% unless link.url == all_collection_url %}
+                {%- comment -%} Nivel 1 {%- endcomment -%}
+                {% if link.url == product_collection.url %}
+                  {% assign collection_depth = 1 %}
+                {% endif %}
+
+                {%- comment -%} Buscar en nivel 2 y 3 solo si aún no encontramos nivel 3 {%- endcomment -%}
+                {% if collection_depth < 3 and link.links != blank %}
+                  {% for sublink in link.links %}
+                    {% unless sublink.url == all_collection_url %}
+                      {% if sublink.url == product_collection.url %}
+                        {% assign collection_depth = 2 %}
+                      {% endif %}
+
+                      {%- comment -%} Buscar en nivel 3 solo si aún no encontramos nivel 3 {%- endcomment -%}
+                      {% if collection_depth < 3 and sublink.links != blank %}
+                        {% for subsub in sublink.links %}
+                          {% unless subsub.url == all_collection_url %}
+                            {% if subsub.url == product_collection.url %}
+                              {% assign collection_depth = 3 %}
+                              {% break %}
+                            {% endif %}
+                          {% endunless %}
+                        {% endfor %}
+                      {% endif %}
+
+                      {%- comment -%} Si encontramos nivel 3, salir del loop de nivel 2 {%- endcomment -%}
+                      {% if collection_depth == 3 %}
+                        {% break %}
+                      {% endif %}
+                    {% endunless %}
+                  {% endfor %}
+                {% endif %}
+
+                {%- comment -%} Si encontramos nivel 3, salir del loop principal {%- endcomment -%}
+                {% if collection_depth == 3 %}
+                  {% break %}
+                {% endif %}
+              {% endunless %}
+            {% endfor %}
+
+            {%- comment -%} Si está en el menú y es más profunda que la actual, usarla {%- endcomment -%}
+            {% if collection_depth > best_collection_depth %}
+              {% assign best_collection = product_collection %}
+              {% assign best_collection_url = product_collection.url %}
+              {% assign best_collection_depth = collection_depth %}
+            {% elsif collection_depth == 0 and best_collection == nil %}
+              {%- comment -%} Si no está en el menú y no hay mejor opción, guardar como fallback {%- endcomment -%}
+              {% assign best_collection = product_collection %}
+              {% assign best_collection_url = product_collection.url %}
+            {% endif %}
+          {% else %}
+            {%- comment -%} Si no hay menú, usar la primera {%- endcomment -%}
+            {% if best_collection == nil %}
+              {% assign best_collection = product_collection %}
+              {% assign best_collection_url = product_collection.url %}
+            {% endif %}
+          {% endif %}
+        {% endunless %}
+      {% endfor %}
+    {% endif %}
+
+    {% if best_collection %}
+      {% assign target_collection = best_collection %}
+      {% assign target_collection_url = best_collection_url %}
+    {% endif %}
+  {% endif %}
+
+  {%- comment -%}
+    2) Buscar la ruta completa en el menú (múltiples niveles)
+    Almacenamos los niveles intermedios en variables
+  {%- endcomment -%}
+  {% assign level1_title = '' %}
+  {% assign level1_url = '' %}
+  {% assign level2_title = '' %}
+  {% assign level2_url = '' %}
+  {% assign level3_title = '' %}
+  {% assign level3_url = '' %}
+  {% assign found_path = false %}
+  {% assign path_depth = 0 %}
+
+  {% if target_collection_url != '' and nav and nav.links != blank %}
+    {%- comment -%} Buscar en nivel 1 (directo), excluyendo collections/all {%- endcomment -%}
+    {% for link in nav.links %}
+      {% unless link.url == all_collection_url %}
+        {% if link.url == target_collection_url %}
+          {% assign level1_title = link.title %}
+          {% assign level1_url = link.url %}
+          {% assign found_path = true %}
+          {% assign path_depth = 1 %}
+          {% break %}
+        {% endif %}
+      {% endunless %}
+    {% endfor %}
+
+    {%- comment -%} Si no se encontró en nivel 1, buscar en nivel 2, excluyendo collections/all {%- endcomment -%}
+    {% if found_path == false %}
+      {% for parent_link in nav.links %}
+        {% unless parent_link.url == all_collection_url %}
+          {% if parent_link.links != blank %}
+            {% for child_link in parent_link.links %}
+              {% unless child_link.url == all_collection_url %}
+                {% if child_link.url == target_collection_url %}
+                  {% assign level1_title = parent_link.title %}
+                  {% assign level1_url = parent_link.url %}
+                  {% assign level2_title = child_link.title %}
+                  {% assign level2_url = child_link.url %}
+                  {% assign found_path = true %}
+                  {% assign path_depth = 2 %}
+                  {% break %}
+                {% endif %}
+              {% endunless %}
+            {% endfor %}
+            {% if found_path %}
+              {% break %}
+            {% endif %}
+          {% endif %}
+        {% endunless %}
+      {% endfor %}
+    {% endif %}
+
+    {%- comment -%} Si aún no se encontró, buscar en nivel 3, excluyendo collections/all {%- endcomment -%}
+    {% if found_path == false %}
+      {% for parent_link in nav.links %}
+        {% unless parent_link.url == all_collection_url %}
+          {% if parent_link.links != blank %}
+            {% for child_link in parent_link.links %}
+              {% unless child_link.url == all_collection_url %}
+                {% if child_link.links != blank %}
+                  {% for grandchild_link in child_link.links %}
+                    {% unless grandchild_link.url == all_collection_url %}
+                      {% if grandchild_link.url == target_collection_url %}
+                        {% assign level1_title = parent_link.title %}
+                        {% assign level1_url = parent_link.url %}
+                        {% assign level2_title = child_link.title %}
+                        {% assign level2_url = child_link.url %}
+                        {% assign level3_title = grandchild_link.title %}
+                        {% assign level3_url = grandchild_link.url %}
+                        {% assign found_path = true %}
+                        {% assign path_depth = 3 %}
+                        {% break %}
+                      {% endif %}
+                    {% endunless %}
+                  {% endfor %}
+                  {% if found_path %}
+                    {% break %}
+                  {% endif %}
+                {% endif %}
+              {% endunless %}
+            {% endfor %}
+            {% if found_path %}
+              {% break %}
+            {% endif %}
+          {% endif %}
+        {% endunless %}
+      {% endfor %}
+    {% endif %}
+  {% endif %}
+
+  {%- comment -%}
+    3) Construir JSON-LD en paralelo al HTML
+  {%- endcomment -%}
+  {% assign position = 1 %}
+
+  {% capture breadcrumb_items %}
+  {
+    "@type": "ListItem",
+    "position": {{ position }},
+    "name": "{{ section.settings.home_label | escape }}",
+    "item": "{{ shop.url }}{{ routes.root_url }}"
+  }
+  {% endcapture %}
+
+  {% assign position = position | plus: 1 %}
+
+  {%- comment -%}
+    Separador configurable
+  {%- endcomment -%}
+  {% assign separator = section.settings.separator | default: '>' %}
+  {% if separator == 'slash' %}
+    {% assign separator_display = '/' %}
+  {% elsif separator == 'dash' %}
+    {% assign separator_display = '-' %}
+  {% elsif separator == 'arrow' %}
+    {% assign separator_display = '>' %}
+  {% elsif separator == 'chevron' %}
+    {% assign separator_display = '›' %}
+  {% elsif separator == 'double-chevron' %}
+    {% assign separator_display = '»' %}
+  {% else %}
+    {% assign separator_display = separator %}
+  {% endif %}
+
+  {%- comment -%}
+    HTML de breadcrumbs con wrapper de sección
+  {%- endcomment -%}
+  <div
+    class="breadcrumb-color-overrides{% if section.settings.enable_custom_colors_desktop %} breadcrumb-color-overrides--desktop{% endif %}{% if section.settings.enable_custom_colors_mobile %} breadcrumb-color-overrides--mobile{% endif %}"
+    style="
+      --breadcrumb-override-desktop-text: {{ section.settings.custom_text_color_desktop }};
+      --breadcrumb-override-desktop-bg: {{ section.settings.custom_background_color_desktop }};
+      --breadcrumb-override-mobile-text: {{ section.settings.custom_text_color_mobile }};
+      --breadcrumb-override-mobile-bg: {{ section.settings.custom_background_color_mobile }};
+    "
+  >
+    <div class="section-background color-{{ section.settings.color_scheme }}"></div>
+    <div class="section section--{{ section.settings.section_width }} color-{{ section.settings.color_scheme }} {% unless section.settings.show_on_desktop %}hidden--desktop{% endunless %} {% unless section.settings.show_on_mobile %}hidden--mobile{% endunless %}">
+      <div class="spacing-style" style="{% render 'spacing-style', settings: section.settings %}">
+        <nav class="breadcrumb breadcrumb--align-{{ section.settings.alignment }}" aria-label="Breadcrumb">
+    <ol class="breadcrumb__list" itemscope itemtype="https://schema.org/BreadcrumbList" style="--breadcrumb-separator: '{{ separator_display }}';">
+
+      {%- comment -%} Home {%- endcomment -%}
+      <li class="breadcrumb__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a href="{{ routes.root_url }}" class="breadcrumb__link" itemprop="item">
+          <span itemprop="name">{{ section.settings.home_label }}</span>
+        </a>
+        <meta itemprop="position" content="1">
+      </li>
+
+      {% if template.name == 'collection' and target_collection %}
+        {%- comment -%}
+          Renderizar niveles intermedios desde el menú
+        {%- endcomment -%}
+        {% if found_path %}
+          {%- comment -%} Nivel 1 (si existe y no es la colección actual) {%- endcomment -%}
+          {% if path_depth >= 1 and level1_url != target_collection_url %}
+            <li class="breadcrumb__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+              <a href="{{ level1_url }}" class="breadcrumb__link" itemprop="item">
+                <span itemprop="name">{{ level1_title }}</span>
+              </a>
+              <meta itemprop="position" content="{{ position }}">
+            </li>
+
+            {% capture breadcrumb_items %}
+            {{ breadcrumb_items }},
+            {
+              "@type": "ListItem",
+              "position": {{ position }},
+              "name": "{{ level1_title | escape }}",
+              "item": "{{ shop.url }}{{ level1_url }}"
+            }
+            {% endcapture %}
+
+            {% assign position = position | plus: 1 %}
+          {% endif %}
+
+          {%- comment -%} Nivel 2 (si existe y no es la colección actual) {%- endcomment -%}
+          {% if path_depth >= 2 and level2_url != target_collection_url %}
+            <li class="breadcrumb__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+              <a href="{{ level2_url }}" class="breadcrumb__link" itemprop="item">
+                <span itemprop="name">{{ level2_title }}</span>
+              </a>
+              <meta itemprop="position" content="{{ position }}">
+            </li>
+
+            {% capture breadcrumb_items %}
+            {{ breadcrumb_items }},
+            {
+              "@type": "ListItem",
+              "position": {{ position }},
+              "name": "{{ level2_title | escape }}",
+              "item": "{{ shop.url }}{{ level2_url }}"
+            }
+            {% endcapture %}
+
+            {% assign position = position | plus: 1 %}
+          {% endif %}
+
+          {%- comment -%} Nivel 3 (si existe y no es la colección actual) {%- endcomment -%}
+          {% if path_depth >= 3 and level3_url != target_collection_url %}
+            <li class="breadcrumb__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+              <a href="{{ level3_url }}" class="breadcrumb__link" itemprop="item">
+                <span itemprop="name">{{ level3_title }}</span>
+              </a>
+              <meta itemprop="position" content="{{ position }}">
+            </li>
+
+            {% capture breadcrumb_items %}
+            {{ breadcrumb_items }},
+            {
+              "@type": "ListItem",
+              "position": {{ position }},
+              "name": "{{ level3_title | escape }}",
+              "item": "{{ shop.url }}{{ level3_url }}"
+            }
+            {% endcapture %}
+
+            {% assign position = position | plus: 1 %}
+          {% endif %}
+        {% endif %}
+
+        {%- comment -%} Crumb de la colección actual (siempre se muestra) {%- endcomment -%}
+        <li class="breadcrumb__item breadcrumb__item--current" aria-current="page" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <span class="breadcrumb__link breadcrumb__link--current" itemprop="name">{{ target_collection.title }}</span>
+          <meta itemprop="position" content="{{ position }}">
+        </li>
+
+        {% capture breadcrumb_items %}
+        {{ breadcrumb_items }},
+        {
+          "@type": "ListItem",
+          "position": {{ position }},
+          "name": "{{ target_collection.title | escape }}",
+          "item": "{{ shop.url }}{{ target_collection.url }}"
+        }
+        {% endcapture %}
+
+        {% assign position = position | plus: 1 %}
+
+      {% elsif template.name == 'product' %}
+        {% if target_collection %}
+          {%- comment -%}
+            Renderizar niveles intermedios desde el menú
+          {%- endcomment -%}
+          {% if found_path %}
+            {%- comment -%} Nivel 1 (si existe y no es la colección actual) {%- endcomment -%}
+            {% if path_depth >= 1 and level1_url != target_collection_url %}
+              <li class="breadcrumb__item" data-breadcrumb-menu-path="true" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                <a href="{{ level1_url }}" class="breadcrumb__link" itemprop="item">
+                  <span itemprop="name">{{ level1_title }}</span>
+                </a>
+                <meta itemprop="position" content="{{ position }}">
+              </li>
+
+              {% capture breadcrumb_items %}
+              {{ breadcrumb_items }},
+              {
+                "@type": "ListItem",
+                "position": {{ position }},
+                "name": "{{ level1_title | escape }}",
+                "item": "{{ shop.url }}{{ level1_url }}"
+              }
+              {% endcapture %}
+
+              {% assign position = position | plus: 1 %}
+            {% endif %}
+
+            {%- comment -%} Nivel 2 (si existe y no es la colección actual) {%- endcomment -%}
+            {% if path_depth >= 2 and level2_url != target_collection_url %}
+              <li class="breadcrumb__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                <a href="{{ level2_url }}" class="breadcrumb__link" itemprop="item">
+                  <span itemprop="name">{{ level2_title }}</span>
+                </a>
+                <meta itemprop="position" content="{{ position }}">
+              </li>
+
+              {% capture breadcrumb_items %}
+              {{ breadcrumb_items }},
+              {
+                "@type": "ListItem",
+                "position": {{ position }},
+                "name": "{{ level2_title | escape }}",
+                "item": "{{ shop.url }}{{ level2_url }}"
+              }
+              {% endcapture %}
+
+              {% assign position = position | plus: 1 %}
+            {% endif %}
+
+            {%- comment -%} Nivel 3 (si existe y no es la colección actual) {%- endcomment -%}
+            {% if path_depth >= 3 and level3_url != target_collection_url %}
+              <li class="breadcrumb__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                <a href="{{ level3_url }}" class="breadcrumb__link" itemprop="item">
+                  <span itemprop="name">{{ level3_title }}</span>
+                </a>
+                <meta itemprop="position" content="{{ position }}">
+              </li>
+
+              {% capture breadcrumb_items %}
+              {{ breadcrumb_items }},
+              {
+                "@type": "ListItem",
+                "position": {{ position }},
+                "name": "{{ level3_title | escape }}",
+                "item": "{{ shop.url }}{{ level3_url }}"
+              }
+              {% endcapture %}
+
+              {% assign position = position | plus: 1 %}
+            {% endif %}
+          {% endif %}
+
+          {%- comment -%} Crumb colección (dinámica para historial) {%- endcomment -%}
+          <li class="breadcrumb__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <a href="{{ target_collection.url }}" class="breadcrumb__link" itemprop="item" data-breadcrumb-dynamic="true">
+              <span itemprop="name">{{ target_collection.title }}</span>
+            </a>
+            <meta itemprop="position" content="{{ position }}">
+          </li>
+
+          {% capture breadcrumb_items %}
+          {{ breadcrumb_items }},
+          {
+            "@type": "ListItem",
+            "position": {{ position }},
+            "name": "{{ target_collection.title | escape }}",
+            "item": "{{ shop.url }}{{ target_collection.url }}"
+          }
+          {% endcapture %}
+
+          {% assign position = position | plus: 1 %}
+        {% endif %}
+
+        {%- comment -%} Crumb producto (último nivel, sin link) {%- endcomment -%}
+        <li class="breadcrumb__item breadcrumb__item--current" aria-current="page" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <span class="breadcrumb__link breadcrumb__link--current" itemprop="name">{{ product.title }}</span>
+          <meta itemprop="position" content="{{ position }}">
+        </li>
+
+        {% capture breadcrumb_items %}
+        {{ breadcrumb_items }},
+        {
+          "@type": "ListItem",
+          "position": {{ position }},
+          "name": "{{ product.title | escape }}",
+          "item": "{{ canonical_url }}"
+        }
+        {% endcapture %}
+
+      {% endif %}
+
+    </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  {%- comment -%}
+    JSON-LD SEO-friendly
+  {%- endcomment -%}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [{{ breadcrumb_items | strip }}]
+  }
+  </script>
+
+  {%- comment -%}
+    Historial de navegación de colecciones con localStorage.
+    SEO = JSON-LD + render inicial, esto solo mejora UX.
+    Si la colección del producto no está en el menú, usa la última colección visitada.
+    IMPORTANTE: El JSON-LD siempre refleja la estructura del menú (SEO-friendly).
+  {%- endcomment -%}
+  <script>
+    (function() {
+      var enableHistory = {% if section.settings.enable_navigation_history %}true{% else %}false{% endif %};
+      var key = 'seo_breadcrumb_last_collection';
+      var path = window.location.pathname || '';
+
+      // Si estoy en una colección, guardo la colección y la ruta completa del breadcrumb
+      if (enableHistory && path.indexOf('/collections/') === 0) {
+        var colLink = document.querySelector('[data-breadcrumb-collection="true"]');
+        if (colLink) {
+          try {
+            var breadcrumbData = {
+              url: colLink.getAttribute('href'),
+              title: colLink.textContent.trim(),
+              path: [],
+              timestamp: Date.now()
+            };
+
+            // Guardar la ruta completa del breadcrumb (niveles intermedios)
+            var breadcrumbItems = document.querySelectorAll('.breadcrumb__item[data-breadcrumb-menu-path] a.breadcrumb__link');
+            for (var i = 0; i < breadcrumbItems.length; i++) {
+              var link = breadcrumbItems[i];
+              breadcrumbData.path.push({
+                title: link.textContent.trim(),
+                url: link.getAttribute('href')
+              });
+            }
+
+            localStorage.setItem(key, JSON.stringify(breadcrumbData));
+          } catch (e) {
+            // Error silencioso al guardar en localStorage
+          }
+        }
+      }
+
+      // Si estoy en un producto, intento reconstruir la ruta completa desde localStorage
+      if (enableHistory && path.indexOf('/products/') === 0) {
+        // Cachear selectores para mejor performance
+        var breadcrumbList = document.querySelector('.breadcrumb__list');
+        if (!breadcrumbList) return;
+
+        var hasMenuPath = breadcrumbList.querySelector('.breadcrumb__item[data-breadcrumb-menu-path]');
+        var dyn = breadcrumbList.querySelector('a[data-breadcrumb-dynamic="true"]');
+
+        // Solo usar historial si NO hay ruta del menú (prioridad al menú)
+        if (!hasMenuPath && dyn) {
+          try {
+            var data = JSON.parse(localStorage.getItem(key) || '{}');
+
+            // Validar que los datos no sean muy antiguos (máximo 1 hora)
+            var maxAge = 60 * 60 * 1000; // 1 hora en milisegundos
+            var dataAge = data.timestamp ? (Date.now() - data.timestamp) : Infinity;
+            var isValidAge = dataAge < maxAge;
+
+            // Validar que la colección del historial tenga sentido
+            // (verificar que la URL sea válida y no sea collections/all)
+            var isValidCollection = data.url &&
+                                    data.url !== '/collections/all' &&
+                                    data.url.indexOf('/collections/') === 0;
+
+            if (isValidCollection && isValidAge && data.path && data.path.length > 0) {
+              // Insertar los niveles intermedios antes del link de la colección
+              var collectionItem = dyn.closest('li');
+              if (collectionItem) {
+                var position = 2; // Empezar después del home
+                var fragment = document.createDocumentFragment();
+
+                // Crear todos los items en un fragment para mejor performance
+                data.path.forEach(function(level) {
+                  var newItem = document.createElement('li');
+                  newItem.className = 'breadcrumb__item';
+                  newItem.setAttribute('itemprop', 'itemListElement');
+                  newItem.setAttribute('itemscope', '');
+                  newItem.setAttribute('itemtype', 'https://schema.org/ListItem');
+                  newItem.setAttribute('data-breadcrumb-menu-path', 'true');
+                  newItem.setAttribute('data-breadcrumb-from-history', 'true');
+
+                  var link = document.createElement('a');
+                  link.href = level.url;
+                  link.className = 'breadcrumb__link';
+                  link.setAttribute('itemprop', 'item');
+
+                  var span = document.createElement('span');
+                  span.setAttribute('itemprop', 'name');
+                  span.textContent = level.title;
+                  link.appendChild(span);
+
+                  var meta = document.createElement('meta');
+                  meta.setAttribute('itemprop', 'position');
+                  meta.content = position++;
+
+                  newItem.appendChild(link);
+                  newItem.appendChild(meta);
+                  fragment.appendChild(newItem);
+                });
+
+                // Insertar todos los items de una vez
+                collectionItem.parentNode.insertBefore(fragment, collectionItem);
+
+                // Actualizar el link de la colección (solo el span interno, no todo el contenido)
+                dyn.setAttribute('href', data.url);
+                var nameSpan = dyn.querySelector('span[itemprop="name"]');
+                if (nameSpan) {
+                  nameSpan.textContent = data.title;
+                } else {
+                  dyn.textContent = data.title;
+                }
+
+                // Actualizar posiciones de los items siguientes (solo los que siguen)
+                var allItems = breadcrumbList.querySelectorAll('.breadcrumb__item');
+                for (var i = 0; i < allItems.length; i++) {
+                  var meta = allItems[i].querySelector('meta[itemprop="position"]');
+                  if (meta) {
+                    meta.content = i + 1;
+                  }
+                }
+              }
+            } else if (isValidCollection && isValidAge && data.url && data.title) {
+              // Si no hay ruta pero sí hay colección válida, solo actualizar el link
+              dyn.setAttribute('href', data.url);
+              var nameSpan = dyn.querySelector('span[itemprop="name"]');
+              if (nameSpan) {
+                nameSpan.textContent = data.title;
+              } else {
+                dyn.textContent = data.title;
+              }
+            }
+          } catch (e) {
+            // Error silencioso al reconstruir breadcrumb
+          }
+        }
+      }
+    })();
+  </script>
+
+{% endif %}
+
+{%- comment -%}
+  Estilos CSS para breadcrumbs
+  Nota: Debe estar fuera del bloque condicional porque {% stylesheet %} no puede estar anidado
+{%- endcomment -%}
+{% stylesheet %}
+  .breadcrumb-color-overrides--desktop {
+    --breadcrumb-link-color: var(--breadcrumb-override-desktop-text);
+    --breadcrumb-current-color: var(--breadcrumb-override-desktop-text);
+    --breadcrumb-separator-color: var(--breadcrumb-override-desktop-text);
+  }
+
+  .breadcrumb-color-overrides--desktop .section-background,
+  .breadcrumb-color-overrides--desktop .section {
+    background: var(--breadcrumb-override-desktop-bg);
+  }
+
+  .breadcrumb-color-overrides--desktop .section {
+    color: var(--breadcrumb-override-desktop-text);
+  }
+
+  @media screen and (max-width: 749px) {
+    .breadcrumb-color-overrides--mobile {
+      --breadcrumb-link-color: var(--breadcrumb-override-mobile-text);
+      --breadcrumb-current-color: var(--breadcrumb-override-mobile-text);
+      --breadcrumb-separator-color: var(--breadcrumb-override-mobile-text);
+    }
+
+    .breadcrumb-color-overrides--mobile .section-background,
+    .breadcrumb-color-overrides--mobile .section {
+      background: var(--breadcrumb-override-mobile-bg);
+    }
+
+    .breadcrumb-color-overrides--mobile .section {
+      color: var(--breadcrumb-override-mobile-text);
+    }
+  }
+
+  .breadcrumb {
+    margin: 0;
+    padding: 0;
+  }
+
+  .breadcrumb--align-left {
+    text-align: left;
+  }
+
+  .breadcrumb--align-center {
+    text-align: center;
+  }
+
+  .breadcrumb--align-right {
+    text-align: right;
+  }
+
+  .breadcrumb__list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 0.5rem;
+    font-size: var(--breadcrumb-font-size, 0.875rem);
+  }
+
+  @media screen and (max-width: 749px) {
+    .breadcrumb__list {
+      flex-wrap: nowrap;
+      overflow: hidden;
+      max-width: 100%;
+    }
+
+    /* Items clickeables: permitir que se ajusten pero con límite */
+    .breadcrumb__item:not(:last-child) {
+      flex-shrink: 1;
+      min-width: 0;
+      max-width: fit-content;
+    }
+
+    /* Primer item (Inicio): no se encoge */
+    .breadcrumb__item:first-child {
+      flex-shrink: 0;
+    }
+
+    /* Último item (producto): se puede truncar completamente ya que no es clickeable */
+    .breadcrumb__item:last-child {
+      flex-shrink: 1;
+      min-width: 0;
+      max-width: 100%;
+      overflow: hidden;
+    }
+
+    /* Links clickeables: truncar si es necesario pero priorizar visibilidad */
+    .breadcrumb__link:not(.breadcrumb__link--current) {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      display: block;
+      max-width: 100%;
+    }
+
+    /* Link del producto (último): truncar agresivamente ya que no es clickeable */
+    .breadcrumb__link--current {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      display: block;
+      max-width: 100%;
+    }
+
+    .breadcrumb__item:not(:last-child)::after {
+      flex-shrink: 0;
+      margin-left: 0.375rem;
+      margin-right: 0.375rem;
+    }
+  }
+
+  .breadcrumb__item {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+  }
+
+  .breadcrumb__item:not(:last-child)::after {
+    content: var(--breadcrumb-separator, '>');
+    margin-left: 0.5rem;
+    color: var(--breadcrumb-separator-color, currentColor);
+    opacity: 1;
+    font-size: 20px;
+    font-weight: normal;
+  }
+
+  .breadcrumb__link {
+    color: var(--breadcrumb-link-color, currentColor);
+    text-decoration: underline;
+    transition: opacity 0.2s ease;
+  }
+
+  .breadcrumb__link:hover {
+    opacity: 0.7;
+    text-decoration: underline;
+  }
+
+  .breadcrumb__link--current {
+    color: var(--breadcrumb-current-color, currentColor);
+    font-weight: var(--breadcrumb-current-weight, 400);
+    opacity: 1;
+    text-decoration: none;
+    cursor: default;
+    pointer-events: none;
+  }
+
+  .breadcrumb__link--current:hover {
+    text-decoration: none;
+    opacity: 1;
+  }
+
+  @media screen and (max-width: 749px) {
+    .breadcrumb__list {
+      font-size: var(--breadcrumb-font-size-mobile, 0.8125rem);
+      gap: 0.375rem;
+    }
+
+    .breadcrumb__item:not(:last-child)::after {
+      margin-left: 0.375rem;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Breadcrumbs SEO",
+  "class": "section-breadcrumbs",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Configuración básica"
+    },
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Menú base (jerarquía)",
+      "info": "Menú de navegación usado para construir la jerarquía del breadcrumb",
+      "default": "main-menu"
+    },
+    {
+      "type": "text",
+      "id": "home_label",
+      "label": "Etiqueta para Home",
+      "default": "Inicio"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "select",
+      "id": "section_width",
+      "label": "Ancho de sección",
+      "options": [
+        {
+          "value": "page-width",
+          "label": "Ancho de página"
+        },
+        {
+          "value": "full-width",
+          "label": "Ancho completo"
+        }
+      ],
+      "default": "page-width"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Esquema de color",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "Espaciado"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "Espaciado superior",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "Espaciado inferior",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Apariencia"
+    },
+    {
+      "type": "select",
+      "id": "separator",
+      "label": "Separador entre niveles",
+      "options": [
+        {
+          "value": "arrow",
+          "label": "Flecha (>)"
+        },
+        {
+          "value": "chevron",
+          "label": "Chevron (›)"
+        },
+        {
+          "value": "double-chevron",
+          "label": "Doble chevron (»)"
+        },
+        {
+          "value": "slash",
+          "label": "Barra (/)"
+        },
+        {
+          "value": "dash",
+          "label": "Guion (-)"
+        }
+      ],
+      "default": "arrow"
+    },
+    {
+      "type": "select",
+      "id": "alignment",
+      "label": "Alineación",
+      "options": [
+        {
+          "value": "left",
+          "label": "Izquierda"
+        },
+        {
+          "value": "center",
+          "label": "Centro"
+        },
+        {
+          "value": "right",
+          "label": "Derecha"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "header",
+      "content": "Sobrescribir colores"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_custom_colors_desktop",
+      "label": "Sobrescribir en desktop",
+      "default": false
+    },
+    {
+      "type": "color",
+      "id": "custom_text_color_desktop",
+      "label": "Color de texto (desktop)",
+      "default": "#111111",
+      "visible_if": "{{ section.settings.enable_custom_colors_desktop }}"
+    },
+    {
+      "type": "color",
+      "id": "custom_background_color_desktop",
+      "label": "Color de fondo (desktop)",
+      "default": "#ffffff",
+      "visible_if": "{{ section.settings.enable_custom_colors_desktop }}"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_custom_colors_mobile",
+      "label": "Sobrescribir en mobile",
+      "default": false
+    },
+    {
+      "type": "color",
+      "id": "custom_text_color_mobile",
+      "label": "Color de texto (mobile)",
+      "default": "#111111",
+      "visible_if": "{{ section.settings.enable_custom_colors_mobile }}"
+    },
+    {
+      "type": "color",
+      "id": "custom_background_color_mobile",
+      "label": "Color de fondo (mobile)",
+      "default": "#ffffff",
+      "visible_if": "{{ section.settings.enable_custom_colors_mobile }}"
+    },
+    {
+      "type": "header",
+      "content": "Navegación inteligente"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_navigation_history",
+      "label": "Usar historial de navegación",
+      "default": true,
+      "info": "Cuando está habilitado, los breadcrumbs en productos recordarán la última colección visitada si la colección del producto no está en el menú. Esto mejora la UX pero no afecta el SEO (el JSON-LD siempre usa la estructura del menú)."
+    },
+    {
+      "type": "header",
+      "content": "Visibilidad por dispositivo"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_on_desktop",
+      "label": "Mostrar en desktop",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_on_mobile",
+      "label": "Mostrar en mobile",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Visibilidad por template",
+      "info": "Nota: La section debe estar agregada al template para mostrarse. Estas opciones controlan la visibilidad cuando la section ya está en el template."
+    },
+    {
+      "type": "checkbox",
+      "id": "show_on_collection",
+      "label": "Mostrar en páginas de colección",
+      "default": true,
+      "info": "Solo aplica si la section está agregada al template de colección"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_on_product",
+      "label": "Mostrar en páginas de producto",
+      "default": true,
+      "info": "Solo aplica si la section está agregada al template de producto"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Breadcrumbs"
+    }
+  ]
+}
+{% endschema %}

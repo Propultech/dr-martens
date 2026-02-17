@@ -22,6 +22,12 @@
     type="module"
   ></script>
 {%- endif -%}
+{%- if block_settings.show_gallery_description_preview -%}
+  <script
+    src="{{ 'dialog.js' | asset_url }}"
+    type="module"
+  ></script>
+{%- endif -%}
 {%- liquid
   assign selected_product = closest.product
   assign selected_variant_media = selected_product.selected_or_first_available_variant.featured_media
@@ -171,6 +177,81 @@
         endif
       endif
     endfor
+  endif
+
+  assign show_gallery_description_preview = false
+  assign gallery_description_heading = ''
+  assign gallery_description_summary_text = ''
+  assign gallery_description_full = ''
+  assign gallery_description_source = block_settings.gallery_description_content
+  assign gallery_description_insert_after_index = -1
+  assign gallery_description_summary_lines = block_settings.gallery_description_summary_lines | default: 3
+  assign gallery_description_preview_limit = gallery_description_summary_lines | times: 90
+  assign gallery_description_needs_truncation = false
+
+  if request.visual_preview_mode and gallery_description_source == blank and selected_product and selected_product.description != blank
+    assign gallery_description_source = selected_product.description
+  endif
+
+  if block_settings.show_gallery_description_preview and gallery_description_source != blank
+    assign show_gallery_description_preview = true
+    assign gallery_description_full = gallery_description_source
+    assign gallery_description_plain = gallery_description_source | strip_html | replace: '&nbsp;', ' ' | strip
+    assign gallery_description_body_plain = gallery_description_plain
+    assign heading_chunk = ''
+
+    if gallery_description_source contains '<h1'
+      assign heading_chunk = gallery_description_source | split: '<h1' | slice: 1, 1 | first | split: '</h1>' | first
+    elsif gallery_description_source contains '<h2'
+      assign heading_chunk = gallery_description_source | split: '<h2' | slice: 1, 1 | first | split: '</h2>' | first
+    elsif gallery_description_source contains '<h3'
+      assign heading_chunk = gallery_description_source | split: '<h3' | slice: 1, 1 | first | split: '</h3>' | first
+    elsif gallery_description_source contains '<h4'
+      assign heading_chunk = gallery_description_source | split: '<h4' | slice: 1, 1 | first | split: '</h4>' | first
+    elsif gallery_description_source contains '<h5'
+      assign heading_chunk = gallery_description_source | split: '<h5' | slice: 1, 1 | first | split: '</h5>' | first
+    elsif gallery_description_source contains '<h6'
+      assign heading_chunk = gallery_description_source | split: '<h6' | slice: 1, 1 | first | split: '</h6>' | first
+    endif
+
+    if heading_chunk != blank
+      assign heading_inner_html = heading_chunk | split: '>' | slice: 1, 50 | join: '>'
+      assign gallery_description_heading = heading_inner_html | strip_html | split: '<' | first | split: '&lt;' | first | strip
+    endif
+
+    if gallery_description_heading != blank
+      assign gallery_description_body_plain = gallery_description_plain | remove_first: gallery_description_heading | strip
+    endif
+
+    assign gallery_description_summary_text = gallery_description_body_plain | strip_newlines | replace: '  ', ' ' | strip
+    if gallery_description_summary_text.size > gallery_description_preview_limit
+      assign gallery_description_summary_text = gallery_description_summary_text | truncate: gallery_description_preview_limit, '...'
+      assign gallery_description_needs_truncation = true
+    endif
+
+    assign gallery_description_insert_after_row = block_settings.gallery_description_insert_after_row | default: 1
+    if gallery_description_insert_after_row < 1
+      assign gallery_description_insert_after_row = 1
+    endif
+
+    if block_settings.media_columns == 'two'
+      if block_settings.large_first_image
+        assign gallery_description_insert_after_index = gallery_description_insert_after_row | minus: 1 | times: 2
+      else
+        assign gallery_description_insert_after_index = gallery_description_insert_after_row | times: 2 | minus: 1
+      endif
+    else
+      assign gallery_description_insert_after_index = gallery_description_insert_after_row | minus: 1
+    endif
+
+    if gallery_description_insert_after_index >= sorted_media.size
+      assign gallery_description_insert_after_index = sorted_media.size | minus: 1
+    endif
+  endif
+
+  assign gallery_description_button_label = block_settings.gallery_description_button_label | strip
+  if gallery_description_button_label == blank
+    assign gallery_description_button_label = 'content.read_more' | t
   endif
 -%}
 {%- if has_image_drop -%}
@@ -447,6 +528,49 @@
               {%- render 'product-media', media: media, sizes: media_sizes, is_main_product_media: forloop.first -%}
             {% endif %}
           </li>
+          {% if show_gallery_description_preview and forloop.index0 == gallery_description_insert_after_index %}
+            <li class="product-media-container product-media-container--description media-gallery__description-item mobile:hidden">
+              <div class="media-gallery__description-card">
+                {% if gallery_description_heading != blank %}
+                  <h3 class="media-gallery__description-heading">{{ gallery_description_heading | escape }}</h3>
+                {% endif %}
+                <div class="media-gallery__description-row">
+                  <span class="media-gallery__description-summary">{{ gallery_description_summary_text }}</span>
+                  {% if gallery_description_needs_truncation %}
+                    <dialog-component class="media-gallery__description-dialog media-gallery__description-dialog--inline">
+                    <button
+                      class="button button-unstyled media-gallery__description-trigger"
+                      type="button"
+                      on:click="/showDialog"
+                    >
+                      {{ gallery_description_button_label }}
+                      <span class="svg-wrapper">{{ 'icon-chevron-right.svg' | inline_asset_content }}</span>
+                    </button>
+                    <dialog
+                      ref="dialog"
+                      class="dialog-modal media-gallery__description-modal color-{{ settings.popover_color_scheme }}{% if block_settings.gallery_description_modal_behavior == 'drawer' %} media-gallery__description-modal--drawer dialog-drawer dialog-drawer--right{% endif %}"
+                      scroll-lock
+                      aria-label="{{ selected_product.title | escape }}"
+                    >
+                      <div class="rte media-gallery__description-modal-content">
+                        {{ gallery_description_full }}
+                      </div>
+                      <button
+                        type="button"
+                        class="button button-unstyled close-button media-gallery__description-modal-close"
+                        aria-label="{{ 'actions.close' | t }}"
+                        on:click="/closeDialog"
+                      >
+                        <span class="visually-hidden">{{ 'actions.close' | t }}</span>
+                        {{ 'icon-close.svg' | inline_asset_content }}
+                      </button>
+                    </dialog>
+                  </dialog-component>
+                  {% endif %}
+                </div>
+              </div>
+            </li>
+          {% endif %}
         {% endfor %}
       </ul>
     {% endif %}
@@ -733,5 +857,137 @@
   .dialog-zoomed-gallery .product-media-container--model .product-media__image {
     /* Make the height match the height of the model-viewer */
     height: 100vh;
+  }
+
+  .media-gallery__description-item {
+    grid-column: 1 / -1;
+    padding: 25px 10px;
+    background-color: transparent;
+    border-radius: var(--media-radius, 0);
+    min-height: auto;
+  }
+
+  .media-gallery__description-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+  }
+
+  .media-gallery__description-heading {
+    margin: 0;
+    font-family: var(--font-body--family);
+    font-size: var(--font-paragraph--size);
+    font-weight: var(--font-accent--weight, 800);
+    line-height: 18px;
+    letter-spacing: .25px;
+    text-transform: uppercase;
+  }
+
+  .media-gallery__description-row {
+    font-size: var(--font-paragraph--size);
+    line-height: 137.5%;
+  }
+
+  .media-gallery__description-summary {
+    margin: 0;
+    text-wrap: pretty;
+  }
+
+  .media-gallery__description-dialog--inline {
+    display: inline;
+  }
+
+  .media-gallery__description-trigger {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+    margin-inline-start: var(--gap-3xs);
+    font-weight: var(--font-subheading--weight);
+    font-size: var(--font-size--md);
+    text-decoration: underline;
+    text-transform: none;
+    font-family: var(--font-body--family);
+    font-stretch: normal;
+
+    .svg-wrapper {
+      width: 8px;
+      height: 20px;
+    }
+  }
+
+  .media-gallery__description-modal:not(.media-gallery__description-modal--drawer) {
+    background-color: var(--color-variant-background);
+    color: var(--color-variant-text);
+    border-radius: var(--style-border-radius-popover);
+    border: var(--style-border-popover);
+    box-shadow: var(--shadow-popover);
+    width: min(680px, calc(100vw - var(--padding-xl) * 2));
+    max-height: var(--modal-max-height);
+    padding: var(--padding-xl);
+  }
+
+  .media-gallery__description-modal--drawer {
+    background-color: var(--color-variant-background);
+    color: var(--color-variant-text);
+    border: var(--style-border-popover);
+    border-radius: 0;
+    box-shadow: var(--shadow-popover);
+    position: fixed;
+    width: 59.03dvw;
+    max-width: 95vw;
+    height: 100%;
+    margin: 0 0 0 auto;
+    padding: 50px 9.03dvw;
+  }
+
+  .media-gallery__description-modal--drawer:modal {
+    max-height: 100dvh;
+  }
+
+  .media-gallery__description-modal--drawer[open] {
+    --start-x: 100%;
+    --end-x: 0px;
+    --start-opacity: 1;
+  }
+
+  .media-gallery__description-modal--drawer[open].dialog-closing {
+    --start-x: 0px;
+    --end-x: 100%;
+    --start-opacity: 1;
+    --end-opacity: 1;
+  }
+
+  .media-gallery__description-modal:not(.media-gallery__description-modal--drawer)[open] {
+    animation: modalSlideInTop var(--animation-speed) var(--animation-easing) forwards;
+  }
+
+  .media-gallery__description-modal:not(.media-gallery__description-modal--drawer).dialog-closing {
+    animation: modalSlideOutTop var(--animation-speed) var(--animation-easing) forwards;
+  }
+
+  .media-gallery__description-modal-content {
+    padding-right: var(--padding-xl);
+
+    > h3 {
+      margin: 0 0 8px;
+      padding: 0 0 8px;
+    }
+
+    > div {
+      margin: 0 0 16px;
+      padding: 0 0 16px;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    > h3:first-of-type {
+      border-bottom: 1px solid var(--color-border);
+    }
+  }
+
+  .media-gallery__description-modal-close {
+    top: var(--margin-2xs);
+    right: var(--margin-2xs);
   }
 {% endstylesheet %}
