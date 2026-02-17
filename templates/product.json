@@ -348,6 +348,30 @@
               },
               "blocks": {}
             },
+            "product_icon_text_row_6dt4Gb": {
+              "type": "product-icon-text-row",
+              "name": "Icono + texto",
+              "settings": {
+                "text": "<p>Envíos gratis para compras sobre $150.000<br/>Devolución gratuita durante 30 días<br/>Retiro rápido en estilos seleccionados</p>",
+                "icon": "none",
+                "image_upload": "shopify://shop_images/icon-info.svg",
+                "icon_width": 20,
+                "inherit_color_scheme": true,
+                "color_scheme": "",
+                "custom_background_color": "#f7f7f7",
+                "custom_text_color": "",
+                "icon_text_gap": 8,
+                "padding-block-start": 10,
+                "padding-block-end": 10,
+                "padding-inline-start": 15,
+                "padding-inline-end": 15,
+                "padding-block-start-mobile": 0,
+                "padding-block-end-mobile": 0,
+                "padding-inline-start-mobile": 0,
+                "padding-inline-end-mobile": 0
+              },
+              "blocks": {}
+            },
             "variant_picker_R3rGDr": {
               "type": "variant-picker",
               "settings": {
@@ -826,6 +850,7 @@
           "block_order": [
             "group_qABXqH",
             "review_jNnpFP",
+            "product_icon_text_row_6dt4Gb",
             "variant_picker_R3rGDr",
             "popup_link_rMdiEq",
             "popup_link_KenLFr",
@@ -863,6 +888,7 @@
           "name": "t:names.video",
           "settings": {
             "source": "url",
+            "video_url": "",
             "video_autoplay": false,
             "video_loop": false,
             "cover_image": "shopify://shop_images/prod_video.jpg",
