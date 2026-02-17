@@ -94,6 +94,60 @@
     },
     {
       "type": "header",
+      "content": "Descripción en galería"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_gallery_description_preview",
+      "label": "Mostrar resumen de descripción en la galería",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "gallery_description_insert_after_row",
+      "label": "Insertar después de la fila",
+      "min": 1,
+      "max": 12,
+      "step": 1,
+      "default": 1,
+      "visible_if": "{{ block.settings.show_gallery_description_preview }}"
+    },
+    {
+      "type": "range",
+      "id": "gallery_description_summary_lines",
+      "label": "Líneas visibles",
+      "min": 1,
+      "max": 50,
+      "step": 1,
+      "default": 3,
+      "visible_if": "{{ block.settings.show_gallery_description_preview }}"
+    },
+    {
+      "type": "select",
+      "id": "gallery_description_modal_behavior",
+      "label": "Tipo de modal",
+      "options": [
+        {
+          "value": "drawer",
+          "label": "Lateral derecho"
+        },
+        {
+          "value": "centered",
+          "label": "Centrado"
+        }
+      ],
+      "default": "drawer",
+      "visible_if": "{{ block.settings.show_gallery_description_preview }}"
+    },
+    {
+      "type": "text",
+      "id": "gallery_description_button_label",
+      "label": "Texto del botón",
+      "default": "Leer más",
+      "visible_if": "{{ block.settings.show_gallery_description_preview }}"
+    },
+    {
+      "type": "header",
       "content": "t:content.carousel"
     },
     {

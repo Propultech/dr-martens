@@ -86,6 +86,13 @@
     {% assign product_href = '#ProductInformation-' | append: section_id %}
     {% render 'skip-to-content-link', href: product_href, text: 'accessibility.skip_to_product_info' %}
   {% endif %}
+
+  {% if additional_blocks != blank %}
+    <div class="product-information__additional-blocks">
+      {{ additional_blocks }}
+    </div>
+  {% endif %}
+
   <div
     class="{{ product_grid_class }}"
     data-product-grid-content
@@ -108,8 +115,6 @@
       {% endif %}
     {% endfor %}
   </div>
-
-  {{ additional_blocks }}
 </div>
 
 {% stylesheet %}
@@ -122,6 +127,11 @@
     display: grid;
     grid-template-columns: subgrid;
     grid-column: 1 / -1;
+  }
+
+  .product-information__additional-blocks {
+    grid-column: 1 / -1;
+    width: 100%;
   }
 
   /* Default column positions */
@@ -288,7 +298,7 @@
         .product-information__grid--half,
         .product-information--media-none
       ).product-information--media-left {
-      grid-template-columns: 2fr 1fr;
+      grid-template-columns: 2fr minmax(0, 410px);
     }
 
     .product-information__grid:not(
