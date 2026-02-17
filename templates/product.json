@@ -335,19 +335,16 @@
                 "price_MbDBUc"
               ]
             },
-            "divider_VJhene": {
-              "type": "_divider",
-              "name": "t:names.divider",
+            "review_jNnpFP": {
+              "type": "review",
+              "name": "t:names.product_review_stars",
               "settings": {
-                "thickness": 1,
-                "corner_radius": "square",
-                "width_percent": 100,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-block-start-mobile": 0,
-                "padding-block-end-mobile": 0,
-                "padding-inline-start-mobile": 0,
-                "padding-inline-end-mobile": 0
+                "stars_style": "shaded",
+                "show_number": true,
+                "rating_color": "primary",
+                "type_preset": "paragraph",
+                "width": "100%",
+                "alignment": "left"
               },
               "blocks": {}
             },
@@ -828,7 +825,7 @@
           },
           "block_order": [
             "group_qABXqH",
-            "divider_VJhene",
+            "review_jNnpFP",
             "variant_picker_R3rGDr",
             "popup_link_rMdiEq",
             "popup_link_KenLFr",
