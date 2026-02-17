@@ -350,7 +350,7 @@
             },
             "product_icon_text_row_6dt4Gb": {
               "type": "product-icon-text-row",
-              "name": "Icono + texto",
+              "name": "Información extra",
               "settings": {
                 "text": "<p>Envíos gratis para compras sobre $150.000<br/>Devolución gratuita durante 30 días<br/>Retiro rápido en estilos seleccionados</p>",
                 "icon": "none",
