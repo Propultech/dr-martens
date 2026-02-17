@@ -2215,6 +2215,29 @@ product-price.text-block:is(.h1, .h2, .h3, .h4, .h5, .h6)>*:not(.tax-note) {
   margin-block: 0;
 }
 
+.product-information {
+  [ref="priceContainer"] {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+
+    [role="group"] {
+      line-height: 25px;
+    }
+
+    .compare-at-price {
+      font-size: var(--font-size--sm);
+      font-weight: normal;
+    }
+  }
+}
+
+[ref="priceContainer"] {
+  &:has(.compare-at-price) .price {
+    color: var(--color-price-discount);
+  }
+}
+
 .compare-at-price {
   opacity: 0.4;
   text-decoration-line: line-through;
