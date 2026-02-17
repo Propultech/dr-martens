@@ -75,6 +75,12 @@
     {% if block_settings.strong_color %}
       --text-strong-color: {{ block_settings.strong_color }};
     {% endif %}
+    {% if block_settings.link_font_size != blank %}
+      --text-link-font-size: {{ block_settings.link_font_size }};
+    {% endif %}
+    {% if block_settings.link_font_size_mobile != blank %}
+      --text-link-font-size-mobile: {{ block_settings.link_font_size_mobile }};
+    {% endif %}
     {% if block_settings.mobile_padding_override %}
       --padding-block-start-mobile: {{ block_settings['padding-block-start-mobile'] | default: 0 }}px;
       --padding-block-end-mobile: {{ block_settings['padding-block-end-mobile'] | default: 0 }}px;
@@ -274,5 +280,15 @@
   .text-block em,
   .text-block i {
     color: var(--text-italic-color, inherit);
+  }
+
+  .text-block a {
+    font-size: var(--text-link-font-size, inherit);
+  }
+
+  @media screen and (max-width: 749px) {
+    .text-block a {
+      font-size: var(--text-link-font-size-mobile, var(--text-link-font-size, inherit));
+    }
   }
 {% endstylesheet %}

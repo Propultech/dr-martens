@@ -459,16 +459,39 @@
         {% endif %}
 
         {% if render_mobile_slideshow_controls %}
-          {%- render 'slideshow-controls',
-            class: 'desktop:hidden media-gallery__mobile-controls',
-            style: block_settings.slideshow_mobile_controls_style,
-            item_count: sorted_media.size,
-            thumbnails: sorted_media,
-            controls_on_media: mobile_controls_on_media,
-            pagination_position: 'center',
-            aspect_ratio: block_settings.aspect_ratio,
-            thumbnail_radius: block_settings.thumbnail_radius
-          -%}
+          {% if block_settings.slideshow_mobile_controls_style == 'dots_counter' %}
+            {%- render 'slideshow-controls',
+              class: 'desktop:hidden media-gallery__mobile-controls',
+              style: 'dots',
+              item_count: sorted_media.size,
+              thumbnails: sorted_media,
+              controls_on_media: mobile_controls_on_media,
+              pagination_position: 'center',
+              aspect_ratio: block_settings.aspect_ratio,
+              thumbnail_radius: block_settings.thumbnail_radius
+            -%}
+            {%- render 'slideshow-controls',
+              class: 'desktop:hidden media-gallery__mobile-controls',
+              style: 'counter',
+              item_count: sorted_media.size,
+              thumbnails: sorted_media,
+              controls_on_media: mobile_controls_on_media,
+              pagination_position: 'center',
+              aspect_ratio: block_settings.aspect_ratio,
+              thumbnail_radius: block_settings.thumbnail_radius
+            -%}
+          {% else %}
+            {%- render 'slideshow-controls',
+              class: 'desktop:hidden media-gallery__mobile-controls',
+              style: block_settings.slideshow_mobile_controls_style,
+              item_count: sorted_media.size,
+              thumbnails: sorted_media,
+              controls_on_media: mobile_controls_on_media,
+              pagination_position: 'center',
+              aspect_ratio: block_settings.aspect_ratio,
+              thumbnail_radius: block_settings.thumbnail_radius
+            -%}
+          {% endif %}
         {% endif %}
       {% endcapture %}
     {% endif %}
@@ -826,6 +849,11 @@
 
   .media-gallery__mobile-controls {
     grid-area: auto;
+
+    &:has(.slideshow-controls__counter) {
+      top: 27px;
+      bottom: initial;
+    }
   }
 
   /* Mobile thumbnails styling */
