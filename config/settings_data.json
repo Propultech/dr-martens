@@ -745,7 +745,7 @@
           "selected_variant_border_color": "rgba(0,0,0,0)",
           "selected_variant_hover_background_color": "rgba(0,0,0,0)",
           "selected_variant_hover_text_color": "#fedb00",
-          "selected_variant_hover_border_color": "rgba(0,0,0,0)"
+          "selected_variant_hover_border_color": "#828282"
         }
       },
       "scheme-d834ac77-589c-4d43-b03b-5c648d2fcf65": {
