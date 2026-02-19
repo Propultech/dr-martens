@@ -863,7 +863,7 @@
           "type": "_tab_products",
           "name": "Similares",
           "settings": {
-            "tab_title": "Similares",
+            "tab_title": "También te puedes gustar",
             "products": "{{ closest.product.metafields.drmartens.similar_styles.value }}",
             "use_recommendations": true,
             "base_product": "{{ closest.product }}",
