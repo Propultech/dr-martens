@@ -442,7 +442,7 @@
                 "size_guide_message": "<p>Calce: <strong>Talla real</strong>. Compra tu talla habitual.</p>",
                 "size_guide_page": "guia-de-tallas",
                 "size_guide_show_icon_button": true,
-                "size_guide_modal_behavior": "drawer",
+                "size_guide_modal_behavior": "centered",
                 "enable_color_options_modal": true,
                 "color_options_option_names": "color,colour,colorway",
                 "color_options_button_label": "Ver más opciones",
