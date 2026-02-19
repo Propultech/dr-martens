@@ -1,0 +1,562 @@
+{% liquid
+  assign item_1_title = block.settings.item_1_title | strip
+  assign item_1_text = block.settings.item_1_text | strip
+  assign item_1_price = block.settings.item_1_price | strip
+  assign item_2_title = block.settings.item_2_title | strip
+  assign item_2_text = block.settings.item_2_text | strip
+  assign item_2_price = block.settings.item_2_price | strip
+  assign item_3_title = block.settings.item_3_title | strip
+  assign item_3_text = block.settings.item_3_text | strip
+  assign item_3_price = block.settings.item_3_price | strip
+  assign item_4_title = block.settings.item_4_title | strip
+  assign item_4_text = block.settings.item_4_text | strip
+  assign item_4_price = block.settings.item_4_price | strip
+  assign item_5_title = block.settings.item_5_title | strip
+  assign item_5_text = block.settings.item_5_text | strip
+  assign item_5_price = block.settings.item_5_price | strip
+
+  assign item_1_has_content = false
+  assign item_2_has_content = false
+  assign item_3_has_content = false
+  assign item_4_has_content = false
+  assign item_5_has_content = false
+  assign has_content = false
+
+  if item_1_text != blank or item_1_price != blank
+    assign item_1_has_content = true
+    assign has_content = true
+  endif
+  if item_2_text != blank or item_2_price != blank
+    assign item_2_has_content = true
+    assign has_content = true
+  endif
+  if item_3_text != blank or item_3_price != blank
+    assign item_3_has_content = true
+    assign has_content = true
+  endif
+  if item_4_text != blank or item_4_price != blank
+    assign item_4_has_content = true
+    assign has_content = true
+  endif
+  if item_5_text != blank or item_5_price != blank
+    assign item_5_has_content = true
+    assign has_content = true
+  endif
+
+  assign summary_title = ''
+  assign summary_text = ''
+  assign summary_price = ''
+  assign summary_item_index = 0
+  if item_1_has_content
+    assign summary_title = item_1_title
+    assign summary_text = item_1_text
+    assign summary_price = item_1_price
+    assign summary_item_index = 1
+  elsif item_2_has_content
+    assign summary_title = item_2_title
+    assign summary_text = item_2_text
+    assign summary_price = item_2_price
+    assign summary_item_index = 2
+  elsif item_3_has_content
+    assign summary_title = item_3_title
+    assign summary_text = item_3_text
+    assign summary_price = item_3_price
+    assign summary_item_index = 3
+  elsif item_4_has_content
+    assign summary_title = item_4_title
+    assign summary_text = item_4_text
+    assign summary_price = item_4_price
+    assign summary_item_index = 4
+  elsif item_5_has_content
+    assign summary_title = item_5_title
+    assign summary_text = item_5_text
+    assign summary_price = item_5_price
+    assign summary_item_index = 5
+  endif
+
+  assign heading = block.settings.heading | strip
+  if heading == blank
+    assign heading = 'ENTREGA Y DEVOLUCIONES'
+  endif
+
+  assign read_more_label = block.settings.read_more_label | strip
+  if read_more_label == blank
+    assign read_more_label = 'Leer más'
+  endif
+
+  assign read_less_label = block.settings.read_less_label | strip
+  if read_less_label == blank
+    assign read_less_label = 'Cerrar'
+  endif
+
+  assign panel_id = 'product-delivery-dropdown-panel-' | append: block.id
+%}
+
+{% if has_content %}
+  <div
+    class="spacing-style product-delivery-dropdown product-delivery-dropdown--{{ block.id }}"
+    style="{% render 'spacing-style', settings: block.settings %}"
+    data-delivery-dropdown="{{ block.id }}"
+    {{ block.shopify_attributes }}
+  >
+    <h3 class="product-delivery-dropdown__heading">{{ heading | escape }}</h3>
+    <div class="product-delivery-dropdown__divider" aria-hidden="true"></div>
+
+    <div class="product-delivery-dropdown__summary">
+      {% if summary_title != blank %}
+        <h4>{{ summary_title | escape }}</h4>
+      {% endif %}
+      <div class="product-delivery-dropdown__summary-row">
+        {% if summary_text != blank %}
+          <p>{{ summary_text | escape | newline_to_br }}</p>
+        {% endif %}
+        {% if summary_price != blank %}
+          <span class="product-delivery-dropdown__price">{{ summary_price | escape }}</span>
+        {% endif %}
+      </div>
+    </div>
+
+    <button
+      type="button"
+      class="button button-unstyled product-delivery-dropdown__toggle"
+      aria-expanded="false"
+      aria-controls="{{ panel_id }}"
+      data-delivery-toggle
+    >
+      <span>{{ read_more_label | escape }}</span>
+      <span class="product-delivery-dropdown__toggle-icon" aria-hidden="true">{{ 'icon-chevron-right.svg' | inline_asset_content }}</span>
+    </button>
+
+    <div id="{{ panel_id }}" class="product-delivery-dropdown__panel" hidden>
+      {% if item_1_has_content and summary_item_index != 1 %}
+        <div class="product-delivery-dropdown__item">
+          {% if item_1_title != blank %}<h4>{{ item_1_title | escape }}</h4>{% endif %}
+          <div class="product-delivery-dropdown__item-row">
+            {% if item_1_text != blank %}<p>{{ item_1_text | escape | newline_to_br }}</p>{% endif %}
+            {% if item_1_price != blank %}<span class="product-delivery-dropdown__price">{{ item_1_price | escape }}</span>{% endif %}
+          </div>
+        </div>
+      {% endif %}
+      {% if item_2_has_content and summary_item_index != 2 %}
+        <div class="product-delivery-dropdown__item">
+          {% if item_2_title != blank %}<h4>{{ item_2_title | escape }}</h4>{% endif %}
+          <div class="product-delivery-dropdown__item-row">
+            {% if item_2_text != blank %}<p>{{ item_2_text | escape | newline_to_br }}</p>{% endif %}
+            {% if item_2_price != blank %}<span class="product-delivery-dropdown__price">{{ item_2_price | escape }}</span>{% endif %}
+          </div>
+        </div>
+      {% endif %}
+      {% if item_3_has_content and summary_item_index != 3 %}
+        <div class="product-delivery-dropdown__item">
+          {% if item_3_title != blank %}<h4>{{ item_3_title | escape }}</h4>{% endif %}
+          <div class="product-delivery-dropdown__item-row">
+            {% if item_3_text != blank %}<p>{{ item_3_text | escape | newline_to_br }}</p>{% endif %}
+            {% if item_3_price != blank %}<span class="product-delivery-dropdown__price">{{ item_3_price | escape }}</span>{% endif %}
+          </div>
+        </div>
+      {% endif %}
+      {% if item_4_has_content and summary_item_index != 4 %}
+        <div class="product-delivery-dropdown__item">
+          {% if item_4_title != blank %}<h4>{{ item_4_title | escape }}</h4>{% endif %}
+          <div class="product-delivery-dropdown__item-row">
+            {% if item_4_text != blank %}<p>{{ item_4_text | escape | newline_to_br }}</p>{% endif %}
+            {% if item_4_price != blank %}<span class="product-delivery-dropdown__price">{{ item_4_price | escape }}</span>{% endif %}
+          </div>
+        </div>
+      {% endif %}
+      {% if item_5_has_content and summary_item_index != 5 %}
+        <div class="product-delivery-dropdown__item">
+          {% if item_5_title != blank %}<h4>{{ item_5_title | escape }}</h4>{% endif %}
+          <div class="product-delivery-dropdown__item-row">
+            {% if item_5_text != blank %}<p>{{ item_5_text | escape | newline_to_br }}</p>{% endif %}
+            {% if item_5_price != blank %}<span class="product-delivery-dropdown__price">{{ item_5_price | escape }}</span>{% endif %}
+          </div>
+        </div>
+      {% endif %}
+
+      <button
+        type="button"
+        class="button button-unstyled product-delivery-dropdown__collapse"
+        aria-label="{{ read_less_label | escape }}"
+        data-delivery-collapse
+      >
+        <span aria-hidden="true">{{ 'icon-chevron-right.svg' | inline_asset_content }}</span>
+      </button>
+    </div>
+  </div>
+
+  <script>
+    (() => {
+      const root = document.querySelector('[data-delivery-dropdown="{{ block.id }}"]');
+      if (!root) return;
+
+      const panel = root.querySelector('#{{ panel_id }}');
+      const toggle = root.querySelector('[data-delivery-toggle]');
+      const collapse = root.querySelector('[data-delivery-collapse]');
+      if (!panel || !toggle) return;
+
+      const setExpanded = (expanded) => {
+        toggle.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+        panel.hidden = !expanded;
+        root.classList.toggle('is-expanded', expanded);
+      };
+
+      toggle.addEventListener('click', () => {
+        const expanded = toggle.getAttribute('aria-expanded') === 'true';
+        setExpanded(!expanded);
+      });
+
+      if (collapse) {
+        collapse.addEventListener('click', () => setExpanded(false));
+      }
+    })();
+  </script>
+{% endif %}
+
+{% stylesheet %}
+  .product-delivery-dropdown {
+    border: 1px solid var(--color-variant-border);
+    padding: 20px 20px 15px;
+    background: var(--color-page);
+    margin-block: calc(var(--padding-block-start) + var(--section-top-offset, 0px)) var(--padding-block-end);
+    margin-inline: var(--padding-inline-start) var(--padding-inline-end);
+  }
+
+  .product-delivery-dropdown__heading {
+    margin: 0;
+    font-family: var(--font-accent--family, var(--font-heading--family));
+    font-weight: var(--font-accent--weight, 800);
+    text-transform: uppercase;
+    font-size: var(--font-size--md);
+    line-height: 1.2;
+    letter-spacing: .25px;
+  }
+
+  .product-delivery-dropdown__divider {
+    border-top: 1px solid var(--color-variant-border);
+    margin: 18px 0;
+  }
+
+  .product-delivery-dropdown__summary h4,
+  .product-delivery-dropdown__item h4 {
+    margin: 0 0 10px;
+    font-family: var(--font-accent--family, var(--font-heading--family));
+    font-weight: var(--font-accent--weight, 800);
+    text-transform: uppercase;
+    font-size: var(--font-size--md);
+    line-height: 1.2;
+    letter-spacing: .25px;
+  }
+
+  .product-delivery-dropdown__summary-row,
+  .product-delivery-dropdown__item-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 12px;
+    align-items: center;
+  }
+
+  .product-delivery-dropdown__summary-row p,
+  .product-delivery-dropdown__item-row p {
+    margin: 0;
+    font-family: var(--font-body--family);
+    font-size: var(--font-size--md);
+    line-height: 1.4;
+  }
+
+  .product-delivery-dropdown__price {
+    font-family: var(--font-accent--family, var(--font-heading--family));
+    font-weight: var(--font-accent--weight, 800);
+    font-size: var(--font-size--md);
+    line-height: 1;
+    white-space: nowrap;
+    text-transform: uppercase;
+  }
+
+  .product-delivery-dropdown__toggle {
+    margin: 15px auto 0;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    text-decoration: underline;
+    font-family: var(--font-accent--family, var(--font-heading--family));
+    font-weight: var(--font-subheading--weight, 700);
+    font-size: var(--font-size--sm);
+    text-transform: none;
+  }
+
+  .product-delivery-dropdown__toggle-icon {
+    display: inline-flex;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    transform: rotate(90deg);
+  }
+
+  .product-delivery-dropdown__toggle-icon .svg-wrapper,
+  .product-delivery-dropdown__collapse .svg-wrapper {
+    width: 16px;
+    height: 16px;
+  }
+
+  .product-delivery-dropdown.is-expanded .product-delivery-dropdown__toggle {
+    display: none;
+  }
+
+  .product-delivery-dropdown__panel {
+    margin-top: 16px;
+  }
+
+  .product-delivery-dropdown__item {
+    border-top: 1px solid var(--color-variant-border);
+    padding: 14px 0 10px;
+  }
+
+  .product-delivery-dropdown__collapse {
+    display: flex;
+    margin: 14px auto 0;
+    width: 24px;
+    height: 24px;
+    align-items: center;
+    justify-content: center;
+    transform: rotate(-90deg);
+  }
+
+  @media screen and (max-width: 749px) {
+    .product-delivery-dropdown {
+      margin-block: calc(var(--padding-block-start-mobile) + var(--section-top-offset, 0px)) var(--padding-block-end-mobile);
+      margin-inline: var(--padding-inline-start-mobile) var(--padding-inline-end-mobile);
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Delivery dropdown",
+  "tag": null,
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Título",
+      "default": "ENTREGA Y DEVOLUCIONES"
+    },
+    {
+      "type": "text",
+      "id": "read_more_label",
+      "label": "Texto botón abrir",
+      "default": "Leer más"
+    },
+    {
+      "type": "text",
+      "id": "read_less_label",
+      "label": "Texto accesible botón cerrar",
+      "default": "Cerrar"
+    },
+    {
+      "type": "header",
+      "content": "Fila 1"
+    },
+    {
+      "type": "text",
+      "id": "item_1_title",
+      "label": "Título",
+      "default": "ESTÁNDAR"
+    },
+    {
+      "type": "textarea",
+      "id": "item_1_text",
+      "label": "Descripción",
+      "default": "Entregado en 2-3 días hábiles cuando haces tu pedido antes de las 5pm"
+    },
+    {
+      "type": "text",
+      "id": "item_1_price",
+      "label": "Precio",
+      "default": "GRATIS"
+    },
+    {
+      "type": "header",
+      "content": "Fila 2"
+    },
+    {
+      "type": "text",
+      "id": "item_2_title",
+      "label": "Título",
+      "default": "ENTREGA AL DÍA SIGUIENTE"
+    },
+    {
+      "type": "textarea",
+      "id": "item_2_text",
+      "label": "Descripción",
+      "default": "Pide antes de las 5pm de lunes a viernes para entrega el siguiente día hábil"
+    },
+    {
+      "type": "text",
+      "id": "item_2_price",
+      "label": "Precio",
+      "default": "£5.50"
+    },
+    {
+      "type": "header",
+      "content": "Fila 3"
+    },
+    {
+      "type": "text",
+      "id": "item_3_title",
+      "label": "Título",
+      "default": "SÁBADO"
+    },
+    {
+      "type": "textarea",
+      "id": "item_3_text",
+      "label": "Descripción",
+      "default": "Entregado el sábado cuando haces tu pedido antes de las 5pm del viernes"
+    },
+    {
+      "type": "text",
+      "id": "item_3_price",
+      "label": "Precio",
+      "default": "£8.50"
+    },
+    {
+      "type": "header",
+      "content": "Fila 4"
+    },
+    {
+      "type": "text",
+      "id": "item_4_title",
+      "label": "Título",
+      "default": "CLICK & COLLECT"
+    },
+    {
+      "type": "textarea",
+      "id": "item_4_text",
+      "label": "Descripción",
+      "default": "Pide antes de la 1pm para retiro el mismo día"
+    },
+    {
+      "type": "text",
+      "id": "item_4_price",
+      "label": "Precio",
+      "default": "GRATIS"
+    },
+    {
+      "type": "header",
+      "content": "Fila 5"
+    },
+    {
+      "type": "text",
+      "id": "item_5_title",
+      "label": "Título",
+      "default": "DEVOLUCIONES"
+    },
+    {
+      "type": "textarea",
+      "id": "item_5_text",
+      "label": "Descripción",
+      "default": "Los artículos pueden devolverse en tienda o por correo dentro de los 30 días posteriores a la entrega."
+    },
+    {
+      "type": "text",
+      "id": "item_5_price",
+      "label": "Precio",
+      "default": "GRATIS"
+    },
+    {
+      "type": "header",
+      "content": "t:content.padding"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "t:settings.top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "t:settings.bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-inline-start",
+      "label": "t:settings.left",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-inline-end",
+      "label": "t:settings.right",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "Rellenos móviles"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start-mobile",
+      "label": "Arriba (móvil)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end-mobile",
+      "label": "Abajo (móvil)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-inline-start-mobile",
+      "label": "Izquierda (móvil)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-inline-end-mobile",
+      "label": "Derecha (móvil)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    }
+  ],
+  "presets": [
+    {
+      "name": "Delivery dropdown",
+      "category": "t:categories.product"
+    }
+  ]
+}
+{% endschema %}

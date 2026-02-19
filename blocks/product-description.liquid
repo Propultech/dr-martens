@@ -115,7 +115,6 @@
   assign description_preview_limit = description_preview_lines | times: 90
   assign description_preview_heading = description_first_section_heading
   assign description_preview_body_plain = description_plain
-  assign description_preview_needs_truncation = false
   assign show_description_preview_modal = false
   if description_display_mode == 'excerpt_modal' and description_plain != blank
     assign show_description_preview_modal = true
@@ -134,7 +133,6 @@
   assign description_preview_text = description_preview_body_plain | strip_newlines | replace: '  ', ' ' | strip
   if description_preview_text.size > description_preview_limit
     assign description_preview_text = description_preview_text | truncate: description_preview_limit, '...'
-    assign description_preview_needs_truncation = true
   endif
 
   assign visibility_class = ''
@@ -361,6 +359,7 @@
     top: var(--margin-2xs);
     right: var(--margin-2xs);
   }
+
 {% endstyle %}
 
 {% schema %}
