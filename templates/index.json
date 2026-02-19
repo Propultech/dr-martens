@@ -30,6 +30,8 @@
             "color": "var(--color-foreground)",
             "italic_color": "",
             "strong_color": "",
+            "link_font_size": "",
+            "link_font_size_mobile": "",
             "background": false,
             "line_highlight": false,
             "background_color": "#00000026",
@@ -94,6 +96,7 @@
           "name": "t:names.group",
           "settings": {
             "content_direction": "column",
+            "visibility": "",
             "vertical_on_mobile": true,
             "horizontal_alignment": "flex-start",
             "vertical_alignment": "center",
@@ -130,7 +133,8 @@
             "padding-block-start-mobile": 75,
             "padding-block-end-mobile": 54,
             "padding-inline-start-mobile": 30,
-            "padding-inline-end-mobile": 30
+            "padding-inline-end-mobile": 30,
+            "custom_css": ""
           },
           "blocks": {
             "text_x8YQfB": {
@@ -151,6 +155,8 @@
                 "color": "var(--color-primary)",
                 "italic_color": "",
                 "strong_color": "",
+                "link_font_size": "",
+                "link_font_size_mobile": "",
                 "background": false,
                 "line_highlight": false,
                 "background_color": "#00000026",
@@ -187,6 +193,8 @@
                 "color": "var(--color-foreground)",
                 "italic_color": "",
                 "strong_color": "#fedb00",
+                "link_font_size": "",
+                "link_font_size_mobile": "",
                 "background": false,
                 "line_highlight": false,
                 "background_color": "#00000026",
@@ -223,6 +231,8 @@
                 "color": "var(--color-foreground)",
                 "italic_color": "",
                 "strong_color": "",
+                "link_font_size": "",
+                "link_font_size_mobile": "",
                 "background": false,
                 "line_highlight": false,
                 "background_color": "#00000026",
@@ -245,6 +255,7 @@
               "name": "t:names.group",
               "settings": {
                 "content_direction": "row",
+                "visibility": "",
                 "vertical_on_mobile": true,
                 "horizontal_alignment": "flex-start",
                 "vertical_alignment": "center",
@@ -281,7 +292,8 @@
                 "padding-block-start-mobile": 0,
                 "padding-block-end-mobile": 0,
                 "padding-inline-start-mobile": 0,
-                "padding-inline-end-mobile": 0
+                "padding-inline-end-mobile": 0,
+                "custom_css": ""
               },
               "blocks": {
                 "button_t36Ea6": {
@@ -384,6 +396,7 @@
           "name": "t:names.group",
           "settings": {
             "content_direction": "column",
+            "visibility": "",
             "vertical_on_mobile": true,
             "horizontal_alignment": "flex-start",
             "vertical_alignment": "center",
@@ -420,7 +433,8 @@
             "padding-block-start-mobile": 35,
             "padding-block-end-mobile": 0,
             "padding-inline-start-mobile": 0,
-            "padding-inline-end-mobile": 0
+            "padding-inline-end-mobile": 0,
+            "custom_css": ""
           },
           "blocks": {
             "button_FHHwdL": {
@@ -519,7 +533,7 @@
           "name": "t:names.product_card",
           "static": true,
           "settings": {
-            "product_card_gap": 0,
+            "product_card_gap": 10,
             "inherit_color_scheme": true,
             "color_scheme": "",
             "border": "none",
@@ -566,7 +580,7 @@
                 "type_preset": "custom",
                 "font": "var(--font-accent--family)",
                 "font_size": "0.875rem",
-                "line_height": "tight",
+                "line_height": "normal",
                 "letter_spacing": "normal",
                 "case": "uppercase",
                 "wrap": "pretty",
@@ -574,7 +588,7 @@
                 "background": false,
                 "background_color": "#00000026",
                 "corner_radius": 0,
-                "padding-block-start": 12,
+                "padding-block-start": 0,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
@@ -597,11 +611,11 @@
                 "letter_spacing": "normal",
                 "case": "none",
                 "color": "var(--color-foreground)",
-                "padding-block-start": 10,
+                "padding-block-start": 0,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0,
-                "padding-block-start-mobile": 10,
+                "padding-block-start-mobile": 0,
                 "padding-block-end-mobile": 0,
                 "padding-inline-start-mobile": 0,
                 "padding-inline-end-mobile": 0
@@ -760,6 +774,7 @@
           "name": "t:names.group",
           "settings": {
             "content_direction": "column",
+            "visibility": "",
             "vertical_on_mobile": true,
             "horizontal_alignment": "flex-start",
             "vertical_alignment": "center",
@@ -796,7 +811,8 @@
             "padding-block-start-mobile": 35,
             "padding-block-end-mobile": 0,
             "padding-inline-start-mobile": 0,
-            "padding-inline-end-mobile": 0
+            "padding-inline-end-mobile": 0,
+            "custom_css": ""
           },
           "blocks": {
             "button_QhkchY": {
@@ -1030,6 +1046,7 @@
           "name": "t:names.group",
           "settings": {
             "content_direction": "column",
+            "visibility": "",
             "vertical_on_mobile": true,
             "horizontal_alignment": "flex-start",
             "vertical_alignment": "center",
@@ -1066,7 +1083,8 @@
             "padding-block-start-mobile": 0,
             "padding-block-end-mobile": 0,
             "padding-inline-start-mobile": 0,
-            "padding-inline-end-mobile": 0
+            "padding-inline-end-mobile": 0,
+            "custom_css": ""
           },
           "blocks": {
             "text_LULzyJ": {
@@ -1087,6 +1105,8 @@
                 "color": "var(--color-foreground)",
                 "italic_color": "",
                 "strong_color": "",
+                "link_font_size": "",
+                "link_font_size_mobile": "",
                 "background": false,
                 "line_highlight": false,
                 "background_color": "#00000026",
