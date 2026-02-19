@@ -649,7 +649,7 @@
         "rows_gap": 24,
         "icons_style": "chevron",
         "icons_shape": "none",
-        "section_width": "page-width",
+        "section_width": "full-width",
         "horizontal_alignment": "flex-start",
         "gap": 0,
         "color_scheme": "scheme-1",
@@ -1014,6 +1014,9 @@
       "block_order": [
         "group_6PbG3d"
       ],
+      "custom_css": [
+        ".force-full-width {grid-column: 2;}"
+      ],
       "name": "Clásicos",
       "settings": {
         "collection": "all",
@@ -1027,7 +1030,7 @@
         "rows_gap": 24,
         "icons_style": "chevron",
         "icons_shape": "none",
-        "section_width": "page-width",
+        "section_width": "full-width",
         "horizontal_alignment": "flex-start",
         "gap": 0,
         "color_scheme": "scheme-1",
