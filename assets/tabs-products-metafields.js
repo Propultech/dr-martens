@@ -39,6 +39,80 @@
       });
     }
 
+    /**
+     * @param {HTMLElement} panel
+     */
+    function removePanelAndSeed(panel) {
+      var tabId = panel.getAttribute('aria-labelledby');
+      if (tabId) {
+        var seed = root.querySelector('.tp-tab-seed[data-tab-id="' + tabId + '"]');
+        if (seed) seed.remove();
+        var tab = root.querySelector('[id="' + tabId + '"]');
+        if (tab) tab.remove();
+      }
+      panel.remove();
+    }
+
+    /**
+     * @param {HTMLElement} recommendationsEl
+     * @returns {Promise<number>}
+     */
+    async function preloadRecommendations(recommendationsEl) {
+      if (
+        !recommendationsEl ||
+        recommendationsEl.getAttribute('data-recommendations-performed') === 'true'
+      ) {
+        return recommendationsEl.querySelectorAll('.resource-list__item').length;
+      }
+
+      var productId = recommendationsEl.getAttribute('data-product-id');
+      var sectionId = recommendationsEl.getAttribute('data-section-id');
+      var intent = recommendationsEl.getAttribute('data-intent');
+      var baseUrl = recommendationsEl.getAttribute('data-url');
+
+      if (!productId || !baseUrl) return 0;
+
+      var url = baseUrl + '&product_id=' + productId + '&section_id=' + sectionId + '&intent=' + intent;
+
+      try {
+        var response = await fetch(url);
+        if (!response.ok) return 0;
+
+        var text = await response.text();
+        var html = document.createElement('div');
+        html.innerHTML = text;
+        var id = recommendationsEl.id;
+        var fetched = id ? html.querySelector('product-recommendations[id="' + id + '"]') : null;
+        if (!fetched || !fetched.innerHTML || !fetched.innerHTML.trim().length) return 0;
+
+        recommendationsEl.dataset.recommendationsPerformed = 'true';
+        recommendationsEl.innerHTML = fetched.innerHTML;
+        return recommendationsEl.querySelectorAll('.resource-list__item').length;
+      } catch (_) {
+        return 0;
+      }
+    }
+
+    /**
+     * Preload recommendation-backed panels before building tab buttons.
+     * Empty results are removed so users never see a tab that later disappears.
+     * @returns {Promise<void>}
+     */
+    async function primeAutoPanels() {
+      var panels = Array.prototype.slice.call(root.querySelectorAll('.tp-panel'));
+      if (!panels.length) return;
+
+      var jobs = panels.map(async function (panel) {
+        var recommendationsEl = panel.querySelector('.tp-recommendations');
+        if (!recommendationsEl) return;
+
+        var count = await preloadRecommendations(recommendationsEl);
+        if (!count) removePanelAndSeed(panel);
+      });
+
+      await Promise.all(jobs);
+    }
+
     buildTabsIfMissing();
 
     /** @returns {NodeListOf<HTMLElement>} */
@@ -144,28 +218,35 @@
       activate(tabs[n].id);
     }
 
-    tablist.addEventListener('click', onClick);
-    tablist.addEventListener('keydown', onKeydown);
+    root.dataset.tpInit = '1';
+    root.setAttribute('aria-busy', 'true');
+    root.style.visibility = 'hidden';
 
-    (function ensureInitialActive() {
+    primeAutoPanels().finally(function () {
+      buildTabsIfMissing();
       pruneEmptyTabs();
+
+      tablist.addEventListener('click', onClick);
+      tablist.addEventListener('keydown', onKeydown);
+
       var current = root.querySelector('.tp-tab.is-active') || getTabs()[0] || null;
       if (current) activate(current.id);
-    })();
 
-    var observer = new MutationObserver(function () {
-      pruneEmptyTabs();
-    });
-    observer.observe(panelsContainer, {
-      childList: true,
-      subtree: true,
-      attributes: true,
-      attributeFilter: ['class', 'data-error', 'data-recommendations-performed'],
-    });
+      var observer = new MutationObserver(function () {
+        pruneEmptyTabs();
+      });
+      observer.observe(panelsContainer, {
+        childList: true,
+        subtree: true,
+        attributes: true,
+        attributeFilter: ['class', 'data-error', 'data-recommendations-performed'],
+      });
 
-    root._tpHandlers = { onClick: onClick, onKeydown: onKeydown };
-    root._tpObserver = observer;
-    root.dataset.tpInit = '1';
+      root._tpHandlers = { onClick: onClick, onKeydown: onKeydown };
+      root._tpObserver = observer;
+      root.removeAttribute('aria-busy');
+      root.style.removeProperty('visibility');
+    });
   }
 
   /**
