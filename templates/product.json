@@ -690,10 +690,179 @@
     "tabs_products_metafields_94dwER": {
       "type": "tabs-products-metafields",
       "blocks": {
+        "tab_products_rmd9hR": {
+          "type": "_tab_products",
+          "name": "Recomendados",
+          "settings": {
+            "tab_title": "Estilos de moda",
+            "products": [],
+            "use_recommendations": true,
+            "base_product": "",
+            "recommendation_type": "related",
+            "products_limit": 8,
+            "columns_gap": 10,
+            "mobile_columns_gap": 10,
+            "columns": 5,
+            "mobile_columns": 2,
+            "icons_style": "chevron",
+            "icons_shape": "none"
+          },
+          "blocks": {
+            "static-product-card": {
+              "type": "_product-card",
+              "static": true,
+              "settings": {
+                "product_card_gap": 10,
+                "inherit_color_scheme": true,
+                "color_scheme": "scheme-1",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0,
+                "padding-block-start-mobile": 0,
+                "padding-block-end-mobile": 0,
+                "padding-inline-start-mobile": 0,
+                "padding-inline-end-mobile": 0
+              },
+              "blocks": {
+                "product_card_gallery_NJxnyT": {
+                  "type": "_product-card-gallery",
+                  "name": "t:names.product_card_media",
+                  "settings": {
+                    "image_ratio": "portrait",
+                    "border": "none",
+                    "border_width": 1,
+                    "border_opacity": 100,
+                    "border_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0,
+                    "padding-block-start-mobile": 0,
+                    "padding-block-end-mobile": 0,
+                    "padding-inline-start-mobile": 0,
+                    "padding-inline-end-mobile": 0
+                  },
+                  "blocks": {}
+                },
+                "product_title_ceDY4g": {
+                  "type": "product-title",
+                  "name": "t:names.title",
+                  "settings": {
+                    "width": "fit-content",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "custom",
+                    "font": "var(--font-accent--family)",
+                    "font_size": "0.875rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "uppercase",
+                    "wrap": "pretty",
+                    "color": "var(--color-foreground)",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                },
+                "price_kQLHCD": {
+                  "type": "price",
+                  "name": "t:names.product_price",
+                  "settings": {
+                    "show_sale_price_first": true,
+                    "show_installments": false,
+                    "show_tax_info": false,
+                    "type_preset": "custom",
+                    "width": "100%",
+                    "alignment": "left",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "color": "var(--color-foreground)",
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0,
+                    "padding-block-start-mobile": 0,
+                    "padding-block-end-mobile": 0,
+                    "padding-inline-start-mobile": 0,
+                    "padding-inline-end-mobile": 0
+                  },
+                  "blocks": {}
+                },
+                "buy_buttons_iENYWr": {
+                  "type": "buy-buttons",
+                  "name": "t:names.product_buy_buttons",
+                  "settings": {
+                    "stacking": false,
+                    "show_pickup_availability": false,
+                    "gift_card_form": false,
+                    "font_size_desktop": "1rem",
+                    "font_size_mobile": "",
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0,
+                    "padding-block-start-mobile": 0,
+                    "padding-block-end-mobile": 0,
+                    "padding-inline-start-mobile": 0,
+                    "padding-inline-end-mobile": 0
+                  },
+                  "blocks": {
+                    "quantity": {
+                      "type": "quantity",
+                      "disabled": true,
+                      "static": true,
+                      "settings": {},
+                      "blocks": {}
+                    },
+                    "add-to-cart": {
+                      "type": "add-to-cart",
+                      "static": true,
+                      "settings": {
+                        "style_class": "button",
+                        "show_add_to_cart_icon": false,
+                        "add_to_cart_text_desktop": "Añadir al carrito",
+                        "add_to_cart_text_mobile": "Comprar"
+                      },
+                      "blocks": {}
+                    },
+                    "accelerated-checkout": {
+                      "type": "accelerated-checkout",
+                      "disabled": true,
+                      "static": true,
+                      "settings": {},
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": []
+                }
+              },
+              "block_order": [
+                "product_card_gallery_NJxnyT",
+                "product_title_ceDY4g",
+                "price_kQLHCD",
+                "buy_buttons_iENYWr"
+              ]
+            }
+          },
+          "block_order": []
+        },
         "tab_products_BBRmxc": {
           "type": "_tab_products",
           "settings": {
-            "tab_title": "Estilos de moda",
+            "tab_title": "Más botines 1460",
             "products": [
               "1460-soft-leather-lace-up-boots",
               "1460-soft-leather-lace-up-boots-blue-virginia",
@@ -868,12 +1037,21 @@
           },
           "block_order": []
         },
-        "tab_products_rmd9hR": {
+        "tab_products_ce4KYE": {
           "type": "_tab_products",
-          "name": "Recomendados",
           "settings": {
-            "tab_title": "Más botines 1460",
-            "products": [],
+            "tab_title": "Con un poco de cuidado, durarán mucho más",
+            "products": [
+              "1460-soft-leather-lace-up-boots",
+              "1460-soft-leather-lace-up-boots-blue-virginia",
+              "mens-shoes-polished-smooth-adrian",
+              "originals-boots-smooth-1460-w",
+              "unisex-originals-boots-arcadia-1460",
+              "originals-boots-smooth-1460",
+              "1460-soft-leather-lace-up-boots-black-virginia",
+              "originals-boots-virginia-pascal",
+              "womens-boots-pisa-1460-pascal-max"
+            ],
             "use_recommendations": true,
             "base_product": "",
             "recommendation_type": "related",
@@ -907,7 +1085,7 @@
                 "padding-inline-end-mobile": 0
               },
               "blocks": {
-                "product_card_gallery_NJxnyT": {
+                "product_card_gallery_LAQXWr": {
                   "type": "_product-card-gallery",
                   "name": "t:names.product_card_media",
                   "settings": {
@@ -927,7 +1105,7 @@
                   },
                   "blocks": {}
                 },
-                "product_title_ceDY4g": {
+                "product_title_yjahf9": {
                   "type": "product-title",
                   "name": "t:names.title",
                   "settings": {
@@ -952,7 +1130,7 @@
                   },
                   "blocks": {}
                 },
-                "price_kQLHCD": {
+                "price_TCHFUh": {
                   "type": "price",
                   "name": "t:names.product_price",
                   "settings": {
@@ -979,7 +1157,7 @@
                   },
                   "blocks": {}
                 },
-                "buy_buttons_iENYWr": {
+                "buy_buttons_rkerLc": {
                   "type": "buy-buttons",
                   "name": "t:names.product_buy_buttons",
                   "settings": {
@@ -1028,10 +1206,10 @@
                 }
               },
               "block_order": [
-                "product_card_gallery_NJxnyT",
-                "product_title_ceDY4g",
-                "price_kQLHCD",
-                "buy_buttons_iENYWr"
+                "product_card_gallery_LAQXWr",
+                "product_title_yjahf9",
+                "price_TCHFUh",
+                "buy_buttons_rkerLc"
               ]
             }
           },
@@ -1039,8 +1217,9 @@
         }
       },
       "block_order": [
+        "tab_products_rmd9hR",
         "tab_products_BBRmxc",
-        "tab_products_rmd9hR"
+        "tab_products_ce4KYE"
       ],
       "name": "Tabs productos metafield",
       "settings": {
