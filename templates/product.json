@@ -865,7 +865,7 @@
           "settings": {
             "tab_title": "También te puedes gustar",
             "products": "{{ closest.product.metafields.drmartens.similar_styles.value }}",
-            "use_recommendations": true,
+            "use_recommendations": false,
             "base_product": "{{ closest.product }}",
             "recommendation_type": "related",
             "products_limit": 8,
