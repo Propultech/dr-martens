@@ -187,7 +187,7 @@
             "gallery_section_5_title": "Código del producto",
             "gallery_section_5_content": "<p>{{ closest.product.metafields.drmartens.product_code.value }}</p>",
             "gallery_description_insert_after_row": 1,
-            "gallery_description_summary_lines": 3,
+            "gallery_description_summary_lines": 2,
             "gallery_description_modal_behavior": "drawer",
             "gallery_description_button_label": "Leer más",
             "padding-block-start": 0,
