@@ -62,6 +62,37 @@
     },
     {
       "type": "checkbox",
+      "id": "enable_gallery_desktop_collapse",
+      "label": "Activar mostrar más/menos en desktop",
+      "default": true,
+      "visible_if": "{{ block.settings.media_presentation == 'grid' }}"
+    },
+    {
+      "type": "range",
+      "id": "gallery_visible_rows_desktop",
+      "label": "Filas visibles (desktop)",
+      "min": 1,
+      "max": 12,
+      "step": 1,
+      "default": 2,
+      "visible_if": "{{ block.settings.media_presentation == 'grid' and block.settings.enable_gallery_desktop_collapse }}"
+    },
+    {
+      "type": "text",
+      "id": "gallery_show_more_label",
+      "label": "Texto botón mostrar más",
+      "default": "MOSTRAR MÁS IMÁGENES",
+      "visible_if": "{{ block.settings.media_presentation == 'grid' and block.settings.enable_gallery_desktop_collapse }}"
+    },
+    {
+      "type": "text",
+      "id": "gallery_show_less_label",
+      "label": "Texto botón mostrar menos",
+      "default": "MOSTRAR MENOS IMÁGENES",
+      "visible_if": "{{ block.settings.media_presentation == 'grid' and block.settings.enable_gallery_desktop_collapse }}"
+    },
+    {
+      "type": "checkbox",
       "id": "large_first_image",
       "label": "t:settings.full_width_first_image",
       "default": false,
