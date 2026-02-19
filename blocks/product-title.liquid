@@ -1,9 +1,9 @@
 {% if closest.product == blank %}
   {% assign text = 'placeholders.product_title' | t %}
-  {% assign product_title = '<p>' | append: text | append: '</p>' %}
+  {% assign product_title = '<p class="product-title">' | append: text | append: '</p>' %}
   {% render 'text', fallback_text: product_title, block: block %}
 {% else %}
-  {% assign product_title = '<p>' | append: closest.product.title | append: '</p>' %}
+  {% assign product_title = '<p class="product-title">' | append: closest.product.title | append: '</p>' %}
   <a
     class="contents user-select-text"
     ref="productTitleLink"
@@ -12,6 +12,18 @@
     {% render 'text', fallback_text: product_title, block: block %}
   </a>
 {% endif %}
+
+{% stylesheet %}
+  .product-title {
+    height: 33px;
+    line-height: 16px !important;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+{% endstylesheet %}
 
 {% schema %}
 {
