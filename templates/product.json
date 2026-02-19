@@ -501,6 +501,39 @@
               },
               "block_order": []
             },
+            "product_delivery_dropdown_e46Epr": {
+              "type": "product-delivery-dropdown",
+              "name": "Delivery dropdown",
+              "settings": {
+                "heading": "ENTREGA Y DEVOLUCIONES",
+                "read_more_label": "Leer más",
+                "read_less_label": "Cerrar",
+                "item_1_title": "ESTÁNDAR",
+                "item_1_text": "Entregado en 2-3 días hábiles cuando haces tu pedido antes de las 5pm",
+                "item_1_price": "GRATIS",
+                "item_2_title": "ENTREGA AL DÍA SIGUIENTE",
+                "item_2_text": "Pide antes de las 5pm de lunes a viernes para entrega el siguiente día hábil",
+                "item_2_price": "£5.50",
+                "item_3_title": "SÁBADO",
+                "item_3_text": "Entregado el sábado cuando haces tu pedido antes de las 5pm del viernes",
+                "item_3_price": "£8.50",
+                "item_4_title": "CLICK & COLLECT",
+                "item_4_text": "Pide antes de la 1pm para retiro el mismo día",
+                "item_4_price": "GRATIS",
+                "item_5_title": "DEVOLUCIONES",
+                "item_5_text": "Los artículos pueden devolverse en tienda o por correo dentro de los 30 días posteriores a la entrega.",
+                "item_5_price": "GRATIS",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0,
+                "padding-block-start-mobile": 0,
+                "padding-block-end-mobile": 30,
+                "padding-inline-start-mobile": 0,
+                "padding-inline-end-mobile": 0
+              },
+              "blocks": {}
+            },
             "product_description_ypXKej": {
               "type": "product-description",
               "name": "t:names.product_description",
@@ -551,6 +584,7 @@
             "text_xM7zdk",
             "variant_picker_R3rGDr",
             "buy_buttons_eYQEYi",
+            "product_delivery_dropdown_e46Epr",
             "product_description_ypXKej"
           ]
         }
