@@ -466,7 +466,7 @@
                 "show_pickup_availability": true,
                 "gift_card_form": true,
                 "font_size_desktop": "",
-                "font_size_mobile": "",
+                "font_size_mobile": "0.625rem",
                 "padding-block-start": 44,
                 "padding-block-end": 36,
                 "padding-inline-start": 0,
