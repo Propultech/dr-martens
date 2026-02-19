@@ -1,14 +1,111 @@
 {% liquid
   assign description_html = ''
+  assign description_first_section_heading = ''
+  assign description_first_section_plain = ''
 
-  if block.settings.text != blank
-    assign description_html = block.settings.text
+  assign description_section_1_title = block.settings.description_section_1_title | strip
+  assign description_section_1_content = block.settings.description_section_1_content
+  assign description_section_2_title = block.settings.description_section_2_title | strip
+  assign description_section_2_content = block.settings.description_section_2_content
+  assign description_section_3_title = block.settings.description_section_3_title | strip
+  assign description_section_3_content = block.settings.description_section_3_content
+  assign description_section_4_title = block.settings.description_section_4_title | strip
+  assign description_section_4_content = block.settings.description_section_4_content
+  assign description_section_5_title = block.settings.description_section_5_title | strip
+  assign description_section_5_content = block.settings.description_section_5_content
+
+  assign section_plain = description_section_1_content | strip_html | replace: '&nbsp;', ' ' | strip
+  if section_plain != blank
+    capture description_html
+      echo description_html
+      echo '<div class="product-description__section">'
+      if description_section_1_title != blank
+        echo '<h3>'
+        echo description_section_1_title | escape
+        echo '</h3>'
+      endif
+      echo description_section_1_content
+      echo '</div>'
+    endcapture
+    if description_first_section_plain == blank
+      assign description_first_section_plain = section_plain
+      assign description_first_section_heading = description_section_1_title
+    endif
   endif
 
-  if request.visual_preview_mode and description_html == blank
-    assign preview_product = collections.all.products.first
-    if preview_product
-      assign description_html = preview_product.description
+  assign section_plain = description_section_2_content | strip_html | replace: '&nbsp;', ' ' | strip
+  if section_plain != blank
+    capture description_html
+      echo description_html
+      echo '<div class="product-description__section">'
+      if description_section_2_title != blank
+        echo '<h3>'
+        echo description_section_2_title | escape
+        echo '</h3>'
+      endif
+      echo description_section_2_content
+      echo '</div>'
+    endcapture
+    if description_first_section_plain == blank
+      assign description_first_section_plain = section_plain
+      assign description_first_section_heading = description_section_2_title
+    endif
+  endif
+
+  assign section_plain = description_section_3_content | strip_html | replace: '&nbsp;', ' ' | strip
+  if section_plain != blank
+    capture description_html
+      echo description_html
+      echo '<div class="product-description__section">'
+      if description_section_3_title != blank
+        echo '<h3>'
+        echo description_section_3_title | escape
+        echo '</h3>'
+      endif
+      echo description_section_3_content
+      echo '</div>'
+    endcapture
+    if description_first_section_plain == blank
+      assign description_first_section_plain = section_plain
+      assign description_first_section_heading = description_section_3_title
+    endif
+  endif
+
+  assign section_plain = description_section_4_content | strip_html | replace: '&nbsp;', ' ' | strip
+  if section_plain != blank
+    capture description_html
+      echo description_html
+      echo '<div class="product-description__section">'
+      if description_section_4_title != blank
+        echo '<h3>'
+        echo description_section_4_title | escape
+        echo '</h3>'
+      endif
+      echo description_section_4_content
+      echo '</div>'
+    endcapture
+    if description_first_section_plain == blank
+      assign description_first_section_plain = section_plain
+      assign description_first_section_heading = description_section_4_title
+    endif
+  endif
+
+  assign section_plain = description_section_5_content | strip_html | replace: '&nbsp;', ' ' | strip
+  if section_plain != blank
+    capture description_html
+      echo description_html
+      echo '<div class="product-description__section">'
+      if description_section_5_title != blank
+        echo '<h3>'
+        echo description_section_5_title | escape
+        echo '</h3>'
+      endif
+      echo description_section_5_content
+      echo '</div>'
+    endcapture
+    if description_first_section_plain == blank
+      assign description_first_section_plain = section_plain
+      assign description_first_section_heading = description_section_5_title
     endif
   endif
 
@@ -16,36 +113,22 @@
   assign description_display_mode = block.settings.description_display_mode | default: 'normal'
   assign description_preview_lines = block.settings.description_preview_lines | default: 3
   assign description_preview_limit = description_preview_lines | times: 90
-  assign description_preview_heading = ''
+  assign description_preview_heading = description_first_section_heading
   assign description_preview_body_plain = description_plain
-  assign heading_chunk = ''
   assign description_preview_needs_truncation = false
   assign show_description_preview_modal = false
   if description_display_mode == 'excerpt_modal' and description_plain != blank
     assign show_description_preview_modal = true
   endif
 
-  if description_html contains '<h1'
-    assign heading_chunk = description_html | split: '<h1' | slice: 1, 1 | first | split: '</h1>' | first
-  elsif description_html contains '<h2'
-    assign heading_chunk = description_html | split: '<h2' | slice: 1, 1 | first | split: '</h2>' | first
-  elsif description_html contains '<h3'
-    assign heading_chunk = description_html | split: '<h3' | slice: 1, 1 | first | split: '</h3>' | first
-  elsif description_html contains '<h4'
-    assign heading_chunk = description_html | split: '<h4' | slice: 1, 1 | first | split: '</h4>' | first
-  elsif description_html contains '<h5'
-    assign heading_chunk = description_html | split: '<h5' | slice: 1, 1 | first | split: '</h5>' | first
-  elsif description_html contains '<h6'
-    assign heading_chunk = description_html | split: '<h6' | slice: 1, 1 | first | split: '</h6>' | first
-  endif
-
-  if heading_chunk != blank
-    assign heading_inner_html = heading_chunk | split: '>' | slice: 1, 50 | join: '>'
-    assign description_preview_heading = heading_inner_html | strip_html | split: '<' | first | split: '&lt;' | first | strip
-  endif
-
   if description_preview_heading != blank
-    assign description_preview_body_plain = description_plain | remove_first: description_preview_heading | strip
+    assign description_preview_body_plain = description_first_section_plain
+  elsif description_first_section_plain != blank
+    assign description_preview_body_plain = description_first_section_plain
+  endif
+
+  if description_preview_body_plain == blank
+    assign description_preview_body_plain = description_plain
   endif
 
   assign description_preview_text = description_preview_body_plain | strip_newlines | replace: '  ', ' ' | strip
@@ -69,66 +152,66 @@
   ></script>
 {% endif %}
 
-{% if show_description_preview_modal %}
-  {% liquid
-    assign description_modal_button_label = block.settings.description_preview_button_label | strip
-    if description_modal_button_label == blank
-      assign description_modal_button_label = 'content.read_more' | t
-    endif
-  %}
-  <div
-    class="product-description__container product-description__container--{{ block.settings.description_content_width | default: 'contained' }}{{ visibility_class }}"
-  >
+{% if description_plain != blank %}
+  {% if show_description_preview_modal %}
+    {% liquid
+      assign description_modal_button_label = block.settings.description_preview_button_label | strip
+      if description_modal_button_label == blank
+        assign description_modal_button_label = 'content.read_more' | t
+      endif
+    %}
     <div
-      class="product-description__excerpt"
-      style="
-        {% render 'spacing-padding', settings: block.settings %}
-        {% render 'typography-style', settings: block.settings %}
-      "
+      class="product-description__container product-description__container--{{ block.settings.description_content_width | default: 'contained' }}{{ visibility_class }}"
     >
-    {% if description_preview_heading != blank %}
-      <h3 class="product-description__preview-heading">{{ description_preview_heading | escape }}</h3>
-    {% endif %}
-    <div class="product-description__preview-row">
-      <span class="product-description__preview-text">{{ description_preview_text }}</span>
-      {% if description_preview_needs_truncation %}
+      <div
+        class="product-description__excerpt"
+        style="
+          {% render 'spacing-padding', settings: block.settings %}
+          {% render 'typography-style', settings: block.settings %}
+        "
+      >
+      {% if description_preview_heading != blank %}
+        <h3 class="product-description__preview-heading">{{ description_preview_heading | escape }}</h3>
+      {% endif %}
+      <div class="product-description__preview-row">
+        <span class="product-description__preview-text">{{ description_preview_text }}</span>
         <dialog-component class="product-description__dialog product-description__dialog--inline">
-        <button
-          class="button button-unstyled product-description__preview-button"
-          type="button"
-          on:click="/showDialog"
-        >
-          {{ description_modal_button_label }}
-          <span class="svg-wrapper">{{ 'icon-chevron-right.svg' | inline_asset_content }}</span>
-        </button>
-        <dialog
-          ref="dialog"
+          <button
+            class="button button-unstyled product-description__preview-button"
+            type="button"
+            on:click="/showDialog"
+          >
+            {{ description_modal_button_label }}
+            <span class="svg-wrapper">{{ 'icon-chevron-right.svg' | inline_asset_content }}</span>
+          </button>
+          <dialog
+            ref="dialog"
           class="dialog-modal product-description__modal color-{{ settings.popover_color_scheme }}{% if block.settings.description_modal_behavior == 'drawer' %} product-description__modal--drawer dialog-drawer dialog-drawer--right{% endif %}"
           scroll-lock
           aria-label="{{ closest.product.title | default: shop.name | escape }}"
         >
-          <div class="rte product-description__modal-content">
-            {{ description_html }}
-          </div>
-          <button
-            type="button"
-            class="button button-unstyled close-button product-description__modal-close"
-            aria-label="{{ 'actions.close' | t }}"
-            on:click="/closeDialog"
-          >
-            <span class="visually-hidden">{{ 'actions.close' | t }}</span>
-            {{ 'icon-close.svg' | inline_asset_content }}
-          </button>
-        </dialog>
-      </dialog-component>
-      {% endif %}
+            <div class="rte product-description__modal-content">
+              {{ description_html }}
+            </div>
+            <button
+              type="button"
+              class="button button-unstyled close-button product-description__modal-close"
+              aria-label="{{ 'actions.close' | t }}"
+              on:click="/closeDialog"
+            >
+              <span class="visually-hidden">{{ 'actions.close' | t }}</span>
+              {{ 'icon-close.svg' | inline_asset_content }}
+            </button>
+          </dialog>
+        </dialog-component>
+      </div>
+      </div>
     </div>
+  {% else %}
+    <div class="product-description__container product-description__container--{{ block.settings.description_content_width | default: 'contained' }}{{ visibility_class }}">
+      {% render 'text', fallback_text: description_html, block: block %}
     </div>
-  </div>
-{% else %}
-  <div class="product-description__container product-description__container--{{ block.settings.description_content_width | default: 'contained' }}{{ visibility_class }}">
-    {% render 'text', fallback_text: description_html, block: block %}
-  </div>
+  {% endif %}
 {% endif %}
 
 {% style %}
@@ -286,11 +369,6 @@
   "tag": null,
   "settings": [
     {
-      "type": "richtext",
-      "id": "text",
-      "label": "t:settings.text"
-    },
-    {
       "type": "header",
       "content": "Resumen y modal"
     },
@@ -343,6 +421,60 @@
       "label": "Texto del botón",
       "default": "Leer más",
       "visible_if": "{{ block.settings.description_display_mode == 'excerpt_modal' }}"
+    },
+    {
+      "type": "header",
+      "content": "Secciones de contenido"
+    },
+    {
+      "type": "text",
+      "id": "description_section_1_title",
+      "label": "Título espacio 1"
+    },
+    {
+      "type": "richtext",
+      "id": "description_section_1_content",
+      "label": "Contenido espacio 1"
+    },
+    {
+      "type": "text",
+      "id": "description_section_2_title",
+      "label": "Título espacio 2"
+    },
+    {
+      "type": "richtext",
+      "id": "description_section_2_content",
+      "label": "Contenido espacio 2"
+    },
+    {
+      "type": "text",
+      "id": "description_section_3_title",
+      "label": "Título espacio 3"
+    },
+    {
+      "type": "richtext",
+      "id": "description_section_3_content",
+      "label": "Contenido espacio 3"
+    },
+    {
+      "type": "text",
+      "id": "description_section_4_title",
+      "label": "Título espacio 4"
+    },
+    {
+      "type": "richtext",
+      "id": "description_section_4_content",
+      "label": "Contenido espacio 4"
+    },
+    {
+      "type": "text",
+      "id": "description_section_5_title",
+      "label": "Título espacio 5"
+    },
+    {
+      "type": "richtext",
+      "id": "description_section_5_content",
+      "label": "Contenido espacio 5"
     },
     {
       "type": "header",
