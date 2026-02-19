@@ -633,6 +633,9 @@
       "block_order": [
         "group_T7ctYT"
       ],
+      "custom_css": [
+        ".force-full-width {grid-column: 2;}"
+      ],
       "name": "Estilos populares",
       "settings": {
         "collection": "all",
