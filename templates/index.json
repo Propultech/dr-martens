@@ -1022,7 +1022,7 @@
         "mobile_card_size": "60cqw",
         "columns_gap": 8,
         "rows_gap": 24,
-        "icons_style": "arrow",
+        "icons_style": "chevron",
         "icons_shape": "none",
         "section_width": "page-width",
         "horizontal_alignment": "flex-start",

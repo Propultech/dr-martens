@@ -447,7 +447,7 @@
                 "size_guide_page": "guia-de-tallas",
                 "size_guide_show_icon_button": true,
                 "size_guide_modal_behavior": "centered",
-                "enable_color_options_modal": true,
+                "enable_color_options_modal": false,
                 "color_options_option_names": "color,colour,colorway",
                 "color_options_button_label": "Ver más opciones",
                 "color_options_modal_title": "Más opciones de color",
