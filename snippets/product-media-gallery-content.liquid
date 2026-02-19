@@ -183,69 +183,161 @@
   assign gallery_description_heading = ''
   assign gallery_description_summary_text = ''
   assign gallery_description_full = ''
-  assign gallery_description_source = block_settings.gallery_description_content
   assign gallery_description_insert_after_index = -1
   assign gallery_description_summary_lines = block_settings.gallery_description_summary_lines | default: 3
   assign gallery_description_preview_limit = gallery_description_summary_lines | times: 90
   assign gallery_description_needs_truncation = false
 
-  if request.visual_preview_mode and gallery_description_source == blank and selected_product and selected_product.description != blank
-    assign gallery_description_source = selected_product.description
-  endif
+  if block_settings.show_gallery_description_preview
+    assign gallery_first_section_heading = ''
+    assign gallery_first_section_plain = ''
+    assign gallery_section_1_title = block_settings.gallery_section_1_title | strip
+    assign gallery_section_1_content = block_settings.gallery_section_1_content
+    assign gallery_section_2_title = block_settings.gallery_section_2_title | strip
+    assign gallery_section_2_content = block_settings.gallery_section_2_content
+    assign gallery_section_3_title = block_settings.gallery_section_3_title | strip
+    assign gallery_section_3_content = block_settings.gallery_section_3_content
+    assign gallery_section_4_title = block_settings.gallery_section_4_title | strip
+    assign gallery_section_4_content = block_settings.gallery_section_4_content
+    assign gallery_section_5_title = block_settings.gallery_section_5_title | strip
+    assign gallery_section_5_content = block_settings.gallery_section_5_content
 
-  if block_settings.show_gallery_description_preview and gallery_description_source != blank
-    assign show_gallery_description_preview = true
-    assign gallery_description_full = gallery_description_source
-    assign gallery_description_plain = gallery_description_source | strip_html | replace: '&nbsp;', ' ' | strip
-    assign gallery_description_body_plain = gallery_description_plain
-    assign heading_chunk = ''
-
-    if gallery_description_source contains '<h1'
-      assign heading_chunk = gallery_description_source | split: '<h1' | slice: 1, 1 | first | split: '</h1>' | first
-    elsif gallery_description_source contains '<h2'
-      assign heading_chunk = gallery_description_source | split: '<h2' | slice: 1, 1 | first | split: '</h2>' | first
-    elsif gallery_description_source contains '<h3'
-      assign heading_chunk = gallery_description_source | split: '<h3' | slice: 1, 1 | first | split: '</h3>' | first
-    elsif gallery_description_source contains '<h4'
-      assign heading_chunk = gallery_description_source | split: '<h4' | slice: 1, 1 | first | split: '</h4>' | first
-    elsif gallery_description_source contains '<h5'
-      assign heading_chunk = gallery_description_source | split: '<h5' | slice: 1, 1 | first | split: '</h5>' | first
-    elsif gallery_description_source contains '<h6'
-      assign heading_chunk = gallery_description_source | split: '<h6' | slice: 1, 1 | first | split: '</h6>' | first
-    endif
-
-    if heading_chunk != blank
-      assign heading_inner_html = heading_chunk | split: '>' | slice: 1, 50 | join: '>'
-      assign gallery_description_heading = heading_inner_html | strip_html | split: '<' | first | split: '&lt;' | first | strip
-    endif
-
-    if gallery_description_heading != blank
-      assign gallery_description_body_plain = gallery_description_plain | remove_first: gallery_description_heading | strip
-    endif
-
-    assign gallery_description_summary_text = gallery_description_body_plain | strip_newlines | replace: '  ', ' ' | strip
-    if gallery_description_summary_text.size > gallery_description_preview_limit
-      assign gallery_description_summary_text = gallery_description_summary_text | truncate: gallery_description_preview_limit, '...'
-      assign gallery_description_needs_truncation = true
-    endif
-
-    assign gallery_description_insert_after_row = block_settings.gallery_description_insert_after_row | default: 1
-    if gallery_description_insert_after_row < 1
-      assign gallery_description_insert_after_row = 1
-    endif
-
-    if block_settings.media_columns == 'two'
-      if block_settings.large_first_image
-        assign gallery_description_insert_after_index = gallery_description_insert_after_row | minus: 1 | times: 2
-      else
-        assign gallery_description_insert_after_index = gallery_description_insert_after_row | times: 2 | minus: 1
+    assign section_plain = gallery_section_1_content | strip_html | replace: '&nbsp;', ' ' | strip
+    if section_plain != blank
+      capture gallery_description_full
+        echo gallery_description_full
+        echo '<div class="media-gallery__description-section">'
+        if gallery_section_1_title != blank
+          echo '<h3>'
+          echo gallery_section_1_title | escape
+          echo '</h3>'
+        endif
+        echo gallery_section_1_content
+        echo '</div>'
+      endcapture
+      if gallery_first_section_plain == blank
+        assign gallery_first_section_plain = section_plain
+        assign gallery_first_section_heading = gallery_section_1_title
       endif
-    else
-      assign gallery_description_insert_after_index = gallery_description_insert_after_row | minus: 1
     endif
 
-    if gallery_description_insert_after_index >= sorted_media.size
-      assign gallery_description_insert_after_index = sorted_media.size | minus: 1
+    assign section_plain = gallery_section_2_content | strip_html | replace: '&nbsp;', ' ' | strip
+    if section_plain != blank
+      capture gallery_description_full
+        echo gallery_description_full
+        echo '<div class="media-gallery__description-section">'
+        if gallery_section_2_title != blank
+          echo '<h3>'
+          echo gallery_section_2_title | escape
+          echo '</h3>'
+        endif
+        echo gallery_section_2_content
+        echo '</div>'
+      endcapture
+      if gallery_first_section_plain == blank
+        assign gallery_first_section_plain = section_plain
+        assign gallery_first_section_heading = gallery_section_2_title
+      endif
+    endif
+
+    assign section_plain = gallery_section_3_content | strip_html | replace: '&nbsp;', ' ' | strip
+    if section_plain != blank
+      capture gallery_description_full
+        echo gallery_description_full
+        echo '<div class="media-gallery__description-section">'
+        if gallery_section_3_title != blank
+          echo '<h3>'
+          echo gallery_section_3_title | escape
+          echo '</h3>'
+        endif
+        echo gallery_section_3_content
+        echo '</div>'
+      endcapture
+      if gallery_first_section_plain == blank
+        assign gallery_first_section_plain = section_plain
+        assign gallery_first_section_heading = gallery_section_3_title
+      endif
+    endif
+
+    assign section_plain = gallery_section_4_content | strip_html | replace: '&nbsp;', ' ' | strip
+    if section_plain != blank
+      capture gallery_description_full
+        echo gallery_description_full
+        echo '<div class="media-gallery__description-section">'
+        if gallery_section_4_title != blank
+          echo '<h3>'
+          echo gallery_section_4_title | escape
+          echo '</h3>'
+        endif
+        echo gallery_section_4_content
+        echo '</div>'
+      endcapture
+      if gallery_first_section_plain == blank
+        assign gallery_first_section_plain = section_plain
+        assign gallery_first_section_heading = gallery_section_4_title
+      endif
+    endif
+
+    assign section_plain = gallery_section_5_content | strip_html | replace: '&nbsp;', ' ' | strip
+    if section_plain != blank
+      capture gallery_description_full
+        echo gallery_description_full
+        echo '<div class="media-gallery__description-section">'
+        if gallery_section_5_title != blank
+          echo '<h3>'
+          echo gallery_section_5_title | escape
+          echo '</h3>'
+        endif
+        echo gallery_section_5_content
+        echo '</div>'
+      endcapture
+      if gallery_first_section_plain == blank
+        assign gallery_first_section_plain = section_plain
+        assign gallery_first_section_heading = gallery_section_5_title
+      endif
+    endif
+
+    assign gallery_description_plain = gallery_description_full | strip_html | replace: '&nbsp;', ' ' | strip
+
+    if gallery_description_plain != blank
+      assign show_gallery_description_preview = true
+
+      assign gallery_description_heading = gallery_first_section_heading
+      assign gallery_description_summary_text = gallery_description_plain
+
+      if gallery_description_heading != blank
+        assign gallery_description_summary_text = gallery_first_section_plain
+      elsif gallery_first_section_plain != blank
+        assign gallery_description_summary_text = gallery_first_section_plain
+      endif
+      if gallery_description_summary_text == blank
+        assign gallery_description_summary_text = gallery_description_plain
+      endif
+
+      assign gallery_description_summary_text = gallery_description_summary_text | strip_newlines | replace: '  ', ' ' | strip
+      if gallery_description_summary_text.size > gallery_description_preview_limit
+        assign gallery_description_summary_text = gallery_description_summary_text | truncate: gallery_description_preview_limit, '...'
+        assign gallery_description_needs_truncation = true
+      endif
+
+      assign gallery_description_insert_after_row = block_settings.gallery_description_insert_after_row | default: 1
+      if gallery_description_insert_after_row < 1
+        assign gallery_description_insert_after_row = 1
+      endif
+
+      if block_settings.media_columns == 'two'
+        if block_settings.large_first_image
+          assign gallery_description_insert_after_index = gallery_description_insert_after_row | minus: 1 | times: 2
+        else
+          assign gallery_description_insert_after_index = gallery_description_insert_after_row | times: 2 | minus: 1
+        endif
+      else
+        assign gallery_description_insert_after_index = gallery_description_insert_after_row | minus: 1
+      endif
+
+      if gallery_description_insert_after_index >= sorted_media.size
+        assign gallery_description_insert_after_index = sorted_media.size | minus: 1
+      endif
     endif
   endif
 
@@ -551,7 +643,7 @@
               {%- render 'product-media', media: media, sizes: media_sizes, is_main_product_media: forloop.first -%}
             {% endif %}
           </li>
-          {% if show_gallery_description_preview and forloop.index0 == gallery_description_insert_after_index %}
+          {% if show_gallery_description_preview and gallery_description_summary_text != blank and forloop.index0 == gallery_description_insert_after_index %}
             <li class="product-media-container product-media-container--description media-gallery__description-item mobile:hidden">
               <div class="media-gallery__description-card">
                 {% if gallery_description_heading != blank %}
@@ -559,8 +651,7 @@
                 {% endif %}
                 <div class="media-gallery__description-row">
                   <span class="media-gallery__description-summary">{{ gallery_description_summary_text }}</span>
-                  {% if gallery_description_needs_truncation %}
-                    <dialog-component class="media-gallery__description-dialog media-gallery__description-dialog--inline">
+                  <dialog-component class="media-gallery__description-dialog media-gallery__description-dialog--inline">
                     <button
                       class="button button-unstyled media-gallery__description-trigger"
                       type="button"
@@ -589,7 +680,6 @@
                       </button>
                     </dialog>
                   </dialog-component>
-                  {% endif %}
                 </div>
               </div>
             </li>
