@@ -492,7 +492,7 @@
                   "static": true,
                   "settings": {
                     "style_class": "button",
-                    "show_add_to_cart_icon": true,
+                    "show_add_to_cart_icon": false,
                     "add_to_cart_text_desktop": "",
                     "add_to_cart_text_mobile": ""
                   },
