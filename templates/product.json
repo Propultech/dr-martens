@@ -617,7 +617,7 @@
             "video_loop": false,
             "cover_image": "shopify://shop_images/prod_video.jpg",
             "alt": "",
-            "custom_width": 100,
+            "custom_width": 90,
             "custom_width_mobile": 100,
             "aspect_ratio": "16/9",
             "border": "none",
