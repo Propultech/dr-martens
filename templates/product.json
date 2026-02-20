@@ -903,10 +903,26 @@
         "padding-inline-start-mobile": 0,
         "padding-inline-end-mobile": 0
       }
+    },
+    "54caed8ea9387bde681a": {
+      "type": "apps",
+      "blocks": {
+        "1c5a4f8f-244c-4918-a0b7-af1284e00a69": {
+          "type": "shopify://apps/yotpo-product-reviews/blocks/reviews/eb7dfd7d-db44-4334-bc49-c893b51b36cf",
+          "settings": {
+            "product": "{{product}}"
+          }
+        }
+      },
+      "block_order": [
+        "1c5a4f8f-244c-4918-a0b7-af1284e00a69"
+      ],
+      "settings": {}
     }
   },
   "order": [
     "main",
+    "54caed8ea9387bde681a",
     "product_recommendations_qggXJq"
   ]
 }
