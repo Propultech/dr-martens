@@ -62,6 +62,37 @@
     },
     {
       "type": "checkbox",
+      "id": "enable_gallery_desktop_collapse",
+      "label": "Activar mostrar más/menos en desktop",
+      "default": true,
+      "visible_if": "{{ block.settings.media_presentation == 'grid' }}"
+    },
+    {
+      "type": "range",
+      "id": "gallery_visible_rows_desktop",
+      "label": "Filas visibles (desktop)",
+      "min": 1,
+      "max": 12,
+      "step": 1,
+      "default": 2,
+      "visible_if": "{{ block.settings.media_presentation == 'grid' and block.settings.enable_gallery_desktop_collapse }}"
+    },
+    {
+      "type": "text",
+      "id": "gallery_show_more_label",
+      "label": "Texto botón mostrar más",
+      "default": "MOSTRAR MÁS IMÁGENES",
+      "visible_if": "{{ block.settings.media_presentation == 'grid' and block.settings.enable_gallery_desktop_collapse }}"
+    },
+    {
+      "type": "text",
+      "id": "gallery_show_less_label",
+      "label": "Texto botón mostrar menos",
+      "default": "MOSTRAR MENOS IMÁGENES",
+      "visible_if": "{{ block.settings.media_presentation == 'grid' and block.settings.enable_gallery_desktop_collapse }}"
+    },
+    {
+      "type": "checkbox",
       "id": "large_first_image",
       "label": "t:settings.full_width_first_image",
       "default": false,
@@ -128,6 +159,10 @@
         {
           "value": "counter",
           "label": "t:options.counter"
+        },
+        {
+          "value": "dots_counter",
+          "label": "Puntos + contador"
         },
         {
           "value": "hint",
@@ -272,6 +307,122 @@
       "id": "hide_variants",
       "default": false,
       "label": "t:settings.hide_unselected_variant_media"
+    },
+    {
+      "type": "header",
+      "content": "Descripción en galería",
+      "visible_if": "{{ block.settings.media_presentation == 'grid' }}"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_gallery_description_preview",
+      "label": "Mostrar resumen de descripción en la galería",
+      "default": false,
+      "visible_if": "{{ block.settings.media_presentation == 'grid' }}"
+    },
+    {
+      "type": "text",
+      "id": "gallery_section_1_title",
+      "label": "Título espacio 1",
+      "visible_if": "{{ block.settings.media_presentation == 'grid' and block.settings.show_gallery_description_preview }}"
+    },
+    {
+      "type": "richtext",
+      "id": "gallery_section_1_content",
+      "label": "Contenido espacio 1",
+      "visible_if": "{{ block.settings.media_presentation == 'grid' and block.settings.show_gallery_description_preview }}"
+    },
+    {
+      "type": "text",
+      "id": "gallery_section_2_title",
+      "label": "Título espacio 2",
+      "visible_if": "{{ block.settings.media_presentation == 'grid' and block.settings.show_gallery_description_preview }}"
+    },
+    {
+      "type": "richtext",
+      "id": "gallery_section_2_content",
+      "label": "Contenido espacio 2",
+      "visible_if": "{{ block.settings.media_presentation == 'grid' and block.settings.show_gallery_description_preview }}"
+    },
+    {
+      "type": "text",
+      "id": "gallery_section_3_title",
+      "label": "Título espacio 3",
+      "visible_if": "{{ block.settings.media_presentation == 'grid' and block.settings.show_gallery_description_preview }}"
+    },
+    {
+      "type": "richtext",
+      "id": "gallery_section_3_content",
+      "label": "Contenido espacio 3",
+      "visible_if": "{{ block.settings.media_presentation == 'grid' and block.settings.show_gallery_description_preview }}"
+    },
+    {
+      "type": "text",
+      "id": "gallery_section_4_title",
+      "label": "Título espacio 4",
+      "visible_if": "{{ block.settings.media_presentation == 'grid' and block.settings.show_gallery_description_preview }}"
+    },
+    {
+      "type": "richtext",
+      "id": "gallery_section_4_content",
+      "label": "Contenido espacio 4",
+      "visible_if": "{{ block.settings.media_presentation == 'grid' and block.settings.show_gallery_description_preview }}"
+    },
+    {
+      "type": "text",
+      "id": "gallery_section_5_title",
+      "label": "Título espacio 5",
+      "visible_if": "{{ block.settings.media_presentation == 'grid' and block.settings.show_gallery_description_preview }}"
+    },
+    {
+      "type": "richtext",
+      "id": "gallery_section_5_content",
+      "label": "Contenido espacio 5",
+      "visible_if": "{{ block.settings.media_presentation == 'grid' and block.settings.show_gallery_description_preview }}"
+    },
+    {
+      "type": "range",
+      "id": "gallery_description_insert_after_row",
+      "label": "Insertar después de la fila",
+      "min": 1,
+      "max": 12,
+      "step": 1,
+      "default": 1,
+      "visible_if": "{{ block.settings.media_presentation == 'grid' and block.settings.show_gallery_description_preview }}"
+    },
+    {
+      "type": "range",
+      "id": "gallery_description_summary_lines",
+      "label": "Líneas visibles",
+      "min": 1,
+      "max": 50,
+      "step": 1,
+      "default": 3,
+      "visible_if": "{{ block.settings.media_presentation == 'grid' and block.settings.show_gallery_description_preview }}"
+    },
+    {
+      "type": "select",
+      "id": "gallery_description_modal_behavior",
+      "label": "Tipo de modal",
+      "options": [
+        {
+          "value": "drawer",
+          "label": "Lateral derecho"
+        },
+        {
+          "value": "centered",
+          "label": "Centrado"
+        }
+      ],
+      "default": "drawer",
+      "visible_if": "{{ block.settings.media_presentation == 'grid' and block.settings.show_gallery_description_preview }}"
+    },
+    {
+      "type": "text",
+      "id": "gallery_description_button_label",
+      "label": "Texto del botón",
+      "default": "Leer más",
+      "visible_if": "{{ block.settings.media_presentation == 'grid' and block.settings.show_gallery_description_preview }}"
     },
     {
       "type": "header",

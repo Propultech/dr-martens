@@ -52,6 +52,112 @@
     },
     {
       "type": "header",
+      "content": "Guia de tallas"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_size_guide",
+      "label": "Activar guia de tallas",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "size_guide_option_names",
+      "label": "Opciones de talla",
+      "info": "Separadas por coma. Ej: size,talla,talle | Esta opcion detecta el titulo del elemento (<legend></legend>) y lo relaciona con la guia de tallas. Si el titulo de la opcion de talla es diferente, no se mostrara el link de guia de tallas.",
+      "default": "size,talla,talle",
+      "visible_if": "{{ block.settings.enable_size_guide }}"
+    },
+    {
+      "type": "text",
+      "id": "size_guide_title",
+      "label": "Titulo",
+      "default": "Guia de tallas",
+      "visible_if": "{{ block.settings.enable_size_guide }}"
+    },
+    {
+      "type": "text",
+      "id": "size_guide_link_label",
+      "label": "Texto del link",
+      "default": "Ver guia de tallas",
+      "visible_if": "{{ block.settings.enable_size_guide }}"
+    },
+    {
+      "type": "richtext",
+      "id": "size_guide_message",
+      "label": "Mensaje",
+      "default": "<p>Calce: <strong>Talla real</strong>. Compra tu talla habitual.</p>",
+      "visible_if": "{{ block.settings.enable_size_guide }}"
+    },
+    {
+      "type": "page",
+      "id": "size_guide_page",
+      "label": "Pagina de guia de tallas",
+      "info": "En el codigo de la tienda, deberia existir un archivo llamado size-guide.html, la idea es copiar el codigo en shopify solo remplazando el html, ya que esta usando el <style> y <script> casi iguales al original",
+    },
+    {
+      "type": "checkbox",
+      "id": "size_guide_show_icon_button",
+      "label": "Mostrar boton icono al final de las tallas",
+      "default": true,
+      "visible_if": "{{ block.settings.enable_size_guide }}"
+    },
+    {
+      "type": "select",
+      "id": "size_guide_modal_behavior",
+      "label": "Tipo de modal",
+      "options": [
+        {
+          "value": "drawer",
+          "label": "Lateral derecho"
+        },
+        {
+          "value": "centered",
+          "label": "Centrado"
+        }
+      ],
+      "default": "drawer",
+      "visible_if": "{{ block.settings.enable_size_guide }}"
+    },
+    {
+      "type": "header",
+      "content": "Modal de color"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_color_options_modal",
+      "label": "Activar modal de color",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "color_options_option_names",
+      "label": "Opciones de color",
+      "info": "Separadas por coma. Ej: color,colour,colorway",
+      "default": "color,colour,colorway",
+      "visible_if": "{{ block.settings.enable_color_options_modal }}"
+    },
+    {
+      "type": "text",
+      "id": "color_options_button_label",
+      "label": "Texto del botón",
+      "default": "Ver más opciones",
+      "visible_if": "{{ block.settings.enable_color_options_modal }}"
+    },
+    {
+      "type": "text",
+      "id": "color_options_modal_title",
+      "label": "Título del modal",
+      "default": "Más opciones de color",
+      "visible_if": "{{ block.settings.enable_color_options_modal }}"
+    },
+    {
+      "type": "page",
+      "id": "color_options_page",
+      "label": "Página del modal de color"
+    },
+    {
+      "type": "header",
       "content": "t:content.padding"
     },
     {

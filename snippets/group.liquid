@@ -6,6 +6,8 @@
   @param {string} shopify_attributes - String with Shopify attributes for the editor.
   @param {string} [class] - Custom classes for the group block.
   @param {string} [style] - Custom inline styles for the group block.
+  @param {string} [group_id] - Unique block id used for CSS scoping.
+  @param {string} [custom_css] - Custom CSS declarations for this specific group block.
 
   @example
   {% render 'group', children: children, settings: block.settings, shopify_attributes: block.shopify_attributes %}
@@ -14,6 +16,8 @@
 <div
   class="
     group-block
+    {% if group_id != blank %}group-block--{{ group_id }}{% endif %}
+    {% if settings.visibility == 'desktop' %}hidden--mobile{% elsif settings.visibility == 'mobile' %}hidden--desktop{% endif %}
     group-block--height-{{ settings.height }}
     group-block--width-{{ settings.width }}
     border-style
@@ -68,6 +72,20 @@
     {{- children -}}
   </div>
 </div>
+
+{%- if custom_css != blank and group_id != blank -%}
+  <style>
+    /* Mode 1: declarations for the group container itself */
+    .group-block--{{ group_id }} {
+      {{ custom_css }}
+    }
+
+    /* Mode 2: selector rules scoped to this group (e.g. h3 { ... }) */
+    @scope (.group-block--{{ group_id }}) {
+      {{ custom_css }}
+    }
+  </style>
+{%- endif -%}
 
 {% stylesheet %}
   .group-block__link {

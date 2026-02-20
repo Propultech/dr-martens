@@ -15,7 +15,49 @@
     else
       assign strikethrough_color_mix = '#fff'
     endif
+
+    assign size_guide_enabled = false
+    assign color_options_enabled = false
+    if block_settings.enable_size_guide and block_settings.size_guide_page != blank
+      assign size_option_aliases = block_settings.size_guide_option_names | default: 'size,talla,talle' | split: ','
+      for product_option in product_resource.options_with_values
+        assign option_name_handle = product_option.name | handleize
+        for size_option_alias in size_option_aliases
+          assign alias_handle = size_option_alias | strip | handleize
+          if alias_handle != blank and option_name_handle contains alias_handle
+            assign size_guide_enabled = true
+            break
+          endif
+        endfor
+        if size_guide_enabled
+          break
+        endif
+      endfor
+    endif
+
+    if block_settings.enable_color_options_modal and block_settings.color_options_page != blank
+      assign color_option_aliases = block_settings.color_options_option_names | default: 'color,colour,colorway' | split: ','
+      for product_option in product_resource.options_with_values
+        assign option_name_handle = product_option.name | handleize
+        for color_option_alias in color_option_aliases
+          assign alias_handle = color_option_alias | strip | handleize
+          if alias_handle != blank and option_name_handle contains alias_handle
+            assign color_options_enabled = true
+            break
+          endif
+        endfor
+        if color_options_enabled
+          break
+        endif
+      endfor
+    endif
   %}
+  {% if size_guide_enabled or color_options_enabled %}
+    <script
+      src="{{ 'dialog.js' | asset_url }}"
+      type="module"
+    ></script>
+  {% endif %}
   <variant-picker
     class="variant-picker spacing-style variant-picker--{{ block_settings.alignment }}"
     style="--color-strikethrough-mix: {{ strikethrough_color_mix }}; {% render 'spacing-style', settings: block_settings %}"
@@ -37,6 +79,12 @@
         {%- liquid
           assign swatch_count = product_option.values | map: 'swatch' | compact | size
           assign variant_style = block_settings.variant_style
+          assign option_name_handle = product_option.name | handleize
+          assign show_size_guide = false
+          assign option_id_attribute = ''
+          assign fieldset_id = ''
+          assign longest_value = 0
+          assign show_color_options = false
 
           if swatch_count > 0 and block_settings.show_swatches
             if block_settings.variant_style == 'dropdown'
@@ -49,89 +97,263 @@
           if variant_style == 'buttons' and settings.variant_button_width == 'equal-width-buttons'
             assign fieldset_id = section.id | append: '-' | append: product_resource.id | append: '-' | append: product_option.name | handleize
             assign option_id_attribute = 'data-option-id="' | append: fieldset_id | append: '"'
-            assign longest_value = 0
+          endif
+
+          if block_settings.enable_size_guide and block_settings.size_guide_page != blank
+            assign size_option_aliases = block_settings.size_guide_option_names | default: 'size,talla,talle' | split: ','
+            for size_option_alias in size_option_aliases
+              assign alias_handle = size_option_alias | strip | handleize
+              if alias_handle != blank and option_name_handle contains alias_handle
+                assign show_size_guide = true
+                break
+              endif
+            endfor
+          endif
+
+          if variant_style == 'swatch' and block_settings.enable_color_options_modal and block_settings.color_options_page != blank
+            assign color_option_aliases = block_settings.color_options_option_names | default: 'color,colour,colorway' | split: ','
+            for color_option_alias in color_option_aliases
+              assign alias_handle = color_option_alias | strip | handleize
+              if alias_handle != blank and option_name_handle contains alias_handle
+                assign show_color_options = true
+                break
+              endif
+            endfor
           endif
         -%}
 
         {%- if variant_style == 'swatch' or block_settings.variant_style == 'buttons' -%}
           {%- assign fieldset_index = forloop.index0 -%}
           <fieldset
-            class="variant-option variant-option--buttons{% if variant_style == 'swatch' %} variant-option--swatches{% else %} variant-option--{{ settings.variant_button_width }}{% endif %}"
+            class="variant-option variant-option--buttons{% if variant_style == 'swatch' %} variant-option--swatches{% else %} variant-option--{{ settings.variant_button_width }}{% endif %}{% if show_size_guide %} variant-option--size-guide{% endif %}{% if show_color_options %} variant-option--color-options{% endif %}"
             data-fieldset-index="{{ fieldset_index }}"
             ref="fieldsets[]"
             {{ option_id_attribute }}
           >
             <legend>
-              {{ product_option.name | escape -}}
+              {{ product_option.name | escape -}}:
               {%- if variant_style == 'swatch' -%}
                 <span class="variant-option__swatch-value">{{ product_option.selected_value }}</span>
               {%- endif %}
             </legend>
-            {%- for product_option_value in product_option.values -%}
-              {% if product_option_value.size > longest_value and option_id_attribute %}
-                {% assign longest_value = product_option_value.size %}
-              {% endif %}
-              <label
-                class="variant-option__button-label{% if variant_style == 'swatch' %} variant-option__button-label--has-swatch{% endif %}"
-              >
-                <input
-                  type="radio"
-                  name="{{ product_option.name | escape }}-{{ block.id }}-{{ product_resource.id }}"
-                  value="{{ product_option_value | escape }}"
-                  aria-label="{{ product_option_value.name }}"
-                  {% if product_option_value.available == false %}
-                    aria-disabled="true"
-                  {% endif %}
-                  data-previous-checked="false"
-                  data-fieldset-index="{{ fieldset_index }}"
-                  data-input-index="{{ forloop.index0 }}"
-                  data-input-id="{{ product_option.position }}-{{ forloop.index0 }}"
-                  data-option-value-id="{{ product_option_value.id }}"
-                  data-option-available="{{ product_option_value.available }}"
-                  data-connected-product-url="{{ product_option_value.product_url }}"
-                  {% if product_option_value.variant.id %}
-                    data-variant-id="{{ product_option_value.variant.id }}"
-                  {% endif %}
-                  {% if product_option_value.selected %}
-                    data-current-checked="true"
-                    checked
-                  {% else %}
-                    data-current-checked="false"
-                  {% endif %}
-                >
-                {% if variant_style == 'swatch' %}
-                  {% liquid
-                    assign featured_media = product_option_value.variant.featured_media
-
-                    # If the variant has no featured media, and we have a combined listing product, then fall back to
-                    # using the featured media of the child product that is linked to this option value.
-                    if featured_media == blank and product_option_value.product_url
-                      assign featured_media = product_option_value.variant.product.featured_media
-                    endif
-                  %}
-
-                  {% render 'swatch',
-                    swatch: product_option_value.swatch,
-                    variant_image: featured_media,
-                    mode: 'unscaled'
-                  %}
-                {% else %}
-                  {% if product_option_value.available == true %}
-                    <span
-                      class="variant-option__button-label__pill"
-                      data-key="variant-option-pill"
-                    ></span>
-                  {% endif %}
-                  <span
-                    class="variant-option__button-label__text"
-                    data-key="variant-option-text"
+            {% if show_size_guide %}
+              <dialog-component class="variant-size-guide">
+                <div class="variant-size-guide__header">
+                  <span class="variant-size-guide__title">{{ block_settings.size_guide_title | default: product_option.name | escape }}</span>
+                  <button
+                    class="button button-unstyled variant-size-guide__link"
+                    type="button"
+                    on:click="/showDialog"
                   >
-                    {{- product_option_value | escape -}}
-                  </span>
+                    {{ block_settings.size_guide_link_label | default: 'Guia de tallas' | escape }}
+                  </button>
+                </div>
+                {% if block_settings.size_guide_message != blank %}
+                  <div class="variant-size-guide__message rte">{{ block_settings.size_guide_message }}</div>
                 {% endif %}
-                {% render 'strikethrough-variant', product_option: product_option_value %}
-              </label>
-            {%- endfor -%}
+                <div class="variant-size-guide__options">
+                  {%- for product_option_value in product_option.values -%}
+                    {% if product_option_value.size > longest_value and option_id_attribute %}
+                      {% assign longest_value = product_option_value.size %}
+                    {% endif %}
+                    <label
+                      class="variant-option__button-label{% if variant_style == 'swatch' %} variant-option__button-label--has-swatch{% endif %}"
+                    >
+                      <input
+                        type="radio"
+                        name="{{ product_option.name | escape }}-{{ block.id }}-{{ product_resource.id }}"
+                        value="{{ product_option_value | escape }}"
+                        aria-label="{{ product_option_value.name }}"
+                        {% if product_option_value.available == false %}
+                          aria-disabled="true"
+                        {% endif %}
+                        data-previous-checked="false"
+                        data-fieldset-index="{{ fieldset_index }}"
+                        data-input-index="{{ forloop.index0 }}"
+                        data-input-id="{{ product_option.position }}-{{ forloop.index0 }}"
+                        data-option-value-id="{{ product_option_value.id }}"
+                        data-option-available="{{ product_option_value.available }}"
+                        data-connected-product-url="{{ product_option_value.product_url }}"
+                        {% if product_option_value.variant.id %}
+                          data-variant-id="{{ product_option_value.variant.id }}"
+                        {% endif %}
+                        {% if product_option_value.selected %}
+                          data-current-checked="true"
+                          checked
+                        {% else %}
+                          data-current-checked="false"
+                        {% endif %}
+                      >
+                      {% if variant_style == 'swatch' %}
+                        {% liquid
+                          assign featured_media = product_option_value.variant.featured_media
+
+                          # If the variant has no featured media, and we have a combined listing product, then fall back to
+                          # using the featured media of the child product that is linked to this option value.
+                          if featured_media == blank and product_option_value.product_url
+                            assign featured_media = product_option_value.variant.product.featured_media
+                          endif
+                        %}
+
+                        {% render 'swatch',
+                          swatch: product_option_value.swatch,
+                          variant_image: featured_media,
+                          mode: 'unscaled'
+                        %}
+                      {% else %}
+                        {% if product_option_value.available == true %}
+                          <span
+                            class="variant-option__button-label__pill"
+                            data-key="variant-option-pill"
+                          ></span>
+                        {% endif %}
+                        <span
+                          class="variant-option__button-label__text"
+                          data-key="variant-option-text"
+                        >
+                          {{- product_option_value | escape -}}
+                        </span>
+                      {% endif %}
+                      {% render 'strikethrough-variant', product_option: product_option_value %}
+                    </label>
+                  {%- endfor -%}
+                  {% if block_settings.size_guide_show_icon_button %}
+                    <button
+                      type="button"
+                      class="button button-unstyled variant-option__button-label variant-option__button-label--size-guide-modal"
+                      on:click="/showDialog"
+                      aria-label="{{ block_settings.size_guide_link_label | default: 'Guia de tallas' | escape }}"
+                    >
+                      <span class="variant-size-guide__icon-svg">
+                        {{ 'icon-size.svg' | inline_asset_content }}
+                      </span>
+                    </button>
+                  {% endif %}
+                </div>
+                <dialog
+                  ref="dialog"
+                  class="dialog-modal variant-size-guide__modal color-{{ settings.popover_color_scheme }}{% if block_settings.size_guide_modal_behavior == 'drawer' %} variant-size-guide__modal--drawer dialog-drawer dialog-drawer--right{% endif %}"
+                  scroll-lock
+                  aria-label="{{ block_settings.size_guide_title | default: product_option.name | escape }}"
+                >
+                  <div class="rte variant-size-guide__modal-content">
+                    {{ block_settings.size_guide_page.content }}
+                  </div>
+                  <button
+                    type="button"
+                    class="button button-unstyled close-button variant-size-guide__modal-close"
+                    aria-label="{{ 'actions.close' | t }}"
+                    on:click="/closeDialog"
+                  >
+                    <span class="visually-hidden">{{ 'actions.close' | t }}</span>
+                    {{ 'icon-close.svg' | inline_asset_content }}
+                  </button>
+                </dialog>
+              </dialog-component>
+            {% else %}
+              {%- for product_option_value in product_option.values -%}
+                {% if product_option_value.size > longest_value and option_id_attribute %}
+                  {% assign longest_value = product_option_value.size %}
+                {% endif %}
+                <label
+                  class="variant-option__button-label{% if variant_style == 'swatch' %} variant-option__button-label--has-swatch{% endif %}"
+                >
+                  <input
+                    type="radio"
+                    name="{{ product_option.name | escape }}-{{ block.id }}-{{ product_resource.id }}"
+                    value="{{ product_option_value | escape }}"
+                    aria-label="{{ product_option_value.name }}"
+                    {% if product_option_value.available == false %}
+                      aria-disabled="true"
+                    {% endif %}
+                    data-previous-checked="false"
+                    data-fieldset-index="{{ fieldset_index }}"
+                    data-input-index="{{ forloop.index0 }}"
+                    data-input-id="{{ product_option.position }}-{{ forloop.index0 }}"
+                    data-option-value-id="{{ product_option_value.id }}"
+                    data-option-available="{{ product_option_value.available }}"
+                    data-connected-product-url="{{ product_option_value.product_url }}"
+                    {% if product_option_value.variant.id %}
+                      data-variant-id="{{ product_option_value.variant.id }}"
+                    {% endif %}
+                    {% if product_option_value.selected %}
+                      data-current-checked="true"
+                      checked
+                    {% else %}
+                      data-current-checked="false"
+                    {% endif %}
+                  >
+                  {% if variant_style == 'swatch' %}
+                    {% liquid
+                      assign featured_media = product_option_value.variant.featured_media
+
+                      # If the variant has no featured media, and we have a combined listing product, then fall back to
+                      # using the featured media of the child product that is linked to this option value.
+                      if featured_media == blank and product_option_value.product_url
+                        assign featured_media = product_option_value.variant.product.featured_media
+                      endif
+                    %}
+
+                    {% render 'swatch',
+                      swatch: product_option_value.swatch,
+                      variant_image: featured_media,
+                      mode: 'unscaled'
+                    %}
+                  {% else %}
+                    {% if product_option_value.available == true %}
+                      <span
+                        class="variant-option__button-label__pill"
+                        data-key="variant-option-pill"
+                      ></span>
+                    {% endif %}
+                    <span
+                      class="variant-option__button-label__text"
+                      data-key="variant-option-text"
+                    >
+                      {{- product_option_value | escape -}}
+                    </span>
+                  {% endif %}
+                  {% render 'strikethrough-variant', product_option: product_option_value %}
+                </label>
+              {%- endfor -%}
+            {% endif %}
+            {% if show_color_options %}
+              <dialog-component class="variant-color-options">
+                <button
+                  class="button button-unstyled variant-color-options__trigger"
+                  type="button"
+                  on:click="/showDialog"
+                >
+                  <span class="variant-color-options__trigger-text">
+                    {{ block_settings.color_options_button_label | default: 'Ver más opciones' | escape }}
+                  </span>
+                  <span class="variant-color-options__icon" aria-hidden="true">
+                    <svg viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M1 1L7 7L1 13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </span>
+                </button>
+                <dialog
+                  ref="dialog"
+                  class="dialog-modal variant-color-options__modal color-{{ settings.popover_color_scheme }} variant-color-options__modal--drawer dialog-drawer dialog-drawer--right"
+                  scroll-lock
+                  aria-label="{{ block_settings.color_options_modal_title | default: 'Más opciones de color' | escape }}"
+                >
+                  <div class="rte variant-color-options__modal-content">
+                    {{ block_settings.color_options_page.content }}
+                  </div>
+                  <button
+                    type="button"
+                    class="button button-unstyled close-button variant-color-options__modal-close"
+                    aria-label="{{ 'actions.close' | t }}"
+                    on:click="/closeDialog"
+                  >
+                    <span class="visually-hidden">{{ 'actions.close' | t }}</span>
+                    {{ 'icon-close.svg' | inline_asset_content }}
+                  </button>
+                </dialog>
+              </dialog-component>
+            {% endif %}
             {% if option_id_attribute %}
               {% style %}
                 [data-option-id="{{ fieldset_id }}"] {
@@ -230,7 +452,7 @@
   }
 
   .variant-option + .variant-option {
-    margin-top: var(--padding-lg);
+    margin-top: 25px;
   }
 
   .variant-option--swatches {
@@ -263,12 +485,21 @@
 
   .variant-option--buttons legend {
     padding: 0;
-    margin-block-end: var(--margin-xs);
+    margin-block-end: 15px;
+
+    color: var(--color-foreground);
+    font-size: var(--font-size--md);
+    font-weight: var(--font-weight-ExtraBold, 800);
+    line-height: 112.5%;
+    letter-spacing: .25px;
+    text-transform: uppercase;
   }
 
   .variant-option__swatch-value {
-    padding-inline-start: var(--padding-xs);
-    color: rgb(var(--color-foreground-rgb) / var(--opacity-70));
+    padding-inline-start: 3px;
+    font-weight: var(--font-paragraph--weight);
+    line-height: 137.5%;
+    text-transform: none;
   }
 
   @media (prefers-reduced-motion: no-preference) {
@@ -315,7 +546,7 @@
 
     cursor: pointer;
     display: flex;
-    flex: 0 0 3.25em;
+    flex: 0 0 3.438em;
     align-items: center;
     position: relative;
     padding-block: var(--padding-sm);
@@ -324,7 +555,7 @@
     border-radius: var(--options-border-radius);
     overflow: clip;
     justify-content: center;
-    min-height: 3.25em;
+    min-height: 2.813em;
     min-width: fit-content;
     white-space: nowrap;
     background-color: var(--color-variant-background);
@@ -335,6 +566,10 @@
       background-color: var(--color-variant-hover-background);
       border-color: var(--color-variant-hover-border);
       color: var(--color-variant-hover-text);
+    }
+
+    .variant-option__strikethrough {
+      transform: rotate(341deg);
     }
 
     /* we need something like overflow-clip-margin to use the pseudoelement but it doesn't work in Safari */
@@ -438,7 +673,7 @@
   }
 
   .variant-option__button-label__pill {
-    background: var(--color-selected-variant-background);
+    background: var(--color-variant-hover-background);
     position: absolute;
     top: calc(var(--options-border-width) * -1);
     bottom: calc(var(--options-border-width) * -1);
@@ -531,7 +766,7 @@
 
   .variant-option__button-label--has-swatch:hover {
     outline: var(--focus-outline-width) solid rgb(var(--color-foreground-rgb) / var(--opacity-35-55));
-    outline-offset: var(--focus-outline-offset);
+    /* outline-offset: var(--focus-outline-offset); */
   }
 
   .facets__inputs-list--swatches-grid .variant-option__button-label--has-swatch:has(:checked) {
@@ -547,7 +782,8 @@
     --focus-outline: var(--focus-outline-width) solid var(--color-foreground);
 
     outline: var(--focus-outline);
-    outline-offset: var(--focus-outline-offset);
+    border-bottom: 4px solid black;
+    /* outline-offset: var(--focus-outline-offset); */
   }
 
   /* This triggers iOS < 16.4. The outline bug is not recognized as a lack of @supports */
@@ -688,5 +924,241 @@
   .variant-picker--right .variant-option {
     text-align: right;
     justify-content: right;
+  }
+
+  .variant-option--size-guide {
+    display: block;
+
+    > legend {
+      display: none;
+    }
+  }
+
+  .variant-size-guide__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--gap-sm);
+    margin: 0 0 16px;
+  }
+
+  .variant-size-guide__title {
+    font-weight: var(--font-subheading--weight);
+    color: var(--color-foreground);
+    font-family: var(--font-paragraph--family);
+    font-size: var(--font-paragraph--size);
+    font-weight: var(--font-accent--weight);
+    line-height: 112.5%;
+    letter-spacing: .25px;
+    text-transform: uppercase;
+  }
+
+  .variant-size-guide__link {
+    white-space: nowrap;
+    color: var(--color-foreground);
+    font-family: var(--font-paragraph--family);
+    font-size: var(--font-paragraph--size);
+    font-weight: var(--font-paragraph--weight);
+    line-height: 137.5%;
+    letter-spacing: .25px;
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-decoration-skip-ink: auto;
+    text-decoration-thickness: auto;
+    text-underline-offset: auto;
+    text-underline-position: from-font;
+    text-transform: unset;
+    font-stretch: unset;
+  }
+
+  .variant-size-guide__message {
+    margin-bottom: var(--margin-xs);
+    font-size: var(--font-size--md);
+    background-color: var(--background-color-message);
+    color: var(--color-foreground);
+    line-height: 22px;
+    letter-spacing: .25px;
+    padding: 9px 10px 5px;
+  }
+
+  .variant-size-guide__options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gap-sm);
+  }
+
+  .variant-option__button-label--size-guide-modal .svg-wrapper {
+    width: var(--icon-size-sm);
+    height: var(--icon-size-sm);
+  }
+
+  .variant-size-guide__icon-svg {
+    display: inline-flex;
+    width: 11px;
+    height: 20px;
+    color: currentcolor;
+    position: relative;
+  }
+
+  .variant-size-guide__icon-svg svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .variant-size-guide__icon-svg svg path {
+    fill: none;
+    stroke: currentColor;
+  }
+
+  .variant-size-guide__modal {
+    container-type: inline-size;
+  }
+
+  .variant-size-guide__modal:not(.variant-size-guide__modal--drawer) {
+    background-color: var(--color-variant-background);
+    color: var(--color-variant-text);
+    border-radius: var(--style-border-radius-popover);
+    border: var(--style-border-popover);
+    box-shadow: var(--shadow-popover);
+    width: min(980px, calc(100vw - var(--padding-xl) * 2));
+    max-height: var(--modal-max-height);
+    padding: var(--padding-xl);
+    margin: auto;
+  }
+
+  .variant-size-guide__modal--drawer {
+    background-color: var(--color-variant-background);
+    color: var(--color-variant-text);
+    border: var(--style-border-popover);
+    border-radius: 0;
+    box-shadow: var(--shadow-popover);
+    position: fixed;
+    width: var(--sidebar-width);
+    max-width: 95vw;
+    height: 100%;
+    margin: 0 0 0 auto;
+    padding: 60px 20px;
+  }
+
+  .variant-size-guide__modal--drawer:modal {
+    max-height: 100dvh;
+  }
+
+  .variant-size-guide__modal--drawer[open] {
+    --start-x: 100%;
+    --end-x: 0px;
+    --start-opacity: 1;
+  }
+
+  .variant-size-guide__modal--drawer[open].dialog-closing {
+    --start-x: 0px;
+    --end-x: 100%;
+    --start-opacity: 1;
+    --end-opacity: 1;
+  }
+
+  .variant-size-guide__modal:not(.variant-size-guide__modal--drawer)[open] {
+    animation: modalSlideInTop var(--animation-speed) var(--animation-easing) forwards;
+  }
+
+  .variant-size-guide__modal:not(.variant-size-guide__modal--drawer).dialog-closing {
+    animation: modalSlideOutTop var(--animation-speed) var(--animation-easing) forwards;
+  }
+
+  .variant-size-guide__modal-content {
+    padding-right: var(--padding-xl);
+  }
+
+  .variant-size-guide__modal-close {
+    top: var(--margin-2xs);
+    right: var(--margin-2xs);
+  }
+
+  .variant-color-options {
+    width: 100%;
+    margin: 7px 0 0;
+  }
+
+  .variant-color-options__trigger {
+    width: 100%;
+    min-height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--gap-sm);
+    padding: 10px 14px;
+    border: 1px solid var(--color-selected-variant-hover-border);
+    border-radius: var(--style-border-radius-inputs);
+    background-color: transparent;
+    color: var(--color-foreground);
+    text-align: left;
+  }
+
+  .variant-color-options__trigger:hover {
+    border-color: var(--color-selected-variant-hover-border);
+  }
+
+  .variant-color-options__trigger-text {
+    font-size: var(--font-size--md);
+    font-weight: var(--font-weight-ExtraBold, 800);
+    line-height: 112.5%;
+    letter-spacing: .25px;
+    text-transform: uppercase;
+  }
+
+  .variant-color-options__icon {
+    display: inline-flex;
+    width: 8px;
+    height: 14px;
+    flex-shrink: 0;
+  }
+
+  .variant-color-options__icon svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .variant-color-options__modal {
+    container-type: inline-size;
+    background-color: var(--color-variant-background);
+    color: var(--color-variant-text);
+  }
+
+  .variant-color-options__modal--drawer {
+    border: var(--style-border-popover);
+    border-radius: 0;
+    box-shadow: var(--shadow-popover);
+    position: fixed;
+    width: var(--sidebar-width);
+    max-width: 95vw;
+    height: 100%;
+    margin: 0 0 0 auto;
+    padding: 60px 20px;
+  }
+
+  .variant-color-options__modal--drawer:modal {
+    max-height: 100dvh;
+  }
+
+  .variant-color-options__modal--drawer[open] {
+    --start-x: 100%;
+    --end-x: 0px;
+    --start-opacity: 1;
+  }
+
+  .variant-color-options__modal--drawer[open].dialog-closing {
+    --start-x: 0px;
+    --end-x: 100%;
+    --start-opacity: 1;
+    --end-opacity: 1;
+  }
+
+  .variant-color-options__modal-content {
+    padding-right: var(--padding-xl);
+  }
+
+  .variant-color-options__modal-close {
+    top: var(--margin-2xs);
+    right: var(--margin-2xs);
   }
 {% endstylesheet %}

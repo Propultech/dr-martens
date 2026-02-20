@@ -280,7 +280,7 @@
           <div class="pickup-availability__column">
             <span class="svg-wrapper">
               {% if pick_up_availabilities.first.available %}
-                {{- 'icon-available.svg' | inline_asset_content -}}
+                {{- 'icon-pin.svg' | inline_asset_content -}}
               {% else %}
                 {{- 'icon-unavailable.svg' | inline_asset_content -}}
               {% endif %}
@@ -396,14 +396,14 @@
 
   .product-form-buttons button {
     width: 100%;
-    padding-block: var(--padding-lg);
+    padding: 10px;
     font-size: var(--buy-buttons-font-size, var(--font-paragraph--size));
   }
 
   .quantity-selector {
     flex-grow: 0;
     flex-shrink: 0;
-    height: var(--height-buy-buttons);
+    height: 40px;
   }
 
   .quantity-label {
@@ -456,8 +456,9 @@
   }
 
   .add-to-cart-button {
-    height: var(--height-buy-buttons);
+    height: 40px;
     text-transform: var(--button-text-case-primary);
+    font-stretch: normal;
   }
 
   .add-to-cart-button.button-secondary {
@@ -473,6 +474,7 @@
 
   .product__pickup-availabilities {
     width: 100%;
+    padding: 0 0 20px;
   }
 
   .pickup-availability__column {
@@ -539,16 +541,17 @@
 
   .pickup-location__button {
     width: fit-content;
-    color: var(--color-primary);
+    color: var(--color-primary-button-text);
     font-size: var(--font-size--xs);
     font-family: var(--font-body--family);
     padding: 0;
     cursor: pointer;
     margin-block: var(--margin-xs);
+    text-decoration: underline;
   }
 
   .pickup-location__button:hover {
-    color: var(--color-primary-hover);
+    color: var(--color-primary-button-hover-text);
   }
 
   .pickup-location__h4 {

@@ -1,0 +1,303 @@
+{%- liquid
+  assign tabs = section.blocks | where: 'type', '_tab_products'
+  assign first_tab = tabs | first
+  assign is_first = false
+  # theme-check-disable BlockIdUsage
+  if first_tab and block.id == first_tab.id
+    assign is_first = true
+  endif
+  # theme-check-enable BlockIdUsage
+
+  assign tab_title = block.settings.tab_title | default: 'Tab'
+  assign products = block.settings.products
+  assign base_product = block.settings.base_product
+  if base_product == blank and product != blank
+    assign base_product = product
+  endif
+  assign has_manual_products = false
+  if products != blank
+    assign has_manual_products = true
+  endif
+  assign use_auto_recommendations = false
+  if has_manual_products == false and block.settings.use_recommendations and base_product != blank
+    assign use_auto_recommendations = true
+  endif
+  assign show_tab = false
+  if has_manual_products or use_auto_recommendations
+    assign show_tab = true
+  endif
+
+  assign slide_count = products.size
+  if slide_count > block.settings.products_limit
+    assign slide_count = block.settings.products_limit
+  endif
+-%}
+
+{% if show_tab %}
+  <button
+    type="button"
+    class="tp-tab-seed"
+    data-tab-id="tp-tab-{{ block.id }}"
+    data-panel-id="tp-panel-{{ block.id }}"
+    data-label="{{ tab_title | escape }}"
+    data-active="{% if is_first %}1{% else %}0{% endif %}"
+    hidden
+  ></button>
+
+  <div
+    id="tp-panel-{{ block.id }}"
+    class="tp-panel{% if is_first %} is-active{% endif %}"
+    role="tabpanel"
+    aria-labelledby="tp-tab-{{ block.id }}"
+    tabindex="0"
+    {{ block.shopify_attributes }}
+  >
+    <h3 class="tp-mobile-title">
+      {{ tab_title | escape }}
+
+      <span class="variant-color-options__icon" aria-hidden="true">
+        <svg viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1 1L7 7L1 13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </span>
+    </h3>
+
+    {% if has_manual_products %}
+      {% capture list_items %}
+        {% for product in products limit: block.settings.products_limit %}
+          <div class="resource-list__item">
+            {% content_for 'block',
+              type: '_product-card',
+              id: 'static-product-card',
+              closest.product: product
+            %}
+          </div>
+          {% unless forloop.last %}
+            <!--@tp/split-->
+          {% endunless %}
+        {% endfor %}
+      {% endcapture %}
+
+      {% # theme-check-disable UnusedAssign %}
+      {% assign slides = list_items | strip | split: '<!--@tp/split-->' %}
+      {% # theme-check-enable UnusedAssign %}
+
+      <div
+        class="resource-list resource-list__carousel force-full-width tp-carousel"
+        style="
+          --resource-list-column-gap-desktop: {{ block.settings.columns_gap }}px;
+          --resource-list-column-gap-mobile: {{ block.settings.mobile_columns_gap }}px;
+          --column-count: {{ block.settings.columns }};
+          --column-count-mobile: {{ block.settings.mobile_columns }};
+          --mobile-card-size: 76cqw;
+          --slide-width-max-desktop: 370px;
+          --slide-width-max-mobile: 260px;
+        "
+      >
+        {% render 'resource-list-carousel',
+          ref: 'tpCarousel-' | append: block.id,
+          slides: slides,
+          slide_count: slide_count,
+          settings: block.settings
+        %}
+      </div>
+    {% elsif use_auto_recommendations %}
+      <product-recommendations
+        id="tp-recommendations-{{ block.id }}"
+        class="tp-recommendations product-recommendations"
+        data-url="{{ routes.product_recommendations_url }}?limit={{ block.settings.products_limit }}"
+        data-section-id="{{ section.id }}"
+        data-product-id="{{ base_product.id }}"
+        data-intent="{{ block.settings.recommendation_type }}"
+        data-recommendations-performed="{{ recommendations.performed }}"
+      >
+        {% if recommendations.performed %}
+          {% liquid
+            assign auto_products = recommendations.products
+            if recommendations.products_count == 0
+              if block.settings.recommendation_type == 'related'
+                assign auto_products = collections.all.products | reject: 'id', base_product.id
+              else
+                assign auto_products = null
+              endif
+            endif
+
+            assign auto_slide_count = auto_products.size
+            if auto_slide_count > block.settings.products_limit
+              assign auto_slide_count = block.settings.products_limit
+            endif
+          %}
+
+          {% if auto_products != blank %}
+            {% capture auto_list_items %}
+              {% for product in auto_products limit: block.settings.products_limit %}
+                <div class="resource-list__item">
+                  {%- # theme-check-disable UniqueStaticBlockId -%}
+                  {% content_for 'block',
+                    type: '_product-card',
+                    id: 'static-product-card',
+                    closest.product: product
+                  %}
+                  {%- # theme-check-enable UniqueStaticBlockId -%}
+                </div>
+                {% unless forloop.last %}
+                  <!--@tp-auto/split-->
+                {% endunless %}
+              {% endfor %}
+            {% endcapture %}
+
+            {% # theme-check-disable UnusedAssign %}
+            {% assign auto_slides = auto_list_items | strip | split: '<!--@tp-auto/split-->' %}
+            {% # theme-check-enable UnusedAssign %}
+
+            <div
+              class="resource-list resource-list__carousel force-full-width tp-carousel"
+              style="
+                --resource-list-column-gap-desktop: {{ block.settings.columns_gap }}px;
+                --resource-list-column-gap-mobile: {{ block.settings.mobile_columns_gap }}px;
+                --column-count: {{ block.settings.columns }};
+                --column-count-mobile: {{ block.settings.mobile_columns }};
+                --mobile-card-size: 76cqw;
+                --slide-width-max-desktop: 370px;
+                --slide-width-max-mobile: 260px;
+              "
+            >
+              {% render 'resource-list-carousel',
+                ref: 'tpAutoCarousel-' | append: block.id,
+                slides: auto_slides,
+                slide_count: auto_slide_count,
+                settings: block.settings
+              %}
+            </div>
+          {% endif %}
+        {% else %}
+          <div class="tp-skeleton-grid" aria-label="Cargando productos recomendados">
+            {% for i in (1..4) %}
+              <div class="tp-skeleton-item"></div>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </product-recommendations>
+    {% endif %}
+  </div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Tab productos",
+  "settings": [
+    {
+      "type": "text",
+      "id": "tab_title",
+      "label": "Título del tab",
+      "default": "Estilos de moda"
+    },
+    {
+      "type": "product_list",
+      "id": "products",
+      "label": "Productos (admite fuente dinámica/metafield)"
+    },
+    {
+      "type": "checkbox",
+      "id": "use_recommendations",
+      "label": "Usar recomendaciones automáticas si la lista está vacía",
+      "default": true
+    },
+    {
+      "type": "product",
+      "id": "base_product",
+      "label": "Producto base para recomendaciones"
+    },
+    {
+      "type": "select",
+      "id": "recommendation_type",
+      "label": "Tipo de recomendación",
+      "options": [
+        { "value": "related", "label": "Relacionado" },
+        { "value": "complementary", "label": "Complementario" }
+      ],
+      "default": "related",
+      "visible_if": "{{ block.settings.use_recommendations }}"
+    },
+    {
+      "type": "range",
+      "id": "products_limit",
+      "label": "Cantidad máxima de productos",
+      "min": 2,
+      "max": 12,
+      "step": 1,
+      "default": 8
+    },
+    {
+      "type": "header",
+      "content": "Configuración del carrusel"
+    },
+    {
+      "type": "range",
+      "id": "columns_gap",
+      "label": "Espaciado desktop",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "default": 10,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_columns_gap",
+      "label": "Espaciado móvil",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "default": 10,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "columns",
+      "label": "Elementos por fila (desktop)",
+      "min": 1,
+      "max": 6,
+      "step": 1,
+      "default": 5
+    },
+    {
+      "type": "range",
+      "id": "mobile_columns",
+      "label": "Elementos por fila (móvil)",
+      "min": 1,
+      "max": 3,
+      "step": 1,
+      "default": 2
+    },
+    {
+      "type": "header",
+      "content": "Flechas"
+    },
+    {
+      "type": "select",
+      "id": "icons_style",
+      "label": "Estilo de flecha",
+      "options": [
+        { "value": "arrow", "label": "Flecha" },
+        { "value": "chevron", "label": "Chevron" },
+        { "value": "caret", "label": "Caret" },
+        { "value": "none", "label": "Sin flechas" }
+      ],
+      "default": "arrow"
+    },
+    {
+      "type": "select",
+      "id": "icons_shape",
+      "label": "Fondo de flecha",
+      "options": [
+        { "value": "none", "label": "Ninguno" },
+        { "value": "circle", "label": "Círculo" },
+        { "value": "square", "label": "Cuadrado" }
+      ],
+      "default": "none"
+    }
+  ],
+  "presets": [{ "name": "Tab productos" }]
+}
+{% endschema %}

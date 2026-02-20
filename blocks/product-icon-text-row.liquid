@@ -1,0 +1,245 @@
+{%- assign block_settings = block.settings -%}
+{%- assign color_scheme_class = '' -%}
+{%- if block_settings.inherit_color_scheme == false and block_settings.color_scheme != blank -%}
+  {%- assign color_scheme_class = ' color-' | append: block_settings.color_scheme -%}
+{%- endif -%}
+
+{% capture icon_markup %}
+  {% render 'icon-or-image',
+    icon: block_settings.icon,
+    image_upload: block_settings.image_upload,
+    width: block_settings.icon_width,
+    class_name: 'product-icon-text-row__icon'
+  %}
+{% endcapture %}
+
+<div
+  class="spacing-style product-icon-text-row{{ color_scheme_class }}"
+  style="{% render 'spacing-style', settings: block_settings %}{% if block_settings.custom_background_color != blank %} --product-icon-text-row-background: {{ block_settings.custom_background_color }};{% endif %}{% if block_settings.custom_text_color != blank %} --product-icon-text-row-color: {{ block_settings.custom_text_color }};{% endif %}{% if block_settings.icon_text_gap != blank %} --product-icon-text-row-gap: {{ block_settings.icon_text_gap }}px;{% endif %}"
+  {{ block.shopify_attributes }}
+>
+  {% if block_settings.icon != 'none' or block_settings.image_upload != blank %}
+    <div class="product-icon-text-row__left">
+      {{ icon_markup }}
+    </div>
+  {% endif %}
+  <div class="product-icon-text-row__right rte">
+    {{ block_settings.text }}
+  </div>
+</div>
+
+{% stylesheet %}
+  .product-icon-text-row {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: var(--product-icon-text-row-gap, var(--gap-sm));
+    background-color: var(--product-icon-text-row-background, var(--color-background));
+    color: var(--product-icon-text-row-color, var(--color-foreground));
+  }
+
+  .product-icon-text-row__left {
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  .product-icon-text-row__right {
+    text-align: left;
+  }
+
+  .product-icon-text-row__right p {
+    margin: 0;
+    font-weight: var(--font-paragraph--weight);
+    font-size: var(--font-size--sm);
+    line-height: 142.857%;
+    letter-spacing: .25px;
+  }
+
+  .product-icon-text-row a {
+    color: inherit;
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Icono + texto",
+  "tag": null,
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Texto",
+      "default": "<p>Envío gratis en compras sobre $100</p>"
+    },
+    {
+      "type": "header",
+      "content": "Icono"
+    },
+    {
+      "type": "select",
+      "id": "icon",
+      "label": "Ícono",
+      "options": [
+        { "value": "none", "label": "Ninguno" },
+        { "value": "arrow", "label": "Arrow" },
+        { "value": "check_box", "label": "Check" },
+        { "value": "lock", "label": "Lock" },
+        { "value": "plane", "label": "Plane" },
+        { "value": "price_tag", "label": "Price tag" },
+        { "value": "return", "label": "Return" },
+        { "value": "shoe", "label": "Shoe" },
+        { "value": "truck", "label": "Truck" }
+      ],
+      "default": "truck"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_upload",
+      "label": "Imagen de ícono"
+    },
+    {
+      "type": "range",
+      "id": "icon_width",
+      "label": "Tamaño del ícono",
+      "min": 12,
+      "max": 48,
+      "step": 1,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "header",
+      "content": "Apariencia"
+    },
+    {
+      "type": "checkbox",
+      "id": "inherit_color_scheme",
+      "label": "Heredar esquema de color",
+      "default": true
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Esquema de color",
+      "default": "scheme-1",
+      "visible_if": "{{ block.settings.inherit_color_scheme == false }}"
+    },
+    {
+      "type": "color",
+      "id": "custom_background_color",
+      "label": "Fondo (manual)",
+      "alpha": true
+    },
+    {
+      "type": "color",
+      "id": "custom_text_color",
+      "label": "Color de texto (manual)",
+      "alpha": true
+    },
+    {
+      "type": "header",
+      "content": "Espaciado"
+    },
+    {
+      "type": "range",
+      "id": "icon_text_gap",
+      "label": "Gap ícono/texto",
+      "min": 0,
+      "max": 64,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "Arriba",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "Abajo",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-inline-start",
+      "label": "Izquierda",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-inline-end",
+      "label": "Derecha",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "Rellenos móviles"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start-mobile",
+      "label": "Arriba (móvil)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end-mobile",
+      "label": "Abajo (móvil)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-inline-start-mobile",
+      "label": "Izquierda (móvil)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-inline-end-mobile",
+      "label": "Derecha (móvil)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    }
+  ],
+  "presets": [
+    {
+      "name": "Icono + texto"
+    }
+  ]
+}
+{% endschema %}

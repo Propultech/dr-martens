@@ -22,6 +22,12 @@
     type="module"
   ></script>
 {%- endif -%}
+{%- if block_settings.show_gallery_description_preview -%}
+  <script
+    src="{{ 'dialog.js' | asset_url }}"
+    type="module"
+  ></script>
+{%- endif -%}
 {%- liquid
   assign selected_product = closest.product
   assign selected_variant_media = selected_product.selected_or_first_available_variant.featured_media
@@ -172,6 +178,198 @@
       endif
     endfor
   endif
+
+  assign show_gallery_description_preview = false
+  assign gallery_description_heading = ''
+  assign gallery_description_summary_text = ''
+  assign gallery_description_full = ''
+  assign gallery_description_insert_after_index = -1
+  assign gallery_description_summary_lines = block_settings.gallery_description_summary_lines | default: 3
+  assign gallery_description_preview_limit = gallery_description_summary_lines | times: 90
+  assign gallery_description_needs_truncation = false
+
+  if block_settings.show_gallery_description_preview
+    assign gallery_first_section_heading = ''
+    assign gallery_first_section_plain = ''
+    assign gallery_section_1_title = block_settings.gallery_section_1_title | strip
+    assign gallery_section_1_content = block_settings.gallery_section_1_content
+    assign gallery_section_2_title = block_settings.gallery_section_2_title | strip
+    assign gallery_section_2_content = block_settings.gallery_section_2_content
+    assign gallery_section_3_title = block_settings.gallery_section_3_title | strip
+    assign gallery_section_3_content = block_settings.gallery_section_3_content
+    assign gallery_section_4_title = block_settings.gallery_section_4_title | strip
+    assign gallery_section_4_content = block_settings.gallery_section_4_content
+    assign gallery_section_5_title = block_settings.gallery_section_5_title | strip
+    assign gallery_section_5_content = block_settings.gallery_section_5_content
+
+    assign section_plain = gallery_section_1_content | strip_html | replace: '&nbsp;', ' ' | strip
+    if section_plain != blank
+      capture gallery_description_full
+        echo gallery_description_full
+        echo '<div class="media-gallery__description-section">'
+        if gallery_section_1_title != blank
+          echo '<h3>'
+          echo gallery_section_1_title | escape
+          echo '</h3>'
+        endif
+        echo gallery_section_1_content
+        echo '</div>'
+      endcapture
+      if gallery_first_section_plain == blank
+        assign gallery_first_section_plain = section_plain
+        assign gallery_first_section_heading = gallery_section_1_title
+      endif
+    endif
+
+    assign section_plain = gallery_section_2_content | strip_html | replace: '&nbsp;', ' ' | strip
+    if section_plain != blank
+      capture gallery_description_full
+        echo gallery_description_full
+        echo '<div class="media-gallery__description-section">'
+        if gallery_section_2_title != blank
+          echo '<h3>'
+          echo gallery_section_2_title | escape
+          echo '</h3>'
+        endif
+        echo gallery_section_2_content
+        echo '</div>'
+      endcapture
+      if gallery_first_section_plain == blank
+        assign gallery_first_section_plain = section_plain
+        assign gallery_first_section_heading = gallery_section_2_title
+      endif
+    endif
+
+    assign section_plain = gallery_section_3_content | strip_html | replace: '&nbsp;', ' ' | strip
+    if section_plain != blank
+      capture gallery_description_full
+        echo gallery_description_full
+        echo '<div class="media-gallery__description-section">'
+        if gallery_section_3_title != blank
+          echo '<h3>'
+          echo gallery_section_3_title | escape
+          echo '</h3>'
+        endif
+        echo gallery_section_3_content
+        echo '</div>'
+      endcapture
+      if gallery_first_section_plain == blank
+        assign gallery_first_section_plain = section_plain
+        assign gallery_first_section_heading = gallery_section_3_title
+      endif
+    endif
+
+    assign section_plain = gallery_section_4_content | strip_html | replace: '&nbsp;', ' ' | strip
+    if section_plain != blank
+      capture gallery_description_full
+        echo gallery_description_full
+        echo '<div class="media-gallery__description-section">'
+        if gallery_section_4_title != blank
+          echo '<h3>'
+          echo gallery_section_4_title | escape
+          echo '</h3>'
+        endif
+        echo gallery_section_4_content
+        echo '</div>'
+      endcapture
+      if gallery_first_section_plain == blank
+        assign gallery_first_section_plain = section_plain
+        assign gallery_first_section_heading = gallery_section_4_title
+      endif
+    endif
+
+    assign section_plain = gallery_section_5_content | strip_html | replace: '&nbsp;', ' ' | strip
+    if section_plain != blank
+      capture gallery_description_full
+        echo gallery_description_full
+        echo '<div class="media-gallery__description-section">'
+        if gallery_section_5_title != blank
+          echo '<h3>'
+          echo gallery_section_5_title | escape
+          echo '</h3>'
+        endif
+        echo gallery_section_5_content
+        echo '</div>'
+      endcapture
+      if gallery_first_section_plain == blank
+        assign gallery_first_section_plain = section_plain
+        assign gallery_first_section_heading = gallery_section_5_title
+      endif
+    endif
+
+    assign gallery_description_plain = gallery_description_full | strip_html | replace: '&nbsp;', ' ' | strip
+
+    if gallery_description_plain != blank
+      assign show_gallery_description_preview = true
+
+      assign gallery_description_heading = gallery_first_section_heading
+      assign gallery_description_summary_text = gallery_description_plain
+
+      if gallery_description_heading != blank
+        assign gallery_description_summary_text = gallery_first_section_plain
+      elsif gallery_first_section_plain != blank
+        assign gallery_description_summary_text = gallery_first_section_plain
+      endif
+      if gallery_description_summary_text == blank
+        assign gallery_description_summary_text = gallery_description_plain
+      endif
+
+      assign gallery_description_summary_text = gallery_description_summary_text | strip_newlines | replace: '  ', ' ' | strip
+      if gallery_description_summary_text.size > gallery_description_preview_limit
+        assign gallery_description_summary_text = gallery_description_summary_text | truncate: gallery_description_preview_limit, '...'
+        assign gallery_description_needs_truncation = true
+      endif
+
+      assign gallery_description_insert_after_row = block_settings.gallery_description_insert_after_row | default: 1
+      if gallery_description_insert_after_row < 1
+        assign gallery_description_insert_after_row = 1
+      endif
+
+      if block_settings.media_columns == 'two'
+        if block_settings.large_first_image
+          assign gallery_description_insert_after_index = gallery_description_insert_after_row | minus: 1 | times: 2
+        else
+          assign gallery_description_insert_after_index = gallery_description_insert_after_row | times: 2 | minus: 1
+        endif
+      else
+        assign gallery_description_insert_after_index = gallery_description_insert_after_row | minus: 1
+      endif
+
+      if gallery_description_insert_after_index >= sorted_media.size
+        assign gallery_description_insert_after_index = sorted_media.size | minus: 1
+      endif
+    endif
+  endif
+
+  assign gallery_description_button_label = block_settings.gallery_description_button_label | strip
+  if gallery_description_button_label == blank
+    assign gallery_description_button_label = 'content.read_more' | t
+  endif
+
+  assign gallery_visible_rows_desktop = block_settings.gallery_visible_rows_desktop | default: 2
+  if gallery_visible_rows_desktop < 1
+    assign gallery_visible_rows_desktop = 1
+  endif
+
+  assign enable_gallery_desktop_collapse = block_settings.enable_gallery_desktop_collapse
+  if enable_gallery_desktop_collapse == blank
+    assign enable_gallery_desktop_collapse = true
+  endif
+
+  assign gallery_show_more_label = block_settings.gallery_show_more_label | strip
+  if gallery_show_more_label == blank
+    assign gallery_show_more_label = 'MOSTRAR MAS IMAGENES'
+  endif
+
+  assign gallery_show_less_label = block_settings.gallery_show_less_label | strip
+  if gallery_show_less_label == blank
+    assign gallery_show_less_label = 'MOSTRAR MENOS IMAGENES'
+  endif
+
+  assign show_desktop_gallery_toggle = false
+  if enable_gallery_desktop_collapse and media_presentation == 'grid'
+    assign show_desktop_gallery_toggle = true
+  endif
 -%}
 {%- if has_image_drop -%}
   <script
@@ -317,6 +515,10 @@
     "
     style="{% render 'spacing-style', settings: block_settings %} --thumbnail-width: {{ block_settings.thumbnail_width }}px; --media-radius: {{ block_settings.media_radius }}px;{% if block_settings.icons_style contains 'large' %} --slideshow-icon-padding: 0px;{% endif %}--image-gap: {{ block_settings.image_gap }}px;{% unless block_settings.aspect_ratio == 'adapt' %} --gallery-aspect-ratio: {{ block_settings.aspect_ratio }};{% endunless %}"
     data-presentation="{{ media_presentation }}"
+    data-media-gallery-block-id="{{ block_id }}"
+    data-desktop-visible-rows="{{ gallery_visible_rows_desktop }}"
+    data-gallery-show-more="{{ gallery_show_more_label | escape }}"
+    data-gallery-show-less="{{ gallery_show_less_label | escape }}"
     {{ block_shopify_attributes }}
   >
     {% capture slides %}
@@ -378,16 +580,39 @@
         {% endif %}
 
         {% if render_mobile_slideshow_controls %}
-          {%- render 'slideshow-controls',
-            class: 'desktop:hidden media-gallery__mobile-controls',
-            style: block_settings.slideshow_mobile_controls_style,
-            item_count: sorted_media.size,
-            thumbnails: sorted_media,
-            controls_on_media: mobile_controls_on_media,
-            pagination_position: 'center',
-            aspect_ratio: block_settings.aspect_ratio,
-            thumbnail_radius: block_settings.thumbnail_radius
-          -%}
+          {% if block_settings.slideshow_mobile_controls_style == 'dots_counter' %}
+            {%- render 'slideshow-controls',
+              class: 'desktop:hidden media-gallery__mobile-controls',
+              style: 'dots',
+              item_count: sorted_media.size,
+              thumbnails: sorted_media,
+              controls_on_media: mobile_controls_on_media,
+              pagination_position: 'center',
+              aspect_ratio: block_settings.aspect_ratio,
+              thumbnail_radius: block_settings.thumbnail_radius
+            -%}
+            {%- render 'slideshow-controls',
+              class: 'desktop:hidden media-gallery__mobile-controls',
+              style: 'counter',
+              item_count: sorted_media.size,
+              thumbnails: sorted_media,
+              controls_on_media: mobile_controls_on_media,
+              pagination_position: 'center',
+              aspect_ratio: block_settings.aspect_ratio,
+              thumbnail_radius: block_settings.thumbnail_radius
+            -%}
+          {% else %}
+            {%- render 'slideshow-controls',
+              class: 'desktop:hidden media-gallery__mobile-controls',
+              style: block_settings.slideshow_mobile_controls_style,
+              item_count: sorted_media.size,
+              thumbnails: sorted_media,
+              controls_on_media: mobile_controls_on_media,
+              pagination_position: 'center',
+              aspect_ratio: block_settings.aspect_ratio,
+              thumbnail_radius: block_settings.thumbnail_radius
+            -%}
+          {% endif %}
         {% endif %}
       {% endcapture %}
     {% endif %}
@@ -417,6 +642,7 @@
           <li
             ref="media[]"
             class="{{ product_media_container_class }} product-media-container--{{ media.media_type }}"
+            data-gallery-media-item
             style="{% if block_settings.aspect_ratio == 'adapt' %} --media-preview-ratio: {{ media.preview_image.aspect_ratio | default: 1.0 }};{% endif %}"
             {% if settings.transition_to_main_product and forloop.first %}
               data-view-transition-type="product-image-transition"
@@ -447,8 +673,65 @@
               {%- render 'product-media', media: media, sizes: media_sizes, is_main_product_media: forloop.first -%}
             {% endif %}
           </li>
+          {% if show_gallery_description_preview and gallery_description_summary_text != blank and forloop.index0 == gallery_description_insert_after_index %}
+            <li class="product-media-container product-media-container--description media-gallery__description-item mobile:hidden">
+              <div class="media-gallery__description-card">
+                {% if gallery_description_heading != blank %}
+                  <h3 class="media-gallery__description-heading">{{ gallery_description_heading | escape }}</h3>
+                {% endif %}
+                <div class="media-gallery__description-row">
+                  <span class="media-gallery__description-summary">{{ gallery_description_summary_text }}</span>
+                  <dialog-component class="media-gallery__description-dialog media-gallery__description-dialog--inline">
+                    <button
+                      class="button button-unstyled media-gallery__description-trigger"
+                      type="button"
+                      on:click="/showDialog"
+                    >
+                      {{ gallery_description_button_label }}
+                      <span class="svg-wrapper">{{ 'icon-chevron-right.svg' | inline_asset_content }}</span>
+                    </button>
+                    <dialog
+                      ref="dialog"
+                      class="dialog-modal media-gallery__description-modal color-{{ settings.popover_color_scheme }}{% if block_settings.gallery_description_modal_behavior == 'drawer' %} media-gallery__description-modal--drawer dialog-drawer dialog-drawer--right{% endif %}"
+                      scroll-lock
+                      aria-label="{{ selected_product.title | escape }}"
+                    >
+                      <div class="rte media-gallery__description-modal-content">
+                        {{ gallery_description_full }}
+                      </div>
+                      <button
+                        type="button"
+                        class="button button-unstyled close-button media-gallery__description-modal-close"
+                        aria-label="{{ 'actions.close' | t }}"
+                        on:click="/closeDialog"
+                      >
+                        <span class="visually-hidden">{{ 'actions.close' | t }}</span>
+                        {{ 'icon-close.svg' | inline_asset_content }}
+                      </button>
+                    </dialog>
+                  </dialog-component>
+                </div>
+              </div>
+            </li>
+          {% endif %}
         {% endfor %}
       </ul>
+
+      {% if show_desktop_gallery_toggle %}
+        <div class="media-gallery__desktop-toggle-wrap mobile:hidden" hidden>
+          <button
+            type="button"
+            class="button button-unstyled media-gallery__desktop-toggle"
+            data-gallery-toggle
+            aria-expanded="false"
+          >
+            <span data-gallery-toggle-label>{{ gallery_show_more_label | escape }}</span>
+            <span class="media-gallery__desktop-toggle-icon" aria-hidden="true">
+              {{ 'icon-chevron-right.svg' | inline_asset_content }}
+            </span>
+          </button>
+        </div>
+      {% endif %}
     {% endif %}
 
     {%- if block_settings.zoom -%}
@@ -593,6 +876,129 @@
       </script>
     {%- endif -%}
   </media-gallery>
+
+  {% if show_desktop_gallery_toggle %}
+    <script>
+      (() => {
+        const currentScript = document.currentScript;
+        let mediaGallery = currentScript ? currentScript.previousElementSibling : null;
+
+        if (!mediaGallery || mediaGallery.tagName !== 'MEDIA-GALLERY') {
+          mediaGallery = document.querySelector('media-gallery[data-media-gallery-block-id="{{ block_id }}"]');
+        }
+
+        if (!mediaGallery) return;
+
+        const toggleWrap = mediaGallery.querySelector('.media-gallery__desktop-toggle-wrap');
+        const toggleButton = mediaGallery.querySelector('[data-gallery-toggle]');
+        const toggleLabel = mediaGallery.querySelector('[data-gallery-toggle-label]');
+        const mediaItems = Array.from(mediaGallery.querySelectorAll('[data-gallery-media-item]'));
+        const collapsedLabel = mediaGallery.getAttribute('data-gallery-show-more') || 'MOSTRAR MAS IMAGENES';
+        const expandedLabel = mediaGallery.getAttribute('data-gallery-show-less') || 'MOSTRAR MENOS IMAGENES';
+        const visibleRows = Number.parseInt(mediaGallery.getAttribute('data-desktop-visible-rows') || '0', 10);
+
+        if (!toggleWrap || !toggleButton || !toggleLabel || !mediaItems.length || !visibleRows) return;
+
+        const desktopQuery = window.matchMedia('(min-width: 750px)');
+        let expanded = false;
+
+        const getRowIndexes = () => {
+          const rowTops = [];
+          const tolerance = 2;
+          const rowIndexes = [];
+
+          mediaItems.forEach((item) => {
+            const top = item.getBoundingClientRect().top;
+            let rowIndex = rowTops.findIndex((rowTop) => Math.abs(rowTop - top) <= tolerance);
+            if (rowIndex === -1) {
+              rowTops.push(top);
+              rowIndex = rowTops.length - 1;
+            }
+            rowIndexes.push(rowIndex);
+          });
+
+          return {
+            rowIndexes,
+            totalRows: rowTops.length,
+          };
+        };
+
+        const updateState = () => {
+          const isDesktop = desktopQuery.matches;
+
+          toggleButton.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+          mediaGallery.classList.toggle('media-gallery--expanded', expanded);
+          toggleLabel.textContent = expanded ? expandedLabel : collapsedLabel;
+
+          if (!isDesktop) {
+            mediaItems.forEach((item) => {
+              item.classList.remove('media-gallery__item--collapsed');
+              item.removeAttribute('hidden');
+              item.style.removeProperty('display');
+            });
+            toggleWrap.hidden = true;
+            return;
+          }
+
+          mediaItems.forEach((item) => {
+            item.classList.remove('media-gallery__item--collapsed');
+            item.removeAttribute('hidden');
+            item.style.removeProperty('display');
+          });
+
+          const { rowIndexes, totalRows } = getRowIndexes();
+          const hasOverflowRows = totalRows > visibleRows;
+          toggleWrap.hidden = !hasOverflowRows;
+
+          if (!hasOverflowRows) {
+            mediaItems.forEach((item) => {
+              item.classList.remove('media-gallery__item--collapsed');
+              item.removeAttribute('hidden');
+              item.style.removeProperty('display');
+            });
+            expanded = false;
+            toggleButton.setAttribute('aria-expanded', 'false');
+            mediaGallery.classList.remove('media-gallery--expanded');
+            toggleLabel.textContent = collapsedLabel;
+            return;
+          }
+
+          mediaItems.forEach((item, index) => {
+            const shouldCollapse = !expanded && rowIndexes[index] >= visibleRows;
+            item.classList.toggle('media-gallery__item--collapsed', shouldCollapse);
+            if (shouldCollapse) {
+              item.setAttribute('hidden', 'hidden');
+              item.style.setProperty('display', 'none', 'important');
+            } else {
+              item.removeAttribute('hidden');
+              item.style.removeProperty('display');
+            }
+          });
+        };
+
+        updateState();
+
+        toggleButton.addEventListener('click', () => {
+          expanded = !expanded;
+          updateState();
+        });
+
+        if (desktopQuery.addEventListener) {
+          desktopQuery.addEventListener('change', () => {
+            expanded = false;
+            updateState();
+          });
+        } else if (desktopQuery.addListener) {
+          desktopQuery.addListener(() => {
+            expanded = false;
+            updateState();
+          });
+        }
+
+        window.addEventListener('resize', () => updateState());
+      })();
+    </script>
+  {% endif %}
 {% endif %}
 
 {% stylesheet %}
@@ -702,6 +1108,11 @@
 
   .media-gallery__mobile-controls {
     grid-area: auto;
+
+    &:has(.slideshow-controls__counter) {
+      top: 27px;
+      bottom: initial;
+    }
   }
 
   /* Mobile thumbnails styling */
@@ -733,5 +1144,197 @@
   .dialog-zoomed-gallery .product-media-container--model .product-media__image {
     /* Make the height match the height of the model-viewer */
     height: 100vh;
+  }
+
+  .media-gallery__description-item {
+    grid-column: 1 / -1;
+    padding: 25px 10px;
+    background-color: transparent;
+    border-radius: var(--media-radius, 0);
+    min-height: auto;
+  }
+
+  .media-gallery__description-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+  }
+
+  .media-gallery__description-heading {
+    margin: 0;
+    font-family: var(--font-body--family);
+    font-size: var(--font-paragraph--size);
+    font-weight: var(--font-accent--weight, 800);
+    line-height: 18px;
+    letter-spacing: .25px;
+    text-transform: uppercase;
+  }
+
+  .media-gallery__description-row {
+    font-size: var(--font-paragraph--size);
+    line-height: 137.5%;
+  }
+
+  .media-gallery__description-summary {
+    margin: 0;
+    text-wrap: pretty;
+  }
+
+  .media-gallery__description-dialog--inline {
+    display: inline;
+  }
+
+  .media-gallery__description-trigger {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+    margin-inline-start: var(--gap-3xs);
+    font-weight: var(--font-subheading--weight);
+    font-size: var(--font-size--md);
+    text-decoration: underline;
+    text-transform: none;
+    font-family: var(--font-body--family);
+    font-stretch: normal;
+
+    .svg-wrapper {
+      width: 8px;
+      height: 20px;
+    }
+  }
+
+  .media-gallery__description-modal:not(.media-gallery__description-modal--drawer) {
+    background-color: var(--color-variant-background);
+    color: var(--color-variant-text);
+    border-radius: var(--style-border-radius-popover);
+    border: var(--style-border-popover);
+    box-shadow: var(--shadow-popover);
+    width: min(680px, calc(100vw - var(--padding-xl) * 2));
+    max-height: var(--modal-max-height);
+    padding: var(--padding-xl);
+  }
+
+  .media-gallery__description-modal--drawer {
+    background-color: var(--color-variant-background);
+    color: var(--color-variant-text);
+    border: var(--style-border-popover);
+    border-radius: 0;
+    box-shadow: var(--shadow-popover);
+    position: fixed;
+    width: 59.03dvw;
+    max-width: 95vw;
+    height: 100%;
+    margin: 0 0 0 auto;
+    padding: 50px 9.03dvw;
+  }
+
+  .media-gallery__description-modal--drawer:modal {
+    max-height: 100dvh;
+  }
+
+  .media-gallery__description-modal--drawer[open] {
+    --start-x: 100%;
+    --end-x: 0px;
+    --start-opacity: 1;
+  }
+
+  .media-gallery__description-modal--drawer[open].dialog-closing {
+    --start-x: 0px;
+    --end-x: 100%;
+    --start-opacity: 1;
+    --end-opacity: 1;
+  }
+
+  .media-gallery__description-modal:not(.media-gallery__description-modal--drawer)[open] {
+    animation: modalSlideInTop var(--animation-speed) var(--animation-easing) forwards;
+  }
+
+  .media-gallery__description-modal:not(.media-gallery__description-modal--drawer).dialog-closing {
+    animation: modalSlideOutTop var(--animation-speed) var(--animation-easing) forwards;
+  }
+
+  .media-gallery__description-modal-content {
+    padding-right: var(--padding-xl);
+
+    > h3 {
+      margin: 0 0 8px;
+      padding: 0 0 8px;
+    }
+
+    hr {
+      display: none;
+    }
+
+    > div {
+      margin: 0 0 16px;
+      padding: 0 0 16px;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    > p {
+      margin: 0 0 16px;
+      padding: 0 0 16px;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    > h3:first-of-type {
+      border-bottom: 1px solid var(--color-border);
+    }
+  }
+
+  .media-gallery__description-modal-close {
+    top: var(--margin-2xs);
+    right: var(--margin-2xs);
+  }
+
+  @media screen and (min-width: 750px) {
+    media-gallery.media-gallery--grid .media-gallery__grid > .product-media-container[hidden] {
+      display: none !important;
+    }
+
+    .media-gallery__item--collapsed {
+      display: none;
+    }
+  }
+
+  .media-gallery__desktop-toggle-wrap {
+    margin-top: 6px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .media-gallery__desktop-toggle {
+    min-width: 300px;
+    padding: 14px 32px;
+    border: 1px solid var(--color-primary-button-text);
+    color: var(--color-primary-button-text);
+    text-transform: uppercase;
+    font-family: var(--font-accent--family, var(--font-heading--family));
+    font-weight: var(--font-accent--weight, 800);
+    font-size: var(--font-size--sm);
+    letter-spacing: 0.5px;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .media-gallery__desktop-toggle:hover {
+    text-decoration: none;
+  }
+
+  .media-gallery__desktop-toggle-icon {
+    width: 14px;
+    height: 14px;
+    display: inline-flex;
+    justify-content: center;
+    transform: rotate(90deg);
+    transition: transform var(--animation-speed) var(--animation-easing);
+  }
+
+  .media-gallery--expanded .media-gallery__desktop-toggle-icon {
+    transform: rotate(-90deg);
   }
 {% endstylesheet %}

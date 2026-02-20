@@ -9,6 +9,16 @@
 {% liquid
   assign class = 'add-to-cart-button ' | append: block.settings.style_class
   assign id = 'BuyButtons-ProductSubmitButton-' | append: block.id
+  assign add_to_cart_text_desktop = add_to_cart_text
+  assign add_to_cart_text_mobile = add_to_cart_text
+
+  if can_add_to_cart and block.settings.add_to_cart_text_desktop != blank
+    assign add_to_cart_text_desktop = block.settings.add_to_cart_text_desktop
+  endif
+
+  if can_add_to_cart and block.settings.add_to_cart_text_mobile != blank
+    assign add_to_cart_text_mobile = block.settings.add_to_cart_text_mobile
+  endif
 %}
 
 <span
@@ -20,7 +30,9 @@
     class: class,
     can_add_to_cart: can_add_to_cart,
     product: closest.product,
-    add_to_cart_text: add_to_cart_text,
+    add_to_cart_text: add_to_cart_text_desktop,
+    add_to_cart_text_mobile: add_to_cart_text_mobile,
+    show_add_to_cart_icon: block.settings.show_add_to_cart_icon,
     data_testid: 'standalone-add-to-cart'
   %}
 </span>
@@ -45,6 +57,24 @@
         }
       ],
       "default": "button-secondary"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_add_to_cart_icon",
+      "label": "Mostrar icono",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "add_to_cart_text_desktop",
+      "label": "Texto personalizado (desktop)",
+      "info": "Se usa solo cuando el producto está disponible."
+    },
+    {
+      "type": "text",
+      "id": "add_to_cart_text_mobile",
+      "label": "Texto personalizado (mobile)",
+      "info": "Se usa solo cuando el producto está disponible."
     }
   ]
 }
