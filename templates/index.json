@@ -88,10 +88,10 @@
         "padding-inline-end-mobile": 0
       }
     },
-    "hero_nDerYx": {
+    "hero_CKYTDh": {
       "type": "hero",
       "blocks": {
-        "group_7qxgBz": {
+        "group_qqzHkn": {
           "type": "group",
           "name": "t:names.group",
           "settings": {
@@ -137,7 +137,7 @@
             "custom_css": ""
           },
           "blocks": {
-            "text_x8YQfB": {
+            "text_ihKXnH": {
               "type": "text",
               "settings": {
                 "text": "<p>SALE</p>",
@@ -174,7 +174,7 @@
               },
               "blocks": {}
             },
-            "text_h8rbpw": {
+            "text_yUeEGf": {
               "type": "text",
               "name": "t:names.text",
               "settings": {
@@ -212,7 +212,7 @@
               },
               "blocks": {}
             },
-            "text_UydG4G": {
+            "text_FjzALt": {
               "type": "text",
               "name": "t:names.text",
               "settings": {
@@ -250,7 +250,7 @@
               },
               "blocks": {}
             },
-            "group_JiK8g8": {
+            "group_kbefPD": {
               "type": "group",
               "name": "t:names.group",
               "settings": {
@@ -296,7 +296,7 @@
                 "custom_css": ""
               },
               "blocks": {
-                "button_t36Ea6": {
+                "button_8fPygy": {
                   "type": "button",
                   "name": "t:names.button",
                   "settings": {
@@ -313,7 +313,7 @@
                   },
                   "blocks": {}
                 },
-                "button_zFGPBy": {
+                "button_6nK3er": {
                   "type": "button",
                   "name": "t:names.button",
                   "settings": {
@@ -332,21 +332,21 @@
                 }
               },
               "block_order": [
-                "button_t36Ea6",
-                "button_zFGPBy"
+                "button_8fPygy",
+                "button_6nK3er"
               ]
             }
           },
           "block_order": [
-            "text_x8YQfB",
-            "text_h8rbpw",
-            "text_UydG4G",
-            "group_JiK8g8"
+            "text_ihKXnH",
+            "text_yUeEGf",
+            "text_FjzALt",
+            "group_kbefPD"
           ]
         }
       },
       "block_order": [
-        "group_7qxgBz"
+        "group_qqzHkn"
       ],
       "name": "Hero - Top",
       "settings": {
@@ -388,10 +388,10 @@
         "padding-inline-end-mobile": 0
       }
     },
-    "product_list_fa6P9H": {
+    "product_list_ciKQCk": {
       "type": "product-list",
       "blocks": {
-        "group_T7ctYT": {
+        "group_QNrLrh": {
           "type": "group",
           "name": "t:names.group",
           "settings": {
@@ -437,7 +437,7 @@
             "custom_css": ""
           },
           "blocks": {
-            "button_FHHwdL": {
+            "button_WFmMeM": {
               "type": "button",
               "name": "t:names.button",
               "settings": {
@@ -456,7 +456,7 @@
             }
           },
           "block_order": [
-            "button_FHHwdL"
+            "button_WFmMeM"
           ]
         },
         "static-header": {
@@ -497,7 +497,7 @@
             "padding-inline-end-mobile": 0
           },
           "blocks": {
-            "product_list_text_YFtzcL": {
+            "product_list_text_fiMPcP": {
               "type": "_product-list-text",
               "name": "t:names.collection_title",
               "settings": {
@@ -525,7 +525,7 @@
             }
           },
           "block_order": [
-            "product_list_text_YFtzcL"
+            "product_list_text_fiMPcP"
           ]
         },
         "static-product-card": {
@@ -550,7 +550,7 @@
             "padding-inline-end-mobile": 0
           },
           "blocks": {
-            "product_card_gallery_677WP3": {
+            "product_card_gallery_xw4jVq": {
               "type": "_product-card-gallery",
               "name": "t:names.product_card_media",
               "settings": {
@@ -570,7 +570,7 @@
               },
               "blocks": {}
             },
-            "product_title_YXxMTj": {
+            "product_title_XfYDJT": {
               "type": "product-title",
               "name": "t:names.product_title",
               "settings": {
@@ -595,7 +595,7 @@
               },
               "blocks": {}
             },
-            "price_JQzVV4": {
+            "price_qrqf6T": {
               "type": "price",
               "name": "t:names.product_price",
               "settings": {
@@ -624,14 +624,14 @@
             }
           },
           "block_order": [
-            "product_card_gallery_677WP3",
-            "product_title_YXxMTj",
-            "price_JQzVV4"
+            "product_card_gallery_xw4jVq",
+            "product_title_XfYDJT",
+            "price_qrqf6T"
           ]
         }
       },
       "block_order": [
-        "group_T7ctYT"
+        "group_QNrLrh"
       ],
       "custom_css": [
         ".force-full-width {grid-column: 2;}"
@@ -668,6 +668,7 @@
       "blocks": {
         "tab_VxtYRi": {
           "type": "_tab",
+          "name": "Hombre",
           "settings": {
             "label": "Hombre",
             "collection_list": [
@@ -688,6 +689,7 @@
         },
         "tab_HjHNna": {
           "type": "_tab",
+          "name": "Mujer",
           "settings": {
             "label": "Mujer",
             "collection_list": [
@@ -708,6 +710,7 @@
         },
         "tab_rYkFQB": {
           "type": "_tab",
+          "name": "Unisex",
           "settings": {
             "label": "Unisex",
             "collection_list": [
@@ -728,6 +731,7 @@
         },
         "tab_a6Ca6J": {
           "type": "_tab",
+          "name": "Kids",
           "settings": {
             "label": "Kids",
             "collection_list": [
@@ -769,10 +773,10 @@
         "padding-inline-end-mobile": 0
       }
     },
-    "product_list_aLBdAE": {
+    "product_list_mfjJri": {
       "type": "product-list",
       "blocks": {
-        "group_6PbG3d": {
+        "group_DG4H4z": {
           "type": "group",
           "name": "t:names.group",
           "settings": {
@@ -818,7 +822,7 @@
             "custom_css": ""
           },
           "blocks": {
-            "button_QhkchY": {
+            "button_pyxErR": {
               "type": "button",
               "name": "t:names.button",
               "settings": {
@@ -837,7 +841,7 @@
             }
           },
           "block_order": [
-            "button_QhkchY"
+            "button_pyxErR"
           ]
         },
         "static-header": {
@@ -878,7 +882,7 @@
             "padding-inline-end-mobile": 0
           },
           "blocks": {
-            "product_list_text_XjecCM": {
+            "product_list_text_KLyd9p": {
               "type": "_product-list-text",
               "name": "t:names.collection_title",
               "settings": {
@@ -906,7 +910,7 @@
             }
           },
           "block_order": [
-            "product_list_text_XjecCM"
+            "product_list_text_KLyd9p"
           ]
         },
         "static-product-card": {
@@ -931,7 +935,7 @@
             "padding-inline-end-mobile": 0
           },
           "blocks": {
-            "product_card_gallery_YxaTrH": {
+            "product_card_gallery_g9GpdH": {
               "type": "_product-card-gallery",
               "name": "t:names.product_card_media",
               "settings": {
@@ -951,7 +955,7 @@
               },
               "blocks": {}
             },
-            "product_title_wPmq8y": {
+            "product_title_tNjwfN": {
               "type": "product-title",
               "name": "t:names.product_title",
               "settings": {
@@ -976,7 +980,7 @@
               },
               "blocks": {}
             },
-            "price_EBGd47": {
+            "price_69mKhh": {
               "type": "price",
               "name": "t:names.product_price",
               "settings": {
@@ -1005,14 +1009,14 @@
             }
           },
           "block_order": [
-            "product_card_gallery_YxaTrH",
-            "product_title_wPmq8y",
-            "price_EBGd47"
+            "product_card_gallery_g9GpdH",
+            "product_title_tNjwfN",
+            "price_69mKhh"
           ]
         }
       },
       "block_order": [
-        "group_6PbG3d"
+        "group_DG4H4z"
       ],
       "custom_css": [
         ".force-full-width {grid-column: 2;}"
@@ -1142,8 +1146,8 @@
                 "custom_width": 22,
                 "width_mobile": "fit-content",
                 "custom_width_mobile": 100,
-                "font_size_desktop": "1.25rem",
-                "font_size_mobile": "1.25rem"
+                "font_size_desktop": "",
+                "font_size_mobile": ""
               },
               "blocks": {}
             }
@@ -1617,10 +1621,10 @@
   },
   "order": [
     "section_eMhXmK",
-    "hero_nDerYx",
-    "product_list_fa6P9H",
+    "hero_CKYTDh",
+    "product_list_ciKQCk",
     "tabs_collections_CWqwz6",
-    "product_list_aLBdAE",
+    "product_list_mfjJri",
     "hero_9gdi7R",
     "product_list_3JCKYP",
     "blog_article_showcase_dVq7q9",
