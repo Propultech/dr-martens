@@ -624,7 +624,7 @@
             "border_width": 1,
             "border_opacity": 100,
             "border_radius": 0,
-            "padding-block-start": 32,
+            "padding-block-start": 0,
             "padding-block-end": 0,
             "padding-inline-start": 0,
             "padding-inline-end": 0,
@@ -640,7 +640,6 @@
         "video_CGMqKe"
       ],
       "custom_css": [
-        "& {background-color: blue; transform: rotate(90deg);}",
         ".video-placeholder-wrapper {display: none !important;}"
       ],
       "name": "t:names.video_section",
@@ -668,7 +667,7 @@
         "overlay_color": "#00000026",
         "overlay_style": "solid",
         "gradient_direction": "to top",
-        "padding-block-start": 0,
+        "padding-block-start": 90,
         "padding-block-end": 0,
         "padding-inline-start": 0,
         "padding-inline-end": 0,
