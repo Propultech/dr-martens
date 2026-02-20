@@ -1,0 +1,214 @@
+<div class="section-background color-{{ section.settings.color_scheme }}"></div>
+
+<section
+  id="yotpo-reviews-host-{{ section.id }}"
+  class="section section--{{ section.settings.section_width }} color-{{ section.settings.color_scheme }} yotpo-reviews-host spacing-style"
+  style="{% render 'spacing-style', settings: section.settings %}"
+  data-testid="yotpo-reviews-host"
+>
+  <div class="yotpo-reviews-host__inner">
+    {% content_for 'blocks' %}
+  </div>
+</section>
+
+{% javascript %}
+  (() => {
+    const root = document.getElementById('yotpo-reviews-host-{{ section.id }}');
+    if (!root) return;
+
+    const initYotpo = () => {
+      const container = window.yotpoWidgetsContainer;
+      if (container && typeof container.initWidgets === 'function') {
+        container.initWidgets();
+      }
+
+      const widgets = root.querySelectorAll('.yotpo-reviews-main-widget, .yotpo-widget-override-css');
+      widgets.forEach((widget) => {
+        widget.style.setProperty('--primary-font-family', 'var(--font-body--family)', 'important');
+        widget.style.setProperty('--secondary-font-family', 'var(--font-body--family)', 'important');
+      });
+    };
+
+    // Re-init once the section is painted to avoid measuring stale widths.
+    requestAnimationFrame(() => {
+      setTimeout(initYotpo, 0);
+    });
+
+    document.addEventListener('shopify:section:load', (event) => {
+      if (event.target && event.target.contains(root)) {
+        initYotpo();
+      }
+    });
+  })();
+{% endjavascript %}
+
+{% stylesheet %}
+  .yotpo-reviews-host {
+    overflow: visible;
+  }
+
+  .yotpo-reviews-host__inner {
+    width: 100%;
+    max-width: none;
+  }
+
+  .yotpo-reviews-host__inner .shopify-app-block {
+    width: 100%;
+    max-width: none;
+  }
+
+  /* Override Yotpo search input background to match theme */
+  .yotpo-reviews-host .yotpo-search-filter .yotpo-search-input {
+    background-color: transparent !important;
+  }
+
+  .yotpo-reviews-host .yotpo-display-s .yotpo-head .yotpo-headline {
+    margin: 0;
+  }
+
+  .yotpo-reviews-host .yotpo-bold-layout .yotpo-head {
+    min-height: 0;
+  }
+
+  .yotpo-reviews-host .yotpo-display-s .yotpo-head {
+    margin-top: 0;
+  }
+
+  .yotpo-reviews-host .yotpo-empty-state {
+    display: flex;
+    flex-flow: column;
+    max-width: 200px;
+    align-items: center;
+    margin: auto;
+
+    svg {
+      width: 40px;
+    }
+  }
+
+  .yotpo-reviews-host:has(.yotpo-empty-state) .yotpo-head {
+    justify-content: center;
+  }
+
+  .yotpo-reviews-host .yotpo-new-review-btn.yotpo-btn-l.empty-state {
+    padding: 5px 20px;
+  }
+
+  .yotpo-reviews-host :is(.yotpo-reviews-main-widget, .yotpo-widget-override-css) {
+    --primary-font-family: var(--font-body--family) !important;
+    --secondary-font-family: var(--font-body--family) !important;
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Yotpo Reviews Host",
+  "class": "section-wrapper",
+  "blocks": [
+    {
+      "type": "@app"
+    }
+  ],
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "select",
+      "id": "section_width",
+      "label": "t:settings.width",
+      "options": [
+        {
+          "value": "page-width",
+          "label": "t:options.page"
+        },
+        {
+          "value": "full-width",
+          "label": "t:options.full"
+        }
+      ],
+      "default": "page-width"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:settings.color_scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "t:content.padding"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "t:settings.top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "t:settings.bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "Rellenos móviles"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start-mobile",
+      "label": "Arriba (móvil)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end-mobile",
+      "label": "Abajo (móvil)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-inline-start-mobile",
+      "label": "Izquierda (móvil)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-inline-end-mobile",
+      "label": "Derecha (móvil)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    }
+  ],
+  "presets": [
+    {
+      "name": "Yotpo Reviews Host",
+      "category": "Apps"
+    }
+  ]
+}
+{% endschema %}
