@@ -1209,6 +1209,102 @@
         "padding-inline-end-mobile": 0
       }
     },
+    "instagram_style_feed_ijJnLL": {
+      "type": "instagram-style-feed",
+      "blocks": {
+        "feed_image_JPLgMH": {
+          "type": "feed_image",
+          "settings": {
+            "image": "shopify://shop_images/13512006.85.jpg",
+            "link": "",
+            "open_in_new_tab": true,
+            "alt": ""
+          }
+        },
+        "feed_image_w4HhjH": {
+          "type": "feed_image",
+          "settings": {
+            "image": "shopify://shop_images/26902416.81_851fd55b-fcb1-4101-a98c-3f4dde568168.jpg",
+            "link": "",
+            "open_in_new_tab": true,
+            "alt": ""
+          }
+        },
+        "feed_image_Nt8x46": {
+          "type": "feed_image",
+          "settings": {
+            "image": "shopify://shop_images/11822006_d052dc00-7f76-4b4a-87e4-8a9e71689e22.jpg",
+            "link": "",
+            "open_in_new_tab": true,
+            "alt": ""
+          }
+        },
+        "feed_image_Gn39M7": {
+          "type": "feed_image",
+          "settings": {
+            "image": "shopify://shop_images/11838002_01d18e77-504f-4802-bb2d-fe934978abee.jpg",
+            "link": "",
+            "open_in_new_tab": true,
+            "alt": ""
+          }
+        },
+        "feed_image_dUeNBM": {
+          "type": "feed_image",
+          "settings": {
+            "image": "shopify://shop_images/25310001_9606a3fd-0189-4ecb-b059-40dbdc426fc1.jpg",
+            "link": "",
+            "open_in_new_tab": true,
+            "alt": ""
+          }
+        },
+        "feed_image_Lp8BmG": {
+          "type": "feed_image",
+          "settings": {
+            "image": "shopify://shop_images/25357001_01ca289a-fa90-489e-a673-c1e9f61fc84b.jpg",
+            "link": "",
+            "open_in_new_tab": true,
+            "alt": ""
+          }
+        },
+        "feed_image_QYzKhA": {
+          "type": "feed_image",
+          "settings": {
+            "image": "shopify://shop_images/27486201_54853354-eb5d-40b3-8d9d-6c0d04e32f7c.jpg",
+            "link": "",
+            "open_in_new_tab": true,
+            "alt": ""
+          }
+        }
+      },
+      "block_order": [
+        "feed_image_JPLgMH",
+        "feed_image_w4HhjH",
+        "feed_image_Nt8x46",
+        "feed_image_Gn39M7",
+        "feed_image_dUeNBM",
+        "feed_image_Lp8BmG",
+        "feed_image_QYzKhA"
+      ],
+      "name": "Feed Instagram Manual",
+      "settings": {
+        "heading": "<h3><strong>Úsalos a tu manera</strong></h3>",
+        "subtitle": "<p>Comparte tu estilo con el mundo, etiqueta a @drmartensofficial</p>",
+        "columns": 5,
+        "columns_gap": 8,
+        "mobile_card_width": 260,
+        "slide_max_width": 360,
+        "icons_style": "arrow",
+        "icons_shape": "none",
+        "section_width": "full-width",
+        "color_scheme": "",
+        "padding-block-start": 32,
+        "padding-block-end": 32,
+        "padding-block-start-mobile": 24,
+        "padding-block-end-mobile": 24,
+        "padding-inline-start-mobile": 0,
+        "padding-inline-end-mobile": 0
+      }
+    },
     "177135901212683778": {
       "type": "_blocks",
       "blocks": {
@@ -1261,6 +1357,7 @@
     "main",
     "section_VxxcgU",
     "tabs_products_metafields_94dwER",
+    "instagram_style_feed_ijJnLL",
     "177135901212683778"
   ]
 }
