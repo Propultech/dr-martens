@@ -2,9 +2,11 @@
   assign tabs = section.blocks | where: 'type', '_tab_products'
   assign first_tab = tabs | first
   assign is_first = false
+  # theme-check-disable BlockIdUsage
   if first_tab and block.id == first_tab.id
     assign is_first = true
   endif
+  # theme-check-enable BlockIdUsage
 
   assign tab_title = block.settings.tab_title | default: 'Tab'
   assign products = block.settings.products
@@ -76,7 +78,9 @@
         {% endfor %}
       {% endcapture %}
 
+      {% # theme-check-disable UnusedAssign %}
       {% assign slides = list_items | strip | split: '<!--@tp/split-->' %}
+      {% # theme-check-enable UnusedAssign %}
 
       <div
         class="resource-list resource-list__carousel force-full-width tp-carousel"
@@ -128,11 +132,13 @@
             {% capture auto_list_items %}
               {% for product in auto_products limit: block.settings.products_limit %}
                 <div class="resource-list__item">
+                  {%- # theme-check-disable UniqueStaticBlockId -%}
                   {% content_for 'block',
                     type: '_product-card',
                     id: 'static-product-card',
                     closest.product: product
                   %}
+                  {%- # theme-check-enable UniqueStaticBlockId -%}
                 </div>
                 {% unless forloop.last %}
                   <!--@tp-auto/split-->
@@ -140,7 +146,9 @@
               {% endfor %}
             {% endcapture %}
 
+            {% # theme-check-disable UnusedAssign %}
             {% assign auto_slides = auto_list_items | strip | split: '<!--@tp-auto/split-->' %}
+            {% # theme-check-enable UnusedAssign %}
 
             <div
               class="resource-list resource-list__carousel force-full-width tp-carousel"
