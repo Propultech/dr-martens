@@ -705,10 +705,17 @@
             "buy_buttons_eYQEYi",
             "text_aEtTtq"
           ]
+        },
+        "e806276b-75d5-4504-bf7c-98054d1704be": {
+          "type": "shopify://apps/yotpo-product-reviews/blocks/star-rating/eb7dfd7d-db44-4334-bc49-c893b51b36cf",
+          "settings": {
+            "product": "{{product}}"
+          }
         }
       },
       "block_order": [
-        "yotpo_product_reviews_reviews_dX68cE"
+        "yotpo_product_reviews_reviews_dX68cE",
+        "e806276b-75d5-4504-bf7c-98054d1704be"
       ],
       "settings": {
         "content_width": "content-center-aligned",
