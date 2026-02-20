@@ -640,7 +640,8 @@
         "video_CGMqKe"
       ],
       "custom_css": [
-        ".video-placeholder-wrapper {display: none}"
+        "& {background-color: blue;}",
+        ".video-placeholder-wrapper {display: none !important;}"
       ],
       "name": "t:names.video_section",
       "settings": {
