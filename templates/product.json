@@ -1305,44 +1305,23 @@
         "padding-inline-end-mobile": 0
       }
     },
-    "177135901212683778": {
-      "type": "_blocks",
+    "yotpo_reviews_host_aGrEA9": {
+      "type": "yotpo-reviews-host",
       "blocks": {
-        "yotpo_product_reviews_reviews_rBaRqN": {
+        "yotpo_product_reviews_reviews_6mRbUF": {
           "type": "shopify://apps/yotpo-product-reviews/blocks/reviews/eb7dfd7d-db44-4334-bc49-c893b51b36cf",
           "settings": {
-            "product": "{{closest.product}}"
+            "product": "{{product}}"
           }
         }
       },
       "block_order": [
-        "yotpo_product_reviews_reviews_rBaRqN"
+        "yotpo_product_reviews_reviews_6mRbUF"
       ],
-      "name": "Review",
+      "name": "Yotpo Reviews Host",
       "settings": {
-        "content_direction": "column",
-        "vertical_on_mobile": true,
-        "horizontal_alignment": "flex-start",
-        "vertical_alignment": "center",
-        "align_baseline": false,
-        "horizontal_alignment_flex_direction_column": "flex-start",
-        "vertical_alignment_flex_direction_column": "center",
-        "gap": 12,
         "section_width": "page-width",
-        "section_height": "",
-        "section_height_custom": 50,
         "color_scheme": "",
-        "background_media": "none",
-        "video_position": "cover",
-        "background_image_position": "cover",
-        "border": "none",
-        "border_width": 1,
-        "border_opacity": 100,
-        "border_radius": 0,
-        "toggle_overlay": false,
-        "overlay_color": "#00000026",
-        "overlay_style": "solid",
-        "gradient_direction": "to top",
         "padding-block-start": 0,
         "padding-block-end": 0,
         "padding-block-start-mobile": 0,
@@ -1358,6 +1337,6 @@
     "section_VxxcgU",
     "tabs_products_metafields_94dwER",
     "instagram_style_feed_ijJnLL",
-    "177135901212683778"
+    "yotpo_reviews_host_aGrEA9"
   ]
 }
