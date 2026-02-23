@@ -1,0 +1,315 @@
+{% liquid
+  assign block_settings = block.settings
+  assign menu_handle = block_settings.menu
+  assign nav = linklists[menu_handle]
+  assign all_collection_url = '/collections/all'
+  assign current_link = blank
+
+  if collection and nav and nav.links != blank
+    # level 1
+    for link_l1 in nav.links
+      if link_l1.url == collection.url
+        assign current_link = link_l1
+        break
+      endif
+    endfor
+
+    # level 2
+    if current_link == blank
+      for link_l1 in nav.links
+        for link_l2 in link_l1.links
+          if link_l2.url == collection.url
+            assign current_link = link_l2
+            break
+          endif
+        endfor
+        if current_link != blank
+          break
+        endif
+      endfor
+    endif
+
+    # level 3
+    if current_link == blank
+      for link_l1 in nav.links
+        for link_l2 in link_l1.links
+          for link_l3 in link_l2.links
+            if link_l3.url == collection.url
+              assign current_link = link_l3
+              break
+            endif
+          endfor
+          if current_link != blank
+            break
+          endif
+        endfor
+        if current_link != blank
+          break
+        endif
+      endfor
+    endif
+  endif
+%}
+
+{% if current_link != blank and current_link.links != blank %}
+  <div
+    class="collection-children-links spacing-style"
+    style="{% render 'spacing-style', settings: block_settings %}"
+    {{ block.shopify_attributes }}
+  >
+    <ul class="collection-children-links__list" role="list">
+      {% for child_link in current_link.links limit: block_settings.max_items %}
+        {% if child_link.type != 'collection_link' or child_link.object == blank %}
+          {% continue %}
+        {% endif %}
+
+        {% assign child_collection = child_link.object %}
+        {% if child_collection.url == all_collection_url %}
+          {% continue %}
+        {% endif %}
+
+        <li class="collection-children-links__item">
+          <a
+            href="{{ child_collection.url }}"
+            class="collection-children-links__link"
+            {% if child_link.current %}
+              aria-current="page"
+            {% endif %}
+          >
+            <span
+              class="collection-children-links__icon"
+              style="--collection-children-icon-size: {{ block_settings.icon_size }}px;"
+            >
+              {% if child_collection.image %}
+                {{
+                  child_collection.image
+                  | image_url: width: 240
+                  | image_tag:
+                    widths: '64, 96, 128, 160, 192, 240',
+                    loading: 'lazy',
+                    class: 'collection-children-links__image'
+                }}
+              {% else %}
+                {{ 'image' | placeholder_svg_tag: 'collection-children-links__placeholder' }}
+              {% endif %}
+            </span>
+
+            <span class="collection-children-links__name">{{ child_collection.title }}</span>
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endif %}
+
+{% stylesheet %}
+  .collection-children-links {
+    width: 100%;
+  }
+
+  .collection-children-links__title {
+    margin: 0;
+    margin-block-end: var(--gap-sm);
+  }
+
+  .collection-children-links__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .collection-children-links__list::-webkit-scrollbar {
+    display: none;
+  }
+
+  .collection-children-links__item {
+    flex: 0 0 auto;
+  }
+
+  .collection-children-links__link {
+    display: grid;
+    gap: 10px;
+    justify-items: center;
+    text-decoration: none;
+    color: inherit;
+
+    &:hover {
+        .collection-children-links__name {
+            text-decoration-line: underline;
+            text-decoration-style: solid;
+            text-decoration-skip-ink: auto;
+            text-decoration-thickness: 20%; /* 3.2px */
+            text-underline-offset: auto;
+            text-underline-position: from-font;
+        }
+
+        .collection-children-links__image {
+            outline: 3px solid var(--color-primary);
+        }
+    }
+  }
+
+  .collection-children-links__icon {
+    width: var(--collection-children-icon-size);
+    height: var(--collection-children-icon-size);
+    display: block;
+    overflow: hidden;
+  }
+
+  .collection-children-links__image,
+  .collection-children-links__placeholder {
+    width: calc(100% - 6px);
+    height: calc(100% - 6px);
+    display: block;
+    object-fit: cover;
+    margin: 3px 0 0 3px;
+  }
+
+  .collection-children-links__name {
+    color: var(--color-primary);
+    text-align: center;
+    font-size: var(--font-size--paragraph);
+    font-weight: var(--font-paragraph--weight);
+    line-height: 137.5%;
+    letter-spacing: .25px;
+
+    &::first-letter {
+        text-transform: uppercase;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:names.collection_children_links",
+  "tag": null,
+  "class": "collection-children-links-block",
+  "settings": [
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Menú",
+      "default": "main-menu"
+    },
+    {
+      "type": "range",
+      "id": "max_items",
+      "label": "Máximo de elementos",
+      "min": 1,
+      "max": 24,
+      "step": 1,
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "icon_size",
+      "label": "Tamaño del ícono",
+      "min": 24,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 56
+    },
+    {
+      "type": "header",
+      "content": "Espaciado (escritorio)"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "Arriba",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "Abajo",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-inline-start",
+      "label": "Izquierda",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-inline-end",
+      "label": "Derecha",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "Espaciado (móvil)"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start-mobile",
+      "label": "Arriba",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end-mobile",
+      "label": "Abajo",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-inline-start-mobile",
+      "label": "Izquierda",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-inline-end-mobile",
+      "label": "Derecha",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:names.collection_children_links",
+      "category": "t:categories.collection"
+    }
+  ]
+}
+{% endschema %}
