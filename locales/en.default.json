@@ -123,6 +123,7 @@
       "success": "Thanks for subscribing!"
     },
     "filter": "Filter",
+    "filter_by": "Filter by",
     "load_video": "Load video: {{ description }}",
     "sold_out": "Sold out",
     "payment_methods": "Payment methods",

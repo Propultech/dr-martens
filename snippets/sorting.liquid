@@ -95,14 +95,17 @@
         >
           {{- 'actions.sort' | t -}}
         </span>
-        <span
-          class="facets__status h6 desktop:hidden"
-        >
-          {{- status -}}
-        </span>
-        <span class="svg-wrapper icon-caret icon-animated">
-          {{- 'icon-caret.svg' | inline_asset_content -}}
-        </span>
+        <div class="facets__summary-select">
+          <span
+            class="facets__status h6 desktop:hidden"
+          >
+            {{- status -}}
+          </span>
+          <span class="svg-wrapper icon-caret icon-animated">
+            {{- 'icon-caret.svg' | inline_asset_content -}}
+          </span>
+        </div>
+
       </summary>
       <floating-panel-component
         id="sorting-options-{{ section_id }}"
@@ -172,6 +175,16 @@
     align-items: center;
     overflow: clip;
     padding: var(--padding-2xs) var(--padding-xs);
+  }
+
+  .facets__summary-select {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    gap: 5px;
+    border: 1px solid rgb(var(--color-foreground-rgb) / var(--opacity-5-15));
+    padding: 7px 5px 7px 10px;
+    height: 40px;
   }
 
   .sorting-filter__select-wrapper:has(:focus-visible) {
