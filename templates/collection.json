@@ -193,12 +193,16 @@
             "padding-block-end": 8,
             "padding-inline-start": 0,
             "padding-inline-end": 0,
-            "padding-block-start-mobile": 0,
-            "padding-block-end-mobile": 0,
-            "padding-inline-start-mobile": 0,
-            "padding-inline-end-mobile": 0,
+            "padding-block-start-mobile": 35,
+            "padding-block-end-mobile": 35,
+            "padding-inline-start-mobile": 15,
+            "padding-inline-end-mobile": 15,
             "facets_margin_bottom": 8,
-            "facets_margin_right": 17
+            "facets_margin_right": 17,
+            "show_product_count_left": true,
+            "show_active_filters_in_bar": true,
+            "show_image_toggle": true,
+            "show_sort_inline": true
           },
           "blocks": {}
         },
