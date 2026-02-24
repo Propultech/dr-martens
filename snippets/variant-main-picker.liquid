@@ -198,7 +198,8 @@
                         {% render 'swatch',
                           swatch: product_option_value.swatch,
                           variant_image: featured_media,
-                          mode: 'unscaled'
+                          mode: 'unscaled',
+                          context: 'pdp'
                         %}
                       {% else %}
                         {% if product_option_value.available == true %}
@@ -297,7 +298,8 @@
                     {% render 'swatch',
                       swatch: product_option_value.swatch,
                       variant_image: featured_media,
-                      mode: 'unscaled'
+                      mode: 'unscaled',
+                      context: 'pdp'
                     %}
                   {% else %}
                     {% if product_option_value.available == true %}
