@@ -89,13 +89,16 @@
     "product_corner_radius": 0,
     "card_corner_radius": 4,
     "card_title_case": "uppercase",
-    "show_variant_image": true,
+    "show_variant_image_pdp": true,
+    "show_variant_image_plp": false,
+    "swatches_plp_max_count": 3,
     "variant_swatch_width": 59,
     "variant_swatch_height": 74,
     "variant_swatch_radius": 0,
     "variant_button_border_width": 1,
     "variant_button_radius": 2,
     "variant_button_width": "default-width-buttons",
+    "show_variant_image": true,
     "button_font_weight_secondary": "default",
     "sections": {
       "password-footer": {
