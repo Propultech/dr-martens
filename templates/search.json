@@ -87,12 +87,16 @@
             "padding-block-end": 8,
             "padding-inline-start": 0,
             "padding-inline-end": 0,
-            "padding-block-start-mobile": 0,
-            "padding-block-end-mobile": 0,
-            "padding-inline-start-mobile": 0,
-            "padding-inline-end-mobile": 0,
+            "padding-block-start-mobile": 35,
+            "padding-block-end-mobile": 35,
+            "padding-inline-start-mobile": 15,
+            "padding-inline-end-mobile": 15,
             "facets_margin_bottom": 8,
-            "facets_margin_right": 17
+            "facets_margin_right": 17,
+            "show_product_count_left": true,
+            "show_active_filters_in_bar": true,
+            "show_image_toggle": true,
+            "show_sort_inline": true
           },
           "blocks": {}
         },
@@ -100,7 +104,7 @@
           "type": "_product-card",
           "static": true,
           "settings": {
-            "product_card_gap": 0,
+            "product_card_gap": 4,
             "inherit_color_scheme": true,
             "color_scheme": "",
             "border": "none",
@@ -147,7 +151,11 @@
                 "product_swatches_padding_top": 4,
                 "product_swatches_padding_bottom": 0,
                 "product_swatches_padding_left": 0,
-                "product_swatches_padding_right": 0
+                "product_swatches_padding_right": 0,
+                "product_swatches_padding_top_mobile": 4,
+                "product_swatches_padding_bottom_mobile": 0,
+                "product_swatches_padding_left_mobile": 0,
+                "product_swatches_padding_right_mobile": 0
               },
               "blocks": {}
             },
@@ -155,7 +163,7 @@
               "type": "product-title",
               "name": "t:names.product_title",
               "settings": {
-                "width": "fit-content",
+                "width": "100%",
                 "max_width": "normal",
                 "alignment": "left",
                 "type_preset": "custom",
@@ -176,16 +184,12 @@
               },
               "blocks": {}
             },
-            "review_fRKjA3": {
-              "type": "review",
-              "name": "t:names.product_review_stars",
+            "yotpo_review_iUe6iG": {
+              "type": "yotpo-review",
+              "name": "Yotpo Reviews",
               "settings": {
-                "stars_style": "shaded",
-                "show_number": true,
-                "rating_color": "primary",
-                "type_preset": "paragraph",
-                "width": "100%",
-                "alignment": "left"
+                "yotpo_instance_id": "1286465",
+                "width": "100%"
               },
               "blocks": {}
             },
@@ -221,7 +225,7 @@
             "product_card_gallery_cFExAi",
             "swatches_UbMHqD",
             "product_title_j7qXTx",
-            "review_fRKjA3",
+            "yotpo_review_iUe6iG",
             "price_fYkUgG"
           ]
         }
