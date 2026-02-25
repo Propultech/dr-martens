@@ -59,7 +59,7 @@
         "alignment": "flex-start",
         "color_scheme": "scheme-1",
         "padding-block-start": 40,
-        "padding-block-end": 0,
+        "padding-block-end": 20,
         "padding-block-start-mobile": 20,
         "padding-block-end-mobile": 0,
         "padding-inline-start-mobile": 0,
@@ -243,8 +243,8 @@
         "padding-inline-start": 0,
         "padding-inline-end": 0,
         "color_scheme": "scheme-1",
-        "padding-block-start": 10,
-        "padding-block-end": 40
+        "padding-block-start": 0,
+        "padding-block-end": 32
       }
     }
   },
