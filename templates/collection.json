@@ -118,6 +118,7 @@
           "name": "t:names.collection_children_links",
           "settings": {
             "menu": "main-menu-1",
+            "only_with_image": true,
             "max_items": 8,
             "icon_size": 112,
             "padding-block-start": 0,
@@ -256,7 +257,11 @@
                 "product_swatches_padding_top": 4,
                 "product_swatches_padding_bottom": 0,
                 "product_swatches_padding_left": 0,
-                "product_swatches_padding_right": 0
+                "product_swatches_padding_right": 0,
+                "product_swatches_padding_top_mobile": 4,
+                "product_swatches_padding_bottom_mobile": 0,
+                "product_swatches_padding_left_mobile": 0,
+                "product_swatches_padding_right_mobile": 0
               },
               "blocks": {}
             },
