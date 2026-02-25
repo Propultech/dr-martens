@@ -23,6 +23,21 @@
           {%- endif -%}
         </div>
       {%- endif -%}
+
+      {%- assign label_text = product.metafields.drmartens.label_text.value -%}
+      {%- if label_text != blank -%}
+        {%- assign label_bg = product.metafields.drmartens.label_background.value -%}
+        {%- assign label_color = product.metafields.drmartens.label_color.value -%}
+        <div
+          class="product-badges__badge product-badges__badge--rectangle"
+          style="
+            {% if label_bg != blank %}background: {{ label_bg }};{% endif %}
+            {% if label_color != blank %}color: {{ label_color }};{% endif %}
+          "
+        >
+          {{- label_text -}}
+        </div>
+      {%- endif -%}
     </div>
     {%  if settings.quick_add or settings.mobile_quick_add %}
       {% render 'quick-add', product: product, section_id: section.id %}
@@ -45,6 +60,9 @@
   .product-badges {
     --badge-inset: max(var(--padding-xs), calc((var(--border-radius) + var(--padding-xs)) * (1 - cos(45deg))));
 
+    display: flex;
+    flex-flow: column;
+    gap: 3px;
     position: absolute;
     z-index: var(--layer-flat);
   }
@@ -55,8 +73,8 @@
   }
 
   .product-badges--top-left {
-    top: calc(var(--badge-inset) + var(--padding-block-start));
-    left: calc(var(--badge-inset) + var(--padding-inline-start));
+    top: 0;
+    left: 0;
   }
 
   .product-badges--top-right {
@@ -65,12 +83,13 @@
   }
 
   .product-badges__badge {
-    --badge-font-size: var(--font-size--xs);
+    --badge-font-size: var(--font-size--sm);
 
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
+    text-align: left;
+    width: fit-content;
     color: var(--color-foreground);
     background: var(--color-background);
     font-size: var(--badge-font-size);
