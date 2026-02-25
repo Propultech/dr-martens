@@ -1,0 +1,98 @@
+{% liquid
+  assign block_settings = block.settings
+  assign product = closest.product
+-%}
+
+{%- unless product == blank -%}
+  <yotpo-review-widget
+    class="yotpo-review-block size-style"
+    style="{% render 'size-style', settings: block_settings %}"
+    {{ block.shopify_attributes }}
+  >
+    <div
+      class="yotpo-widget-instance"
+      data-yotpo-instance-id="{{ block_settings.yotpo_instance_id }}"
+      data-yotpo-product-id="{{ product.id }}"
+      data-yotpo-section-id="{{ template.name }}"
+    ></div>
+  </yotpo-review-widget>
+{%- endunless -%}
+
+{% javascript %}
+  function yotpoInit() {
+    if (window.yotpoWidgetsContainer?.initWidgets) {
+      window.yotpoWidgetsContainer.initWidgets();
+    }
+  }
+
+  // Handles initial load and infinite-scroll appends.
+  if (!customElements.get('yotpo-review-widget')) {
+    customElements.define(
+      'yotpo-review-widget',
+      class YotpoReviewWidget extends HTMLElement {
+        connectedCallback() {
+          setTimeout(yotpoInit, 150);
+        }
+      }
+    );
+  }
+
+  // Handles filter updates: filter:update fires before the async morph,
+  // so we wait 700ms for the DOM to settle before re-initializing.
+  if (!window.__yotpoReinitActive) {
+    window.__yotpoReinitActive = true;
+    document.addEventListener('filter:update', () => setTimeout(yotpoInit, 700));
+  }
+{% endjavascript %}
+
+{% stylesheet %}
+  yotpo-review-widget {
+    display: block;
+
+    .yotpo-reviews-star-ratings-widget {
+        margin: 0 !important;
+
+        .yotpo-sr-bottom-line-summary {
+            flex-direction: row !important;
+        }
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Yotpo Reviews",
+  "tag": null,
+  "settings": [
+    {
+      "type": "text",
+      "id": "yotpo_instance_id",
+      "label": "Yotpo Instance ID",
+      "default": "1286465",
+      "info": "El ID del widget de Yotpo. Se encuentra en el snippet: data-yotpo-instance-id."
+    },
+    {
+      "type": "select",
+      "id": "width",
+      "label": "t:settings.width",
+      "options": [
+        {
+          "value": "fit-content",
+          "label": "t:options.fit"
+        },
+        {
+          "value": "100%",
+          "label": "t:options.fill"
+        }
+      ],
+      "default": "100%"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Yotpo Reviews",
+      "category": "t:categories.product"
+    }
+  ]
+}
+{% endschema %}
