@@ -290,16 +290,12 @@
               },
               "blocks": {}
             },
-            "review_TjFHM6": {
-              "type": "review",
-              "name": "t:names.product_review_stars",
+            "yotpo_review_dn7KU3": {
+              "type": "yotpo-review",
+              "name": "Yotpo Reviews",
               "settings": {
-                "stars_style": "shaded",
-                "show_number": true,
-                "rating_color": "primary",
-                "type_preset": "paragraph",
-                "width": "100%",
-                "alignment": "left"
+                "yotpo_instance_id": "1286465",
+                "width": "100%"
               },
               "blocks": {}
             },
@@ -334,7 +330,7 @@
             "card-gallery",
             "swatches",
             "product_title_4nY4eT",
-            "review_TjFHM6",
+            "yotpo_review_dn7KU3",
             "price_EzJzMm"
           ]
         }
