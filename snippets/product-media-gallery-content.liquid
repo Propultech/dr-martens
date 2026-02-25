@@ -483,6 +483,44 @@
       background-color: var(--color-background);
     }
   {% endif %}
+
+  /* PDP badges — desktop grid: top-left overlay */
+  .media-gallery--grid .media-gallery__grid .product-badges--pdp {
+    --badge-inset: max(8px, calc((var(--media-radius, 0px) + 8px) * (1 - cos(45deg))));
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+
+    .product-badges__badge {
+      padding: 7px 10px;
+    }
+  }
+
+  /* PDP badges — mobile: flujo normal debajo del slider */
+  .pdp-badges-mobile {
+    display: flex;
+    justify-content: center;
+    background-color: var(--background-color-mobile);
+    pa
+  }
+
+  .pdp-badges-mobile .product-badges--pdp {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 10px 0;
+
+    .product-badges__badge {
+      padding: 7px 10px;
+    }
+  }
 {% endstyle %}
 
 {% if closest.product == blank %}
@@ -521,6 +559,51 @@
     data-gallery-show-less="{{ gallery_show_less_label | escape }}"
     {{ block_shopify_attributes }}
   >
+    {%- liquid
+      assign pdp_show_sold_out = false
+      assign pdp_show_sale = false
+      if selected_product.available == false
+        assign pdp_show_sold_out = true
+      elsif selected_product.compare_at_price > selected_product.price
+        assign pdp_show_sale = true
+      endif
+      assign pdp_label_text = selected_product.metafields.drmartens.label_text.value
+      assign pdp_label_bg = selected_product.metafields.drmartens.label_background.value
+      assign pdp_label_color = selected_product.metafields.drmartens.label_color.value
+    -%}
+    {%- capture pdp_badges_html -%}
+      {%- if pdp_show_sold_out or pdp_show_sale or pdp_label_text != blank -%}
+        <div
+          class="product-badges product-badges--pdp"
+          style="
+            --badge-border-radius: {{ settings.badge_corner_radius }}px;
+            --badge-font-family: var(--font-{{ settings.badge_font_family }}--family); --badge-font-weight: var(--font-{{ settings.badge_font_family }}--weight); --badge-text-transform: {{ settings.badge_text_transform }};
+          "
+        >
+          {%- if pdp_show_sold_out -%}
+            <div class="product-badges__badge product-badges__badge--rectangle color-{{ settings.badge_sold_out_color_scheme }}">
+              {{- 'content.product_badge_sold_out' | t -}}
+            </div>
+          {%- elsif pdp_show_sale -%}
+            <div class="product-badges__badge product-badges__badge--rectangle color-{{ settings.badge_sale_color_scheme }}">
+              {{- 'content.product_badge_sale' | t -}}
+            </div>
+          {%- endif -%}
+          {%- if pdp_label_text != blank -%}
+            <div
+              class="product-badges__badge product-badges__badge--rectangle"
+              style="
+                {%- if pdp_label_bg != blank -%}background: {{ pdp_label_bg }};{%- endif -%}
+                {%- if pdp_label_color != blank -%}color: {{ pdp_label_color }};{%- endif -%}
+              "
+            >
+              {{- pdp_label_text -}}
+            </div>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+    {%- endcapture -%}
+
     {% capture slides %}
       {% for media in sorted_media %}
         {% capture children %}
@@ -633,6 +716,12 @@
       controls: controls
     %}
 
+    {%- if pdp_badges_html != blank -%}
+      <div class="pdp-badges-mobile desktop:hidden">
+        {{ pdp_badges_html }}
+      </div>
+    {%- endif -%}
+
     {% if media_presentation == 'grid' %}
       <ul
         class="media-gallery__grid list-unstyled"
@@ -672,6 +761,7 @@
             {% else %}
               {%- render 'product-media', media: media, sizes: media_sizes, is_main_product_media: forloop.first -%}
             {% endif %}
+            {%- if forloop.first -%}{{ pdp_badges_html }}{%- endif -%}
           </li>
           {% if show_gallery_description_preview and gallery_description_summary_text != blank and forloop.index0 == gallery_description_insert_after_index %}
             <li class="product-media-container product-media-container--description media-gallery__description-item mobile:hidden">

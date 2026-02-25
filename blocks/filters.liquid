@@ -587,17 +587,38 @@
       let currentView = 'product';
 
       /**
+       * Monotonic counter incremented on every new applyImageView request.
+       * Pending retry chains from older requests bail out on mismatch,
+       * preventing the "flickering" caused by rapid toggle clicks.
+       */
+      let applyGeneration = 0;
+
+      /**
        * Moves all visible card slideshows to the slide that matches the view.
        * Index 0 → product image, index 1 → model image.
+       * Retries to handle async connectedCallback of slideshow-component.
        *
        * @param {'product'|'model'} view
+       * @param {number} [attempt]
        */
-      function applyImageView(view) {
+      function applyImageView(view, attempt = 0) {
+        // On the first call, bump the generation so any in-flight retries from
+        // a previous invocation are cancelled immediately.
+        if (attempt === 0) applyGeneration++;
+        const gen = applyGeneration;
+
         document.querySelectorAll('.card-gallery slideshow-component').forEach((slideshow) => {
           if (typeof slideshow.select === 'function') {
             slideshow.select(view === 'model' ? 1 : 0, undefined, { animate: false });
           }
         });
+        // Retry to handle async connectedCallback; bail out if a newer call arrived
+        if (attempt < 8) {
+          setTimeout(() => {
+            if (applyGeneration !== gen) return;
+            applyImageView(view, attempt + 1);
+          }, 250);
+        }
       }
 
       /**
@@ -612,45 +633,201 @@
         });
       }
 
-      /**
-       * Bootstraps the toggle:
-       *  1. Syncs button states to the default "product" view.
-       *  2. Attaches a delegated click listener on the toggle container so
-       *     any [data-view] button can trigger a view change.
-       */
-      function initImageToggle() {
-        const toggle = document.getElementById('facets-image-toggle--{{ section.id }}');
-        if (!toggle) return;
-
+      // Sync toggle UI as soon as the DOM is ready
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', () => syncToggleUI(currentView));
+      } else {
         syncToggleUI(currentView);
+      }
 
-        toggle.addEventListener('click', (e) => {
-          const btn = e.target.closest('[data-view]');
-          if (!btn) return;
-          currentView = btn.dataset.view;
-          syncToggleUI(currentView);
-          applyImageView(currentView);
+      /**
+       * Delegated click listener on document.
+       * Survives any section HTML replacement by Horizon — no re-attachment needed.
+       */
+      document.addEventListener('click', (e) => {
+        const btn = e.target.closest('[data-view]');
+        if (!btn) return;
+        const toggle = btn.closest('#facets-image-toggle--{{ section.id }}');
+        if (!toggle) return;
+        currentView = btn.dataset.view;
+        syncToggleUI(currentView);
+        applyImageView(currentView);
+      });
+
+      /** Active MutationObserver instance for the product grid. */
+      let gridObserver = null;
+
+      /** Separate generation counter for per-card infinite-scroll retries. */
+      let cardApplyGeneration = 0;
+
+      /**
+       * Applies the current view to specific newly added card elements,
+       * retrying a fixed number of times because slideshow-component has an
+       * async connectedCallback — the method exists on the prototype immediately
+       * but internal state is not ready until the callback resolves.
+       *
+       * @param {Element[]} cards
+       * @param {number} attempt
+       */
+      function applyViewToCards(cards, attempt) {
+        if (currentView === 'product') return;
+
+        // Bump generation on first call so stale retry chains from previous
+        // infinite-scroll batches don't interfere with the current one.
+        if (attempt === 0) cardApplyGeneration++;
+        const gen = cardApplyGeneration;
+
+        const targetIndex = currentView === 'model' ? 1 : 0;
+        for (const card of cards) {
+          card.querySelectorAll('.card-gallery slideshow-component').forEach((slideshow) => {
+            if (typeof slideshow.select === 'function') {
+              slideshow.select(targetIndex, undefined, { animate: false });
+            }
+          });
+        }
+
+        // Retry to handle async connectedCallback; bail out if superseded
+        if (attempt < 8) {
+          setTimeout(() => {
+            if (cardApplyGeneration !== gen) return;
+            applyViewToCards(cards, attempt + 1);
+          }, 250);
+        }
+      }
+
+      /**
+       * Attaches a MutationObserver to the product grid <ul> so that cards
+       * appended/prepended by infinite scroll get the correct view applied.
+       * The grid element reference is resolved fresh each time because a
+       * filter:update replaces the whole section HTML.
+       */
+      function observeProductGrid() {
+        // Disconnect any previous observer
+        if (gridObserver) {
+          gridObserver.disconnect();
+          gridObserver = null;
+        }
+
+        // The grid is a <ul ref="grid"> with class product-grid
+        const grid = document.querySelector('.product-grid[ref="grid"]');
+        if (!grid) return;
+
+        gridObserver = new MutationObserver((mutations) => {
+          if (currentView === 'product') return;
+
+          const newCards = [];
+          for (const mutation of mutations) {
+            for (const node of mutation.addedNodes) {
+              if (node.nodeType === Node.ELEMENT_NODE) newCards.push(node);
+            }
+          }
+          if (!newCards.length) return;
+
+          // Start retrying immediately
+          applyViewToCards(newCards, 0);
+        });
+
+        gridObserver.observe(grid, { childList: true });
+      }
+
+      // Initialize both toggle UI and grid observer as soon as the DOM is ready
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', observeProductGrid);
+      } else {
+        observeProductGrid();
+      }
+
+      /**
+       * Preloads the model image (slide index 1) for a set of product cards.
+       * Forces the browser to fetch the image in the background so it is already
+       * cached by the time the user switches to the "model" view.
+       *
+       * Uses a data attribute to avoid scheduling duplicate preloads for the
+       * same card across multiple IntersectionObserver / hover callbacks.
+       *
+       * @param {Element[]} cards
+       */
+      function preloadModelImages(cards) {
+        for (const card of cards) {
+          const slideshow = card.querySelector?.('.card-gallery slideshow-component');
+          if (!slideshow) continue;
+          // The slides are <li> elements; we want the second one (index 1)
+          const slides = slideshow.querySelectorAll(':scope li');
+          const slide = slides[1];
+          if (!slide) continue;
+          const img = slide.querySelector('img');
+          if (!img || img.complete || img.dataset.modelPreloaded) continue;
+          img.dataset.modelPreloaded = '1';
+          // Use a detached Image so the browser fetches without affecting the DOM
+          const pre = new Image();
+          if (img.srcset) pre.srcset = img.srcset;
+          pre.src = img.src;
+        }
+      }
+
+      /**
+       * IntersectionObserver that preloads the model image of each product card
+       * as it scrolls into the viewport. Runs silently in the background so the
+       * image is already cached before the user ever clicks "Modelo".
+       */
+      const preloadObserver = new IntersectionObserver(
+        (entries) => {
+          const visible = entries
+            .filter((e) => e.isIntersecting)
+            .map((e) => e.target);
+          if (visible.length) preloadModelImages(visible);
+        },
+        { rootMargin: '200px' } // start preloading 200px before the card enters the viewport
+      );
+
+      /** Attaches preloadObserver to every product card currently in the grid. */
+      function observeCardsForPreload() {
+        document.querySelectorAll('.product-grid[ref="grid"] > li').forEach((card) => {
+          preloadObserver.observe(card);
         });
       }
 
-      // Initialize as soon as the DOM is ready
       if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initImageToggle);
+        document.addEventListener('DOMContentLoaded', observeCardsForPreload);
       } else {
-        initImageToggle();
+        observeCardsForPreload();
       }
 
+      // On hover of the "Modelo" button, eagerly preload all currently visible cards
+      // so the switch feels instant for cards already on screen.
+      document.addEventListener('mouseenter', (e) => {
+        if (!e.target.closest?.('[data-view="model"]')) return;
+        const allCards = Array.from(
+          document.querySelectorAll('.product-grid[ref="grid"] > li')
+        );
+        preloadModelImages(allCards);
+      }, true);
+
       /**
-       * Re-apply the current in-memory view after Horizon re-renders the section via AJAX.
-       * The 800 ms delay gives the new product cards time to mount their
-       * slideshow custom elements before we call .select() on them.
+       * After Horizon re-renders the section via AJAX, re-sync the toggle UI
+       * and re-apply the view to the new grid.
+       *
+       * Horizon may update the DOM via morphing (in-place attribute/class updates)
+       * rather than inserting new nodes, so a MutationObserver on addedNodes is
+       * unreliable. Instead we pulse syncToggleUI at staggered intervals that
+       * cover the full range of Horizon's DOM update timing.
+       *
+       * currentView is always correct in memory, so calling syncToggleUI at any
+       * point after the filter renders will restore the right active button.
        */
       document.addEventListener('filter:update', () => {
-        if (currentView === 'product') return; // default view, cards load as product already
+        // Staggered syncs: cover both fast and slow network/render scenarios.
+        // Using closure over currentView so the correct view is always applied.
+        [50, 200, 400, 750, 1200].forEach((delay) => {
+          setTimeout(() => syncToggleUI(currentView), delay);
+        });
+
+        // Re-attach the grid observer and re-apply the image view once the new
+        // section HTML is in place (150 ms is enough for the AJAX swap).
         setTimeout(() => {
-          applyImageView(currentView);
-          syncToggleUI(currentView);
-        }, 800);
+          observeProductGrid();
+          if (currentView !== 'product') applyImageView(currentView);
+        }, 150);
       });
     })();
   </script>
