@@ -68,6 +68,10 @@
           {% continue %}
         {% endif %}
 
+        {% if block_settings.only_with_image and child_collection.image == blank %}
+          {% continue %}
+        {% endif %}
+
         <li class="collection-children-links__item">
           <a
             href="{{ child_collection.url }}"
@@ -196,6 +200,13 @@
       "id": "menu",
       "label": "Menú",
       "default": "main-menu"
+    },
+    {
+      "type": "checkbox",
+      "id": "only_with_image",
+      "label": "Mostrar categoría con imagen",
+      "info": "Solo muestra subcategorías que tengan imagen asignada.",
+      "default": false
     },
     {
       "type": "range",
