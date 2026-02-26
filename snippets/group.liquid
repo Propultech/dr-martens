@@ -20,6 +20,7 @@
     {% if settings.visibility == 'desktop' %}hidden--mobile{% elsif settings.visibility == 'mobile' %}hidden--desktop{% endif %}
     group-block--height-{{ settings.height }}
     group-block--width-{{ settings.width }}
+    group-block--width-mobile-{{ settings.width_mobile | default: settings.width }}
     border-style
     spacing-style
     size-style
@@ -65,9 +66,13 @@
       {% if request.design_mode %}group-block-content--design-mode{% endif %}
       layout-panel-flex
       layout-panel-flex--{{ settings.content_direction | default: 'column' }}
-      {% if settings.vertical_on_mobile %} mobile-column{% endif %}
+      {% if settings.vertical_on_mobile and settings.enable_slider != true %} mobile-column{% endif %}
+      {% if settings.enable_slider %}group-block-content--slider-{{ settings.slider_on | default: 'both' }}{% endif %}
     "
-    style="{% render 'layout-panel-style', settings: settings %}"
+    style="
+      {% render 'layout-panel-style', settings: settings %}
+      {% if settings.enable_slider and settings.slider_scrollbar_color != blank %}--slider-scrollbar-color: {{ settings.slider_scrollbar_color }};{% endif %}
+    "
   >
     {{- children -}}
   </div>
@@ -88,6 +93,67 @@
 {%- endif -%}
 
 {% stylesheet %}
+  /* ── Slider / scroll horizontal ────────────────────────────── */
+
+  /* Shared slider styles */
+  .group-block-content.group-block-content--slider-both,
+  .group-block-content.group-block-content--slider-desktop {
+    flex-flow: row nowrap;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+    scrollbar-color: var(--slider-scrollbar-color, currentColor) transparent;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Remove scrollbar arrow buttons (WebKit) */
+  .group-block-content[class*="group-block-content--slider-"]::-webkit-scrollbar-button {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+
+  .group-block-content.group-block-content--slider-both > *,
+  .group-block-content.group-block-content--slider-desktop > * {
+    scroll-snap-align: start;
+    flex-shrink: 0;
+  }
+
+  /* Mobile-only slider */
+  @media screen and (max-width: 749px) {
+    .group-block-content.group-block-content--slider-mobile {
+      flex-flow: row nowrap;
+      overflow-x: scroll;
+      overflow-y: hidden;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: thin;
+      scrollbar-color: var(--slider-scrollbar-color, currentColor) transparent;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .group-block-content.group-block-content--slider-mobile > * {
+      scroll-snap-align: start;
+      flex-shrink: 0;
+    }
+  }
+
+  /* Desktop-only slider: disable on mobile */
+  @media screen and (max-width: 749px) {
+    .group-block-content.group-block-content--slider-desktop {
+      flex-flow: row wrap;
+      overflow-x: visible;
+      scroll-snap-type: none;
+    }
+
+    .group-block-content.group-block-content--slider-desktop > * {
+      scroll-snap-align: none;
+      flex-shrink: 1;
+    }
+  }
+
+  /* ─────────────────────────────────────────────────────────── */
+
   .group-block__link {
     position: absolute;
     inset: 0;

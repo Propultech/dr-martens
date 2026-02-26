@@ -2612,7 +2612,7 @@ product-price.text-block:is(.h1, .h2, .h3, .h4, .h5, .h6)>*:not(.tax-note) {
 }
 
 .checkbox {
-  --checkbox-size: 22px;
+  --checkbox-size: 20px;
   --checkbox-top: 50%;
   --checkbox-left: 1.5px;
   --checkbox-offset: 3px;
@@ -2627,7 +2627,7 @@ product-price.text-block:is(.h1, .h2, .h3, .h4, .h5, .h6)>*:not(.tax-note) {
   align-items: center;
 
   @media screen and (min-width: 750px) {
-    --checkbox-size: 16px;
+    --checkbox-size: 20px;
     --checkbox-border-radius: 5px;
     --checkbox-label-padding: 6px;
   }
@@ -2856,6 +2856,7 @@ product-price.text-block:is(.h1, .h2, .h3, .h4, .h5, .h6)>*:not(.tax-note) {
   cursor: pointer;
   background-color: var(--pills-pill-background-color);
   transition: background-color var(--animation-speed) var(--animation-easing);
+  text-transform: capitalize;
 
   &:hover {
     --pills-pill-background-color: rgb(var(--color-foreground-rgb) / var(--opacity-10-25));
@@ -3842,6 +3843,22 @@ slideshow-arrows .slideshow-control.slideshow-control--style-none {
 
 .layout-panel-flex--row>.group-block--width-custom {
   flex-basis: var(--size-style-width);
+}
+
+/* Mobile overrides for width variants */
+@media screen and (max-width: 749px) {
+  .layout-panel-flex--row>.group-block--width-mobile-fit {
+    flex: 0;
+  }
+
+  .layout-panel-flex--row>.group-block--width-mobile-fill {
+    flex: 1;
+  }
+
+  .layout-panel-flex--row>.group-block--width-mobile-custom {
+    flex: none;
+    flex-basis: var(--size-style-width-mobile);
+  }
 }
 
 /* Dimension utilities - Height */

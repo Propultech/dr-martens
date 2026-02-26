@@ -101,8 +101,8 @@
             </span>
           </facet-status-component>
         {% endif %}
-        <span class="svg-wrapper icon-caret icon-animated">
-          {{- 'icon-caret.svg' | inline_asset_content -}}
+        <span class="svg-wrapper icon-plus icon-animated">
+          {{- 'icon-plus.svg' | inline_asset_content -}}
         </span>
       </div>
     </summary>
@@ -427,7 +427,7 @@
 
 {% stylesheet %}
   .facets input:checked + label {
-    font-weight: 500;
+    font-weight: 400;
   }
 
   .facets .checkbox .icon-checkmark {
@@ -483,6 +483,8 @@
 
     &:hover {
       --pill-label-border-opacity: 100%;
+      color: var(--color-selected-variant-text);
+      background-color: var(--color-selected-variant-background);
     }
   }
 
@@ -491,6 +493,9 @@
       --pill-label-color-rgb: var(--color-background-rgb);
       --pill-label-background-color-rgb: var(--color-foreground-rgb);
       --pill-label-border-opacity: 0;
+
+      color: var(--color-selected-variant-text);
+      background-color: var(--color-selected-variant-background);
 
       font-weight: 500;
     }
@@ -577,6 +582,7 @@
 
   .facets--vertical .facets__inputs-list--swatches .facets__inputs-list-item {
     display: flex;
+    justify-content: center;
   }
 
   .facets__inputs-wrapper .facets__inputs-list--swatches-grid {
@@ -584,6 +590,7 @@
 
     display: grid;
     grid-template-columns: repeat(var(--columns), 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
   }
 
   .facets__inputs-wrapper .facets__inputs-list--swatches-grid .variant-option--swatches {
@@ -599,6 +606,12 @@
     cursor: pointer;
     word-break: break-word;
     white-space: normal;
+    text-align: center;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 
   .facets__inputs-list--swatches-grid .facets__inputs-list-item--disabled label {
@@ -617,6 +630,7 @@
     width: 100%;
     flex-basis: unset;
     gap: var(--gap-sm);
+    flex-flow: column;
   }
 
   .facets__inputs-wrapper .facets__inputs-list--swatches-grid .variant-option__button-label:has(:checked) {

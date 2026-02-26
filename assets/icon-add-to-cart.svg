@@ -1,1 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="var(--icon-stroke-width)" d="M16.608 9.421V6.906H3.392v8.016c0 .567.224 1.112.624 1.513.4.402.941.627 1.506.627H8.63M8.818 3h2.333c.618 0 1.212.247 1.649.686a2.35 2.35 0 0 1 .683 1.658v1.562H6.486V5.344c0-.622.246-1.218.683-1.658A2.33 2.33 0 0 1 8.82 3"/><path stroke="currentColor" stroke-linecap="round" stroke-width="var(--icon-stroke-width)" d="M14.608 12.563v5m2.5-2.5h-5"/></svg>
+<svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" fill="none">
+
+ <g>
+  <title>Layer 1</title>
+  <path stroke="currentcolor" id="svg_1" stroke-linecap="round" stroke-miterlimit="10" d="m3.48276,3.13184l10.63759,0"/>
+  <path stroke="currentcolor" id="svg_2" stroke-linecap="round" stroke-miterlimit="10" d="m5.91541,3.13184l-2.34774,0c-0.21233,0 -0.38523,0.16379 -0.39736,0.37612l-0.89178,15.24209"/>
+  <path stroke="currentcolor" id="svg_3" stroke-linecap="round" stroke-miterlimit="10" d="m2.27854,18.75013l14.33517,0"/>
+  <path stroke="currentcolor" id="svg_4" stroke-miterlimit="10" d="m13.13146,3.05913c-0.65821,-1.4863 -2.02322,-2.51154 -3.60657,-2.51154c-1.58334,0 -2.95133,1.02524 -3.60652,2.51154l7.2161,0l-0.00301,0z"/>
+  <path stroke="currentcolor" id="svg_5" stroke-miterlimit="10" d="m10.72285,10.71498l-2.45962,0c-0.06365,0 -0.11525,0.05161 -0.11525,0.11528l0,2.4596c0,0.06366 0.0516,0.1152 0.11525,0.1152l2.45962,0c0.06359,0 0.1152,-0.05153 0.1152,-0.1152l0,-2.4596c0,-0.06366 -0.05161,-0.11528 -0.1152,-0.11528z"/>
+  <path stroke="currentcolor" id="svg_6" stroke-miterlimit="10" d="m10.32827,10.651l0.86434,-2.65979c0.01514,-0.04249 -0.01816,-0.08793 -0.06366,-0.08793l-3.34214,0c-0.04549,0 -0.07885,0.04543 -0.06369,0.08793l0.86434,2.65979c0.0091,0.02727 0.03639,0.04543 0.06373,0.04543l1.61341,0c0.03029,0 0.05455,-0.01816 0.06366,-0.04543z"/>
+  <path stroke="currentcolor" id="svg_7" stroke-miterlimit="10" d="m2.89424,7.33907l1.55582,1.89547c0.05762,0.07278 0.1486,0.11226 0.23959,0.11226l3.06008,0"/>
+  <path stroke="currentcolor" id="svg_8" stroke-linecap="round" stroke-miterlimit="10" d="m14.04726,9.34703l-2.96305,0"/>
+  <path stroke="currentcolor" id="svg_9" stroke-linecap="round" stroke-miterlimit="10" d="m16.04034,2.63442l0,5.25967"/>
+  <path stroke="currentcolor" id="svg_10" stroke-linecap="round" stroke-miterlimit="10" d="m18.67007,5.25205l-5.2597,0"/>
+  <path stroke="currentcolor" id="svg_11" stroke-linecap="round" stroke-miterlimit="10" d="m16.14673,9.65941l0.55205,9.0816"/>
+ </g>
+</svg>

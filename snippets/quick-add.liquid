@@ -153,7 +153,7 @@
     cursor: pointer;
     opacity: var(--quick-add-mobile-opacity, 0);
     overflow: hidden;
-    color: var(--color-foreground);
+    color: var(--color-primary);
     pointer-events: all;
     position: absolute;
     right: max(var(--quick-add-right), calc((var(--border-radius) + var(--quick-add-right)) * (1 - cos(45deg))));
@@ -193,6 +193,12 @@
     border-radius: 50px;
     height: 100%;
     gap: 0;
+    color: var(--color-black);
+
+    &:hover {
+      background-color: var(--background-color-quick-hover-button);
+      color: var(--background-color-message);
+    }
   }
 
   .quick-add__button .svg-wrapper .checkmark-burst {

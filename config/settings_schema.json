@@ -2249,9 +2249,25 @@
     "settings": [
       {
         "type": "checkbox",
-        "id": "show_variant_image",
-        "label": "t:settings.variant_images",
+        "id": "show_variant_image_pdp",
+        "label": "t:settings.variant_images_pdp",
         "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "show_variant_image_plp",
+        "label": "t:settings.variant_images_plp",
+        "default": false
+      },
+      {
+        "type": "range",
+        "id": "swatches_plp_max_count",
+        "label": "t:settings.swatches_plp_max_count",
+        "info": "t:settings.swatches_plp_max_count_info",
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "default": 0
       },
       {
         "type": "range",

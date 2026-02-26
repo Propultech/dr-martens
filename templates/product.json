@@ -37,7 +37,7 @@
     "main": {
       "type": "product-information",
       "blocks": {
-        "group_TN7fTV": {
+        "group_qd4Ken": {
           "type": "group",
           "name": "Header - mobile",
           "settings": {
@@ -83,7 +83,7 @@
             "custom_css": "product-price {\nflex: 0 1 auto !important;\n}"
           },
           "blocks": {
-            "text_WPwPR3": {
+            "text_cP8z7G": {
               "type": "text",
               "name": "t:names.title",
               "settings": {
@@ -121,7 +121,7 @@
               },
               "blocks": {}
             },
-            "price_KQAUpp": {
+            "price_QqHQdz": {
               "type": "price",
               "settings": {
                 "show_sale_price_first": true,
@@ -149,8 +149,8 @@
             }
           },
           "block_order": [
-            "text_WPwPR3",
-            "price_KQAUpp"
+            "text_cP8z7G",
+            "price_QqHQdz"
           ]
         },
         "media-gallery": {
@@ -236,7 +236,7 @@
             "padding-inline-end-mobile": 0
           },
           "blocks": {
-            "group_D8XFYQ": {
+            "group_qABXqH": {
               "type": "group",
               "name": "Header - desktop",
               "settings": {
@@ -355,10 +355,10 @@
             "yotpo_product_reviews_star_rating_EAkHCX": {
               "type": "shopify://apps/yotpo-product-reviews/blocks/star-rating/eb7dfd7d-db44-4334-bc49-c893b51b36cf",
               "settings": {
-                "product": "{{closest.product}}"
+                "product": "{{product}}"
               }
             },
-            "product_icon_text_row_yxceK3": {
+            "product_icon_text_row_6dt4Gb": {
               "type": "product-icon-text-row",
               "name": "Información extra",
               "settings": {
@@ -382,7 +382,7 @@
               },
               "blocks": {}
             },
-            "text_zRYypz": {
+            "text_xM7zdk": {
               "type": "text",
               "name": "t:names.text",
               "settings": {
@@ -571,19 +571,19 @@
             }
           },
           "block_order": [
-            "group_D8XFYQ",
-            "yotpo_product_reviews_star_rating_EAkHCX",
-            "product_icon_text_row_yxceK3",
-            "text_zRYypz",
-            "variant_picker_N3Enn6",
-            "buy_buttons_q6UrGa",
-            "product_delivery_dropdown_6mA3AU",
-            "product_description_hXEWhM"
+            "group_qABXqH",
+            "yotpo_product_reviews_star_rating_yahhKh",
+            "product_icon_text_row_6dt4Gb",
+            "text_xM7zdk",
+            "variant_picker_R3rGDr",
+            "buy_buttons_eYQEYi",
+            "product_delivery_dropdown_e46Epr",
+            "product_description_ypXKej"
           ]
         }
       },
       "block_order": [
-        "group_TN7fTV"
+        "group_qd4Ken"
       ],
       "settings": {
         "content_width": "content-center-aligned",
@@ -606,7 +606,7 @@
     "section_NdCdcC": {
       "type": "section",
       "blocks": {
-        "video_9pzrwQ": {
+        "video_CGMqKe": {
           "type": "video",
           "name": "t:names.video",
           "settings": {
@@ -637,7 +637,7 @@
         }
       },
       "block_order": [
-        "video_9pzrwQ"
+        "video_CGMqKe"
       ],
       "custom_css": [
         ".video-placeholder-wrapper {display: none !important;}"
@@ -677,10 +677,10 @@
         "padding-inline-end-mobile": 0
       }
     },
-    "tabs_products_metafields_TJyAxM": {
+    "tabs_products_metafields_94dwER": {
       "type": "tabs-products-metafields",
       "blocks": {
-        "tab_products_cachtB": {
+        "tab_products_rmd9hR": {
           "type": "_tab_products",
           "name": "Recomendados",
           "settings": {
@@ -1334,9 +1334,9 @@
   "order": [
     "breadcrumbs_erGm4H",
     "main",
-    "section_NdCdcC",
-    "tabs_products_metafields_TJyAxM",
-    "instagram_style_feed_WTViXi",
-    "yotpo_reviews_host_ak3UWi"
+    "section_VxxcgU",
+    "tabs_products_metafields_94dwER",
+    "instagram_style_feed_ijJnLL",
+    "yotpo_reviews_host_aGrEA9"
   ]
 }
