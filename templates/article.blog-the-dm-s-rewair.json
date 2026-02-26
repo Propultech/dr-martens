@@ -202,7 +202,7 @@
           "type": "text",
           "name": "t:names.text",
           "settings": {
-            "text": "{{ closest.article.excerpt }}",
+            "text": "{{ closest.article.content }}",
             "width": "100%",
             "max_width": "normal",
             "alignment": "center",
