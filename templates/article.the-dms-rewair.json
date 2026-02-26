@@ -290,8 +290,8 @@
               "name": "t:names.button",
               "settings": {
                 "label": "GO TO OUR DEPOP SHOP",
-                "link": "shopify://collections/all",
-                "open_in_new_tab": false,
+                "link": "https://www.depop.com/drmartens/",
+                "open_in_new_tab": true,
                 "style_class": "button",
                 "width": "custom",
                 "custom_width": 15,
@@ -624,8 +624,8 @@
                       "name": "t:names.button",
                       "settings": {
                         "label": "GO TO OUR DEPOP SHOP",
-                        "link": "shopify://collections/all",
-                        "open_in_new_tab": false,
+                        "link": "https://www.depop.com/drmartens/",
+                        "open_in_new_tab": true,
                         "style_class": "button",
                         "width": "custom",
                         "custom_width": 51,
