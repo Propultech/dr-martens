@@ -307,7 +307,7 @@
               "name": "t:names.button",
               "settings": {
                 "label": "JUMP TO FAQS",
-                "link": "shopify://collections/all",
+                "link": "#shopify-section-template--21208455610594__section_3McjWy",
                 "open_in_new_tab": false,
                 "style_class": "button-secondary",
                 "width": "fit-content",
