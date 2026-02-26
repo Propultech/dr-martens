@@ -693,10 +693,10 @@
         "padding-inline-end-mobile": 0
       }
     },
-    "section_kfaLm3": {
+    "section_X4VkEm": {
       "type": "section",
       "blocks": {
-        "text_mcz3QF": {
+        "text_KBiVUP": {
           "type": "text",
           "name": "t:names.heading",
           "settings": {
@@ -734,7 +734,7 @@
           },
           "blocks": {}
         },
-        "group_tFftiY": {
+        "group_QxWbeb": {
           "type": "group",
           "name": "Grupo | Pasos",
           "settings": {
@@ -783,7 +783,7 @@
             "custom_css": ""
           },
           "blocks": {
-            "group_CPx9Q8": {
+            "group_tMnmPN": {
               "type": "group",
               "name": "Grupo | Paso",
               "settings": {
@@ -832,7 +832,7 @@
                 "custom_css": ""
               },
               "blocks": {
-                "image_GkUJ7x": {
+                "image_DWEBXa": {
                   "type": "image",
                   "name": "t:names.image",
                   "settings": {
@@ -859,7 +859,7 @@
                   },
                   "blocks": {}
                 },
-                "text_mjkgnE": {
+                "text_mqtqQY": {
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
@@ -897,7 +897,7 @@
                   },
                   "blocks": {}
                 },
-                "text_4i9aUP": {
+                "text_YFfnpG": {
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
@@ -937,12 +937,12 @@
                 }
               },
               "block_order": [
-                "image_GkUJ7x",
-                "text_mjkgnE",
-                "text_4i9aUP"
+                "image_DWEBXa",
+                "text_mqtqQY",
+                "text_YFfnpG"
               ]
             },
-            "group_KkgVQm": {
+            "group_tWePyK": {
               "type": "group",
               "name": "Grupo | Paso",
               "settings": {
@@ -991,11 +991,11 @@
                 "custom_css": ""
               },
               "blocks": {
-                "image_3HKBcj": {
+                "image_UJdVNw": {
                   "type": "image",
                   "name": "t:names.image",
                   "settings": {
-                    "image": "shopify://shop_images/EVG_REWAIR_LP_HOWTO_1_MOBILE.webp",
+                    "image": "shopify://shop_images/EVG_REWAIR_LP_HOWTO_2_MOBILE.webp",
                     "link": "",
                     "image_ratio": "adapt",
                     "width": "fill",
@@ -1018,11 +1018,11 @@
                   },
                   "blocks": {}
                 },
-                "text_zc4GbF": {
+                "text_HF3aDQ": {
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h2><strong>STEP 1:</strong></h2>",
+                    "text": "<h2><strong>STEP 2:</strong></h2>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -1056,11 +1056,11 @@
                   },
                   "blocks": {}
                 },
-                "text_igPTnw": {
+                "text_GRV3XV": {
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Our team of experts at The Boot Repair Company receives worn DM's in need of refurbishment.</p>",
+                    "text": "<p>After being repaired, all styles are restored, deep cleaned and sanitised using Micro-Fresh®.</p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -1096,12 +1096,12 @@
                 }
               },
               "block_order": [
-                "image_3HKBcj",
-                "text_zc4GbF",
-                "text_igPTnw"
+                "image_UJdVNw",
+                "text_HF3aDQ",
+                "text_GRV3XV"
               ]
             },
-            "group_byTke4": {
+            "group_a6EnFh": {
               "type": "group",
               "name": "Grupo | Paso",
               "settings": {
@@ -1150,11 +1150,11 @@
                 "custom_css": ""
               },
               "blocks": {
-                "image_teDLBE": {
+                "image_zjHcGQ": {
                   "type": "image",
                   "name": "t:names.image",
                   "settings": {
-                    "image": "shopify://shop_images/EVG_REWAIR_LP_HOWTO_1_MOBILE.webp",
+                    "image": "shopify://shop_images/EVG_REWAIR_LP_HOWTO_3_MOBILE.webp",
                     "link": "",
                     "image_ratio": "adapt",
                     "width": "fill",
@@ -1177,11 +1177,11 @@
                   },
                   "blocks": {}
                 },
-                "text_EYAbUq": {
+                "text_reJTzr": {
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h2><strong>STEP 1:</strong></h2>",
+                    "text": "<h2><strong>STEP 3:</strong></h2>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -1215,11 +1215,11 @@
                   },
                   "blocks": {}
                 },
-                "text_9ANTAL": {
+                "text_ARebBc": {
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Our team of experts at The Boot Repair Company receives worn DM's in need of refurbishment.</p>",
+                    "text": "<p>They're then listed on our Depop shop – ready for you to put them through their paces.</p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -1255,12 +1255,12 @@
                 }
               },
               "block_order": [
-                "image_teDLBE",
-                "text_EYAbUq",
-                "text_9ANTAL"
+                "image_zjHcGQ",
+                "text_reJTzr",
+                "text_ARebBc"
               ]
             },
-            "group_496hDt": {
+            "group_ktaQqk": {
               "type": "group",
               "name": "Grupo | Paso",
               "settings": {
@@ -1309,11 +1309,11 @@
                 "custom_css": ""
               },
               "blocks": {
-                "image_tJnmBW": {
+                "image_NBbm7Y": {
                   "type": "image",
                   "name": "t:names.image",
                   "settings": {
-                    "image": "shopify://shop_images/EVG_REWAIR_LP_HOWTO_1_MOBILE.webp",
+                    "image": "shopify://shop_images/EVG_REWAIR_LP_HOWTO_4_MOBILE.webp",
                     "link": "",
                     "image_ratio": "adapt",
                     "width": "fill",
@@ -1336,11 +1336,11 @@
                   },
                   "blocks": {}
                 },
-                "text_MRwygG": {
+                "text_6KVxD3": {
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h2><strong>STEP 1:</strong></h2>",
+                    "text": "<h2><strong>STEP 4:</strong></h2>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -1374,11 +1374,11 @@
                   },
                   "blocks": {}
                 },
-                "text_U8prkp": {
+                "text_EMe7iU": {
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Our team of experts at The Boot Repair Company receives worn DM's in need of refurbishment.</p>",
+                    "text": "<p>If you make a purchase, it will be shipped with recycled packaging that's as minimal as possible.</p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -1414,23 +1414,23 @@
                 }
               },
               "block_order": [
-                "image_tJnmBW",
-                "text_MRwygG",
-                "text_U8prkp"
+                "image_NBbm7Y",
+                "text_6KVxD3",
+                "text_EMe7iU"
               ]
             }
           },
           "block_order": [
-            "group_CPx9Q8",
-            "group_KkgVQm",
-            "group_byTke4",
-            "group_496hDt"
+            "group_tMnmPN",
+            "group_tWePyK",
+            "group_a6EnFh",
+            "group_ktaQqk"
           ]
         }
       },
       "block_order": [
-        "text_mcz3QF",
-        "group_tFftiY"
+        "text_KBiVUP",
+        "group_QxWbeb"
       ],
       "custom_css": [
         "p {color: white;}"
@@ -1845,7 +1845,7 @@
     "hero_rnKjKJ",
     "section_ParHWb",
     "section_wzHpWj",
-    "section_kfaLm3",
+    "section_X4VkEm",
     "section_3McjWy"
   ]
 }
