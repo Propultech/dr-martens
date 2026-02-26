@@ -67,6 +67,45 @@
       "default": ""
     },
     {
+      "type": "header",
+      "content": "Slider / scroll horizontal"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_slider",
+      "label": "Activar modo slider",
+      "info": "Los hijos se alinean en fila y se deslizan horizontalmente con scroll.",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "slider_on",
+      "label": "Activar en",
+      "options": [
+        {
+          "value": "both",
+          "label": "Desktop y móvil"
+        },
+        {
+          "value": "desktop",
+          "label": "Solo desktop"
+        },
+        {
+          "value": "mobile",
+          "label": "Solo móvil"
+        }
+      ],
+      "default": "both",
+      "visible_if": "{{ block.settings.enable_slider }}"
+    },
+    {
+      "type": "color",
+      "id": "slider_scrollbar_color",
+      "label": "Color del scrollbar",
+      "default": "#FFDD00",
+      "visible_if": "{{ block.settings.enable_slider }}"
+    },
+    {
       "type": "checkbox",
       "id": "vertical_on_mobile",
       "label": "t:settings.vertical_on_mobile",

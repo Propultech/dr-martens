@@ -3845,6 +3845,22 @@ slideshow-arrows .slideshow-control.slideshow-control--style-none {
   flex-basis: var(--size-style-width);
 }
 
+/* Mobile overrides for width variants */
+@media screen and (max-width: 749px) {
+  .layout-panel-flex--row>.group-block--width-mobile-fit {
+    flex: 0;
+  }
+
+  .layout-panel-flex--row>.group-block--width-mobile-fill {
+    flex: 1;
+  }
+
+  .layout-panel-flex--row>.group-block--width-mobile-custom {
+    flex: none;
+    flex-basis: var(--size-style-width-mobile);
+  }
+}
+
 /* Dimension utilities - Height */
 .group-block--height-fit {
   height: auto;
