@@ -700,7 +700,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<h2><strong>Novedades</strong></h2>",
+            "text": "<h2><strong>HOW IT WORKS</strong></h2>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "left",
