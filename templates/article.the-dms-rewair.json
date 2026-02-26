@@ -693,14 +693,14 @@
         "padding-inline-end-mobile": 0
       }
     },
-    "section_zMf8MH": {
+    "section_kfaLm3": {
       "type": "section",
       "blocks": {
-        "text_Xbxrwh": {
+        "text_mcz3QF": {
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<h2><strong>HOW IT WORKS</strong></h2>",
+            "text": "<h2><strong>Novedades</strong></h2>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "left",
@@ -734,14 +734,14 @@
           },
           "blocks": {}
         },
-        "group_BWRVnj": {
+        "group_tFftiY": {
           "type": "group",
           "name": "Grupo | Pasos",
           "settings": {
             "content_direction": "row",
             "visibility": "",
-            "enable_slider": false,
-            "slider_on": "both",
+            "enable_slider": true,
+            "slider_on": "mobile",
             "slider_scrollbar_color": "#ffdd00",
             "vertical_on_mobile": true,
             "horizontal_alignment": "flex-start",
@@ -783,7 +783,7 @@
             "custom_css": ""
           },
           "blocks": {
-            "group_AcHTRk": {
+            "group_CPx9Q8": {
               "type": "group",
               "name": "Grupo | Paso",
               "settings": {
@@ -801,8 +801,8 @@
                 "gap": 12,
                 "width": "fill",
                 "custom_width": 100,
-                "width_mobile": "fill",
-                "custom_width_mobile": 100,
+                "width_mobile": "custom",
+                "custom_width_mobile": 70,
                 "height": "fit",
                 "custom_height": 100,
                 "inherit_color_scheme": true,
@@ -826,13 +826,13 @@
                 "padding-inline-start": 0,
                 "padding-inline-end": 0,
                 "padding-block-start-mobile": 0,
-                "padding-block-end-mobile": 0,
+                "padding-block-end-mobile": 15,
                 "padding-inline-start-mobile": 0,
                 "padding-inline-end-mobile": 0,
                 "custom_css": ""
               },
               "blocks": {
-                "image_fwfkyR": {
+                "image_GkUJ7x": {
                   "type": "image",
                   "name": "t:names.image",
                   "settings": {
@@ -859,7 +859,7 @@
                   },
                   "blocks": {}
                 },
-                "text_ygNgMU": {
+                "text_mjkgnE": {
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
@@ -897,7 +897,7 @@
                   },
                   "blocks": {}
                 },
-                "text_V4RRxY": {
+                "text_4i9aUP": {
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
@@ -937,12 +937,12 @@
                 }
               },
               "block_order": [
-                "image_fwfkyR",
-                "text_ygNgMU",
-                "text_V4RRxY"
+                "image_GkUJ7x",
+                "text_mjkgnE",
+                "text_4i9aUP"
               ]
             },
-            "group_mEVti8": {
+            "group_KkgVQm": {
               "type": "group",
               "name": "Grupo | Paso",
               "settings": {
@@ -960,8 +960,8 @@
                 "gap": 12,
                 "width": "fill",
                 "custom_width": 100,
-                "width_mobile": "fill",
-                "custom_width_mobile": 100,
+                "width_mobile": "custom",
+                "custom_width_mobile": 70,
                 "height": "fit",
                 "custom_height": 100,
                 "inherit_color_scheme": true,
@@ -985,13 +985,13 @@
                 "padding-inline-start": 0,
                 "padding-inline-end": 0,
                 "padding-block-start-mobile": 0,
-                "padding-block-end-mobile": 0,
+                "padding-block-end-mobile": 15,
                 "padding-inline-start-mobile": 0,
                 "padding-inline-end-mobile": 0,
                 "custom_css": ""
               },
               "blocks": {
-                "image_fPBkaj": {
+                "image_3HKBcj": {
                   "type": "image",
                   "name": "t:names.image",
                   "settings": {
@@ -1018,7 +1018,7 @@
                   },
                   "blocks": {}
                 },
-                "text_KL7tJc": {
+                "text_zc4GbF": {
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
@@ -1056,7 +1056,7 @@
                   },
                   "blocks": {}
                 },
-                "text_rfPmej": {
+                "text_igPTnw": {
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
@@ -1096,12 +1096,12 @@
                 }
               },
               "block_order": [
-                "image_fPBkaj",
-                "text_KL7tJc",
-                "text_rfPmej"
+                "image_3HKBcj",
+                "text_zc4GbF",
+                "text_igPTnw"
               ]
             },
-            "group_nYxa4w": {
+            "group_byTke4": {
               "type": "group",
               "name": "Grupo | Paso",
               "settings": {
@@ -1119,8 +1119,8 @@
                 "gap": 12,
                 "width": "fill",
                 "custom_width": 100,
-                "width_mobile": "fill",
-                "custom_width_mobile": 100,
+                "width_mobile": "custom",
+                "custom_width_mobile": 70,
                 "height": "fit",
                 "custom_height": 100,
                 "inherit_color_scheme": true,
@@ -1144,13 +1144,13 @@
                 "padding-inline-start": 0,
                 "padding-inline-end": 0,
                 "padding-block-start-mobile": 0,
-                "padding-block-end-mobile": 0,
+                "padding-block-end-mobile": 15,
                 "padding-inline-start-mobile": 0,
                 "padding-inline-end-mobile": 0,
                 "custom_css": ""
               },
               "blocks": {
-                "image_38Wxkj": {
+                "image_teDLBE": {
                   "type": "image",
                   "name": "t:names.image",
                   "settings": {
@@ -1177,7 +1177,7 @@
                   },
                   "blocks": {}
                 },
-                "text_HzUKmN": {
+                "text_EYAbUq": {
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
@@ -1215,7 +1215,7 @@
                   },
                   "blocks": {}
                 },
-                "text_TUyTPL": {
+                "text_9ANTAL": {
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
@@ -1255,12 +1255,12 @@
                 }
               },
               "block_order": [
-                "image_38Wxkj",
-                "text_HzUKmN",
-                "text_TUyTPL"
+                "image_teDLBE",
+                "text_EYAbUq",
+                "text_9ANTAL"
               ]
             },
-            "group_rj7W4T": {
+            "group_496hDt": {
               "type": "group",
               "name": "Grupo | Paso",
               "settings": {
@@ -1278,8 +1278,8 @@
                 "gap": 12,
                 "width": "fill",
                 "custom_width": 100,
-                "width_mobile": "fill",
-                "custom_width_mobile": 100,
+                "width_mobile": "custom",
+                "custom_width_mobile": 70,
                 "height": "fit",
                 "custom_height": 100,
                 "inherit_color_scheme": true,
@@ -1303,13 +1303,13 @@
                 "padding-inline-start": 0,
                 "padding-inline-end": 0,
                 "padding-block-start-mobile": 0,
-                "padding-block-end-mobile": 0,
+                "padding-block-end-mobile": 15,
                 "padding-inline-start-mobile": 0,
                 "padding-inline-end-mobile": 0,
                 "custom_css": ""
               },
               "blocks": {
-                "image_DeLJhG": {
+                "image_tJnmBW": {
                   "type": "image",
                   "name": "t:names.image",
                   "settings": {
@@ -1336,7 +1336,7 @@
                   },
                   "blocks": {}
                 },
-                "text_zUi7Ft": {
+                "text_MRwygG": {
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
@@ -1374,7 +1374,7 @@
                   },
                   "blocks": {}
                 },
-                "text_EaCpdz": {
+                "text_U8prkp": {
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
@@ -1414,23 +1414,23 @@
                 }
               },
               "block_order": [
-                "image_DeLJhG",
-                "text_zUi7Ft",
-                "text_EaCpdz"
+                "image_tJnmBW",
+                "text_MRwygG",
+                "text_U8prkp"
               ]
             }
           },
           "block_order": [
-            "group_AcHTRk",
-            "group_mEVti8",
-            "group_nYxa4w",
-            "group_rj7W4T"
+            "group_CPx9Q8",
+            "group_KkgVQm",
+            "group_byTke4",
+            "group_496hDt"
           ]
         }
       },
       "block_order": [
-        "text_Xbxrwh",
-        "group_BWRVnj"
+        "text_mcz3QF",
+        "group_tFftiY"
       ],
       "custom_css": [
         "p {color: white;}"
@@ -1845,7 +1845,7 @@
     "hero_rnKjKJ",
     "section_ParHWb",
     "section_wzHpWj",
-    "section_zMf8MH",
+    "section_kfaLm3",
     "section_3McjWy"
   ]
 }
