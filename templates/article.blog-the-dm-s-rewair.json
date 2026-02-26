@@ -714,7 +714,7 @@
             "padding-block-end": 30,
             "padding-inline-start": 0,
             "padding-inline-end": 0,
-            "mobile_padding_override": false,
+            "mobile_padding_override": true,
             "padding-block-start-mobile": 0,
             "padding-block-end-mobile": 0,
             "padding-inline-start-mobile": 0,
@@ -1438,8 +1438,8 @@
         "padding-block-end": 55,
         "padding-inline-start": 0,
         "padding-inline-end": 0,
-        "padding-block-start-mobile": 0,
-        "padding-block-end-mobile": 0,
+        "padding-block-start-mobile": 25,
+        "padding-block-end-mobile": 15,
         "padding-inline-start-mobile": 0,
         "padding-inline-end-mobile": 0
       }
@@ -1455,10 +1455,10 @@
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "left",
-            "type_preset": "rte",
-            "font": "var(--font-body--family)",
-            "font_size": "1rem",
-            "font_size_mobile": "",
+            "type_preset": "custom",
+            "font": "var(--font-accent--family)",
+            "font_size": "1.5rem",
+            "font_size_mobile": "1.25rem",
             "line_height": "normal",
             "letter_spacing": "normal",
             "case": "none",
@@ -1477,9 +1477,9 @@
             "padding-block-end": 40,
             "padding-inline-start": 0,
             "padding-inline-end": 0,
-            "mobile_padding_override": false,
+            "mobile_padding_override": true,
             "padding-block-start-mobile": 0,
-            "padding-block-end-mobile": 0,
+            "padding-block-end-mobile": 40,
             "padding-inline-start-mobile": 0,
             "padding-inline-end-mobile": 0
           },
@@ -1563,7 +1563,7 @@
               "type": "_accordion-row",
               "settings": {
                 "heading": "Why have DM’s launched ReWair?",
-                "open_by_default": true,
+                "open_by_default": false,
                 "icon": "none",
                 "width": 20
               },
@@ -1614,7 +1614,7 @@
               "type": "_accordion-row",
               "settings": {
                 "heading": "Who are The Boot Repair Company?",
-                "open_by_default": true,
+                "open_by_default": false,
                 "icon": "none",
                 "width": 20
               },
@@ -1665,7 +1665,7 @@
               "type": "_accordion-row",
               "settings": {
                 "heading": "What condition will my ReWair product be in?",
-                "open_by_default": true,
+                "open_by_default": false,
                 "icon": "none",
                 "width": 20
               },
@@ -1716,7 +1716,7 @@
               "type": "_accordion-row",
               "settings": {
                 "heading": "What is the difference between the conditions?",
-                "open_by_default": true,
+                "open_by_default": false,
                 "icon": "none",
                 "width": 20
               },
@@ -1806,8 +1806,8 @@
         "padding-block-end": 50,
         "padding-inline-start": 0,
         "padding-inline-end": 0,
-        "padding-block-start-mobile": 0,
-        "padding-block-end-mobile": 0,
+        "padding-block-start-mobile": 35,
+        "padding-block-end-mobile": 35,
         "padding-inline-start-mobile": 0,
         "padding-inline-end-mobile": 0
       }
