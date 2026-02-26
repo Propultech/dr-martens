@@ -242,6 +242,9 @@
           "settings": {
             "content_direction": "row",
             "visibility": "",
+            "enable_slider": false,
+            "slider_on": "both",
+            "slider_scrollbar_color": "#ffdd00",
             "vertical_on_mobile": true,
             "horizontal_alignment": "center",
             "vertical_alignment": "center",
@@ -372,6 +375,9 @@
           "settings": {
             "content_direction": "column",
             "visibility": "",
+            "enable_slider": false,
+            "slider_on": "both",
+            "slider_scrollbar_color": "#ffdd00",
             "vertical_on_mobile": true,
             "horizontal_alignment": "flex-start",
             "vertical_alignment": "center",
@@ -418,6 +424,9 @@
               "settings": {
                 "content_direction": "row",
                 "visibility": "",
+                "enable_slider": false,
+                "slider_on": "both",
+                "slider_scrollbar_color": "#ffdd00",
                 "vertical_on_mobile": true,
                 "horizontal_alignment": "flex-start",
                 "vertical_alignment": "center",
@@ -491,6 +500,9 @@
                   "settings": {
                     "content_direction": "column",
                     "visibility": "",
+                    "enable_slider": false,
+                    "slider_on": "both",
+                    "slider_scrollbar_color": "#ffdd00",
                     "vertical_on_mobile": true,
                     "horizontal_alignment": "flex-start",
                     "vertical_alignment": "center",
@@ -681,14 +693,14 @@
         "padding-inline-end-mobile": 0
       }
     },
-    "section_zMf8MH": {
+    "section_hXxJze": {
       "type": "section",
       "blocks": {
-        "text_Xbxrwh": {
+        "text_8yJM9X": {
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<h2><strong>Novedades</strong></h2>",
+            "text": "<h2><strong>HOW IT WORKS</strong></h2>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "left",
@@ -722,12 +734,15 @@
           },
           "blocks": {}
         },
-        "group_BWRVnj": {
+        "group_pxyDxj": {
           "type": "group",
           "name": "Grupo | Pasos",
           "settings": {
             "content_direction": "row",
             "visibility": "",
+            "enable_slider": true,
+            "slider_on": "mobile",
+            "slider_scrollbar_color": "#ffdd00",
             "vertical_on_mobile": true,
             "horizontal_alignment": "flex-start",
             "vertical_alignment": "center",
@@ -768,12 +783,15 @@
             "custom_css": ""
           },
           "blocks": {
-            "group_AcHTRk": {
+            "group_V67w8y": {
               "type": "group",
               "name": "Grupo | Paso",
               "settings": {
                 "content_direction": "column",
                 "visibility": "",
+                "enable_slider": false,
+                "slider_on": "both",
+                "slider_scrollbar_color": "#ffdd00",
                 "vertical_on_mobile": true,
                 "horizontal_alignment": "flex-start",
                 "vertical_alignment": "center",
@@ -783,8 +801,8 @@
                 "gap": 12,
                 "width": "fill",
                 "custom_width": 100,
-                "width_mobile": "fill",
-                "custom_width_mobile": 100,
+                "width_mobile": "custom",
+                "custom_width_mobile": 70,
                 "height": "fit",
                 "custom_height": 100,
                 "inherit_color_scheme": true,
@@ -808,13 +826,13 @@
                 "padding-inline-start": 0,
                 "padding-inline-end": 0,
                 "padding-block-start-mobile": 0,
-                "padding-block-end-mobile": 0,
+                "padding-block-end-mobile": 15,
                 "padding-inline-start-mobile": 0,
                 "padding-inline-end-mobile": 0,
                 "custom_css": ""
               },
               "blocks": {
-                "image_fwfkyR": {
+                "image_4JhMHe": {
                   "type": "image",
                   "name": "t:names.image",
                   "settings": {
@@ -841,7 +859,7 @@
                   },
                   "blocks": {}
                 },
-                "text_ygNgMU": {
+                "text_G9Rnwm": {
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
@@ -879,7 +897,7 @@
                   },
                   "blocks": {}
                 },
-                "text_V4RRxY": {
+                "text_a74FpU": {
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
@@ -919,17 +937,20 @@
                 }
               },
               "block_order": [
-                "image_fwfkyR",
-                "text_ygNgMU",
-                "text_V4RRxY"
+                "image_4JhMHe",
+                "text_G9Rnwm",
+                "text_a74FpU"
               ]
             },
-            "group_mEVti8": {
+            "group_Pq3imp": {
               "type": "group",
               "name": "Grupo | Paso",
               "settings": {
                 "content_direction": "column",
                 "visibility": "",
+                "enable_slider": false,
+                "slider_on": "both",
+                "slider_scrollbar_color": "#ffdd00",
                 "vertical_on_mobile": true,
                 "horizontal_alignment": "flex-start",
                 "vertical_alignment": "center",
@@ -939,8 +960,8 @@
                 "gap": 12,
                 "width": "fill",
                 "custom_width": 100,
-                "width_mobile": "fill",
-                "custom_width_mobile": 100,
+                "width_mobile": "custom",
+                "custom_width_mobile": 70,
                 "height": "fit",
                 "custom_height": 100,
                 "inherit_color_scheme": true,
@@ -964,13 +985,13 @@
                 "padding-inline-start": 0,
                 "padding-inline-end": 0,
                 "padding-block-start-mobile": 0,
-                "padding-block-end-mobile": 0,
+                "padding-block-end-mobile": 15,
                 "padding-inline-start-mobile": 0,
                 "padding-inline-end-mobile": 0,
                 "custom_css": ""
               },
               "blocks": {
-                "image_fPBkaj": {
+                "image_rJxWLp": {
                   "type": "image",
                   "name": "t:names.image",
                   "settings": {
@@ -997,7 +1018,7 @@
                   },
                   "blocks": {}
                 },
-                "text_KL7tJc": {
+                "text_gimTiF": {
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
@@ -1035,7 +1056,7 @@
                   },
                   "blocks": {}
                 },
-                "text_rfPmej": {
+                "text_BmEmfw": {
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
@@ -1075,17 +1096,20 @@
                 }
               },
               "block_order": [
-                "image_fPBkaj",
-                "text_KL7tJc",
-                "text_rfPmej"
+                "image_rJxWLp",
+                "text_gimTiF",
+                "text_BmEmfw"
               ]
             },
-            "group_nYxa4w": {
+            "group_maQcfN": {
               "type": "group",
               "name": "Grupo | Paso",
               "settings": {
                 "content_direction": "column",
                 "visibility": "",
+                "enable_slider": false,
+                "slider_on": "both",
+                "slider_scrollbar_color": "#ffdd00",
                 "vertical_on_mobile": true,
                 "horizontal_alignment": "flex-start",
                 "vertical_alignment": "center",
@@ -1095,8 +1119,8 @@
                 "gap": 12,
                 "width": "fill",
                 "custom_width": 100,
-                "width_mobile": "fill",
-                "custom_width_mobile": 100,
+                "width_mobile": "custom",
+                "custom_width_mobile": 70,
                 "height": "fit",
                 "custom_height": 100,
                 "inherit_color_scheme": true,
@@ -1120,13 +1144,13 @@
                 "padding-inline-start": 0,
                 "padding-inline-end": 0,
                 "padding-block-start-mobile": 0,
-                "padding-block-end-mobile": 0,
+                "padding-block-end-mobile": 15,
                 "padding-inline-start-mobile": 0,
                 "padding-inline-end-mobile": 0,
                 "custom_css": ""
               },
               "blocks": {
-                "image_38Wxkj": {
+                "image_YhyQXn": {
                   "type": "image",
                   "name": "t:names.image",
                   "settings": {
@@ -1153,7 +1177,7 @@
                   },
                   "blocks": {}
                 },
-                "text_HzUKmN": {
+                "text_3ndgyz": {
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
@@ -1191,7 +1215,7 @@
                   },
                   "blocks": {}
                 },
-                "text_TUyTPL": {
+                "text_qEUVtk": {
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
@@ -1231,17 +1255,20 @@
                 }
               },
               "block_order": [
-                "image_38Wxkj",
-                "text_HzUKmN",
-                "text_TUyTPL"
+                "image_YhyQXn",
+                "text_3ndgyz",
+                "text_qEUVtk"
               ]
             },
-            "group_rj7W4T": {
+            "group_Xf3bRn": {
               "type": "group",
               "name": "Grupo | Paso",
               "settings": {
                 "content_direction": "column",
                 "visibility": "",
+                "enable_slider": false,
+                "slider_on": "both",
+                "slider_scrollbar_color": "#ffdd00",
                 "vertical_on_mobile": true,
                 "horizontal_alignment": "flex-start",
                 "vertical_alignment": "center",
@@ -1251,8 +1278,8 @@
                 "gap": 12,
                 "width": "fill",
                 "custom_width": 100,
-                "width_mobile": "fill",
-                "custom_width_mobile": 100,
+                "width_mobile": "custom",
+                "custom_width_mobile": 70,
                 "height": "fit",
                 "custom_height": 100,
                 "inherit_color_scheme": true,
@@ -1276,13 +1303,13 @@
                 "padding-inline-start": 0,
                 "padding-inline-end": 0,
                 "padding-block-start-mobile": 0,
-                "padding-block-end-mobile": 0,
+                "padding-block-end-mobile": 15,
                 "padding-inline-start-mobile": 0,
                 "padding-inline-end-mobile": 0,
                 "custom_css": ""
               },
               "blocks": {
-                "image_DeLJhG": {
+                "image_xi7xYU": {
                   "type": "image",
                   "name": "t:names.image",
                   "settings": {
@@ -1309,7 +1336,7 @@
                   },
                   "blocks": {}
                 },
-                "text_zUi7Ft": {
+                "text_chdNAP": {
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
@@ -1347,7 +1374,7 @@
                   },
                   "blocks": {}
                 },
-                "text_EaCpdz": {
+                "text_J7BJGT": {
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
@@ -1387,23 +1414,23 @@
                 }
               },
               "block_order": [
-                "image_DeLJhG",
-                "text_zUi7Ft",
-                "text_EaCpdz"
+                "image_xi7xYU",
+                "text_chdNAP",
+                "text_J7BJGT"
               ]
             }
           },
           "block_order": [
-            "group_AcHTRk",
-            "group_mEVti8",
-            "group_nYxa4w",
-            "group_rj7W4T"
+            "group_V67w8y",
+            "group_Pq3imp",
+            "group_maQcfN",
+            "group_Xf3bRn"
           ]
         }
       },
       "block_order": [
-        "text_Xbxrwh",
-        "group_BWRVnj"
+        "text_8yJM9X",
+        "group_pxyDxj"
       ],
       "custom_css": [
         "p {color: white;}"
@@ -1818,7 +1845,7 @@
     "hero_rnKjKJ",
     "section_ParHWb",
     "section_wzHpWj",
-    "section_zMf8MH",
+    "section_hXxJze",
     "section_3McjWy"
   ]
 }
