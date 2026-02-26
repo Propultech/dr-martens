@@ -1443,6 +1443,374 @@
         "padding-inline-start-mobile": 0,
         "padding-inline-end-mobile": 0
       }
+    },
+    "section_axqLmK": {
+      "type": "section",
+      "blocks": {
+        "text_DwLYMw": {
+          "type": "text",
+          "name": "t:names.heading",
+          "settings": {
+            "text": "<h2>FREQUENTLY ASKED QUESTIONS</h2>",
+            "width": "fit-content",
+            "max_width": "normal",
+            "alignment": "left",
+            "type_preset": "rte",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "font_size_mobile": "",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "var(--color-foreground)",
+            "italic_color": "",
+            "strong_color": "",
+            "link_font_size": "",
+            "link_font_size_mobile": "",
+            "background": false,
+            "line_highlight": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "visibility": "all",
+            "padding-block-start": 0,
+            "padding-block-end": 40,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0,
+            "mobile_padding_override": false,
+            "padding-block-start-mobile": 0,
+            "padding-block-end-mobile": 0,
+            "padding-inline-start-mobile": 0,
+            "padding-inline-end-mobile": 0
+          },
+          "blocks": {}
+        },
+        "accordion_Wg8t4B": {
+          "type": "accordion",
+          "name": "t:names.accordion",
+          "settings": {
+            "icon": "plus",
+            "dividers": true,
+            "type_preset": "h4",
+            "inherit_color_scheme": true,
+            "color_scheme": "",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0,
+            "padding-block-start-mobile": 0,
+            "padding-block-end-mobile": 0,
+            "padding-inline-start-mobile": 0,
+            "padding-inline-end-mobile": 0
+          },
+          "blocks": {
+            "accordion_row_UcHXkp": {
+              "type": "_accordion-row",
+              "settings": {
+                "heading": "How does ReWair work?",
+                "open_by_default": true,
+                "icon": "none",
+                "width": 20
+              },
+              "blocks": {
+                "text_XtUnEi": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p>We take worn DM’s in need of restoration, and clean them inside and out using Micro-Fresh®. Our skilled repairers at The Boot Repair Company then fix any faults. Restored DM’s are then boxed up ready to be sold through our ReWair Depop shop.</p>",
+                    "width": "100%",
+                    "max_width": "none",
+                    "alignment": "left",
+                    "type_preset": "rte",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "font_size_mobile": "",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "color": "var(--color-foreground)",
+                    "italic_color": "",
+                    "strong_color": "",
+                    "link_font_size": "",
+                    "link_font_size_mobile": "",
+                    "background": false,
+                    "line_highlight": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "visibility": "all",
+                    "padding-block-start": 15,
+                    "padding-block-end": 15,
+                    "padding-inline-start": 5,
+                    "padding-inline-end": 5,
+                    "mobile_padding_override": false,
+                    "padding-block-start-mobile": 0,
+                    "padding-block-end-mobile": 0,
+                    "padding-inline-start-mobile": 0,
+                    "padding-inline-end-mobile": 0
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "text_XtUnEi"
+              ]
+            },
+            "accordion_row_rNtd38": {
+              "type": "_accordion-row",
+              "settings": {
+                "heading": "Why have DM’s launched ReWair?",
+                "open_by_default": true,
+                "icon": "none",
+                "width": 20
+              },
+              "blocks": {
+                "text_QGEdnh": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p>We have committed to offering more options for used footwear, helping our wearers maximise the life of their DM's. ReWair is our next step forward on our path towards leaving things better than how we found them – and making the most of every pair of Doc’s.</p>",
+                    "width": "100%",
+                    "max_width": "none",
+                    "alignment": "left",
+                    "type_preset": "rte",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "font_size_mobile": "",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "color": "var(--color-foreground)",
+                    "italic_color": "",
+                    "strong_color": "",
+                    "link_font_size": "",
+                    "link_font_size_mobile": "",
+                    "background": false,
+                    "line_highlight": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "visibility": "all",
+                    "padding-block-start": 15,
+                    "padding-block-end": 15,
+                    "padding-inline-start": 5,
+                    "padding-inline-end": 5,
+                    "mobile_padding_override": false,
+                    "padding-block-start-mobile": 0,
+                    "padding-block-end-mobile": 0,
+                    "padding-inline-start-mobile": 0,
+                    "padding-inline-end-mobile": 0
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "text_QGEdnh"
+              ]
+            },
+            "accordion_row_Qedtzn": {
+              "type": "_accordion-row",
+              "settings": {
+                "heading": "Who are The Boot Repair Company?",
+                "open_by_default": true,
+                "icon": "none",
+                "width": 20
+              },
+              "blocks": {
+                "text_GTeBK9": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p>The Boot Repair Company provides a quality, skilled service that helps restore damaged or worn footwear back to its former glory and onto our wearers' feet. Every repair goes to their UK workshop, where they use the same machines that construct our footwear. You can find more info on our <a href=\"https://www.drmartens.com/uk/en_gb/boots-shoes-repair-service\"><span style=\"text-decoration:underline\">repairs page</span></a>.</p>",
+                    "width": "100%",
+                    "max_width": "none",
+                    "alignment": "left",
+                    "type_preset": "rte",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "font_size_mobile": "",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "color": "var(--color-foreground)",
+                    "italic_color": "",
+                    "strong_color": "",
+                    "link_font_size": "",
+                    "link_font_size_mobile": "",
+                    "background": false,
+                    "line_highlight": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "visibility": "all",
+                    "padding-block-start": 15,
+                    "padding-block-end": 15,
+                    "padding-inline-start": 5,
+                    "padding-inline-end": 5,
+                    "mobile_padding_override": false,
+                    "padding-block-start-mobile": 0,
+                    "padding-block-end-mobile": 0,
+                    "padding-inline-start-mobile": 0,
+                    "padding-inline-end-mobile": 0
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "text_GTeBK9"
+              ]
+            },
+            "accordion_row_DanCCz": {
+              "type": "_accordion-row",
+              "settings": {
+                "heading": "What condition will my ReWair product be in?",
+                "open_by_default": true,
+                "icon": "none",
+                "width": 20
+              },
+              "blocks": {
+                "text_wg3Wc7": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p>We have three grades of footwear: ‘Excellent’, ‘Good’ and 'Fair'. All ReWair silhouettes are cleaned and sanitised inside and out to a professional standard using Micro-Fresh®.</p>",
+                    "width": "100%",
+                    "max_width": "none",
+                    "alignment": "left",
+                    "type_preset": "rte",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "font_size_mobile": "",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "color": "var(--color-foreground)",
+                    "italic_color": "",
+                    "strong_color": "",
+                    "link_font_size": "",
+                    "link_font_size_mobile": "",
+                    "background": false,
+                    "line_highlight": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "visibility": "all",
+                    "padding-block-start": 15,
+                    "padding-block-end": 15,
+                    "padding-inline-start": 5,
+                    "padding-inline-end": 5,
+                    "mobile_padding_override": false,
+                    "padding-block-start-mobile": 0,
+                    "padding-block-end-mobile": 0,
+                    "padding-inline-start-mobile": 0,
+                    "padding-inline-end-mobile": 0
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "text_wg3Wc7"
+              ]
+            },
+            "accordion_row_JNc6xi": {
+              "type": "_accordion-row",
+              "settings": {
+                "heading": "What is the difference between the conditions?",
+                "open_by_default": true,
+                "icon": "none",
+                "width": 20
+              },
+              "blocks": {
+                "text_FYpwrz": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p><strong>Excellent:</strong></p><ul><li>Some components like zips, insoles and eyelets may have been replaced</li><li>There may be some small signs of wear, minor defects, light marking or light creasing</li><li>The sole may show some small signs of wear Insoles will be either new or cleaned and sanitised so they are like new</li><li>All ReWair styles are cleaned and sanitised inside and out to a professional standard using Micro-Fresh®</li></ul><p><strong>Good:</strong></p><ul><li>Some components like zips, insoles and eyelets may have been replaced</li><li>There may be signs of wear, minor defects, moderate marking or creasing</li><li>The sole may show signs of heavier wear, but will always have tread left</li><li>Insoles will be either new or cleaned and sanitised but may show signs of wear</li><li>All ReWair product is cleaned and sanitised inside and out to a professional standard using Micro-Fresh®</li></ul><p><strong>Fair:</strong></p><ul><li>Some components like zips, insoles and eyelets may have been replaced</li><li>There may be obvious signs of wear, substantial defects, considerable marking, scuffing or creasing</li><li>The sole may show signs of heavier wear, but will always have tread left</li><li>Insoles will be either new or cleaned and sanitised but may show signs of wear</li><li>All ReWair product is cleaned and sanitised inside and out to a professional standard using Micro-Fresh®</li></ul>",
+                    "width": "100%",
+                    "max_width": "none",
+                    "alignment": "left",
+                    "type_preset": "rte",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "font_size_mobile": "",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "color": "var(--color-foreground)",
+                    "italic_color": "",
+                    "strong_color": "",
+                    "link_font_size": "",
+                    "link_font_size_mobile": "",
+                    "background": false,
+                    "line_highlight": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "visibility": "all",
+                    "padding-block-start": 15,
+                    "padding-block-end": 15,
+                    "padding-inline-start": 5,
+                    "padding-inline-end": 5,
+                    "mobile_padding_override": false,
+                    "padding-block-start-mobile": 0,
+                    "padding-block-end-mobile": 0,
+                    "padding-inline-start-mobile": 0,
+                    "padding-inline-end-mobile": 0
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "text_FYpwrz"
+              ]
+            }
+          },
+          "block_order": [
+            "accordion_row_UcHXkp",
+            "accordion_row_rNtd38",
+            "accordion_row_Qedtzn",
+            "accordion_row_DanCCz",
+            "accordion_row_JNc6xi"
+          ]
+        }
+      },
+      "block_order": [
+        "text_DwLYMw",
+        "accordion_Wg8t4B"
+      ],
+      "name": "t:names.custom_section",
+      "settings": {
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "flex-start",
+        "vertical_alignment_flex_direction_column": "flex-start",
+        "gap": 0,
+        "section_width": "page-width",
+        "section_height": "",
+        "section_height_custom": 50,
+        "color_scheme": "",
+        "background_media": "none",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_radius": 0,
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "padding-block-start": 50,
+        "padding-block-end": 50,
+        "padding-inline-start": 0,
+        "padding-inline-end": 0,
+        "padding-block-start-mobile": 0,
+        "padding-block-end-mobile": 0,
+        "padding-inline-start-mobile": 0,
+        "padding-inline-end-mobile": 0
+      }
     }
   },
   "order": [
@@ -1450,6 +1818,7 @@
     "hero_UiiF7X",
     "section_7BNbfp",
     "section_4WXAHc",
-    "section_pBUNFP"
+    "section_pBUNFP",
+    "section_axqLmK"
   ]
 }
