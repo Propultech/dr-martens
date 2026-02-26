@@ -242,6 +242,9 @@
           "settings": {
             "content_direction": "row",
             "visibility": "",
+            "enable_slider": false,
+            "slider_on": "both",
+            "slider_scrollbar_color": "#ffdd00",
             "vertical_on_mobile": true,
             "horizontal_alignment": "center",
             "vertical_alignment": "center",
@@ -372,6 +375,9 @@
           "settings": {
             "content_direction": "column",
             "visibility": "",
+            "enable_slider": false,
+            "slider_on": "both",
+            "slider_scrollbar_color": "#ffdd00",
             "vertical_on_mobile": true,
             "horizontal_alignment": "flex-start",
             "vertical_alignment": "center",
@@ -418,6 +424,9 @@
               "settings": {
                 "content_direction": "row",
                 "visibility": "",
+                "enable_slider": false,
+                "slider_on": "both",
+                "slider_scrollbar_color": "#ffdd00",
                 "vertical_on_mobile": true,
                 "horizontal_alignment": "flex-start",
                 "vertical_alignment": "center",
@@ -491,6 +500,9 @@
                   "settings": {
                     "content_direction": "column",
                     "visibility": "",
+                    "enable_slider": false,
+                    "slider_on": "both",
+                    "slider_scrollbar_color": "#ffdd00",
                     "vertical_on_mobile": true,
                     "horizontal_alignment": "flex-start",
                     "vertical_alignment": "center",
@@ -688,7 +700,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<h2><strong>Novedades</strong></h2>",
+            "text": "<h2><strong>HOW IT WORKS</strong></h2>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "left",
@@ -728,6 +740,9 @@
           "settings": {
             "content_direction": "row",
             "visibility": "",
+            "enable_slider": false,
+            "slider_on": "both",
+            "slider_scrollbar_color": "#ffdd00",
             "vertical_on_mobile": true,
             "horizontal_alignment": "flex-start",
             "vertical_alignment": "center",
@@ -774,6 +789,9 @@
               "settings": {
                 "content_direction": "column",
                 "visibility": "",
+                "enable_slider": false,
+                "slider_on": "both",
+                "slider_scrollbar_color": "#ffdd00",
                 "vertical_on_mobile": true,
                 "horizontal_alignment": "flex-start",
                 "vertical_alignment": "center",
@@ -930,6 +948,9 @@
               "settings": {
                 "content_direction": "column",
                 "visibility": "",
+                "enable_slider": false,
+                "slider_on": "both",
+                "slider_scrollbar_color": "#ffdd00",
                 "vertical_on_mobile": true,
                 "horizontal_alignment": "flex-start",
                 "vertical_alignment": "center",
@@ -1086,6 +1107,9 @@
               "settings": {
                 "content_direction": "column",
                 "visibility": "",
+                "enable_slider": false,
+                "slider_on": "both",
+                "slider_scrollbar_color": "#ffdd00",
                 "vertical_on_mobile": true,
                 "horizontal_alignment": "flex-start",
                 "vertical_alignment": "center",
@@ -1242,6 +1266,9 @@
               "settings": {
                 "content_direction": "column",
                 "visibility": "",
+                "enable_slider": false,
+                "slider_on": "both",
+                "slider_scrollbar_color": "#ffdd00",
                 "vertical_on_mobile": true,
                 "horizontal_alignment": "flex-start",
                 "vertical_alignment": "center",
