@@ -16,8 +16,8 @@
           "type": "_cart-title",
           "static": true,
           "settings": {
-            "title": "Cart",
-            "show_count": true,
+            "title": "Carrito",
+            "show_count": false,
             "type_preset": "h4",
             "alignment": "left",
             "padding-block-start": 0,
@@ -54,9 +54,9 @@
           "type": "_cart-summary",
           "static": true,
           "settings": {
-            "extend_summary": true,
+            "extend_summary": false,
             "inherit_color_scheme": false,
-            "color_scheme": "scheme-2",
+            "color_scheme": "scheme-f48d3ffd-3906-441c-a0dc-7151306deb8a",
             "border": "none",
             "border_width": 1,
             "border_opacity": 100,
@@ -146,6 +146,7 @@
             "product_list_button_eibbma": {
               "type": "_product-list-button",
               "name": "t:names.product_list_button",
+              "disabled": true,
               "settings": {
                 "label": "Ver todos",
                 "open_in_new_tab": false,

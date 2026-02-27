@@ -693,10 +693,10 @@
         "padding-inline-end-mobile": 0
       }
     },
-    "section_X4VkEm": {
+    "section_hXxJze": {
       "type": "section",
       "blocks": {
-        "text_KBiVUP": {
+        "text_8yJM9X": {
           "type": "text",
           "name": "t:names.heading",
           "settings": {
@@ -734,7 +734,7 @@
           },
           "blocks": {}
         },
-        "group_QxWbeb": {
+        "group_pxyDxj": {
           "type": "group",
           "name": "Grupo | Pasos",
           "settings": {
@@ -783,7 +783,7 @@
             "custom_css": ""
           },
           "blocks": {
-            "group_tMnmPN": {
+            "group_V67w8y": {
               "type": "group",
               "name": "Grupo | Paso",
               "settings": {
@@ -832,7 +832,7 @@
                 "custom_css": ""
               },
               "blocks": {
-                "image_DWEBXa": {
+                "image_4JhMHe": {
                   "type": "image",
                   "name": "t:names.image",
                   "settings": {
@@ -859,7 +859,7 @@
                   },
                   "blocks": {}
                 },
-                "text_mqtqQY": {
+                "text_G9Rnwm": {
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
@@ -897,7 +897,7 @@
                   },
                   "blocks": {}
                 },
-                "text_YFfnpG": {
+                "text_a74FpU": {
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
@@ -937,12 +937,12 @@
                 }
               },
               "block_order": [
-                "image_DWEBXa",
-                "text_mqtqQY",
-                "text_YFfnpG"
+                "image_4JhMHe",
+                "text_G9Rnwm",
+                "text_a74FpU"
               ]
             },
-            "group_tWePyK": {
+            "group_Pq3imp": {
               "type": "group",
               "name": "Grupo | Paso",
               "settings": {
@@ -991,7 +991,7 @@
                 "custom_css": ""
               },
               "blocks": {
-                "image_UJdVNw": {
+                "image_rJxWLp": {
                   "type": "image",
                   "name": "t:names.image",
                   "settings": {
@@ -1018,7 +1018,7 @@
                   },
                   "blocks": {}
                 },
-                "text_HF3aDQ": {
+                "text_gimTiF": {
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
@@ -1056,7 +1056,7 @@
                   },
                   "blocks": {}
                 },
-                "text_GRV3XV": {
+                "text_BmEmfw": {
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
@@ -1096,12 +1096,12 @@
                 }
               },
               "block_order": [
-                "image_UJdVNw",
-                "text_HF3aDQ",
-                "text_GRV3XV"
+                "image_rJxWLp",
+                "text_gimTiF",
+                "text_BmEmfw"
               ]
             },
-            "group_a6EnFh": {
+            "group_maQcfN": {
               "type": "group",
               "name": "Grupo | Paso",
               "settings": {
@@ -1150,7 +1150,7 @@
                 "custom_css": ""
               },
               "blocks": {
-                "image_zjHcGQ": {
+                "image_YhyQXn": {
                   "type": "image",
                   "name": "t:names.image",
                   "settings": {
@@ -1177,7 +1177,7 @@
                   },
                   "blocks": {}
                 },
-                "text_reJTzr": {
+                "text_3ndgyz": {
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
@@ -1215,7 +1215,7 @@
                   },
                   "blocks": {}
                 },
-                "text_ARebBc": {
+                "text_qEUVtk": {
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
@@ -1255,12 +1255,12 @@
                 }
               },
               "block_order": [
-                "image_zjHcGQ",
-                "text_reJTzr",
-                "text_ARebBc"
+                "image_YhyQXn",
+                "text_3ndgyz",
+                "text_qEUVtk"
               ]
             },
-            "group_ktaQqk": {
+            "group_Xf3bRn": {
               "type": "group",
               "name": "Grupo | Paso",
               "settings": {
@@ -1309,7 +1309,7 @@
                 "custom_css": ""
               },
               "blocks": {
-                "image_NBbm7Y": {
+                "image_xi7xYU": {
                   "type": "image",
                   "name": "t:names.image",
                   "settings": {
@@ -1336,7 +1336,7 @@
                   },
                   "blocks": {}
                 },
-                "text_6KVxD3": {
+                "text_chdNAP": {
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
@@ -1374,7 +1374,7 @@
                   },
                   "blocks": {}
                 },
-                "text_EMe7iU": {
+                "text_J7BJGT": {
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
@@ -1414,23 +1414,23 @@
                 }
               },
               "block_order": [
-                "image_NBbm7Y",
-                "text_6KVxD3",
-                "text_EMe7iU"
+                "image_xi7xYU",
+                "text_chdNAP",
+                "text_J7BJGT"
               ]
             }
           },
           "block_order": [
-            "group_tMnmPN",
-            "group_tWePyK",
-            "group_a6EnFh",
-            "group_ktaQqk"
+            "group_V67w8y",
+            "group_Pq3imp",
+            "group_maQcfN",
+            "group_Xf3bRn"
           ]
         }
       },
       "block_order": [
-        "text_KBiVUP",
-        "group_QxWbeb"
+        "text_8yJM9X",
+        "group_pxyDxj"
       ],
       "custom_css": [
         "p {color: white;}"
@@ -1845,7 +1845,7 @@
     "hero_rnKjKJ",
     "section_ParHWb",
     "section_wzHpWj",
-    "section_X4VkEm",
+    "section_hXxJze",
     "section_3McjWy"
   ]
 }
