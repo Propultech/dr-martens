@@ -7,6 +7,7 @@
   <yotpo-review-widget
     class="yotpo-review-block size-style"
     style="{% render 'size-style', settings: block_settings %}"
+    data-hide-empty="{{ block_settings.hide_empty_reviews }}"
     {{ block.shopify_attributes }}
   >
     <div
@@ -25,6 +26,36 @@
     }
   }
 
+  // Watches a widget until Yotpo finishes rendering, then hides it if it has 0 reviews.
+  // We observe the subtree for any star element to appear — only then we decide,
+  // avoiding the race condition where data-yotpo-element-loaded is set before stars are in the DOM.
+  function watchAndHideEmptyWidget(widget) {
+    function checkAndHide() {
+      const hasReviews = widget.querySelector('.yotpo-sr-star-full, .yotpo-sr-star-half');
+      widget.style.display = hasReviews ? '' : 'none';
+    }
+
+    // If Yotpo already rendered stars, act immediately.
+    if (widget.querySelector('.yotpo-sr-star-full, .yotpo-sr-star-half, .yotpo-sr-star-empty')) {
+      checkAndHide();
+      return;
+    }
+
+    // Otherwise, wait for any star to appear in the subtree.
+    const observer = new MutationObserver((_mutations, obs) => {
+      if (widget.querySelector('.yotpo-sr-star-full, .yotpo-sr-star-half, .yotpo-sr-star-empty')) {
+        obs.disconnect();
+        checkAndHide();
+      }
+    });
+    observer.observe(widget, { childList: true, subtree: true });
+  }
+
+  // Applies hide-empty logic to all widgets that have the flag enabled.
+  function applyHideEmpty() {
+    document.querySelectorAll('yotpo-review-widget[data-hide-empty="true"]').forEach(watchAndHideEmptyWidget);
+  }
+
   // Handles initial load and infinite-scroll appends.
   if (!customElements.get('yotpo-review-widget')) {
     customElements.define(
@@ -32,6 +63,9 @@
       class YotpoReviewWidget extends HTMLElement {
         connectedCallback() {
           setTimeout(yotpoInit, 150);
+          if (this.dataset.hideEmpty === 'true') {
+            watchAndHideEmptyWidget(this);
+          }
         }
       }
     );
@@ -41,7 +75,12 @@
   // so we wait 700ms for the DOM to settle before re-initializing.
   if (!window.__yotpoReinitActive) {
     window.__yotpoReinitActive = true;
-    document.addEventListener('filter:update', () => setTimeout(yotpoInit, 700));
+    document.addEventListener('filter:update', () => {
+      setTimeout(() => {
+        yotpoInit();
+        applyHideEmpty();
+      }, 700);
+    });
   }
 {% endjavascript %}
 
@@ -70,6 +109,13 @@
       "label": "Yotpo Instance ID",
       "default": "1286465",
       "info": "El ID del widget de Yotpo. Se encuentra en el snippet: data-yotpo-instance-id."
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_empty_reviews",
+      "label": "Ocultar si no tiene reseñas",
+      "default": true,
+      "info": "Si está activado, el widget se oculta cuando el producto tiene 0 reseñas. Desactivar para mostrar siempre el widget."
     },
     {
       "type": "select",
