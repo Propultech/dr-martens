@@ -657,7 +657,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<h2><strong>HOW IT WORKS</strong></h2>",
+            "text": "<h2><strong>CÓMO FUNCIONA</strong></h2>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "left",
@@ -702,7 +702,7 @@
             "slider_scrollbar_color": "#ffdd00",
             "vertical_on_mobile": true,
             "horizontal_alignment": "flex-start",
-            "vertical_alignment": "center",
+            "vertical_alignment": "flex-start",
             "align_baseline": false,
             "horizontal_alignment_flex_direction_column": "flex-start",
             "vertical_alignment_flex_direction_column": "center",
@@ -820,7 +820,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h2><strong>STEP 1:</strong></h2>",
+                    "text": "<h2><strong>PASO 1:</strong></h2>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -858,7 +858,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Our team of experts at The Boot Repair Company receives worn DM's in need of refurbishment.</p>",
+                    "text": "<p>Nuestro equipo de expertos en The Boot Repair Company recibe DM desgastados que necesitan ser renovados.</p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -979,7 +979,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h2><strong>STEP 2:</strong></h2>",
+                    "text": "<h2><strong>PASO 2:</strong></h2>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -1017,7 +1017,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>After being repaired, all styles are restored, deep cleaned and sanitised using Micro-Fresh®.</p>",
+                    "text": "<p>Después de ser reparados, todos los estilos se restauran, se limpian profundamente y se desinfectan con Micro-Fresh®.</p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -1138,7 +1138,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h2><strong>STEP 3:</strong></h2>",
+                    "text": "<h2><strong>PASO 3:</strong></h2>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -1176,7 +1176,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>They're then listed on our Depop shop – ready for you to put them through their paces.</p>",
+                    "text": "<p>Luego aparecen en nuestra tienda Depop, listos para que los pongas a prueba.</p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -1297,7 +1297,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h2><strong>STEP 4:</strong></h2>",
+                    "text": "<h2><strong>PASO 4:</strong></h2>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -1335,7 +1335,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>If you make a purchase, it will be shipped with recycled packaging that's as minimal as possible.</p>",
+                    "text": "<p>Si realizas una compra, ésta se enviará con un embalaje reciclado lo mínimo posible.</p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
