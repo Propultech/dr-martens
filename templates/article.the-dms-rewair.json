@@ -290,8 +290,8 @@
               "name": "t:names.button",
               "settings": {
                 "label": "GO TO OUR DEPOP SHOP",
-                "link": "shopify://collections/all",
-                "open_in_new_tab": false,
+                "link": "https://www.depop.com/drmartens/",
+                "open_in_new_tab": true,
                 "style_class": "button",
                 "width": "custom",
                 "custom_width": 15,
@@ -307,7 +307,7 @@
               "name": "t:names.button",
               "settings": {
                 "label": "JUMP TO FAQS",
-                "link": "shopify://collections/all",
+                "link": "#shopify-section-template--21208455610594__section_3McjWy",
                 "open_in_new_tab": false,
                 "style_class": "button-secondary",
                 "width": "fit-content",
@@ -624,8 +624,8 @@
                       "name": "t:names.button",
                       "settings": {
                         "label": "GO TO OUR DEPOP SHOP",
-                        "link": "shopify://collections/all",
-                        "open_in_new_tab": false,
+                        "link": "https://www.depop.com/drmartens/",
+                        "open_in_new_tab": true,
                         "style_class": "button",
                         "width": "custom",
                         "custom_width": 51,
@@ -995,7 +995,7 @@
                   "type": "image",
                   "name": "t:names.image",
                   "settings": {
-                    "image": "shopify://shop_images/EVG_REWAIR_LP_HOWTO_1_MOBILE.webp",
+                    "image": "shopify://shop_images/EVG_REWAIR_LP_HOWTO_2_MOBILE.webp",
                     "link": "",
                     "image_ratio": "adapt",
                     "width": "fill",
@@ -1022,7 +1022,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h2><strong>STEP 1:</strong></h2>",
+                    "text": "<h2><strong>STEP 2:</strong></h2>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -1060,7 +1060,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Our team of experts at The Boot Repair Company receives worn DM's in need of refurbishment.</p>",
+                    "text": "<p>After being repaired, all styles are restored, deep cleaned and sanitised using Micro-Fresh®.</p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -1154,7 +1154,7 @@
                   "type": "image",
                   "name": "t:names.image",
                   "settings": {
-                    "image": "shopify://shop_images/EVG_REWAIR_LP_HOWTO_1_MOBILE.webp",
+                    "image": "shopify://shop_images/EVG_REWAIR_LP_HOWTO_3_MOBILE.webp",
                     "link": "",
                     "image_ratio": "adapt",
                     "width": "fill",
@@ -1181,7 +1181,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h2><strong>STEP 1:</strong></h2>",
+                    "text": "<h2><strong>STEP 3:</strong></h2>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -1219,7 +1219,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Our team of experts at The Boot Repair Company receives worn DM's in need of refurbishment.</p>",
+                    "text": "<p>They're then listed on our Depop shop – ready for you to put them through their paces.</p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -1313,7 +1313,7 @@
                   "type": "image",
                   "name": "t:names.image",
                   "settings": {
-                    "image": "shopify://shop_images/EVG_REWAIR_LP_HOWTO_1_MOBILE.webp",
+                    "image": "shopify://shop_images/EVG_REWAIR_LP_HOWTO_4_MOBILE.webp",
                     "link": "",
                     "image_ratio": "adapt",
                     "width": "fill",
@@ -1340,7 +1340,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h2><strong>STEP 1:</strong></h2>",
+                    "text": "<h2><strong>STEP 4:</strong></h2>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -1378,7 +1378,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Our team of experts at The Boot Repair Company receives worn DM's in need of refurbishment.</p>",
+                    "text": "<p>If you make a purchase, it will be shipped with recycled packaging that's as minimal as possible.</p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
