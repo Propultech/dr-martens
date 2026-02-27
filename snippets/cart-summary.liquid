@@ -252,7 +252,11 @@
       </span>
     {% endif %}
     <div class="cart__summary-item tax-note cart-primary-typography">
-      {% render 'tax-info', has_discounts_enabled: settings.show_add_discount_code %}
+      {%- if settings.cart_tax_note != blank -%}
+        {{ settings.cart_tax_note }}
+      {%- else -%}
+        {% render 'tax-info', has_discounts_enabled: settings.show_add_discount_code %}
+      {%- endif -%}
     </div>
   </div>
 </div>
@@ -447,7 +451,7 @@
     display: flex;
     align-items: flex-start;
     gap: var(--gap-2xs);
-    font-size: var(--cart-font-size--2xs);
+    font-size: var(--cart-font-size--sm);
     font-weight: 500;
   }
 
