@@ -504,7 +504,7 @@
                       "type": "text",
                       "name": "t:names.heading",
                       "settings": {
-                        "text": "<h2>PACKED WITH PRE-LOVED GEMS</h2>",
+                        "text": "<h2>REPLETO DE GEMAS DE SEGUNDA MANO</h2>",
                         "width": "fit-content",
                         "max_width": "normal",
                         "alignment": "left",
@@ -542,7 +542,7 @@
                       "type": "text",
                       "name": "t:names.text",
                       "settings": {
-                        "text": "<p>Scuffs, scrapes and scratches happen. But our styles are built to go the distance. That's why we made a commitment to give our wearers more options and support so their boots and shoes keep going for longer. ReWair is how we put this into action. Explore our Depop shop, packed with pre-loved gems that are restored and ready to go.<br/><br/></p>",
+                        "text": "<p>Los arañazos, rozaduras y rozaduras son comunes. Pero nuestros estilos están diseñados para durar. Por eso nos comprometemos a ofrecer a nuestros usuarios más opciones y soporte para que sus botas y zapatos duren más. ReWair es nuestra forma de hacerlo. Explora nuestra tienda Depop, repleta de joyas de segunda mano restauradas y listas para usar.</p>",
                         "width": "fit-content",
                         "max_width": "normal",
                         "alignment": "left",
@@ -580,7 +580,7 @@
                       "type": "button",
                       "name": "t:names.button",
                       "settings": {
-                        "label": "GO TO OUR DEPOP SHOP",
+                        "label": "VISITA NUESTRA TIENDA DEPOP",
                         "link": "https://www.depop.com/drmartens/",
                         "open_in_new_tab": true,
                         "style_class": "button",
