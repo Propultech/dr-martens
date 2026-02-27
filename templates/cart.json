@@ -17,7 +17,7 @@
           "static": true,
           "settings": {
             "title": "Carrito",
-            "show_count": true,
+            "show_count": false,
             "type_preset": "h4",
             "alignment": "left",
             "padding-block-start": 0,
