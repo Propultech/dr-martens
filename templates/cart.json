@@ -54,9 +54,9 @@
           "type": "_cart-summary",
           "static": true,
           "settings": {
-            "extend_summary": true,
+            "extend_summary": false,
             "inherit_color_scheme": false,
-            "color_scheme": "scheme-2",
+            "color_scheme": "scheme-f48d3ffd-3906-441c-a0dc-7151306deb8a",
             "border": "none",
             "border_width": 1,
             "border_opacity": 100,
