@@ -146,6 +146,7 @@
             "product_list_button_eibbma": {
               "type": "_product-list-button",
               "name": "t:names.product_list_button",
+              "disabled": true,
               "settings": {
                 "label": "Ver todos",
                 "open_in_new_tab": false,
