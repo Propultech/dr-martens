@@ -9,111 +9,51 @@
  */
 {
   "sections": {
-    "section": {
-      "type": "main-blog-post",
+    "main": {
+      "type": "main-page",
       "blocks": {
-        "blog-post-title": {
+        "heading": {
           "type": "text",
           "name": "Title",
-          "static": true,
           "settings": {
-            "text": "<h1>{{ article.title }}</h1>",
+            "text": "<h1>{{ closest.page.title }}</h1>",
             "width": "100%",
             "max_width": "normal",
-            "alignment": "center",
+            "alignment": "left",
             "type_preset": "h2",
             "font": "var(--font-primary--family)",
             "font_size": "",
-            "font_size_mobile": "",
             "line_height": "normal",
             "letter_spacing": "normal",
             "case": "none",
             "wrap": "pretty",
             "color": "",
-            "italic_color": "",
-            "strong_color": "",
-            "link_font_size": "",
-            "link_font_size_mobile": "",
             "background": false,
-            "line_highlight": false,
             "background_color": "#00000026",
             "corner_radius": 0,
-            "visibility": "all",
             "padding-block-start": 0,
             "padding-block-end": 0,
             "padding-inline-start": 0,
-            "padding-inline-end": 0,
-            "mobile_padding_override": false,
-            "padding-block-start-mobile": 0,
-            "padding-block-end-mobile": 0,
-            "padding-inline-start-mobile": 0,
-            "padding-inline-end-mobile": 0
+            "padding-inline-end": 0
           },
           "blocks": {}
         },
-        "blog-post-details": {
-          "type": "_blog-post-info-text",
-          "name": "Details",
-          "static": true,
-          "settings": {
-            "show_date": true,
-            "show_author": false,
-            "type_preset": "",
-            "alignment": "center",
-            "show_alignment": true,
-            "padding-block-start": 24,
-            "padding-block-end": 0,
-            "padding-block-start-mobile": 0,
-            "padding-block-end-mobile": 0,
-            "padding-inline-start-mobile": 0,
-            "padding-inline-end-mobile": 0
-          },
-          "blocks": {}
-        },
-        "blog-post-image": {
-          "type": "_blog-post-featured-image",
-          "name": "Featured image",
-          "static": true,
-          "settings": {
-            "image_ratio": "landscape",
-            "width": "fill",
-            "custom_width": 100,
-            "width_mobile": "fill",
-            "custom_width_mobile": 100,
-            "height": "fit",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0,
-            "padding-block-start-mobile": 0,
-            "padding-block-end-mobile": 0,
-            "padding-inline-start-mobile": 0,
-            "padding-inline-end-mobile": 0
-          },
-          "blocks": {}
-        },
-        "blog-post-content": {
-          "type": "_blog-post-content",
-          "static": true,
+        "page-content": {
+          "type": "page-content",
           "settings": {},
           "blocks": {}
         }
       },
-      "disabled": true,
+      "block_order": [
+        "heading",
+        "page-content"
+      ],
       "settings": {
         "content_direction": "column",
         "gap": 32,
         "color_scheme": "",
         "padding-block-start": 40,
-        "padding-block-end": 80,
-        "padding-block-start-mobile": 0,
-        "padding-block-end-mobile": 0,
-        "padding-inline-start-mobile": 0,
-        "padding-inline-end-mobile": 0
+        "padding-block-end": 80
       }
     },
     "hero_rnKjKJ": {
@@ -121,7 +61,7 @@
       "name": "t:names.hero",
       "settings": {
         "media_type_1": "image",
-        "image_1": "{{ article.image }}",
+        "image_1": "",
         "media_type_2": "image",
         "stack_media_on_mobile": false,
         "custom_mobile_media": false,
@@ -1841,7 +1781,7 @@
     }
   },
   "order": [
-    "section",
+    "main",
     "hero_rnKjKJ",
     "section_ParHWb",
     "section_wzHpWj",
