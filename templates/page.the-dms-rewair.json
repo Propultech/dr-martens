@@ -9,18 +9,17 @@
  */
 {
   "sections": {
-    "section": {
-      "type": "main-blog-post",
+    "main": {
+      "type": "main-page",
       "blocks": {
-        "blog-post-title": {
+        "heading": {
           "type": "text",
           "name": "Title",
-          "static": true,
           "settings": {
-            "text": "<h1>{{ article.title }}</h1>",
+            "text": "<h1>{{ closest.page.title }}</h1>",
             "width": "100%",
             "max_width": "normal",
-            "alignment": "center",
+            "alignment": "left",
             "type_preset": "h2",
             "font": "var(--font-primary--family)",
             "font_size": "",
@@ -51,58 +50,16 @@
           },
           "blocks": {}
         },
-        "blog-post-details": {
-          "type": "_blog-post-info-text",
-          "name": "Details",
-          "static": true,
-          "settings": {
-            "show_date": true,
-            "show_author": false,
-            "type_preset": "",
-            "alignment": "center",
-            "show_alignment": true,
-            "padding-block-start": 24,
-            "padding-block-end": 0,
-            "padding-block-start-mobile": 0,
-            "padding-block-end-mobile": 0,
-            "padding-inline-start-mobile": 0,
-            "padding-inline-end-mobile": 0
-          },
-          "blocks": {}
-        },
-        "blog-post-image": {
-          "type": "_blog-post-featured-image",
-          "name": "Featured image",
-          "static": true,
-          "settings": {
-            "image_ratio": "landscape",
-            "width": "fill",
-            "custom_width": 100,
-            "width_mobile": "fill",
-            "custom_width_mobile": 100,
-            "height": "fit",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0,
-            "padding-block-start-mobile": 0,
-            "padding-block-end-mobile": 0,
-            "padding-inline-start-mobile": 0,
-            "padding-inline-end-mobile": 0
-          },
-          "blocks": {}
-        },
-        "blog-post-content": {
-          "type": "_blog-post-content",
-          "static": true,
+        "page-content": {
+          "type": "page-content",
           "settings": {},
           "blocks": {}
         }
       },
+      "block_order": [
+        "heading",
+        "page-content"
+      ],
       "disabled": true,
       "settings": {
         "content_direction": "column",
@@ -121,7 +78,7 @@
       "name": "t:names.hero",
       "settings": {
         "media_type_1": "image",
-        "image_1": "{{ article.image }}",
+        "image_1": "shopify://shop_images/blog0.jpg",
         "media_type_2": "image",
         "stack_media_on_mobile": false,
         "custom_mobile_media": false,
@@ -289,12 +246,12 @@
               "type": "button",
               "name": "t:names.button",
               "settings": {
-                "label": "GO TO OUR DEPOP SHOP",
+                "label": "VISITA NUESTRA TIENDA DEPOP",
                 "link": "https://www.depop.com/drmartens/",
                 "open_in_new_tab": true,
                 "style_class": "button",
                 "width": "custom",
-                "custom_width": 15,
+                "custom_width": 22,
                 "width_mobile": "custom",
                 "custom_width_mobile": 100,
                 "font_size_desktop": "",
@@ -306,12 +263,12 @@
               "type": "button",
               "name": "t:names.button",
               "settings": {
-                "label": "JUMP TO FAQS",
+                "label": "IR A LAS PREGUNTAS FRECUENTES",
                 "link": "#shopify-section-template--21208455610594__section_3McjWy",
                 "open_in_new_tab": false,
                 "style_class": "button-secondary",
-                "width": "fit-content",
-                "custom_width": 100,
+                "width": "custom",
+                "custom_width": 22,
                 "width_mobile": "custom",
                 "custom_width_mobile": 100,
                 "font_size_desktop": "",
@@ -547,7 +504,7 @@
                       "type": "text",
                       "name": "t:names.heading",
                       "settings": {
-                        "text": "<h2>PACKED WITH PRE-LOVED GEMS</h2>",
+                        "text": "<h2>REPLETO DE GEMAS DE SEGUNDA MANO</h2>",
                         "width": "fit-content",
                         "max_width": "normal",
                         "alignment": "left",
@@ -585,7 +542,7 @@
                       "type": "text",
                       "name": "t:names.text",
                       "settings": {
-                        "text": "<p>Scuffs, scrapes and scratches happen. But our styles are built to go the distance. That's why we made a commitment to give our wearers more options and support so their boots and shoes keep going for longer. ReWair is how we put this into action. Explore our Depop shop, packed with pre-loved gems that are restored and ready to go.<br/><br/></p>",
+                        "text": "<p>Los arañazos, rozaduras y rozaduras son comunes. Pero nuestros estilos están diseñados para durar. Por eso nos comprometemos a ofrecer a nuestros usuarios más opciones y soporte para que sus botas y zapatos duren más. ReWair es nuestra forma de hacerlo. Explora nuestra tienda Depop, repleta de joyas de segunda mano restauradas y listas para usar.</p>",
                         "width": "fit-content",
                         "max_width": "normal",
                         "alignment": "left",
@@ -623,7 +580,7 @@
                       "type": "button",
                       "name": "t:names.button",
                       "settings": {
-                        "label": "GO TO OUR DEPOP SHOP",
+                        "label": "VISITA NUESTRA TIENDA DEPOP",
                         "link": "https://www.depop.com/drmartens/",
                         "open_in_new_tab": true,
                         "style_class": "button",
@@ -700,7 +657,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<h2><strong>HOW IT WORKS</strong></h2>",
+            "text": "<h2><strong>CÓMO FUNCIONA</strong></h2>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "left",
@@ -745,7 +702,7 @@
             "slider_scrollbar_color": "#ffdd00",
             "vertical_on_mobile": true,
             "horizontal_alignment": "flex-start",
-            "vertical_alignment": "center",
+            "vertical_alignment": "flex-start",
             "align_baseline": false,
             "horizontal_alignment_flex_direction_column": "flex-start",
             "vertical_alignment_flex_direction_column": "center",
@@ -863,7 +820,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h2><strong>STEP 1:</strong></h2>",
+                    "text": "<h2><strong>PASO 1:</strong></h2>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -901,7 +858,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Our team of experts at The Boot Repair Company receives worn DM's in need of refurbishment.</p>",
+                    "text": "<p>Nuestro equipo de expertos en The Boot Repair Company recibe DM desgastados que necesitan ser renovados.</p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -1022,7 +979,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h2><strong>STEP 2:</strong></h2>",
+                    "text": "<h2><strong>PASO 2:</strong></h2>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -1060,7 +1017,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>After being repaired, all styles are restored, deep cleaned and sanitised using Micro-Fresh®.</p>",
+                    "text": "<p>Después de ser reparados, todos los estilos se restauran, se limpian profundamente y se desinfectan con Micro-Fresh®.</p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -1181,7 +1138,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h2><strong>STEP 3:</strong></h2>",
+                    "text": "<h2><strong>PASO 3:</strong></h2>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -1219,7 +1176,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>They're then listed on our Depop shop – ready for you to put them through their paces.</p>",
+                    "text": "<p>Luego aparecen en nuestra tienda Depop, listos para que los pongas a prueba.</p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -1340,7 +1297,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h2><strong>STEP 4:</strong></h2>",
+                    "text": "<h2><strong>PASO 4:</strong></h2>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -1378,7 +1335,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>If you make a purchase, it will be shipped with recycled packaging that's as minimal as possible.</p>",
+                    "text": "<p>Si realizas una compra, ésta se enviará con un embalaje reciclado lo mínimo posible.</p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -1478,7 +1435,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<h2>FREQUENTLY ASKED QUESTIONS</h2>",
+            "text": "<h2>PREGUNTAS FRECUENTES</h2>",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "left",
@@ -1538,7 +1495,7 @@
             "accordion_row_ptgKEg": {
               "type": "_accordion-row",
               "settings": {
-                "heading": "How does ReWair work?",
+                "heading": "¿Cómo funciona ReWair?",
                 "open_by_default": true,
                 "icon": "none",
                 "width": 20
@@ -1547,7 +1504,7 @@
                 "text_yf7bbB": {
                   "type": "text",
                   "settings": {
-                    "text": "<p>We take worn DM’s in need of restoration, and clean them inside and out using Micro-Fresh®. Our skilled repairers at The Boot Repair Company then fix any faults. Restored DM’s are then boxed up ready to be sold through our ReWair Depop shop.</p>",
+                    "text": "<p>Recogemos los DM desgastados que necesitan restauración y los limpiamos por dentro y por fuera con Micro-Fresh®. Nuestros técnicos expertos de The Boot Repair Company reparan cualquier defecto. Los DM restaurados se empaquetan listos para su venta a través de nuestra tienda ReWair Depop.</p>",
                     "width": "100%",
                     "max_width": "none",
                     "alignment": "left",
@@ -1589,7 +1546,7 @@
             "accordion_row_WLbBXW": {
               "type": "_accordion-row",
               "settings": {
-                "heading": "Why have DM’s launched ReWair?",
+                "heading": "¿Por qué DM lanzó ReWair?",
                 "open_by_default": false,
                 "icon": "none",
                 "width": 20
@@ -1598,7 +1555,7 @@
                 "text_D4QCC6": {
                   "type": "text",
                   "settings": {
-                    "text": "<p>We have committed to offering more options for used footwear, helping our wearers maximise the life of their DM's. ReWair is our next step forward on our path towards leaving things better than how we found them – and making the most of every pair of Doc’s.</p>",
+                    "text": "<p>Nos hemos comprometido a ofrecer más opciones de calzado usado, ayudando a nuestros usuarios a maximizar la vida útil de sus Doc's. ReWair es nuestro siguiente paso en nuestro camino para dejar las cosas en mejores condiciones y aprovechar al máximo cada par de Doc's.</p>",
                     "width": "100%",
                     "max_width": "none",
                     "alignment": "left",
@@ -1640,7 +1597,7 @@
             "accordion_row_nANM4A": {
               "type": "_accordion-row",
               "settings": {
-                "heading": "Who are The Boot Repair Company?",
+                "heading": "¿Quiénes son The Boot Repair Company?",
                 "open_by_default": false,
                 "icon": "none",
                 "width": 20
@@ -1649,7 +1606,7 @@
                 "text_UwHxNe": {
                   "type": "text",
                   "settings": {
-                    "text": "<p>The Boot Repair Company provides a quality, skilled service that helps restore damaged or worn footwear back to its former glory and onto our wearers' feet. Every repair goes to their UK workshop, where they use the same machines that construct our footwear. You can find more info on our <a href=\"https://www.drmartens.com/uk/en_gb/boots-shoes-repair-service\"><span style=\"text-decoration:underline\">repairs page</span></a>.</p>",
+                    "text": "<p>The Boot Repair Company ofrece un servicio especializado de calidad que ayuda a restaurar el calzado dañado o desgastado para que recupere su esplendor original. Todas las reparaciones se realizan en su taller del Reino Unido, donde utilizan las mismas máquinas que fabrican nuestro calzado. Puede encontrar más información en nuestra página de reparaciones.</p>",
                     "width": "100%",
                     "max_width": "none",
                     "alignment": "left",
@@ -1691,7 +1648,7 @@
             "accordion_row_6xAybE": {
               "type": "_accordion-row",
               "settings": {
-                "heading": "What condition will my ReWair product be in?",
+                "heading": "¿En qué condiciones estará mi producto ReWair?",
                 "open_by_default": false,
                 "icon": "none",
                 "width": 20
@@ -1700,7 +1657,7 @@
                 "text_KfTgdM": {
                   "type": "text",
                   "settings": {
-                    "text": "<p>We have three grades of footwear: ‘Excellent’, ‘Good’ and 'Fair'. All ReWair silhouettes are cleaned and sanitised inside and out to a professional standard using Micro-Fresh®.</p>",
+                    "text": "<p>Ofrecemos tres grados de calzado: «Excelente», «Bueno» y «Regular». Todas las siluetas ReWair se limpian y desinfectan por dentro y por fuera con un estándar profesional utilizando Micro-Fresh®.</p>",
                     "width": "100%",
                     "max_width": "none",
                     "alignment": "left",
@@ -1742,7 +1699,7 @@
             "accordion_row_XacUgW": {
               "type": "_accordion-row",
               "settings": {
-                "heading": "What is the difference between the conditions?",
+                "heading": "¿Cuál es la diferencia entre las condiciones?",
                 "open_by_default": false,
                 "icon": "none",
                 "width": 20
@@ -1751,7 +1708,7 @@
                 "text_C9BPae": {
                   "type": "text",
                   "settings": {
-                    "text": "<p><strong>Excellent:</strong></p><ul><li>Some components like zips, insoles and eyelets may have been replaced</li><li>There may be some small signs of wear, minor defects, light marking or light creasing</li><li>The sole may show some small signs of wear Insoles will be either new or cleaned and sanitised so they are like new</li><li>All ReWair styles are cleaned and sanitised inside and out to a professional standard using Micro-Fresh®</li></ul><p><strong>Good:</strong></p><ul><li>Some components like zips, insoles and eyelets may have been replaced</li><li>There may be signs of wear, minor defects, moderate marking or creasing</li><li>The sole may show signs of heavier wear, but will always have tread left</li><li>Insoles will be either new or cleaned and sanitised but may show signs of wear</li><li>All ReWair product is cleaned and sanitised inside and out to a professional standard using Micro-Fresh®</li></ul><p><strong>Fair:</strong></p><ul><li>Some components like zips, insoles and eyelets may have been replaced</li><li>There may be obvious signs of wear, substantial defects, considerable marking, scuffing or creasing</li><li>The sole may show signs of heavier wear, but will always have tread left</li><li>Insoles will be either new or cleaned and sanitised but may show signs of wear</li><li>All ReWair product is cleaned and sanitised inside and out to a professional standard using Micro-Fresh®</li></ul>",
+                    "text": "<p><strong>Excelente:</strong></p><ul><li>Algunos componentes como cierres, plantillas y ojales podrían haber sido reemplazados.</li><li>Puede presentar pequeñas señales de uso, defectos menores, marcas leves o ligeros pliegues.</li><li>La suela puede mostrar marcas mínimas de desgaste. Las plantillas serán nuevas o habrán sido lavadas y desinfectadas para que luzcan como nuevas.</li><li>Todos los modelos ReWair se limpian y desinfectan por dentro y por fuera bajo estándares profesionales usando Micro-Fresh®.</li></ul><p><strong>Bueno:</strong></p><ul><li>Algunos componentes como cierres, plantillas y ojales podrían haber sido reemplazados.</li><li>Puede presentar señales de uso, defectos menores, así como marcas o pliegues moderados.</li><li>La suela puede mostrar un desgaste más notable, pero siempre conservará el dibujo o relieve (tracción).</li><li>Las plantillas serán nuevas o habrán sido lavadas y desinfectadas, pero podrían mostrar señales de uso previo.</li><li>Todos los productos ReWair se limpian y desinfectan por dentro y por fuera bajo estándares profesionales usando Micro-Fresh®.</li></ul><p><strong>Aceptable:</strong></p><ul><li>Algunos componentes como cierres, plantillas y ojales podrían haber sido reemplazados.</li><li>Puede presentar señales obvias de uso, defectos importantes, marcas considerables, raspaduras o pliegues marcados.</li><li>La suela puede mostrar un desgaste pesado, pero siempre conservará el dibujo o relieve (tracción).</li><li>Las plantillas serán nuevas o habrán sido lavadas y desinfectadas, pero podrían mostrar señales de uso.</li><li>Todos los productos ReWair se limpian y desinfectan por dentro y por fuera bajo estándares profesionales usando Micro-Fresh®.</li></ul>",
                     "width": "100%",
                     "max_width": "none",
                     "alignment": "left",
@@ -1841,7 +1798,7 @@
     }
   },
   "order": [
-    "section",
+    "main",
     "hero_rnKjKJ",
     "section_ParHWb",
     "section_wzHpWj",

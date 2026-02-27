@@ -30,6 +30,8 @@
             "color": "var(--color-foreground)",
             "italic_color": "",
             "strong_color": "",
+            "link_font_size": "",
+            "link_font_size_mobile": "",
             "background": false,
             "line_highlight": false,
             "background_color": "#00000026",
@@ -94,6 +96,10 @@
           "name": "t:names.group",
           "settings": {
             "content_direction": "column",
+            "visibility": "",
+            "enable_slider": false,
+            "slider_on": "both",
+            "slider_scrollbar_color": "#ffdd00",
             "vertical_on_mobile": true,
             "horizontal_alignment": "flex-start",
             "vertical_alignment": "center",
@@ -130,7 +136,8 @@
             "padding-block-start-mobile": 75,
             "padding-block-end-mobile": 54,
             "padding-inline-start-mobile": 30,
-            "padding-inline-end-mobile": 30
+            "padding-inline-end-mobile": 30,
+            "custom_css": ""
           },
           "blocks": {
             "text_ihKXnH": {
@@ -151,6 +158,8 @@
                 "color": "var(--color-primary)",
                 "italic_color": "",
                 "strong_color": "",
+                "link_font_size": "",
+                "link_font_size_mobile": "",
                 "background": false,
                 "line_highlight": false,
                 "background_color": "#00000026",
@@ -187,6 +196,8 @@
                 "color": "var(--color-foreground)",
                 "italic_color": "",
                 "strong_color": "#fedb00",
+                "link_font_size": "",
+                "link_font_size_mobile": "",
                 "background": false,
                 "line_highlight": false,
                 "background_color": "#00000026",
@@ -223,6 +234,8 @@
                 "color": "var(--color-foreground)",
                 "italic_color": "",
                 "strong_color": "",
+                "link_font_size": "",
+                "link_font_size_mobile": "",
                 "background": false,
                 "line_highlight": false,
                 "background_color": "#00000026",
@@ -245,6 +258,10 @@
               "name": "t:names.group",
               "settings": {
                 "content_direction": "row",
+                "visibility": "",
+                "enable_slider": false,
+                "slider_on": "both",
+                "slider_scrollbar_color": "#ffdd00",
                 "vertical_on_mobile": true,
                 "horizontal_alignment": "flex-start",
                 "vertical_alignment": "center",
@@ -281,7 +298,8 @@
                 "padding-block-start-mobile": 0,
                 "padding-block-end-mobile": 0,
                 "padding-inline-start-mobile": 0,
-                "padding-inline-end-mobile": 0
+                "padding-inline-end-mobile": 0,
+                "custom_css": ""
               },
               "blocks": {
                 "button_8fPygy": {
@@ -384,6 +402,10 @@
           "name": "t:names.group",
           "settings": {
             "content_direction": "column",
+            "visibility": "",
+            "enable_slider": false,
+            "slider_on": "both",
+            "slider_scrollbar_color": "#ffdd00",
             "vertical_on_mobile": true,
             "horizontal_alignment": "flex-start",
             "vertical_alignment": "center",
@@ -420,7 +442,8 @@
             "padding-block-start-mobile": 35,
             "padding-block-end-mobile": 0,
             "padding-inline-start-mobile": 0,
-            "padding-inline-end-mobile": 0
+            "padding-inline-end-mobile": 0,
+            "custom_css": ""
           },
           "blocks": {
             "button_WFmMeM": {
@@ -767,6 +790,10 @@
           "name": "t:names.group",
           "settings": {
             "content_direction": "column",
+            "visibility": "",
+            "enable_slider": false,
+            "slider_on": "both",
+            "slider_scrollbar_color": "#ffdd00",
             "vertical_on_mobile": true,
             "horizontal_alignment": "flex-start",
             "vertical_alignment": "center",
@@ -803,7 +830,8 @@
             "padding-block-start-mobile": 35,
             "padding-block-end-mobile": 0,
             "padding-inline-start-mobile": 0,
-            "padding-inline-end-mobile": 0
+            "padding-inline-end-mobile": 0,
+            "custom_css": ""
           },
           "blocks": {
             "button_pyxErR": {
@@ -1040,6 +1068,10 @@
           "name": "t:names.group",
           "settings": {
             "content_direction": "column",
+            "visibility": "",
+            "enable_slider": false,
+            "slider_on": "both",
+            "slider_scrollbar_color": "#ffdd00",
             "vertical_on_mobile": true,
             "horizontal_alignment": "flex-start",
             "vertical_alignment": "center",
@@ -1076,7 +1108,8 @@
             "padding-block-start-mobile": 0,
             "padding-block-end-mobile": 0,
             "padding-inline-start-mobile": 0,
-            "padding-inline-end-mobile": 0
+            "padding-inline-end-mobile": 0,
+            "custom_css": ""
           },
           "blocks": {
             "text_LULzyJ": {
@@ -1097,6 +1130,8 @@
                 "color": "var(--color-foreground)",
                 "italic_color": "",
                 "strong_color": "",
+                "link_font_size": "",
+                "link_font_size_mobile": "",
                 "background": false,
                 "line_highlight": false,
                 "background_color": "#00000026",
@@ -1398,20 +1433,19 @@
         "padding-inline-end-mobile": 0
       }
     },
-    "blog_article_showcase_dVq7q9": {
-      "type": "blog-article-showcase",
-      "name": "Artículo de Blog",
+    "page_showcase_HdyhPt": {
+      "type": "page-showcase",
+      "name": "Página Showcase",
       "settings": {
-        "article": "news/rewair-x-depop",
+        "page": "rewair-x-depop",
         "title": "Historias de DR. MARTENS",
         "heading_alignment": "text-left",
         "show_image": true,
+        "image": "shopify://shop_images/blog0.jpg",
         "show_title": true,
         "show_subtitle": false,
-        "subtitle": "HISTORIAS DE DR. MARTENS",
-        "show_author": false,
-        "show_date": false,
-        "show_excerpt": true,
+        "subtitle": "DR. MARTENS",
+        "show_content": true,
         "show_button": true,
         "button_text": "DESCUBRE MÁS",
         "button_style": "link",
@@ -1421,7 +1455,7 @@
         "gap_desktop": 44,
         "gap_mobile": 20,
         "section_width": "page-width",
-        "color_scheme": "scheme-397490af-ec3d-4e12-a4e1-10901b3baade",
+        "color_scheme": "",
         "padding-block-start": 50,
         "padding-block-end": 20,
         "padding-block-start-mobile": 35,
@@ -1607,7 +1641,7 @@
     "product_list_mfjJri",
     "hero_9gdi7R",
     "product_list_3JCKYP",
-    "blog_article_showcase_dVq7q9",
+    "page_showcase_HdyhPt",
     "featured_blog_posts_RDmReA"
   ]
 }
