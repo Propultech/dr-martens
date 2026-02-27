@@ -1435,7 +1435,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<h2>FREQUENTLY ASKED QUESTIONS</h2>",
+            "text": "<h2>PREGUNTAS FRECUENTES</h2>",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "left",
@@ -1495,7 +1495,7 @@
             "accordion_row_ptgKEg": {
               "type": "_accordion-row",
               "settings": {
-                "heading": "How does ReWair work?",
+                "heading": "¿Cómo funciona ReWair?",
                 "open_by_default": true,
                 "icon": "none",
                 "width": 20
@@ -1546,7 +1546,7 @@
             "accordion_row_WLbBXW": {
               "type": "_accordion-row",
               "settings": {
-                "heading": "Why have DM’s launched ReWair?",
+                "heading": "¿Por qué DM lanzó ReWair?",
                 "open_by_default": false,
                 "icon": "none",
                 "width": 20
@@ -1597,7 +1597,7 @@
             "accordion_row_nANM4A": {
               "type": "_accordion-row",
               "settings": {
-                "heading": "Who are The Boot Repair Company?",
+                "heading": "¿Quiénes son The Boot Repair Company?",
                 "open_by_default": false,
                 "icon": "none",
                 "width": 20
@@ -1648,7 +1648,7 @@
             "accordion_row_6xAybE": {
               "type": "_accordion-row",
               "settings": {
-                "heading": "What condition will my ReWair product be in?",
+                "heading": "¿En qué condiciones estará mi producto ReWair?",
                 "open_by_default": false,
                 "icon": "none",
                 "width": 20
@@ -1699,7 +1699,7 @@
             "accordion_row_XacUgW": {
               "type": "_accordion-row",
               "settings": {
-                "heading": "What is the difference between the conditions?",
+                "heading": "¿Cuál es la diferencia entre las condiciones?",
                 "open_by_default": false,
                 "icon": "none",
                 "width": 20
@@ -1708,7 +1708,7 @@
                 "text_C9BPae": {
                   "type": "text",
                   "settings": {
-                    "text": "<p><strong>Excellent:</strong></p><ul><li>Some components like zips, insoles and eyelets may have been replaced</li><li>There may be some small signs of wear, minor defects, light marking or light creasing</li><li>The sole may show some small signs of wear Insoles will be either new or cleaned and sanitised so they are like new</li><li>All ReWair styles are cleaned and sanitised inside and out to a professional standard using Micro-Fresh®</li></ul><p><strong>Good:</strong></p><ul><li>Some components like zips, insoles and eyelets may have been replaced</li><li>There may be signs of wear, minor defects, moderate marking or creasing</li><li>The sole may show signs of heavier wear, but will always have tread left</li><li>Insoles will be either new or cleaned and sanitised but may show signs of wear</li><li>All ReWair product is cleaned and sanitised inside and out to a professional standard using Micro-Fresh®</li></ul><p><strong>Fair:</strong></p><ul><li>Some components like zips, insoles and eyelets may have been replaced</li><li>There may be obvious signs of wear, substantial defects, considerable marking, scuffing or creasing</li><li>The sole may show signs of heavier wear, but will always have tread left</li><li>Insoles will be either new or cleaned and sanitised but may show signs of wear</li><li>All ReWair product is cleaned and sanitised inside and out to a professional standard using Micro-Fresh®</li></ul>",
+                    "text": "<p><strong>Excelente:</strong></p><ul><li>Algunos componentes como cierres, plantillas y ojales podrían haber sido reemplazados.</li><li>Puede presentar pequeñas señales de uso, defectos menores, marcas leves o ligeros pliegues.</li><li>La suela puede mostrar marcas mínimas de desgaste. Las plantillas serán nuevas o habrán sido lavadas y desinfectadas para que luzcan como nuevas.</li><li>Todos los modelos ReWair se limpian y desinfectan por dentro y por fuera bajo estándares profesionales usando Micro-Fresh®.</li></ul><p><strong>Bueno:</strong></p><ul><li>Algunos componentes como cierres, plantillas y ojales podrían haber sido reemplazados.</li><li>Puede presentar señales de uso, defectos menores, así como marcas o pliegues moderados.</li><li>La suela puede mostrar un desgaste más notable, pero siempre conservará el dibujo o relieve (tracción).</li><li>Las plantillas serán nuevas o habrán sido lavadas y desinfectadas, pero podrían mostrar señales de uso previo.</li><li>Todos los productos ReWair se limpian y desinfectan por dentro y por fuera bajo estándares profesionales usando Micro-Fresh®.</li></ul><p><strong>Aceptable:</strong></p><ul><li>Algunos componentes como cierres, plantillas y ojales podrían haber sido reemplazados.</li><li>Puede presentar señales obvias de uso, defectos importantes, marcas considerables, raspaduras o pliegues marcados.</li><li>La suela puede mostrar un desgaste pesado, pero siempre conservará el dibujo o relieve (tracción).</li><li>Las plantillas serán nuevas o habrán sido lavadas y desinfectadas, pero podrían mostrar señales de uso.</li><li>Todos los productos ReWair se limpian y desinfectan por dentro y por fuera bajo estándares profesionales usando Micro-Fresh®.</li></ul>",
                     "width": "100%",
                     "max_width": "none",
                     "alignment": "left",
