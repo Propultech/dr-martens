@@ -1,8 +1,10 @@
+
+
 {% comment %}
   This section is only to be called by the Section Rendering API. Faster to render a single card than the entire product grid.
 
-  HTML updated based on client-side interactions needs to be rendered here.  It is not important to have the exact
-  same HTML structure as the final rendered product card. The variant-picker.js script will morph specific elements as needed.
+  For combined listings: when switching to a child product, the entire product-card__content is morphed so that
+  images, price, and variant picker update together without redirecting to PDP.
 {% endcomment %}
 
 {% liquid
@@ -36,17 +38,54 @@
   >
 {%- endif -%}
 
-<product-card>
+<product-card
+  data-product-id="{{ product.id }}"
+  data-product-url="{{ product.url }}"
+>
   <a
     href="{{ url }}"
     ref="productCardLink"
+    class="product-card__link"
   >
-    <variant-picker>
-      <script type="application/json">
-        {{ product.selected_or_first_available_variant | json }}
-      </script>
-    </variant-picker>
+    <span class="visually-hidden">{{ product.title }}</span>
+  </a>
+  <div
+    class="
+      product-card__content
+      layout-panel-flex
+      layout-panel-flex--column
+      product-grid__card
+      spacing-style
+      border-style
+      gap-style
+    "
+  >
+    {% capture card_gallery_children %}
+      {% if product.available == false or product.compare_at_price > product.price %}
+        <div class="product-badges product-badges--{{ settings.badge_position }}">
+          <div class="product-badges__badge product-badges__badge--rectangle{% if product.available == false %} color-{{ settings.badge_sold_out_color_scheme }}{% elsif product.compare_at_price > product.price %} color-{{ settings.badge_sale_color_scheme }}{% endif %}">
+            {% if product.available == false %}
+              {{ 'content.product_badge_sold_out' | t }}
+            {% elsif product.compare_at_price > product.price %}
+              {{ 'content.product_badge_sale' | t }}
+            {% endif %}
+          </div>
+        </div>
+      {% endif %}
+    {% endcapture %}
+    {% render 'card-gallery',
+      product_resource: product,
+      block_settings_source: section,
+      children: card_gallery_children
+    %}
+
     {% render 'variant-swatches', product_resource: product, has_option_selected: true %}
+
+    <product-title class="h4">
+      <a href="{{ url }}" ref="productTitleLink" class="contents">
+        <span class="title-text">{{ product.title }}</span>
+      </a>
+    </product-title>
 
     <product-price>
       {% render 'price', product_resource: product, show_unit_price: true %}
@@ -58,7 +97,7 @@
     >
       {% render 'sku', product_resource: product %}
     </product-sku-component>
-  </a>
+  </div>
 </product-card>
 {%- if settings.transition_to_main_product -%}
   </product-card-link>
@@ -75,6 +114,97 @@
       "type": "product",
       "id": "product",
       "label": "t:settings.product"
+    },
+    {
+      "type": "select",
+      "id": "image_ratio",
+      "options": [
+        { "value": "adapt", "label": "t:options.auto" },
+        { "value": "portrait", "label": "t:options.portrait" },
+        { "value": "square", "label": "t:options.square" },
+        { "value": "landscape", "label": "t:options.landscape" }
+      ],
+      "default": "adapt",
+      "label": "t:settings.aspect_ratio"
+    },
+    {
+      "type": "select",
+      "id": "border",
+      "label": "t:settings.style",
+      "options": [
+        { "value": "none", "label": "t:options.none" },
+        { "value": "solid", "label": "t:options.solid" }
+      ],
+      "default": "none"
+    },
+    {
+      "type": "range",
+      "id": "border_width",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "t:settings.thickness",
+      "default": 1
+    },
+    {
+      "type": "range",
+      "id": "border_opacity",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "label": "t:settings.opacity",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "label": "t:settings.border_radius",
+      "min": 0,
+      "max": 32,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "t:settings.top",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "t:settings.bottom",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-inline-start",
+      "label": "t:settings.left",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-inline-end",
+      "label": "t:settings.right",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "unit": "px",
+      "default": 0
     }
   ]
 }

@@ -79,11 +79,19 @@ export default class VariantPicker extends Component {
     const loadsNewProduct = isOnProductPage && !!newUrl && newUrl !== currentUrl;
     const isOnFeaturedProductSection = Boolean(this.closest('featured-product-information'));
 
+    // For combined listings in product cards (PLP): morph product-card__content so images, price,
+    // and swatches update together when switching to a child product (e.g. different color).
+    const isInProductCard = Boolean(this.closest('product-card'));
+    const isCombinedListingSwitch =
+      isInProductCard && !!newUrl && newUrl !== currentUrl;
+
     const morphElementSelector = loadsNewProduct
       ? 'main'
       : isOnFeaturedProductSection
-      ? 'featured-product-information'
-      : undefined;
+        ? 'featured-product-information'
+        : isCombinedListingSwitch
+          ? '.product-card__content'
+          : undefined;
 
     this.fetchUpdatedSection(this.buildRequestUrl(selectedOption), morphElementSelector);
 
@@ -314,14 +322,20 @@ export default class VariantPicker extends Component {
         // Defer is only useful for the initial rendering of the page. Remove it here.
         html.querySelector('overflow-list[defer]')?.removeAttribute('defer');
 
-        const textContent = html.querySelector(`variant-picker script[type="application/json"]`)?.textContent;
-        if (!textContent) return;
+        const textContent =
+          html.querySelector('variant-picker script[type="application/json"]')?.textContent ??
+          html.querySelector('swatches-variant-picker-component script[type="application/json"]')?.textContent;
 
         if (morphElementSelector === 'main') {
           this.updateMain(html);
         } else if (morphElementSelector) {
           this.updateElement(html, morphElementSelector);
+          if (morphElementSelector === '.product-card__content') {
+            this.#syncProductCardLinksAfterMorph(html);
+          }
         } else {
+          if (!textContent) return;
+
           const newProduct = this.updateVariantPicker(html);
 
           // We grab the variant object from the response and dispatch an event with it.
@@ -401,6 +415,37 @@ export default class VariantPicker extends Component {
     // Batch all writes after all reads
     for (const measurement of measurements) {
       this.#applyFieldsetMeasurements(measurement);
+    }
+  }
+
+  /**
+   * Syncs product card links (anchor, product-card-link) after morphing product-card__content.
+   * Required for combined listings when switching to a child product.
+   * @param {Document} newHtml - The HTML response from the fetch.
+   */
+  #syncProductCardLinksAfterMorph(newHtml) {
+    const productCard = this.closest('product-card');
+    const newProductCard = newHtml.querySelector('product-card');
+    if (!productCard || !newProductCard) return;
+
+    const newAnchor = newProductCard.querySelector('a.product-card__link');
+    const currentAnchor = productCard.querySelector('a.product-card__link');
+    if (newAnchor && currentAnchor) {
+      currentAnchor.href = newAnchor.href;
+    }
+
+    productCard.dataset.productId = newProductCard.dataset.productId ?? '';
+    productCard.dataset.productUrl = newProductCard.dataset.productUrl ?? '';
+
+    const productCardLink = productCard.closest('product-card-link');
+    const newProductCardLink = newHtml.querySelector('product-card-link');
+    if (productCardLink && newProductCardLink) {
+      if (newProductCardLink.dataset.featuredMediaUrl) {
+        productCardLink.dataset.featuredMediaUrl = newProductCardLink.dataset.featuredMediaUrl;
+      }
+      if (newProductCardLink.dataset.productId) {
+        productCardLink.dataset.productId = newProductCardLink.dataset.productId;
+      }
     }
   }
 
