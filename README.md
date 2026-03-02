@@ -111,6 +111,7 @@ _Registrar aquí cada desarrollo significativo: fecha, descripción breve, archi
 | Fecha       | Desarrollo | Archivos / Notas |
 |------------|------------|------------------|
 | 2025-02-03 | Estándares de desarrollo: documentación en README, Cursor rule `development-standards.mdc` (buenas prácticas, performance Shopify, Core Web Vitals, accesibilidad). | README.md, .cursor/rules/development-standards.mdc |
+| 2026-03-02 | Combined listing en PLP: morph de `product-card__content` en product cards, sincronización de links/datasets y soporte Section Rendering API para gallery. | assets/variant-picker.js, sections/section-rendering-product-card.liquid, snippets/card-gallery.liquid, docs/combined-listing-plp-product-card.md, .cursor/references/combined-listing-plp-product-card.mdc |
 
 ## Contributing
 
