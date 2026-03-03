@@ -1,0 +1,1025 @@
+{% liquid
+  assign description_output = section.settings.description | strip | escape
+  assign highlight_output = section.settings.description_highlight | strip | escape
+  if highlight_output != blank and description_output contains highlight_output
+    assign highlight_markup = '<em>' | append: highlight_output | append: '</em>'
+    assign description_output = description_output | replace: highlight_output, highlight_markup
+  endif
+%}
+
+<div
+  class="section section--{{ section.settings.section_width }} spacing-style timeline-collage-hero color-{{ section.settings.color_scheme }}"
+  style="
+    {% render 'spacing-style', settings: section.settings %}
+    --canvas-height-desktop: {{ section.settings.canvas_height_desktop }}px;
+    --canvas-height-mobile: {{ section.settings.canvas_height_mobile }}px;
+    --title-size-desktop: {{ section.settings.title_size_desktop }}px;
+    --title-size-mobile: {{ section.settings.title_size_mobile }}px;
+    --title-x-desktop: {{ section.settings.title_offset_x_desktop }}px;
+    --title-y-desktop: {{ section.settings.title_offset_y_desktop }}px;
+    --title-x-mobile: {{ section.settings.title_offset_x_mobile }}px;
+    --title-y-mobile: {{ section.settings.title_offset_y_mobile }}px;
+    --desc-size-desktop: {{ section.settings.description_size_desktop }}px;
+    --desc-size-mobile: {{ section.settings.description_size_mobile }}px;
+    --desc-width-desktop: {{ section.settings.description_max_width_desktop }}px;
+    --desc-width-mobile: {{ section.settings.description_max_width_mobile }}px;
+    --desc-x-desktop: {{ section.settings.description_offset_x_desktop }}px;
+    --desc-y-desktop: {{ section.settings.description_offset_y_desktop }}px;
+    --desc-x-mobile: {{ section.settings.description_offset_x_mobile }}px;
+    --desc-y-mobile: {{ section.settings.description_offset_y_mobile }}px;
+    --left-width-desktop: {{ section.settings.left_image_width_desktop }}px;
+    --left-width-mobile: {{ section.settings.left_image_width_mobile }}px;
+    --left-x-desktop: {{ section.settings.left_image_offset_x_desktop }}px;
+    --left-y-desktop: {{ section.settings.left_image_offset_y_desktop }}px;
+    --left-x-mobile: {{ section.settings.left_image_offset_x_mobile }}px;
+    --left-y-mobile: {{ section.settings.left_image_offset_y_mobile }}px;
+    --left-rotation: {{ section.settings.left_image_rotation }}deg;
+    --right-width-desktop: {{ section.settings.right_image_width_desktop }}px;
+    --right-width-mobile: {{ section.settings.right_image_width_mobile }}px;
+    --right-x-desktop: {{ section.settings.right_image_offset_x_desktop }}px;
+    --right-y-desktop: {{ section.settings.right_image_offset_y_desktop }}px;
+    --right-x-mobile: {{ section.settings.right_image_offset_x_mobile }}px;
+    --right-y-mobile: {{ section.settings.right_image_offset_y_mobile }}px;
+    --right-rotation: {{ section.settings.right_image_rotation }}deg;
+  "
+>
+  <div
+    class="timeline-collage-hero__canvas"
+    {% if section.settings.background_image != blank %}
+      style="background-image: url('{{ section.settings.background_image | image_url: width: 2400 }}');"
+    {% endif %}
+  >
+    {% if section.settings.left_image != blank %}
+      <div class="timeline-collage-hero__float timeline-collage-hero__float--left{% if section.settings.left_image_shadow %} has-shadow{% endif %}">
+        <img
+          src="{{ section.settings.left_image | image_url: width: 1200 }}"
+          alt="{{ section.settings.left_image.alt | escape }}"
+          loading="lazy"
+          width="{{ section.settings.left_image.width }}"
+          height="{{ section.settings.left_image.height }}"
+        >
+      </div>
+    {% endif %}
+
+    {% if section.settings.right_image != blank %}
+      <div class="timeline-collage-hero__float timeline-collage-hero__float--right{% if section.settings.right_image_shadow %} has-shadow{% endif %}">
+        <img
+          src="{{ section.settings.right_image | image_url: width: 1200 }}"
+          alt="{{ section.settings.right_image.alt | escape }}"
+          loading="lazy"
+          width="{{ section.settings.right_image.width }}"
+          height="{{ section.settings.right_image.height }}"
+        >
+      </div>
+    {% endif %}
+
+    {% if section.settings.title != blank %}
+      <div class="timeline-collage-hero__title-wrap">
+        <h2 class="timeline-collage-hero__title">
+          <span class="timeline-collage-hero__title-text">{{ section.settings.title | escape }}</span>
+        </h2>
+      </div>
+    {% endif %}
+
+    {% if section.settings.description != blank %}
+      <div class="timeline-collage-hero__description-wrap">
+        <p class="timeline-collage-hero__description">
+          <span class="timeline-collage-hero__description-text">{{ description_output }}</span>
+        </p>
+      </div>
+    {% endif %}
+
+  </div>
+
+  <div class="timeline-collage-hero__body page-width">
+    {% for block in section.blocks %}
+      {% if block.type == 'overlay_text' %}
+        <div class="timeline-collage-hero__body-text">
+          {% render 'text', block: block, class: 'timeline-collage-hero__body-text-content', width: '100%' %}
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
+
+{% stylesheet %}
+  .timeline-collage-hero {
+    position: relative;
+    z-index: 0;
+    overflow: visible;
+  }
+
+  .timeline-collage-hero__canvas {
+    position: relative;
+    min-height: var(--canvas-height-mobile);
+    background-color: #dddddd;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    overflow: visible;
+  }
+
+  .timeline-collage-hero__title-wrap {
+    position: absolute;
+    left: 50%;
+    top: 25%;
+    transform: translate(calc(-50% + var(--title-x-mobile)), calc(-50% + var(--title-y-mobile)));
+    z-index: 2;
+    max-width: 92%;
+    text-align: center;
+  }
+
+  .timeline-collage-hero__title {
+    margin: 0;
+    line-height: 1;
+    font-size: var(--title-size-mobile);
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+
+  .timeline-collage-hero__title-text {
+    display: inline;
+    background: #000;
+    color: #fff;
+    padding: 0.08em 0.24em 0.12em;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+  }
+
+  .timeline-collage-hero__description-wrap {
+    position: absolute;
+    left: 50%;
+    top: 54%;
+    transform: translate(calc(-50% + var(--desc-x-mobile)), calc(-50% + var(--desc-y-mobile)));
+    z-index: 2;
+    width: min(92%, var(--desc-width-mobile));
+    text-align: center;
+  }
+
+  .timeline-collage-hero__description {
+    margin: 0;
+    line-height: 1.2;
+    font-size: var(--desc-size-mobile);
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+
+  .timeline-collage-hero__description-text {
+    display: inline;
+    white-space: normal;
+    background: #000;
+    color: #fff;
+    padding: 0 0.2em;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+  }
+
+  .timeline-collage-hero__description em {
+    color: #ffe100;
+    font-style: normal;
+  }
+
+  .timeline-collage-hero__float {
+    position: absolute;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .timeline-collage-hero__float img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .timeline-collage-hero__float.has-shadow img {
+    box-shadow: 0 16px 34px rgb(0 0 0 / 0.3);
+  }
+
+  .timeline-collage-hero__float--left {
+    left: 0;
+    top: 54%;
+    width: var(--left-width-mobile);
+    transform: translate(var(--left-x-mobile), calc(-50% + var(--left-y-mobile))) rotate(var(--left-rotation));
+  }
+
+  .timeline-collage-hero__float--right {
+    right: 0;
+    top: 30%;
+    width: var(--right-width-mobile);
+    transform: translate(var(--right-x-mobile), calc(-50% + var(--right-y-mobile))) rotate(var(--right-rotation));
+  }
+
+  .timeline-collage-hero__body {
+    margin-top: 20px;
+    position: relative;
+    z-index: 3;
+    text-align: center;
+  }
+
+  .timeline-collage-hero__body-text .text-block {
+    width: 100%;
+  }
+
+  @media screen and (min-width: 750px) {
+    .timeline-collage-hero__canvas {
+      min-height: var(--canvas-height-desktop);
+    }
+
+    .timeline-collage-hero__title-wrap {
+      transform: translate(calc(-50% + var(--title-x-desktop)), calc(-50% + var(--title-y-desktop)));
+    }
+
+    .timeline-collage-hero__title {
+      font-size: var(--title-size-desktop);
+    }
+
+    .timeline-collage-hero__description-wrap {
+      width: min(92%, var(--desc-width-desktop));
+      transform: translate(calc(-50% + var(--desc-x-desktop)), calc(-50% + var(--desc-y-desktop)));
+    }
+
+    .timeline-collage-hero__description {
+      font-size: var(--desc-size-desktop);
+    }
+
+    .timeline-collage-hero__float--left {
+      width: var(--left-width-desktop);
+      transform: translate(var(--left-x-desktop), calc(-50% + var(--left-y-desktop))) rotate(var(--left-rotation));
+    }
+
+    .timeline-collage-hero__float--right {
+      width: var(--right-width-desktop);
+      transform: translate(var(--right-x-desktop), calc(-50% + var(--right-y-desktop))) rotate(var(--right-rotation));
+    }
+
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Timeline Collage Hero",
+  "tag": "section",
+  "class": "timeline-collage-hero-section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Título",
+      "default": "1960"
+    },
+    {
+      "type": "range",
+      "id": "title_size_desktop",
+      "label": "Tamaño título (escritorio)",
+      "min": 24,
+      "max": 220,
+      "step": 2,
+      "unit": "px",
+      "default": 120
+    },
+    {
+      "type": "range",
+      "id": "title_size_mobile",
+      "label": "Tamaño título (móvil)",
+      "min": 18,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "title_offset_x_desktop",
+      "label": "Título X (escritorio)",
+      "min": -250,
+      "max": 250,
+      "step": 5,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "title_offset_y_desktop",
+      "label": "Título Y (escritorio)",
+      "min": -250,
+      "max": 250,
+      "step": 5,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "title_offset_x_mobile",
+      "label": "Título X (móvil)",
+      "min": -250,
+      "max": 250,
+      "step": 5,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "title_offset_y_mobile",
+      "label": "Título Y (móvil)",
+      "min": -250,
+      "max": 250,
+      "step": 5,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Descripción",
+      "default": "THE BEGINNINGS 'OF AN ICON'\nBORN FROM INGENUITY"
+    },
+    {
+      "type": "text",
+      "id": "description_highlight",
+      "label": "Texto destacado en amarillo",
+      "default": "THE BEGINNINGS 'OF AN ICON'"
+    },
+    {
+      "type": "range",
+      "id": "description_size_desktop",
+      "label": "Tamaño descripción (escritorio)",
+      "min": 14,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 58
+    },
+    {
+      "type": "range",
+      "id": "description_size_mobile",
+      "label": "Tamaño descripción (móvil)",
+      "min": 12,
+      "max": 72,
+      "step": 1,
+      "unit": "px",
+      "default": 34
+    },
+    {
+      "type": "range",
+      "id": "description_max_width_desktop",
+      "label": "Ancho descripción (escritorio)",
+      "min": 300,
+      "max": 1800,
+      "step": 15,
+      "unit": "px",
+      "default": 1305
+    },
+    {
+      "type": "range",
+      "id": "description_max_width_mobile",
+      "label": "Ancho descripción (móvil)",
+      "min": 220,
+      "max": 900,
+      "step": 10,
+      "unit": "px",
+      "default": 540
+    },
+    {
+      "type": "range",
+      "id": "description_offset_x_desktop",
+      "label": "Descripción X (escritorio)",
+      "min": -250,
+      "max": 250,
+      "step": 5,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "description_offset_y_desktop",
+      "label": "Descripción Y (escritorio)",
+      "min": -250,
+      "max": 250,
+      "step": 5,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "description_offset_x_mobile",
+      "label": "Descripción X (móvil)",
+      "min": -250,
+      "max": 250,
+      "step": 5,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "description_offset_y_mobile",
+      "label": "Descripción Y (móvil)",
+      "min": -250,
+      "max": 250,
+      "step": 5,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "Fondo"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Imagen de fondo"
+    },
+    {
+      "type": "range",
+      "id": "canvas_height_desktop",
+      "label": "Altura del bloque (escritorio)",
+      "min": 300,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "default": 760
+    },
+    {
+      "type": "range",
+      "id": "canvas_height_mobile",
+      "label": "Altura del bloque (móvil)",
+      "min": 220,
+      "max": 900,
+      "step": 10,
+      "unit": "px",
+      "default": 520
+    },
+    {
+      "type": "header",
+      "content": "Imagen izquierda"
+    },
+    {
+      "type": "image_picker",
+      "id": "left_image",
+      "label": "Imagen izquierda"
+    },
+    {
+      "type": "checkbox",
+      "id": "left_image_shadow",
+      "label": "Sombra imagen izquierda",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "left_image_width_desktop",
+      "label": "Ancho izquierda (escritorio)",
+      "min": 80,
+      "max": 900,
+      "step": 10,
+      "unit": "px",
+      "default": 380
+    },
+    {
+      "type": "range",
+      "id": "left_image_width_mobile",
+      "label": "Ancho izquierda (móvil)",
+      "min": 60,
+      "max": 700,
+      "step": 10,
+      "unit": "px",
+      "default": 220
+    },
+    {
+      "type": "range",
+      "id": "left_image_offset_x_desktop",
+      "label": "Izquierda X (escritorio)",
+      "min": -300,
+      "max": 300,
+      "step": 6,
+      "unit": "px",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "left_image_offset_y_desktop",
+      "label": "Izquierda Y (escritorio)",
+      "min": -300,
+      "max": 300,
+      "step": 6,
+      "unit": "px",
+      "default": 180
+    },
+    {
+      "type": "range",
+      "id": "left_image_offset_x_mobile",
+      "label": "Izquierda X (móvil)",
+      "min": -300,
+      "max": 300,
+      "step": 6,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "left_image_offset_y_mobile",
+      "label": "Izquierda Y (móvil)",
+      "min": -300,
+      "max": 300,
+      "step": 6,
+      "unit": "px",
+      "default": 120
+    },
+    {
+      "type": "range",
+      "id": "left_image_rotation",
+      "label": "Rotación izquierda",
+      "min": -30,
+      "max": 30,
+      "step": 1,
+      "unit": "deg",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "Imagen derecha"
+    },
+    {
+      "type": "image_picker",
+      "id": "right_image",
+      "label": "Imagen derecha"
+    },
+    {
+      "type": "checkbox",
+      "id": "right_image_shadow",
+      "label": "Sombra imagen derecha",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "right_image_width_desktop",
+      "label": "Ancho derecha (escritorio)",
+      "min": 80,
+      "max": 900,
+      "step": 10,
+      "unit": "px",
+      "default": 360
+    },
+    {
+      "type": "range",
+      "id": "right_image_width_mobile",
+      "label": "Ancho derecha (móvil)",
+      "min": 60,
+      "max": 700,
+      "step": 10,
+      "unit": "px",
+      "default": 200
+    },
+    {
+      "type": "range",
+      "id": "right_image_offset_x_desktop",
+      "label": "Derecha X (escritorio)",
+      "min": -300,
+      "max": 300,
+      "step": 6,
+      "unit": "px",
+      "default": -30
+    },
+    {
+      "type": "range",
+      "id": "right_image_offset_y_desktop",
+      "label": "Derecha Y (escritorio)",
+      "min": -300,
+      "max": 300,
+      "step": 6,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "right_image_offset_x_mobile",
+      "label": "Derecha X (móvil)",
+      "min": -300,
+      "max": 300,
+      "step": 6,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "right_image_offset_y_mobile",
+      "label": "Derecha Y (móvil)",
+      "min": -300,
+      "max": 300,
+      "step": 6,
+      "unit": "px",
+      "default": -12
+    },
+    {
+      "type": "range",
+      "id": "right_image_rotation",
+      "label": "Rotación derecha",
+      "min": -30,
+      "max": 30,
+      "step": 1,
+      "unit": "deg",
+      "default": 0
+    },
+    {
+      "type": "select",
+      "id": "section_width",
+      "label": "Ancho de la sección",
+      "options": [
+        { "value": "full-width", "label": "Ancho completo" },
+        { "value": "page-width", "label": "Ancho de página" }
+      ],
+      "default": "full-width"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Esquema de color",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "t:content.padding"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "Arriba",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "Abajo",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "t:content.padding_mobile"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start-mobile",
+      "label": "Arriba (móvil)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end-mobile",
+      "label": "Abajo (móvil)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    }
+  ],
+  "blocks": [
+    {
+      "type": "overlay_text",
+      "name": "Texto inferior",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Texto"
+        },
+        {
+          "type": "header",
+          "content": "Layout"
+        },
+        {
+          "type": "select",
+          "id": "width",
+          "label": "Ancho",
+          "options": [
+            { "value": "fit-content", "label": "Ajustado" },
+            { "value": "100%", "label": "Llenar" }
+          ],
+          "default": "fit-content"
+        },
+        {
+          "type": "select",
+          "id": "max_width",
+          "label": "Ancho máximo",
+          "options": [
+            { "value": "narrow", "label": "Estrecho" },
+            { "value": "normal", "label": "Normal" },
+            { "value": "none", "label": "Sin límite" }
+          ],
+          "default": "normal"
+        },
+        {
+          "type": "text_alignment",
+          "id": "alignment",
+          "label": "Alineación",
+          "default": "left",
+          "visible_if": "{{ block.settings.width == '100%' }}"
+        },
+        {
+          "type": "header",
+          "content": "Tipografía"
+        },
+        {
+          "type": "select",
+          "id": "type_preset",
+          "label": "Preset",
+          "options": [
+            { "value": "rte", "label": "Default" },
+            { "value": "paragraph", "label": "Párrafo" },
+            { "value": "h1", "label": "H1" },
+            { "value": "h2", "label": "H2" },
+            { "value": "h3", "label": "H3" },
+            { "value": "h4", "label": "H4" },
+            { "value": "h5", "label": "H5" },
+            { "value": "h6", "label": "H6" },
+            { "value": "custom", "label": "Personalizado" }
+          ],
+          "default": "rte"
+        },
+        {
+          "type": "select",
+          "id": "font",
+          "label": "Fuente",
+          "options": [
+            { "value": "var(--font-body--family)", "label": "Body" },
+            { "value": "var(--font-subheading--family)", "label": "Subheading" },
+            { "value": "var(--font-heading--family)", "label": "Heading" },
+            { "value": "var(--font-accent--family)", "label": "Accent" }
+          ],
+          "default": "var(--font-body--family)",
+          "visible_if": "{{ block.settings.type_preset == 'custom' }}"
+        },
+        {
+          "type": "select",
+          "id": "font_size",
+          "label": "Tamaño",
+          "options": [
+            { "value": "", "label": "Default" },
+            { "value": "0.75rem", "label": "12px" },
+            { "value": "0.875rem", "label": "14px" },
+            { "value": "1rem", "label": "16px" },
+            { "value": "1.125rem", "label": "18px" },
+            { "value": "1.25rem", "label": "20px" },
+            { "value": "1.5rem", "label": "24px" },
+            { "value": "1.875rem", "label": "30px" },
+            { "value": "2.5rem", "label": "40px" },
+            { "value": "3rem", "label": "48px" },
+            { "value": "4.5rem", "label": "72px" }
+          ],
+          "default": "1rem",
+          "visible_if": "{{ block.settings.type_preset == 'custom' }}"
+        },
+        {
+          "type": "select",
+          "id": "font_size_mobile",
+          "label": "Tamaño móvil",
+          "options": [
+            { "value": "", "label": "Default" },
+            { "value": "0.75rem", "label": "12px" },
+            { "value": "0.875rem", "label": "14px" },
+            { "value": "1rem", "label": "16px" },
+            { "value": "1.125rem", "label": "18px" },
+            { "value": "1.25rem", "label": "20px" },
+            { "value": "1.5rem", "label": "24px" },
+            { "value": "1.875rem", "label": "30px" },
+            { "value": "2.5rem", "label": "40px" },
+            { "value": "3rem", "label": "48px" },
+            { "value": "4.5rem", "label": "72px" }
+          ],
+          "default": "",
+          "visible_if": "{{ block.settings.type_preset == 'custom' }}"
+        },
+        {
+          "type": "select",
+          "id": "line_height",
+          "label": "Interlineado",
+          "options": [
+            { "value": "tight", "label": "Compacto" },
+            { "value": "normal", "label": "Normal" },
+            { "value": "loose", "label": "Amplio" }
+          ],
+          "default": "normal",
+          "visible_if": "{{ block.settings.type_preset == 'custom' }}"
+        },
+        {
+          "type": "select",
+          "id": "letter_spacing",
+          "label": "Espaciado",
+          "options": [
+            { "value": "tight", "label": "Compacto" },
+            { "value": "normal", "label": "Normal" },
+            { "value": "loose", "label": "Amplio" }
+          ],
+          "default": "normal",
+          "visible_if": "{{ block.settings.type_preset == 'custom' }}"
+        },
+        {
+          "type": "select",
+          "id": "case",
+          "label": "Mayúsculas",
+          "options": [
+            { "value": "none", "label": "Default" },
+            { "value": "uppercase", "label": "Uppercase" }
+          ],
+          "default": "none",
+          "visible_if": "{{ block.settings.type_preset == 'custom' }}"
+        },
+        {
+          "type": "select",
+          "id": "wrap",
+          "label": "Saltos de línea",
+          "options": [
+            { "value": "pretty", "label": "Pretty" },
+            { "value": "balance", "label": "Balance" },
+            { "value": "nowrap", "label": "Sin wrap" }
+          ],
+          "visible_if": "{{ block.settings.type_preset == 'custom' }}"
+        },
+        {
+          "type": "select",
+          "id": "color",
+          "label": "Color",
+          "options": [
+            { "value": "var(--color-foreground)", "label": "Texto" },
+            { "value": "var(--color-foreground-heading)", "label": "Heading" },
+            { "value": "var(--color-primary)", "label": "Link" }
+          ],
+          "default": "var(--color-foreground)",
+          "visible_if": "{{ block.settings.type_preset != 'rte' }}"
+        },
+        {
+          "type": "color",
+          "id": "italic_color",
+          "label": "Color cursiva"
+        },
+        {
+          "type": "color",
+          "id": "strong_color",
+          "label": "Color negrita"
+        },
+        {
+          "type": "header",
+          "content": "Apariencia"
+        },
+        {
+          "type": "checkbox",
+          "id": "background",
+          "label": "Fondo",
+          "default": false
+        },
+        {
+          "type": "checkbox",
+          "id": "line_highlight",
+          "label": "Resaltar por línea",
+          "default": false
+        },
+        {
+          "type": "color",
+          "id": "background_color",
+          "label": "Color de fondo",
+          "alpha": true,
+          "default": "#000000",
+          "visible_if": "{{ block.settings.background or block.settings.line_highlight }}"
+        },
+        {
+          "type": "range",
+          "id": "corner_radius",
+          "label": "Radio",
+          "default": 0,
+          "min": 0,
+          "max": 50,
+          "step": 1,
+          "visible_if": "{{ block.settings.background }}"
+        },
+        {
+          "type": "select",
+          "id": "visibility",
+          "label": "Visibilidad",
+          "options": [
+            { "value": "all", "label": "Desktop y móvil" },
+            { "value": "desktop", "label": "Solo desktop" },
+            { "value": "mobile", "label": "Solo móvil" }
+          ],
+          "default": "all"
+        },
+        {
+          "type": "header",
+          "content": "Padding"
+        },
+        {
+          "type": "range",
+          "id": "padding-block-start",
+          "label": "Arriba",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "default": 0
+        },
+        {
+          "type": "range",
+          "id": "padding-block-end",
+          "label": "Abajo",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "default": 0
+        },
+        {
+          "type": "range",
+          "id": "padding-inline-start",
+          "label": "Izquierda",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "default": 0
+        },
+        {
+          "type": "range",
+          "id": "padding-inline-end",
+          "label": "Derecha",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "default": 0
+        },
+        {
+          "type": "header",
+          "content": "Padding móvil"
+        },
+        {
+          "type": "checkbox",
+          "id": "mobile_padding_override",
+          "label": "Padding móvil personalizado",
+          "default": false
+        },
+        {
+          "type": "range",
+          "id": "padding-block-start-mobile",
+          "label": "Arriba (móvil)",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "default": 0,
+          "visible_if": "{{ block.settings.mobile_padding_override }}"
+        },
+        {
+          "type": "range",
+          "id": "padding-block-end-mobile",
+          "label": "Abajo (móvil)",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "default": 0,
+          "visible_if": "{{ block.settings.mobile_padding_override }}"
+        },
+        {
+          "type": "range",
+          "id": "padding-inline-start-mobile",
+          "label": "Izquierda (móvil)",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "default": 0,
+          "visible_if": "{{ block.settings.mobile_padding_override }}"
+        },
+        {
+          "type": "range",
+          "id": "padding-inline-end-mobile",
+          "label": "Derecha (móvil)",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "default": 0,
+          "visible_if": "{{ block.settings.mobile_padding_override }}"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Timeline Collage Hero"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,618 @@
+{% liquid
+  assign raw_youtube = section.settings.youtube_url | strip
+  assign youtube_id = raw_youtube
+
+  if raw_youtube contains 'youtu.be/'
+    assign youtube_id = raw_youtube | split: 'youtu.be/' | last | split: '?' | first | split: '&' | first
+  elsif raw_youtube contains 'watch?v='
+    assign youtube_id = raw_youtube | split: 'v=' | last | split: '&' | first
+  elsif raw_youtube contains '/embed/'
+    assign youtube_id = raw_youtube | split: '/embed/' | last | split: '?' | first | split: '&' | first
+  endif
+
+  assign youtube_id = youtube_id | strip
+
+  assign poster_url = ''
+  if section.settings.poster_image != blank
+    assign poster_url = section.settings.poster_image | image_url: width: 2400
+  elsif youtube_id != blank
+    assign poster_url = 'https://img.youtube.com/vi/' | append: youtube_id | append: '/maxresdefault.jpg'
+  endif
+
+  assign video_src = ''
+  if youtube_id != blank
+    assign video_src = 'https://www.youtube.com/embed/' | append: youtube_id | append: '?autoplay=1&mute=1&playsinline=1&rel=0&modestbranding=1'
+  endif
+%}
+
+<div
+  class="section section--{{ section.settings.section_width }} spacing-style hero-video-youtube color-{{ section.settings.color_scheme }}"
+  style="
+    {% render 'spacing-style', settings: section.settings %}
+    --hero-video-height-desktop: {{ section.settings.height_desktop }}svh;
+    --hero-video-height-mobile: {{ section.settings.height_mobile }}svh;
+    --hero-overlay-opacity: {{ section.settings.overlay_opacity | divided_by: 100.0 }};
+    --hero-heading-size-desktop: {{ section.settings.heading_size_desktop }}px;
+    --hero-heading-size-mobile: {{ section.settings.heading_size_mobile }}px;
+    --hero-content-offset-desktop: {{ section.settings.content_offset_desktop }}px;
+    --hero-content-offset-mobile: {{ section.settings.content_offset_mobile }}px;
+    --hero-play-size-desktop: {{ section.settings.play_size_desktop }}px;
+    --hero-play-size-mobile: {{ section.settings.play_size_mobile }}px;
+  "
+>
+  <div
+    class="hero-video-youtube__stage"
+    {% if poster_url != blank %}
+      style="background-image: url('{{ poster_url }}');"
+    {% endif %}
+  >
+    <div class="hero-video-youtube__overlay"></div>
+
+    <div class="hero-video-youtube__content text-{{ section.settings.content_alignment }} valign-{{ section.settings.content_vertical_alignment }}">
+      <button
+        type="button"
+        class="hero-video-youtube__play"
+        data-open-video
+        aria-label="{{ section.settings.play_label | default: 'Reproducir video' | escape }}"
+        {% if video_src == blank %}
+          disabled
+        {% endif %}
+      >
+        <span class="hero-video-youtube__play-icon" aria-hidden="true"></span>
+      </button>
+
+      {% if section.settings.heading != blank %}
+        {% liquid
+          assign heading_output = section.settings.heading | strip | escape
+          assign highlight_output = section.settings.highlight_phrase | strip | escape
+
+          if highlight_output != blank and heading_output contains highlight_output
+            assign highlight_markup = '<em>' | append: highlight_output | append: '</em>'
+            assign heading_output = heading_output | replace: highlight_output, highlight_markup
+          endif
+        %}
+        <h2 class="hero-video-youtube__heading"><span class="hero-video-youtube__heading-text">{{ heading_output }}</span></h2>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="hero-video-youtube__modal" data-video-modal hidden>
+    <div class="hero-video-youtube__modal-backdrop" data-close-video></div>
+    <div class="hero-video-youtube__dialog" role="dialog" aria-modal="true" aria-label="{{ section.settings.play_label | default: 'Video' | escape }}">
+      <button type="button" class="hero-video-youtube__close" data-close-video aria-label="Cerrar video">
+        {{ 'icon-close.svg' | inline_asset_content }}
+      </button>
+      <div class="hero-video-youtube__frame-wrap">
+        <iframe
+          class="hero-video-youtube__frame"
+          data-video-iframe
+          data-src="{{ video_src }}"
+          title="{{ section.settings.play_label | default: 'Video' | escape }}"
+          allow="autoplay; encrypted-media; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function () {
+    const sectionEl = document.getElementById('shopify-section-{{ section.id }}');
+    if (!sectionEl) return;
+
+    const modal = sectionEl.querySelector('[data-video-modal]');
+    const openButton = sectionEl.querySelector('[data-open-video]');
+    const closeButtons = sectionEl.querySelectorAll('[data-close-video]');
+    const iframe = sectionEl.querySelector('[data-video-iframe]');
+
+    if (!modal || !openButton || !iframe) return;
+
+    const iframeSrc = iframe.dataset.src || '';
+    let isOpen = false;
+
+    function openVideo() {
+      if (!iframeSrc || isOpen) return;
+      isOpen = true;
+      modal.hidden = false;
+      requestAnimationFrame(function () {
+        modal.classList.add('is-open');
+      });
+      iframe.src = iframeSrc;
+      document.documentElement.classList.add('hero-video-youtube--lock-scroll');
+    }
+
+    function closeVideo() {
+      if (!isOpen) return;
+      isOpen = false;
+      modal.classList.remove('is-open');
+      iframe.src = '';
+      document.documentElement.classList.remove('hero-video-youtube--lock-scroll');
+      setTimeout(function () {
+        modal.hidden = true;
+      }, 180);
+    }
+
+    openButton.addEventListener('click', openVideo);
+    closeButtons.forEach(function (button) {
+      button.addEventListener('click', closeVideo);
+    });
+
+    sectionEl.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape') {
+        closeVideo();
+      }
+    });
+
+    document.addEventListener('shopify:section:unload', function (event) {
+      if (event.detail.sectionId === '{{ section.id }}') {
+        closeVideo();
+      }
+    });
+  })();
+</script>
+
+<style>
+  .hero-video-youtube__stage {
+    position: relative;
+    min-height: clamp(340px, var(--hero-video-height-mobile), 100svh);
+    height: var(--hero-video-height-mobile);
+    background-color: #111;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    display: grid;
+    place-items: center;
+    padding: 24px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .hero-video-youtube__stage {
+      min-height: clamp(460px, var(--hero-video-height-desktop), 100svh);
+      height: var(--hero-video-height-desktop);
+    }
+  }
+
+  .hero-video-youtube__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgb(0 0 0 / var(--hero-overlay-opacity));
+  }
+
+  .hero-video-youtube__play {
+    position: relative;
+    width: var(--hero-play-size-mobile);
+    height: var(--hero-play-size-mobile);
+    border: 0;
+    background: #ffe100;
+    color: #111;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.2s ease, filter 0.2s ease;
+  }
+
+  .hero-video-youtube__play:hover {
+    transform: scale(1.04);
+    filter: brightness(0.95);
+  }
+
+  .hero-video-youtube__play:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .hero-video-youtube__play-icon {
+    width: 0;
+    height: 0;
+    border-top: calc(var(--hero-play-size-mobile) * 0.11) solid transparent;
+    border-bottom: calc(var(--hero-play-size-mobile) * 0.11) solid transparent;
+    border-left: calc(var(--hero-play-size-mobile) * 0.17) solid #111;
+    margin-left: 2px;
+  }
+
+  .hero-video-youtube__content {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, var(--hero-content-offset-mobile));
+    z-index: 2;
+    width: min(94%, 1100px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    text-align: center;
+  }
+
+  .hero-video-youtube__content.text-left {
+    left: 3%;
+    transform: translateY(var(--hero-content-offset-mobile));
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .hero-video-youtube__content.text-right {
+    left: auto;
+    right: 3%;
+    transform: translateY(var(--hero-content-offset-mobile));
+    align-items: flex-end;
+    text-align: right;
+  }
+
+  .hero-video-youtube__content.valign-top {
+    top: 8%;
+    bottom: auto;
+  }
+
+  .hero-video-youtube__content.valign-center {
+    top: 50%;
+    bottom: auto;
+    transform: translate(-50%, calc(-50% + var(--hero-content-offset-mobile)));
+  }
+
+  .hero-video-youtube__content.text-left.valign-center,
+  .hero-video-youtube__content.text-right.valign-center {
+    transform: translateY(calc(-50% + var(--hero-content-offset-mobile)));
+  }
+
+  .hero-video-youtube__content.valign-bottom {
+    top: auto;
+    bottom: 8%;
+  }
+
+  .hero-video-youtube__heading {
+    margin: 0 10dvw;
+    line-height: 1.2;
+    font-stretch: normal;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #fff;
+    text-align: inherit;
+    font-size: var(--hero-heading-size-mobile);
+    letter-spacing: 0.01em;
+    display: block;
+    white-space: normal;
+  }
+
+  .hero-video-youtube__heading-text {
+    display: inline;
+    white-space: normal;
+    background: #000;
+    padding: 0 0.22em;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+  }
+
+  @media screen and (min-width: 750px) {
+    .hero-video-youtube__heading {
+      font-size: var(--hero-heading-size-desktop);
+    }
+
+    .hero-video-youtube__content {
+      transform: translate(-50%, var(--hero-content-offset-desktop));
+    }
+
+    .hero-video-youtube__content.text-left,
+    .hero-video-youtube__content.text-right {
+      transform: translateY(var(--hero-content-offset-desktop));
+    }
+
+    .hero-video-youtube__content.valign-center {
+      transform: translate(-50%, calc(-50% + var(--hero-content-offset-desktop)));
+    }
+
+    .hero-video-youtube__content.text-left.valign-center,
+    .hero-video-youtube__content.text-right.valign-center {
+      transform: translateY(calc(-50% + var(--hero-content-offset-desktop)));
+    }
+
+    .hero-video-youtube__play {
+      width: var(--hero-play-size-desktop);
+      height: var(--hero-play-size-desktop);
+    }
+
+    .hero-video-youtube__play-icon {
+      border-top: calc(var(--hero-play-size-desktop) * 0.11) solid transparent;
+      border-bottom: calc(var(--hero-play-size-desktop) * 0.11) solid transparent;
+      border-left: calc(var(--hero-play-size-desktop) * 0.17) solid #111;
+    }
+  }
+
+  .hero-video-youtube__heading em {
+    color: #ffe100;
+    font-style: normal;
+  }
+
+  .hero-video-youtube__modal {
+    position: fixed;
+    inset: 0;
+    z-index: 40;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.18s ease;
+  }
+
+  .hero-video-youtube__modal.is-open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .hero-video-youtube__modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgb(0 0 0 / 0.78);
+  }
+
+  .hero-video-youtube__dialog {
+    position: relative;
+    z-index: 1;
+    width: min(94vw, 1280px);
+    margin: 4vh auto 0;
+    background: #000;
+  }
+
+  .hero-video-youtube__close {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    z-index: 2;
+    width: 44px;
+    height: 44px;
+    border: 0;
+    border-radius: 999px;
+    background: rgb(0 0 0 / 0.55);
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  .hero-video-youtube__close svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .hero-video-youtube__frame-wrap {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+  }
+
+  .hero-video-youtube__frame {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
+  .hero-video-youtube--lock-scroll,
+  .hero-video-youtube--lock-scroll body {
+    overflow: hidden;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Hero Video YouTube",
+  "tag": "section",
+  "class": "hero-video-youtube-section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "url",
+      "id": "youtube_url",
+      "label": "URL de YouTube",
+      "info": "Acepta links watch, youtu.be o embed."
+    },
+    {
+      "type": "image_picker",
+      "id": "poster_image",
+      "label": "Imagen portada (opcional)"
+    },
+    {
+      "type": "textarea",
+      "id": "heading",
+      "label": "Título",
+      "default": "DR. MARTENS: A HISTORY OF\nREBELLIOUS SELF-\nEXPRESSION."
+    },
+    {
+      "type": "range",
+      "id": "heading_size_desktop",
+      "label": "Tamaño de título (escritorio)",
+      "min": 24,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "default": 72
+    },
+    {
+      "type": "range",
+      "id": "heading_size_mobile",
+      "label": "Tamaño de título (móvil)",
+      "min": 18,
+      "max": 80,
+      "step": 1,
+      "unit": "px",
+      "default": 44
+    },
+    {
+      "type": "text",
+      "id": "highlight_phrase",
+      "label": "Texto resaltado en amarillo",
+      "default": "DR. MARTENS:"
+    },
+    {
+      "type": "select",
+      "id": "content_alignment",
+      "label": "Alineación del contenido",
+      "options": [
+        { "value": "left", "label": "Izquierda" },
+        { "value": "center", "label": "Centro" },
+        { "value": "right", "label": "Derecha" }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "content_vertical_alignment",
+      "label": "Alineación vertical del contenido",
+      "options": [
+        { "value": "top", "label": "Arriba" },
+        { "value": "center", "label": "Centro" },
+        { "value": "bottom", "label": "Abajo" }
+      ],
+      "default": "bottom"
+    },
+    {
+      "type": "range",
+      "id": "content_offset_desktop",
+      "label": "Offset vertical contenido (escritorio)",
+      "min": -200,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "content_offset_mobile",
+      "label": "Offset vertical contenido (móvil)",
+      "min": -200,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "text",
+      "id": "play_label",
+      "label": "Etiqueta accesible del botón play",
+      "default": "Reproducir video"
+    },
+    {
+      "type": "range",
+      "id": "play_size_desktop",
+      "label": "Tamaño botón play (escritorio)",
+      "min": 40,
+      "max": 180,
+      "step": 2,
+      "unit": "px",
+      "default": 92
+    },
+    {
+      "type": "range",
+      "id": "play_size_mobile",
+      "label": "Tamaño botón play (móvil)",
+      "min": 32,
+      "max": 140,
+      "step": 2,
+      "unit": "px",
+      "default": 72
+    },
+    {
+      "type": "range",
+      "id": "height_desktop",
+      "label": "Altura escritorio",
+      "min": 40,
+      "max": 100,
+      "step": 1,
+      "unit": "svh",
+      "default": 90
+    },
+    {
+      "type": "range",
+      "id": "height_mobile",
+      "label": "Altura móvil",
+      "min": 40,
+      "max": 100,
+      "step": 1,
+      "unit": "svh",
+      "default": 70
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "label": "Opacidad overlay",
+      "min": 0,
+      "max": 90,
+      "step": 5,
+      "unit": "%",
+      "default": 30
+    },
+    {
+      "type": "select",
+      "id": "section_width",
+      "label": "Ancho de la sección",
+      "options": [
+        { "value": "full-width", "label": "Ancho completo" },
+        { "value": "page-width", "label": "Ancho de página" }
+      ],
+      "default": "full-width"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Esquema de color",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "t:content.padding"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "Arriba",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "Abajo",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "t:content.padding_mobile"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start-mobile",
+      "label": "Arriba (móvil)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end-mobile",
+      "label": "Abajo (móvil)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero Video YouTube"
+    }
+  ]
+}
+{% endschema %}
