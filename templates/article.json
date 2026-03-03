@@ -57,7 +57,7 @@
           "static": true,
           "settings": {
             "show_date": true,
-            "show_author": true,
+            "show_author": false,
             "type_preset": "",
             "alignment": "left",
             "show_alignment": true,
@@ -244,7 +244,7 @@
       "block_order": [
         "group_4Rm3Ea"
       ],
-      "name": "t:names.custom_section",
+      "name": "Sección | contenido",
       "settings": {
         "content_direction": "column",
         "vertical_on_mobile": true,
