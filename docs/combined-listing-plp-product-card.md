@@ -43,12 +43,10 @@ El comportamiento en PDP se mantiene: para combined listings en PDP se sigue hac
   - Después del morph de `.product-card__content` llama a una rutina de sincronización de links/datos de la card.
 
 - `sections/section-rendering-product-card.liquid`
-  - Define el HTML que se usa como **origen** para el morph de `.product-card__content`.
-  - Agrega atributos `data-product-id` y `data-product-url` al `product-card` para que puedan sincronizarse tras el morph.
-  - Estructura la card para que:
-    - Exista un anchor principal `a.product-card__link` (link clickable a PDP).
-    - Todo el contenido variable (gallery, swatches, título, precio, badges, SKU) esté dentro de `.product-card__content`.
-  - Incluye badges de producto (`Sold out` / `Sale`) y elementos de título/precio/SKU pensados para ser refrescados con cada producto hijo.
+  - Genera una card específica para Section Rendering que respeta la estructura clave de la product card:
+    - `product-card-link` (cuando aplica), `product-card`, `a.product-card__link` y `.product-card__content`.
+    - Dentro de `.product-card__content` renderiza gallery, badges, swatches, título (`product-title`), precio y SKU.
+  - Usa el snippet `card-gallery` con `product_resource` y `block_settings_source` para que la gallery sea consistente con la de la card real.
 
 - `snippets/card-gallery.liquid`
   - Permite renderizar la gallery en contexto de Section Rendering API:

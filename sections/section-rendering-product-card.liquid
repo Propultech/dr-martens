@@ -1,5 +1,3 @@
-
-
 {% comment %}
   This section is only to be called by the Section Rendering API. Faster to render a single card than the entire product grid.
 
@@ -91,12 +89,7 @@
       {% render 'price', product_resource: product, show_unit_price: true %}
     </product-price>
 
-    <product-sku-component
-      data-product-id="{{ product.id }}"
-      style="{% if sku == blank %}display: none;{% else %}display: block;{% endif %}"
-    >
-      {% render 'sku', product_resource: product %}
-    </product-sku-component>
+  
   </div>
 </product-card>
 {%- if settings.transition_to_main_product -%}

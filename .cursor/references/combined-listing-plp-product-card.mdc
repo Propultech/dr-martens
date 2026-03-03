@@ -90,32 +90,42 @@ Si se renombra alguna de estas clases/atributos (`.product-card__link`, `.produc
 
 Archivo: `sections/section-rendering-product-card.liquid`
 
-Rol: proveer el markup fuente para el morph de `.product-card__content` en PLP.
+Rol: proveer el markup fuente para el morph de `.product-card__content` en PLP, respetando la estructura clave de la product card.
 
-Cambios clave:
+Implementación:
 
-- `product-card` ahora define:
-  - `data-product-id="{{ product.id }}"`
-  - `data-product-url="{{ product.url }}"`
+- La sección construye una card pensada para Section Rendering con:
+  - `product-card-link` cuando `settings.transition_to_main_product` está activo (incluye `data-product-id`, `data-featured-media-url`, `data-product-transition`).
+  - `product-card` con:
+    - `data-product-id="{{ product.id }}"`
+    - `data-product-url="{{ product.url }}"`
+  - `a.product-card__link` con `ref="productCardLink"` y un `<span class="visually-hidden">{{ product.title }}</span>`.
+  - Un contenedor `.product-card__content` que agrupa todo el contenido variable (gallery, badges, swatches, título, precio, SKU).
 
-- Estructura de la card:
-  - Anchor principal:
-    - `<a href="{{ url }}" ref="productCardLink" class="product-card__link">`
-    - Incluye un `<span class="visually-hidden">{{ product.title }}</span>` por accesibilidad.
-  - Contenedor de contenido variable:
-    - `<div class="product-card__content layout-panel-flex ...">`
-    - Dentro de este `div` viven:
-      - Gallery (`{% render 'card-gallery', ... %}`).
-      - Swatches (`{% render 'variant-swatches', ... %}`).
-      - Título (`<product-title>…</product-title>`).
-      - Precio (`<product-price>…</product-price>`).
-      - SKU (`<product-sku-component>…</product-sku-component>`).
-      - Badges (`product-badges`) en el `children` pasado a `card-gallery`.
+- Dentro de `.product-card__content`:
+  - Se capturan badges (`product-badges`) según disponibilidad y `compare_at_price`.
+  - Se renderiza `card-gallery` con:
+    - `product_resource: product`
+    - `block_settings_source: section`
+    - `children: card_gallery_children` (badges).
+  - Se renderiza `variant-swatches` con `product_resource: product` y `has_option_selected: true`.
+  - El título se muestra usando el custom element `product-title` con un enlace interno:
 
-Notas:
+    ```liquid
+    <product-title class="h4">
+      <a href="{{ url }}" ref="productTitleLink" class="contents">
+        <span class="title-text">{{ product.title }}</span>
+      </a>
+    </product-title>
+    ```
 
-- `.product-card__content` es el **único fragmento** que se morfea en PLP; todo lo que deba cambiar entre productos hijos debe estar dentro de este contenedor.
-- Los `data-*` del `product-card` y del `product-card-link` se usan solo para sincronización, no se morfean directamente.
+  - El precio se renderiza con el snippet `price` dentro de `<product-price>`.
+  - El SKU se muestra dentro de `<product-sku-component>` usando el snippet `sku`, y se oculta si `sku` está en blanco.
+
+Consecuencia:
+
+- `.product-card__content` contiene todos los elementos que deben refrescarse al cambiar de producto hijo (gallery, badges, swatches, título, precio, SKU).
+- El morph de `.product-card__content` en PLP mantiene la misma jerarquía de elementos y clases clave (`product-card`, `.product-card__link`, `.product-card__content`, `product-title`, `product-price`, `product-sku-component`).
 
 ---
 
