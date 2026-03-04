@@ -432,7 +432,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h3><a href=\"https://www.drmartens.com/uk/en_gb/guides/how-to-care/how-to-clean-docs-balsam-wax\">HOW TO USE WONDER BALSAM</a></h3>",
+                    "text": "<h3>CÓMO USAR WONDER BALSAM</h3>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -470,7 +470,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Nourish and rejuvenate any well-worn pair</p>",
+                    "text": "<p>Nutre y rejuvenece cualquier par desgastado</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -508,7 +508,7 @@
                   "type": "button",
                   "name": "t:names.button",
                   "settings": {
-                    "label": "DISCOVER MORE",
+                    "label": "DESCUBRE MÁS",
                     "link": "shopify://collections/all",
                     "open_in_new_tab": false,
                     "style_class": "button",
@@ -609,7 +609,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h3><a href=\"https://www.drmartens.com/uk/en_gb/guides/how-to-care/how-to-clean-docs-balsam-wax\">HOW TO USE WONDER BALSAM</a></h3>",
+                    "text": "<h3>CÓMO USAR DUBBIN WAX</h3>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -647,7 +647,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Nourish and rejuvenate any well-worn pair</p>",
+                    "text": "<p>Recupera y protege tu calzado</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -685,7 +685,7 @@
                   "type": "button",
                   "name": "t:names.button",
                   "settings": {
-                    "label": "DISCOVER MORE",
+                    "label": "DESCUBRE MÁS",
                     "link": "shopify://collections/all",
                     "open_in_new_tab": false,
                     "style_class": "button",
@@ -786,7 +786,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h3><a href=\"https://www.drmartens.com/uk/en_gb/guides/how-to-care/how-to-clean-docs-balsam-wax\">HOW TO USE WONDER BALSAM</a></h3>",
+                    "text": "<h3>CÓMO PROTEGER TUS DR. MARTENS</h3>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -824,7 +824,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Nourish and rejuvenate any well-worn pair</p>",
+                    "text": "<p>Prepara tus botas para cualquier cosa</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -862,7 +862,7 @@
                   "type": "button",
                   "name": "t:names.button",
                   "settings": {
-                    "label": "DISCOVER MORE",
+                    "label": "DESCUBRE MÁS",
                     "link": "shopify://collections/all",
                     "open_in_new_tab": false,
                     "style_class": "button",
@@ -1019,7 +1019,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h3><a href=\"https://www.drmartens.com/uk/en_gb/guides/how-to-care/how-to-clean-docs-balsam-wax\">HOW TO USE WONDER BALSAM</a></h3>",
+                    "text": "<h3>CÓMO LIMPIAR CALZADO DE GAMUZA</h3>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -1057,7 +1057,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Nourish and rejuvenate any well-worn pair</p>",
+                    "text": "<p>Devuélveles su esplendor original</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -1095,7 +1095,7 @@
                   "type": "button",
                   "name": "t:names.button",
                   "settings": {
-                    "label": "DISCOVER MORE",
+                    "label": "DESCUBRE MÁS",
                     "link": "shopify://collections/all",
                     "open_in_new_tab": false,
                     "style_class": "button",
@@ -1196,7 +1196,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h3><a href=\"https://www.drmartens.com/uk/en_gb/guides/how-to-care/how-to-clean-docs-balsam-wax\">HOW TO USE WONDER BALSAM</a></h3>",
+                    "text": "<h3>CÓMO PULIR TUS BOTAS</h3>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -1234,7 +1234,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Nourish and rejuvenate any well-worn pair</p>",
+                    "text": "<p>Para que duren aún más</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -1272,7 +1272,7 @@
                   "type": "button",
                   "name": "t:names.button",
                   "settings": {
-                    "label": "DISCOVER MORE",
+                    "label": "DESCUBRE MÁS",
                     "link": "shopify://collections/all",
                     "open_in_new_tab": false,
                     "style_class": "button",
@@ -1373,7 +1373,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h3><a href=\"https://www.drmartens.com/uk/en_gb/guides/how-to-care/how-to-clean-docs-balsam-wax\">HOW TO USE WONDER BALSAM</a></h3>",
+                    "text": "<h3>CÓMO LIMPIAR BOTAS DE CHAROL</h3>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -1411,7 +1411,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Nourish and rejuvenate any well-worn pair</p>",
+                    "text": "<p>Recupera ese brillo brillante</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -1449,7 +1449,7 @@
                   "type": "button",
                   "name": "t:names.button",
                   "settings": {
-                    "label": "DISCOVER MORE",
+                    "label": "DESCUBRE MÁS",
                     "link": "shopify://collections/all",
                     "open_in_new_tab": false,
                     "style_class": "button",
@@ -1524,12 +1524,12 @@
           "type": "button",
           "name": "t:names.button",
           "settings": {
-            "label": "SHOP SHOE CARE AND LACES",
+            "label": "VISITA CUIDADO DE CALZADO Y CORDONES",
             "link": "shopify://collections/all",
             "open_in_new_tab": false,
             "style_class": "button",
             "width": "custom",
-            "custom_width": 23,
+            "custom_width": 30,
             "width_mobile": "fit-content",
             "custom_width_mobile": 100,
             "font_size_desktop": "1.25rem",
