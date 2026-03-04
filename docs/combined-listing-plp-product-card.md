@@ -2,66 +2,109 @@
 
 ### Contexto
 
-- En PDP ya existía soporte para **combined listings**: al cambiar de producto hijo (por ejemplo, otro color) el `variant-picker` pedía la sección completa y hacía morph de `main`.
-- En PLP, al cambiar de variante combinada en la **product card** solo se actualizaba la imagen principal; el resto de la información del producto (nombre, precios, badges, SKU, etc.) quedaba desfasada respecto al producto hijo seleccionado.
+- En PDP, los combined listings mantienen el comportamiento existente: switch de producto hijo con morph de `main`.
+- En PLP, se necesitaba actualizar la card al producto hijo seleccionado sin redirigir a PDP y sin perder clases/estilos configurados por bloques.
 
-### Objetivo funcional
+### Estado actual (implementado)
 
-Cuando el usuario interactúa con los swatches de combined listing en una product card de la PLP:
+En PLP combined listing **ya no se hace morph completo de `.product-card__content`**.
 
-- **No se navega a la PDP**: la tarjeta permanece en la grilla.
-- Se actualiza de forma consistente la información de la card al producto hijo seleccionado:
-  - **Imagen principal / gallery** (ya existía).
-  - **Nombre de producto** mostrado en la card.
-  - **Precio** y **compare at price** (incluyendo badges de oferta).
-  - **Badges de producto** (por ejemplo, `Sold out`, `Sale`).
-  - **SKU** cuando aplica.
-- Se actualizan también los **links y metadatos** asociados a la card:
-  - `href` del enlace principal de la card.
-  - `data-product-id` y `data-product-url` del `product-card`.
-  - `data-featured-media-url` y `data-product-id` del `product-card-link` padre (cuando existe).
+En su lugar, `variant-picker.js` usa un flujo de actualización parcial de fragments:
 
-El comportamiento en PDP se mantiene: para combined listings en PDP se sigue haciendo morph de `main`.
+- slideshow/gallery
+- badges
+- swatches picker
+- price container
+- title (link + texto)
+- zoom-out title
+- SKU
 
-### Flujo funcional (PLP)
+Esto evita drift de markup/clases al preservar wrappers existentes de la card en el DOM actual.
 
-1. El usuario selecciona un swatch/variant dentro de una **product card** que usa combined listings.
-2. El `variant-picker` detecta que:
-   - Está dentro de un `product-card` (PLP).
-   - El `connectedProductUrl` de la opción seleccionada es diferente al `productUrl` actual.
-3. En ese caso:
-   - Se llama a la Section Rendering API para `section-rendering-product-card`.
-   - Se hace **morph de `.product-card__content`** con la respuesta del servidor.
-4. Tras el morph:
-   - Se sincronizan los enlaces y `data-*` del `product-card` y su `product-card-link` padre para que apunten al producto hijo actual.
+### Detección de combined listing
 
-### Archivos involucrados
+El switch de producto se detecta con:
 
-- `assets/variant-picker.js`
-  - Detecta cuándo un cambio de variante en PLP corresponde a un **switch de producto** dentro de una combined listing.
-  - Decide si debe hacer morph de `main` (PDP), de `featured-product-information` o de `.product-card__content` (PLP).
-  - Después del morph de `.product-card__content` llama a una rutina de sincronización de links/datos de la card.
+- `currentUrl = this.dataset.productUrl?.split('?')[0]`
+- `newUrl = selectedOption.dataset.connectedProductUrl`
+- combined switch cuando `newUrl` existe y `newUrl !== currentUrl` dentro de `product-card`.
 
-- `sections/section-rendering-product-card.liquid`
-  - Genera una card específica para Section Rendering que respeta la estructura clave de la product card:
-    - `product-card-link` (cuando aplica), `product-card`, `a.product-card__link` y `.product-card__content`.
-    - Dentro de `.product-card__content` renderiza gallery, badges, swatches, título (`product-title`), precio y SKU.
-  - Usa el snippet `card-gallery` con `product_resource` y `block_settings_source` para que la gallery sea consistente con la de la card real.
+Fuente de `connectedProductUrl`:
 
-- `snippets/card-gallery.liquid`
-  - Permite renderizar la gallery en contexto de Section Rendering API:
-    - Nuevo parámetro `product_resource` (producto cuando no hay `closest.product`).
-    - Nuevo parámetro `block_settings_source` (section o block “fuente” de settings cuando no se dispone de `block`).
-  - Ajusta clases y atributos cuando se renderiza fuera de un bloque (por ejemplo, usa `card-gallery-section-render` y omite `block.shopify_attributes`).
+- `snippets/variant-swatches.liquid` (`data-connected-product-url="{{ product_option_value.product_url }}"`).
 
-### Casos a validar (QA)
+### Flujo técnico en `assets/variant-picker.js`
 
-- **PLP – combined listing:**
-  - Cambiar de color/variante combinada actualiza imagen, título, precio, compare at price, badges y SKU en la misma card.
-  - El enlace de la card lleva a la PDP del **producto hijo** seleccionado.
-  - Si el producto hijo está `sold_out` o `on_sale`, los badges se actualizan correctamente.
-- **PLP – productos sin combined listing:**
-  - El comportamiento de selección de variantes permanece igual, sin morph de `.product-card__content`.
-- **PDP – combined listing:**
-  - Se mantiene la lógica existente: cambio de producto hijo hace morph de `main` según lo esperado.
+1. **`fetchUpdatedSection` robusto ante clicks rápidos**
+   - `AbortController` para cancelar request anterior.
+   - `#latestRequestId` para ignorar respuestas stale que lleguen tarde.
 
+2. **Rama PLP combined (`combined-listing-product-card`)**
+   - `#updateCombinedListingProductCard(html)` actualiza fragments.
+   - `#syncProductCardLinksAfterMorph(html)` sincroniza links/datasets.
+   - `#dispatchVariantUpdateEvent(...)` mantiene compatibilidad con listeners downstream (quick-add/product-card).
+
+3. **Hardening adicional**
+   - Parse seguro de payload JSON en `#dispatchVariantUpdateEvent` (`try/catch`).
+   - Debounce en reinit de Yotpo (`YOTPO_REINIT_DEBOUNCE_MS`).
+   - Narrowing de tipos (`HTMLElement` / `HTMLAnchorElement`) para estabilidad de TS.
+
+### `#syncProductCardLinksAfterMorph` (qué sincroniza)
+
+- `a.product-card__link` (`href`)
+- `product-card[data-product-id][data-product-url]`
+- `product-card-link[data-featured-media-url][data-product-id]` cuando existe
+
+### `#updateCombinedListingProductCard` (qué sincroniza)
+
+- `cardGalleryLink.href`
+- `slideshow-component`
+- `.product-badges` (incluye manejo de add/remove)
+- `swatches-variant-picker-component` + refresh de `this.dataset.productId/productUrl`
+- `product-price [ref='priceContainer']`
+- `productTitleLink.href` + texto de título
+- `.product-grid-view-zoom-out--details .h4`
+- `product-sku-component`
+- Yotpo (`data-yotpo-product-id` + reinit)
+
+### Cambios en `section-rendering-product-card.liquid`
+
+La sección ahora está documentada como **fuente de fragments** para JS, no como reemplazo completo de card.
+
+Puntos clave:
+
+- Mantiene estructura base para sync de links/datasets.
+- Mantiene estilos base de wrapper (border/layout/spacing/gap + variables quick-add/zoom-out).
+- Badge stack alineado con la card real:
+  - badge sale/sold out
+  - badge de metafield (`drmartens.label_text`, `label_background`, `label_color`)
+- Render de gallery con `product_resource` + `block_settings_source`.
+
+### Cambios en `snippets/card-gallery.liquid`
+
+Soporte explícito para Section Rendering API:
+
+- `product_resource`
+- `block_settings_source`
+
+Permite reutilizar gallery en contexto sin `block`.
+
+### Riesgos/consideraciones para futuros cambios
+
+- No renombrar sin coordinar:
+  - `.product-card__link`
+  - refs usados por JS (`cardGalleryLink`, `productTitleLink`, `priceContainer`)
+  - datasets (`data-product-id`, `data-product-url`)
+- Si se cambia markup de apps dentro de card (ej. reviews), validar sync en combined flow.
+- Si se agrega nuevo fragmento dinámico en card, incorporarlo en `#updateCombinedListingProductCard`.
+
+### QA recomendado
+
+- PLP combined: alternar colores A↔B↔C rápido y verificar:
+  - imagen, título, precio, badges, SKU
+  - hrefs y datasets
+  - add-to-cart con variante correcta
+- Badge custom metafield + sale/sold out
+- Productos sin combined (no regresión)
+- PDP combined (morph de `main` intacto)
+- Cards con Yotpo (reinit correcto al cambiar hijo)

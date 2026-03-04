@@ -1,177 +1,100 @@
-# Combined listing en PLP – notas técnicas
+# Combined listing en PLP – referencia rápida
 
-## Objetivo
+## Resumen
 
-Garantizar que, en **PLP**, las product cards que representan **combined listings**:
+Para combined listings en PLP, el flujo actual **no** hace morph completo de `.product-card__content`.
+Se usa actualización parcial de fragments para preservar wrappers/clases existentes de la card.
 
-- Refresquen toda la información visual y semántica de la card (gallery, título, precios, badges, SKU) al cambiar de producto hijo.
-- Sincronicen correctamente **links y `data-*`** para que navegación, tracking y features dependientes de esos atributos sigan apuntando al producto hijo actual.
+Fragments actualizados:
 
-Este documento sirve como referencia para futuros desarrollos y para agentes de IA que modifiquen `variant-picker`, la Section Rendering API o el markup de product cards.
+- gallery/slideshow
+- badges
+- swatches picker
+- title
+- price container
+- SKU
+- links/datasets de card
+- contexto de Yotpo
 
 ---
 
-## Flujo de refresco en PLP
-
-### 1. Detección de switch de producto en `variant-picker.js`
+## Detección de switch de producto
 
 Archivo: `assets/variant-picker.js`
 
-En el handler de cambio de opción:
+- `currentUrl = this.dataset.productUrl?.split('?')[0]`
+- `newUrl = selectedOption.dataset.connectedProductUrl`
+- Combined switch si `newUrl` existe y `newUrl !== currentUrl` dentro de `product-card`.
 
-- Se calculan:
-  - `currentUrl`: a partir de `this.dataset.productUrl` (sin querystring).
-  - `newUrl`: `selectedOption.dataset.connectedProductUrl` (combined listing).
-  - `isOnProductPage`: sigue usando `dataset.templateProductMatch === 'true'` y exclusión de `product-card` / `quick-add-dialog`.
-  - `isOnFeaturedProductSection`: `Boolean(this.closest('featured-product-information'))`.
-  - **Nuevo:** `isInProductCard = Boolean(this.closest('product-card'))`.
-  - **Nuevo:** `isCombinedListingSwitch = isInProductCard && !!newUrl && newUrl !== currentUrl`.
-
-- En base a eso se define `morphElementSelector`:
-  - PDP combined listing: `loadsNewProduct === true` ⟶ `'main'`.
-  - Featured product section: `'featured-product-information'`.
-  - **PLP combined listing:** `isCombinedListingSwitch === true` ⟶ `'.product-card__content'`.
-  - Caso general (sin combined listing / sin product switch): `undefined` (flujo previo de actualización de variant picker).
-
-- Luego se llama a:
-  - `this.fetchUpdatedSection(this.buildRequestUrl(selectedOption), morphElementSelector);`
-
-Puntos importantes:
-
-- El switch de producto en PLP **solo se activa** cuando existe `data-connected-product-url` distinto al `productUrl` actual.
-- El selector `.product-card__content` es el **target exacto** del morph que se espera recibir desde la Section Rendering API.
-
-### 2. Manejo de la respuesta y sincronización post-morph
-
-En el handler de la respuesta (`fetchUpdatedSection`):
-
-- Se obtiene `textContent` desde:
-  - `variant-picker script[type="application/json"]` o
-  - `swatches-variant-picker-component script[type="application/json"]`.
-
-- Ramas principales:
-  - `morphElementSelector === 'main'` ⟶ `this.updateMain(html);`
-  - `morphElementSelector` definido ⟶ `this.updateElement(html, morphElementSelector);`
-    - **Nuevo:** si `morphElementSelector === '.product-card__content'` se llama a `#syncProductCardLinksAfterMorph(html);`
-  - `morphElementSelector` indefinido ⟶ flujo clásico de `updateVariantPicker`.
-
-#### `#syncProductCardLinksAfterMorph(newHtml)`
-
-Función privada añadida para PLP combined listing:
-
-- Localiza:
-  - `productCard`: `this.closest('product-card')` en el DOM actual.
-  - `newProductCard`: `newHtml.querySelector('product-card')` en la respuesta.
-  - `currentAnchor`: `productCard.querySelector('a.product-card__link')`.
-  - `newAnchor`: `newProductCard.querySelector('a.product-card__link')`.
-  - `productCardLink`: `productCard.closest('product-card-link')` (cuando existe).
-  - `newProductCardLink`: `newHtml.querySelector('product-card-link')`.
-
-- Sincroniza:
-  - `currentAnchor.href = newAnchor.href` (link principal de la card).
-  - `productCard.dataset.productId = newProductCard.dataset.productId ?? ''`.
-  - `productCard.dataset.productUrl = newProductCard.dataset.productUrl ?? ''`.
-  - Si existen ambos `product-card-link`:
-    - Copia `data-featured-media-url` y `data-product-id` desde `newProductCardLink` hacia el `productCardLink` actual.
-
-**Dependencias críticas de markup:**
-
-- Debe existir un `product-card` alrededor del `variant-picker` en la PLP.
-- Ese `product-card` debe tener:
-  - `data-product-id` y `data-product-url` configurados en el HTML server-side.
-  - Un anchor interno `a.product-card__link` (link principal de la card).
-- Opcionalmente (según layout), puede estar envuelto en `product-card-link`, que expone `data-featured-media-url` y `data-product-id`.
-
-Si se renombra alguna de estas clases/atributos (`.product-card__link`, `.product-card__content`, `data-product-*`), **es obligatorio** actualizar también `#syncProductCardLinksAfterMorph`.
+`connectedProductUrl` viene desde `snippets/variant-swatches.liquid`.
 
 ---
 
-## Section Rendering API: `section-rendering-product-card.liquid`
+## Ruta de actualización PLP combined
+
+Constante: `COMBINED_LISTING_PRODUCT_CARD_UPDATE`
+
+En `fetchUpdatedSection`:
+
+1. `#updateCombinedListingProductCard(html)`
+2. `#syncProductCardLinksAfterMorph(html)`
+3. `#dispatchVariantUpdateEvent(textContent, html)`
+
+---
+
+## Robustez implementada
+
+- Race conditions por clicks rápidos:
+  - `AbortController` para cancelar request anterior.
+  - `#latestRequestId` para ignorar respuestas stale.
+- Parse JSON seguro en `#dispatchVariantUpdateEvent` (`try/catch`).
+- Reinit Yotpo con debounce (`YOTPO_REINIT_DEBOUNCE_MS`).
+- Narrowing de tipos DOM para evitar errores TS.
+
+---
+
+## Contrato de markup esperado
+
+El JS depende de estos nodos/refs/datasets:
+
+- `product-card` con `data-product-id` y `data-product-url`
+- `a.product-card__link`
+- `[ref="cardGalleryLink"]`
+- `[ref="productTitleLink"]`
+- `product-price [ref="priceContainer"]`
+- `swatches-variant-picker-component`
+- `product-sku-component`
+- `.product-badges`
+
+Si se renombra/remueve algo de esto, hay que actualizar `variant-picker.js`.
+
+---
+
+## Section Rendering API
 
 Archivo: `sections/section-rendering-product-card.liquid`
 
-Rol: proveer el markup fuente para el morph de `.product-card__content` en PLP, respetando la estructura clave de la product card.
+Esta sección debe seguir siendo fuente de fragments para combined PLP:
 
-Implementación:
+- gallery + badges
+- swatches
+- title
+- price
+- SKU
+- datasets/links base de card
 
-- La sección construye una card pensada para Section Rendering con:
-  - `product-card-link` cuando `settings.transition_to_main_product` está activo (incluye `data-product-id`, `data-featured-media-url`, `data-product-transition`).
-  - `product-card` con:
-    - `data-product-id="{{ product.id }}"`
-    - `data-product-url="{{ product.url }}"`
-  - `a.product-card__link` con `ref="productCardLink"` y un `<span class="visually-hidden">{{ product.title }}</span>`.
-  - Un contenedor `.product-card__content` que agrupa todo el contenido variable (gallery, badges, swatches, título, precio, SKU).
+Mantener paridad con lógica de badges de la card real, incluyendo badge custom de metafields:
 
-- Dentro de `.product-card__content`:
-  - Se capturan badges (`product-badges`) según disponibilidad y `compare_at_price`.
-  - Se renderiza `card-gallery` con:
-    - `product_resource: product`
-    - `block_settings_source: section`
-    - `children: card_gallery_children` (badges).
-  - Se renderiza `variant-swatches` con `product_resource: product` y `has_option_selected: true`.
-  - El título se muestra usando el custom element `product-title` con un enlace interno:
-
-    ```liquid
-    <product-title class="h4">
-      <a href="{{ url }}" ref="productTitleLink" class="contents">
-        <span class="title-text">{{ product.title }}</span>
-      </a>
-    </product-title>
-    ```
-
-  - El precio se renderiza con el snippet `price` dentro de `<product-price>`.
-  - El SKU se muestra dentro de `<product-sku-component>` usando el snippet `sku`, y se oculta si `sku` está en blanco.
-
-Consecuencia:
-
-- `.product-card__content` contiene todos los elementos que deben refrescarse al cambiar de producto hijo (gallery, badges, swatches, título, precio, SKU).
-- El morph de `.product-card__content` en PLP mantiene la misma jerarquía de elementos y clases clave (`product-card`, `.product-card__link`, `.product-card__content`, `product-title`, `product-price`, `product-sku-component`).
+- `product.metafields.drmartens.label_text.value`
+- `label_background`
+- `label_color`
 
 ---
 
-## Snippet `card-gallery.liquid` en contexto Section Rendering
+## QA mínima sugerida
 
-Archivo: `snippets/card-gallery.liquid`
-
-Nuevos parámetros para soportar Section Rendering API:
-
-- `product_resource`: producto a usar cuando no existe `closest.product`.
-- `block_settings_source`: sección o block “fuente” de settings cuando `block` no está disponible.
-
-Lógica principal:
-
-- `product = product_resource | default: closest.product`
-- `block_settings`:
-  - Si hay `block`, se usan `block.settings`.
-  - Si no, se usan `block_settings_source.settings`.
-
-Otros detalles:
-
-- Clase de wrapper:
-  - `card-gallery card-gallery-{{ block.id }}` cuando hay `block`.
-  - `card-gallery card-gallery-section-render` cuando viene desde Section Rendering (sin `block`).
-- `block.shopify_attributes` solo se imprime cuando `block` existe (evita errores en Section Rendering).
-
-Implicación:
-
-- `section-rendering-product-card.liquid` puede usar el snippet `card-gallery` pasando explícitamente:
-  - `product_resource: product`
-  - `block_settings_source: section`
-  - `children: card_gallery_children` (badges).
-
----
-
-## Guía para futuros cambios
-
-- **No cambiar** arbitrariamente:
-  - El selector `.product-card__content` (target de morph en PLP).
-  - La clase `.product-card__link`.
-  - La presencia de `data-product-id` / `data-product-url` en `product-card`.
-  - Los `data-*` relevantes de `product-card-link` si se usan para features adicionales.
-- Si se necesita que la card muestre nuevos datos dependientes del producto hijo:
-  - Añadirlos dentro de `.product-card__content` en `section-rendering-product-card.liquid`.
-  - Si esos datos también se usan en PDP, revisar la lógica de morph de `main` para mantener consistencia.
-- Si se cambia el contrato de Section Rendering para product cards:
-  - Asegurarse de seguir pasando `product_resource` y `block_settings_source` al snippet `card-gallery`.
-  - Mantener el patrón de `children` para badges u otros overlays.
-
+1. Alternar swatches A↔B↔C rápido en PLP combined.
+2. Verificar href/datasets actualizados.
+3. Verificar add-to-cart con variante correcta.
+4. Verificar badges (sale/sold_out + custom metafield).
+5. Verificar cards con Yotpo tras cambio de color/producto hijo.
