@@ -432,7 +432,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h3>CÓMO USAR WONDER BALSAM</h3>",
+                    "text": "<h3><a href=\"#\" title=\"#\">CÓMO USAR WONDER BALSAM</a></h3>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
