@@ -7,6 +7,8 @@
   @param {string} [text_fallback] - text to display if image is blank
   @param {boolean} [unset_image_tag] - if true, ignores the image focal point
   @param {string} [style] - additional styles
+  @param {string} [loading] - image loading strategy (e.g. 'lazy' or 'eager')
+  @param {string} [fetchpriority] - image fetch priority (e.g. 'high', 'low', 'auto')
 
   @example
   {% render 'image', image: product.featured_image, height: 300, class: 'product-image' %}
@@ -26,7 +28,27 @@
     {% assign style_value = style_value | append: 'object-position: inherit;' %}
   {% endif %}
 
-  {{ image | image_url: height: image_height | image_tag: class: class, srcset: image_srcset, style: style_value }}
+  {% if loading != blank and fetchpriority != blank %}
+    {{
+      image
+      | image_url: height: image_height
+      | image_tag: class: class, srcset: image_srcset, style: style_value, loading: loading, fetchpriority: fetchpriority
+    }}
+  {% elsif loading != blank %}
+    {{
+      image
+      | image_url: height: image_height
+      | image_tag: class: class, srcset: image_srcset, style: style_value, loading: loading
+    }}
+  {% elsif fetchpriority != blank %}
+    {{
+      image
+      | image_url: height: image_height
+      | image_tag: class: class, srcset: image_srcset, style: style_value, fetchpriority: fetchpriority
+    }}
+  {% else %}
+    {{ image | image_url: height: image_height | image_tag: class: class, srcset: image_srcset, style: style_value }}
+  {% endif %}
 {% elsif text_fallback %}
   {{ text_fallback }}
 {% endif %}

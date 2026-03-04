@@ -5,6 +5,15 @@
 {%- enddoc -%}
 
 {%- assign block_settings = block.settings -%}
+{%- liquid
+  assign image_loading = 'lazy'
+  assign image_fetchpriority = 'auto'
+
+  if forloop and forloop.first
+    assign image_loading = 'eager'
+    assign image_fetchpriority = 'high'
+  endif
+-%}
 
 <img
   srcset="
@@ -15,8 +24,8 @@
     {{ image | image_url }} {{ image.width }}w
   "
   src="{{ image | image_url: width: 1100 }}"
-  loading="eager"
-  fetchpriority="high"
+  loading="{{ image_loading }}"
+  fetchpriority="{{ image_fetchpriority }}"
   width="{{ image.width }}"
   height="{{ image.height }}"
   alt="{{ image.alt | escape }}"

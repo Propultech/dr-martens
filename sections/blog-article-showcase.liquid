@@ -21,6 +21,14 @@
     assign media_class_modifier = media_class_modifier | append: ' blog-article-showcase--media-right'
   endif
 
+  assign image_sizes = '(min-width: 750px) 58vw, 100vw'
+  case section.settings.media_width
+    when 'narrow'
+      assign image_sizes = '(min-width: 750px) 33vw, 100vw'
+    when 'medium'
+      assign image_sizes = '(min-width: 750px) 50vw, 100vw'
+  endcase
+
   assign button_class = 'button'
   if section.settings.button_style == 'button-secondary'
     assign button_class = 'button-secondary'
@@ -75,6 +83,7 @@
                   {{ article.image | image_url: width: 1500 }} 1500w
                 "
                 src="{{ article.image | image_url: width: 1100 }}"
+                sizes="{{ image_sizes }}"
                 loading="lazy"
                 width="{{ article.image.width }}"
                 height="{{ article.image.height }}"
@@ -520,7 +529,7 @@
     },
     {
       "type": "header",
-      "content": "Relleno"
+      "content": "t:content.padding"
     },
     {
       "type": "range",
@@ -544,7 +553,7 @@
     },
     {
       "type": "header",
-      "content": "Rellenos móviles"
+      "content": "t:content.padding_mobile"
     },
     {
       "type": "range",
