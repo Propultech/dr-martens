@@ -368,7 +368,7 @@
                 "horizontal_alignment_flex_direction_column": "flex-start",
                 "vertical_alignment_flex_direction_column": "flex-start",
                 "gap": 0,
-                "width": "fit-content",
+                "width": "fill",
                 "custom_width": 100,
                 "width_mobile": "fill",
                 "custom_width_mobile": 100,
@@ -408,7 +408,7 @@
                     "image": "shopify://shop_images/Desktop_image1.jpg",
                     "link": "",
                     "image_ratio": "adapt",
-                    "width": "fit-content",
+                    "width": "fill",
                     "custom_width": 100,
                     "width_mobile": "fill",
                     "custom_width_mobile": 100,
@@ -529,7 +529,7 @@
                 "button_ziwVYA"
               ]
             },
-            "group_xjDNHM": {
+            "group_6iKbpd": {
               "type": "group",
               "name": "Grupo | Ficha",
               "settings": {
@@ -545,7 +545,7 @@
                 "horizontal_alignment_flex_direction_column": "flex-start",
                 "vertical_alignment_flex_direction_column": "flex-start",
                 "gap": 0,
-                "width": "fit-content",
+                "width": "fill",
                 "custom_width": 100,
                 "width_mobile": "fill",
                 "custom_width_mobile": 100,
@@ -578,14 +578,14 @@
                 "custom_css": ""
               },
               "blocks": {
-                "image_YB3Tzw": {
+                "image_qBJWeY": {
                   "type": "image",
                   "name": "t:names.image",
                   "settings": {
                     "image": "shopify://shop_images/Desktop_image1.jpg",
                     "link": "",
                     "image_ratio": "adapt",
-                    "width": "fit-content",
+                    "width": "fill",
                     "custom_width": 100,
                     "width_mobile": "fill",
                     "custom_width_mobile": 100,
@@ -605,7 +605,7 @@
                   },
                   "blocks": {}
                 },
-                "text_yyEDNi": {
+                "text_aUYCKt": {
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
@@ -632,7 +632,7 @@
                     "corner_radius": 0,
                     "visibility": "all",
                     "padding-block-start": 20,
-                    "padding-block-end": 10,
+                    "padding-block-end": 20,
                     "padding-inline-start": 0,
                     "padding-inline-end": 0,
                     "mobile_padding_override": true,
@@ -643,7 +643,7 @@
                   },
                   "blocks": {}
                 },
-                "text_TEyFqV": {
+                "text_WdAhjL": {
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
@@ -681,7 +681,7 @@
                   },
                   "blocks": {}
                 },
-                "button_fJbYmw": {
+                "button_tn7gWx": {
                   "type": "button",
                   "name": "t:names.button",
                   "settings": {
@@ -700,13 +700,13 @@
                 }
               },
               "block_order": [
-                "image_YB3Tzw",
-                "text_yyEDNi",
-                "text_TEyFqV",
-                "button_fJbYmw"
+                "image_qBJWeY",
+                "text_aUYCKt",
+                "text_WdAhjL",
+                "button_tn7gWx"
               ]
             },
-            "group_pUEDVq": {
+            "group_aPQnfX": {
               "type": "group",
               "name": "Grupo | Ficha",
               "settings": {
@@ -722,7 +722,7 @@
                 "horizontal_alignment_flex_direction_column": "flex-start",
                 "vertical_alignment_flex_direction_column": "flex-start",
                 "gap": 0,
-                "width": "fit-content",
+                "width": "fill",
                 "custom_width": 100,
                 "width_mobile": "fill",
                 "custom_width_mobile": 100,
@@ -755,14 +755,14 @@
                 "custom_css": ""
               },
               "blocks": {
-                "image_98qRPx": {
+                "image_bW3R3P": {
                   "type": "image",
                   "name": "t:names.image",
                   "settings": {
                     "image": "shopify://shop_images/Desktop_image1.jpg",
                     "link": "",
                     "image_ratio": "adapt",
-                    "width": "fit-content",
+                    "width": "fill",
                     "custom_width": 100,
                     "width_mobile": "fill",
                     "custom_width_mobile": 100,
@@ -782,7 +782,7 @@
                   },
                   "blocks": {}
                 },
-                "text_jDkh9r": {
+                "text_Ynx8NX": {
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
@@ -809,7 +809,7 @@
                     "corner_radius": 0,
                     "visibility": "all",
                     "padding-block-start": 20,
-                    "padding-block-end": 10,
+                    "padding-block-end": 20,
                     "padding-inline-start": 0,
                     "padding-inline-end": 0,
                     "mobile_padding_override": true,
@@ -820,7 +820,7 @@
                   },
                   "blocks": {}
                 },
-                "text_n93hRL": {
+                "text_yYAxwH": {
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
@@ -858,7 +858,7 @@
                   },
                   "blocks": {}
                 },
-                "button_jGEiNE": {
+                "button_Jt97qf": {
                   "type": "button",
                   "name": "t:names.button",
                   "settings": {
@@ -877,17 +877,17 @@
                 }
               },
               "block_order": [
-                "image_98qRPx",
-                "text_jDkh9r",
-                "text_n93hRL",
-                "button_jGEiNE"
+                "image_bW3R3P",
+                "text_Ynx8NX",
+                "text_yYAxwH",
+                "button_Jt97qf"
               ]
             }
           },
           "block_order": [
             "group_K84pnT",
-            "group_xjDNHM",
-            "group_pUEDVq"
+            "group_6iKbpd",
+            "group_aPQnfX"
           ]
         }
       },
