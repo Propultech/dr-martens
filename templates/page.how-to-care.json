@@ -1576,7 +1576,7 @@
         "padding-inline-end-mobile": 0
       }
     },
-    "product_list_FDkQt8": {
+    "product_list_9XRMaC": {
       "type": "product-list",
       "blocks": {
         "static-header": {
@@ -1609,22 +1609,52 @@
             "border_opacity": 100,
             "border_radius": 0,
             "padding-block-start": 0,
-            "padding-block-end": 0,
+            "padding-block-end": 20,
             "padding-inline-start": 0,
             "padding-inline-end": 0,
             "padding-block-start-mobile": 0,
-            "padding-block-end-mobile": 0,
+            "padding-block-end-mobile": 15,
             "padding-inline-start-mobile": 0,
             "padding-inline-end-mobile": 0
           },
-          "blocks": {}
+          "blocks": {
+            "product_list_text_NUCcAb": {
+              "type": "_product-list-text",
+              "name": "t:names.collection_title",
+              "settings": {
+                "text": "<h3>ESTILOS POPULARES</h3>",
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "center",
+                "type_preset": "custom",
+                "font": "var(--font-accent--family)",
+                "font_size": "1.25rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "uppercase",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "product_list_text_NUCcAb"
+          ]
         },
         "static-product-card": {
           "type": "_product-card",
           "name": "t:names.product_card",
           "static": true,
           "settings": {
-            "product_card_gap": 4,
+            "product_card_gap": 10,
             "inherit_color_scheme": true,
             "color_scheme": "",
             "border": "none",
@@ -1641,7 +1671,7 @@
             "padding-inline-end-mobile": 0
           },
           "blocks": {
-            "product_card_gallery_CDfiFY": {
+            "product_card_gallery_Bh8MKF": {
               "type": "_product-card-gallery",
               "name": "t:names.product_card_media",
               "settings": {
@@ -1661,39 +1691,39 @@
               },
               "blocks": {}
             },
-            "product_title_HzfWXU": {
+            "product_title_4Ac3gx": {
               "type": "product-title",
               "name": "t:names.product_title",
               "settings": {
-                "width": "fit-content",
+                "width": "100%",
                 "max_width": "normal",
                 "alignment": "left",
-                "type_preset": "rte",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
+                "type_preset": "custom",
+                "font": "var(--font-accent--family)",
+                "font_size": "0.875rem",
                 "line_height": "normal",
                 "letter_spacing": "normal",
-                "case": "none",
+                "case": "uppercase",
                 "wrap": "pretty",
                 "color": "var(--color-foreground)",
                 "background": false,
                 "background_color": "#00000026",
                 "corner_radius": 0,
-                "padding-block-start": 4,
+                "padding-block-start": 0,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
               "blocks": {}
             },
-            "price_jx4YPM": {
+            "price_9Rj3nq": {
               "type": "price",
               "name": "t:names.product_price",
               "settings": {
                 "show_sale_price_first": true,
                 "show_installments": false,
                 "show_tax_info": false,
-                "type_preset": "h6",
+                "type_preset": "custom",
                 "width": "100%",
                 "alignment": "left",
                 "font": "var(--font-body--family)",
@@ -1715,18 +1745,21 @@
             }
           },
           "block_order": [
-            "product_card_gallery_CDfiFY",
-            "product_title_HzfWXU",
-            "price_jx4YPM"
+            "product_card_gallery_Bh8MKF",
+            "product_title_4Ac3gx",
+            "price_9Rj3nq"
           ]
         }
       },
-      "name": "t:names.products_carousel",
+      "custom_css": [
+        ".force-full-width {grid-column: 2;}"
+      ],
+      "name": "Estilos populares",
       "settings": {
-        "collection": "",
+        "collection": "all",
         "layout_type": "carousel",
         "carousel_on_mobile": false,
-        "max_products": 6,
+        "max_products": 8,
         "columns": 4,
         "mobile_columns": "2",
         "mobile_card_size": "60cqw",
@@ -1734,7 +1767,7 @@
         "rows_gap": 24,
         "icons_style": "chevron",
         "icons_shape": "none",
-        "section_width": "page-width",
+        "section_width": "full-width",
         "horizontal_alignment": "flex-start",
         "gap": 0,
         "color_scheme": "scheme-1",
@@ -1755,6 +1788,6 @@
     "section_3qLPic",
     "section_KmfJrw",
     "section_QCRAk6",
-    "product_list_FDkQt8"
+    "product_list_9XRMaC"
   ]
 }
