@@ -149,7 +149,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<h1>DR. MARTENS SHOE CARE. STEP BY STEP</h1>",
+            "text": "<h1>CUIDADO DE BOTAS DR. MARTENS. PASO A PASO</h1>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "center",
@@ -187,7 +187,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<h2>HOW TO CLEAN & CARE FOR YOUR FOOTWEAR, WITH TIPS FROM THE DM’s BOOT DOCTOR</h2>",
+            "text": "<h2>CÓMO LIMPIAR Y CUIDAR TUS ZAPATOS, CON CONSEJOS DEL DOCTOR DE BOTAS DE DR MARTENS</h2>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "center",
@@ -225,7 +225,7 @@
           "type": "text",
           "name": "t:names.text",
           "settings": {
-            "text": "<p>With a little bit of care, they’ll last even longer. Dr. Martens shoe careis designed to make tough footwear damn-near-indestructible. In these step-by-step guides, we’ll show you how to clean and care for your footwear – with a few tips from the DM’s Boot Doctor. Be sure to check out the videos at the bottom of the pages,</p>",
+            "text": "<p>Con un poco de cuidado, durarán aún más. El cuidado de calzado Dr. Martens está diseñado para hacer que el calzado resistente sea prácticamente indestructible. En estas guías paso a paso, te mostraremos cómo limpiar y cuidar tu calzado, con algunos consejos del Boot Doctor de DM. Asegúrate de consultar los videos al final de las páginas.</p>",
             "width": "100%",
             "max_width": "none",
             "alignment": "center",
