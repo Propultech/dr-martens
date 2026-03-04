@@ -1,0 +1,100 @@
+# Combined listing en PLP – referencia rápida
+
+## Resumen
+
+Para combined listings en PLP, el flujo actual **no** hace morph completo de `.product-card__content`.
+Se usa actualización parcial de fragments para preservar wrappers/clases existentes de la card.
+
+Fragments actualizados:
+
+- gallery/slideshow
+- badges
+- swatches picker
+- title
+- price container
+- SKU
+- links/datasets de card
+- contexto de Yotpo
+
+---
+
+## Detección de switch de producto
+
+Archivo: `assets/variant-picker.js`
+
+- `currentUrl = this.dataset.productUrl?.split('?')[0]`
+- `newUrl = selectedOption.dataset.connectedProductUrl`
+- Combined switch si `newUrl` existe y `newUrl !== currentUrl` dentro de `product-card`.
+
+`connectedProductUrl` viene desde `snippets/variant-swatches.liquid`.
+
+---
+
+## Ruta de actualización PLP combined
+
+Constante: `COMBINED_LISTING_PRODUCT_CARD_UPDATE`
+
+En `fetchUpdatedSection`:
+
+1. `#updateCombinedListingProductCard(html)`
+2. `#syncProductCardLinksAfterMorph(html)`
+3. `#dispatchVariantUpdateEvent(textContent, html)`
+
+---
+
+## Robustez implementada
+
+- Race conditions por clicks rápidos:
+  - `AbortController` para cancelar request anterior.
+  - `#latestRequestId` para ignorar respuestas stale.
+- Parse JSON seguro en `#dispatchVariantUpdateEvent` (`try/catch`).
+- Reinit Yotpo con debounce (`YOTPO_REINIT_DEBOUNCE_MS`).
+- Narrowing de tipos DOM para evitar errores TS.
+
+---
+
+## Contrato de markup esperado
+
+El JS depende de estos nodos/refs/datasets:
+
+- `product-card` con `data-product-id` y `data-product-url`
+- `a.product-card__link`
+- `[ref="cardGalleryLink"]`
+- `[ref="productTitleLink"]`
+- `product-price [ref="priceContainer"]`
+- `swatches-variant-picker-component`
+- `product-sku-component`
+- `.product-badges`
+
+Si se renombra/remueve algo de esto, hay que actualizar `variant-picker.js`.
+
+---
+
+## Section Rendering API
+
+Archivo: `sections/section-rendering-product-card.liquid`
+
+Esta sección debe seguir siendo fuente de fragments para combined PLP:
+
+- gallery + badges
+- swatches
+- title
+- price
+- SKU
+- datasets/links base de card
+
+Mantener paridad con lógica de badges de la card real, incluyendo badge custom de metafields:
+
+- `product.metafields.drmartens.label_text.value`
+- `label_background`
+- `label_color`
+
+---
+
+## QA mínima sugerida
+
+1. Alternar swatches A↔B↔C rápido en PLP combined.
+2. Verificar href/datasets actualizados.
+3. Verificar add-to-cart con variante correcta.
+4. Verificar badges (sale/sold_out + custom metafield).
+5. Verificar cards con Yotpo tras cambio de color/producto hijo.
