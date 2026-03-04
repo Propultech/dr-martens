@@ -4,13 +4,19 @@
   Note: When the product card itself is in a carousel layout, the card-gallery's carousel is disabled with JavaScript.
 
   @param [children] - Additional content rendered below the card gallery
+  @param [product_resource] - Product object when rendered outside block context (e.g. Section Rendering API)
+  @param [block_settings_source] - Section or block with settings when block is not available (e.g. Section Rendering API)
   @param [section] - The section object the snippet is rendered in
   @param [block] - The block object the snippet is rendered in
 {%- enddoc -%}
 
 {% liquid
-  assign product = closest.product
-  assign block_settings = block.settings
+  assign product = product_resource | default: closest.product
+  if block
+    assign block_settings = block.settings
+  elsif block_settings_source
+    assign block_settings = block_settings_source.settings
+  endif
   assign image_sizes = '(min-width: 750px) 50vw, 100vw'
 
   # Check if product has badges and determine position
@@ -65,7 +71,7 @@
 
 <div
   ref="cardGallery"
-  class="card-gallery card-gallery-{{ block.id }} spacing-style border-style{% if has_badges %} card-gallery--badge-{{ badge_position }}{% endif %}"
+  class="card-gallery card-gallery-{% if block %}{{ block.id }}{% else %}section-render{% endif %} spacing-style border-style{% if has_badges %} card-gallery--badge-{{ badge_position }}{% endif %}"
   style="
     {% render 'border-override', settings: block_settings %}
     {% render 'spacing-style', settings: block_settings %}
@@ -80,7 +86,7 @@
     data-view-transition-to-main-product
   {% endif %}
   data-image-ratio="{{ block_settings.image_ratio }}"
-  {{ block.shopify_attributes }}
+  {% if block %}{{ block.shopify_attributes }}{% endif %}
 >
   {%- if product.media.size > 0 -%}
     {% liquid
@@ -191,7 +197,7 @@
         assign placeholder_index = block_parts.last | default: 0
         assign variant = placeholder_index | modulo: 3 | plus: 1
         assign placeholder_name = 'product-apparel-' | append: variant
-        echo placeholder_name | placeholder_svg_tag: 'placeholder-image'
+        echo placeholder_name | placeholder_svg_tag
       endcapture
       capture placeholder_slide
         render 'slideshow-slide', index: 1, children: placeholder_image, class: 'product-media-container card-gallery__placeholder'

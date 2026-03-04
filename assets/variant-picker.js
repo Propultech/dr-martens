@@ -3,6 +3,9 @@ import { VariantSelectedEvent, VariantUpdateEvent } from '@theme/events';
 import { morph, MORPH_OPTIONS } from '@theme/morph';
 import { yieldToMainThread, getViewParameterValue, ResizeNotifier } from '@theme/utilities';
 
+const COMBINED_LISTING_PRODUCT_CARD_UPDATE = 'combined-listing-product-card';
+const YOTPO_REINIT_DEBOUNCE_MS = 150;
+
 /**
  * @typedef {object} VariantPickerRefs
  * @property {HTMLFieldSetElement[]} fieldsets – The fieldset elements.
@@ -20,6 +23,12 @@ export default class VariantPicker extends Component {
 
   /** @type {AbortController | undefined} */
   #abortController;
+
+  /** @type {number} */
+  #latestRequestId = 0;
+
+  /** @type {ReturnType<typeof setTimeout> | undefined} */
+  #yotpoReinitTimeout;
 
   /** @type {number[][]} */
   #checkedIndices = [];
@@ -72,18 +81,29 @@ export default class VariantPicker extends Component {
       !event.target.closest('product-card') &&
       !event.target.closest('quick-add-dialog');
 
-    // Morph the entire main content for combined listings child products, because changing the product
-    // might also change other sections depending on recommendations, metafields, etc.
+    // PDP behavior (existing Horizon behavior):
+    // if a swatch points to a connected product URL, we treat it as a product switch
+    // and morph the full <main> so all product-dependent sections stay in sync.
     const currentUrl = this.dataset.productUrl?.split('?')[0];
     const newUrl = selectedOption.dataset.connectedProductUrl;
     const loadsNewProduct = isOnProductPage && !!newUrl && newUrl !== currentUrl;
     const isOnFeaturedProductSection = Boolean(this.closest('featured-product-information'));
 
+    // PLP combined-listing behavior:
+    // swatches can point to child products; in this case we do a scoped card update.
+    // We intentionally avoid full-card morphing to preserve merchant-configured block wrappers,
+    // classes and inline styles already present in the current card DOM.
+    const isInProductCard = Boolean(this.closest('product-card'));
+    const isCombinedListingSwitch =
+      isInProductCard && !!newUrl && newUrl !== currentUrl;
+
     const morphElementSelector = loadsNewProduct
       ? 'main'
       : isOnFeaturedProductSection
-      ? 'featured-product-information'
-      : undefined;
+        ? 'featured-product-information'
+        : isCombinedListingSwitch
+          ? COMBINED_LISTING_PRODUCT_CARD_UPDATE
+          : undefined;
 
     this.fetchUpdatedSection(this.buildRequestUrl(selectedOption), morphElementSelector);
 
@@ -302,38 +322,48 @@ export default class VariantPicker extends Component {
    * @param {string} [morphElementSelector] - The selector of the element to be morphed. By default, only the variant picker is morphed.
    */
   fetchUpdatedSection(requestUrl, morphElementSelector) {
-    // We use this to abort the previous fetch request if it's still pending.
+    const requestId = ++this.#latestRequestId;
+
+    // Abort previous in-flight request to reduce race conditions under rapid clicks.
     this.#abortController?.abort();
     this.#abortController = new AbortController();
 
     fetch(requestUrl, { signal: this.#abortController.signal })
       .then((response) => response.text())
       .then((responseText) => {
+        // Even with aborts, stale responses can occasionally resolve late in some environments.
+        // Request id check guarantees we only apply the most recent user intent.
+        if (requestId !== this.#latestRequestId) return;
+
         this.#pendingRequestUrl = undefined;
         const html = new DOMParser().parseFromString(responseText, 'text/html');
         // Defer is only useful for the initial rendering of the page. Remove it here.
         html.querySelector('overflow-list[defer]')?.removeAttribute('defer');
 
-        const textContent = html.querySelector(`variant-picker script[type="application/json"]`)?.textContent;
-        if (!textContent) return;
+        const textContent =
+          html.querySelector('variant-picker script[type="application/json"]')?.textContent ??
+          html.querySelector('swatches-variant-picker-component script[type="application/json"]')?.textContent;
 
         if (morphElementSelector === 'main') {
           this.updateMain(html);
+        } else if (morphElementSelector === COMBINED_LISTING_PRODUCT_CARD_UPDATE) {
+          // Combined-listing PLP update path:
+          // update dynamic fragments while preserving original card structure/styling.
+          this.#updateCombinedListingProductCard(html);
+
+          // Sync card-level links/datasets used by navigation and transition components.
+          this.#syncProductCardLinksAfterMorph(html);
+
+          // Keep downstream listeners working (product-card, quick-add, etc.).
+          this.#dispatchVariantUpdateEvent(textContent, html);
         } else if (morphElementSelector) {
           this.updateElement(html, morphElementSelector);
         } else {
+          if (!textContent) return;
+
           const newProduct = this.updateVariantPicker(html);
 
-          // We grab the variant object from the response and dispatch an event with it.
-          if (this.selectedOptionId) {
-            this.dispatchEvent(
-              new VariantUpdateEvent(JSON.parse(textContent), this.selectedOptionId, {
-                html,
-                productId: this.dataset.productId ?? '',
-                newProduct,
-              })
-            );
-          }
+          this.#dispatchVariantUpdateEvent(textContent, html, newProduct);
         }
       })
       .catch((error) => {
@@ -343,6 +373,29 @@ export default class VariantPicker extends Component {
           console.error(error);
         }
       });
+  }
+
+  /**
+   * Dispatches VariantUpdateEvent when variant JSON is available.
+   * @param {string | undefined} textContent
+   * @param {Document} html
+   * @param {NewProduct | undefined} [newProduct]
+   */
+  #dispatchVariantUpdateEvent(textContent, html, newProduct = undefined) {
+    if (!textContent || !this.selectedOptionId) return;
+
+    try {
+      const variantPayload = JSON.parse(textContent);
+      this.dispatchEvent(
+        new VariantUpdateEvent(variantPayload, this.selectedOptionId, {
+          html,
+          productId: this.dataset.productId ?? '',
+          newProduct,
+        })
+      );
+    } catch (error) {
+      console.error('Failed to parse variant JSON payload', error);
+    }
   }
 
   /**
@@ -401,6 +454,166 @@ export default class VariantPicker extends Component {
     // Batch all writes after all reads
     for (const measurement of measurements) {
       this.#applyFieldsetMeasurements(measurement);
+    }
+  }
+
+  /**
+   * Syncs product card links (anchor, product-card-link) after morphing product-card__content.
+   * Required for combined listings when switching to a child product.
+   * @param {Document} newHtml - The HTML response from the fetch.
+   */
+  #syncProductCardLinksAfterMorph(newHtml) {
+    const productCard = this.closest('product-card');
+    const newProductCard = newHtml.querySelector('product-card');
+    if (!(productCard instanceof HTMLElement) || !(newProductCard instanceof HTMLElement)) return;
+
+    const newAnchor = newProductCard.querySelector('a.product-card__link');
+    const currentAnchor = productCard.querySelector('a.product-card__link');
+    if (newAnchor instanceof HTMLAnchorElement && currentAnchor instanceof HTMLAnchorElement) {
+      currentAnchor.href = newAnchor.href;
+    }
+
+    // Keep card metadata in sync for future combined-listing comparisons
+    // and for any consumer reading product-card datasets.
+    productCard.dataset.productId = newProductCard.dataset.productId ?? '';
+    productCard.dataset.productUrl = newProductCard.dataset.productUrl ?? '';
+
+    const productCardLink = productCard.closest('product-card-link');
+    const newProductCardLink = newHtml.querySelector('product-card-link');
+    if (productCardLink instanceof HTMLElement && newProductCardLink instanceof HTMLElement) {
+      if (newProductCardLink.dataset.featuredMediaUrl) {
+        productCardLink.dataset.featuredMediaUrl = newProductCardLink.dataset.featuredMediaUrl;
+      }
+      if (newProductCardLink.dataset.productId) {
+        productCardLink.dataset.productId = newProductCardLink.dataset.productId;
+      }
+    }
+  }
+
+  /**
+   * Updates product card dynamic content for combined listings while preserving
+   * existing block wrappers/classes/styles from the current card.
+   * @param {Document} newHtml
+   */
+  #updateCombinedListingProductCard(newHtml) {
+    const productCard = this.closest('product-card');
+    const newProductCard = newHtml.querySelector('product-card');
+    if (!(productCard instanceof HTMLElement) || !(newProductCard instanceof HTMLElement)) return;
+
+    // 1) Keep gallery link pointing to current selected child product.
+    const currentGalleryLink = productCard.querySelector('[ref="cardGalleryLink"]');
+    const newGalleryLink = newProductCard.querySelector('[ref="cardGalleryLink"]');
+    if (currentGalleryLink instanceof HTMLAnchorElement && newGalleryLink instanceof HTMLAnchorElement) {
+      currentGalleryLink.href = newGalleryLink.href;
+    }
+
+    // 2) Morph slideshow media only (images/video), preserving outer card wrappers.
+    const currentSlideshow = productCard.querySelector('[ref="cardGallery"] slideshow-component');
+    const newSlideshow = newProductCard.querySelector('[ref="cardGallery"] slideshow-component');
+    if (currentSlideshow && newSlideshow) {
+      morph(currentSlideshow, newSlideshow);
+    }
+
+    // 3) Morph badges and keep a stable insertion point relative to quick-add overlay.
+    const currentBadges = productCard.querySelector('[ref="cardGallery"] .product-badges');
+    const newBadges = newProductCard.querySelector('[ref="cardGallery"] .product-badges');
+    if (currentBadges && newBadges) {
+      morph(currentBadges, newBadges);
+    } else if (currentBadges && !newBadges) {
+      currentBadges.remove();
+    } else if (!currentBadges && newBadges) {
+      const gallery = productCard.querySelector('[ref="cardGallery"]');
+      if (gallery) {
+        const quickAdd = gallery.querySelector('quick-add-component');
+        const newBadgesNode = newBadges.cloneNode(true);
+        if (quickAdd) {
+          quickAdd.before(newBadgesNode);
+        } else {
+          gallery.append(newBadgesNode);
+        }
+      }
+    }
+
+    // 4) Morph swatches picker and refresh this picker datasets so URL comparison logic
+    // continues to work when toggling back/forth between sibling child products.
+    const currentSwatches = productCard.querySelector('swatches-variant-picker-component');
+    const newSwatches = newProductCard.querySelector('swatches-variant-picker-component');
+    if (currentSwatches instanceof HTMLElement && newSwatches instanceof HTMLElement) {
+      morph(currentSwatches, newSwatches);
+
+      // Keep the active picker context in sync so switching back/forth between
+      // combined-listing child products compares against the correct current URL.
+      this.dataset.productId = newSwatches.dataset.productId ?? this.dataset.productId ?? '';
+      this.dataset.productUrl = newSwatches.dataset.productUrl ?? this.dataset.productUrl ?? '';
+    }
+
+    // 5) Morph price payload only (priceContainer) to avoid replacing merchant typography wrappers.
+    const currentPriceContainer = productCard.querySelector('product-price [ref="priceContainer"]');
+    const newPriceContainer = newProductCard.querySelector('product-price [ref="priceContainer"]');
+    if (currentPriceContainer && newPriceContainer) {
+      morph(currentPriceContainer, newPriceContainer);
+    }
+
+    // 6) Update title link and visible title text in both regular and zoom-out views.
+    const currentTitleLink = productCard.querySelector('[ref="productTitleLink"]');
+    const newTitleLink = newProductCard.querySelector('[ref="productTitleLink"]');
+    if (currentTitleLink instanceof HTMLAnchorElement && newTitleLink instanceof HTMLAnchorElement) {
+      currentTitleLink.href = newTitleLink.href;
+
+      const currentTitle =
+        currentTitleLink.querySelector('.product-title') ?? currentTitleLink.querySelector('.title-text');
+      const newTitle = newTitleLink.querySelector('.product-title') ?? newTitleLink.querySelector('.title-text');
+      if (currentTitle && newTitle) {
+        currentTitle.textContent = newTitle.textContent ?? '';
+      }
+    }
+
+    const currentZoomOutTitle = productCard.querySelector('.product-grid-view-zoom-out--details .h4');
+    const newZoomOutTitle = newProductCard.querySelector('.product-grid-view-zoom-out--details .h4');
+    if (currentZoomOutTitle && newZoomOutTitle) {
+      currentZoomOutTitle.textContent = newZoomOutTitle.textContent ?? '';
+    }
+
+    // 7) SKU can change between child products, keep it aligned when present.
+    const currentSku = productCard.querySelector('product-sku-component');
+    const newSku = newProductCard.querySelector('product-sku-component');
+    if (currentSku && newSku) {
+      morph(currentSku, newSku);
+    }
+
+    // 8) App/widget integration: refresh Yotpo context to the currently selected child product.
+    this.#syncYotpoWidgetProductId(newProductCard, productCard);
+  }
+
+  /**
+   * Syncs Yotpo widget product id and re-inits widgets if available.
+   * @param {Element} newProductCard
+   * @param {Element} currentProductCard
+   */
+  #syncYotpoWidgetProductId(newProductCard, currentProductCard) {
+    const currentYotpoInstance = currentProductCard.querySelector('.yotpo-widget-instance');
+    const newYotpoInstance = newProductCard.querySelector('.yotpo-widget-instance');
+    if (!(currentYotpoInstance instanceof HTMLElement) || !(newYotpoInstance instanceof HTMLElement)) return;
+
+    const newProductId = newYotpoInstance.dataset.yotpoProductId;
+    if (!newProductId) return;
+
+    // Reset loaded flag so widget can be re-initialized against the new product id.
+    currentYotpoInstance.dataset.yotpoProductId = newProductId;
+    currentYotpoInstance.removeAttribute('data-yotpo-element-loaded');
+
+    const windowWithYotpo = /** @type {Window & { yotpoWidgetsContainer?: { initWidgets?: () => void } }} */ (
+      window
+    );
+    const yotpoWidgetsContainer = windowWithYotpo.yotpoWidgetsContainer;
+    // Re-init safely when Yotpo global container is available.
+    if (yotpoWidgetsContainer?.initWidgets) {
+      if (this.#yotpoReinitTimeout) {
+        clearTimeout(this.#yotpoReinitTimeout);
+      }
+      this.#yotpoReinitTimeout = setTimeout(() => {
+        yotpoWidgetsContainer.initWidgets?.();
+      }, YOTPO_REINIT_DEBOUNCE_MS);
     }
   }
 
