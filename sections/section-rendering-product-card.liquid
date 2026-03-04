@@ -1,11 +1,33 @@
 {% comment %}
   This section is only to be called by the Section Rendering API. Faster to render a single card than the entire product grid.
 
-  For combined listings: when switching to a child product, the entire product-card__content is morphed so that
-  images, price, and variant picker update together without redirecting to PDP.
+  PURPOSE
+  - Provide server-rendered HTML for combined-listing product-card updates in PLP.
+  - JS fetches this section on swatch change and copies/morphs selected fragments into the live card.
+
+  WHY THIS EXISTS
+  - In combined listings, a "color" can be a different child product URL, not just a variant id.
+  - We want card updates without redirecting to PDP, while preserving merchant-configured DOM wrappers.
+
+  CONTRACT WITH assets/variant-picker.js
+  - JS expects to find these fragments in this response:
+    * product-card datasets and main anchor URL
+    * gallery slideshow and badges
+    * swatches picker json/data attributes
+    * title link/text
+    * price container
+    * sku component
+  - If this markup diverges from the live card too much, class/style drift can appear after morph.
+
+  MAINTENANCE NOTES
+  - Keep badge logic aligned with the regular product-card implementation, including metafield label badge.
+  - Keep this section focused on dynamic fragments (not all app blocks), because JS performs partial updates.
 {% endcomment %}
 
 {% liquid
+  # `block_settings` mirrors the settings surface used by product-card style snippets
+  # (spacing/border/gap/color scheme). Keeping this in sync avoids style drift after updates.
+  assign block_settings = section.settings
   if product == blank
     assign product = closest.product
   endif
@@ -26,6 +48,18 @@
   endunless
 
   assign sku = product.selected_or_first_available_variant.sku
+  assign product_card_gap_value = block_settings.product_card_gap
+
+  # Expose quick-add CSS vars consistently with the real product-card wrapper.
+  assign has_quick_add = false
+  if settings.quick_add and product.available
+    assign has_quick_add = true
+  endif
+
+  assign has_mobile_quick_add = false
+  if has_quick_add and settings.mobile_quick_add
+    assign has_mobile_quick_add = true
+  endif
 %}
 
 {%- if settings.transition_to_main_product -%}
@@ -37,6 +71,7 @@
 {%- endif -%}
 
 <product-card
+  class="product-card"
   data-product-id="{{ product.id }}"
   data-product-url="{{ product.url }}"
 >
@@ -56,18 +91,70 @@
       spacing-style
       border-style
       gap-style
+      {% if block_settings.inherit_color_scheme == false %} color-{{ block_settings.color_scheme }}{% endif %}
+    "
+    style="
+      {% comment %}
+        Wrapper style intentionally mirrors snippets/product-card.liquid:
+        these CSS variables are relied upon by child blocks and responsive states.
+      {% endcomment %}
+      {% render 'border-override', settings: block_settings %}
+      {% render 'layout-panel-style', settings: block_settings %}
+      {% render 'spacing-style', settings: block_settings %}
+      {% render 'gap-style', value: product_card_gap_value, name: 'product-card-gap' %}
+      --quick-add-display: {% if has_quick_add %}flex{% else %}none{% endif %};
+      --quick-add-mobile-display: {% if has_mobile_quick_add %}flex{% else %}none{% endif %};
+      --quick-add-mobile-opacity: {% if has_mobile_quick_add %}1{% else %}0{% endif %};
+      {% if block_settings.padding-inline-start > 0 %}--zoom-out-padding-inline-start: min(var(--padding-xs), {{ block_settings.padding-inline-start | times: 0.7 }}px);{% endif %}
+      {% if block_settings.padding-inline-end > 0 %}--zoom-out-padding-inline-end: min(var(--padding-xs), {{ block_settings.padding-inline-end | times: 0.7 }}px);{% endif %}
+      {% if block_settings.padding-block-start > 0 %}--zoom-out-padding-block-start: min(var(--padding-xs), {{ block_settings.padding-block-start | times: 0.7 }}px);{% endif %}
+      {% if block_settings.padding-block-end > 0 %}--zoom-out-padding-block-end: min(var(--padding-xs), {{ block_settings.padding-block-end | times: 0.7 }}px);{% endif %}
     "
   >
     {% capture card_gallery_children %}
-      {% if product.available == false or product.compare_at_price > product.price %}
-        <div class="product-badges product-badges--{{ settings.badge_position }}">
-          <div class="product-badges__badge product-badges__badge--rectangle{% if product.available == false %} color-{{ settings.badge_sold_out_color_scheme }}{% elsif product.compare_at_price > product.price %} color-{{ settings.badge_sale_color_scheme }}{% endif %}">
-            {% if product.available == false %}
-              {{ 'content.product_badge_sold_out' | t }}
-            {% elsif product.compare_at_price > product.price %}
-              {{ 'content.product_badge_sale' | t }}
-            {% endif %}
-          </div>
+      {% comment %}
+        Badge stack rendered inside card-gallery so JS can morph badge state independently.
+        Includes:
+        - sale/sold_out status badge (theme settings driven)
+        - custom metafield label badge (drmartens.label_text + optional colors)
+      {% endcomment %}
+      {% if product != blank %}
+        <div
+          class="product-badges product-badges--{{ settings.badge_position }}"
+          style="
+            --badge-border-radius: {{ settings.badge_corner_radius }}px;
+            --badge-font-family: var(--font-{{ settings.badge_font_family }}--family); --badge-font-weight: var(--font-{{ settings.badge_font_family }}--weight); --badge-text-transform: {{ settings.badge_text_transform }};
+          "
+        >
+          {%- if product.available == false or product.compare_at_price > product.price -%}
+            <div
+              class="
+                product-badges__badge product-badges__badge--rectangle
+                {% if product.available == false %} color-{{ settings.badge_sold_out_color_scheme }}{% elsif product.compare_at_price > product.price %} color-{{ settings.badge_sale_color_scheme }}{% endif %}
+              "
+            >
+              {%- if product.available == false -%}
+                {{ 'content.product_badge_sold_out' | t }}
+              {%- elsif product.compare_at_price > product.price -%}
+                {{ 'content.product_badge_sale' | t }}
+              {%- endif -%}
+            </div>
+          {%- endif -%}
+
+          {%- assign label_text = product.metafields.drmartens.label_text.value -%}
+          {%- if label_text != blank -%}
+            {%- assign label_bg = product.metafields.drmartens.label_background.value -%}
+            {%- assign label_color = product.metafields.drmartens.label_color.value -%}
+            <div
+              class="product-badges__badge product-badges__badge--rectangle"
+              style="
+                {% if label_bg != blank %}background: {{ label_bg }};{% endif %}
+                {% if label_color != blank %}color: {{ label_color }};{% endif %}
+              "
+            >
+              {{- label_text -}}
+            </div>
+          {%- endif -%}
         </div>
       {% endif %}
     {% endcapture %}
@@ -77,8 +164,16 @@
       children: card_gallery_children
     %}
 
+    {% comment %}
+      Swatches source for combined-listing switches.
+      JS morphs this picker and reads its dataset/json for downstream events/state.
+    {% endcomment %}
     {% render 'variant-swatches', product_resource: product, has_option_selected: true %}
 
+    {% comment %}
+      Title/price/SKU are separate fragments so JS can update only these regions
+      while preserving existing wrapper classes from the original card.
+    {% endcomment %}
     <product-title class="h4">
       <a href="{{ url }}" ref="productTitleLink" class="contents">
         <span class="title-text">{{ product.title }}</span>
@@ -88,8 +183,6 @@
     <product-price>
       {% render 'price', product_resource: product, show_unit_price: true %}
     </product-price>
-
-  
   </div>
 </product-card>
 {%- if settings.transition_to_main_product -%}
@@ -107,6 +200,29 @@
       "type": "product",
       "id": "product",
       "label": "t:settings.product"
+    },
+    {
+      "type": "range",
+      "id": "product_card_gap",
+      "label": "t:settings.vertical_gap",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "checkbox",
+      "id": "inherit_color_scheme",
+      "label": "t:settings.inherit_color_scheme",
+      "default": true
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:settings.color_scheme",
+      "default": "scheme-1",
+      "visible_if": "{{ section.settings.inherit_color_scheme == false }}"
     },
     {
       "type": "select",
