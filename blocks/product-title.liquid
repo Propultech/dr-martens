@@ -18,7 +18,7 @@
     height: 33px;
     line-height: 16px !important;
     display: -webkit-box;
-    font-stretch: var(--font-accent--stretch);
+    font-stretch: var(--font-stretch, var(--font-accent--stretch));
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
@@ -154,6 +154,25 @@
         }
       ],
       "default": "var(--font-body--family)",
+      "visible_if": "{{ block.settings.type_preset == 'custom' }}"
+    },
+    {
+      "type": "select",
+      "id": "weight",
+      "label": "Peso de fuente",
+      "options": [
+        { "value": "", "label": "t:options.default" },
+        { "value": "100", "label": "100 Thin" },
+        { "value": "200", "label": "200 Extra Light" },
+        { "value": "300", "label": "300 Light" },
+        { "value": "400", "label": "400 Regular" },
+        { "value": "500", "label": "500 Medium" },
+        { "value": "600", "label": "600 Semi Bold" },
+        { "value": "700", "label": "700 Bold" },
+        { "value": "800", "label": "800 Extra Bold" },
+        { "value": "900", "label": "900 Black" }
+      ],
+      "default": "",
       "visible_if": "{{ block.settings.type_preset == 'custom' }}"
     },
     {
@@ -314,6 +333,54 @@
     },
     {
       "type": "select",
+      "id": "font_stretch",
+      "label": "Estiramiento de fuente",
+      "options": [
+        {
+          "value": "normal",
+          "label": "Normal"
+        },        {
+          "value": "var(--font-accent--stretch)",
+          "label": "Estiramiento custom"
+        },
+        {
+          "value": "ultra-condensed",
+          "label": "Ultra condensado"
+        },
+        {
+          "value": "extra-condensed",
+          "label": "Extra condensado"
+        },
+        {
+          "value": "condensed",
+          "label": "Condensado"
+        },
+        {
+          "value": "semi-condensed",
+          "label": "Semi condensado"
+        },
+        {
+          "value": "semi-expanded",
+          "label": "Semi expandido"
+        },
+        {
+          "value": "expanded",
+          "label": "Expandido"
+        },
+        {
+          "value": "extra-expanded",
+          "label": "Extra expandido"
+        },
+        {
+          "value": "ultra-expanded",
+          "label": "Ultra expandido"
+        }
+      ],
+      "default": "normal",
+      "visible_if": "{{ block.settings.type_preset == 'custom' }}"
+    },
+    {
+      "type": "select",
       "id": "color",
       "label": "t:settings.color",
       "options": [
@@ -414,3 +481,5 @@
   ]
 }
 {% endschema %}
+
+
