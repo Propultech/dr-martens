@@ -359,6 +359,85 @@
     },
     {
       "type": "select",
+      "id": "background_image_visibility",
+      "label": "Visibilidad de imagen",
+      "options": [
+        {
+          "value": "both",
+          "label": "Desktop y m\u00f3vil"
+        },
+        {
+          "value": "desktop",
+          "label": "Solo desktop"
+        },
+        {
+          "value": "mobile",
+          "label": "Solo m\u00f3vil"
+        }
+      ],
+      "default": "both",
+      "visible_if": "{{ block.settings.background_media == 'image' }}"
+    },
+    {
+      "type": "select",
+      "id": "background_image_vertical_alignment",
+      "label": "Posici\u00f3n del fondo",
+      "options": [
+        {
+          "value": "top",
+          "label": "Arriba"
+        },
+        {
+          "value": "center",
+          "label": "Centro"
+        },
+        {
+          "value": "bottom",
+          "label": "Abajo"
+        }
+      ],
+      "default": "center",
+      "visible_if": "{{ block.settings.background_media == 'image' }}"
+    },
+    {
+      "type": "select",
+      "id": "background_image_horizontal_position",
+      "label": "Alinear fondo",
+      "options": [
+        {
+          "value": "left",
+          "label": "Izquierda"
+        },
+        {
+          "value": "center",
+          "label": "Centro"
+        },
+        {
+          "value": "right",
+          "label": "Derecha"
+        }
+      ],
+      "default": "center",
+      "visible_if": "{{ block.settings.background_media == 'image' }}"
+    },
+    {
+      "type": "text",
+      "id": "background_image_max_height_desktop",
+      "label": "Alto máximo del fondo (desktop)",
+      "default": "0",
+      "info": "Escribe 0, 320 o 320px. 0 = sin límite",
+      "visible_if": "{{ block.settings.background_media == 'image' }}"
+    },
+    {
+      "type": "text",
+      "id": "background_image_max_height_mobile",
+      "label": "Alto máximo del fondo (móvil)",
+      "default": "0",
+      "info": "Escribe 0, 320 o 320px. 0 = sin límite",
+      "visible_if": "{{ block.settings.background_media == 'image' }}"
+    },
+    {
+      "type": "select",
       "id": "border",
       "label": "t:settings.borders",
       "options": [
@@ -564,3 +643,5 @@
   ]
 }
 {% endschema %}
+
+
