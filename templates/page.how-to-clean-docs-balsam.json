@@ -4231,11 +4231,11 @@
             "slider_scrollbar_color": "#FFDD00",
             "vertical_on_mobile": true,
             "horizontal_alignment": "flex-start",
-            "vertical_alignment": "center",
+            "vertical_alignment": "flex-start",
             "align_baseline": false,
             "horizontal_alignment_flex_direction_column": "flex-start",
             "vertical_alignment_flex_direction_column": "center",
-            "gap": 12,
+            "gap": 10,
             "width": "fill",
             "custom_width": 100,
             "width_mobile": "fill",
@@ -4287,9 +4287,9 @@
                 "horizontal_alignment": "flex-start",
                 "vertical_alignment": "center",
                 "align_baseline": false,
-                "horizontal_alignment_flex_direction_column": "flex-start",
-                "vertical_alignment_flex_direction_column": "center",
-                "gap": 12,
+                "horizontal_alignment_flex_direction_column": "center",
+                "vertical_alignment_flex_direction_column": "flex-start",
+                "gap": 0,
                 "width": "custom",
                 "custom_width": 25,
                 "width_mobile": "fill",
@@ -4354,13 +4354,113 @@
                     "padding-inline-end-mobile": 0
                   },
                   "blocks": {}
+                },
+                "text_J4eKtF": {
+                  "type": "text",
+                  "name": "t:names.heading",
+                  "settings": {
+                    "text": "<p>HOW TO POLISH YOUR<br/>FOOTWEAR</p>",
+                    "width": "fit-content",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "custom",
+                    "font": "var(--font-body--family)",
+                    "weight": "700",
+                    "font_size": "1rem",
+                    "font_size_mobile": "",
+                    "line_height": "tight",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "font_stretch": "normal",
+                    "color": "var(--color-foreground)",
+                    "italic_color": "",
+                    "strong_color": "",
+                    "link_font_size": "",
+                    "link_font_size_mobile": "",
+                    "background": false,
+                    "line_highlight": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "visibility": "all",
+                    "padding-block-start": 20,
+                    "padding-block-end": 20,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0,
+                    "mobile_padding_override": false,
+                    "padding-block-start-mobile": 0,
+                    "padding-block-end-mobile": 0,
+                    "padding-inline-start-mobile": 0,
+                    "padding-inline-end-mobile": 0
+                  },
+                  "blocks": {}
+                },
+                "text_GAi7Kw": {
+                  "type": "text",
+                  "name": "t:names.text",
+                  "settings": {
+                    "text": "<p>Restores, revives and protects — with or without shine. Here the Boot Doctor will show you how to polish your smooth leather footwear.</p>",
+                    "width": "fit-content",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "rte",
+                    "font": "var(--font-body--family)",
+                    "weight": "",
+                    "font_size": "1rem",
+                    "font_size_mobile": "",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "font_stretch": "normal",
+                    "color": "var(--color-foreground)",
+                    "italic_color": "",
+                    "strong_color": "",
+                    "link_font_size": "",
+                    "link_font_size_mobile": "",
+                    "background": false,
+                    "line_highlight": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "visibility": "all",
+                    "padding-block-start": 0,
+                    "padding-block-end": 10,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0,
+                    "mobile_padding_override": true,
+                    "padding-block-start-mobile": 0,
+                    "padding-block-end-mobile": 10,
+                    "padding-inline-start-mobile": 0,
+                    "padding-inline-end-mobile": 0
+                  },
+                  "blocks": {}
+                },
+                "button_KdBmyp": {
+                  "type": "button",
+                  "name": "t:names.button",
+                  "settings": {
+                    "label": "Lee nuestra guía",
+                    "link": "shopify://collections/all",
+                    "open_in_new_tab": false,
+                    "style_class": "button",
+                    "width": "fit-content",
+                    "custom_width": 100,
+                    "width_mobile": "fit-content",
+                    "custom_width_mobile": 100,
+                    "font_size_desktop": "1.25rem",
+                    "font_size_mobile": ""
+                  },
+                  "blocks": {}
                 }
               },
               "block_order": [
-                "image_YhVDEr"
+                "image_YhVDEr",
+                "text_J4eKtF",
+                "text_GAi7Kw",
+                "button_KdBmyp"
               ]
             },
-            "group_G89JNb": {
+            "group_DzHHj4": {
               "type": "group",
               "name": "t:names.group",
               "settings": {
@@ -4373,9 +4473,9 @@
                 "horizontal_alignment": "flex-start",
                 "vertical_alignment": "center",
                 "align_baseline": false,
-                "horizontal_alignment_flex_direction_column": "flex-start",
-                "vertical_alignment_flex_direction_column": "center",
-                "gap": 12,
+                "horizontal_alignment_flex_direction_column": "center",
+                "vertical_alignment_flex_direction_column": "flex-start",
+                "gap": 0,
                 "width": "custom",
                 "custom_width": 25,
                 "width_mobile": "fill",
@@ -4414,11 +4514,11 @@
                 "custom_css": ""
               },
               "blocks": {
-                "image_7L7pBR": {
+                "image_A4xYc6": {
                   "type": "image",
                   "name": "t:names.image",
                   "settings": {
-                    "image": "shopify://shop_images/07_Desktop_carousel_tile-min_dubbin_wax.jpg",
+                    "image": "shopify://shop_images/Ultra-min.jpg",
                     "link": "",
                     "image_ratio": "adapt",
                     "width": "fill",
@@ -4440,13 +4540,113 @@
                     "padding-inline-end-mobile": 0
                   },
                   "blocks": {}
+                },
+                "text_nFfUYC": {
+                  "type": "text",
+                  "name": "t:names.heading",
+                  "settings": {
+                    "text": "<p>HOW TO PROTECT YOUR FOOTWEAR</p>",
+                    "width": "fit-content",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "custom",
+                    "font": "var(--font-body--family)",
+                    "weight": "700",
+                    "font_size": "1rem",
+                    "font_size_mobile": "",
+                    "line_height": "tight",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "font_stretch": "normal",
+                    "color": "var(--color-foreground)",
+                    "italic_color": "",
+                    "strong_color": "",
+                    "link_font_size": "",
+                    "link_font_size_mobile": "",
+                    "background": false,
+                    "line_highlight": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "visibility": "all",
+                    "padding-block-start": 20,
+                    "padding-block-end": 20,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0,
+                    "mobile_padding_override": false,
+                    "padding-block-start-mobile": 0,
+                    "padding-block-end-mobile": 0,
+                    "padding-inline-start-mobile": 0,
+                    "padding-inline-end-mobile": 0
+                  },
+                  "blocks": {}
+                },
+                "text_mwcjD7": {
+                  "type": "text",
+                  "name": "t:names.text",
+                  "settings": {
+                    "text": "<p>Create a layer of protection against scuffs and other wear and tear. Our Ultra Protector Spray can be used on leather, suede, nylon or canvas.</p>",
+                    "width": "fit-content",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "rte",
+                    "font": "var(--font-body--family)",
+                    "weight": "",
+                    "font_size": "1rem",
+                    "font_size_mobile": "",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "font_stretch": "normal",
+                    "color": "var(--color-foreground)",
+                    "italic_color": "",
+                    "strong_color": "",
+                    "link_font_size": "",
+                    "link_font_size_mobile": "",
+                    "background": false,
+                    "line_highlight": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "visibility": "all",
+                    "padding-block-start": 0,
+                    "padding-block-end": 10,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0,
+                    "mobile_padding_override": true,
+                    "padding-block-start-mobile": 0,
+                    "padding-block-end-mobile": 10,
+                    "padding-inline-start-mobile": 0,
+                    "padding-inline-end-mobile": 0
+                  },
+                  "blocks": {}
+                },
+                "button_UViEEX": {
+                  "type": "button",
+                  "name": "t:names.button",
+                  "settings": {
+                    "label": "Lee nuestra guía",
+                    "link": "shopify://collections/all",
+                    "open_in_new_tab": false,
+                    "style_class": "button",
+                    "width": "fit-content",
+                    "custom_width": 100,
+                    "width_mobile": "fit-content",
+                    "custom_width_mobile": 100,
+                    "font_size_desktop": "1.25rem",
+                    "font_size_mobile": ""
+                  },
+                  "blocks": {}
                 }
               },
               "block_order": [
-                "image_7L7pBR"
+                "image_A4xYc6",
+                "text_nFfUYC",
+                "text_mwcjD7",
+                "button_UViEEX"
               ]
             },
-            "group_jPbMT6": {
+            "group_JUEEy6": {
               "type": "group",
               "name": "t:names.group",
               "settings": {
@@ -4459,9 +4659,9 @@
                 "horizontal_alignment": "flex-start",
                 "vertical_alignment": "center",
                 "align_baseline": false,
-                "horizontal_alignment_flex_direction_column": "flex-start",
-                "vertical_alignment_flex_direction_column": "center",
-                "gap": 12,
+                "horizontal_alignment_flex_direction_column": "center",
+                "vertical_alignment_flex_direction_column": "flex-start",
+                "gap": 0,
                 "width": "custom",
                 "custom_width": 25,
                 "width_mobile": "fill",
@@ -4500,7 +4700,7 @@
                 "custom_css": ""
               },
               "blocks": {
-                "image_bk3L7C": {
+                "image_GgBh9y": {
                   "type": "image",
                   "name": "t:names.image",
                   "settings": {
@@ -4526,13 +4726,113 @@
                     "padding-inline-end-mobile": 0
                   },
                   "blocks": {}
+                },
+                "text_KXQyab": {
+                  "type": "text",
+                  "name": "t:names.heading",
+                  "settings": {
+                    "text": "<p>HOW TO POLISH YOUR<br/>FOOTWEAR</p>",
+                    "width": "fit-content",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "custom",
+                    "font": "var(--font-body--family)",
+                    "weight": "700",
+                    "font_size": "1rem",
+                    "font_size_mobile": "",
+                    "line_height": "tight",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "font_stretch": "normal",
+                    "color": "var(--color-foreground)",
+                    "italic_color": "",
+                    "strong_color": "",
+                    "link_font_size": "",
+                    "link_font_size_mobile": "",
+                    "background": false,
+                    "line_highlight": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "visibility": "all",
+                    "padding-block-start": 20,
+                    "padding-block-end": 20,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0,
+                    "mobile_padding_override": false,
+                    "padding-block-start-mobile": 0,
+                    "padding-block-end-mobile": 0,
+                    "padding-inline-start-mobile": 0,
+                    "padding-inline-end-mobile": 0
+                  },
+                  "blocks": {}
+                },
+                "text_GtcXii": {
+                  "type": "text",
+                  "name": "t:names.text",
+                  "settings": {
+                    "text": "<p>Restores, revives and protects — with or without shine. Here the Boot Doctor will show you how to polish your smooth leather footwear.</p>",
+                    "width": "fit-content",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "rte",
+                    "font": "var(--font-body--family)",
+                    "weight": "",
+                    "font_size": "1rem",
+                    "font_size_mobile": "",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "font_stretch": "normal",
+                    "color": "var(--color-foreground)",
+                    "italic_color": "",
+                    "strong_color": "",
+                    "link_font_size": "",
+                    "link_font_size_mobile": "",
+                    "background": false,
+                    "line_highlight": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "visibility": "all",
+                    "padding-block-start": 0,
+                    "padding-block-end": 10,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0,
+                    "mobile_padding_override": true,
+                    "padding-block-start-mobile": 0,
+                    "padding-block-end-mobile": 10,
+                    "padding-inline-start-mobile": 0,
+                    "padding-inline-end-mobile": 0
+                  },
+                  "blocks": {}
+                },
+                "button_k3946P": {
+                  "type": "button",
+                  "name": "t:names.button",
+                  "settings": {
+                    "label": "Lee nuestra guía",
+                    "link": "shopify://collections/all",
+                    "open_in_new_tab": false,
+                    "style_class": "button",
+                    "width": "fit-content",
+                    "custom_width": 100,
+                    "width_mobile": "fit-content",
+                    "custom_width_mobile": 100,
+                    "font_size_desktop": "1.25rem",
+                    "font_size_mobile": ""
+                  },
+                  "blocks": {}
                 }
               },
               "block_order": [
-                "image_bk3L7C"
+                "image_GgBh9y",
+                "text_KXQyab",
+                "text_GtcXii",
+                "button_k3946P"
               ]
             },
-            "group_pJ86tQ": {
+            "group_EicKKh": {
               "type": "group",
               "name": "t:names.group",
               "settings": {
@@ -4545,9 +4845,9 @@
                 "horizontal_alignment": "flex-start",
                 "vertical_alignment": "center",
                 "align_baseline": false,
-                "horizontal_alignment_flex_direction_column": "flex-start",
-                "vertical_alignment_flex_direction_column": "center",
-                "gap": 12,
+                "horizontal_alignment_flex_direction_column": "center",
+                "vertical_alignment_flex_direction_column": "flex-start",
+                "gap": 0,
                 "width": "custom",
                 "custom_width": 25,
                 "width_mobile": "fill",
@@ -4586,7 +4886,7 @@
                 "custom_css": ""
               },
               "blocks": {
-                "image_EMzVyT": {
+                "image_DthHF4": {
                   "type": "image",
                   "name": "t:names.image",
                   "settings": {
@@ -4612,13 +4912,113 @@
                     "padding-inline-end-mobile": 0
                   },
                   "blocks": {}
+                },
+                "text_CFPExH": {
+                  "type": "text",
+                  "name": "t:names.heading",
+                  "settings": {
+                    "text": "<p>HOW TO POLISH YOUR<br/>FOOTWEAR</p>",
+                    "width": "fit-content",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "custom",
+                    "font": "var(--font-body--family)",
+                    "weight": "700",
+                    "font_size": "1rem",
+                    "font_size_mobile": "",
+                    "line_height": "tight",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "font_stretch": "normal",
+                    "color": "var(--color-foreground)",
+                    "italic_color": "",
+                    "strong_color": "",
+                    "link_font_size": "",
+                    "link_font_size_mobile": "",
+                    "background": false,
+                    "line_highlight": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "visibility": "all",
+                    "padding-block-start": 20,
+                    "padding-block-end": 20,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0,
+                    "mobile_padding_override": false,
+                    "padding-block-start-mobile": 0,
+                    "padding-block-end-mobile": 0,
+                    "padding-inline-start-mobile": 0,
+                    "padding-inline-end-mobile": 0
+                  },
+                  "blocks": {}
+                },
+                "text_aBWxFh": {
+                  "type": "text",
+                  "name": "t:names.text",
+                  "settings": {
+                    "text": "<p>Restores, revives and protects — with or without shine. Here the Boot Doctor will show you how to polish your smooth leather footwear.</p>",
+                    "width": "fit-content",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "rte",
+                    "font": "var(--font-body--family)",
+                    "weight": "",
+                    "font_size": "1rem",
+                    "font_size_mobile": "",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "font_stretch": "normal",
+                    "color": "var(--color-foreground)",
+                    "italic_color": "",
+                    "strong_color": "",
+                    "link_font_size": "",
+                    "link_font_size_mobile": "",
+                    "background": false,
+                    "line_highlight": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "visibility": "all",
+                    "padding-block-start": 0,
+                    "padding-block-end": 10,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0,
+                    "mobile_padding_override": true,
+                    "padding-block-start-mobile": 0,
+                    "padding-block-end-mobile": 10,
+                    "padding-inline-start-mobile": 0,
+                    "padding-inline-end-mobile": 0
+                  },
+                  "blocks": {}
+                },
+                "button_HfJQeH": {
+                  "type": "button",
+                  "name": "t:names.button",
+                  "settings": {
+                    "label": "Lee nuestra guía",
+                    "link": "shopify://collections/all",
+                    "open_in_new_tab": false,
+                    "style_class": "button",
+                    "width": "fit-content",
+                    "custom_width": 100,
+                    "width_mobile": "fit-content",
+                    "custom_width_mobile": 100,
+                    "font_size_desktop": "1.25rem",
+                    "font_size_mobile": ""
+                  },
+                  "blocks": {}
                 }
               },
               "block_order": [
-                "image_EMzVyT"
+                "image_DthHF4",
+                "text_CFPExH",
+                "text_aBWxFh",
+                "button_HfJQeH"
               ]
             },
-            "group_4AY6eG": {
+            "group_PJjDGd": {
               "type": "group",
               "name": "t:names.group",
               "settings": {
@@ -4631,11 +5031,11 @@
                 "horizontal_alignment": "flex-start",
                 "vertical_alignment": "center",
                 "align_baseline": false,
-                "horizontal_alignment_flex_direction_column": "flex-start",
-                "vertical_alignment_flex_direction_column": "center",
-                "gap": 12,
-                "width": "fill",
-                "custom_width": 100,
+                "horizontal_alignment_flex_direction_column": "center",
+                "vertical_alignment_flex_direction_column": "flex-start",
+                "gap": 0,
+                "width": "custom",
+                "custom_width": 25,
                 "width_mobile": "fill",
                 "custom_width_mobile": 100,
                 "height": "fit",
@@ -4672,7 +5072,7 @@
                 "custom_css": ""
               },
               "blocks": {
-                "image_eRHN8c": {
+                "image_MzAPX9": {
                   "type": "image",
                   "name": "t:names.image",
                   "settings": {
@@ -4698,19 +5098,119 @@
                     "padding-inline-end-mobile": 0
                   },
                   "blocks": {}
+                },
+                "text_RCtGtR": {
+                  "type": "text",
+                  "name": "t:names.heading",
+                  "settings": {
+                    "text": "<p>HOW TO POLISH YOUR<br/>FOOTWEAR</p>",
+                    "width": "fit-content",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "custom",
+                    "font": "var(--font-body--family)",
+                    "weight": "700",
+                    "font_size": "1rem",
+                    "font_size_mobile": "",
+                    "line_height": "tight",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "font_stretch": "normal",
+                    "color": "var(--color-foreground)",
+                    "italic_color": "",
+                    "strong_color": "",
+                    "link_font_size": "",
+                    "link_font_size_mobile": "",
+                    "background": false,
+                    "line_highlight": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "visibility": "all",
+                    "padding-block-start": 20,
+                    "padding-block-end": 20,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0,
+                    "mobile_padding_override": false,
+                    "padding-block-start-mobile": 0,
+                    "padding-block-end-mobile": 0,
+                    "padding-inline-start-mobile": 0,
+                    "padding-inline-end-mobile": 0
+                  },
+                  "blocks": {}
+                },
+                "text_mY7wz8": {
+                  "type": "text",
+                  "name": "t:names.text",
+                  "settings": {
+                    "text": "<p>Restores, revives and protects — with or without shine. Here the Boot Doctor will show you how to polish your smooth leather footwear.</p>",
+                    "width": "fit-content",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "rte",
+                    "font": "var(--font-body--family)",
+                    "weight": "",
+                    "font_size": "1rem",
+                    "font_size_mobile": "",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "font_stretch": "normal",
+                    "color": "var(--color-foreground)",
+                    "italic_color": "",
+                    "strong_color": "",
+                    "link_font_size": "",
+                    "link_font_size_mobile": "",
+                    "background": false,
+                    "line_highlight": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "visibility": "all",
+                    "padding-block-start": 0,
+                    "padding-block-end": 10,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0,
+                    "mobile_padding_override": true,
+                    "padding-block-start-mobile": 0,
+                    "padding-block-end-mobile": 10,
+                    "padding-inline-start-mobile": 0,
+                    "padding-inline-end-mobile": 0
+                  },
+                  "blocks": {}
+                },
+                "button_XtxicK": {
+                  "type": "button",
+                  "name": "t:names.button",
+                  "settings": {
+                    "label": "Lee nuestra guía",
+                    "link": "shopify://collections/all",
+                    "open_in_new_tab": false,
+                    "style_class": "button",
+                    "width": "fit-content",
+                    "custom_width": 100,
+                    "width_mobile": "fit-content",
+                    "custom_width_mobile": 100,
+                    "font_size_desktop": "1.25rem",
+                    "font_size_mobile": ""
+                  },
+                  "blocks": {}
                 }
               },
               "block_order": [
-                "image_eRHN8c"
+                "image_MzAPX9",
+                "text_RCtGtR",
+                "text_mY7wz8",
+                "button_XtxicK"
               ]
             }
           },
           "block_order": [
             "group_eNgjFL",
-            "group_G89JNb",
-            "group_jPbMT6",
-            "group_pJ86tQ",
-            "group_4AY6eG"
+            "group_DzHHj4",
+            "group_JUEEy6",
+            "group_EicKKh",
+            "group_PJjDGd"
           ]
         }
       },
@@ -4731,7 +5231,7 @@
         "section_width": "page-width",
         "section_height": "",
         "section_height_custom": 50,
-        "color_scheme": "",
+        "color_scheme": "scheme-50b797ac-0ce5-4b42-bd62-f6c27627d717",
         "background_media": "none",
         "video_position": "cover",
         "background_image_position": "cover",
