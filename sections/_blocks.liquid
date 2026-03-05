@@ -359,6 +359,22 @@
       "visible_if": "{{ section.settings.background_media == 'image' }}"
     },
     {
+      "type": "text",
+      "id": "background_image_max_height_desktop",
+      "label": "Alto máximo del fondo (desktop)",
+      "default": "0",
+      "info": "Escribe 0, 320 o 320px. 0 = sin límite",
+      "visible_if": "{{ section.settings.background_media == 'image' }}"
+    },
+    {
+      "type": "text",
+      "id": "background_image_max_height_mobile",
+      "label": "Alto máximo del fondo (móvil)",
+      "default": "0",
+      "info": "Escribe 0, 320 o 320px. 0 = sin límite",
+      "visible_if": "{{ section.settings.background_media == 'image' }}"
+    },
+    {
       "type": "select",
       "id": "border",
       "label": "t:settings.borders",
@@ -530,3 +546,5 @@
   ]
 }
 {% endschema %}
+
+

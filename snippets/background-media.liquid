@@ -9,12 +9,14 @@
   @param {string} [background_image_visibility] - The background image visibility by device
   @param {string} [background_image_horizontal_position] - The background image horizontal position
   @param {string} [background_image_vertical_alignment] - The background image vertical alignment
+  @param {number} [background_image_max_height_desktop] - The background image max height on desktop in px
+  @param {number} [background_image_max_height_mobile] - The background image max height on mobile in px
   @param {string} [placeholder] - The placeholder
   @param {object} [block] - The block object
   @param {object} [section] - The section object
 
   @example
-  {% render 'background-media', background_media: background_media, background_video: background_video, background_video_position: background_video_position, background_image: background_image, background_image_position: background_image_position, background_image_visibility: background_image_visibility, background_image_horizontal_position: background_image_horizontal_position, background_image_vertical_alignment: background_image_vertical_alignment, placeholder: placeholder %}
+  {% render 'background-media', background_media: background_media, background_video: background_video, background_video_position: background_video_position, background_image: background_image, background_image_position: background_image_position, background_image_visibility: background_image_visibility, background_image_horizontal_position: background_image_horizontal_position, background_image_vertical_alignment: background_image_vertical_alignment, background_image_max_height_desktop: background_image_max_height_desktop, background_image_max_height_mobile: background_image_max_height_mobile, placeholder: placeholder %}
 {%- enddoc -%}
 
 {% if background_media == 'video' %}
@@ -66,6 +68,8 @@
     assign image_visibility = background_image_visibility | default: 'both'
     assign image_horizontal_position = background_image_horizontal_position | default: 'center'
     assign image_vertical_alignment = background_image_vertical_alignment | default: 'center'
+    assign image_max_height_desktop = background_image_max_height_desktop | default: 0 | downcase | remove: 'px' | strip | plus: 0
+    assign image_max_height_mobile = background_image_max_height_mobile | default: 0 | downcase | remove: 'px' | strip | plus: 0
 
     assign visibility_class = ''
     if image_visibility == 'desktop'
@@ -74,11 +78,24 @@
       assign visibility_class = ' hidden--desktop'
     endif
 
+    assign max_height_class = ''
+    if image_max_height_mobile > 0 or image_max_height_desktop > 0
+      assign max_height_class = ' background-image-container--max-height'
+    endif
+
     assign image_object_position = image_horizontal_position | append: ' ' | append: image_vertical_alignment
   %}
   <div
-    class="background-image-container{% if background_image_position == 'fit' %} background-image-fit{% endif %}{{ visibility_class }}"
-    style="--background-image-object-position: {{ image_object_position }};"
+    class="background-image-container{% if background_image_position == 'fit' %} background-image-fit{% endif %}{{ visibility_class }}{{ max_height_class }}"
+    style="
+      --background-image-object-position: {{ image_object_position }};
+      {%- if image_max_height_mobile > 0 -%}
+        --background-image-max-height-mobile: {{ image_max_height_mobile }}px;
+      {%- endif -%}
+      {%- if image_max_height_desktop > 0 -%}
+        --background-image-max-height-desktop: {{ image_max_height_desktop }}px;
+      {%- endif -%}
+    "
   >
     {% liquid
       # Define sizes based on page width setting whether this is called from a section or block
@@ -145,5 +162,18 @@
 
   .background-image-container :is(img, svg) {
     object-position: var(--background-image-object-position, center center);
+  }
+
+  .background-image-container--max-height {
+    inset-block-start: 0;
+    inset-inline: 0;
+    inset-block-end: auto;
+    height: min(100%, var(--background-image-max-height-mobile, 100%));
+  }
+
+  @media screen and (min-width: 750px) {
+    .background-image-container--max-height {
+      height: min(100%, var(--background-image-max-height-desktop, var(--background-image-max-height-mobile, 100%)));
+    }
   }
 {% endstylesheet %}
