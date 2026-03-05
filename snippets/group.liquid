@@ -116,12 +116,15 @@
     .group-block-content.group-block-content--slider-both,
     .group-block-content.group-block-content--slider-desktop {
       cursor: grab;
+      touch-action: pan-y;
     }
 
     .group-block-content.group-block-content--slider-both.is-dragging,
     .group-block-content.group-block-content--slider-desktop.is-dragging {
       cursor: grabbing;
       user-select: none;
+      scroll-snap-type: none;
+      scroll-behavior: auto;
     }
   }
 
@@ -203,9 +206,24 @@
     let pointerId = null;
     let startX = 0;
     let startScrollLeft = 0;
+    let pointerX = 0;
     let hasMoved = false;
+    let blockNextClick = false;
+    let rafId = null;
 
     const isDesktop = () => window.matchMedia('(min-width: 750px)').matches;
+
+    const applyDrag = () => {
+      if (!activeSlider) {
+        rafId = null;
+        return;
+      }
+
+      const deltaX = pointerX - startX;
+      if (Math.abs(deltaX) > 4) hasMoved = true;
+      activeSlider.scrollLeft = startScrollLeft - deltaX;
+      rafId = requestAnimationFrame(applyDrag);
+    };
 
     document.addEventListener(
       'pointerdown',
@@ -222,30 +240,38 @@
         activeSlider = slider;
         pointerId = event.pointerId;
         startX = event.clientX;
+        pointerX = event.clientX;
         startScrollLeft = slider.scrollLeft;
         hasMoved = false;
 
         slider.classList.add('is-dragging');
         slider.setPointerCapture?.(pointerId);
+        event.preventDefault();
+
+        if (!rafId) rafId = requestAnimationFrame(applyDrag);
       },
-      { passive: true }
+      { passive: false }
     );
 
     document.addEventListener(
       'pointermove',
       (event) => {
         if (!activeSlider || event.pointerId !== pointerId) return;
-
-        const deltaX = event.clientX - startX;
-        if (Math.abs(deltaX) > 4) hasMoved = true;
-
-        activeSlider.scrollLeft = startScrollLeft - deltaX;
+        pointerX = event.clientX;
+        event.preventDefault();
       },
-      { passive: true }
+      { passive: false }
     );
 
     const finishDrag = () => {
       if (!activeSlider) return;
+
+      if (rafId) {
+        cancelAnimationFrame(rafId);
+        rafId = null;
+      }
+
+      blockNextClick = hasMoved;
       activeSlider.classList.remove('is-dragging');
       activeSlider = null;
       pointerId = null;
@@ -257,7 +283,8 @@
     document.addEventListener(
       'click',
       (event) => {
-        if (!hasMoved) return;
+        if (!blockNextClick) return;
+        blockNextClick = false;
         hasMoved = false;
         event.preventDefault();
         event.stopPropagation();
