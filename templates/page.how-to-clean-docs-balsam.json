@@ -364,7 +364,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h2>DISEÑADO PARA QUE TUS DOCS RESISTENTES DUREN AÚN MÁS</h2>",
+                    "text": "<p>DISEÑADO PARA QUE EL CALZADO RESISTENTE DURE AÚN MÁS</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
