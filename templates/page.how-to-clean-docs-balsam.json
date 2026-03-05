@@ -4199,7 +4199,7 @@
             "type_preset": "custom",
             "font": "var(--font-body--family)",
             "weight": "600",
-            "font_size": "1.875rem",
+            "font_size": "1.5rem",
             "font_size_mobile": "1.25rem",
             "line_height": "tight",
             "letter_spacing": "normal",
