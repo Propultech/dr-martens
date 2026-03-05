@@ -5076,7 +5076,7 @@
                   "type": "image",
                   "name": "t:names.image",
                   "settings": {
-                    "image": "shopify://shop_images/07_Desktop_carousel_tile-min_dubbin_wax.jpg",
+                    "image": "shopify://shop_images/Patent-min.jpg",
                     "link": "",
                     "image_ratio": "adapt",
                     "width": "fill",
@@ -5103,7 +5103,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<p>HOW TO POLISH YOUR<br/>FOOTWEAR</p>",
+                    "text": "<p>HOW TO CLEAN PATENT<br/>LEATHER</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -5143,7 +5143,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Restores, revives and protects — with or without shine. Here the Boot Doctor will show you how to polish your smooth leather footwear.</p>",
+                    "text": "<p>It’s never too late to get that brilliant shine back. Our Patent Cleaner is specially formulated for use on Docs patent leathers. Here’s how to use it.</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
