@@ -112,6 +112,19 @@
     -webkit-overflow-scrolling: touch;
   }
 
+  @media screen and (min-width: 750px) {
+    .group-block-content.group-block-content--slider-both,
+    .group-block-content.group-block-content--slider-desktop {
+      cursor: grab;
+    }
+
+    .group-block-content.group-block-content--slider-both.is-dragging,
+    .group-block-content.group-block-content--slider-desktop.is-dragging {
+      cursor: grabbing;
+      user-select: none;
+    }
+  }
+
   /* Remove scrollbar arrow buttons (WebKit) */
   .group-block-content[class*="group-block-content--slider-"]::-webkit-scrollbar-button {
     display: none;
@@ -177,3 +190,79 @@
     pointer-events: auto;
   }
 {% endstylesheet %}
+
+<script>
+  (() => {
+    if (window.__groupSliderDesktopDragInitialized) return;
+    window.__groupSliderDesktopDragInitialized = true;
+
+    const selector = '.group-block-content.group-block-content--slider-both, .group-block-content.group-block-content--slider-desktop';
+    const interactiveSelector = 'a, button, input, textarea, select, label, summary';
+
+    let activeSlider = null;
+    let pointerId = null;
+    let startX = 0;
+    let startScrollLeft = 0;
+    let hasMoved = false;
+
+    const isDesktop = () => window.matchMedia('(min-width: 750px)').matches;
+
+    document.addEventListener(
+      'pointerdown',
+      (event) => {
+        if (!isDesktop() || event.button !== 0) return;
+
+        const target = event.target;
+        if (!(target instanceof Element)) return;
+
+        const slider = target.closest(selector);
+        if (!(slider instanceof HTMLElement)) return;
+        if (target.closest(interactiveSelector)) return;
+
+        activeSlider = slider;
+        pointerId = event.pointerId;
+        startX = event.clientX;
+        startScrollLeft = slider.scrollLeft;
+        hasMoved = false;
+
+        slider.classList.add('is-dragging');
+        slider.setPointerCapture?.(pointerId);
+      },
+      { passive: true }
+    );
+
+    document.addEventListener(
+      'pointermove',
+      (event) => {
+        if (!activeSlider || event.pointerId !== pointerId) return;
+
+        const deltaX = event.clientX - startX;
+        if (Math.abs(deltaX) > 4) hasMoved = true;
+
+        activeSlider.scrollLeft = startScrollLeft - deltaX;
+      },
+      { passive: true }
+    );
+
+    const finishDrag = () => {
+      if (!activeSlider) return;
+      activeSlider.classList.remove('is-dragging');
+      activeSlider = null;
+      pointerId = null;
+    };
+
+    document.addEventListener('pointerup', finishDrag);
+    document.addEventListener('pointercancel', finishDrag);
+
+    document.addEventListener(
+      'click',
+      (event) => {
+        if (!hasMoved) return;
+        hasMoved = false;
+        event.preventDefault();
+        event.stopPropagation();
+      },
+      true
+    );
+  })();
+</script>
