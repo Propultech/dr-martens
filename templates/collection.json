@@ -54,7 +54,7 @@
             "letter_spacing": "loose",
             "case": "uppercase",
             "wrap": "pretty",
-            "font_stretch": "normal",
+            "font_stretch": "var(--font-accent--stretch)",
             "color": "",
             "italic_color": "",
             "strong_color": "",
