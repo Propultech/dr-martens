@@ -78,7 +78,7 @@
       "blocks": {
         "group_J3eTFe": {
           "type": "group",
-          "name": "t:names.group",
+          "name": "Grupo | Inicio",
           "settings": {
             "content_direction": "row",
             "visibility": "",
@@ -125,9 +125,90 @@
             "custom_css": ""
           },
           "blocks": {
+            "group_8t3hQX": {
+              "type": "group",
+              "name": "Grupo | Img movile",
+              "settings": {
+                "content_direction": "column",
+                "visibility": "mobile",
+                "enable_slider": false,
+                "slider_on": "both",
+                "slider_scrollbar_color": "#FFDD00",
+                "vertical_on_mobile": true,
+                "horizontal_alignment": "flex-start",
+                "vertical_alignment": "center",
+                "align_baseline": false,
+                "horizontal_alignment_flex_direction_column": "flex-start",
+                "vertical_alignment_flex_direction_column": "center",
+                "gap": 12,
+                "width": "fill",
+                "custom_width": 100,
+                "width_mobile": "fill",
+                "custom_width_mobile": 100,
+                "height": "fit",
+                "custom_height": 100,
+                "inherit_color_scheme": true,
+                "color_scheme": "",
+                "background_media": "none",
+                "video_position": "cover",
+                "background_image_position": "cover",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0,
+                "toggle_overlay": false,
+                "overlay_color": "#00000026",
+                "overlay_style": "solid",
+                "gradient_direction": "to top",
+                "link": "",
+                "open_in_new_tab": false,
+                "placeholder": "",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0,
+                "padding-block-start-mobile": 0,
+                "padding-block-end-mobile": 0,
+                "padding-inline-start-mobile": 0,
+                "padding-inline-end-mobile": 0,
+                "custom_css": ""
+              },
+              "blocks": {
+                "image_kQeifw": {
+                  "type": "image",
+                  "name": "t:names.image",
+                  "settings": {
+                    "image": "shopify://shop_images/01_Desktop_Hero_How_To_Care_2.jpg",
+                    "link": "",
+                    "image_ratio": "adapt",
+                    "width": "fill",
+                    "custom_width": 100,
+                    "width_mobile": "fill",
+                    "custom_width_mobile": 100,
+                    "height": "fit",
+                    "border": "none",
+                    "border_width": 1,
+                    "border_opacity": 100,
+                    "border_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0,
+                    "padding-block-start-mobile": 0,
+                    "padding-block-end-mobile": 0,
+                    "padding-inline-start-mobile": 0,
+                    "padding-inline-end-mobile": 0
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "image_kQeifw"
+              ]
+            },
             "group_437YtA": {
               "type": "group",
-              "name": "t:names.group",
+              "name": "Grupo | text",
               "settings": {
                 "content_direction": "column",
                 "visibility": "",
@@ -297,10 +378,10 @@
             },
             "group_K8Dm3i": {
               "type": "group",
-              "name": "t:names.group",
+              "name": "Grupo | Img desktop",
               "settings": {
                 "content_direction": "column",
-                "visibility": "",
+                "visibility": "desktop",
                 "enable_slider": false,
                 "slider_on": "both",
                 "slider_scrollbar_color": "#FFDD00",
@@ -378,6 +459,7 @@
             }
           },
           "block_order": [
+            "group_8t3hQX",
             "group_437YtA",
             "group_K8Dm3i"
           ]
