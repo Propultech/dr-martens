@@ -397,7 +397,7 @@
                   "type": "image",
                   "name": "t:names.image",
                   "settings": {
-                    "image": "shopify://shop_images/Desktop_Dropdown2.jpg",
+                    "image": "shopify://shop_images/Desktop_Dropdown4.jpg",
                     "link": "",
                     "image_ratio": "adapt",
                     "width": "fill",
@@ -524,7 +524,7 @@
                   "type": "image",
                   "name": "t:names.image",
                   "settings": {
-                    "image": "shopify://shop_images/Desktop_Dropdown2.jpg",
+                    "image": "shopify://shop_images/Desktop_Dropdown3.jpg",
                     "link": "",
                     "image_ratio": "adapt",
                     "width": "fill",
@@ -651,7 +651,7 @@
                   "type": "image",
                   "name": "t:names.image",
                   "settings": {
-                    "image": "shopify://shop_images/Desktop_Dropdown2.jpg",
+                    "image": "shopify://shop_images/Desktop_Dropdown1.jpg",
                     "link": "",
                     "image_ratio": "adapt",
                     "width": "fill",
