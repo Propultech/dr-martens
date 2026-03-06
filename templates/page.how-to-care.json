@@ -541,7 +541,7 @@
                   "name": "t:names.button",
                   "settings": {
                     "label": "DESCUBRE MÁS",
-                    "link": "shopify://collections/all",
+                    "link": "shopify://pages/how-to-clean-docs-balsam-wax",
                     "open_in_new_tab": false,
                     "style_class": "button",
                     "width": "fit-content",
