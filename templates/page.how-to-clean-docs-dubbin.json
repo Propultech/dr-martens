@@ -323,7 +323,7 @@
                   "type": "text",
                   "name": "Encabezado | titulo",
                   "settings": {
-                    "text": "<h1><strong>HOW TO CLEANYOUR DR. MARTENSWITH DUBBIN WAX</strong></h1>",
+                    "text": "<h1><strong>CÓMO LIMPIAR TUS DR. MARTENS CON DUBBIN WAX</strong></h1>",
                     "width": "fit-content",
                     "max_width": "none",
                     "alignment": "left",
@@ -363,7 +363,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h2>THE BOOT DOCTOR SAYS: OUR DUBBIN WILL REVIVE ANY WAXED OR OILED LEATHER — USE TO CLEAN WELL-WORN DOCS OR ENSURE BOX-FRESH PROTECTION.</h2>",
+                    "text": "<h2>EL DOCTOR DE BOTAS DICE: NUESTRO DUBBIN REVITALIZARÁ CUALQUIER CUERO ENCERADO O ACEITADO — ÚSALO PARA LIMPIAR DOCS BIEN GASTADOS O ASEGURAR PROTECCIÓN IMPECABLE.</h2>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -403,7 +403,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Even the most rugged DM’s boots need a little love and care from time to time. Our<a href=\"https://www.drmartens.com/uk/en_gb/p/AC792000\">Dubbin Wax</a>rejuvenates and protects your shoes and boots to keep them kicking. Use it on waxed or oiled leathers to provide a water-resistant coating.<br/><br/>Please note Dubbin is a non-vegan product and is not suitable for use on vegan products. It is also not suitable for use on Genix Nappa products.<br/><br/>Here’s how to apply it — in four easy steps — with a few tips from the Dr. Martens Boot Doctor. Check out our full video at the bottom of the page.</p>",
+                    "text": "<p>Incluso las botas Dr. Martens más resistentes necesitan un poco de amor y cuidado de vez en cuando. Nuestro Dubbin Wax rejuvenece y protege tus zapatos y botas para mantenerlos en perfecto estado. Úsalo en cueros encerados u oleosos para proporcionar un acabado resistente al agua.<br/><br/>Ten en cuenta que Dubbin es un producto no vegano y no es adecuado para usar en productos veganos. Tampoco es adecuado para usar en productos Genix Nappa.<br/><br/>Aquí te mostramos cómo aplicarlo — en cuatro pasos sencillos — con algunos consejos del Dr. Martens Boot Doctor. Consulta nuestro video completo al final de la página.</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -590,7 +590,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<h2>BOOT DOCTOR TIP: GOOD TIMES CAN TAKE A TOLL ON YOUR BOOTS — LOOK AFTER THEM AND THEY’LL LOOK AFTER YOU</h2>",
+            "text": "<h2>CONSEJO DEL BOOT DOCTOR: LOS BUENOS MOMENTOS PUEDEN AFECTAR TUS BOTAS — CUÍDALAS Y ELLAS TE CUIDARÁN</h2>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "center",
@@ -1004,7 +1004,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<p><strong>Step 1: YOUR SHOE CARE KIT</strong></p>",
+                    "text": "<p><strong>Paso 1: TU KIT DE CUIDADO DE CALZADO</strong></p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -1044,7 +1044,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Find a table or a patch of floor that can stand to get a little bit wet or muddy. Even if your shoes are fresh as a daisy, we’d still avoid the carpet. You’ll need your tin of<a href=\"https://www.drmartens.com/uk/en_gb/p/ac792000\">Dubbin Wax</a>, a couple of<a href=\"https://www.drmartens.com/uk/en_gb/p/ac777000\">cloths</a>and a bowl of water.</p>",
+                    "text": "<p>Busca una mesa o un parche de piso que pueda mojarse o ensuciarse un poco. Incluso si tus zapatos están impecables, seguiríamos evitando la alfombra. Necesitarás tu lata de Dubbin Wax, un par de cloths y un recipiente con agua.</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -1384,7 +1384,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h2>Step 2: REMOVE DIRT</h2>",
+                    "text": "<h2>Paso 2: ELIMINAR SUCIEDAD</h2>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -1424,7 +1424,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>If you’re working with boots that have been working hard, they might need a quick clean before you pick up the Dubbin. Remove any laces to clean separately, and use a damp cloth to wipe off any mud and dirt from the leather and soles.</p>",
+                    "text": "<p>Si estás trabajando con botas que han sido muy utilizadas, podrían necesitar una limpieza rápida antes de usar el Dubbin. Retira los cordones para limpiarlos por separado y usa un paño húmedo para eliminar el barro y la suciedad del cuero y las suelas.</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -1609,7 +1609,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<h2>BOOT DOCTOR TIP: IF YOUR BOOTS HAVE LIVED A LITTLE, BANG THEM TOGETHER TO REMOVE ANY EXCESS MUD FIRST</h2>",
+            "text": "<h2>CONSEJO DEL BOOT DOCTOR: SI TUS BOTAS HAN TENIDO ALGO DE USO, GOLPÉALAS ENTRE SÍ PARA REMOVER EL BARRO EXCESIVO PRIMERO</h2>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "center",
@@ -2023,7 +2023,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h2>Step 3: GET GREASY</h2>",
+                    "text": "<h2>Paso 3: APLICA GRASA</h2>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -2063,7 +2063,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Use a clean cloth to scoop up some Dubbin and apply generously all over the boot or shoe — make sure you really work it into the seams. Your footwear will look shiny when the Dubbin is fresh, but will matte down as the wax dries. Sit back and wait</p>",
+                    "text": "<p>Utiliza un paño limpio para aplicar generosamente Dubbin en toda la bota o zapato — asegúrate de trabajarlo bien en las costuras. Tu calzado se verá brillante cuando el Dubbin esté fresco, pero perderá brillo a medida que la cera se seque. Siéntate y espera</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -2162,7 +2162,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<h2>BOOT DOCTOR TIP: DUBBIN CAN TAKE A WHILE TO DRY. WHY NOT MAKE THE MOST OF THE WAIT AND TAKE A MOMENT TO LOOK AFTER ANY OTHER WELL-WORN DOCS YOU MIGHT BE HIDING IN THE WARDROBE</h2>",
+            "text": "<h2>CONSEJO DEL BOOT DOCTOR: DUBBIN PUEDE TARDAR UN TIEMPO EN SECARSE. ¿POR QUÉ NO APROVECHAR LA ESPERA Y DEDICAR UN MOMENTO A CUIDAR OTROS DOCS GASTADOS QUE PODRÍAS TENER GUARDADOS EN EL ARMARIO?</h2>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "center",
@@ -2490,7 +2490,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h2>Step 4: FINISH UP</h2>",
+                    "text": "<h2>Paso 4: FINALIZAR</h2>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -2530,7 +2530,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Once your boots or shoes have dried, you can re-lace them. If you’re feeling adventurous, why not take advantage of the spring clean and try out a fresh<a href=\"https://www.drmartens.com/uk/en_gb/accessories/insoles/shoe-laces/c/07597600\">pair of laces</a>? Finish with a few sprays of Dr. Martens<a href=\"https://www.drmartens.com/uk/en_gb/p/AC770000\">Ultra Protector Spray</a>to preserve all your hard work for even longer.</p>",
+                    "text": "<p>Una vez que tus botas o zapatos se hayan secado, puedes volver a enlazarlos. Si te sientes aventurero, ¿por qué no aprovechar la limpieza de primavera e intentar un par fresco de laces? Termina con algunos sprays de Dr. Martens Ultra Protector Spray para preservar todo tu trabajo durante aún más tiempo.</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -2715,7 +2715,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<h2>BOOT DOCTOR TIP: THERE’S NO SUCH THING AS TOO MUCH DUBBIN. APPLY WHENEVER YOUR DM’S ARE LOOKING A LITTLE WORN</h2>",
+            "text": "<h2>CONSEJO DEL BOOT DOCTOR: NO EXISTE ALGO COMO DEMASIADO DUBBIN. APLICA SIEMPRE QUE TUS DM'S SE VEAN UN POCO GASTADAS</h2>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "center",
@@ -3129,7 +3129,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h2>DR. MARTENS DUBBIN WAX</h2>",
+                    "text": "<h2>CERA DUBBIN DR. MARTENS</h2>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -3169,7 +3169,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Rejuvenates your boots and shoes, and provides a water-resistant layer of protection. Perfect for waxed and oiled leathers.</p>",
+                    "text": "<p>Rejuvenece tus botas y zapatos, y proporciona una capa de protección resistente al agua. Perfecto para cueros encerados y aceitados.</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -3739,7 +3739,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<p>HOW TO USE WONDER BALSAM</p>",
+                    "text": "<p>CÓMO USAR WONDER<br/>BALSAM</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -3779,7 +3779,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Bring smooth or waxy leathers back to their best. Our Wonder Balsam nourishes and rejuvenates, with no shine and no polishing required.</p>",
+                    "text": "<p>Devuelve los cueros lisos o encerados a su mejor estado. Nuestro Wonder Balsam nutre y rejuvenece, sin brillo y sin necesidad de pulir.</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
