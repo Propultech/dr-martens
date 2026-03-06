@@ -534,7 +534,7 @@
                     "text_exWfNR": {
                       "type": "text",
                       "settings": {
-                        "text": "<ul><li><a href=\"/pages/historia\" title=\"Historia\">ENVÍO</a></li><li><a href=\"#\" title=\"EMPLEOS\">EMPLEOS</a></li><li><a href=\"#\" title=\"GUÍAS\">GUÍAS</a></li><li><a href=\"#\" title=\"PRENSA\">PRENSA</a></li><li><a href=\"#\" title=\"ENCUENTRA TU TIENDA\">ENCUENTRA TU TIENDA</a></li><li><a href=\"#\" title=\"SOSTENIBILIDAD\">SOSTENIBILIDAD</a></li><li><a href=\"#\" title=\"RESEÑAS\">RESEÑAS</a></li></ul>",
+                        "text": "<ul><li><a href=\"/pages/historia\" title=\"Historia\">ENVÍO</a></li><li><a href=\"#\" title=\"AYUDA Y PREGUNTAS FRECUENTES\">AYUDA Y PREGUNTAS FRECUENTES</a></li><li><a href=\"#\" title=\"INFORMACIÓN DEL PEDIDO\">INFORMACIÓN DEL PEDIDO</a></li><li><a href=\"#\" title=\"PARA LA VIDA\">PARA LA VIDA</a></li><li><a href=\"#\" title=\"DEVOLUCIONES\">DEVOLUCIONES</a></li><li><a href=\"#\" title=\"MAPA DEL SITIO\">MAPA DEL SITIO</a></li><li><a href=\"#\" title=\"GUÍA DE TAMAÑOS\">GUÍA DE TAMAÑOS</a></li><li><a href=\"#\" title=\"TARJETAS DE REGALO\">TARJETAS DE REGALO</a></li></ul>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
