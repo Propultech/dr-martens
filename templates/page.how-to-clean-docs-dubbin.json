@@ -136,7 +136,7 @@
               "type": "image",
               "name": "t:names.image",
               "settings": {
-                "image": "shopify://shop_images/01_Desktop_Hero_How_To_Care_2.jpg",
+                "image": "shopify://shop_images/01_Desktop_B-min_doc_martens_boots.jpg",
                 "link": "",
                 "image_ratio": "adapt",
                 "width": "fill",
@@ -184,7 +184,6 @@
         "color_scheme": "",
         "background_media": "image",
         "video_position": "cover",
-        "background_image": "shopify://shop_images/Desktop_Hero.jpg",
         "background_image_position": "fit",
         "background_image_visibility": "desktop",
         "background_image_vertical_alignment": "top",
@@ -505,7 +504,7 @@
                   "type": "image",
                   "name": "t:names.image",
                   "settings": {
-                    "image": "shopify://shop_images/01_Desktop_Hero_How_To_Care_2.jpg",
+                    "image": "shopify://shop_images/01_Desktop_B-min_doc_martens_boots.jpg",
                     "link": "",
                     "image_ratio": "adapt",
                     "width": "fill",
@@ -559,7 +558,7 @@
         "color_scheme": "",
         "background_media": "image",
         "video_position": "cover",
-        "background_image": "shopify://shop_images/Desktop_Hero.jpg",
+        "background_image": "shopify://shop_images/01_Desktop-min_clean_boots.jpg",
         "background_image_position": "cover",
         "background_image_visibility": "desktop",
         "background_image_vertical_alignment": "top",
@@ -732,7 +731,7 @@
               "type": "image",
               "name": "t:names.image",
               "settings": {
-                "image": "shopify://shop_images/02_Desktop_Set_up-min.jpg",
+                "image": "shopify://shop_images/02_Desktop-min_doc_martens_boots.jpg",
                 "link": "",
                 "image_ratio": "adapt",
                 "width": "fill",
@@ -919,7 +918,7 @@
                   "type": "image",
                   "name": "t:names.image",
                   "settings": {
-                    "image": "shopify://shop_images/02_Desktop_Set_up-min.jpg",
+                    "image": "shopify://shop_images/02_Desktop-min_doc_martens_boots.jpg",
                     "link": "",
                     "image_ratio": "adapt",
                     "width": "fill",
@@ -1198,7 +1197,7 @@
               "type": "image",
               "name": "t:names.image",
               "settings": {
-                "image": "shopify://shop_images/03_Desktop_Clean-min.jpg",
+                "image": "shopify://shop_images/03_Desktop-min_clean_doc_martens_boots.jpg",
                 "link": "",
                 "image_ratio": "adapt",
                 "width": "fill",
@@ -1525,7 +1524,7 @@
                   "type": "image",
                   "name": "t:names.image",
                   "settings": {
-                    "image": "shopify://shop_images/03_Desktop_Clean-min.jpg",
+                    "image": "shopify://shop_images/03_Desktop-min_clean_doc_martens_boots.jpg",
                     "link": "",
                     "image_ratio": "adapt",
                     "width": "fill",
@@ -1751,7 +1750,7 @@
               "type": "image",
               "name": "t:names.image",
               "settings": {
-                "image": "shopify://shop_images/04_Desktop_Cleaning_Wonder-min.gif",
+                "image": "shopify://shop_images/04_Desktop_Mobile-min_boots_sole.gif",
                 "link": "",
                 "image_ratio": "adapt",
                 "width": "fill",
@@ -1938,7 +1937,7 @@
                   "type": "image",
                   "name": "t:names.image",
                   "settings": {
-                    "image": "shopify://shop_images/04_Desktop_Cleaning_Wonder-min.gif",
+                    "image": "shopify://shop_images/04_Desktop_Mobile-min_boots_sole.gif",
                     "link": "",
                     "image_ratio": "adapt",
                     "width": "fill",
