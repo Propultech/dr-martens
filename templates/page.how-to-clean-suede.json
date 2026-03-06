@@ -323,7 +323,7 @@
                   "type": "text",
                   "name": "Encabezado | titulo",
                   "settings": {
-                    "text": "<p><strong>HOW TO CLEAN SUEDEDR. MARTENS FOOTWEAR</strong></p>",
+                    "text": "<p><strong>CÓMO LIMPIAR ANTE EN DR. MARTENS</strong></p>",
                     "width": "fit-content",
                     "max_width": "none",
                     "alignment": "left",
@@ -363,7 +363,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h2>THE BOOT DOCTOR SAYS: OUR SUEDE CLEANER WILL REVIVE EVEN THE MOST WELL-LOVED PAIR OF SUEDE SHOES OR BOOTS</h2>",
+                    "text": "<h2>EL DOCTOR DE BOTAS DICE: NUESTRO LIMPIADOR DE GAMUZA REVITALIZARÁ INCLUSO TUS ZAPATOS O BOTAS DE GAMUZA MÁS USADOS</h2>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -403,7 +403,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Suede upkeep is notoriously tricky. But looked after properly,<a href=\"https://www.drmartens.com/uk/en_gb/unisex/suede/c/04e30000\">suede footwear</a>can be a long-lasting feature in your collection. Our<a href=\"https://www.drmartens.com/uk/en_gb/p/AC771000\">Suede Cleaner</a>is designed to restore and clean your suede shoes to their former glory, whatever you’ve put them through.<br/><br/>Here’s how to use it — in five easy steps — with a few tips from the Dr. Martens Boot Doctor. Check out our full video at the bottom of the page.</p>",
+                    "text": "<p>El cuidado del ante es notoriamente complicado. Pero si se cuida adecuadamente, el calzado de ante puede ser una pieza duradera en tu colección. Nuestro Suede Cleaner está diseñado para restaurar y limpiar tus zapatos de ante a su estado original, sin importar lo que hayan pasado.<br/><br/>Aquí te mostramos cómo usarlo — en cinco pasos sencillos — con algunos consejos del Dr. Martens Boot Doctor. Consulta nuestro video completo al final de la página.</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -590,7 +590,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<h2>BOOT DOCTOR TIP: TAKING SOME TIME TO LOOK AFTER YOUR SUEDE MAKES ALL THE DIFFERENCE</h2>",
+            "text": "<h2>CONSEJO DEL BOOT DOCTOR: DEDICAR TIEMPO A CUIDAR TU ANTE MARCA LA DIFERENCIA</h2>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "center",
@@ -1044,7 +1044,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>First up, find a spot you don’t mind getting a bit wet or flicked with mud. You’ll need a damp<a href=\"https://www.drmartens.com/uk/en_gb/p/ac777000\">cloth</a>or sponge, some clean water, a<a href=\"https://www.drmartens.com/uk/en_gb/p/ac888000\">suede brush</a>and your bottle of<a href=\"https://www.drmartens.com/uk/en_gb/p/ac771000\">Dr. Martens Suede Cleaner</a>. Find a playlist to keep you entertained for 20-30 minutes.</p>",
+                    "text": "<p>Primero, busca un lugar donde no te importe mojarte un poco o que salpique barro. Necesitarás un paño húmedo o esponja, agua limpia, un suede brush y tu botella de Dr. Martens Suede Cleaner. Encuentra una lista de reproducción para mantenerte entretenido durante 20-30 minutos.</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -1384,7 +1384,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h2>Step 2: REMOVE DIRT</h2>",
+                    "text": "<h2>Paso 2: ELIMINAR SUCIEDAD</h2>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -1424,7 +1424,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>If you’ve been putting your boots through their paces, they might need a clean-up first. Whip out your laces to clean separately and wipe down the boots with a damp cloth.</p>",
+                    "text": "<p>Si has estado usando tus botas intensamente, es posible que necesiten una limpieza primero. Retira los cordones para limpiarlos por separado y pasa un paño húmedo sobre las botas.</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -1609,7 +1609,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<h2>BOOT DOCTOR TIP: IF YOUR BOOTS HAVE LIVED A LITTLE, BANG THEM TOGETHER TO REMOVE ANY EXCESS MUD FIRST</h2>",
+            "text": "<h2>CONSEJO DEL BOOT DOCTOR: SI TUS BOOTS HAN TENIDO VIDA, GOLPÉALOS ENTRE SÍ PARA REMOVER EL BARRO EXCESIVO PRIMERO</h2>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "center",
@@ -2023,7 +2023,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h2>Step 3: GET STUCK IN</h2>",
+                    "text": "<h2>Paso 3: MANOS A LA OBRA</h2>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -2063,7 +2063,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Give the bottle a good shake, then spray your boots all over. Scrub gently with a clean, damp sponge or cloth. Once you’ve scrubbed the entire boot, use the sponge or cloth to wipe lightly with clean water to remove excess cleaner. Be careful not to get the suede too wet. Leave to dry naturally.</p>",
+                    "text": "<p>Agita bien la botella y luego rocía tus botas por completo. Frota suavemente con una esponja o paño limpio y húmedo. Una vez que hayas frotado toda la bota, usa la esponja o paño para pasar ligeramente con agua limpia y remover el exceso de limpiador. Ten cuidado de no mojar demasiado la gamuza. Deja secar naturalmente.</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -2403,7 +2403,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h2>Step 4: GRAB YOUR SUEDE BRUSH</h2>",
+                    "text": "<h2>Paso 4: TOMA TU CEPILLO PARA GAMUZA</h2>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -2443,7 +2443,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Once your boots are dry, use the soft rubber side of your brush to sweep lightly over the suede. Make sure you brush in the same direction to keep your suede looking as fresh as possible.</p>",
+                    "text": "<p>Una vez que tus boots estén secos, utiliza el lado de goma suave de tu cepillo para barrer suavemente sobre la gamuza. Asegúrate de cepillar en la misma dirección para mantener tu suede luciendo lo más fresco posible.</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -2628,7 +2628,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<h2>BOOT DOCTOR TIP: A NEW PAIR OF LACES CAN ADD A WHOLE NEW LOOK</h2>",
+            "text": "<h2>CONSEJO DEL BOOT DOCTOR: UN NUEVO PAR DE CORDONES PUEDE DARLE UN LOOK COMPLETAMENTE NUEVO</h2>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "center",
@@ -3042,7 +3042,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h2>Step 5: RE-LACE</h2>",
+                    "text": "<h2>Paso 5: RE-ATAR</h2>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -3082,7 +3082,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Pop your clean laces back in, or play around with a<a href=\"https://www.drmartens.com/uk/en_gb/accessories/insoles/shoe-laces/c/07597600\">new pair</a>. Suede makes a great canvas for some funky patterns and bright colours. Finish with a few sprays of<a href=\"https://www.drmartens.com/uk/en_gb/p/AC770000\">Dr. Martens Ultra Protector</a>, in case it’s a while before you sit down for your next spring clean.</p>",
+                    "text": "<p>Vuelve a colocar tus cordones limpios, o juega con un nuevo par. La gamuza es un excelente lienzo para patrones divertidos y colores vibrantes. Termina con algunos sprays de Dr. Martens Ultra Protector, por si pasa un tiempo antes de que te sientes para tu próxima limpieza profunda.</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -3181,7 +3181,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<h2>BOOT DOCTOR TIP: USE SUEDE CLEANER MONTHLY TO PROLONG THE LIFE OF YOUR FOOTWEAR</h2>",
+            "text": "<h2>CONSEJO DEL BOOT DOCTOR: USA SUEDE CLEANER MENSUALMENTE PARA PROLONGAR LA VIDA DE TU CALZADO</h2>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "center",
