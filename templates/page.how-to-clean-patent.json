@@ -4864,7 +4864,7 @@
                 "button_HfJQeH"
               ]
             },
-            "group_PJjDGd": {
+            "group_dqQmbP": {
               "type": "group",
               "name": "t:names.group",
               "settings": {
@@ -4918,11 +4918,11 @@
                 "custom_css": ""
               },
               "blocks": {
-                "image_MzAPX9": {
+                "image_MgJkhm": {
                   "type": "image",
                   "name": "t:names.image",
                   "settings": {
-                    "image": "shopify://shop_images/Patent-min.jpg",
+                    "image": "shopify://shop_images/Wonder-min.jpg",
                     "link": "",
                     "image_ratio": "adapt",
                     "width": "fill",
@@ -4945,11 +4945,11 @@
                   },
                   "blocks": {}
                 },
-                "text_RCtGtR": {
+                "text_Uear3N": {
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<p>CÓMO LIMPIAR CUERO<br/>CHAROLADO</p>",
+                    "text": "<p>CÓMO USAR WONDER<br/>BALSAM</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -4985,11 +4985,11 @@
                   },
                   "blocks": {}
                 },
-                "text_mY7wz8": {
+                "text_qtTwhx": {
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Nunca es demasiado tarde para recuperar ese brillo brillante. Nuestro Patent Cleaner está especialmente formulado para usar en cueros patent de Docs. Aquí te mostramos cómo usarlo.</p>",
+                    "text": "<p>Devuelve los cueros lisos o encerados a su mejor estado. Nuestro Wonder Balsam nutre y rejuvenece, sin brillo y sin necesidad de pulir.</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -5025,12 +5025,12 @@
                   },
                   "blocks": {}
                 },
-                "button_XtxicK": {
+                "button_6xcznC": {
                   "type": "button",
                   "name": "t:names.button",
                   "settings": {
                     "label": "Lee nuestra guía",
-                    "link": "shopify://collections/all",
+                    "link": "shopify://pages/how-to-clean-docs-balsam-wax",
                     "open_in_new_tab": false,
                     "style_class": "button",
                     "width": "fit-content",
@@ -5044,10 +5044,10 @@
                 }
               },
               "block_order": [
-                "image_MzAPX9",
-                "text_RCtGtR",
-                "text_mY7wz8",
-                "button_XtxicK"
+                "image_MgJkhm",
+                "text_Uear3N",
+                "text_qtTwhx",
+                "button_6xcznC"
               ]
             }
           },
@@ -5056,7 +5056,7 @@
             "group_DzHHj4",
             "group_JUEEy6",
             "group_EicKKh",
-            "group_PJjDGd"
+            "group_dqQmbP"
           ]
         }
       },
