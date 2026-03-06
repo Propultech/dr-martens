@@ -4678,7 +4678,7 @@
                 "button_k3946P"
               ]
             },
-            "group_EicKKh": {
+            "group_QRKQyp": {
               "type": "group",
               "name": "t:names.group",
               "settings": {
@@ -4732,11 +4732,11 @@
                 "custom_css": ""
               },
               "blocks": {
-                "image_DthHF4": {
+                "image_Tr7BqH": {
                   "type": "image",
                   "name": "t:names.image",
                   "settings": {
-                    "image": "shopify://shop_images/Suede-min.jpg",
+                    "image": "shopify://shop_images/Wonder-min.jpg",
                     "link": "",
                     "image_ratio": "adapt",
                     "width": "fill",
@@ -4759,11 +4759,11 @@
                   },
                   "blocks": {}
                 },
-                "text_CFPExH": {
+                "text_HRBTBP": {
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<p>CÓMO CUIDAR CALZADO <br/>DE GAMUZA</p>",
+                    "text": "<p>CÓMO USAR WONDER<br/>BALSAM</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -4799,11 +4799,11 @@
                   },
                   "blocks": {}
                 },
-                "text_aBWxFh": {
+                "text_x4zGtQ": {
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Un poco de cuidado los mantendrá luciendo frescos. Aprende cómo restaurar tus zapatos y botas de ante a su esplendor original.</p>",
+                    "text": "<p>Devuelve los cueros lisos o encerados a su mejor estado. Nuestro Wonder Balsam nutre y rejuvenece, sin brillo y sin necesidad de pulir.</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -4839,12 +4839,12 @@
                   },
                   "blocks": {}
                 },
-                "button_HfJQeH": {
+                "button_jcfyPq": {
                   "type": "button",
                   "name": "t:names.button",
                   "settings": {
                     "label": "Lee nuestra guía",
-                    "link": "shopify://collections/all",
+                    "link": "shopify://pages/how-to-clean-docs-balsam-wax",
                     "open_in_new_tab": false,
                     "style_class": "button",
                     "width": "fit-content",
@@ -4858,10 +4858,10 @@
                 }
               },
               "block_order": [
-                "image_DthHF4",
-                "text_CFPExH",
-                "text_aBWxFh",
-                "button_HfJQeH"
+                "image_Tr7BqH",
+                "text_HRBTBP",
+                "text_x4zGtQ",
+                "button_jcfyPq"
               ]
             },
             "group_PJjDGd": {
@@ -5055,7 +5055,7 @@
             "group_eNgjFL",
             "group_DzHHj4",
             "group_JUEEy6",
-            "group_EicKKh",
+            "group_QRKQyp",
             "group_PJjDGd"
           ]
         }
