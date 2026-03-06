@@ -323,7 +323,7 @@
                   "type": "text",
                   "name": "Encabezado | titulo",
                   "settings": {
-                    "text": "<h1><strong>HOW TO CLEAN PATENT LEATHER DR. MARTENS FOOTWEAR</strong></h1>",
+                    "text": "<h1><strong>CÓMO LIMPIAR CALZADO DR. MARTENS DE CUERO CHAROL</strong></h1>",
                     "width": "fit-content",
                     "max_width": "none",
                     "alignment": "left",
@@ -363,7 +363,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h2>THE BOOT DOCTOR SAYS: OUR PATENT CLEANER WILL BRING BACK THAT BRILLIANT SHINE AND HAVE YOUR BOOTS LOOKING GOOD AS NEW</h2>",
+                    "text": "<h2>EL BOOT DOCTOR DICE: NUESTRO PATENT CLEANER DEVOLVERÁ ESE BRILLO BRILLANTE Y DEJARÁ TUS BOTAS COMO NUEVAS</h2>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -403,7 +403,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Patent leather is tougher than you might think. Looked after properly, it can last ages. And taking care of<a href=\"https://www.drmartens.com/uk/en_gb/unisex/patent-boots-and-shoes/c/04090000\">our patent leathers</a>couldn’t be easier. Dr. Martens<a href=\"https://www.drmartens.com/uk/en_gb/p/ac770001\">Patent Cleaner</a>is designed to bring back that signature shine, even when your boots are looking far from their best.<br/><br/>Here’s how to use it — in five easy steps — with a few tips from the Dr. Martens Boot Doctor. Check out our full video at the bottom of the page.</p>",
+                    "text": "<p>El cuero charol es más resistente de lo que podrías pensar. Si lo cuidas adecuadamente, puede durar años. Y cuidar nuestros cueros charol es increíblemente fácil. Dr. Martens Patent Cleaner está diseñado para devolver ese brillo característico, incluso cuando tus botas no se ven en su mejor momento.<br/><br/>Aquí te mostramos cómo usarlo — en cinco pasos sencillos — con algunos consejos del Dr. Martens Boot Doctor. Consulta nuestro video completo al final de la página.</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -590,7 +590,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<h2>BOOT DOCTOR TIP: IT’S NEVER TOO LATE TO BRING A BIT OF SHINE BACK TO PATENT FOOTWEAR</h2>",
+            "text": "<h2>CONSEJO DEL BOOT DOCTOR: NUNCA ES TARDE PARA DEVOLVERLE UN POCO DE BRILLO A TUS PATENT FOOTWEAR</h2>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "center",
@@ -1044,7 +1044,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Patent leather might mark fairly easily, but it cleans even easier. All you need is a couple of<a href=\"https://www.drmartens.com/uk/en_gb/p/ac777000\">cloths</a>, some water, a<a href=\"https://www.drmartens.com/uk/en_gb/p/AC776000\">shoe brush</a>and a bottle of<a href=\"https://www.drmartens.com/uk/en_gb/p/ac770001\">Patent Cleaner</a>. It shouldn’t take more than 15 minutes or so.</p>",
+                    "text": "<p>El cuero charol puede marcarse con facilidad, pero se limpia aún más fácilmente. Todo lo que necesitas es un par de cloths, agua, un shoe brush y una botella de Patent Cleaner. No debería tomar más de 15 minutos aproximadamente.</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -1424,7 +1424,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>If it’s been a while, your boots will probably need a bit of wipe first. Give them a good clean all over with a damp cloth — rinsing and repeating if necessary. Remove your shoelaces and clean them separately, then dry your boots with a different cloth.</p>",
+                    "text": "<p>Si ha pasado un tiempo, tus botas probablemente necesitarán una limpieza inicial. Límpialas bien con un paño húmedo, enjuagando y repitiendo si es necesario. Retira los cordones y límpialos por separado, luego seca tus botas con un paño diferente.</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -1609,7 +1609,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<h2>BOOT DOCTOR TIP: IF YOUR BOOTS HAVE LIVED A LITTLE, BANG THEM TOGETHER TO REMOVE ANY EXCESS MUD FIRST</h2>",
+            "text": "<h2>CONSEJO DEL BOOT DOCTOR: SI TUS BOTAS HAN VIVIDO UN POCO, GOLPÉALAS JUNTAS PARA REMOVER EL BARRO EXCESIVO PRIMERO</h2>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "center",
@@ -2063,7 +2063,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Give the bottle a good shake, then spray the shoes all over. Wipe off any excess with a clean cloth, and ensure you finish with a smooth, even coating.</p>",
+                    "text": "<p>Agita bien la botella, luego rocía los zapatos por completo. Limpia el exceso con un paño limpio y asegúrate de terminar con un acabado suave y uniforme.</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -2403,7 +2403,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h2>PASO 4: BUFF TO SHINE</h2>",
+                    "text": "<h2>PASO 4: PULIR HASTA BRILLAR</h2>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -2443,7 +2443,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Now it’s time to get that brilliant shine back. Grab your brush and start buffing. When your boots have a glossy even shine, leave them to dry for a few minutes.</p>",
+                    "text": "<p>Ahora es momento de recuperar ese brillo brillante. Toma tu cepillo y comienza a pulir. Cuando tus boots tengan un brillo uniforme y brillante, déjalas secar durante algunos minutos.</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -2628,7 +2628,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<h2>BOOT DOCTOR TIP: A NEW PAIR OF LACES CAN GO A HELL OF A LONG WAY</h2>",
+            "text": "<h2>CONSEJO DEL BOOT DOCTOR: UN NUEVO PAR DE LACES PUEDE HACER UNA GRAN DIFERENCIA</h2>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "center",
@@ -3082,7 +3082,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Nearly there. Re-atar your boots, or customise them with a<a href=\"https://www.drmartens.com/uk/en_gb/accessories/insoles/shoe-laces/c/07597600\">new pair,</a>and finish with a squirt of Dr. Martens<a href=\"https://www.drmartens.com/uk/en_gb/p/ac785000\">Shoe Freshener</a>if needed. And there you have it: good as new. Try and keep them that way, eh?<br/><br/></p>",
+                    "text": "<p>Casi listo. Vuelve a atar tus botas, o personalízalas con un nuevo par, y termina con un spray de Dr. Martens Shoe Freshener si es necesario. Y listo: como nuevas. Intenta mantenerlas así, ¿eh?</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -3181,7 +3181,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<h2>BOOT DOCTOR TIP: TAKE PROPER CARE OF YOUR PATENT LEATHER, AND IT’LL LAST YOU AGES</h2>",
+            "text": "<h2>CONSEJO DEL BOOT DOCTOR: CUIDA ADECUADAMENTE TU PATENT LEATHER Y TE DURARÁ AÑOS</h2>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "center",
@@ -3549,7 +3549,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Restores shine with a few quick sprays. Our Patent Cleaner is specially formulated for use on<a href=\"https://www.drmartens.com/uk/en_gb/unisex/patent-boots-and-shoes/c/04090000\">Docs patent leathers.</a></p>",
+                    "text": "<p>Restaura el brillo con algunos pulverizadores rápidos. Nuestro Patent Cleaner está especialmente formulado para usar en Docs patent leathers.</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
