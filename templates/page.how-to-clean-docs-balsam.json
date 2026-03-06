@@ -4448,7 +4448,7 @@
                   "name": "t:names.button",
                   "settings": {
                     "label": "Lee nuestra guía",
-                    "link": "shopify://collections/all",
+                    "link": "shopify://pages/how-to-clean-docs-dubbin-wax",
                     "open_in_new_tab": false,
                     "style_class": "button",
                     "width": "fit-content",
