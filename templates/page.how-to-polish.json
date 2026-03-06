@@ -324,7 +324,7 @@
                   "type": "text",
                   "name": "Encabezado | titulo",
                   "settings": {
-                    "text": "<h1><strong>Cómo limpiar tus botas con Wonder Balsam wax</strong></h1>",
+                    "text": "<h1><strong>HOW TO POLISH YOURDR. MARTENS FOOTWEAR</strong></h1>",
                     "width": "fit-content",
                     "max_width": "none",
                     "alignment": "left",
@@ -364,7 +364,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<p>DISEÑADO PARA QUE EL CALZADO RESISTENTE DURE AÚN MÁS</p>",
+                    "text": "<h2>THE BOOT DOCTOR SAYS: SHOE POLISH RESTORES, NOURISHES AND PROTECTS FOR LONG-LASTING LEATHER</h2>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -404,7 +404,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Podrías ver algunas botas gastadas, pero nosotros vemos un par con mucha vida por delante. Dr. Martens Wonder Balsam está diseñado para devolver el brillo a tu calzado bien usado. Nuestro bálsamo de cera nutre el cuero — lo mantiene flexible, resistente y suave. Usado regularmente, prolongará la vida de tu calzado.<br/><br/>Ten en cuenta que Wonder Balsam es un producto no vegano y no es apto para usar en productos veganos. Tampoco es apto para usar en productos Genix Nappa.<br/><br/>Aquí te mostramos cómo usarlo — en cinco pasos sencillos. O consulta nuestro video a continuación.</p>",
+                    "text": "<p>Even tough shoes need a little looking after. Dr. Martens<a href=\"https://www.drmartens.com/uk/en_gb/p/AC789000\">Shoe Polish</a>is designed to restore, protect and add shine to tough smooth leathers — bringing well-worn boots back to their best. In three colours,<a href=\"https://www.drmartens.com/uk/en_gb/p/AC789000\">Black</a>,<a href=\"https://www.drmartens.com/uk/en_gb/p/AC790000\">Cherry Red</a>and<a href=\"https://www.drmartens.com/uk/en_gb/p/AC791000\">Neutral</a>, DM’s shoe polish helps cover up scuffs and marks, and shield the leather from additional wear.<br/><br/>Here’s how to polish your boots — in five easy steps — with a few tips from the Dr. Martens Boot Doctor. Check out our full video at the bottom of the page.</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -591,7 +591,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<h2>CONSEJO DEL DOCTOR DE BOTAS: WONDER BALSAM PUEDE USARSE EN LA MAYORÍA DE CUEROS LISOS Y ENCERADOS.</h2>",
+            "text": "<h2>BOOT DOCTOR TIP: DM’s SHOE POLISH CAN BE USED ON MOST SMOOTH LEATHERS. TEST ON A SMALL CORNER OF THE LEATHER IF YOU’RE UNSURE.</h2>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "center",
@@ -1005,7 +1005,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h2>PASO 1: TU KIT DE CUIDADO DE CALZADO</h2>",
+                    "text": "<h2>STEP 1: GROUNDWORK</h2>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -1045,7 +1045,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Lo primero es encontrar una superficie donde no te importe ensuciarte un poco, y prepara tu kit. Limpiar tus botas con bálsamo no requiere mucho. Todo lo que necesitas es un par de trapos, agua y un tarro de Wonder Balsam. Y 20 minutos de tu tiempo.</p>",
+                    "text": "<p>Before you get started, it’s worth putting a bit of newspaper down to avoid any unwanted black marks. Then: assemble your kit. Polishing your boots doesn’t take much. All you need is a couple of<a href=\"https://www.drmartens.com/uk/en_gb/p/ac777000\">cloths</a>, some water, a<a href=\"https://www.drmartens.com/uk/en_gb/p/ac776000\">shoe brush</a>and a tub of<a href=\"https://www.drmartens.com/uk/en_gb/p/AC789000\">Shoe Polish</a>. It shouldn’t take more than 20 minutes.</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -1385,7 +1385,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h2>PASO 2: ELIMINA LA SUCIEDAD</h2>",
+                    "text": "<h2>STEP 2: REMOVE DIRT</h2>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -1425,7 +1425,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Tus botas podrían necesitar una limpieza antes de comenzar. Dales una buena pasada con un paño húmedo. Retira los cordones y límpialos por separado, luego seca las botas con un paño diferente.</p>",
+                    "text": "<p>Your boots will probably need a bit of clean before you can get polishing. Give them a good wipe with a damp cloth. Remove your shoelaces and clean them separately, then dry your boots with a different cloth.</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -1610,7 +1610,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<h2>CONSEJO DEL BOOT DOCTOR: SI TUS BOTAS HAN VIVIDO UN POCO, GOLPÉALAS ENTRE SÍ PARA REMOVER EL BARRO EXCESIVO PRIMERO.</h2>",
+            "text": "<h2>BOOT DOCTOR TIP: BANG YOUR BOOTS TOGETHER A COUPLE OF TIMES TO REMOVE ANY EXCESS MUD.</h2>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "center",
@@ -2064,7 +2064,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Saca la esponja del recipiente de Wonder Balsam y úsala para extraer un poco de cera. Aplica generosamente en toda la bota, prestando especial atención a los pliegues, la lengüeta y el cuero interior. Asegúrate de trabajar bien la cera en las costuras. Una vez que el recubrimiento sea uniforme, deja secar durante 10 minutos.</p>",
+                    "text": "<p>Scoop some polish out with a<a href=\"https://www.drmartens.com/uk/en_gb/p/ac777000\">dry cloth</a>, and apply a thin layer all over the boot, including the tongue. Pay attention to any scuffs, scratches or marks, and ensure you get a good, even coating. Wipe off any excess with a cloth.</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -2163,7 +2163,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<h2>CONSEJO DEL DOCTOR DE BOTAS: APLICA EXTRA WONDER BALSAM PARA MINIMIZAR ARAÑAZOS, ROZADURAS Y MARCAS.</h2>",
+            "text": "<h2>BOOT DOCTOR TIP: YOU CAN APPLY MULTIPLE COATINGS IF YOUR BOOTS HAVE REALLY BEEN THROUGH IT. BUT LET THE FIRST ONE DRY FIRST.</h2>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "center",
@@ -2491,7 +2491,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h2>PASO 4: RE-ATAR</h2>",
+                    "text": "<h2>STEP 4: BUFF TO SHINE</h2>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -2531,7 +2531,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>En esta etapa, puedes volver a colocar los cordones recién limpios en tus botas. Si los antiguos aún se ven gastados, cómprate un par nuevo. ¿Por qué no pruebas un color diferente para hacer tus botas únicas? Te sorprenderá la diferencia que unos cordones nuevos pueden hacer.</p>",
+                    "text": "<p>If you want your boots to have a sharp shine, grab your brush and get buffing. If not, you can skip this stage. Then leave the boots to dry for a few minutes, and re-lace them. Why not try a new pair of<a href=\"https://www.drmartens.com/uk/en_gb/c/07597500\">laces</a>to really bring them back to life?</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -3083,7 +3083,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Ya casi terminas. Solo quedan algunos toques finales opcionales. Puedes darle a tus botas recién limpias un rápido spray con Dr. Martens Ultra Protector para una capa adicional de protección. O un poco de Dr. Martens Shoe Freshener para eliminar cualquier olor. Y listo: tus botas deberían verse como nuevas. La próxima vez no esperes tanto, ¿eh?</p>",
+                    "text": "<p>You're almost there. All that’s left are a few optional last touches. You can give your newly-polished boots a quick spray with Dr. Martens<a href=\"https://www.drmartens.com/uk/en_gb/p/ac770000\">Ultra Protector</a>for an added layer of protection. Or a squirt of Dr. Martens<a href=\"https://www.drmartens.com/uk/en_gb/p/ac785000\">Shoe Freshener</a>to remove any odours. And there you have it: your boots should be looking back to their best. Now to scuff them up again.</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -3182,7 +3182,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<h2>CONSEJO DEL BOOT DOCTOR: ÚSALO MENSUALMENTE PARA PROLONGAR LA VIDA DE TUS ZAPATOS</h2>",
+            "text": "<h2>BOOT DOCTOR TIP: GRAB THE POLISH WHENEVER YOUR BOOTS ARE LOOKING A BIT ROUGH AROUND THE EDGES. THE MORE OFTEN, THE BETTER.</h2>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "center",
@@ -3510,7 +3510,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h2>BÁLSAMO WONDER DE DR. MARTENS</h2>",
+                    "text": "<h2>DR. MARTENS SHOE POLISH</h2>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -3550,7 +3550,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Restaura y rejuvenece sin pulido ni brillo: nuestro Wonder Balsam está formulado para mantener el cuero fuerte y flexible, y asegurar que tus botas duren aún más tiempo. Nota: contiene cera de abeja.</p>",
+                    "text": "<p>New look, same product. Coming with a sponge nozzle for simple application, our new Shoe Polish Tubes are built to restore, protect and rejuvenate in three colours:<a href=\"https://www.drmartens.com/uk/en_gb/p/AC789000\">Black</a>,<a href=\"https://www.drmartens.com/uk/en_gb/p/AC790000\">Cherry Red</a>and<a href=\"https://www.drmartens.com/uk/en_gb/p/AC791000\">Neutral</a>.</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
