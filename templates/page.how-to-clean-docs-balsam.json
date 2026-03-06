@@ -2879,7 +2879,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h2>PASO 3: MANOS A LA OBRA</h2>",
+                    "text": "<h2>PASO 5: TOQUES FINALES</h2>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -2919,7 +2919,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Saca la esponja del tarro de Wonder Balsam y úsala para extraer un poco de cera. Aplica generosamente en toda la bota, prestando especial atención a los pliegues, la lengüeta y el cuero interior. Asegúrate de trabajar bien la cera en las costuras. Una vez que el recubrimiento sea uniforme, deja secar durante 10 minutos.</p>",
+                    "text": "<p>Ya casi terminas. Solo quedan algunos toques finales opcionales. Puedes darle a tus botas recién limpias un rápido spray con Dr. Martens Ultra Protector para una capa adicional de protección. O un poco de Dr. Martens Shoe Freshener para eliminar cualquier olor. Y listo: tus botas deberían verse como nuevas. La próxima vez no esperes tanto, ¿eh?</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
