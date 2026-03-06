@@ -323,7 +323,7 @@
                   "type": "text",
                   "name": "Encabezado | titulo",
                   "settings": {
-                    "text": "<p><strong>CÓMO LIMPIAR ANTE EN DR. MARTENS</strong></p>",
+                    "text": "<p><strong>CÓMO LIMPIAR GAMUZA EN DR. MARTENS</strong></p>",
                     "width": "fit-content",
                     "max_width": "none",
                     "alignment": "left",
@@ -403,7 +403,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>El cuidado del ante es notoriamente complicado. Pero si se cuida adecuadamente, el calzado de ante puede ser una pieza duradera en tu colección. Nuestro Suede Cleaner está diseñado para restaurar y limpiar tus zapatos de ante a su estado original, sin importar lo que hayan pasado.<br/><br/>Aquí te mostramos cómo usarlo — en cinco pasos sencillos — con algunos consejos del Dr. Martens Boot Doctor. Consulta nuestro video completo al final de la página.</p>",
+                    "text": "<p>El cuidado de la gamuza es notoriamente complicado. Pero si se cuida adecuadamente, el calzado de ante puede ser una pieza duradera en tu colección. Nuestro Suede Cleaner está diseñado para restaurar y limpiar tus zapatos de ante a su estado original, sin importar lo que hayan pasado.<br/><br/>Aquí te mostramos cómo usarlo — en cinco pasos sencillos — con algunos consejos del Dr. Martens Boot Doctor. Consulta nuestro video completo al final de la página.</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -590,7 +590,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<h2>CONSEJO DEL BOOT DOCTOR: DEDICAR TIEMPO A CUIDAR TU ANTE MARCA LA DIFERENCIA</h2>",
+            "text": "<h2>CONSEJO DEL BOOT DOCTOR: DEDICAR TIEMPO A CUIDAR TU GAMUZA MARCA LA DIFERENCIA</h2>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "center",
@@ -1609,7 +1609,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<h2>CONSEJO DEL BOOT DOCTOR: SI TUS BOOTS HAN TENIDO VIDA, GOLPÉALOS ENTRE SÍ PARA REMOVER EL BARRO EXCESIVO PRIMERO</h2>",
+            "text": "<h2>CONSEJO DEL BOOT DOCTOR: SI TUS BOTAS HAN TENIDO VIDA, GOLPÉALOS ENTRE SÍ PARA REMOVER EL BARRO EXCESIVO PRIMERO</h2>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "center",
@@ -3509,7 +3509,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h2>DR. MARTENS SUEDE CLEANER</h2>",
+                    "text": "<h2>SUEDE CLEANER DR. MARTENS</h2>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -3549,7 +3549,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Restores suede to its former glory. Formulated for use on Docs<a href=\"https://www.drmartens.com/uk/en_gb/unisex/suede/c/04e30000\">suede leathers.</a></p>",
+                    "text": "<p>Restaura la gamuza a su esplendor original. Formulado para usar en gamuza Dr Martens.</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
