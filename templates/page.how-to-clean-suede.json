@@ -136,7 +136,7 @@
               "type": "image",
               "name": "t:names.image",
               "settings": {
-                "image": "shopify://shop_images/01_Desktop_Hero_How_To_Care_2.jpg",
+                "image": "shopify://shop_images/07_Mobile_Product_Suede_Cleaner_Brush.jpg",
                 "link": "",
                 "image_ratio": "adapt",
                 "width": "fill",
@@ -184,7 +184,6 @@
         "color_scheme": "",
         "background_media": "image",
         "video_position": "cover",
-        "background_image": "shopify://shop_images/Desktop_Hero.jpg",
         "background_image_position": "fit",
         "background_image_visibility": "desktop",
         "background_image_vertical_alignment": "top",
@@ -324,7 +323,7 @@
                   "type": "text",
                   "name": "Encabezado | titulo",
                   "settings": {
-                    "text": "<h1><strong>Cómo limpiar tus botas con Wonder Balsam wax</strong></h1>",
+                    "text": "<p><strong>HOW TO CLEAN SUEDEDR. MARTENS FOOTWEAR</strong></p>",
                     "width": "fit-content",
                     "max_width": "none",
                     "alignment": "left",
@@ -364,7 +363,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<p>DISEÑADO PARA QUE EL CALZADO RESISTENTE DURE AÚN MÁS</p>",
+                    "text": "<h2>THE BOOT DOCTOR SAYS: OUR SUEDE CLEANER WILL REVIVE EVEN THE MOST WELL-LOVED PAIR OF SUEDE SHOES OR BOOTS</h2>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -404,7 +403,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Podrías ver algunas botas gastadas, pero nosotros vemos un par con mucha vida por delante. Dr. Martens Wonder Balsam está diseñado para devolver el brillo a tu calzado bien usado. Nuestro bálsamo de cera nutre el cuero — lo mantiene flexible, resistente y suave. Usado regularmente, prolongará la vida de tu calzado.<br/><br/>Ten en cuenta que Wonder Balsam es un producto no vegano y no es apto para usar en productos veganos. Tampoco es apto para usar en productos Genix Nappa.<br/><br/>Aquí te mostramos cómo usarlo — en cinco pasos sencillos. O consulta nuestro video a continuación.</p>",
+                    "text": "<p>Suede upkeep is notoriously tricky. But looked after properly,<a href=\"https://www.drmartens.com/uk/en_gb/unisex/suede/c/04e30000\">suede footwear</a>can be a long-lasting feature in your collection. Our<a href=\"https://www.drmartens.com/uk/en_gb/p/AC771000\">Suede Cleaner</a>is designed to restore and clean your suede shoes to their former glory, whatever you’ve put them through.<br/><br/>Here’s how to use it — in five easy steps — with a few tips from the Dr. Martens Boot Doctor. Check out our full video at the bottom of the page.</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -505,7 +504,7 @@
                   "type": "image",
                   "name": "t:names.image",
                   "settings": {
-                    "image": "shopify://shop_images/01_Desktop_Hero_How_To_Care_2.jpg",
+                    "image": "shopify://shop_images/07_Mobile_Product_Suede_Cleaner_Brush.jpg",
                     "link": "",
                     "image_ratio": "adapt",
                     "width": "fill",
@@ -559,7 +558,7 @@
         "color_scheme": "",
         "background_media": "image",
         "video_position": "cover",
-        "background_image": "shopify://shop_images/Desktop_Hero.jpg",
+        "background_image": "shopify://shop_images/01_Desktop_banner-Suede_Boots.jpg",
         "background_image_position": "cover",
         "background_image_visibility": "desktop",
         "background_image_vertical_alignment": "top",
@@ -591,7 +590,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<h2>CONSEJO DEL DOCTOR DE BOTAS: WONDER BALSAM PUEDE USARSE EN LA MAYORÍA DE CUEROS LISOS Y ENCERADOS.</h2>",
+            "text": "<h2>BOOT DOCTOR TIP: TAKING SOME TIME TO LOOK AFTER YOUR SUEDE MAKES ALL THE DIFFERENCE</h2>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "center",
@@ -732,7 +731,7 @@
               "type": "image",
               "name": "t:names.image",
               "settings": {
-                "image": "shopify://shop_images/02_Desktop_Set_up-min.jpg",
+                "image": "shopify://shop_images/02_Desktop_Suede_Boots.jpg",
                 "link": "",
                 "image_ratio": "adapt",
                 "width": "fill",
@@ -919,7 +918,7 @@
                   "type": "image",
                   "name": "t:names.image",
                   "settings": {
-                    "image": "shopify://shop_images/02_Desktop_Set_up-min.jpg",
+                    "image": "shopify://shop_images/02_Desktop_Suede_Boots.jpg",
                     "link": "",
                     "image_ratio": "adapt",
                     "width": "fill",
@@ -1045,7 +1044,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Lo primero es encontrar una superficie donde no te importe ensuciarte un poco, y prepara tu kit. Limpiar tus botas con bálsamo no requiere mucho. Todo lo que necesitas es un par de trapos, agua y un tarro de Wonder Balsam. Y 20 minutos de tu tiempo.</p>",
+                    "text": "<p>First up, find a spot you don’t mind getting a bit wet or flicked with mud. You’ll need a damp<a href=\"https://www.drmartens.com/uk/en_gb/p/ac777000\">cloth</a>or sponge, some clean water, a<a href=\"https://www.drmartens.com/uk/en_gb/p/ac888000\">suede brush</a>and your bottle of<a href=\"https://www.drmartens.com/uk/en_gb/p/ac771000\">Dr. Martens Suede Cleaner</a>. Find a playlist to keep you entertained for 20-30 minutes.</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -1198,7 +1197,7 @@
               "type": "image",
               "name": "t:names.image",
               "settings": {
-                "image": "shopify://shop_images/03_Desktop_Clean-min.jpg",
+                "image": "shopify://shop_images/03_Desktop_Suede_Boots.jpg",
                 "link": "",
                 "image_ratio": "adapt",
                 "width": "fill",
@@ -1385,7 +1384,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h2>PASO 2: ELIMINA LA SUCIEDAD</h2>",
+                    "text": "<h2>Step 2: REMOVE DIRT</h2>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -1425,7 +1424,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Tus botas podrían necesitar una limpieza antes de comenzar. Dales una buena pasada con un paño húmedo. Retira los cordones y límpialos por separado, luego seca las botas con un paño diferente.</p>",
+                    "text": "<p>If you’ve been putting your boots through their paces, they might need a clean-up first. Whip out your laces to clean separately and wipe down the boots with a damp cloth.</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -1525,7 +1524,7 @@
                   "type": "image",
                   "name": "t:names.image",
                   "settings": {
-                    "image": "shopify://shop_images/03_Desktop_Clean-min.jpg",
+                    "image": "shopify://shop_images/03_Desktop_Suede_Boots.jpg",
                     "link": "",
                     "image_ratio": "adapt",
                     "width": "fill",
@@ -1610,7 +1609,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<h2>CONSEJO DEL BOOT DOCTOR: SI TUS BOTAS HAN VIVIDO UN POCO, GOLPÉALAS ENTRE SÍ PARA REMOVER EL BARRO EXCESIVO PRIMERO.</h2>",
+            "text": "<h2>BOOT DOCTOR TIP: IF YOUR BOOTS HAVE LIVED A LITTLE, BANG THEM TOGETHER TO REMOVE ANY EXCESS MUD FIRST</h2>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "center",
@@ -1751,7 +1750,7 @@
               "type": "image",
               "name": "t:names.image",
               "settings": {
-                "image": "shopify://shop_images/04_Desktop_Cleaning_Wonder-min.gif",
+                "image": "shopify://shop_images/SUEDE-CLEANER-min.gif",
                 "link": "",
                 "image_ratio": "adapt",
                 "width": "fill",
@@ -1938,7 +1937,7 @@
                   "type": "image",
                   "name": "t:names.image",
                   "settings": {
-                    "image": "shopify://shop_images/04_Desktop_Cleaning_Wonder-min.gif",
+                    "image": "shopify://shop_images/SUEDE-CLEANER-min.gif",
                     "link": "",
                     "image_ratio": "adapt",
                     "width": "fill",
@@ -2024,7 +2023,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h2>PASO 3: MANOS A LA OBRA</h2>",
+                    "text": "<h2>Step 3: GET STUCK IN</h2>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -2064,7 +2063,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Saca la esponja del recipiente de Wonder Balsam y úsala para extraer un poco de cera. Aplica generosamente en toda la bota, prestando especial atención a los pliegues, la lengüeta y el cuero interior. Asegúrate de trabajar bien la cera en las costuras. Una vez que el recubrimiento sea uniforme, deja secar durante 10 minutos.</p>",
+                    "text": "<p>Give the bottle a good shake, then spray your boots all over. Scrub gently with a clean, damp sponge or cloth. Once you’ve scrubbed the entire boot, use the sponge or cloth to wipe lightly with clean water to remove excess cleaner. Be careful not to get the suede too wet. Leave to dry naturally.</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -2156,73 +2155,119 @@
         "padding-inline-end-mobile": 0
       }
     },
-    "section_LnTg4m": {
+    "section_GJxdzd": {
       "type": "section",
       "blocks": {
-        "text_zJc3pX": {
-          "type": "text",
-          "name": "t:names.heading",
+        "group_DR43mF": {
+          "type": "group",
+          "name": "Grupo | móvil img",
           "settings": {
-            "text": "<h2>CONSEJO DEL DOCTOR DE BOTAS: APLICA EXTRA WONDER BALSAM PARA MINIMIZAR ARAÑAZOS, ROZADURAS Y MARCAS.</h2>",
-            "width": "100%",
-            "max_width": "normal",
-            "alignment": "center",
-            "type_preset": "custom",
-            "font": "var(--font-accent--family)",
-            "weight": "",
-            "font_size": "1.5rem",
-            "font_size_mobile": "1.25rem",
-            "line_height": "tight",
-            "letter_spacing": "normal",
-            "case": "uppercase",
-            "wrap": "pretty",
-            "font_stretch": "normal",
-            "color": "var(--color-foreground)",
-            "italic_color": "",
-            "strong_color": "",
-            "link_font_size": "",
-            "link_font_size_mobile": "",
-            "background": false,
-            "line_highlight": false,
-            "background_color": "#00000026",
-            "corner_radius": 0,
-            "visibility": "all",
-            "padding-block-start": 0,
+            "content_direction": "row",
+            "visibility": "mobile",
+            "enable_slider": false,
+            "slider_on": "both",
+            "slider_scrollbar_color": "#ffdd00",
+            "vertical_on_mobile": true,
+            "horizontal_alignment": "flex-start",
+            "vertical_alignment": "flex-start",
+            "align_baseline": false,
+            "horizontal_alignment_flex_direction_column": "flex-start",
+            "vertical_alignment_flex_direction_column": "center",
+            "gap": 12,
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "custom_height": 100,
+            "inherit_color_scheme": true,
+            "color_scheme": "",
+            "background_media": "none",
+            "video_position": "cover",
+            "background_image_position": "cover",
+            "background_image_visibility": "both",
+            "background_image_vertical_alignment": "center",
+            "background_image_horizontal_position": "center",
+            "background_image_max_height_desktop": "0",
+            "background_image_max_height_mobile": "0",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "toggle_overlay": false,
+            "overlay_color": "#00000026",
+            "overlay_style": "solid",
+            "gradient_direction": "to top",
+            "link": "",
+            "open_in_new_tab": false,
+            "placeholder": "",
+            "padding-block-start": 100,
             "padding-block-end": 0,
             "padding-inline-start": 0,
             "padding-inline-end": 0,
-            "mobile_padding_override": false,
             "padding-block-start-mobile": 0,
             "padding-block-end-mobile": 0,
             "padding-inline-start-mobile": 0,
-            "padding-inline-end-mobile": 0
+            "padding-inline-end-mobile": 0,
+            "custom_css": ""
           },
-          "blocks": {}
+          "blocks": {
+            "image_jeh6wF": {
+              "type": "image",
+              "name": "t:names.image",
+              "settings": {
+                "image": "shopify://shop_images/05_Desktop_Suede_Footwear_Brush.jpg",
+                "link": "",
+                "image_ratio": "adapt",
+                "width": "fill",
+                "custom_width": 100,
+                "width_mobile": "fill",
+                "custom_width_mobile": 100,
+                "height": "fit",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0,
+                "padding-block-start-mobile": 0,
+                "padding-block-end-mobile": 0,
+                "padding-inline-start-mobile": 0,
+                "padding-inline-end-mobile": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "image_jeh6wF"
+          ]
         }
       },
       "block_order": [
-        "text_zJc3pX"
+        "group_DR43mF"
       ],
-      "name": "Sección | Titulo 3",
+      "name": "Sección | PASO 4 - móvil img",
       "settings": {
-        "content_direction": "column",
+        "content_direction": "row",
         "vertical_on_mobile": true,
-        "horizontal_alignment": "flex-start",
-        "vertical_alignment": "center",
+        "horizontal_alignment": "center",
+        "vertical_alignment": "flex-start",
         "align_baseline": false,
-        "horizontal_alignment_flex_direction_column": "flex-start",
-        "vertical_alignment_flex_direction_column": "center",
-        "gap": 12,
-        "section_width": "page-width",
+        "horizontal_alignment_flex_direction_column": "center",
+        "vertical_alignment_flex_direction_column": "flex-start",
+        "gap": 0,
+        "section_width": "full-width",
         "section_height": "",
         "section_height_custom": 50,
         "color_scheme": "",
-        "background_media": "none",
+        "background_media": "image",
         "video_position": "cover",
-        "background_image_position": "cover",
-        "background_image_visibility": "both",
-        "background_image_vertical_alignment": "center",
-        "background_image_horizontal_position": "center",
+        "background_image_position": "fit",
+        "background_image_visibility": "desktop",
+        "background_image_vertical_alignment": "top",
+        "background_image_horizontal_position": "left",
         "background_image_max_height_desktop": "0",
         "background_image_max_height_mobile": "0",
         "border": "none",
@@ -2234,11 +2279,11 @@
         "overlay_style": "solid",
         "gradient_direction": "to top",
         "padding-block-start": 0,
-        "padding-block-end": 50,
+        "padding-block-end": 0,
         "padding-inline-start": 0,
         "padding-inline-end": 0,
         "padding-block-start-mobile": 0,
-        "padding-block-end-mobile": 40,
+        "padding-block-end-mobile": 0,
         "padding-inline-start-mobile": 0,
         "padding-inline-end-mobile": 0
       }
@@ -2358,7 +2403,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h2>PASO 4: RELACEAR</h2>",
+                    "text": "<h2>Step 4: GRAB YOUR SUEDE BRUSH</h2>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -2398,7 +2443,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>En esta etapa, puedes volver a colocar los cordones recién limpios en tus botas. Si los antiguos aún se ven gastados, cómprate un par nuevo. ¿Por qué no pruebas un color diferente para hacer tus botas únicas? Te sorprenderá la diferencia que unos cordones nuevos pueden hacer.</p>",
+                    "text": "<p>Once your boots are dry, use the soft rubber side of your brush to sweep lightly over the suede. Make sure you brush in the same direction to keep your suede looking as fresh as possible.</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -2442,7 +2487,7 @@
             },
             "group_qzchFM": {
               "type": "group",
-              "name": "Grupo | Img Empty",
+              "name": "Grupo | Img",
               "settings": {
                 "content_direction": "column",
                 "visibility": "desktop",
@@ -2493,7 +2538,38 @@
                 "padding-inline-end-mobile": 0,
                 "custom_css": ""
               },
-              "blocks": {}
+              "blocks": {
+                "image_HdLzzV": {
+                  "type": "image",
+                  "name": "t:names.image",
+                  "settings": {
+                    "image": "shopify://shop_images/05_Desktop_Suede_Footwear_Brush.jpg",
+                    "link": "",
+                    "image_ratio": "adapt",
+                    "width": "fill",
+                    "custom_width": 100,
+                    "width_mobile": "fill",
+                    "custom_width_mobile": 100,
+                    "height": "fit",
+                    "border": "none",
+                    "border_width": 1,
+                    "border_opacity": 100,
+                    "border_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0,
+                    "padding-block-start-mobile": 0,
+                    "padding-block-end-mobile": 0,
+                    "padding-inline-start-mobile": 0,
+                    "padding-inline-end-mobile": 0
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "image_HdLzzV"
+              ]
             }
           },
           "block_order": [
@@ -2541,6 +2617,93 @@
         "padding-inline-end": 0,
         "padding-block-start-mobile": 30,
         "padding-block-end-mobile": 50,
+        "padding-inline-start-mobile": 0,
+        "padding-inline-end-mobile": 0
+      }
+    },
+    "section_LnTg4m": {
+      "type": "section",
+      "blocks": {
+        "text_zJc3pX": {
+          "type": "text",
+          "name": "t:names.heading",
+          "settings": {
+            "text": "<h2>BOOT DOCTOR TIP: A NEW PAIR OF LACES CAN ADD A WHOLE NEW LOOK</h2>",
+            "width": "100%",
+            "max_width": "normal",
+            "alignment": "center",
+            "type_preset": "custom",
+            "font": "var(--font-accent--family)",
+            "weight": "",
+            "font_size": "1.5rem",
+            "font_size_mobile": "1.25rem",
+            "line_height": "tight",
+            "letter_spacing": "normal",
+            "case": "uppercase",
+            "wrap": "pretty",
+            "font_stretch": "normal",
+            "color": "var(--color-foreground)",
+            "italic_color": "",
+            "strong_color": "",
+            "link_font_size": "",
+            "link_font_size_mobile": "",
+            "background": false,
+            "line_highlight": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "visibility": "all",
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0,
+            "mobile_padding_override": false,
+            "padding-block-start-mobile": 0,
+            "padding-block-end-mobile": 0,
+            "padding-inline-start-mobile": 0,
+            "padding-inline-end-mobile": 0
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "text_zJc3pX"
+      ],
+      "name": "Sección | Titulo 3",
+      "settings": {
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "flex-start",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 12,
+        "section_width": "page-width",
+        "section_height": "",
+        "section_height_custom": 50,
+        "color_scheme": "",
+        "background_media": "none",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "background_image_visibility": "both",
+        "background_image_vertical_alignment": "center",
+        "background_image_horizontal_position": "center",
+        "background_image_max_height_desktop": "0",
+        "background_image_max_height_mobile": "0",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_radius": 0,
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "padding-block-start": 0,
+        "padding-block-end": 50,
+        "padding-inline-start": 0,
+        "padding-inline-end": 0,
+        "padding-block-start-mobile": 0,
+        "padding-block-end-mobile": 40,
         "padding-inline-start-mobile": 0,
         "padding-inline-end-mobile": 0
       }
@@ -2606,7 +2769,7 @@
               "type": "image",
               "name": "t:names.image",
               "settings": {
-                "image": "shopify://shop_images/06_Desktop_final_touches-min.jpg",
+                "image": "shopify://shop_images/06_Desktop_Suede_Boots.jpg",
                 "link": "",
                 "image_ratio": "adapt",
                 "width": "fill",
@@ -2793,7 +2956,7 @@
                   "type": "image",
                   "name": "t:names.image",
                   "settings": {
-                    "image": "shopify://shop_images/06_Desktop_final_touches-min.jpg",
+                    "image": "shopify://shop_images/06_Desktop_Suede_Boots.jpg",
                     "link": "",
                     "image_ratio": "adapt",
                     "width": "fill",
@@ -2879,7 +3042,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h2>PASO 5: TOQUES FINALES</h2>",
+                    "text": "<h2>Step 5: RE-LACE</h2>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -2919,7 +3082,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Ya casi terminas. Solo quedan algunos toques finales opcionales. Puedes darle a tus botas recién limpias un rápido spray con Dr. Martens Ultra Protector para una capa adicional de protección. O un poco de Dr. Martens Shoe Freshener para eliminar cualquier olor. Y listo: tus botas deberían verse como nuevas. La próxima vez no esperes tanto, ¿eh?</p>",
+                    "text": "<p>Pop your clean laces back in, or play around with a<a href=\"https://www.drmartens.com/uk/en_gb/accessories/insoles/shoe-laces/c/07597600\">new pair</a>. Suede makes a great canvas for some funky patterns and bright colours. Finish with a few sprays of<a href=\"https://www.drmartens.com/uk/en_gb/p/AC770000\">Dr. Martens Ultra Protector</a>, in case it’s a while before you sit down for your next spring clean.</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -3018,7 +3181,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<h2>CONSEJO DEL BOOT DOCTOR: ÚSALO MENSUALMENTE PARA PROLONGAR LA VIDA DE TUS ZAPATOS</h2>",
+            "text": "<h2>BOOT DOCTOR TIP: USE SUEDE CLEANER MONTHLY TO PROLONG THE LIFE OF YOUR FOOTWEAR</h2>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "center",
@@ -3159,7 +3322,7 @@
               "type": "image",
               "name": "t:names.image",
               "settings": {
-                "image": "shopify://shop_images/08_Desktop_product-min.jpg",
+                "image": "shopify://shop_images/Suede-min_ba9844ea-53f1-4f63-a905-73ea70b4484d.jpg",
                 "link": "",
                 "image_ratio": "adapt",
                 "width": "fill",
@@ -3288,92 +3451,6 @@
             "custom_css": ""
           },
           "blocks": {
-            "group_DpYWcH": {
-              "type": "group",
-              "name": "Grupo | Img desktop",
-              "settings": {
-                "content_direction": "column",
-                "visibility": "desktop",
-                "enable_slider": false,
-                "slider_on": "both",
-                "slider_scrollbar_color": "#ffdd00",
-                "vertical_on_mobile": true,
-                "horizontal_alignment": "flex-start",
-                "vertical_alignment": "center",
-                "align_baseline": false,
-                "horizontal_alignment_flex_direction_column": "flex-start",
-                "vertical_alignment_flex_direction_column": "center",
-                "gap": 0,
-                "width": "fill",
-                "custom_width": 100,
-                "width_mobile": "fill",
-                "custom_width_mobile": 100,
-                "height": "fit",
-                "custom_height": 100,
-                "inherit_color_scheme": true,
-                "color_scheme": "",
-                "background_media": "none",
-                "video_position": "cover",
-                "background_image_position": "cover",
-                "background_image_visibility": "both",
-                "background_image_vertical_alignment": "center",
-                "background_image_horizontal_position": "center",
-                "background_image_max_height_desktop": "0",
-                "background_image_max_height_mobile": "0",
-                "border": "none",
-                "border_width": 1,
-                "border_opacity": 100,
-                "border_radius": 0,
-                "toggle_overlay": false,
-                "overlay_color": "#00000026",
-                "overlay_style": "solid",
-                "gradient_direction": "to top",
-                "link": "",
-                "open_in_new_tab": false,
-                "placeholder": "",
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0,
-                "padding-block-start-mobile": 0,
-                "padding-block-end-mobile": 0,
-                "padding-inline-start-mobile": 0,
-                "padding-inline-end-mobile": 0,
-                "custom_css": ""
-              },
-              "blocks": {
-                "image_drmFqy": {
-                  "type": "image",
-                  "name": "t:names.image",
-                  "settings": {
-                    "image": "shopify://shop_images/08_Desktop_product-min.jpg",
-                    "link": "",
-                    "image_ratio": "adapt",
-                    "width": "fill",
-                    "custom_width": 100,
-                    "width_mobile": "fill",
-                    "custom_width_mobile": 100,
-                    "height": "fit",
-                    "border": "none",
-                    "border_width": 1,
-                    "border_opacity": 100,
-                    "border_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0,
-                    "padding-block-start-mobile": 0,
-                    "padding-block-end-mobile": 0,
-                    "padding-inline-start-mobile": 0,
-                    "padding-inline-end-mobile": 0
-                  },
-                  "blocks": {}
-                }
-              },
-              "block_order": [
-                "image_drmFqy"
-              ]
-            },
             "group_V3fKyi": {
               "type": "group",
               "name": "Grupo | text",
@@ -3432,7 +3509,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h2>BÁLSAMO WONDER DE DR. MARTENS</h2>",
+                    "text": "<h2>DR. MARTENS SUEDE CLEANER</h2>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -3472,7 +3549,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Restaura y rejuvenece sin pulido ni brillo: nuestro Wonder Balsam está formulado para mantener el cuero fuerte y flexible, y asegurar que tus botas duren aún más tiempo. Nota: contiene cera de abeja.</p>",
+                    "text": "<p>Restores suede to its former glory. Formulated for use on Docs<a href=\"https://www.drmartens.com/uk/en_gb/unisex/suede/c/04e30000\">suede leathers.</a></p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -3531,248 +3608,8 @@
                 "text_fJU4pi",
                 "button_rqBkz4"
               ]
-            }
-          },
-          "block_order": [
-            "group_DpYWcH",
-            "group_V3fKyi"
-          ]
-        }
-      },
-      "block_order": [
-        "group_bfbWAc"
-      ],
-      "name": "Sección | End",
-      "settings": {
-        "content_direction": "row",
-        "vertical_on_mobile": true,
-        "horizontal_alignment": "center",
-        "vertical_alignment": "flex-start",
-        "align_baseline": false,
-        "horizontal_alignment_flex_direction_column": "center",
-        "vertical_alignment_flex_direction_column": "flex-start",
-        "gap": 0,
-        "section_width": "page-width",
-        "section_height": "",
-        "section_height_custom": 50,
-        "color_scheme": "scheme-50b797ac-0ce5-4b42-bd62-f6c27627d717",
-        "background_media": "none",
-        "video_position": "cover",
-        "background_image_position": "cover",
-        "background_image_visibility": "desktop",
-        "background_image_vertical_alignment": "top",
-        "background_image_horizontal_position": "left",
-        "background_image_max_height_desktop": "280",
-        "background_image_max_height_mobile": "0",
-        "border": "none",
-        "border_width": 1,
-        "border_opacity": 100,
-        "border_radius": 0,
-        "toggle_overlay": false,
-        "overlay_color": "#00000026",
-        "overlay_style": "solid",
-        "gradient_direction": "to top",
-        "padding-block-start": 0,
-        "padding-block-end": 50,
-        "padding-inline-start": 0,
-        "padding-inline-end": 0,
-        "padding-block-start-mobile": 30,
-        "padding-block-end-mobile": 50,
-        "padding-inline-start-mobile": 0,
-        "padding-inline-end-mobile": 0
-      }
-    },
-    "section_PTLDAr": {
-      "type": "section",
-      "blocks": {
-        "group_VeE8p7": {
-          "type": "group",
-          "name": "Grupo | móvil img",
-          "settings": {
-            "content_direction": "row",
-            "visibility": "mobile",
-            "enable_slider": false,
-            "slider_on": "both",
-            "slider_scrollbar_color": "#ffdd00",
-            "vertical_on_mobile": true,
-            "horizontal_alignment": "flex-start",
-            "vertical_alignment": "flex-start",
-            "align_baseline": false,
-            "horizontal_alignment_flex_direction_column": "flex-start",
-            "vertical_alignment_flex_direction_column": "center",
-            "gap": 12,
-            "width": "fill",
-            "custom_width": 100,
-            "width_mobile": "fill",
-            "custom_width_mobile": 100,
-            "height": "fit",
-            "custom_height": 100,
-            "inherit_color_scheme": true,
-            "color_scheme": "",
-            "background_media": "none",
-            "video_position": "cover",
-            "background_image_position": "cover",
-            "background_image_visibility": "both",
-            "background_image_vertical_alignment": "center",
-            "background_image_horizontal_position": "center",
-            "background_image_max_height_desktop": "0",
-            "background_image_max_height_mobile": "0",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 0,
-            "toggle_overlay": false,
-            "overlay_color": "#00000026",
-            "overlay_style": "solid",
-            "gradient_direction": "to top",
-            "link": "",
-            "open_in_new_tab": false,
-            "placeholder": "",
-            "padding-block-start": 100,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0,
-            "padding-block-start-mobile": 0,
-            "padding-block-end-mobile": 0,
-            "padding-inline-start-mobile": 0,
-            "padding-inline-end-mobile": 0,
-            "custom_css": ""
-          },
-          "blocks": {
-            "image_BGC6pR": {
-              "type": "image",
-              "name": "t:names.image",
-              "settings": {
-                "image": "shopify://shop_images/07_Desktop_end_result.jpg",
-                "link": "",
-                "image_ratio": "adapt",
-                "width": "fill",
-                "custom_width": 100,
-                "width_mobile": "fill",
-                "custom_width_mobile": 100,
-                "height": "fit",
-                "border": "none",
-                "border_width": 1,
-                "border_opacity": 100,
-                "border_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0,
-                "padding-block-start-mobile": 0,
-                "padding-block-end-mobile": 0,
-                "padding-inline-start-mobile": 0,
-                "padding-inline-end-mobile": 0
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": [
-            "image_BGC6pR"
-          ]
-        }
-      },
-      "block_order": [
-        "group_VeE8p7"
-      ],
-      "name": "Sección | End Result - móvil img",
-      "settings": {
-        "content_direction": "row",
-        "vertical_on_mobile": true,
-        "horizontal_alignment": "center",
-        "vertical_alignment": "flex-start",
-        "align_baseline": false,
-        "horizontal_alignment_flex_direction_column": "center",
-        "vertical_alignment_flex_direction_column": "flex-start",
-        "gap": 0,
-        "section_width": "full-width",
-        "section_height": "",
-        "section_height_custom": 50,
-        "color_scheme": "",
-        "background_media": "image",
-        "video_position": "cover",
-        "background_image_position": "fit",
-        "background_image_visibility": "desktop",
-        "background_image_vertical_alignment": "top",
-        "background_image_horizontal_position": "left",
-        "background_image_max_height_desktop": "0",
-        "background_image_max_height_mobile": "0",
-        "border": "none",
-        "border_width": 1,
-        "border_opacity": 100,
-        "border_radius": 0,
-        "toggle_overlay": false,
-        "overlay_color": "#00000026",
-        "overlay_style": "solid",
-        "gradient_direction": "to top",
-        "padding-block-start": 0,
-        "padding-block-end": 0,
-        "padding-inline-start": 0,
-        "padding-inline-end": 0,
-        "padding-block-start-mobile": 0,
-        "padding-block-end-mobile": 0,
-        "padding-inline-start-mobile": 0,
-        "padding-inline-end-mobile": 0
-      }
-    },
-    "section_TdBm3n": {
-      "type": "section",
-      "blocks": {
-        "group_ky9Ljf": {
-          "type": "group",
-          "name": "Grupo | DER",
-          "settings": {
-            "content_direction": "row",
-            "visibility": "",
-            "enable_slider": false,
-            "slider_on": "both",
-            "slider_scrollbar_color": "#ffdd00",
-            "vertical_on_mobile": true,
-            "horizontal_alignment": "flex-start",
-            "vertical_alignment": "center",
-            "align_baseline": false,
-            "horizontal_alignment_flex_direction_column": "flex-start",
-            "vertical_alignment_flex_direction_column": "center",
-            "gap": 30,
-            "width": "fill",
-            "custom_width": 100,
-            "width_mobile": "fill",
-            "custom_width_mobile": 100,
-            "height": "fit",
-            "custom_height": 100,
-            "inherit_color_scheme": true,
-            "color_scheme": "",
-            "background_media": "none",
-            "video_position": "cover",
-            "background_image_position": "cover",
-            "background_image_visibility": "both",
-            "background_image_vertical_alignment": "center",
-            "background_image_horizontal_position": "center",
-            "background_image_max_height_desktop": "0",
-            "background_image_max_height_mobile": "0",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 0,
-            "toggle_overlay": false,
-            "overlay_color": "#00000026",
-            "overlay_style": "solid",
-            "gradient_direction": "to top",
-            "link": "",
-            "open_in_new_tab": false,
-            "placeholder": "",
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0,
-            "padding-block-start-mobile": 0,
-            "padding-block-end-mobile": 0,
-            "padding-inline-start-mobile": 0,
-            "padding-inline-end-mobile": 0,
-            "custom_css": ""
-          },
-          "blocks": {
-            "group_cmgkct": {
+            },
+            "group_j7bC4G": {
               "type": "group",
               "name": "Grupo | Img desktop",
               "settings": {
@@ -3826,11 +3663,11 @@
                 "custom_css": ""
               },
               "blocks": {
-                "image_nFbdg3": {
+                "image_drmFqy": {
                   "type": "image",
                   "name": "t:names.image",
                   "settings": {
-                    "image": "shopify://shop_images/07_Desktop_end_result.jpg",
+                    "image": "shopify://shop_images/Suede-min_ba9844ea-53f1-4f63-a905-73ea70b4484d.jpg",
                     "link": "",
                     "image_ratio": "adapt",
                     "width": "fill",
@@ -3855,19 +3692,20 @@
                 }
               },
               "block_order": [
-                "image_nFbdg3"
+                "image_drmFqy"
               ]
             }
           },
           "block_order": [
-            "group_cmgkct"
+            "group_V3fKyi",
+            "group_j7bC4G"
           ]
         }
       },
       "block_order": [
-        "group_ky9Ljf"
+        "group_bfbWAc"
       ],
-      "name": "Sección | End Result",
+      "name": "Sección | End",
       "settings": {
         "content_direction": "row",
         "vertical_on_mobile": true,
@@ -5279,15 +5117,14 @@
     "section_h9frxH",
     "section_dUenD7",
     "section_gRnfgE",
-    "section_LnTg4m",
+    "section_GJxdzd",
     "section_CyLgXq",
+    "section_LnTg4m",
     "section_NNJWRy",
     "section_dkQ8PX",
     "section_erhkkP",
     "section_mL9deL",
     "section_gjp8WT",
-    "section_PTLDAr",
-    "section_TdBm3n",
     "section_Lm9WYY",
     "product_list_46fKXa",
     "section_GC4tEk"
