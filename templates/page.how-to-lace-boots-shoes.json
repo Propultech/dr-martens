@@ -82,7 +82,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<h1>HOW TO LACE DR. MARTENS FOOTWEAR</h1>",
+            "text": "<h1>CÓMO ATARSE EL CALZADO DR. MARTENS</h1>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "left",
@@ -122,7 +122,7 @@
           "type": "text",
           "name": "t:names.text",
           "settings": {
-            "text": "<p>Over the decades, we’ve seen our wearers lace their footwear in all sorts of weird and interesting ways. These are four unshakable classics, as chosen by the DM’s Boot Doctor.</p>",
+            "text": "<p>A lo largo de las décadas, hemos visto a distintas generaciones atarse nuestro calzado de todo tipo de maneras extrañas e interesantes. El Doctor de las Botas DM's te presenta a cuatro clásicos imperecederos.</p>",
             "width": "100%",
             "max_width": "none",
             "alignment": "left",
@@ -297,7 +297,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<p>THE CLASSIC CROSS LACE</p>",
+                    "text": "<p>LAZADA CRUZADA CLÁSICA</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -424,7 +424,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<p>THE LADDER LACE</p>",
+                    "text": "<p>LAZADA EN ESCALERA</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -551,7 +551,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<p>THE STRAIGHT BAR LACE</p>",
+                    "text": "<p>LAZADA RECTA</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -678,7 +678,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<p>THE BOW TIE LACE</p>",
+                    "text": "<p>LAZADA A CRUCES O DE PAJARITA</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
