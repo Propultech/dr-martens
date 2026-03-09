@@ -781,7 +781,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<p><strong>4 WAYS TO MAKE THEM YOUR OWN</strong></p>",
+            "text": "<p><strong>4 FORMAS DE PERSONALIZAR TUS DM'S</strong></p>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "center",
@@ -821,7 +821,7 @@
           "type": "text",
           "name": "t:names.text",
           "settings": {
-            "text": "<p><strong>Lacing your boots is about much more than keeping them in place. It’s a chance to customise and leave your mark on your footwear. Add some attitude, try some standout laces, and maybe even kick some life into a well-worn pair of boots. From the classic cross lace to the hard-hitting ladder, here are four ways to tie up your Docs shoes and make them your own, with a few tips from the DM’s Boot Doctor.</strong></p>",
+            "text": "<p><strong>Atarse las botas es mucho más que mantenerlas en su lugar. Es una oportunidad para personalizar y dejar tu propia huella en tu calzado. De aportarles carácter. Prueba con un par de calcetines de tendencia para inyectar vida a tus botas más desgastadas. Desde la clásica lazada cruzada a la lazada de escalera, te presentamos cuatro formas distintas de atar los cordones de tus zapatos Docs, con un par de consejos del Doctor de las Botas de DM's.</strong></p>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "center",
@@ -918,7 +918,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<p><strong>THE CLASSIC CROSS LACE</strong></p>",
+            "text": "<p><strong>LA LAZADA CRUZADA CLÁSICA</strong></p>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "center",
@@ -958,7 +958,7 @@
           "type": "text",
           "name": "t:names.text",
           "settings": {
-            "text": "<p>A GOOD ALL-ROUNDER WITH A SHOW-STOPPING FINISH</p>",
+            "text": "<p>UNA LAZADA MUY VERSÁTIL CON UN ACABADO IMPACTANTE</p>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "center",
@@ -998,7 +998,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<p>THE BOOT DOCTOR SAYS:</p>",
+            "text": "<p>EL DOCTOR DE LAS BOTAS TE RECOMIENDA:</p>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "center",
@@ -1038,7 +1038,7 @@
           "type": "text",
           "name": "t:names.text",
           "settings": {
-            "text": "<p><strong>BREAKING IN YOUR BOOTS? LEAVE THE TOP TWO EYELETS FREE –<br/>YOU’LL APPRECIATE THE EXTRA ROOM DURING THE FIRST FEW WEARS</strong></p>",
+            "text": "<p><strong>¿TUS BOTAS SON NUEVAS? DEJA LOS DOS OJALES SUPERIORES SIN PASAR –<br/>AGRADECERÁS UN POCO DE ESPACIO EXTRA DURANTE LOS PRIMEROS DÍAS.</strong></p>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "center",
@@ -1456,7 +1456,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>STEP 1 : Start with two even lengths of lace. Thread each side through the bottom two eyelets from outside the boot to in, leaving you with a horizontal lace ‘bar’ inside the shoe.<br/><br/>STEP 2: Cross each end of lace over the top of the shoe as you go up to the next pair of eyelets. Pull the lace through the from the inside on either side, then cross over the top of the boot again as you make your way up.<br/><br/>STEP 3: Now for the wraparound. Leave the top two eyelets free to give yourself some excess lace, then wrap the two lengths around the back of the boot, through the heel loop, and around to the front again. Tie a firm knot to keep it in place. If you don’t fancy a wraparound, just keep lacing your boots up to the top, and knot.<br/><br/></p>",
+                    "text": "<p><strong>PASO 1:</strong> Empieza igualando la longitud de cada lado de tus cordones. Pasa cada lado por su respectivo ojal inferior desde el exterior de la bota hacia el interior. Ahora deberías tener la primera \"barra\" horizontal, con los extremos de cada cordón en la parte interior del zapato. <br/><br/><strong>PASO 2:</strong> Cruza ambos extremos del cordón por encima del zapato y pasa cada cordón por el siguiente ojal del lado opuesto, del interior al exterior. Vuelve a cruzar los cordones y repite este paso hasta llegar hasta arriba. <br/><br/><strong>PASO 3:</strong>Para rematar, deja el último par de ojales sin pasar. Esto debería dejarte un poco de cordón extra para darle la vuelta al cuello de la bota, cruzándolo por detrás y pasándolo por dentro del tirador y otra vez hacia delante. Anuda los extremos con un lazo firme en la parte frontal para mantenerlos en su sitio. Si no te apetece pasarte los cordones alrededor del cuello de la bota, continúa la lazada hasta el último par de ojales y ata los cordones.<br/><br/></p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -1562,7 +1562,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<p><strong>THE LADDER LACE</strong></p>",
+            "text": "<h2><strong>LA LAZADA EN ESCALERA</strong></h2>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "center",
@@ -1602,7 +1602,7 @@
           "type": "text",
           "name": "t:names.text",
           "settings": {
-            "text": "<p>TOUGH-AS-NAILS MILITARY-STYLE LACING</p>",
+            "text": "<p>UNA LAZADA RESISTENTE DE ESTILO MILITAR</p>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "center",
@@ -1642,7 +1642,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<p>THE BOOT DOCTOR SAYS:</p>",
+            "text": "<p>EL DOCTOR DE LAS BOTAS TE RECOMIENDA:</p>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "center",
@@ -1682,7 +1682,7 @@
           "type": "text",
           "name": "t:names.text",
           "settings": {
-            "text": "<p><strong>A STANDOUT WITH HIGH BOOTS, THE LADDER LACE IS SERIOUSLY STRONG.<br/>GREAT FOR FOOTWEAR THAT FEELS A BIT ROOMY</strong></p>",
+            "text": "<p><strong>PUEDES TENSAR LOS CORDONES FÁCILMENTE UNA VEZ HAYAS TERMINADO DE PASARLOS.<br/>TIRA DE UN LADO DE CADA \"BARRA\" Y LISTO. SI AÚN TE SOBRA CORDÓN, PRUEBA A PASARTE LOS CORDONES ALREDEDOR DEL CUELLO</strong></p>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "center",
@@ -2100,7 +2100,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>STEP 1: This one begins inside to out: two even lengths of lace coming out of the bottom two eyelets and run up vertically over the boot on each side to the eyelet pair above. Don’t cross them over yet <br/><br/>STEP 2: Once you’ve created your two loops on either side, it’s time for the ladder ‘rungs’. Cross the lace lengths over through the corresponding loops you’ve created, then thread them through the eyelets above <br/><br/>STEP 3: Repeat the process on the next four eyelets, tightening as you go, and again until you reach the top. Pair this robust lacing style with a hardy knot inside the boot, and you’re set</p>",
+                    "text": "<p><strong>PASO 1:</strong> Este comienza de dentro hacia fuera: iguala el largo de ambos lados del cordón, pásalos por los ojales inferiores creando una \"barra\" en la parte interior del zapato, con el cordón saliendo de dentro hacia fuera del primer par de ojales. Pasa cada lado por el siguiente ojal de forma vertical. No los cruces aún. <br/><br/><strong>PASO 2:</strong> Una vez tengas los dos lazos verticales en cada lado, es hora de crear los \"listones\" de tu escalera. Cruza ambas partes del cordón por encima de la bota y pasa cada extremo por el interior del lazo vertical del lado opuesto. Ahora introduce el cordón por el siguiente ojal en vertical, de fuera a dentro. <br/><br/><strong>PASO 3:</strong> Repite el proceso en los cuatro ojales siguientes, tensando a medida que vayas subiendo y hasta que llegues hasta arriba. Ata esta resistente lazada con un nudo fuerte en el interior de la bota. Todo listo para tu nueva aventura.</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -2206,7 +2206,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<h3><strong>THE STRAIGHT BAR LACE</strong></h3>",
+            "text": "<h3><strong>LA LAZADA RECTA</strong></h3>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "center",
@@ -2246,7 +2246,7 @@
           "type": "text",
           "name": "t:names.text",
           "settings": {
-            "text": "<p>LONGER LACES, ADDED ATTITUDE</p>",
+            "text": "<p>APORTA CARÁCTER EXTRA CON UNOS CORDONES MÁS LARGOS</p>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "center",
@@ -2286,7 +2286,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<p>THE BOOT DOCTOR SAYS:</p>",
+            "text": "<p>EL DOCTOR DE LAS BOTAS TE RECOMIENDA:</p>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "center",
@@ -2326,7 +2326,7 @@
           "type": "text",
           "name": "t:names.text",
           "settings": {
-            "text": "<p><strong>YOU CAN EASILY TIGHTEN THE LACES ONCE YOU FINISH.<br/>SIMPLY PULL ONE SIDE OF EACH BAR. TRY A WRAPAROUND IF YOU HAVE EXCESS AT THE TOP</strong></p>",
+            "text": "<p><strong>PUEDES TENSAR LOS CORDONES FÁCILMENTE UNA VEZ HAYAS TERMINADO DE PASARLOS.<br/>TIRA DE UN LADO DE CADA \"BARRA\" Y LISTO. SI AÚN TE SOBRA CORDÓN, PRUEBA A PASARTE LOS CORDONES ALREDEDOR DEL CUELLO DE LA BOTA.</strong></p>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "center",
@@ -2744,7 +2744,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>STEP 1:  Start with two lace lengths threaded through the bottom two eyelets. Make sure they’re roughly even.<br/><br/>STEP 2: Now it gets asymmetrical. Take the lace on one side and skip the eyelet directly above, instead threading through the next-but-one eyelet on the same side. On the other side, your lace should run vertically up the inside of the shoe and out through the eyelet directly above, then across the top in a horizontal ‘bar’ to the eyelet on the other side.<br/><br/>STEP 3: On this pair of shoes, that’ll see you through to the top. But on boots with more eyelets, repeat this process on alternate sides until you hit the last two eyelets. Tie a solid knot to finish.<br/><br/></p>",
+                    "text": "<p><strong>PASO 1:</strong> Este comienza de dentro hacia fuera: iguala el largo de ambos lados del cordón, pásalos por los ojales inferiores creando una \"barra\" en la parte interior del zapato, con el cordón saliendo de dentro hacia fuera del primer par de ojales. Pasa cada lado por el siguiente ojal de forma vertical. No los cruces aún. <br/><br/><strong>PASO 2:</strong> Una vez tengas los dos lazos verticales en cada lado, es hora de crear los \"listones\" de tu escalera. Cruza ambas partes del cordón por encima de la bota y pasa cada extremo por el interior del lazo vertical del lado opuesto. Ahora introduce el cordón por el siguiente ojal en vertical, de fuera a dentro. <br/><br/><strong>PASO 3:</strong> Repite el proceso en los cuatro ojales siguientes, tensando a medida que vayas subiendo y hasta que llegues hasta arriba. Ata esta resistente lazada con un nudo fuerte en el interior de la bota. Todo listo para tu nueva aventura.</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
