@@ -4741,7 +4741,7 @@
                   "name": "t:names.button",
                   "settings": {
                     "label": "Descubre más",
-                    "link": "",
+                    "link": "#",
                     "open_in_new_tab": false,
                     "style_class": "button",
                     "width": "fit-content",
