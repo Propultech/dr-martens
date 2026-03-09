@@ -224,6 +224,38 @@
     },
     {
       "type": "header",
+      "content": "Sticky al scroll"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_sticky_section",
+      "label": "Fijar esta sección al hacer scroll",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "sticky_section_offset_desktop",
+      "label": "Offset sticky (desktop)",
+      "min": -40,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "default": 0,
+      "visible_if": "{{ section.settings.enable_sticky_section }}"
+    },
+    {
+      "type": "range",
+      "id": "sticky_section_offset_mobile",
+      "label": "Offset sticky (móvil)",
+      "min": -40,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "default": 0,
+      "visible_if": "{{ section.settings.enable_sticky_section }}"
+    },
+    {
+      "type": "header",
       "content": "t:content.appearance"
     },
     {
@@ -1904,5 +1936,3 @@
   ]
 }
 {% endschema %}
-
-
