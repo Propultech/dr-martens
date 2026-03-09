@@ -1657,7 +1657,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<p>EL DOCTOR DE LAS BOTAS TE RECOMIENDA:</p>",
+            "text": "<p>EL DOCTOR DE BOTAS TE RECOMIENDA:</p>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "center",
@@ -2310,7 +2310,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<p>EL DOCTOR DE LAS BOTAS TE RECOMIENDA:</p>",
+            "text": "<p>EL DOCTOR DE BOTAS TE RECOMIENDA:</p>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "center",
@@ -2963,7 +2963,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<p>EL DOCTOR DE LAS BOTAS TE RECOMIENDA:</p>",
+            "text": "<p>EL DOCTOR DE BOTAS TE RECOMIENDA:</p>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "center",
