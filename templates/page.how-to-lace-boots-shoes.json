@@ -4299,7 +4299,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<h3><strong>GET MORE FROM YOUR BOOTS</strong></h3>",
+            "text": "<h3><strong>SACA MÁS PARTIDO A TUS BOTAS</strong></h3>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "center",
@@ -4474,7 +4474,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h3><a href=\"/pages/how-to-care\" title=\"how-to-care\"><strong>CLEAN, PROTECT & POLISH</strong></a></h3>",
+                    "text": "<h3><a href=\"/pages/how-to-care\" title=\"how-to-care\"><strong>LIMPIA, PROTEGE Y DA ESPLENDOR</strong></a></h3>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -4514,7 +4514,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p><strong>With a little bit of care, they’ll last even longer</strong></p>",
+                    "text": "<p><strong>Con un poco de cuidado, te durarán mucho más.</strong></p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -4554,7 +4554,7 @@
                   "type": "button",
                   "name": "t:names.button",
                   "settings": {
-                    "label": "Lee nuestra guía",
+                    "label": "Lee nuestras guías",
                     "link": "shopify://pages/how-to-clean-docs-balsam-wax",
                     "open_in_new_tab": false,
                     "style_class": "button",
