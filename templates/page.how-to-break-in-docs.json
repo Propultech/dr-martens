@@ -385,7 +385,7 @@
         "section_width": "page-width",
         "section_height": "",
         "section_height_custom": 50,
-        "enable_sticky_section": false,
+        "enable_sticky_section": true,
         "sticky_section_offset_desktop": 0,
         "sticky_section_offset_mobile": 0,
         "color_scheme": "scheme-50b797ac-0ce5-4b42-bd62-f6c27627d717",
