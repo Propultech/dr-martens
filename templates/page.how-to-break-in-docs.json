@@ -923,7 +923,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h2><strong>IT STARTS WITH SOCKS</strong></h2>",
+                    "text": "<p><strong>EMPIEZA POR LOS CALCETINES</strong></p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -963,7 +963,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p><strong>You could layer up multiple pairs of socks, or you could wear our purpose-made Double Doc Socks. Designed to give you extra protection on the foot’s key friction points, you’ll find that these socks make a world of difference on the break-in.</strong></p>",
+                    "text": "<p><strong>Puedes ponerte varios pares de calcetines o usar nuestros Double Docs. Unos calcetines diseñados específicamente para aportarte una protección extra en los principales puntos de fricción del pie. La diferencia puede ser abismal en los primeros días.</strong></p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -1003,7 +1003,7 @@
                   "type": "button",
                   "name": "t:names.button",
                   "settings": {
-                    "label": "Comprar ahora",
+                    "label": "VER CALCETINES",
                     "link": "shopify://collections/all",
                     "open_in_new_tab": false,
                     "style_class": "button",
@@ -1141,7 +1141,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h2><strong>IT STARTS WITH SOCKS</strong></h2>",
+                    "text": "<p><strong>TRABAJA LA PIEL CON MIMO</strong></p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -1181,7 +1181,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p><strong>You could layer up multiple pairs of socks, or you could wear our purpose-made Double Doc Socks. Designed to give you extra protection on the foot’s key friction points, you’ll find that these socks make a world of difference on the break-in.</strong></p>",
+                    "text": "<p><strong>Masajea bien la piel con tus manos para simular el efecto que tienen tus pies sobre la piel al llevarla por primera vez. Cuanto más trabajes la piel, más se ablandará, así que dale caña.</strong></p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -1513,7 +1513,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h2><strong>IT STARTS WITH SOCKS</strong></h2>",
+                    "text": "<p><strong>PRUEBA CON LA CREMA WONDER BALSAM</strong></p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -1553,7 +1553,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p><strong>You could layer up multiple pairs of socks, or you could wear our purpose-made Double Doc Socks. Designed to give you extra protection on the foot’s key friction points, you’ll find that these socks make a world of difference on the break-in.</strong></p>",
+                    "text": "<p><strong>Nuestra crema Wonder balsam está formulada especialmente para nutrir, acondicionar y ablandar las pieles de Dr Martens, por lo que es ideal para comenzar con tu nuevo par. Aplica un poco en el interior de la bota para empezar a trabajar.</strong></p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -1593,7 +1593,7 @@
                   "type": "button",
                   "name": "t:names.button",
                   "settings": {
-                    "label": "Comprar ahora",
+                    "label": "VER WONDER BALSAM",
                     "link": "shopify://collections/all",
                     "open_in_new_tab": false,
                     "style_class": "button",
@@ -1731,7 +1731,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h2><strong>IT STARTS WITH SOCKS</strong></h2>",
+                    "text": "<p><strong>ESTÍRALOS CUANDO NO LOS LLEVES</strong></p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -1771,7 +1771,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p><strong>You could layer up multiple pairs of socks, or you could wear our purpose-made Double Doc Socks. Designed to give you extra protection on the foot’s key friction points, you’ll find that these socks make a world of difference on the break-in.</strong></p>",
+                    "text": "<p><strong>Mientras disfrutas de un merecido descanso, puedes estirar la piel rellenando bien las botas o los zapatos con un material adaptable. En concreto, te recomendamos que uses papel de periódico o una lata y los dejes así toda la noche para que se estiren bien y vayan cogiendo forma.</strong></p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -2103,7 +2103,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h2><strong>IT STARTS WITH SOCKS</strong></h2>",
+                    "text": "<p><strong>HEEL GRIPS WORK WONDERS</strong></p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -2143,7 +2143,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p><strong>You could layer up multiple pairs of socks, or you could wear our purpose-made Double Doc Socks. Designed to give you extra protection on the foot’s key friction points, you’ll find that these socks make a world of difference on the break-in.</strong></p>",
+                    "text": "<p><strong>La parte superior del talón suele ser el lugar más problemático para muchas personas. Nuestras taloneras son fáciles de poner y atajan el problema de frente, proporcionando a la parte trasera del pie un poco más de apoyo mientras que se va ablandando la piel.</strong></p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -2183,7 +2183,7 @@
                   "type": "button",
                   "name": "t:names.button",
                   "settings": {
-                    "label": "Comprar ahora",
+                    "label": "SHOP HEEL GRIPS",
                     "link": "shopify://collections/all",
                     "open_in_new_tab": false,
                     "style_class": "button",
@@ -2220,7 +2220,7 @@
             "slider_scrollbar_color": "#ffdd00",
             "vertical_on_mobile": true,
             "horizontal_alignment": "flex-start",
-            "vertical_alignment": "flex-start",
+            "vertical_alignment": "center",
             "align_baseline": false,
             "horizontal_alignment_flex_direction_column": "flex-start",
             "vertical_alignment_flex_direction_column": "center",
@@ -2321,7 +2321,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h2><strong>IT STARTS WITH SOCKS</strong></h2>",
+                    "text": "<p><strong>DATE UN DESCANSO DE VEZ EN CUANDO</strong></p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -2361,7 +2361,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p><strong>You could layer up multiple pairs of socks, or you could wear our purpose-made Double Doc Socks. Designed to give you extra protection on the foot’s key friction points, you’ll find that these socks make a world of difference on the break-in.</strong></p>",
+                    "text": "<p><strong>Los más valientes se tiran de cabeza a sus nuevos DM's, y no se los quitan hasta que se adaptan a sus pies. Pero no es algo que recomendemos al principio. Vale la pena tomárselo con calma: póntelos un día sí y un día no. Tienes toda una vida para llevar tus nuevos Dr. Martens, no te precipites.</strong></p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
