@@ -82,7 +82,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<h1><strong>HOW TO BREAK IN DR. MARTENS FOOTWEAR</strong></h1>",
+            "text": "<p><strong>COMO ABLANDAR TUS DR. MARTENS</strong></p>",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "left",
@@ -122,7 +122,7 @@
           "type": "text",
           "name": "t:names.text",
           "settings": {
-            "text": "<p><strong>The DM’s break in is the stuff of legend. From wearing boots in the bath to burying them in the garden, our wearers have gone to some lengths to skip the break in. Whilst it’s true that wearing-in any leather takes time and determination, we can offer some expert tips that’ll help ease those first few steps. Got your new pair ready? Put your feet first. Give these tips a go.</strong></p>",
+            "text": "<p><strong>Hay miles de leyendas sobre como ablandar tus DM's en los primeros días. Cada persona tiene sus trucos. ¿Pero cuáles funcionan de verdad? ¿Podemos ablandar nuestras botas poniéndolas en la bañera? ¿O enterrándolas en el jardín? Es hora de zanjar el debate. Aunque es cierto que el uso de cualquier tipo de piel requiere tiempo y determinación, también podemos ofrecerte algunos consejos certificados por el doctor de las botas que te ayudarán a dar esos primeros pasos. ¿Ya tienes listo tu nuevo par? Prueba estos consejos.</strong></p>",
             "width": "fit-content",
             "max_width": "none",
             "alignment": "left",
