@@ -312,7 +312,7 @@
                 "padding-inline-start": 0,
                 "padding-inline-end": 0,
                 "padding-block-start-mobile": 0,
-                "padding-block-end-mobile": 10,
+                "padding-block-end-mobile": 4,
                 "padding-inline-start-mobile": 0,
                 "padding-inline-end-mobile": 0,
                 "custom_css": ""
@@ -411,7 +411,7 @@
                 "padding-inline-start": 0,
                 "padding-inline-end": 0,
                 "padding-block-start-mobile": 0,
-                "padding-block-end-mobile": 10,
+                "padding-block-end-mobile": 4,
                 "padding-inline-start-mobile": 0,
                 "padding-inline-end-mobile": 0,
                 "custom_css": ""
@@ -510,7 +510,7 @@
                 "padding-inline-start": 0,
                 "padding-inline-end": 0,
                 "padding-block-start-mobile": 0,
-                "padding-block-end-mobile": 10,
+                "padding-block-end-mobile": 4,
                 "padding-inline-start-mobile": 0,
                 "padding-inline-end-mobile": 0,
                 "custom_css": ""
@@ -609,7 +609,7 @@
                 "padding-inline-start": 0,
                 "padding-inline-end": 0,
                 "padding-block-start-mobile": 0,
-                "padding-block-end-mobile": 10,
+                "padding-block-end-mobile": 4,
                 "padding-inline-start-mobile": 0,
                 "padding-inline-end-mobile": 0,
                 "custom_css": ""
@@ -718,6 +718,14 @@
     "section_FUWJxY": {
       "type": "section",
       "blocks": {
+        "anchor_ANNB6E": {
+          "type": "anchor",
+          "name": "Anchor",
+          "settings": {
+            "anchor_id": "tips"
+          },
+          "blocks": {}
+        },
         "group_cjibGf": {
           "type": "group",
           "name": "Grupo | DER",
@@ -777,7 +785,7 @@
               "name": "Grupo | Img desktop",
               "settings": {
                 "content_direction": "column",
-                "visibility": "desktop",
+                "visibility": "",
                 "enable_slider": false,
                 "slider_on": "both",
                 "slider_scrollbar_color": "#ffdd00",
@@ -1006,25 +1014,26 @@
         }
       },
       "block_order": [
+        "anchor_ANNB6E",
         "group_cjibGf"
       ],
       "name": "Sección | PASO 1",
       "settings": {
-        "content_direction": "row",
+        "content_direction": "column",
         "vertical_on_mobile": true,
         "horizontal_alignment": "center",
         "vertical_alignment": "flex-start",
         "align_baseline": false,
         "horizontal_alignment_flex_direction_column": "center",
         "vertical_alignment_flex_direction_column": "flex-start",
-        "gap": 0,
+        "gap": 15,
         "section_width": "page-width",
         "section_height": "",
         "section_height_custom": 50,
         "enable_sticky_section": false,
         "sticky_section_offset_desktop": 0,
         "sticky_section_offset_mobile": 0,
-        "color_scheme": "",
+        "color_scheme": "scheme-50b797ac-0ce5-4b42-bd62-f6c27627d717",
         "background_media": "none",
         "video_position": "cover",
         "background_image_position": "cover",
@@ -1041,11 +1050,11 @@
         "overlay_color": "#00000026",
         "overlay_style": "solid",
         "gradient_direction": "to top",
-        "padding-block-start": 0,
+        "padding-block-start": 15,
         "padding-block-end": 50,
         "padding-inline-start": 0,
         "padding-inline-end": 0,
-        "padding-block-start-mobile": 30,
+        "padding-block-start-mobile": 15,
         "padding-block-end-mobile": 50,
         "padding-inline-start-mobile": 0,
         "padding-inline-end-mobile": 0
