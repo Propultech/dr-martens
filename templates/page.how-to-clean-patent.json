@@ -136,7 +136,7 @@
               "type": "image",
               "name": "t:names.image",
               "settings": {
-                "image": "shopify://shop_images/01_Desktop_Hero_How_To_Care_2.jpg",
+                "image": "shopify://shop_images/01_Desktop_A_Image-min.jpg",
                 "link": "",
                 "image_ratio": "adapt",
                 "width": "fill",
@@ -184,7 +184,6 @@
         "color_scheme": "",
         "background_media": "image",
         "video_position": "cover",
-        "background_image": "shopify://shop_images/Desktop_Hero.jpg",
         "background_image_position": "fit",
         "background_image_visibility": "desktop",
         "background_image_vertical_alignment": "top",
@@ -324,7 +323,7 @@
                   "type": "text",
                   "name": "Encabezado | titulo",
                   "settings": {
-                    "text": "<h1><strong>Cómo limpiar tus botas con Wonder Balsam wax</strong></h1>",
+                    "text": "<h1><strong>CÓMO LIMPIAR CALZADO DR. MARTENS DE CUERO CHAROL</strong></h1>",
                     "width": "fit-content",
                     "max_width": "none",
                     "alignment": "left",
@@ -364,7 +363,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<p>DISEÑADO PARA QUE EL CALZADO RESISTENTE DURE AÚN MÁS</p>",
+                    "text": "<h2>EL BOOT DOCTOR DICE: NUESTRO PATENT CLEANER DEVOLVERÁ ESE BRILLO BRILLANTE Y DEJARÁ TUS BOTAS COMO NUEVAS</h2>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -404,7 +403,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Podrías ver algunas botas gastadas, pero nosotros vemos un par con mucha vida por delante. Dr. Martens Wonder Balsam está diseñado para devolver el brillo a tu calzado bien usado. Nuestro bálsamo de cera nutre el cuero — lo mantiene flexible, resistente y suave. Usado regularmente, prolongará la vida de tu calzado.<br/><br/>Ten en cuenta que Wonder Balsam es un producto no vegano y no es apto para usar en productos veganos. Tampoco es apto para usar en productos Genix Nappa.<br/><br/>Aquí te mostramos cómo usarlo — en cinco pasos sencillos. O consulta nuestro video a continuación.</p>",
+                    "text": "<p>El cuero charol es más resistente de lo que podrías pensar. Si lo cuidas adecuadamente, puede durar años. Y cuidar nuestros cueros charol es increíblemente fácil. Dr. Martens Patent Cleaner está diseñado para devolver ese brillo característico, incluso cuando tus botas no se ven en su mejor momento.<br/><br/>Aquí te mostramos cómo usarlo — en cinco pasos sencillos — con algunos consejos del Dr. Martens Boot Doctor. Consulta nuestro video completo al final de la página.</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -505,7 +504,7 @@
                   "type": "image",
                   "name": "t:names.image",
                   "settings": {
-                    "image": "shopify://shop_images/01_Desktop_Hero_How_To_Care_2.jpg",
+                    "image": "shopify://shop_images/01_Desktop_A_Image-min.jpg",
                     "link": "",
                     "image_ratio": "adapt",
                     "width": "fill",
@@ -559,7 +558,7 @@
         "color_scheme": "",
         "background_media": "image",
         "video_position": "cover",
-        "background_image": "shopify://shop_images/Desktop_Hero.jpg",
+        "background_image": "shopify://shop_images/01_Desktop_Hero_Banner_Paten.jpg",
         "background_image_position": "cover",
         "background_image_visibility": "desktop",
         "background_image_vertical_alignment": "top",
@@ -591,7 +590,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<h2>CONSEJO DEL BOOT DOCTOR: WONDER BALSAM PUEDE USARSE EN LA MAYORÍA DE CUEROS LISOS Y ENCERADOS.</h2>",
+            "text": "<h2>CONSEJO DEL BOOT DOCTOR: NUNCA ES TARDE PARA DEVOLVERLE UN POCO DE BRILLO A TUS PATENT FOOTWEAR</h2>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "center",
@@ -732,7 +731,7 @@
               "type": "image",
               "name": "t:names.image",
               "settings": {
-                "image": "shopify://shop_images/02_Desktop_Set_up-min.jpg",
+                "image": "shopify://shop_images/02_Desktop_step_1-min.jpg",
                 "link": "",
                 "image_ratio": "adapt",
                 "width": "fill",
@@ -919,7 +918,7 @@
                   "type": "image",
                   "name": "t:names.image",
                   "settings": {
-                    "image": "shopify://shop_images/02_Desktop_Set_up-min.jpg",
+                    "image": "shopify://shop_images/02_Desktop_step_1-min.jpg",
                     "link": "",
                     "image_ratio": "adapt",
                     "width": "fill",
@@ -1045,7 +1044,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Lo primero es encontrar una superficie donde no te importe ensuciarte un poco, y prepara tu kit. Limpiar tus botas con bálsamo no requiere mucho. Todo lo que necesitas es un par de trapos, agua y un tarro de Wonder Balsam. Y 20 minutos de tu tiempo.</p>",
+                    "text": "<p>El cuero charol puede marcarse con facilidad, pero se limpia aún más fácilmente. Todo lo que necesitas es un par de cloths, agua, un shoe brush y una botella de Patent Cleaner. No debería tomar más de 15 minutos aproximadamente.</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -1198,7 +1197,7 @@
               "type": "image",
               "name": "t:names.image",
               "settings": {
-                "image": "shopify://shop_images/03_Desktop_Clean-min.jpg",
+                "image": "shopify://shop_images/03_Desktop_step_2-min.jpg",
                 "link": "",
                 "image_ratio": "adapt",
                 "width": "fill",
@@ -1425,7 +1424,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Tus botas podrían necesitar una limpieza antes de comenzar. Dales una buena pasada con un paño húmedo. Retira los cordones y límpialos por separado, luego seca las botas con un paño diferente.</p>",
+                    "text": "<p>Si ha pasado un tiempo, tus botas probablemente necesitarán una limpieza inicial. Límpialas bien con un paño húmedo, enjuagando y repitiendo si es necesario. Retira los cordones y límpialos por separado, luego seca tus botas con un paño diferente.</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -1525,7 +1524,7 @@
                   "type": "image",
                   "name": "t:names.image",
                   "settings": {
-                    "image": "shopify://shop_images/03_Desktop_Clean-min.jpg",
+                    "image": "shopify://shop_images/03_Desktop_step_2-min.jpg",
                     "link": "",
                     "image_ratio": "adapt",
                     "width": "fill",
@@ -1610,7 +1609,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<h2>CONSEJO DEL BOOT DOCTOR: SI TUS BOTAS HAN VIVIDO UN POCO, GOLPÉALAS ENTRE SÍ PARA REMOVER EL BARRO EXCESIVO PRIMERO.</h2>",
+            "text": "<h2>CONSEJO DEL BOOT DOCTOR: SI TUS BOTAS HAN VIVIDO UN POCO, GOLPÉALAS JUNTAS PARA REMOVER EL BARRO EXCESIVO PRIMERO</h2>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "center",
@@ -1751,7 +1750,7 @@
               "type": "image",
               "name": "t:names.image",
               "settings": {
-                "image": "shopify://shop_images/04_Desktop_Cleaning_Wonder-min.gif",
+                "image": "shopify://shop_images/PATENT_CLEANER-min.gif",
                 "link": "",
                 "image_ratio": "adapt",
                 "width": "fill",
@@ -1938,7 +1937,7 @@
                   "type": "image",
                   "name": "t:names.image",
                   "settings": {
-                    "image": "shopify://shop_images/04_Desktop_Cleaning_Wonder-min.gif",
+                    "image": "shopify://shop_images/PATENT_CLEANER-min.gif",
                     "link": "",
                     "image_ratio": "adapt",
                     "width": "fill",
@@ -2064,7 +2063,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Saca la esponja del recipiente de Wonder Balsam y úsala para extraer un poco de cera. Aplica generosamente en toda la bota, prestando especial atención a los pliegues, la lengüeta y el cuero interior. Asegúrate de trabajar bien la cera en las costuras. Una vez que el recubrimiento sea uniforme, deja secar durante 10 minutos.</p>",
+                    "text": "<p>Agita bien la botella, luego rocía los zapatos por completo. Limpia el exceso con un paño limpio y asegúrate de terminar con un acabado suave y uniforme.</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -2156,73 +2155,119 @@
         "padding-inline-end-mobile": 0
       }
     },
-    "section_LnTg4m": {
+    "section_9rcUDY": {
       "type": "section",
       "blocks": {
-        "text_zJc3pX": {
-          "type": "text",
-          "name": "t:names.heading",
+        "group_kXMY9H": {
+          "type": "group",
+          "name": "Grupo | móvil img",
           "settings": {
-            "text": "<h2>CONSEJO DEL BOOT DOCTOR: APLICA EXTRA WONDER BALSAM PARA MINIMIZAR ARAÑAZOS, ROZADURAS Y MARCAS.</h2>",
-            "width": "100%",
-            "max_width": "normal",
-            "alignment": "center",
-            "type_preset": "custom",
-            "font": "var(--font-accent--family)",
-            "weight": "",
-            "font_size": "1.5rem",
-            "font_size_mobile": "1.25rem",
-            "line_height": "tight",
-            "letter_spacing": "normal",
-            "case": "uppercase",
-            "wrap": "pretty",
-            "font_stretch": "normal",
-            "color": "var(--color-foreground)",
-            "italic_color": "",
-            "strong_color": "",
-            "link_font_size": "",
-            "link_font_size_mobile": "",
-            "background": false,
-            "line_highlight": false,
-            "background_color": "#00000026",
-            "corner_radius": 0,
-            "visibility": "all",
-            "padding-block-start": 0,
+            "content_direction": "row",
+            "visibility": "mobile",
+            "enable_slider": false,
+            "slider_on": "both",
+            "slider_scrollbar_color": "#ffdd00",
+            "vertical_on_mobile": true,
+            "horizontal_alignment": "flex-start",
+            "vertical_alignment": "flex-start",
+            "align_baseline": false,
+            "horizontal_alignment_flex_direction_column": "flex-start",
+            "vertical_alignment_flex_direction_column": "center",
+            "gap": 12,
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "custom_height": 100,
+            "inherit_color_scheme": true,
+            "color_scheme": "",
+            "background_media": "none",
+            "video_position": "cover",
+            "background_image_position": "cover",
+            "background_image_visibility": "both",
+            "background_image_vertical_alignment": "center",
+            "background_image_horizontal_position": "center",
+            "background_image_max_height_desktop": "0",
+            "background_image_max_height_mobile": "0",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "toggle_overlay": false,
+            "overlay_color": "#00000026",
+            "overlay_style": "solid",
+            "gradient_direction": "to top",
+            "link": "",
+            "open_in_new_tab": false,
+            "placeholder": "",
+            "padding-block-start": 100,
             "padding-block-end": 0,
             "padding-inline-start": 0,
             "padding-inline-end": 0,
-            "mobile_padding_override": false,
             "padding-block-start-mobile": 0,
             "padding-block-end-mobile": 0,
             "padding-inline-start-mobile": 0,
-            "padding-inline-end-mobile": 0
+            "padding-inline-end-mobile": 0,
+            "custom_css": ""
           },
-          "blocks": {}
+          "blocks": {
+            "image_NYExpQ": {
+              "type": "image",
+              "name": "t:names.image",
+              "settings": {
+                "image": "shopify://shop_images/05_Desktop_step_4-min.jpg",
+                "link": "",
+                "image_ratio": "adapt",
+                "width": "fill",
+                "custom_width": 100,
+                "width_mobile": "fill",
+                "custom_width_mobile": 100,
+                "height": "fit",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0,
+                "padding-block-start-mobile": 0,
+                "padding-block-end-mobile": 0,
+                "padding-inline-start-mobile": 0,
+                "padding-inline-end-mobile": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "image_NYExpQ"
+          ]
         }
       },
       "block_order": [
-        "text_zJc3pX"
+        "group_kXMY9H"
       ],
-      "name": "Sección | Titulo 3",
+      "name": "Sección | PASO 4 - móvil img",
       "settings": {
-        "content_direction": "column",
+        "content_direction": "row",
         "vertical_on_mobile": true,
-        "horizontal_alignment": "flex-start",
-        "vertical_alignment": "center",
+        "horizontal_alignment": "center",
+        "vertical_alignment": "flex-start",
         "align_baseline": false,
-        "horizontal_alignment_flex_direction_column": "flex-start",
-        "vertical_alignment_flex_direction_column": "center",
-        "gap": 12,
-        "section_width": "page-width",
+        "horizontal_alignment_flex_direction_column": "center",
+        "vertical_alignment_flex_direction_column": "flex-start",
+        "gap": 0,
+        "section_width": "full-width",
         "section_height": "",
         "section_height_custom": 50,
         "color_scheme": "",
-        "background_media": "none",
+        "background_media": "image",
         "video_position": "cover",
-        "background_image_position": "cover",
-        "background_image_visibility": "both",
-        "background_image_vertical_alignment": "center",
-        "background_image_horizontal_position": "center",
+        "background_image_position": "fit",
+        "background_image_visibility": "desktop",
+        "background_image_vertical_alignment": "top",
+        "background_image_horizontal_position": "left",
         "background_image_max_height_desktop": "0",
         "background_image_max_height_mobile": "0",
         "border": "none",
@@ -2234,11 +2279,11 @@
         "overlay_style": "solid",
         "gradient_direction": "to top",
         "padding-block-start": 0,
-        "padding-block-end": 50,
+        "padding-block-end": 0,
         "padding-inline-start": 0,
         "padding-inline-end": 0,
         "padding-block-start-mobile": 0,
-        "padding-block-end-mobile": 40,
+        "padding-block-end-mobile": 0,
         "padding-inline-start-mobile": 0,
         "padding-inline-end-mobile": 0
       }
@@ -2358,7 +2403,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h2>PASO 4: RE-ATAR</h2>",
+                    "text": "<h2>PASO 4: PULIR HASTA BRILLAR</h2>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -2398,7 +2443,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>En esta etapa, puedes volver a colocar los cordones recién limpios en tus botas. Si los antiguos aún se ven gastados, cómprate un par nuevo. ¿Por qué no pruebas un color diferente para hacer tus botas únicas? Te sorprenderá la diferencia que unos cordones nuevos pueden hacer.</p>",
+                    "text": "<p>Ahora es momento de recuperar ese brillo brillante. Toma tu cepillo y comienza a pulir. Cuando tus boots tengan un brillo uniforme y brillante, déjalas secar durante algunos minutos.</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -2442,7 +2487,7 @@
             },
             "group_qzchFM": {
               "type": "group",
-              "name": "Grupo | Img Empty",
+              "name": "Grupo | Img",
               "settings": {
                 "content_direction": "column",
                 "visibility": "desktop",
@@ -2493,7 +2538,38 @@
                 "padding-inline-end-mobile": 0,
                 "custom_css": ""
               },
-              "blocks": {}
+              "blocks": {
+                "image_f6Fgma": {
+                  "type": "image",
+                  "name": "t:names.image",
+                  "settings": {
+                    "image": "shopify://shop_images/05_Desktop_step_4-min.jpg",
+                    "link": "",
+                    "image_ratio": "adapt",
+                    "width": "fill",
+                    "custom_width": 100,
+                    "width_mobile": "fill",
+                    "custom_width_mobile": 100,
+                    "height": "fit",
+                    "border": "none",
+                    "border_width": 1,
+                    "border_opacity": 100,
+                    "border_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0,
+                    "padding-block-start-mobile": 0,
+                    "padding-block-end-mobile": 0,
+                    "padding-inline-start-mobile": 0,
+                    "padding-inline-end-mobile": 0
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "image_f6Fgma"
+              ]
             }
           },
           "block_order": [
@@ -2541,6 +2617,93 @@
         "padding-inline-end": 0,
         "padding-block-start-mobile": 30,
         "padding-block-end-mobile": 50,
+        "padding-inline-start-mobile": 0,
+        "padding-inline-end-mobile": 0
+      }
+    },
+    "section_LnTg4m": {
+      "type": "section",
+      "blocks": {
+        "text_zJc3pX": {
+          "type": "text",
+          "name": "t:names.heading",
+          "settings": {
+            "text": "<h2>CONSEJO DEL BOOT DOCTOR: UN NUEVO PAR DE LACES PUEDE HACER UNA GRAN DIFERENCIA</h2>",
+            "width": "100%",
+            "max_width": "normal",
+            "alignment": "center",
+            "type_preset": "custom",
+            "font": "var(--font-accent--family)",
+            "weight": "",
+            "font_size": "1.5rem",
+            "font_size_mobile": "1.25rem",
+            "line_height": "tight",
+            "letter_spacing": "normal",
+            "case": "uppercase",
+            "wrap": "pretty",
+            "font_stretch": "normal",
+            "color": "var(--color-foreground)",
+            "italic_color": "",
+            "strong_color": "",
+            "link_font_size": "",
+            "link_font_size_mobile": "",
+            "background": false,
+            "line_highlight": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "visibility": "all",
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0,
+            "mobile_padding_override": false,
+            "padding-block-start-mobile": 0,
+            "padding-block-end-mobile": 0,
+            "padding-inline-start-mobile": 0,
+            "padding-inline-end-mobile": 0
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "text_zJc3pX"
+      ],
+      "name": "Sección | Titulo 3",
+      "settings": {
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "flex-start",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 12,
+        "section_width": "page-width",
+        "section_height": "",
+        "section_height_custom": 50,
+        "color_scheme": "",
+        "background_media": "none",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "background_image_visibility": "both",
+        "background_image_vertical_alignment": "center",
+        "background_image_horizontal_position": "center",
+        "background_image_max_height_desktop": "0",
+        "background_image_max_height_mobile": "0",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_radius": 0,
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "padding-block-start": 0,
+        "padding-block-end": 50,
+        "padding-inline-start": 0,
+        "padding-inline-end": 0,
+        "padding-block-start-mobile": 0,
+        "padding-block-end-mobile": 40,
         "padding-inline-start-mobile": 0,
         "padding-inline-end-mobile": 0
       }
@@ -2606,7 +2769,7 @@
               "type": "image",
               "name": "t:names.image",
               "settings": {
-                "image": "shopify://shop_images/06_Desktop_final_touches-min.jpg",
+                "image": "shopify://shop_images/06_Desktop_step_5-min.jpg",
                 "link": "",
                 "image_ratio": "adapt",
                 "width": "fill",
@@ -2793,7 +2956,7 @@
                   "type": "image",
                   "name": "t:names.image",
                   "settings": {
-                    "image": "shopify://shop_images/06_Desktop_final_touches-min.jpg",
+                    "image": "shopify://shop_images/06_Desktop_step_5-min.jpg",
                     "link": "",
                     "image_ratio": "adapt",
                     "width": "fill",
@@ -2879,7 +3042,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h2>PASO 5: TOQUES FINALES</h2>",
+                    "text": "<h2>PASO 5: RE-ATAR</h2>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -2919,7 +3082,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Ya casi terminas. Solo quedan algunos toques finales opcionales. Puedes darle a tus botas recién limpias un rápido spray con Dr. Martens Ultra Protector para una capa adicional de protección. O un poco de Dr. Martens Shoe Freshener para eliminar cualquier olor. Y listo: tus botas deberían verse como nuevas. La próxima vez no esperes tanto, ¿eh?</p>",
+                    "text": "<p>Casi listo. Vuelve a atar tus botas, o personalízalas con un nuevo par, y termina con un spray de Dr. Martens Shoe Freshener si es necesario. Y listo: como nuevas. Intenta mantenerlas así, ¿eh?</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -3018,7 +3181,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<h2>CONSEJO DEL BOOT DOCTOR: ÚSALO MENSUALMENTE PARA PROLONGAR LA VIDA DE TUS ZAPATOS</h2>",
+            "text": "<h2>CONSEJO DEL BOOT DOCTOR: CUIDA ADECUADAMENTE TU PATENT LEATHER Y TE DURARÁ AÑOS</h2>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "center",
@@ -3159,7 +3322,7 @@
               "type": "image",
               "name": "t:names.image",
               "settings": {
-                "image": "shopify://shop_images/08_Desktop_product-min.jpg",
+                "image": "shopify://shop_images/07_Desktop_Product-min.jpg",
                 "link": "",
                 "image_ratio": "adapt",
                 "width": "fill",
@@ -3288,92 +3451,6 @@
             "custom_css": ""
           },
           "blocks": {
-            "group_DpYWcH": {
-              "type": "group",
-              "name": "Grupo | Img desktop",
-              "settings": {
-                "content_direction": "column",
-                "visibility": "desktop",
-                "enable_slider": false,
-                "slider_on": "both",
-                "slider_scrollbar_color": "#ffdd00",
-                "vertical_on_mobile": true,
-                "horizontal_alignment": "flex-start",
-                "vertical_alignment": "center",
-                "align_baseline": false,
-                "horizontal_alignment_flex_direction_column": "flex-start",
-                "vertical_alignment_flex_direction_column": "center",
-                "gap": 0,
-                "width": "fill",
-                "custom_width": 100,
-                "width_mobile": "fill",
-                "custom_width_mobile": 100,
-                "height": "fit",
-                "custom_height": 100,
-                "inherit_color_scheme": true,
-                "color_scheme": "",
-                "background_media": "none",
-                "video_position": "cover",
-                "background_image_position": "cover",
-                "background_image_visibility": "both",
-                "background_image_vertical_alignment": "center",
-                "background_image_horizontal_position": "center",
-                "background_image_max_height_desktop": "0",
-                "background_image_max_height_mobile": "0",
-                "border": "none",
-                "border_width": 1,
-                "border_opacity": 100,
-                "border_radius": 0,
-                "toggle_overlay": false,
-                "overlay_color": "#00000026",
-                "overlay_style": "solid",
-                "gradient_direction": "to top",
-                "link": "",
-                "open_in_new_tab": false,
-                "placeholder": "",
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0,
-                "padding-block-start-mobile": 0,
-                "padding-block-end-mobile": 0,
-                "padding-inline-start-mobile": 0,
-                "padding-inline-end-mobile": 0,
-                "custom_css": ""
-              },
-              "blocks": {
-                "image_drmFqy": {
-                  "type": "image",
-                  "name": "t:names.image",
-                  "settings": {
-                    "image": "shopify://shop_images/08_Desktop_product-min.jpg",
-                    "link": "",
-                    "image_ratio": "adapt",
-                    "width": "fill",
-                    "custom_width": 100,
-                    "width_mobile": "fill",
-                    "custom_width_mobile": 100,
-                    "height": "fit",
-                    "border": "none",
-                    "border_width": 1,
-                    "border_opacity": 100,
-                    "border_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0,
-                    "padding-block-start-mobile": 0,
-                    "padding-block-end-mobile": 0,
-                    "padding-inline-start-mobile": 0,
-                    "padding-inline-end-mobile": 0
-                  },
-                  "blocks": {}
-                }
-              },
-              "block_order": [
-                "image_drmFqy"
-              ]
-            },
             "group_V3fKyi": {
               "type": "group",
               "name": "Grupo | text",
@@ -3432,7 +3509,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h2>Wonder Balsam DE DR. MARTENS</h2>",
+                    "text": "<h2>DR. MARTENS PATENT CLEANER</h2>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -3472,7 +3549,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Restaura y rejuvenece sin pulido ni brillo: nuestro Wonder Balsam está formulado para mantener el cuero fuerte y flexible, y asegurar que tus botas duren aún más tiempo. Nota: contiene cera de abeja.</p>",
+                    "text": "<p>Restaura el brillo con algunos pulverizadores rápidos. Nuestro Patent Cleaner está especialmente formulado para usar en Docs patent leathers.</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -3531,248 +3608,8 @@
                 "text_fJU4pi",
                 "button_rqBkz4"
               ]
-            }
-          },
-          "block_order": [
-            "group_DpYWcH",
-            "group_V3fKyi"
-          ]
-        }
-      },
-      "block_order": [
-        "group_bfbWAc"
-      ],
-      "name": "Sección | End",
-      "settings": {
-        "content_direction": "row",
-        "vertical_on_mobile": true,
-        "horizontal_alignment": "center",
-        "vertical_alignment": "flex-start",
-        "align_baseline": false,
-        "horizontal_alignment_flex_direction_column": "center",
-        "vertical_alignment_flex_direction_column": "flex-start",
-        "gap": 0,
-        "section_width": "page-width",
-        "section_height": "",
-        "section_height_custom": 50,
-        "color_scheme": "scheme-50b797ac-0ce5-4b42-bd62-f6c27627d717",
-        "background_media": "none",
-        "video_position": "cover",
-        "background_image_position": "cover",
-        "background_image_visibility": "desktop",
-        "background_image_vertical_alignment": "top",
-        "background_image_horizontal_position": "left",
-        "background_image_max_height_desktop": "280",
-        "background_image_max_height_mobile": "0",
-        "border": "none",
-        "border_width": 1,
-        "border_opacity": 100,
-        "border_radius": 0,
-        "toggle_overlay": false,
-        "overlay_color": "#00000026",
-        "overlay_style": "solid",
-        "gradient_direction": "to top",
-        "padding-block-start": 0,
-        "padding-block-end": 50,
-        "padding-inline-start": 0,
-        "padding-inline-end": 0,
-        "padding-block-start-mobile": 30,
-        "padding-block-end-mobile": 50,
-        "padding-inline-start-mobile": 0,
-        "padding-inline-end-mobile": 0
-      }
-    },
-    "section_PTLDAr": {
-      "type": "section",
-      "blocks": {
-        "group_VeE8p7": {
-          "type": "group",
-          "name": "Grupo | móvil img",
-          "settings": {
-            "content_direction": "row",
-            "visibility": "mobile",
-            "enable_slider": false,
-            "slider_on": "both",
-            "slider_scrollbar_color": "#ffdd00",
-            "vertical_on_mobile": true,
-            "horizontal_alignment": "flex-start",
-            "vertical_alignment": "flex-start",
-            "align_baseline": false,
-            "horizontal_alignment_flex_direction_column": "flex-start",
-            "vertical_alignment_flex_direction_column": "center",
-            "gap": 12,
-            "width": "fill",
-            "custom_width": 100,
-            "width_mobile": "fill",
-            "custom_width_mobile": 100,
-            "height": "fit",
-            "custom_height": 100,
-            "inherit_color_scheme": true,
-            "color_scheme": "",
-            "background_media": "none",
-            "video_position": "cover",
-            "background_image_position": "cover",
-            "background_image_visibility": "both",
-            "background_image_vertical_alignment": "center",
-            "background_image_horizontal_position": "center",
-            "background_image_max_height_desktop": "0",
-            "background_image_max_height_mobile": "0",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 0,
-            "toggle_overlay": false,
-            "overlay_color": "#00000026",
-            "overlay_style": "solid",
-            "gradient_direction": "to top",
-            "link": "",
-            "open_in_new_tab": false,
-            "placeholder": "",
-            "padding-block-start": 100,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0,
-            "padding-block-start-mobile": 0,
-            "padding-block-end-mobile": 0,
-            "padding-inline-start-mobile": 0,
-            "padding-inline-end-mobile": 0,
-            "custom_css": ""
-          },
-          "blocks": {
-            "image_BGC6pR": {
-              "type": "image",
-              "name": "t:names.image",
-              "settings": {
-                "image": "shopify://shop_images/07_Desktop_end_result.jpg",
-                "link": "",
-                "image_ratio": "adapt",
-                "width": "fill",
-                "custom_width": 100,
-                "width_mobile": "fill",
-                "custom_width_mobile": 100,
-                "height": "fit",
-                "border": "none",
-                "border_width": 1,
-                "border_opacity": 100,
-                "border_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0,
-                "padding-block-start-mobile": 0,
-                "padding-block-end-mobile": 0,
-                "padding-inline-start-mobile": 0,
-                "padding-inline-end-mobile": 0
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": [
-            "image_BGC6pR"
-          ]
-        }
-      },
-      "block_order": [
-        "group_VeE8p7"
-      ],
-      "name": "Sección | End Result - móvil img",
-      "settings": {
-        "content_direction": "row",
-        "vertical_on_mobile": true,
-        "horizontal_alignment": "center",
-        "vertical_alignment": "flex-start",
-        "align_baseline": false,
-        "horizontal_alignment_flex_direction_column": "center",
-        "vertical_alignment_flex_direction_column": "flex-start",
-        "gap": 0,
-        "section_width": "full-width",
-        "section_height": "",
-        "section_height_custom": 50,
-        "color_scheme": "",
-        "background_media": "image",
-        "video_position": "cover",
-        "background_image_position": "fit",
-        "background_image_visibility": "desktop",
-        "background_image_vertical_alignment": "top",
-        "background_image_horizontal_position": "left",
-        "background_image_max_height_desktop": "0",
-        "background_image_max_height_mobile": "0",
-        "border": "none",
-        "border_width": 1,
-        "border_opacity": 100,
-        "border_radius": 0,
-        "toggle_overlay": false,
-        "overlay_color": "#00000026",
-        "overlay_style": "solid",
-        "gradient_direction": "to top",
-        "padding-block-start": 0,
-        "padding-block-end": 0,
-        "padding-inline-start": 0,
-        "padding-inline-end": 0,
-        "padding-block-start-mobile": 0,
-        "padding-block-end-mobile": 0,
-        "padding-inline-start-mobile": 0,
-        "padding-inline-end-mobile": 0
-      }
-    },
-    "section_TdBm3n": {
-      "type": "section",
-      "blocks": {
-        "group_ky9Ljf": {
-          "type": "group",
-          "name": "Grupo | DER",
-          "settings": {
-            "content_direction": "row",
-            "visibility": "",
-            "enable_slider": false,
-            "slider_on": "both",
-            "slider_scrollbar_color": "#ffdd00",
-            "vertical_on_mobile": true,
-            "horizontal_alignment": "flex-start",
-            "vertical_alignment": "center",
-            "align_baseline": false,
-            "horizontal_alignment_flex_direction_column": "flex-start",
-            "vertical_alignment_flex_direction_column": "center",
-            "gap": 30,
-            "width": "fill",
-            "custom_width": 100,
-            "width_mobile": "fill",
-            "custom_width_mobile": 100,
-            "height": "fit",
-            "custom_height": 100,
-            "inherit_color_scheme": true,
-            "color_scheme": "",
-            "background_media": "none",
-            "video_position": "cover",
-            "background_image_position": "cover",
-            "background_image_visibility": "both",
-            "background_image_vertical_alignment": "center",
-            "background_image_horizontal_position": "center",
-            "background_image_max_height_desktop": "0",
-            "background_image_max_height_mobile": "0",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 0,
-            "toggle_overlay": false,
-            "overlay_color": "#00000026",
-            "overlay_style": "solid",
-            "gradient_direction": "to top",
-            "link": "",
-            "open_in_new_tab": false,
-            "placeholder": "",
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0,
-            "padding-block-start-mobile": 0,
-            "padding-block-end-mobile": 0,
-            "padding-inline-start-mobile": 0,
-            "padding-inline-end-mobile": 0,
-            "custom_css": ""
-          },
-          "blocks": {
-            "group_cmgkct": {
+            },
+            "group_YJjgPJ": {
               "type": "group",
               "name": "Grupo | Img desktop",
               "settings": {
@@ -3826,11 +3663,11 @@
                 "custom_css": ""
               },
               "blocks": {
-                "image_nFbdg3": {
+                "image_drmFqy": {
                   "type": "image",
                   "name": "t:names.image",
                   "settings": {
-                    "image": "shopify://shop_images/07_Desktop_end_result.jpg",
+                    "image": "shopify://shop_images/07_Desktop_Product-min.jpg",
                     "link": "",
                     "image_ratio": "adapt",
                     "width": "fill",
@@ -3855,19 +3692,20 @@
                 }
               },
               "block_order": [
-                "image_nFbdg3"
+                "image_drmFqy"
               ]
             }
           },
           "block_order": [
-            "group_cmgkct"
+            "group_V3fKyi",
+            "group_YJjgPJ"
           ]
         }
       },
       "block_order": [
-        "group_ky9Ljf"
+        "group_bfbWAc"
       ],
-      "name": "Sección | End Result",
+      "name": "Sección | End",
       "settings": {
         "content_direction": "row",
         "vertical_on_mobile": true,
@@ -5026,7 +4864,7 @@
                 "button_HfJQeH"
               ]
             },
-            "group_PJjDGd": {
+            "group_dqQmbP": {
               "type": "group",
               "name": "t:names.group",
               "settings": {
@@ -5080,11 +4918,11 @@
                 "custom_css": ""
               },
               "blocks": {
-                "image_MzAPX9": {
+                "image_MgJkhm": {
                   "type": "image",
                   "name": "t:names.image",
                   "settings": {
-                    "image": "shopify://shop_images/Patent-min.jpg",
+                    "image": "shopify://shop_images/Wonder-min.jpg",
                     "link": "",
                     "image_ratio": "adapt",
                     "width": "fill",
@@ -5107,11 +4945,11 @@
                   },
                   "blocks": {}
                 },
-                "text_RCtGtR": {
+                "text_Uear3N": {
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<p>CÓMO LIMPIAR CUERO<br/>CHAROLADO</p>",
+                    "text": "<p>CÓMO USAR WONDER<br/>BALSAM</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -5147,11 +4985,11 @@
                   },
                   "blocks": {}
                 },
-                "text_mY7wz8": {
+                "text_qtTwhx": {
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Nunca es demasiado tarde para recuperar ese brillo brillante. Nuestro Patent Cleaner está especialmente formulado para usar en cueros patent de Docs. Aquí te mostramos cómo usarlo.</p>",
+                    "text": "<p>Devuelve los cueros lisos o encerados a su mejor estado. Nuestro Wonder Balsam nutre y rejuvenece, sin brillo y sin necesidad de pulir.</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -5187,12 +5025,12 @@
                   },
                   "blocks": {}
                 },
-                "button_XtxicK": {
+                "button_6xcznC": {
                   "type": "button",
                   "name": "t:names.button",
                   "settings": {
                     "label": "Lee nuestra guía",
-                    "link": "shopify://pages/how-to-clean-patent-leather-docs",
+                    "link": "shopify://pages/how-to-clean-docs-balsam-wax",
                     "open_in_new_tab": false,
                     "style_class": "button",
                     "width": "fit-content",
@@ -5206,10 +5044,10 @@
                 }
               },
               "block_order": [
-                "image_MzAPX9",
-                "text_RCtGtR",
-                "text_mY7wz8",
-                "button_XtxicK"
+                "image_MgJkhm",
+                "text_Uear3N",
+                "text_qtTwhx",
+                "button_6xcznC"
               ]
             }
           },
@@ -5218,7 +5056,7 @@
             "group_DzHHj4",
             "group_JUEEy6",
             "group_EicKKh",
-            "group_PJjDGd"
+            "group_dqQmbP"
           ]
         }
       },
@@ -5279,15 +5117,14 @@
     "section_h9frxH",
     "section_dUenD7",
     "section_gRnfgE",
-    "section_LnTg4m",
+    "section_9rcUDY",
     "section_CyLgXq",
+    "section_LnTg4m",
     "section_NNJWRy",
     "section_dkQ8PX",
     "section_erhkkP",
     "section_mL9deL",
     "section_gjp8WT",
-    "section_PTLDAr",
-    "section_TdBm3n",
     "section_Lm9WYY",
     "product_list_46fKXa",
     "section_GC4tEk"

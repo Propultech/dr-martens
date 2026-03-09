@@ -541,7 +541,7 @@
                   "name": "t:names.button",
                   "settings": {
                     "label": "DESCUBRE MÁS",
-                    "link": "shopify://collections/all",
+                    "link": "shopify://pages/how-to-clean-docs-balsam-wax",
                     "open_in_new_tab": false,
                     "style_class": "button",
                     "width": "fit-content",
@@ -727,7 +727,7 @@
                   "name": "t:names.button",
                   "settings": {
                     "label": "DESCUBRE MÁS",
-                    "link": "shopify://collections/all",
+                    "link": "shopify://pages/how-to-clean-docs-dubbin-wax",
                     "open_in_new_tab": false,
                     "style_class": "button",
                     "width": "fit-content",
@@ -913,7 +913,7 @@
                   "name": "t:names.button",
                   "settings": {
                     "label": "DESCUBRE MÁS",
-                    "link": "shopify://collections/all",
+                    "link": "shopify://pages/how-to-protect-maintain-dr-martens",
                     "open_in_new_tab": false,
                     "style_class": "button",
                     "width": "fit-content",
@@ -1160,7 +1160,7 @@
                   "name": "t:names.button",
                   "settings": {
                     "label": "DESCUBRE MÁS",
-                    "link": "shopify://collections/all",
+                    "link": "shopify://pages/how-to-clean-suede-dr-martens",
                     "open_in_new_tab": false,
                     "style_class": "button",
                     "width": "fit-content",
@@ -1346,7 +1346,7 @@
                   "name": "t:names.button",
                   "settings": {
                     "label": "DESCUBRE MÁS",
-                    "link": "shopify://collections/all",
+                    "link": "shopify://pages/how-to-polish-dr-martens-guide",
                     "open_in_new_tab": false,
                     "style_class": "button",
                     "width": "fit-content",
@@ -1532,7 +1532,7 @@
                   "name": "t:names.button",
                   "settings": {
                     "label": "DESCUBRE MÁS",
-                    "link": "shopify://collections/all",
+                    "link": "shopify://pages/how-to-clean-patent-leather-docs",
                     "open_in_new_tab": false,
                     "style_class": "button",
                     "width": "fit-content",
