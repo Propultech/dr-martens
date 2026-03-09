@@ -4555,7 +4555,7 @@
                   "name": "t:names.button",
                   "settings": {
                     "label": "Lee nuestras guías",
-                    "link": "shopify://pages/how-to-clean-docs-balsam-wax",
+                    "link": "shopify://pages/how-to-care",
                     "open_in_new_tab": false,
                     "style_class": "button",
                     "width": "fit-content",
