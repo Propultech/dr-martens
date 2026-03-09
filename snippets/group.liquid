@@ -115,8 +115,15 @@
   @media screen and (min-width: 750px) {
     .group-block-content.group-block-content--slider-both,
     .group-block-content.group-block-content--slider-desktop {
-      cursor: grab;
+      cursor: default;
       touch-action: pan-y;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+
+    .group-block-content.group-block-content--slider-both.is-scrollable,
+    .group-block-content.group-block-content--slider-desktop.is-scrollable {
+      cursor: grab;
     }
 
     .group-block-content.group-block-content--slider-both.is-dragging,
@@ -125,6 +132,13 @@
       user-select: none;
       scroll-snap-type: none;
       scroll-behavior: auto;
+    }
+
+    .group-block-content.group-block-content--slider-both::-webkit-scrollbar,
+    .group-block-content.group-block-content--slider-desktop::-webkit-scrollbar {
+      display: none;
+      width: 0;
+      height: 0;
     }
   }
 
@@ -196,23 +210,60 @@
 
 <script>
   (() => {
+    // Initialize this behavior only once per page to avoid duplicate global listeners
+    // when multiple group blocks render the same snippet.
     if (window.__groupSliderDesktopDragInitialized) return;
     window.__groupSliderDesktopDragInitialized = true;
 
+    // Slider containers that support desktop drag-to-scroll.
     const selector = '.group-block-content.group-block-content--slider-both, .group-block-content.group-block-content--slider-desktop';
+    // Interactive elements should keep their native click/focus behavior.
     const interactiveSelector = 'a, button, input, textarea, select, label, summary';
 
+    // Drag session state
     let activeSlider = null;
     let pointerId = null;
     let startX = 0;
     let startScrollLeft = 0;
     let pointerX = 0;
     let hasMoved = false;
+    // Prevent accidental click after a drag gesture ends.
     let blockNextClick = false;
     let rafId = null;
+    // Coalesce multiple recalculation triggers into one frame.
+    let updateQueued = false;
 
+    // Desktop-only drag behavior (mobile keeps native touch scrolling).
     const isDesktop = () => window.matchMedia('(min-width: 750px)').matches;
+    // True only when content overflows horizontally.
+    const isHorizontallyScrollable = (element) => element.scrollWidth - element.clientWidth > 1;
 
+    // Toggle `.is-scrollable` so CSS can show/hide the grab cursor only when needed.
+    const updateScrollableState = () => {
+      const desktop = isDesktop();
+
+      document.querySelectorAll(selector).forEach((slider) => {
+        if (!(slider instanceof HTMLElement)) return;
+
+        const scrollable = desktop && isHorizontallyScrollable(slider);
+        slider.classList.toggle('is-scrollable', scrollable);
+
+        if (!scrollable) slider.classList.remove('is-dragging');
+      });
+    };
+
+    // Schedule state recalculation on the next animation frame.
+    const scheduleScrollableStateUpdate = () => {
+      if (updateQueued) return;
+      updateQueued = true;
+
+      requestAnimationFrame(() => {
+        updateQueued = false;
+        updateScrollableState();
+      });
+    };
+
+    // rAF loop for smooth drag updates.
     const applyDrag = () => {
       if (!activeSlider) {
         rafId = null;
@@ -225,6 +276,7 @@
       rafId = requestAnimationFrame(applyDrag);
     };
 
+    // Start drag on primary mouse button over a scrollable slider area.
     document.addEventListener(
       'pointerdown',
       (event) => {
@@ -236,6 +288,7 @@
         const slider = target.closest(selector);
         if (!(slider instanceof HTMLElement)) return;
         if (target.closest(interactiveSelector)) return;
+        if (!slider.classList.contains('is-scrollable')) return;
 
         activeSlider = slider;
         pointerId = event.pointerId;
@@ -253,6 +306,7 @@
       { passive: false }
     );
 
+    // Track pointer position while dragging.
     document.addEventListener(
       'pointermove',
       (event) => {
@@ -263,6 +317,7 @@
       { passive: false }
     );
 
+    // End drag, cleanup frame loop and interaction flags.
     const finishDrag = () => {
       if (!activeSlider) return;
 
@@ -277,9 +332,22 @@
       pointerId = null;
     };
 
+    // Recompute overflow state after layout/content changes.
     document.addEventListener('pointerup', finishDrag);
     document.addEventListener('pointercancel', finishDrag);
+    window.addEventListener('resize', scheduleScrollableStateUpdate, { passive: true });
+    window.addEventListener('load', scheduleScrollableStateUpdate);
+    document.addEventListener('shopify:section:load', scheduleScrollableStateUpdate);
+    document.addEventListener(
+      'load',
+      (event) => {
+        if (event.target instanceof HTMLImageElement) scheduleScrollableStateUpdate();
+      },
+      true
+    );
+    scheduleScrollableStateUpdate();
 
+    // If drag happened, cancel the immediate click to avoid unintended navigation.
     document.addEventListener(
       'click',
       (event) => {
