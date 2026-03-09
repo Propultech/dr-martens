@@ -1,0 +1,41 @@
+{%- liquid
+  assign anchor_id = section.settings.anchor_id | strip | handleize
+-%}
+
+{%- if anchor_id != blank -%}
+  <span id="{{ anchor_id }}" class="anchor-section" aria-hidden="true"></span>
+{%- endif -%}
+
+{% stylesheet %}
+  .anchor-section {
+    display: block;
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    pointer-events: none;
+    scroll-margin-top: var(--scroll-margin, 0px);
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Anchor",
+  "tag": "div",
+  "class": "anchor-section-wrapper",
+  "settings": [
+    {
+      "type": "text",
+      "id": "anchor_id",
+      "label": "ID de ancla",
+      "info": "Ejemplo: beneficios. Úsalo con enlaces tipo #beneficios. Debe ser único por página."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Anchor",
+      "category": "Layout"
+    }
+  ]
+}
+{% endschema %}
