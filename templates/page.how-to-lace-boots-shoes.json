@@ -341,7 +341,7 @@
             },
             "group_99HFaC": {
               "type": "group",
-              "name": "t:names.group",
+              "name": "Grupo | ladder",
               "settings": {
                 "content_direction": "column",
                 "visibility": "",
@@ -379,8 +379,8 @@
                 "overlay_color": "#00000026",
                 "overlay_style": "solid",
                 "gradient_direction": "to top",
-                "link": "",
-                "open_in_new_tab": true,
+                "link": "#ladder",
+                "open_in_new_tab": false,
                 "placeholder": "",
                 "padding-block-start": 0,
                 "padding-block-end": 5,
@@ -468,7 +468,7 @@
             },
             "group_m7TAeb": {
               "type": "group",
-              "name": "t:names.group",
+              "name": "Grupo | straight",
               "settings": {
                 "content_direction": "column",
                 "visibility": "",
@@ -506,8 +506,8 @@
                 "overlay_color": "#00000026",
                 "overlay_style": "solid",
                 "gradient_direction": "to top",
-                "link": "",
-                "open_in_new_tab": true,
+                "link": "#straight",
+                "open_in_new_tab": false,
                 "placeholder": "",
                 "padding-block-start": 0,
                 "padding-block-end": 5,
@@ -595,7 +595,7 @@
             },
             "group_9pRA9C": {
               "type": "group",
-              "name": "t:names.group",
+              "name": "Grupo | bow",
               "settings": {
                 "content_direction": "column",
                 "visibility": "",
@@ -633,8 +633,8 @@
                 "overlay_color": "#00000026",
                 "overlay_style": "solid",
                 "gradient_direction": "to top",
-                "link": "",
-                "open_in_new_tab": true,
+                "link": "#bow",
+                "open_in_new_tab": false,
                 "placeholder": "",
                 "padding-block-start": 0,
                 "padding-block-end": 5,
