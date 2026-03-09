@@ -2850,7 +2850,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<p><strong>THE BOW TIE LACE</strong></p>",
+            "text": "<p><strong>LA LAZADA DE PAJARITA</strong></p>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "center",
@@ -2890,7 +2890,7 @@
           "type": "text",
           "name": "t:names.text",
           "settings": {
-            "text": "<p>A LOOSER STYLE WITH AN UNMISTAKABLE PATTERN </p>",
+            "text": "<p>UNA LAZADA CON MUCHA PERSONALIDAD</p>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "center",
@@ -2930,7 +2930,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<p>THE BOOT DOCTOR SAYS:</p>",
+            "text": "<p>EL DOCTOR DE LAS BOTAS TE RECOMIENDA:</p>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "center",
@@ -2970,7 +2970,7 @@
           "type": "text",
           "name": "t:names.text",
           "settings": {
-            "text": "<p><strong>THIS MINIMAL STYLE GIVES YOU ABOUT 1/3 EXTRA LACE TO PLAY WITH.<br/>GREAT FOR LACES THAT ARE A LITTLE ON THE SHORTER SIDE</strong></p>",
+            "text": "<p><strong>ESTA LAZADA TE APORTA 1/3 EXTRA DE CORDÓN.<br/>ES PERFECTA PARA CUANDO LOS CORDONES SEAN UN POCO MÁS CORTOS</strong></p>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "center",
@@ -3388,7 +3388,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>STEP 1: Begin with two even lengths of lace through the bottom two eyelets. If your shoes have an even number of eyelets, skip the first ‘bows’ by running a vertical lace up the inside of the boot on either side. For an odd number of eyelets, begin the ‘bow tie’ straight away.<br/><br/>STEP 2: To tie the bows, alternate between crossing the lace over as you go to the next higher eyelets, then running a straight vertical lace up the inside to the next set of eyelets. There should be a one-eyelet gap between each of your bow ties.<br/><br/>STEP 3: You'll know if you've done it right when you reach the top two eyelets: the laces should go from inside to out. Finish with a sturdy knot, and get cracking.<br/><br/></p>",
+                    "text": "<p><strong>PASO 1:</strong> Comienza pasando los extremos del cordón por el primer par de ojales, del exterior al interior. Intenta que ambos extremos tengan el mismo largo. <br/><br/><strong>PASO 2:</strong>Y ahora se pone asimétrica la cosa. Toma un extremo del cordón, sáltate el siguiente ojal y pasa el cordón de dentro a fuera en el segundo ojal en vertical. En el otro lado, el cordón debería pasar por el siguiente ojal en vertical, de dentro hacia fuera también. Ahora, crúzalo de un lado a otro para formar una \"barra\" vertical e introdúcelo por el ojal libre de fuera hacia dentro del zapato. <br/><br/><strong>PASO 3:</strong>En este par de zapatos ya hemos terminado. Pero en un par de botas con más ojales repite el mismo proceso alternando el lado hasta que llegues al últimos par de ojales. Ata fuerte los cordones para terminar.<br/><br/></p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -3486,7 +3486,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<h2><strong>HOW DO YOU LACE THEM?</strong></h2>",
+            "text": "<h2><strong>Y TÚ, ¿CÓMO ATAS TUS DM'S?</strong></h2>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "center",
@@ -3526,7 +3526,7 @@
           "type": "text",
           "name": "t:names.text",
           "settings": {
-            "text": "<p>Tag us <a href=\"https://www.instagram.com/drmartensofficial/?hl=en\">@drmartensofficial </a>to be featured</p>",
+            "text": "<p>Etiquétanos en <a href=\"https://www.instagram.com/drmartensofficial/?hl=en\">@drmartensofficial </a>para salir en nuestra galería.</p>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "center",
@@ -4021,12 +4021,12 @@
           "type": "button",
           "name": "t:names.button",
           "settings": {
-            "label": "NEW LACES WORK WONDERS",
+            "label": "UN NUEVO PAR DE CORDONES HACE MARAVILLAS",
             "link": "shopify://collections/all",
             "open_in_new_tab": false,
             "style_class": "button",
             "width": "custom",
-            "custom_width": 27,
+            "custom_width": 36,
             "width_mobile": "fit-content",
             "custom_width_mobile": 100,
             "font_size_desktop": "1.25rem",
