@@ -715,17 +715,16 @@
         "padding-inline-end-mobile": 0
       }
     },
+    "anchor_fhEtBh": {
+      "type": "anchor",
+      "name": "Anchor",
+      "settings": {
+        "anchor_id": "tips"
+      }
+    },
     "section_FUWJxY": {
       "type": "section",
       "blocks": {
-        "anchor_ANNB6E": {
-          "type": "anchor",
-          "name": "Anchor",
-          "settings": {
-            "anchor_id": "tips"
-          },
-          "blocks": {}
-        },
         "group_cjibGf": {
           "type": "group",
           "name": "Grupo | DER",
@@ -1014,7 +1013,6 @@
         }
       },
       "block_order": [
-        "anchor_ANNB6E",
         "group_cjibGf"
       ],
       "name": "Sección | PASO 1",
@@ -1065,6 +1063,7 @@
     "main",
     "section_m6DC8P",
     "section_MB6nXz",
+    "anchor_fhEtBh",
     "section_FUWJxY"
   ]
 }
