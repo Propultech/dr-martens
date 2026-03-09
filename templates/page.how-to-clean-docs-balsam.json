@@ -597,7 +597,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<h2>CONSEJO DEL Doctor de las botas: WONDER BALSAM PUEDE USARSE EN LA MAYORÍA DE CUEROS LISOS Y ENCERADOS.</h2>",
+            "text": "<h2>CONSEJO DEL Doctor de botas: WONDER BALSAM PUEDE USARSE EN LA MAYORÍA DE CUEROS LISOS Y ENCERADOS.</h2>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "center",
@@ -1631,7 +1631,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<h2>CONSEJO DEL Doctor de las botas: SI TUS BOTAS HAN VIVIDO UN POCO, GOLPÉALAS ENTRE SÍ PARA REMOVER EL BARRO EXCESIVO PRIMERO.</h2>",
+            "text": "<h2>CONSEJO DEL Doctor de botas: SI TUS BOTAS HAN VIVIDO UN POCO, GOLPÉALAS ENTRE SÍ PARA REMOVER EL BARRO EXCESIVO PRIMERO.</h2>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "center",
@@ -2193,7 +2193,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<h2>CONSEJO DEL Doctor de las botas: APLICA EXTRA WONDER BALSAM PARA MINIMIZAR ARAÑAZOS, ROZADURAS Y MARCAS.</h2>",
+            "text": "<h2>CONSEJO DEL Doctor de botas: APLICA EXTRA WONDER BALSAM PARA MINIMIZAR ARAÑAZOS, ROZADURAS Y MARCAS.</h2>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "center",
@@ -3060,7 +3060,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<h2>CONSEJO DEL Doctor de las botas: ÚSALO MENSUALMENTE PARA PROLONGAR LA VIDA DE TUS ZAPATOS</h2>",
+            "text": "<h2>CONSEJO DEL Doctor de botas: ÚSALO MENSUALMENTE PARA PROLONGAR LA VIDA DE TUS ZAPATOS</h2>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "center",
@@ -4467,7 +4467,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Restaura, revive y protege — con o sin brillo. Aquí el Doctor de las botas te mostrará cómo pulir tu calzado de cuero liso.</p>",
+                    "text": "<p>Restaura, revive y protege — con o sin brillo. Aquí el Doctor de botas te mostrará cómo pulir tu calzado de cuero liso.</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -4839,7 +4839,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Restaura, revitaliza y protege — con o sin brillo. Aquí el Doctor de las botas te mostrará cómo pulir tu calzado de cuero liso.</p>",
+                    "text": "<p>Restaura, revitaliza y protege — con o sin brillo. Aquí el Doctor de botas te mostrará cómo pulir tu calzado de cuero liso.</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
