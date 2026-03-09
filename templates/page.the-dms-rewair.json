@@ -275,7 +275,7 @@
               "name": "t:names.button",
               "settings": {
                 "label": "IR A LAS PREGUNTAS FRECUENTES",
-                "link": "#QA",
+                "link": "#qa",
                 "open_in_new_tab": false,
                 "style_class": "button-secondary",
                 "width": "custom",
@@ -1523,7 +1523,7 @@
           "type": "anchor",
           "name": "Anchor",
           "settings": {
-            "anchor_id": "QA"
+            "anchor_id": "qa"
           },
           "blocks": {}
         },
