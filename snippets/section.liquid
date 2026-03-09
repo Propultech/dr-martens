@@ -7,7 +7,12 @@
 
 <div class="section-background color-{{ section.settings.color_scheme }}"></div>
 <div
-  class="section section--{{ section.settings.section_width }} color-{{ section.settings.color_scheme }}"
+  class="
+    section
+    section--{{ section.settings.section_width }}
+    color-{{ section.settings.color_scheme }}
+    {% if section.settings.enable_sticky_section %}section--sticky-enabled{% endif %}
+  "
   data-testid="ui-test-section"
 
   {% if request.visual_preview_mode %}
@@ -26,6 +31,9 @@
     {% if section.settings.section_height != '' %}
      --section-preview-height: 600px;
      {% endif %}
+
+    --sticky-section-offset-desktop: {{ section.settings.sticky_section_offset_desktop | default: 0 }}px;
+    --sticky-section-offset-mobile: {{ section.settings.sticky_section_offset_mobile | default: 0 }}px;
   "
 >
   <div class="custom-section-background">
@@ -99,4 +107,131 @@
   .custom-section-content {
     z-index: var(--layer-flat);
   }
+
+  .section--sticky-enabled {
+    z-index: calc(var(--layer-sticky) - 2);
+  }
+
+  .section--sticky-enabled.is-fixed {
+    position: fixed;
+    z-index: calc(var(--layer-sticky) - 2);
+  }
+
+  .shopify-section.section-sticky-host {
+    position: relative;
+  }
 {% endstylesheet %}
+
+<script>
+  (() => {
+    const STICKY_FUDGE_PX = -1;
+
+    const controller = window.__customSectionStickyController || {
+      initialized: false,
+      entries: new Map(),
+      rafId: null,
+    };
+    window.__customSectionStickyController = controller;
+    if (controller.initialized) return;
+    controller.initialized = true;
+
+    const getHeaderOffset = () => {
+      const activeHeader = document.querySelector(
+        '#header-group .header[data-sticky-state="active"]:not([data-animating])'
+      );
+      if (activeHeader instanceof HTMLElement) {
+        return Math.max(0, activeHeader.getBoundingClientRect().height + STICKY_FUDGE_PX);
+      }
+
+      const headerComponent = document.querySelector('#header-group #header-component');
+      if (!(headerComponent instanceof HTMLElement)) return 0;
+
+      const stickyMode = headerComponent.getAttribute('sticky');
+      if (!stickyMode) return 0;
+      if (stickyMode === 'scroll-up' && headerComponent.dataset.stickyState === 'idle') return 0;
+
+      const cssHeight = Number.parseFloat(
+        getComputedStyle(document.documentElement).getPropertyValue('--header-group-height')
+      );
+      if (Number.isFinite(cssHeight)) return cssHeight;
+
+      const headerGroup = document.getElementById('header-group');
+      return headerGroup instanceof HTMLElement ? headerGroup.getBoundingClientRect().height : 0;
+    };
+
+    const getUserOffset = (sectionEl) => {
+      const isMobile = window.matchMedia('(max-width: 749px)').matches;
+      const variableName = isMobile ? '--sticky-section-offset-mobile' : '--sticky-section-offset-desktop';
+      const raw = getComputedStyle(sectionEl).getPropertyValue(variableName);
+      const parsed = Number.parseFloat(raw);
+      return Number.isFinite(parsed) ? parsed : 0;
+    };
+
+    const unsetFixedState = (entry) => {
+      const { host, sectionEl } = entry;
+      host.style.paddingTop = '';
+      sectionEl.style.top = '';
+      sectionEl.style.left = '';
+      sectionEl.style.width = '';
+      sectionEl.classList.remove('is-fixed');
+    };
+
+    const setFixedState = (entry) => {
+      const { host, sectionEl } = entry;
+      const hostRect = host.getBoundingClientRect();
+      host.style.paddingTop = `${sectionEl.offsetHeight}px`;
+      sectionEl.style.top = `${getHeaderOffset() + getUserOffset(sectionEl)}px`;
+      sectionEl.style.left = `${hostRect.left}px`;
+      sectionEl.style.width = `${hostRect.width}px`;
+      sectionEl.classList.add('is-fixed');
+    };
+
+    const syncStickySections = () => {
+      document.querySelectorAll('.section--sticky-enabled').forEach((sectionEl) => {
+        if (!(sectionEl instanceof HTMLElement)) return;
+        const host = sectionEl.closest('.shopify-section');
+        if (!(host instanceof HTMLElement)) return;
+        host.classList.add('section-sticky-host');
+        controller.entries.set(sectionEl, { sectionEl, host });
+      });
+
+      controller.entries.forEach((entry, key) => {
+        if (!entry.sectionEl.isConnected || !entry.host.isConnected) {
+          unsetFixedState(entry);
+          controller.entries.delete(key);
+        }
+      });
+    };
+
+    const updateAll = () => {
+      controller.rafId = null;
+      syncStickySections();
+
+      controller.entries.forEach((entry) => {
+        const top = entry.host.getBoundingClientRect().top;
+        const threshold = getHeaderOffset() + getUserOffset(entry.sectionEl);
+        if (top <= threshold) {
+          setFixedState(entry);
+        } else {
+          unsetFixedState(entry);
+        }
+      });
+    };
+
+    const scheduleUpdate = () => {
+      if (controller.rafId) return;
+      controller.rafId = requestAnimationFrame(updateAll);
+    };
+
+    window.addEventListener('scroll', scheduleUpdate, { passive: true });
+    window.addEventListener('resize', scheduleUpdate, { passive: true });
+    window.addEventListener('load', scheduleUpdate);
+    document.addEventListener('shopify:section:load', scheduleUpdate);
+    document.addEventListener('shopify:section:unload', scheduleUpdate);
+    document.addEventListener('shopify:section:reorder', scheduleUpdate);
+    document.addEventListener('shopify:section:select', scheduleUpdate);
+    document.addEventListener('shopify:section:deselect', scheduleUpdate);
+
+    scheduleUpdate();
+  })();
+</script>
