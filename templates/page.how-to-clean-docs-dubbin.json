@@ -366,7 +366,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h2>EL Doctor de las botas DICE: NUESTRO DUBBIN REVITALIZARÁ CUALQUIER CUERO ENCERADO O ACEITADO — ÚSALO PARA LIMPIAR DOCS BIEN GASTADOS O ASEGURAR PROTECCIÓN IMPECABLE.</h2>",
+                    "text": "<h2>EL Doctor de botas DICE: NUESTRO DUBBIN REVITALIZARÁ CUALQUIER CUERO ENCERADO O ACEITADO — ÚSALO PARA LIMPIAR DOCS BIEN GASTADOS O ASEGURAR PROTECCIÓN IMPECABLE.</h2>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -596,7 +596,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<h2>CONSEJO DEL Doctor de las botas: LOS BUENOS MOMENTOS PUEDEN AFECTAR TUS BOTAS — CUÍDALAS Y ELLAS TE CUIDARÁN</h2>",
+            "text": "<h2>CONSEJO DEL Doctor de botas: LOS BUENOS MOMENTOS PUEDEN AFECTAR TUS BOTAS — CUÍDALAS Y ELLAS TE CUIDARÁN</h2>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "center",
@@ -1630,7 +1630,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<h2>CONSEJO DEL Doctor de las botas: SI TUS BOTAS HAN TENIDO ALGO DE USO, GOLPÉALAS ENTRE SÍ PARA REMOVER EL BARRO EXCESIVO PRIMERO</h2>",
+            "text": "<h2>CONSEJO DEL Doctor de botas: SI TUS BOTAS HAN TENIDO ALGO DE USO, GOLPÉALAS ENTRE SÍ PARA REMOVER EL BARRO EXCESIVO PRIMERO</h2>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "center",
@@ -2192,7 +2192,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<h2>CONSEJO DEL Doctor de las botas: DUBBIN PUEDE TARDAR UN TIEMPO EN SECARSE. ¿POR QUÉ NO APROVECHAR LA ESPERA Y DEDICAR UN MOMENTO A CUIDAR OTROS DOCS GASTADOS QUE PODRÍAS TENER GUARDADOS EN EL ARMARIO?</h2>",
+            "text": "<h2>CONSEJO DEL Doctor de botas: DUBBIN PUEDE TARDAR UN TIEMPO EN SECARSE. ¿POR QUÉ NO APROVECHAR LA ESPERA Y DEDICAR UN MOMENTO A CUIDAR OTROS DOCS GASTADOS QUE PODRÍAS TENER GUARDADOS EN EL ARMARIO?</h2>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "center",
@@ -2754,7 +2754,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<h2>CONSEJO DEL Doctor de las botas: NO EXISTE ALGO COMO DEMASIADO DUBBIN. APLICA SIEMPRE QUE TUS DM'S SE VEAN UN POCO GASTADAS</h2>",
+            "text": "<h2>CONSEJO DEL Doctor de botas: NO EXISTE ALGO COMO DEMASIADO DUBBIN. APLICA SIEMPRE QUE TUS DM'S SE VEAN UN POCO GASTADAS</h2>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "center",
@@ -4202,7 +4202,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Restaura, revitaliza y protege — con o sin brillo. Aquí el Doctor de las botas te mostrará cómo pulir tu calzado de cuero liso.</p>",
+                    "text": "<p>Restaura, revitaliza y protege — con o sin brillo. Aquí el Doctor de botas te mostrará cómo pulir tu calzado de cuero liso.</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
