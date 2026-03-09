@@ -4660,7 +4660,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h3><strong>DIY DOCS</strong></h3>",
+                    "text": "<h3><strong>DOCS PERSONALIZADAS</strong></h3>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -4700,7 +4700,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p><strong>Creative customisation ideas from our community</strong></p>",
+                    "text": "<p><strong>Ideas creativas de personalización de nuestra comunidad.</strong></p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
