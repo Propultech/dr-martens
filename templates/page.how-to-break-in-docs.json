@@ -709,8 +709,8 @@
         "padding-block-end": 14,
         "padding-inline-start": 0,
         "padding-inline-end": 0,
-        "padding-block-start-mobile": 14,
-        "padding-block-end-mobile": 14,
+        "padding-block-start-mobile": 7,
+        "padding-block-end-mobile": 2,
         "padding-inline-start-mobile": 0,
         "padding-inline-end-mobile": 0
       }
