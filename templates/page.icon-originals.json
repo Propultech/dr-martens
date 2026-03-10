@@ -147,7 +147,7 @@
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<h1>DR. MARTENS<br/>ICONIC ORIGINALS</h1>",
+                "text": "<h1>DR. MARTENS<br/>ICONOS ORIGINALES</h1>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -265,7 +265,7 @@
           "type": "text",
           "name": "t:names.text",
           "settings": {
-            "text": "<p>Ever since April 1, 1960, when Dr. Martens boots first rolled off the production line and onto the feet of everyday workers our reputation for durability has become footwear folklore. Our Original styles are the ones that started it all: The 1460 Boot, The 1461 Shoe, The 2976 Chelsea Boot, and our Adrian Loafer are the classics you can count on.</p>",
+            "text": "<p>Desde el 1 de abril de 1960, cuando las botas Dr. Martens salieron por primera vez de la línea de producción y llegaron a los pies de trabajadores comunes, nuestra reputación de durabilidad se convirtió en leyenda del calzado. Nuestros estilos Original son los que lo iniciaron todo: La Bota 1460, El Zapato 1461, La Bota Chelsea 2976 y nuestro Mocasín Adrian son los clásicos en los que puedes confiar.</p>",
             "width": "100%",
             "max_width": "none",
             "alignment": "center",
@@ -308,7 +308,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<h1>MEET OUR ICONS</h1>",
+            "text": "<h1>CONOCE NUESTROS ICONOS</h1>",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "left",
@@ -591,7 +591,7 @@
                       "type": "text",
                       "name": "t:names.heading",
                       "settings": {
-                        "text": "<h2>The 1460 Boot</h2>",
+                        "text": "<h2>La Bota 1460</h2>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -634,7 +634,7 @@
                       "type": "text",
                       "name": "t:names.text",
                       "settings": {
-                        "text": "<p>The boot that started it all.</p>",
+                        "text": "<p>La bota que lo comenzó todo.</p>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -901,7 +901,7 @@
                       "type": "text",
                       "name": "t:names.heading",
                       "settings": {
-                        "text": "<h2>The 1461 Shoe</h2>",
+                        "text": "<h2>El Zapato1461</h2>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -944,7 +944,7 @@
                       "type": "text",
                       "name": "t:names.text",
                       "settings": {
-                        "text": "<p>Our most versatile Oxford Shoe.</p>",
+                        "text": "<p>Nuestro zapato Oxford más versátil.</p>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -1211,7 +1211,7 @@
                       "type": "text",
                       "name": "t:names.heading",
                       "settings": {
-                        "text": "<h2>The 2976 Chelsea Boot</h2>",
+                        "text": "<h2>La Bota Chelsea 2976</h2>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -1254,7 +1254,7 @@
                       "type": "text",
                       "name": "t:names.text",
                       "settings": {
-                        "text": "<p>Slip 'em on. Slide 'em off.</p>",
+                        "text": "<p>Póntelas. Quítátelas.</p>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -1521,7 +1521,7 @@
                       "type": "text",
                       "name": "t:names.heading",
                       "settings": {
-                        "text": "<h2>The Adrian Loafer</h2>",
+                        "text": "<h2>El Mocasín Adrian</h2>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -1564,7 +1564,7 @@
                       "type": "text",
                       "name": "t:names.text",
                       "settings": {
-                        "text": "<p>Our best-selling loafer.</p>",
+                        "text": "<p>Nuestro mocasín más vendido.</p>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -1811,7 +1811,7 @@
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<h2>The 1460 Boot</h2>",
+                "text": "<h2>La Bota 1460</h2>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -1854,7 +1854,7 @@
               "type": "text",
               "name": "t:names.text",
               "settings": {
-                "text": "<p>The 1460 is the Original Dr. Martens boot. First created in 1960, and made iconic by our wearers in the decades since: The 1460 lace up boot is your tried and true, that’s built to last— and available in patters, prints and versatile colors.</p>",
+                "text": "<p>El 1460 es la bota original de Dr. Martens. Creada por primera vez en 1960 e icónica gracias a quienes la usan desde hace décadas: la bota con cordones 1460 es tu aliada de confianza, construida para durar— y disponible en patrones, estampados y colores versátiles.</p>",
                 "width": "fit-content",
                 "max_width": "none",
                 "alignment": "left",
@@ -2273,7 +2273,7 @@
               "type": "text",
               "name": "Texto",
               "settings": {
-                "text": "<p><strong>“Been wearing this style of boot for the last 30 years and I wouldn't change a thing about them. Wonderful boots!”</strong></p>",
+                "text": "<p><strong>\"He estado usando este estilo de bota durante los últimos 30 años y no cambiaría nada de ellas. ¡Botas maravillosas!\"</strong></p>",
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "center",
@@ -2470,7 +2470,7 @@
               "type": "button",
               "name": "t:names.button",
               "settings": {
-                "label": "SHOP THE 1460",
+                "label": "Ver la 1460",
                 "link": "shopify://collections/all",
                 "open_in_new_tab": false,
                 "style_class": "button",
@@ -2787,7 +2787,7 @@
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<h2>The 1461 Shoe</h2>",
+                "text": "<h2>El Zapato 1461</h2>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -2830,7 +2830,7 @@
               "type": "text",
               "name": "t:names.text",
               "settings": {
-                "text": "<p>Our 1461 Oxford shoe picked up where our 1460 boot left off. Worn on runways, stages, and everyday streets for over six decades. This tough and versatile style remains unchanged from day it first rolled off the production line.</p>",
+                "text": "<p>Nuestro zapato Oxford 1461 continuó donde terminó nuestra bota 1460. Usado en pasarelas, escenarios y calles cotidianas durante más de seis décadas. Este estilo resistente y versátil se mantiene sin cambios desde el día en que salió de la línea de producción.</p>",
                 "width": "fit-content",
                 "max_width": "none",
                 "alignment": "left",
@@ -3249,7 +3249,7 @@
               "type": "text",
               "name": "Texto",
               "settings": {
-                "text": "<p><strong>“Perfect fit, reliable quality and a great pair of never out of style shoes. Wear them anywhere to anything.”</strong></p>",
+                "text": "<p><strong>\"Ajuste perfecto, calidad confiable y un excelente par de zapatos que nunca pasan de moda. Úsalos en cualquier lugar y para cualquier ocasión.\"</strong></p>",
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "center",
@@ -3446,7 +3446,7 @@
               "type": "button",
               "name": "t:names.button",
               "settings": {
-                "label": "SHOP THE 1461",
+                "label": "VER LA 1461",
                 "link": "shopify://collections/all",
                 "open_in_new_tab": false,
                 "style_class": "button",
@@ -3463,7 +3463,7 @@
               "type": "button",
               "name": "t:names.button",
               "settings": {
-                "label": "HOW TO STYLE",
+                "label": "CÓMO ESTILIZAR",
                 "link": "shopify://collections/all",
                 "open_in_new_tab": false,
                 "style_class": "button-secondary",
@@ -3763,7 +3763,7 @@
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<h2>The 2976 Chelsea Boot</h2>",
+                "text": "<h2>La Bota Chelsea 2976</h2>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -3806,7 +3806,7 @@
               "type": "text",
               "name": "t:names.text",
               "settings": {
-                "text": "<p>Dating back to the Victorian era, the Chelsea boot was given a rugged Docs overhaul in the early 70s. Drenched in music and authentic DM's spirit for decades, the 2976 was made for center stage.</p>",
+                "text": "<p>Originaria de la era victoriana, la bota Chelsea recibió un rediseño robusto de Docs a principios de los 70. Impregnada de música y del espíritu auténtico de DM durante décadas, la 2976 fue hecha para brillar en el centro del escenario.</p>",
                 "width": "fit-content",
                 "max_width": "none",
                 "alignment": "left",
@@ -4225,7 +4225,7 @@
               "type": "text",
               "name": "Texto",
               "settings": {
-                "text": "<p><strong>“These boots are worth every penny. They are very comfortable. I wear them literally everyday.”</strong></p>",
+                "text": "<p><strong>\"Estas botas valen cada peso. Son muy cómodas. Las uso literalmente todos los días.\"</strong></p>",
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "center",
@@ -4422,7 +4422,7 @@
               "type": "button",
               "name": "t:names.button",
               "settings": {
-                "label": "SHOP THE 2976",
+                "label": "VER LA 2976",
                 "link": "shopify://collections/all",
                 "open_in_new_tab": false,
                 "style_class": "button",
@@ -4439,7 +4439,7 @@
               "type": "button",
               "name": "t:names.button",
               "settings": {
-                "label": "HOW TO STYLE",
+                "label": "CÓMO ESTILIZAR",
                 "link": "shopify://collections/all",
                 "open_in_new_tab": false,
                 "style_class": "button-secondary",
@@ -4739,7 +4739,7 @@
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<h2>THE ADRIAN TASSEL LOAFER</h2>",
+                "text": "<h2>EL MOCASÍN ADRIAN CON BORLA</h2>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -4782,7 +4782,7 @@
               "type": "text",
               "name": "t:names.text",
               "settings": {
-                "text": "<p>We’ve made a name for ourselves with silhouettes that are built to last. But versatility is part of our DNA, too. The Adrian loafer blends mod-inspired style with rugged durability, detailed with double tassels and a kiltie fringe. Think DM’s classic, edgy styling, just a little more polished.</p>",
+                "text": "<p>Nos hemos ganado una reputación con siluetas construidas para durar. Pero la versatilidad también está en nuestro ADN. El mocasín Adrian combina un estilo inspirado en la moda mod con durabilidad robusta, detallado con borlas dobles y flecos kiltie. Piensa en el estilo clásico y atrevido de DM, solo un poco más refinado.</p>",
                 "width": "fit-content",
                 "max_width": "none",
                 "alignment": "left",
@@ -5201,7 +5201,7 @@
               "type": "text",
               "name": "Texto",
               "settings": {
-                "text": "<p><strong>“Classic styling, modern twist. Beautiful pair of shoes.”</strong></p>",
+                "text": "<p><strong>\"Estilo clásico, toque moderno. Un hermoso par de zapatos.\"</strong></p>",
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "center",
@@ -5398,7 +5398,7 @@
               "type": "button",
               "name": "t:names.button",
               "settings": {
-                "label": "SHOP THE ADRIAN",
+                "label": "VER LA ADRIAN",
                 "link": "shopify://collections/all",
                 "open_in_new_tab": false,
                 "style_class": "button",
@@ -5415,7 +5415,7 @@
               "type": "button",
               "name": "t:names.button",
               "settings": {
-                "label": "HOW TO STYLE",
+                "label": "CÓMO ESTILIZAR",
                 "link": "shopify://collections/all",
                 "open_in_new_tab": false,
                 "style_class": "button-secondary",
@@ -5715,7 +5715,7 @@
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<h2>Learn More</h2>",
+                "text": "<h2>Aprende Más</h2>",
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "center",
@@ -5926,7 +5926,7 @@
                       "type": "text",
                       "name": "t:names.heading",
                       "settings": {
-                        "text": "<h2>FOR THE<br/>SERVICE<br/>INDUSTRY</h2>",
+                        "text": "<h2>PARA LA<br/>INDUSTRIA<br/>DE SERVICIOS</h2>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "center",
@@ -5969,7 +5969,7 @@
                       "type": "button",
                       "name": "t:names.button",
                       "settings": {
-                        "label": "SHOP SLIP RESISTANT",
+                        "label": "VER ANTIDESLIZANTES",
                         "link": "shopify://collections/all",
                         "open_in_new_tab": false,
                         "style_class": "button",
@@ -6106,7 +6106,7 @@
                       "type": "text",
                       "name": "t:names.heading",
                       "settings": {
-                        "text": "<h2>OUR SOLES<br/>EXPLAINED</h2>",
+                        "text": "<h2>NUESTRAS SUELAS<br/>EXPLICADAS</h2>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "center",
@@ -6149,7 +6149,7 @@
                       "type": "button",
                       "name": "t:names.button",
                       "settings": {
-                        "label": "VIEW THE GUIDE",
+                        "label": "VER GUÍA",
                         "link": "shopify://collections/all",
                         "open_in_new_tab": false,
                         "style_class": "button",
@@ -6286,7 +6286,7 @@
                       "type": "text",
                       "name": "t:names.heading",
                       "settings": {
-                        "text": "<h2>TAKE CARE<br/>OF<br/>YOUR PAIR</h2>",
+                        "text": "<h2>CUIDA TU<br/>PAR</h2>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "center",
@@ -6329,7 +6329,7 @@
                       "type": "button",
                       "name": "t:names.button",
                       "settings": {
-                        "label": "SHOE CARE GUIDES",
+                        "label": "GUÍAS DE CUIDADO",
                         "link": "shopify://pages/how-to-care",
                         "open_in_new_tab": false,
                         "style_class": "button",
@@ -6486,7 +6486,7 @@
               "type": "button",
               "name": "t:names.button",
               "settings": {
-                "label": "BACK TO TOP",
+                "label": "VOLVER ARRIBA",
                 "link": "#top",
                 "open_in_new_tab": false,
                 "style_class": "button-secondary",
@@ -6552,7 +6552,7 @@
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<h2>Wear an original</h2>",
+                "text": "<h2>Usa un original</h2>",
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "center",
