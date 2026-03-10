@@ -712,7 +712,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p><a href=\"#break\" title=\"#break\">1460 BREAKDOWN</a></p>",
+                    "text": "<p><a href=\"#break\" title=\"#break\">DESGLOSE 1460</a></p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "center",
@@ -814,7 +814,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p><a href=\"#explore\" title=\"#explore\">EXPLORE THE 1460</a></p>",
+                    "text": "<p><a href=\"#explore\" title=\"#explore\">EXPLORA EL 1460</a></p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "center",
@@ -916,7 +916,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p><a href=\"#ways\" title=\"#ways\">WAYS TO STYLE</a></p>",
+                    "text": "<p><a href=\"#ways\" title=\"#ways\">FORMAS DE COMBINAR</a></p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "center",
@@ -1223,7 +1223,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h2>THE 1460:<br/>BREAKDOWN</h2>",
+                    "text": "<h2>EL 1460:<br/>DESGLOSE</h2>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
