@@ -997,7 +997,7 @@
           "type": "anchor",
           "name": "Anchor",
           "settings": {
-            "anchor_id": "breakdown"
+            "anchor_id": "break"
           },
           "blocks": {}
         },
