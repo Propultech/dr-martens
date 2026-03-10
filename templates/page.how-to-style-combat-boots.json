@@ -162,7 +162,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<h1>The 1460 Boot: An Original Icon</h1>",
+            "text": "<p>LA BOTA 1460<br/>LA SUELA ORIGINAL DE DM´S </p>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "center",
@@ -205,7 +205,7 @@
           "type": "text",
           "name": "texto",
           "settings": {
-            "text": "<p>60 years ago, an icon was born—the boot that started it all. The 1460 boot started life as a humble work boot. But in the six decades since the first pair rolled off the production line, it's been worn in every way possible and in many different colors and materials. Even now, Docs wearers are finding new ways to style it.</p>",
+            "text": "<p>Hace 60 años nació un icono. La bota que puso en marcha nuestra historia. Nuestra 1460 nació como una bota de trabajo. Desde entonces, se ha calzado de infinitas formas. Y en una amplia gama de colores y materiales. Pero siempre con la misma silueta. Se adapta a todos los estilos y a todos los gustos, como demuestran nuestros rebelde año tras año. </p>",
             "width": "100%",
             "max_width": "none",
             "alignment": "center",
@@ -299,7 +299,7 @@
           "type": "button",
           "name": "t:names.button",
           "settings": {
-            "label": "SHOP WOMEN'S BOOTS",
+            "label": "BOTAS MUJER",
             "link": "shopify://collections/all",
             "open_in_new_tab": false,
             "style_class": "button",
@@ -316,7 +316,7 @@
           "type": "button",
           "name": "t:names.button",
           "settings": {
-            "label": "SHOP MEN'S BOOTS",
+            "label": "BOTAS HOMBRE",
             "link": "shopify://collections/all",
             "open_in_new_tab": false,
             "style_class": "button",
@@ -2965,7 +2965,7 @@
                       "type": "text",
                       "name": "t:names.text",
                       "settings": {
-                        "text": "<ul><li>Made from Quilon leather using a traditional method.</li></ul>",
+                        "text": "<ul><li>Fabricada con piel Quilon utilizando un método tradicional. </li></ul>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -3008,7 +3008,7 @@
                       "type": "text",
                       "name": "t:names.text",
                       "settings": {
-                        "text": "<ul><li>Gold or yellow scripted heel loop.</li></ul>",
+                        "text": "<ul><li>Tirador de talón dorado o amarillo.</li></ul>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -3051,7 +3051,7 @@
                       "type": "text",
                       "name": "t:names.text",
                       "settings": {
-                        "text": "<ul><li>Slimmer footbed and a more tapered shape.</li></ul>",
+                        "text": "<ul><li>Una plantilla más fina y un diseño más estilizado.</li></ul>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
