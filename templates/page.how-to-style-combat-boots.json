@@ -1266,7 +1266,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>The 1460 is the original Dr. Martens 8-eye boot. It is kind of like a combat boot, but not. Its recognizable DNA looks like this: 8 eyes, classic Dr. Martens Smooth leather, grooved sides, yellow stitching, and a comfortable, air-cushioned sole.</p>",
+                    "text": "<p>El 1460 es la bota original de Dr. Martens con 8 ojetes. Es algo parecido a una bota de combate, pero no lo es. Su ADN reconocible se ve así: 8 ojetes, cuero Smooth clásico de Dr. Martens, costados acanalados, costura amarilla y una suela cómoda con amortiguación de aire.</p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -1629,7 +1629,7 @@
                   "name": "t:names.image",
                   "settings": {
                     "image": "shopify://shop_images/lp-1460-materials-smooth-ss24.webp",
-                    "link": "",
+                    "link": "#",
                     "image_ratio": "adapt",
                     "width": "fill",
                     "custom_width": 100,
@@ -1655,7 +1655,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<p><a href=\"#\" title=\"#\">SMOOTH LEATHER</a></p>",
+                    "text": "<p><a href=\"#\" title=\"#\">CUERO LISO</a></p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "center",
@@ -1759,7 +1759,7 @@
                   "name": "t:names.image",
                   "settings": {
                     "image": "shopify://shop_images/lp-HTS1460-materials-soft-ss25.webp",
-                    "link": "",
+                    "link": "#",
                     "image_ratio": "adapt",
                     "width": "fill",
                     "custom_width": 100,
@@ -1785,7 +1785,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<p><a href=\"#\" title=\"#\">SOFT LEATHER</a></p>",
+                    "text": "<p><a href=\"#\" title=\"#\">CUERO SUAVE</a></p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "center",
@@ -1889,7 +1889,7 @@
                   "name": "t:names.image",
                   "settings": {
                     "image": "shopify://shop_images/lp-HTS1460-materials-suede-ss25.webp",
-                    "link": "",
+                    "link": "#",
                     "image_ratio": "adapt",
                     "width": "fill",
                     "custom_width": 100,
@@ -1915,7 +1915,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<p><a href=\"#\" title=\"#\">SUEDE & NUBUCK LEATHER</a></p>",
+                    "text": "<p><a href=\"#\" title=\"#\">CUERO GAMUZA Y NOBUK</a></p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -2019,7 +2019,7 @@
                   "name": "t:names.image",
                   "settings": {
                     "image": "shopify://shop_images/lp-HTS1460-materials-reclaimed-ss25.webp",
-                    "link": "",
+                    "link": "#",
                     "image_ratio": "adapt",
                     "width": "fill",
                     "custom_width": 100,
@@ -2045,7 +2045,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<p><a href=\"#\" title=\"#\">RECLAIMED LEATHER</a></p>",
+                    "text": "<p><a href=\"#\" title=\"#\">CUERO RECUPERADO</a></p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -2149,7 +2149,7 @@
                   "name": "t:names.image",
                   "settings": {
                     "image": "shopify://shop_images/lp-HTS1460-materials-vegan-ss25.webp",
-                    "link": "",
+                    "link": "#",
                     "image_ratio": "adapt",
                     "width": "fill",
                     "custom_width": 100,
@@ -2175,7 +2175,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<p><a href=\"#\" title=\"#\">VEGAN LEATHER</a></p>",
+                    "text": "<p><a href=\"#\" title=\"#\">CUERO VEGANO</a></p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "center",
@@ -2524,7 +2524,7 @@
                       "type": "text",
                       "name": "t:names.heading",
                       "settings": {
-                        "text": "<h2>SMOOTH LEATHER</h2>",
+                        "text": "<h2>CUERO LISO</h2>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "center",
@@ -2567,7 +2567,7 @@
                       "type": "text",
                       "name": "t:names.text",
                       "settings": {
-                        "text": "<ul><li>The Original Dr. Martens 8-eye boot.</li></ul>",
+                        "text": "<ul><li>La bota original Dr. Martens de 8 ojetes.</li></ul>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -2610,7 +2610,7 @@
                       "type": "text",
                       "name": "t:names.text",
                       "settings": {
-                        "text": "<ul><li>Durable and famously stiff to start, this leather can be polished to a dapper shine or artfully scuffed-up.</li></ul>",
+                        "text": "<ul><li>Duradero y famosamente rígido al principio, este cuero puede pulirse hasta obtener un brillo impecable o desgastarse de manera artística.</li></ul>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -2653,7 +2653,7 @@
                       "type": "text",
                       "name": "t:names.text",
                       "settings": {
-                        "text": "<ul><li>Available in black, white, and an ever-expanding shade range.</li></ul>",
+                        "text": "<ul><li>Disponible en negro, blanco y una gama de colores en constante expansión.</li></ul>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -3320,7 +3320,7 @@
                       "type": "text",
                       "name": "t:names.heading",
                       "settings": {
-                        "text": "<h2>AMBASSADOR LEATHER</h2>",
+                        "text": "<h2>CUERO AMBASSADOR</h2>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "center",
@@ -3363,7 +3363,7 @@
                       "type": "text",
                       "name": "t:names.text",
                       "settings": {
-                        "text": "<ul><li>Made in a soft, tumbled leather that improves with age.</li></ul>",
+                        "text": "<ul><li>Hecho en cuero suave y curtido que mejora con el tiempo.</li></ul>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -3406,7 +3406,7 @@
                       "type": "text",
                       "name": "t:names.text",
                       "settings": {
-                        "text": "<ul><li>Lightly oiled and durable for a supple feel and pebbled finish.</li></ul>",
+                        "text": "<ul><li>Ligeramente aceitado y duradero para una sensación flexible y acabado texturizado.</li></ul>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -3449,7 +3449,7 @@
                       "type": "text",
                       "name": "t:names.text",
                       "settings": {
-                        "text": "<ul><li>Comfort inside and out.</li></ul>",
+                        "text": "<ul><li>Comodidad adentro y afuera.</li></ul>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -3718,7 +3718,7 @@
                       "type": "text",
                       "name": "t:names.heading",
                       "settings": {
-                        "text": "<h2>MAX PLATFORMS</h2>",
+                        "text": "<h2>PLATAFORMAS MAX</h2>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "center",
@@ -3761,7 +3761,7 @@
                       "type": "text",
                       "name": "t:names.text",
                       "settings": {
-                        "text": "<ul><li>Built to make a statement on our highest platform to date.</li></ul>",
+                        "text": "<ul><li>Diseñado para destacar en nuestra plataforma más alta hasta ahora.</li></ul>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -3804,7 +3804,7 @@
                       "type": "text",
                       "name": "t:names.text",
                       "settings": {
-                        "text": "<ul><li>Made from milled Nappa leather with a soft tumbled finished.</li></ul>",
+                        "text": "<ul><li>Hecho de cuero Nappa procesado con un acabado tumbled suave.</li></ul>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -3847,7 +3847,7 @@
                       "type": "text",
                       "name": "t:names.text",
                       "settings": {
-                        "text": "<ul><li>Signature grooving and a chunky lugged tread.</li></ul>",
+                        "text": "<ul><li>Acanalado característico y una suela de tacos gruesos.</li></ul>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -4052,7 +4052,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<h2>THE 1460: STYLED 3 WAYS</h2>",
+            "text": "<h2>EL 1460: 3 FORMAS DE LLEVARLO</h2>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "center",
@@ -4095,7 +4095,7 @@
           "type": "text",
           "name": "texto",
           "settings": {
-            "text": "<p>Versatility is the name of the game, and comfort comes in at a close second. Add grit to your dressed-up or casual outfits with our Original 1460 boot. Take a risk and pair a dress or shorts with our classic boots, or try something out of your comfort zone.</p>",
+            "text": "<p>La versatilidad es lo más importante, y la comodidad viene en un muy cercano segundo lugar. Agrega actitud a tus outfits formales o casuales con nuestra bota Original 1460. Atrévete a combinarla con un vestido o shorts, o prueba algo fuera de tu zona de confort.</p>",
             "width": "100%",
             "max_width": "none",
             "alignment": "center",
@@ -4520,7 +4520,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h2>DRESS THEM UP</h2>",
+                    "text": "<h2>CON UN ATUENDO ELEGANTE</h2>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -4563,7 +4563,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Lo primero es encontrar una superficie donde no te importe ensuciarte un poco, y prepara tu kit. Limpiar tus botas con bálsamo no requiere mucho. Todo lo que necesitas es un par de trapos, agua y un tarro de Wonder Balsam. Y 20 minutos de tu tiempo.</p>",
+                    "text": "<p>Las DM's quedan bien con cualquier cosa, con cualquier vestido. Para una boda. Para una graduación. Ponte la bota 1460 Original con un traje. Lúcela en tu próxima entrevista de trabajo. Sea cual sea la ocasión, asegúrate de empezar con buen pie.</p>",
                     "width": "fit-content",
                     "max_width": "none",
                     "alignment": "left",
@@ -4930,7 +4930,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h2>Dress Them Down</h2>",
+                    "text": "<h2>CON UN ATUENDO INFORMAL</h2>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -4973,7 +4973,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Dr. Martens never back down from making a statement, and our 1460 boot is just as versatile as ever with our signature comfortable air-cushioned sole ready for everyday wear and perfect for all your casual looks. The Original icon elevates pants, dresses, skirts, and shorts.</p>",
+                    "text": "<p>La bota 1460 de Dr. Martens es una de nuestras siluetas más versátiles, duradera y cómoda gracias a su suela con cámara de aire. Perfecta para tus looks más informales.</p>",
                     "width": "fit-content",
                     "max_width": "none",
                     "alignment": "left",
@@ -5512,7 +5512,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h2>DRESS FOR WORK</h2>",
+                    "text": "<h2>O PARA EL TRABAJO</h2>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -5555,7 +5555,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Dr. Martens 1460 boot has been the choice of workers since the beginning. These classic 8-eye boots are at home in an office, on the floor, or in the field. Wear our versatile and comfortable classic style any way you work. Lace ‘em up and get out there.</p>",
+                    "text": "<p>La bota Dr. Martens 1460 ha sido la opción de los trabajadores desde el principio. Estas botas clásicas de 8 ojetes se sienten como en casa en una oficina, en el piso o en el campo. Usa nuestro estilo clásico versátil y cómodo de la manera que trabajes. Ajústate los cordones y sal adelante.</p>",
                     "width": "fit-content",
                     "max_width": "none",
                     "alignment": "left",
@@ -5678,7 +5678,7 @@
           "type": "button",
           "name": "t:names.button",
           "settings": {
-            "label": "SHOP 1460 BOOTS",
+            "label": "VER LA BOTA 1460",
             "link": "shopify://collections/all",
             "open_in_new_tab": false,
             "style_class": "button",
