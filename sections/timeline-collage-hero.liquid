@@ -900,6 +900,12 @@
         },
         {
           "type": "color",
+          "id": "color_custom",
+          "label": "Color custom",
+          "visible_if": "{{ block.settings.type_preset != 'rte' }}"
+        },
+        {
+          "type": "color",
           "id": "italic_color",
           "label": "Color cursiva"
         },
@@ -907,6 +913,24 @@
           "type": "color",
           "id": "strong_color",
           "label": "Color negrita"
+        },
+        {
+          "type": "range",
+          "id": "list_padding_inline_start",
+          "label": "Sangría de listas",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "default": 40,
+          "visible_if": "{{ block.settings.type_preset == 'custom' }}"
+        },
+        {
+          "type": "text",
+          "id": "list_item_icon",
+          "label": "Ícono de viñeta",
+          "info": "Ejemplo: +, -, →",
+          "visible_if": "{{ block.settings.type_preset == 'custom' }}"
         },
         {
           "type": "header",
