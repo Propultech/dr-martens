@@ -3133,7 +3133,7 @@
         "padding-inline-start": 0,
         "padding-inline-end": 0,
         "padding-block-start-mobile": 55,
-        "padding-block-end-mobile": 85,
+        "padding-block-end-mobile": 50,
         "padding-inline-start-mobile": 0,
         "padding-inline-end-mobile": 0
       }
