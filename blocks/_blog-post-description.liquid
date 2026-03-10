@@ -40,7 +40,9 @@
   style="
     {% render 'spacing-padding', settings: block_settings %}
     {% render 'typography-style', settings: block_settings %}
-    {% if block_settings.color != '' %}
+    {% if block_settings.color_custom != blank %}
+      --color: {{ block_settings.color_custom }};
+    {% elsif block_settings.color != '' %}
       --color: {{ block_settings.color }};
     {% endif %}
   "
@@ -400,6 +402,12 @@
         }
       ],
       "default": "var(--color-foreground)",
+      "visible_if": "{{ block.settings.type_preset != 'rte' }}"
+    },
+    {
+      "type": "color",
+      "id": "color_custom",
+      "label": "Color custom",
       "visible_if": "{{ block.settings.type_preset != 'rte' }}"
     },
     {
