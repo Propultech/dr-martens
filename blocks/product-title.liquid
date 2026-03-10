@@ -401,6 +401,30 @@
       "visible_if": "{{ block.settings.type_preset != 'rte' }}"
     },
     {
+      "type": "color",
+      "id": "color_custom",
+      "label": "Color custom",
+      "visible_if": "{{ block.settings.type_preset != 'rte' }}"
+    },
+    {
+      "type": "range",
+      "id": "list_padding_inline_start",
+      "label": "Sangría de listas",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 40,
+      "visible_if": "{{ block.settings.type_preset == 'custom' }}"
+    },
+    {
+      "type": "text",
+      "id": "list_item_icon",
+      "label": "Ícono de viñeta",
+      "info": "Ejemplo: +, -, →",
+      "visible_if": "{{ block.settings.type_preset == 'custom' }}"
+    },
+    {
       "type": "header",
       "content": "t:content.appearance"
     },

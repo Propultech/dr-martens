@@ -53,6 +53,9 @@
     if block_settings.line_highlight
       echo ' text-block--line-highlight '
     endif
+    if block_settings.list_item_icon != blank
+      echo ' text-block--custom-list-icon '
+    endif
   endcapture
 %}
 
@@ -80,6 +83,15 @@
     {% endif %}
     {% if block_settings.link_font_size_mobile != blank %}
       --text-link-font-size-mobile: {{ block_settings.link_font_size_mobile }};
+    {% endif %}
+    {% if block_settings.color_custom != blank %}
+      --color: {{ block_settings.color_custom }};
+    {% endif %}
+    {% if block_settings.list_padding_inline_start != blank %}
+      --text-list-padding-inline-start: {{ block_settings.list_padding_inline_start }}px;
+    {% endif %}
+    {% if block_settings.list_item_icon != blank %}
+      --text-list-item-icon: '{{ block_settings.list_item_icon | escape }}';
     {% endif %}
     {% if block_settings.mobile_padding_override %}
       --padding-block-start-mobile: {{ block_settings['padding-block-start-mobile'] | default: 0 }}px;
@@ -284,6 +296,29 @@
 
   .text-block a {
     font-size: var(--text-link-font-size, inherit);
+  }
+
+  .text-block ul,
+  .text-block ol {
+    padding-inline-start: var(--text-list-padding-inline-start, 40px);
+  }
+
+  .text-block--custom-list-icon ul {
+    list-style: none;
+    padding-inline-start: 0;
+  }
+
+  .text-block--custom-list-icon ul li {
+    position: relative;
+    padding-inline-start: var(--text-list-padding-inline-start, 40px);
+  }
+
+  .text-block--custom-list-icon ul li::before {
+    content: var(--text-list-item-icon, '•');
+    position: absolute;
+    inset-inline-start: 0;
+    top: 0;
+    line-height: normal;
   }
 
   @media screen and (max-width: 749px) {
