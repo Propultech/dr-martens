@@ -188,7 +188,7 @@
                 "style_class": "button-secondary",
                 "width": "fit-content",
                 "custom_width": 100,
-                "width_mobile": "fit-content",
+                "width_mobile": "custom",
                 "custom_width_mobile": 100,
                 "font_size_desktop": "1.25rem",
                 "font_size_mobile": "1.25rem"
@@ -243,8 +243,8 @@
         "padding-block-end": 0,
         "padding-inline-start": 0,
         "padding-inline-end": 0,
-        "padding-block-start-mobile": 0,
-        "padding-block-end-mobile": 0,
+        "padding-block-start-mobile": 40,
+        "padding-block-end-mobile": 100,
         "padding-inline-start-mobile": 0,
         "padding-inline-end-mobile": 0
       }
@@ -307,7 +307,7 @@
             "font": "var(--font-body--family)",
             "weight": "800",
             "font_size": "2rem",
-            "font_size_mobile": "",
+            "font_size_mobile": "1.5rem",
             "line_height": "tight",
             "letter_spacing": "loose",
             "case": "none",
@@ -653,7 +653,7 @@
                         "corner_radius": 0,
                         "visibility": "all",
                         "padding-block-start": 0,
-                        "padding-block-end": 0,
+                        "padding-block-end": 30,
                         "padding-inline-start": 0,
                         "padding-inline-end": 0,
                         "mobile_padding_override": true,
@@ -753,7 +753,7 @@
                 "group_FN9xMj"
               ]
             },
-            "group_KmMcRk": {
+            "group_jVYaXU": {
               "type": "group",
               "name": "Grupo | Paso",
               "settings": {
@@ -807,7 +807,7 @@
                 "custom_css": ""
               },
               "blocks": {
-                "group_LaHQaC": {
+                "group_QjxCCX": {
                   "type": "group",
                   "name": "t:names.group",
                   "settings": {
@@ -861,7 +861,7 @@
                     "custom_css": ""
                   },
                   "blocks": {
-                    "image_LxCkcK": {
+                    "image_yrkNNa": {
                       "type": "image",
                       "name": "t:names.image",
                       "settings": {
@@ -888,14 +888,14 @@
                       },
                       "blocks": {}
                     },
-                    "text_Naz6AR": {
+                    "text_HpWBC3": {
                       "type": "text",
                       "name": "t:names.heading",
                       "settings": {
-                        "text": "<h2>MADE IN ENGLAND</h2>",
+                        "text": "<h2>The 1461 Shoe</h2>",
                         "width": "100%",
                         "max_width": "normal",
-                        "alignment": "center",
+                        "alignment": "left",
                         "type_preset": "custom",
                         "font": "var(--font-body--family)",
                         "weight": "600",
@@ -903,11 +903,11 @@
                         "font_size_mobile": "",
                         "line_height": "tight",
                         "letter_spacing": "normal",
-                        "case": "uppercase",
+                        "case": "none",
                         "wrap": "pretty",
                         "font_stretch": "var(--font-accent--stretch)",
                         "color": "var(--color-foreground)",
-                        "color_custom": "",
+                        "color_custom": "#ffffff",
                         "italic_color": "",
                         "strong_color": "#ffffff",
                         "link_font_size": "",
@@ -931,11 +931,11 @@
                       },
                       "blocks": {}
                     },
-                    "text_GLECtx": {
+                    "text_aqHjpa": {
                       "type": "text",
                       "name": "t:names.text",
                       "settings": {
-                        "text": "<ul><li>Fabricada con piel Quilon utilizando un método tradicional. </li></ul>",
+                        "text": "<p>Our most versatile Oxford Shoe.</p>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -950,95 +950,9 @@
                         "wrap": "pretty",
                         "font_stretch": "normal",
                         "color": "var(--color-foreground)",
-                        "color_custom": "",
+                        "color_custom": "#ffffff",
                         "italic_color": "",
-                        "strong_color": "#ffffff",
-                        "link_font_size": "",
-                        "link_font_size_mobile": "",
-                        "list_padding_inline_start": 15,
-                        "list_item_icon": "+",
-                        "background": false,
-                        "line_highlight": false,
-                        "background_color": "#00000026",
-                        "corner_radius": 0,
-                        "visibility": "all",
-                        "padding-block-start": 0,
-                        "padding-block-end": 10,
-                        "padding-inline-start": 10,
-                        "padding-inline-end": 10,
-                        "mobile_padding_override": true,
-                        "padding-block-start-mobile": 0,
-                        "padding-block-end-mobile": 10,
-                        "padding-inline-start-mobile": 0,
-                        "padding-inline-end-mobile": 0
-                      },
-                      "blocks": {}
-                    },
-                    "text_kj9PYA": {
-                      "type": "text",
-                      "name": "t:names.text",
-                      "settings": {
-                        "text": "<ul><li>Tirador de talón dorado o amarillo.</li></ul>",
-                        "width": "100%",
-                        "max_width": "normal",
-                        "alignment": "left",
-                        "type_preset": "custom",
-                        "font": "var(--font-body--family)",
-                        "weight": "",
-                        "font_size": "1rem",
-                        "font_size_mobile": "",
-                        "line_height": "normal",
-                        "letter_spacing": "normal",
-                        "case": "none",
-                        "wrap": "pretty",
-                        "font_stretch": "normal",
-                        "color": "var(--color-foreground)",
-                        "color_custom": "",
-                        "italic_color": "",
-                        "strong_color": "#ffffff",
-                        "link_font_size": "",
-                        "link_font_size_mobile": "",
-                        "list_padding_inline_start": 15,
-                        "list_item_icon": "+",
-                        "background": false,
-                        "line_highlight": false,
-                        "background_color": "#00000026",
-                        "corner_radius": 0,
-                        "visibility": "all",
-                        "padding-block-start": 0,
-                        "padding-block-end": 10,
-                        "padding-inline-start": 10,
-                        "padding-inline-end": 10,
-                        "mobile_padding_override": true,
-                        "padding-block-start-mobile": 0,
-                        "padding-block-end-mobile": 10,
-                        "padding-inline-start-mobile": 0,
-                        "padding-inline-end-mobile": 0
-                      },
-                      "blocks": {}
-                    },
-                    "text_T8qwRy": {
-                      "type": "text",
-                      "name": "t:names.text",
-                      "settings": {
-                        "text": "<ul><li>Una plantilla más fina y un diseño más estilizado.</li></ul>",
-                        "width": "100%",
-                        "max_width": "normal",
-                        "alignment": "left",
-                        "type_preset": "custom",
-                        "font": "var(--font-body--family)",
-                        "weight": "",
-                        "font_size": "1rem",
-                        "font_size_mobile": "",
-                        "line_height": "normal",
-                        "letter_spacing": "normal",
-                        "case": "none",
-                        "wrap": "pretty",
-                        "font_stretch": "normal",
-                        "color": "var(--color-foreground)",
-                        "color_custom": "",
-                        "italic_color": "",
-                        "strong_color": "#ffffff",
+                        "strong_color": "rgba(0,0,0,0)",
                         "link_font_size": "",
                         "link_font_size_mobile": "",
                         "list_padding_inline_start": 15,
@@ -1050,11 +964,11 @@
                         "visibility": "all",
                         "padding-block-start": 0,
                         "padding-block-end": 30,
-                        "padding-inline-start": 10,
-                        "padding-inline-end": 10,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0,
                         "mobile_padding_override": true,
                         "padding-block-start-mobile": 0,
-                        "padding-block-end-mobile": 30,
+                        "padding-block-end-mobile": 0,
                         "padding-inline-start-mobile": 0,
                         "padding-inline-end-mobile": 0
                       },
@@ -1062,14 +976,12 @@
                     }
                   },
                   "block_order": [
-                    "image_LxCkcK",
-                    "text_Naz6AR",
-                    "text_GLECtx",
-                    "text_kj9PYA",
-                    "text_T8qwRy"
+                    "image_yrkNNa",
+                    "text_HpWBC3",
+                    "text_aqHjpa"
                   ]
                 },
-                "group_V3CJMt": {
+                "group_cEfMQe": {
                   "type": "group",
                   "name": "t:names.group",
                   "settings": {
@@ -1123,7 +1035,7 @@
                     "custom_css": ""
                   },
                   "blocks": {
-                    "button_HCebyX": {
+                    "button_XKCw7g": {
                       "type": "button",
                       "name": "t:names.button",
                       "settings": {
@@ -1142,16 +1054,16 @@
                     }
                   },
                   "block_order": [
-                    "button_HCebyX"
+                    "button_XKCw7g"
                   ]
                 }
               },
               "block_order": [
-                "group_LaHQaC",
-                "group_V3CJMt"
+                "group_QjxCCX",
+                "group_cEfMQe"
               ]
             },
-            "group_J6GRAX": {
+            "group_zjbLpd": {
               "type": "group",
               "name": "Grupo | Paso",
               "settings": {
@@ -1205,7 +1117,7 @@
                 "custom_css": ""
               },
               "blocks": {
-                "group_gNUEE6": {
+                "group_qrwdxM": {
                   "type": "group",
                   "name": "t:names.group",
                   "settings": {
@@ -1259,7 +1171,7 @@
                     "custom_css": ""
                   },
                   "blocks": {
-                    "image_nkjG7p": {
+                    "image_mQ93QG": {
                       "type": "image",
                       "name": "t:names.image",
                       "settings": {
@@ -1286,14 +1198,14 @@
                       },
                       "blocks": {}
                     },
-                    "text_FdUn7W": {
+                    "text_LcBxKF": {
                       "type": "text",
                       "name": "t:names.heading",
                       "settings": {
-                        "text": "<h2>CUERO AMBASSADOR</h2>",
+                        "text": "<h2>The 2976 Chelsea Boot</h2>",
                         "width": "100%",
                         "max_width": "normal",
-                        "alignment": "center",
+                        "alignment": "left",
                         "type_preset": "custom",
                         "font": "var(--font-body--family)",
                         "weight": "600",
@@ -1301,11 +1213,11 @@
                         "font_size_mobile": "",
                         "line_height": "tight",
                         "letter_spacing": "normal",
-                        "case": "uppercase",
+                        "case": "none",
                         "wrap": "pretty",
                         "font_stretch": "var(--font-accent--stretch)",
                         "color": "var(--color-foreground)",
-                        "color_custom": "",
+                        "color_custom": "#ffffff",
                         "italic_color": "",
                         "strong_color": "#ffffff",
                         "link_font_size": "",
@@ -1329,11 +1241,11 @@
                       },
                       "blocks": {}
                     },
-                    "text_jpKD48": {
+                    "text_z3mQmL": {
                       "type": "text",
                       "name": "t:names.text",
                       "settings": {
-                        "text": "<ul><li>Hecho en cuero suave y curtido que mejora con el tiempo.</li></ul>",
+                        "text": "<p>Slip 'em on. Slide 'em off.</p>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -1348,95 +1260,9 @@
                         "wrap": "pretty",
                         "font_stretch": "normal",
                         "color": "var(--color-foreground)",
-                        "color_custom": "",
+                        "color_custom": "#ffffff",
                         "italic_color": "",
-                        "strong_color": "#ffffff",
-                        "link_font_size": "",
-                        "link_font_size_mobile": "",
-                        "list_padding_inline_start": 15,
-                        "list_item_icon": "+",
-                        "background": false,
-                        "line_highlight": false,
-                        "background_color": "#00000026",
-                        "corner_radius": 0,
-                        "visibility": "all",
-                        "padding-block-start": 0,
-                        "padding-block-end": 10,
-                        "padding-inline-start": 10,
-                        "padding-inline-end": 10,
-                        "mobile_padding_override": true,
-                        "padding-block-start-mobile": 0,
-                        "padding-block-end-mobile": 10,
-                        "padding-inline-start-mobile": 0,
-                        "padding-inline-end-mobile": 0
-                      },
-                      "blocks": {}
-                    },
-                    "text_Ue7dmB": {
-                      "type": "text",
-                      "name": "t:names.text",
-                      "settings": {
-                        "text": "<ul><li>Ligeramente aceitado y duradero para una sensación flexible y acabado texturizado.</li></ul>",
-                        "width": "100%",
-                        "max_width": "normal",
-                        "alignment": "left",
-                        "type_preset": "custom",
-                        "font": "var(--font-body--family)",
-                        "weight": "",
-                        "font_size": "1rem",
-                        "font_size_mobile": "",
-                        "line_height": "normal",
-                        "letter_spacing": "normal",
-                        "case": "none",
-                        "wrap": "pretty",
-                        "font_stretch": "normal",
-                        "color": "var(--color-foreground)",
-                        "color_custom": "",
-                        "italic_color": "",
-                        "strong_color": "#ffffff",
-                        "link_font_size": "",
-                        "link_font_size_mobile": "",
-                        "list_padding_inline_start": 15,
-                        "list_item_icon": "+",
-                        "background": false,
-                        "line_highlight": false,
-                        "background_color": "#00000026",
-                        "corner_radius": 0,
-                        "visibility": "all",
-                        "padding-block-start": 0,
-                        "padding-block-end": 10,
-                        "padding-inline-start": 10,
-                        "padding-inline-end": 10,
-                        "mobile_padding_override": true,
-                        "padding-block-start-mobile": 0,
-                        "padding-block-end-mobile": 10,
-                        "padding-inline-start-mobile": 0,
-                        "padding-inline-end-mobile": 0
-                      },
-                      "blocks": {}
-                    },
-                    "text_J6rwbT": {
-                      "type": "text",
-                      "name": "t:names.text",
-                      "settings": {
-                        "text": "<ul><li>Comodidad adentro y afuera.</li></ul>",
-                        "width": "100%",
-                        "max_width": "normal",
-                        "alignment": "left",
-                        "type_preset": "custom",
-                        "font": "var(--font-body--family)",
-                        "weight": "",
-                        "font_size": "1rem",
-                        "font_size_mobile": "",
-                        "line_height": "normal",
-                        "letter_spacing": "normal",
-                        "case": "none",
-                        "wrap": "pretty",
-                        "font_stretch": "normal",
-                        "color": "var(--color-foreground)",
-                        "color_custom": "",
-                        "italic_color": "",
-                        "strong_color": "#ffffff",
+                        "strong_color": "rgba(0,0,0,0)",
                         "link_font_size": "",
                         "link_font_size_mobile": "",
                         "list_padding_inline_start": 15,
@@ -1448,11 +1274,11 @@
                         "visibility": "all",
                         "padding-block-start": 0,
                         "padding-block-end": 30,
-                        "padding-inline-start": 10,
-                        "padding-inline-end": 10,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0,
                         "mobile_padding_override": true,
                         "padding-block-start-mobile": 0,
-                        "padding-block-end-mobile": 30,
+                        "padding-block-end-mobile": 0,
                         "padding-inline-start-mobile": 0,
                         "padding-inline-end-mobile": 0
                       },
@@ -1460,14 +1286,12 @@
                     }
                   },
                   "block_order": [
-                    "image_nkjG7p",
-                    "text_FdUn7W",
-                    "text_jpKD48",
-                    "text_Ue7dmB",
-                    "text_J6rwbT"
+                    "image_mQ93QG",
+                    "text_LcBxKF",
+                    "text_z3mQmL"
                   ]
                 },
-                "group_aX6fnc": {
+                "group_JVmWBi": {
                   "type": "group",
                   "name": "t:names.group",
                   "settings": {
@@ -1521,7 +1345,7 @@
                     "custom_css": ""
                   },
                   "blocks": {
-                    "button_DRE8Yq": {
+                    "button_W9tBqn": {
                       "type": "button",
                       "name": "t:names.button",
                       "settings": {
@@ -1540,16 +1364,16 @@
                     }
                   },
                   "block_order": [
-                    "button_DRE8Yq"
+                    "button_W9tBqn"
                   ]
                 }
               },
               "block_order": [
-                "group_gNUEE6",
-                "group_aX6fnc"
+                "group_qrwdxM",
+                "group_JVmWBi"
               ]
             },
-            "group_VAbFGq": {
+            "group_RDp7bk": {
               "type": "group",
               "name": "Grupo | Paso",
               "settings": {
@@ -1603,7 +1427,7 @@
                 "custom_css": ""
               },
               "blocks": {
-                "group_BATCga": {
+                "group_EwNJhM": {
                   "type": "group",
                   "name": "t:names.group",
                   "settings": {
@@ -1657,7 +1481,7 @@
                     "custom_css": ""
                   },
                   "blocks": {
-                    "image_6mR44p": {
+                    "image_n8GEpG": {
                       "type": "image",
                       "name": "t:names.image",
                       "settings": {
@@ -1684,14 +1508,14 @@
                       },
                       "blocks": {}
                     },
-                    "text_FhUaRj": {
+                    "text_UGWEf3": {
                       "type": "text",
                       "name": "t:names.heading",
                       "settings": {
-                        "text": "<h2>PLATAFORMAS MAX</h2>",
+                        "text": "<h2>The Adrian Loafer</h2>",
                         "width": "100%",
                         "max_width": "normal",
-                        "alignment": "center",
+                        "alignment": "left",
                         "type_preset": "custom",
                         "font": "var(--font-body--family)",
                         "weight": "600",
@@ -1699,11 +1523,11 @@
                         "font_size_mobile": "",
                         "line_height": "tight",
                         "letter_spacing": "normal",
-                        "case": "uppercase",
+                        "case": "none",
                         "wrap": "pretty",
                         "font_stretch": "var(--font-accent--stretch)",
                         "color": "var(--color-foreground)",
-                        "color_custom": "",
+                        "color_custom": "#ffffff",
                         "italic_color": "",
                         "strong_color": "#ffffff",
                         "link_font_size": "",
@@ -1727,11 +1551,11 @@
                       },
                       "blocks": {}
                     },
-                    "text_r9pcYx": {
+                    "text_UxXFD8": {
                       "type": "text",
                       "name": "t:names.text",
                       "settings": {
-                        "text": "<ul><li>Diseñado para destacar en nuestra plataforma más alta hasta ahora.</li></ul>",
+                        "text": "<p>Our best-selling loafer.</p>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -1746,95 +1570,9 @@
                         "wrap": "pretty",
                         "font_stretch": "normal",
                         "color": "var(--color-foreground)",
-                        "color_custom": "",
+                        "color_custom": "#ffffff",
                         "italic_color": "",
-                        "strong_color": "#ffffff",
-                        "link_font_size": "",
-                        "link_font_size_mobile": "",
-                        "list_padding_inline_start": 15,
-                        "list_item_icon": "+",
-                        "background": false,
-                        "line_highlight": false,
-                        "background_color": "#00000026",
-                        "corner_radius": 0,
-                        "visibility": "all",
-                        "padding-block-start": 0,
-                        "padding-block-end": 10,
-                        "padding-inline-start": 10,
-                        "padding-inline-end": 10,
-                        "mobile_padding_override": true,
-                        "padding-block-start-mobile": 0,
-                        "padding-block-end-mobile": 10,
-                        "padding-inline-start-mobile": 0,
-                        "padding-inline-end-mobile": 0
-                      },
-                      "blocks": {}
-                    },
-                    "text_j3riBn": {
-                      "type": "text",
-                      "name": "t:names.text",
-                      "settings": {
-                        "text": "<ul><li>Hecho de cuero Nappa procesado con un acabado tumbled suave.</li></ul>",
-                        "width": "100%",
-                        "max_width": "normal",
-                        "alignment": "left",
-                        "type_preset": "custom",
-                        "font": "var(--font-body--family)",
-                        "weight": "",
-                        "font_size": "1rem",
-                        "font_size_mobile": "",
-                        "line_height": "normal",
-                        "letter_spacing": "normal",
-                        "case": "none",
-                        "wrap": "pretty",
-                        "font_stretch": "normal",
-                        "color": "var(--color-foreground)",
-                        "color_custom": "",
-                        "italic_color": "",
-                        "strong_color": "#ffffff",
-                        "link_font_size": "",
-                        "link_font_size_mobile": "",
-                        "list_padding_inline_start": 15,
-                        "list_item_icon": "+",
-                        "background": false,
-                        "line_highlight": false,
-                        "background_color": "#00000026",
-                        "corner_radius": 0,
-                        "visibility": "all",
-                        "padding-block-start": 0,
-                        "padding-block-end": 10,
-                        "padding-inline-start": 10,
-                        "padding-inline-end": 10,
-                        "mobile_padding_override": true,
-                        "padding-block-start-mobile": 0,
-                        "padding-block-end-mobile": 10,
-                        "padding-inline-start-mobile": 0,
-                        "padding-inline-end-mobile": 0
-                      },
-                      "blocks": {}
-                    },
-                    "text_UbqEUE": {
-                      "type": "text",
-                      "name": "t:names.text",
-                      "settings": {
-                        "text": "<ul><li>Acanalado característico y una suela de tacos gruesos.</li></ul>",
-                        "width": "100%",
-                        "max_width": "normal",
-                        "alignment": "left",
-                        "type_preset": "custom",
-                        "font": "var(--font-body--family)",
-                        "weight": "",
-                        "font_size": "1rem",
-                        "font_size_mobile": "",
-                        "line_height": "normal",
-                        "letter_spacing": "normal",
-                        "case": "none",
-                        "wrap": "pretty",
-                        "font_stretch": "normal",
-                        "color": "var(--color-foreground)",
-                        "color_custom": "",
-                        "italic_color": "",
-                        "strong_color": "#ffffff",
+                        "strong_color": "rgba(0,0,0,0)",
                         "link_font_size": "",
                         "link_font_size_mobile": "",
                         "list_padding_inline_start": 15,
@@ -1846,11 +1584,11 @@
                         "visibility": "all",
                         "padding-block-start": 0,
                         "padding-block-end": 30,
-                        "padding-inline-start": 10,
-                        "padding-inline-end": 10,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0,
                         "mobile_padding_override": true,
                         "padding-block-start-mobile": 0,
-                        "padding-block-end-mobile": 30,
+                        "padding-block-end-mobile": 0,
                         "padding-inline-start-mobile": 0,
                         "padding-inline-end-mobile": 0
                       },
@@ -1858,14 +1596,12 @@
                     }
                   },
                   "block_order": [
-                    "image_6mR44p",
-                    "text_FhUaRj",
-                    "text_r9pcYx",
-                    "text_j3riBn",
-                    "text_UbqEUE"
+                    "image_n8GEpG",
+                    "text_UGWEf3",
+                    "text_UxXFD8"
                   ]
                 },
-                "group_LfdJWx": {
+                "group_4yid6a": {
                   "type": "group",
                   "name": "t:names.group",
                   "settings": {
@@ -1919,7 +1655,7 @@
                     "custom_css": ""
                   },
                   "blocks": {
-                    "button_VtWpzD": {
+                    "button_RCLzAf": {
                       "type": "button",
                       "name": "t:names.button",
                       "settings": {
@@ -1938,21 +1674,21 @@
                     }
                   },
                   "block_order": [
-                    "button_VtWpzD"
+                    "button_RCLzAf"
                   ]
                 }
               },
               "block_order": [
-                "group_BATCga",
-                "group_LfdJWx"
+                "group_EwNJhM",
+                "group_4yid6a"
               ]
             }
           },
           "block_order": [
             "group_UgRCBF",
-            "group_KmMcRk",
-            "group_J6GRAX",
-            "group_VAbFGq"
+            "group_jVYaXU",
+            "group_zjbLpd",
+            "group_RDp7bk"
           ]
         }
       },
@@ -1999,7 +1735,7 @@
         "padding-block-end": 85,
         "padding-inline-start": 0,
         "padding-inline-end": 0,
-        "padding-block-start-mobile": 55,
+        "padding-block-start-mobile": 0,
         "padding-block-end-mobile": 50,
         "padding-inline-start-mobile": 0,
         "padding-inline-end-mobile": 0
