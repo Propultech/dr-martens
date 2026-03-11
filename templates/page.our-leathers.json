@@ -1675,7 +1675,7 @@
                               "type": "text",
                               "name": "t:names.text",
                               "settings": {
-                                "text": "<p><a href=\"https://www.drmartens.com/uk/en_gb/unisex/smooth-leather-boots-and-shoes/c/04e10000\"><span style=\"text-decoration:underline\">COMPRAR CUERO LISO &gt;</span></a></p>",
+                                "text": "<p><a href=\"https://www.drmartens.com/uk/en_gb/unisex/smooth-leather-boots-and-shoes/c/04e10000\" title=\"COMPRAR CUERO LISO\"><span style=\"text-decoration:underline\">COMPRAR CUERO LISO &gt;</span></a></p>",
                                 "width": "fit-content",
                                 "max_width": "normal",
                                 "alignment": "left",
@@ -2392,7 +2392,7 @@
                               "type": "text",
                               "name": "t:names.text",
                               "settings": {
-                                "text": "<p><a href=\"https://www.drmartens.com/uk/en_gb/c/04a10100\"><span style=\"text-decoration:underline\">COMPRAR CUERO VIRGINIA &gt;</span></a></p>",
+                                "text": "<p><a href=\"https://www.drmartens.com/uk/en_gb/c/04a10100\" title=\"COMPRAR CUERO VIRGINIA\"><span style=\"text-decoration:underline\">COMPRAR CUERO VIRGINIA &gt;</span></a></p>",
                                 "width": "fit-content",
                                 "max_width": "normal",
                                 "alignment": "left",
@@ -3109,7 +3109,7 @@
                               "type": "text",
                               "name": "t:names.text",
                               "settings": {
-                                "text": "<p><a href=\"https://www.drmartens.com/uk/en_gb/unisex/crazy-horse-leather-collection/c/04h30000\"><span style=\"text-decoration:underline\">COMPRAR CUERO CRAZY HORSE &gt;</span></a></p>",
+                                "text": "<p><a href=\"https://www.drmartens.com/uk/en_gb/unisex/crazy-horse-leather-collection/c/04h30000\" title=\"COMPRAR CUERO CRAZY HORSE\"><span style=\"text-decoration:underline\">COMPRAR CUERO CRAZY HORSE &gt;</span></a></p>",
                                 "width": "fit-content",
                                 "max_width": "normal",
                                 "alignment": "left",
@@ -3826,7 +3826,7 @@
                               "type": "text",
                               "name": "t:names.text",
                               "settings": {
-                                "text": "<p><a href=\"https://www.drmartens.com/uk/en_gb/unisex/patent-boots-and-shoes/c/04090000\"><span style=\"text-decoration:underline\">COMPRAR CUERO CHAROLADO &gt;</span></a></p>",
+                                "text": "<p><a href=\"https://www.drmartens.com/uk/en_gb/unisex/patent-boots-and-shoes/c/04090000\" title=\"COMPRAR CUERO CHAROLADO\"><span style=\"text-decoration:underline\">COMPRAR CUERO CHAROLADO &gt;</span></a></p>",
                                 "width": "fit-content",
                                 "max_width": "normal",
                                 "alignment": "left",
@@ -4543,7 +4543,7 @@
                               "type": "text",
                               "name": "t:names.text",
                               "settings": {
-                                "text": "<p><a href=\"https://www.drmartens.com/uk/en_gb/unisex/vegan/c/04060000\"><span style=\"text-decoration:underline\">COMPRAR CUERO VEGANO​ &gt;</span></a></p>",
+                                "text": "<p><a href=\"https://www.drmartens.com/uk/en_gb/unisex/vegan/c/04060000\" title=\"COMPRAR CUERO VEGANO\"><span style=\"text-decoration:underline\">COMPRAR CUERO VEGANO​ &gt;</span></a></p>",
                                 "width": "fit-content",
                                 "max_width": "normal",
                                 "alignment": "left",
@@ -5260,7 +5260,7 @@
                               "type": "text",
                               "name": "t:names.text",
                               "settings": {
-                                "text": "<p><a href=\"https://www.drmartens.com/uk/en_gb/unisex/nappa-leather-boots-shoes/c/04ha8600\"><span style=\"text-decoration:underline\">COMPRAR CUERO NAPPA &gt;</span></a></p>",
+                                "text": "<p><a href=\"https://www.drmartens.com/uk/en_gb/unisex/nappa-leather-boots-shoes/c/04ha8600\" title=\"COMPRAR CUERO NAPPA\"><span style=\"text-decoration:underline\">COMPRAR CUERO NAPPA &gt;</span></a></p>",
                                 "width": "fit-content",
                                 "max_width": "normal",
                                 "alignment": "left",
@@ -5977,7 +5977,7 @@
                               "type": "text",
                               "name": "t:names.text",
                               "settings": {
-                                "text": "<p><a href=\"https://www.drmartens.com/uk/en_gb/unisex/quilon-leather-boots-shoes/c/04ha8700\"><span style=\"text-decoration:underline\">COMPRAR CUERO QUILON &gt;</span></a></p>",
+                                "text": "<p><a href=\"https://www.drmartens.com/uk/en_gb/unisex/quilon-leather-boots-shoes/c/04ha8700\" title=\"COMPRAR CUERO QUILON\"><span style=\"text-decoration:underline\">COMPRAR CUERO QUILON &gt;</span></a></p>",
                                 "width": "fit-content",
                                 "max_width": "normal",
                                 "alignment": "left",
