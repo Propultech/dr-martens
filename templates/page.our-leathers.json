@@ -7108,7 +7108,7 @@
                           "type": "image",
                           "name": "t:names.image",
                           "settings": {
-                            "image": "shopify://shop_images/E_S4_EVG_LEATHERS_SUEDE_SWATCH_DESKTOP.webp",
+                            "image": "shopify://shop_images/E_S4_EVG_LEATHERS_SUEDE_IMAGE_DESKTOP.webp",
                             "link": "",
                             "image_ratio": "adapt",
                             "width": "custom",
