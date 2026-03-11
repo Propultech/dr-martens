@@ -2118,7 +2118,7 @@
                 "accordion_row_Ufh9Vn": {
                   "type": "_accordion-row",
                   "settings": {
-                    "heading": "VIRGINIA LEATHER",
+                    "heading": "CUERO VIRGINIA",
                     "open_by_default": false,
                     "icon": "none",
                     "width": 12
@@ -2392,7 +2392,7 @@
                               "type": "text",
                               "name": "t:names.text",
                               "settings": {
-                                "text": "<p><a href=\"https://www.drmartens.com/uk/en_gb/c/04a10100\"><span style=\"text-decoration:underline\">SHOP VIRGINIA LEATHER &gt;</span></a></p>",
+                                "text": "<p><a href=\"https://www.drmartens.com/uk/en_gb/c/04a10100\"><span style=\"text-decoration:underline\">COMPRAR CUERO VIRGINIA &gt;</span></a></p>",
                                 "width": "fit-content",
                                 "max_width": "normal",
                                 "alignment": "left",
@@ -2800,7 +2800,7 @@
                               "type": "button",
                               "name": "t:names.button",
                               "settings": {
-                                "label": "SHOP VIRGINIA LEATHER",
+                                "label": "COMPRAR CUERO VIRGINIA",
                                 "link": "shopify://collections/all",
                                 "open_in_new_tab": false,
                                 "style_class": "button",
@@ -2835,7 +2835,7 @@
                 "accordion_row_aRVQ4c": {
                   "type": "_accordion-row",
                   "settings": {
-                    "heading": "CRAZY HORSE LEATHER",
+                    "heading": "CUERO CRAZY HORSE",
                     "open_by_default": false,
                     "icon": "none",
                     "width": 12
@@ -3109,7 +3109,7 @@
                               "type": "text",
                               "name": "t:names.text",
                               "settings": {
-                                "text": "<p><a href=\"https://www.drmartens.com/uk/en_gb/unisex/crazy-horse-leather-collection/c/04h30000\"><span style=\"text-decoration:underline\">SHOP CRAZY HORSE LEATHER &gt;</span></a></p>",
+                                "text": "<p><a href=\"https://www.drmartens.com/uk/en_gb/unisex/crazy-horse-leather-collection/c/04h30000\"><span style=\"text-decoration:underline\">COMPRAR CUERO CRAZY HORSE &gt;</span></a></p>",
                                 "width": "fit-content",
                                 "max_width": "normal",
                                 "alignment": "left",
@@ -3517,7 +3517,7 @@
                               "type": "button",
                               "name": "t:names.button",
                               "settings": {
-                                "label": "SHOP CRAZY HORSE LEATHER",
+                                "label": "COMPRAR CUERO CRAZY HORSE",
                                 "link": "shopify://collections/all",
                                 "open_in_new_tab": false,
                                 "style_class": "button",
@@ -3552,7 +3552,7 @@
                 "accordion_row_GMBxVN": {
                   "type": "_accordion-row",
                   "settings": {
-                    "heading": "PATENT LEATHER",
+                    "heading": "CUERO CHAROLADO",
                     "open_by_default": false,
                     "icon": "none",
                     "width": 12
@@ -3826,7 +3826,7 @@
                               "type": "text",
                               "name": "t:names.text",
                               "settings": {
-                                "text": "<p><a href=\"https://www.drmartens.com/uk/en_gb/unisex/patent-boots-and-shoes/c/04090000\"><span style=\"text-decoration:underline\">SHOP PATENT LEATHER &gt;</span></a></p>",
+                                "text": "<p><a href=\"https://www.drmartens.com/uk/en_gb/unisex/patent-boots-and-shoes/c/04090000\"><span style=\"text-decoration:underline\">COMPRAR CUERO CHAROLADO &gt;</span></a></p>",
                                 "width": "fit-content",
                                 "max_width": "normal",
                                 "alignment": "left",
@@ -4234,7 +4234,7 @@
                               "type": "button",
                               "name": "t:names.button",
                               "settings": {
-                                "label": "SHOP PATENT LEATHER",
+                                "label": "COMPRAR CUERO CHAROLADO",
                                 "link": "shopify://collections/all",
                                 "open_in_new_tab": false,
                                 "style_class": "button",
