@@ -7420,7 +7420,7 @@
                               "type": "text",
                               "name": "t:names.text",
                               "settings": {
-                                "text": "<p><a href=\"https://www.drmartens.com/uk/en_gb/genix-nappa\"><span style=\"text-decoration:underline\">HOW IT’S MADE &gt;</span></a></p>",
+                                "text": "<p><a href=\"https://www.drmartens.com/uk/en_gb/genix-nappa\"><span style=\"text-decoration:underline\">COMO SE HACE &gt;</span></a></p>",
                                 "width": "fit-content",
                                 "max_width": "normal",
                                 "alignment": "left",
@@ -7828,7 +7828,7 @@
                               "type": "button",
                               "name": "t:names.button",
                               "settings": {
-                                "label": "SHOP GENIX NAPPA",
+                                "label": "COMPRAR GENIX NAPPA",
                                 "link": "shopify://collections/all",
                                 "open_in_new_tab": false,
                                 "style_class": "button",
