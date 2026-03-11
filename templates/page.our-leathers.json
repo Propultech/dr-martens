@@ -7937,7 +7937,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<h2>SHOP BY LEATHER</h2>",
+            "text": "<h2>COMPRA POR TIPO DE CUERO</h2>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "left",
@@ -8115,7 +8115,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h3>AMBASSADOR LEATHER</h3>",
+                    "text": "<h3>CUERO AMBASSADOR</h3>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -8245,7 +8245,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h3>SMOOTH LEATHERS</h3>",
+                    "text": "<h3>CUEROS LISOS</h3>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -8375,7 +8375,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h3>SOFT LEATHERS</h3>",
+                    "text": "<h3>CUEROS SUAVES</h3>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -8505,7 +8505,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h3>VEGAN-FRIENDLY</h3>",
+                    "text": "<h3>APTO PARA VEGANOS</h3>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -8635,7 +8635,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h3>PATENT LEATHER</h3>",
+                    "text": "<h3>CUERO CHAROL</h3>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -8765,7 +8765,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h3>ALL LEATHER</h3>",
+                    "text": "<h3>TODO CUERO</h3>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -8895,7 +8895,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h3>NON-LEATHER</h3>",
+                    "text": "<h3>SIN CUERO</h3>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -9025,7 +9025,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h3>NUBUCK LEATHER</h3>",
+                    "text": "<h3>CUERO NUBUCK</h3>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -9155,7 +9155,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h3>SUEDE LEATHER</h3>",
+                    "text": "<h3>CUERO GAMUZA</h3>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -9399,7 +9399,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<h2>KEEP THEM KICKING​</h2>",
+            "text": "<h2>MANTENLOS EN ACCIÓN</h2>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "center",
@@ -9442,7 +9442,7 @@
           "type": "text",
           "name": "t:names.text",
           "settings": {
-            "text": "<p>Well-loved vintage or box-fresh — your DM’s need a bit of extra care from time to time. We’ve laid out how in a series of guides to ensure your Docs can keep up — wherever you take them.​</p>",
+            "text": "<p>Muy usados o recién sacados de la caja — tus DM's necesitan un poco de cuidado extra de vez en cuando. Preparamos una serie de guías para que tus Docs estén siempre listos — a donde sea que los lleves.</p>",
             "width": "100%",
             "max_width": "none",
             "alignment": "center",
@@ -9536,7 +9536,7 @@
           "type": "button",
           "name": "t:names.button",
           "settings": {
-            "label": "CARE GUIDES",
+            "label": "GUIAS DE CUIDADOS",
             "link": "shopify://pages/how-to-care",
             "open_in_new_tab": false,
             "style_class": "button",
