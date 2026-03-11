@@ -280,7 +280,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h1>FIND OUT WHAT<br/>WE’RE MADE OF</h1>",
+                    "text": "<h1>DESCUBRE DE QUÉ ESTAMOS<br/>HECHOS</h1>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -323,7 +323,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>At Dr. Martens, we like to think we know our leathers. But from a quick glance, it can be tough to tell them apart — or which is the right leather for you. We’ve gathered our expert knowledge to help you decide.</p>",
+                    "text": "<p>En Dr. Martens, nos gusta pensar que conocemos bien nuestros cueros. Pero a primera vista, puede ser difícil distinguirlos — o saber cuál es el cuero indicado para ti. Hemos reunido nuestro conocimiento experto para ayudarte a decidir.</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -429,7 +429,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<h2>GET TO YOU KNOW YOUR DOCS INSIDE OUT</h2>",
+            "text": "<h2>CONOCE TUS DOCS POR DENTRO Y POR FUERA</h2>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "center",
@@ -522,7 +522,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<h3>DISCOVER THE DETAIL</h3>",
+            "text": "<h3>DESCUBRE EL DETALLE</h3>",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "left",
@@ -684,7 +684,7 @@
                 "accordion_row_qP9Y3h": {
                   "type": "_accordion-row",
                   "settings": {
-                    "heading": "AMBASSADOR LEATHER",
+                    "heading": "CUERO AMBASSADOR",
                     "open_by_default": true,
                     "icon": "none",
                     "width": 12
@@ -829,7 +829,7 @@
                               "type": "text",
                               "name": "t:names.heading",
                               "settings": {
-                                "text": "<p>AMBASSADOR<br/>LEATHER</p>",
+                                "text": "<p>CUERO AMBASSADOR</p>",
                                 "width": "fit-content",
                                 "max_width": "normal",
                                 "alignment": "left",
@@ -872,7 +872,7 @@
                               "type": "text",
                               "name": "t:names.heading",
                               "settings": {
-                                "text": "<h3>WE’VE GONE SOFT</h3>",
+                                "text": "<h3>NOS VOLVIMOS SUAVE</h3>",
                                 "width": "fit-content",
                                 "max_width": "normal",
                                 "alignment": "left",
@@ -915,7 +915,7 @@
                               "type": "text",
                               "name": "t:names.text",
                               "settings": {
-                                "text": "<p>A leather that feels soft and well-worn from day one. Ambassador is a heavyweight leather with a rich, oiled finish. It’s been tumbled to create a pebbled texture with loads of character.</p>",
+                                "text": "<p>Un cuero que se siente suave y bien gastado desde el primer día. Ambassador es un cuero pesado con un acabado aceitado y rico. Ha sido tamboreado para crear una textura pebbled llena de carácter.</p>",
                                 "width": "fit-content",
                                 "max_width": "normal",
                                 "alignment": "left",
@@ -958,7 +958,7 @@
                               "type": "text",
                               "name": "t:names.text",
                               "settings": {
-                                "text": "<p><a href=\"https://www.drmartens.com/uk/en_gb/unisex/ambassador-leather-boots-shoes/c/04001200\"><span style=\"text-decoration:underline\">SHOP AMBASSADOR LEATHER &gt;</span></a></p>",
+                                "text": "<p><a href=\"https://www.drmartens.com/uk/en_gb/unisex/ambassador-leather-boots-shoes/c/04001200\"><span style=\"text-decoration:underline\">COMPRA CUERO AMBASSADOR &gt;</span></a></p>",
                                 "width": "fit-content",
                                 "max_width": "normal",
                                 "alignment": "left",
@@ -1237,7 +1237,7 @@
                               "type": "text",
                               "name": "t:names.text",
                               "settings": {
-                                "text": "<p>Keep your Ambassador leather’s oiled finish topped up with regular doses of our Wonder Balsam or buff it to a healthy shine with our nourishing Shoe Polish Cream in the corresponding colour or neutral shade.</p>",
+                                "text": "<p>Mantén el acabado aceitado de tu cuero Ambassador renovado con aplicaciones regulares de nuestro Wonder Balsam o dale un brillo saludable con nuestro nutritivo Shoe Polish Cream en el color correspondiente o en tonos neutros.</p>",
                                 "width": "fit-content",
                                 "max_width": "normal",
                                 "alignment": "left",
@@ -1366,7 +1366,7 @@
                               "type": "button",
                               "name": "t:names.button",
                               "settings": {
-                                "label": "SHOP AMBASSADOR LEATHER",
+                                "label": "COMPRA CUERO AMBASSADOR",
                                 "link": "shopify://collections/all",
                                 "open_in_new_tab": false,
                                 "style_class": "button",
