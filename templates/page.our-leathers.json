@@ -9536,7 +9536,7 @@
           "type": "button",
           "name": "t:names.button",
           "settings": {
-            "label": "GUIAS DE CUIDADOS",
+            "label": "GUÍAS DE CUIDADOS",
             "link": "shopify://pages/how-to-care",
             "open_in_new_tab": false,
             "style_class": "button",
