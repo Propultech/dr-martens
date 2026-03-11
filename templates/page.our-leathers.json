@@ -1401,7 +1401,7 @@
                 "accordion_row_fWbDcM": {
                   "type": "_accordion-row",
                   "settings": {
-                    "heading": "SMOOTH LEATHER",
+                    "heading": "CUERO LISO",
                     "open_by_default": false,
                     "icon": "none",
                     "width": 12
@@ -1546,7 +1546,7 @@
                               "type": "text",
                               "name": "t:names.heading",
                               "settings": {
-                                "text": "<p><strong>SMOOTH LEATHER</strong></p>",
+                                "text": "<p><strong>CUERO LISO</strong></p>",
                                 "width": "fit-content",
                                 "max_width": "normal",
                                 "alignment": "left",
@@ -1589,7 +1589,7 @@
                               "type": "text",
                               "name": "t:names.heading",
                               "settings": {
-                                "text": "<h3>HARDWEARING AND FAMOUSLY TOUGH</h3>",
+                                "text": "<h3>RESISTENTE Y FAMOSAMENTE DURADERO</h3>",
                                 "width": "fit-content",
                                 "max_width": "normal",
                                 "alignment": "left",
@@ -1632,7 +1632,7 @@
                               "type": "text",
                               "name": "t:names.text",
                               "settings": {
-                                "text": "<p>Where else could we start but with our Smooth leather? One of our most famous materials, known for its durability — and the infamous<a href=\"https://www.drmartens.com/uk/en_gb/guides/how-to-care/how-to-break-in-docs\"><span style=\"text-decoration:underline\">DM’s break-in</span></a>.</p>",
+                                "text": "<p>¿Por dónde más podríamos empezar sino con nuestro cuero Smooth? Uno de nuestros materiales más famosos, conocido por su durabilidad — y el infame proceso de adaptación de los DM's.</p>",
                                 "width": "fit-content",
                                 "max_width": "normal",
                                 "alignment": "left",
@@ -1675,7 +1675,7 @@
                               "type": "text",
                               "name": "t:names.text",
                               "settings": {
-                                "text": "<p><a href=\"https://www.drmartens.com/uk/en_gb/unisex/smooth-leather-boots-and-shoes/c/04e10000\"><span style=\"text-decoration:underline\">SHOP SMOOTH LEATHER &gt;</span></a></p>",
+                                "text": "<p><a href=\"https://www.drmartens.com/uk/en_gb/unisex/smooth-leather-boots-and-shoes/c/04e10000\"><span style=\"text-decoration:underline\">COMPRAR CUERO LISO &gt;</span></a></p>",
                                 "width": "fit-content",
                                 "max_width": "normal",
                                 "alignment": "left",
@@ -1954,7 +1954,7 @@
                               "type": "text",
                               "name": "t:names.text",
                               "settings": {
-                                "text": "<p>Smooth is corrected grain leather, which means it’s sanded and continually buffed to leave it with a uniform finish. This process reduces waste and ensures your finished boot is in pristine condition. What you do with it after that is up to you.<br/><br/>The repeated buffing is what leaves Smooth leather famously stiff to start with — but give it a couple of weeks of gentle wear and tender care with our<a href=\"https://www.drmartens.com/uk/en_gb/p/AC787000\"><span style=\"text-decoration:underline\">Wonder Balsam</span></a>, and your boots or shoes will mould to your feet in no time.</p>",
+                                "text": "<p>El cuero Smooth es cuero de grano corregido, lo que significa que está lijado y continuamente pulido para dejar un acabado uniforme. Este proceso reduce el desperdicio y garantiza que tu bota terminada esté en perfectas condiciones. Lo que hagas con ella después depende de ti.<br/><br/>El pulido repetido es lo que deja el cuero Smooth famosamente rígido al principio — pero dale un par de semanas de uso suave y cuidado delicado con nuestro Wonder Balsam, y tus botas o zapatos se amoldarán a tus pies en poco tiempo.</p>",
                                 "width": "fit-content",
                                 "max_width": "normal",
                                 "alignment": "left",
@@ -2083,7 +2083,7 @@
                               "type": "button",
                               "name": "t:names.button",
                               "settings": {
-                                "label": "SHOP SMOOTH LEATHER",
+                                "label": "COMPRAR CUERO LISO",
                                 "link": "shopify://collections/all",
                                 "open_in_new_tab": false,
                                 "style_class": "button",
@@ -2263,7 +2263,7 @@
                               "type": "text",
                               "name": "t:names.heading",
                               "settings": {
-                                "text": "<h3>VIRGINIA LEATHER</h3>",
+                                "text": "<h3>CUERO VIRGINIA</h3>",
                                 "width": "fit-content",
                                 "max_width": "normal",
                                 "alignment": "left",
@@ -2306,7 +2306,7 @@
                               "type": "text",
                               "name": "t:names.heading",
                               "settings": {
-                                "text": "<h3>WORN IN FROM THE FIRST STEP</h3>",
+                                "text": "<h3>GASTADO DESDE EL PRIMER PASO</h3>",
                                 "width": "fit-content",
                                 "max_width": "normal",
                                 "alignment": "left",
@@ -2349,7 +2349,7 @@
                               "type": "text",
                               "name": "t:names.text",
                               "settings": {
-                                "text": "<p>One of our most comfortable leathers. Because we know not everyone wears the break-in process as a badge of honour. Virginia is soft, fine grain leather, which is treated to feel smooth and supple with a lightly pebbled finish.</p>",
+                                "text": "<p>Uno de nuestros cueros más cómodos. Porque sabemos que no todos ven el proceso de adaptación como un distintivo de honor. Virginia es un cuero de grano fino y suave, tratado para sentirse liso y flexible con un acabado ligeramente texturizado.</p>",
                                 "width": "fit-content",
                                 "max_width": "normal",
                                 "alignment": "left",
@@ -2671,7 +2671,7 @@
                               "type": "text",
                               "name": "t:names.text",
                               "settings": {
-                                "text": "<p>Boots and shoes built from Virginia leather feel worn in from day one. And since Virginia leather is easy to dye, you can choose from a variety of bold colours — and wear them all straight out of the box.<br/><br/>With leather as soft as Virginia, you can wait a few weeks before dipping your sponge into the<a href=\"https://www.drmartens.com/uk/en_gb/p/AC787000\"><span style=\"text-decoration:underline\">Wonder Balsam</span></a>.</p>",
+                                "text": "<p>Las botas y zapatos fabricados con cuero Virginia se sienten ya usados desde el primer día. Y como el cuero Virginia es fácil de teñir, puedes elegir entre una variedad de colores audaces — y usarlos directamente desde la caja.<br/><br/>Con un cuero tan suave como Virginia, puedes esperar algunas semanas antes de sumergir tu esponja en el Wonder Balsam.</p>",
                                 "width": "fit-content",
                                 "max_width": "normal",
                                 "alignment": "left",
@@ -2980,7 +2980,7 @@
                               "type": "text",
                               "name": "t:names.heading",
                               "settings": {
-                                "text": "<h3>CRAZY HORSE LEATHER</h3>",
+                                "text": "<h3>CUERO CRAZY HORSE</h3>",
                                 "width": "fit-content",
                                 "max_width": "normal",
                                 "alignment": "left",
@@ -3023,7 +3023,7 @@
                               "type": "text",
                               "name": "t:names.heading",
                               "settings": {
-                                "text": "<h3>READY FOR THE ROUGH AND TUMBLE</h3>",
+                                "text": "<h3>LISTO PARA LO ÁSPERO Y DIFÍCIL</h3>",
                                 "width": "fit-content",
                                 "max_width": "normal",
                                 "alignment": "left",
@@ -3066,7 +3066,7 @@
                               "type": "text",
                               "name": "t:names.text",
                               "settings": {
-                                "text": "<p>Heavyweight, with a worn-in, distressed appearance straight out of the box. Our Crazy Horse leather means business. Or pleasure. Treat it mean or keep it clean. It’s up to you.</p>",
+                                "text": "<p>Pesado, con una apariencia desgastada y envejecida desde el primer día. Nuestro cuero Crazy Horse es serio. O placentero. Trátalo con rudeza o mantenlo limpio. Tú decides.</p>",
                                 "width": "fit-content",
                                 "max_width": "normal",
                                 "alignment": "left",
@@ -3388,7 +3388,7 @@
                               "type": "text",
                               "name": "t:names.text",
                               "settings": {
-                                "text": "<p>For DM’s, Crazy Horse leather originates in the 70s and 80s, and it oozes decades of character. Sometimes referred to as saddle leather, it’s full-grain and treated with wax layers that cause natural variations in colour when scratched or rubbed.<br/><br/>Show off every squeeze, scuff and scrape — or wipe them away with a scoop of<a href=\"https://www.drmartens.com/uk/en_gb/p/AC792000\"><span style=\"text-decoration:underline\">Dubbin</span></a>or<a href=\"https://www.drmartens.com/uk/en_gb/p/AC787000\"><span style=\"text-decoration:underline\">Wonder Balsam</span></a>and start over again.</p>",
+                                "text": "<p>Para DM's, el cuero Crazy Horse se originó en los años 70 y 80, y rezuma décadas de carácter. A veces llamado cuero de montura, es de grano completo y tratado con capas de cera que causan variaciones naturales de color cuando se raya o se frota.<br/><br/>Luce cada marca, rasguño y roce — o elimínalos con un poco de Dubbin o Wonder Balsam y comienza de nuevo.</p>",
                                 "width": "fit-content",
                                 "max_width": "normal",
                                 "alignment": "left",
@@ -3697,7 +3697,7 @@
                               "type": "text",
                               "name": "t:names.heading",
                               "settings": {
-                                "text": "<h3>PATENT LEATHER</h3>",
+                                "text": "<h3>CUERO CHAROLADO</h3>",
                                 "width": "fit-content",
                                 "max_width": "normal",
                                 "alignment": "left",
@@ -3740,7 +3740,7 @@
                               "type": "text",
                               "name": "t:names.heading",
                               "settings": {
-                                "text": "<h3>A SIGNATURE SHINE</h3>",
+                                "text": "<h3>UN BRILLO DISTINTIVO</h3>",
                                 "width": "fit-content",
                                 "max_width": "normal",
                                 "alignment": "left",
@@ -3783,7 +3783,7 @@
                               "type": "text",
                               "name": "t:names.text",
                               "settings": {
-                                "text": "<p>Want to see your reflection in your DM’s? Look no further than our Patent Lamper leather. It’s PU-coated on a suede base for enhanced durability.</p>",
+                                "text": "<p>¿Quieres verte reflejado en tus DM's? No busques más. Nuestro cuero Patent Lamper es lo que necesitas. Tiene un recubrimiento de poliuretano sobre una base de gamuza para mayor durabilidad.</p>",
                                 "width": "fit-content",
                                 "max_width": "normal",
                                 "alignment": "left",
@@ -4105,7 +4105,7 @@
                               "type": "text",
                               "name": "t:names.text",
                               "settings": {
-                                "text": "<p>With an unmistakable finish, Patent Lamper is more robust and resilient than traditional Patent leathers — so you can put your Docs through their paces and keep shining.<br/><br/>Prolong your spotlight-stealing shimmer with a splash of our<a href=\"https://www.drmartens.com/uk/en_gb/p/AC770001\"><span style=\"text-decoration:underline\">Patent Cleaner.</span></a>and start over again.</p>",
+                                "text": "<p>Con un acabado inconfundible, Patent Lamper es más robusto y resistente que los cueros Patent tradicionales, así que puedes exigir mucho a tus Docs y mantener ese brillo impecable.<br/><br/>Prolonga tu brillo que roba miradas con un poco de nuestro Patent Cleaner y comienza de nuevo.</p>",
                                 "width": "fit-content",
                                 "max_width": "normal",
                                 "alignment": "left",
@@ -4414,7 +4414,7 @@
                               "type": "text",
                               "name": "t:names.heading",
                               "settings": {
-                                "text": "<h3>FELIX RUB OFF</h3>",
+                                "text": "<h3>FÉLIX DESGASTE</h3>",
                                 "width": "fit-content",
                                 "max_width": "normal",
                                 "alignment": "left",
@@ -4457,7 +4457,7 @@
                               "type": "text",
                               "name": "t:names.heading",
                               "settings": {
-                                "text": "<h3>OUR VEGAN ALTERNATIVE</h3>",
+                                "text": "<h3>NUESTRA ALTERNATIVA VEGANA</h3>",
                                 "width": "fit-content",
                                 "max_width": "normal",
                                 "alignment": "left",
@@ -4500,7 +4500,7 @@
                               "type": "text",
                               "name": "t:names.text",
                               "settings": {
-                                "text": "<p>Lose the leather. Keep the attitude. Black Felix Rub Off is our go-to synthetic material. Soft and supple, Felix Rub Off has a pliable, premium feel and a matte finish.</p>",
+                                "text": "<p>Olvida el cuero. Mantén la actitud. Black Felix Rub Off es nuestro material sintético de referencia. Suave y flexible, Felix Rub Off tiene un tacto premium maleable y un acabado mate.</p>",
                                 "width": "fit-content",
                                 "max_width": "normal",
                                 "alignment": "left",
@@ -4822,7 +4822,7 @@
                               "type": "text",
                               "name": "t:names.text",
                               "settings": {
-                                "text": "<p>Shoe Care has never been easier — just give your footwear a quick wipe with a damp cloth and finish off with a spritz of<a href=\"https://www.drmartens.com/uk/en_gb/p/AC770000\"><span style=\"text-decoration:underline\">Dr. Martens Ultra Protector Spray</span></a>.</p>",
+                                "text": "<p>El cuidado del calzado nunca fue tan fácil — simplemente pasa un paño húmedo por tu calzado y termina con un spray de Dr. Martens Ultra Protector Spray.</p>",
                                 "width": "fit-content",
                                 "max_width": "normal",
                                 "alignment": "left",
@@ -5131,7 +5131,7 @@
                               "type": "text",
                               "name": "t:names.heading",
                               "settings": {
-                                "text": "<h3>NAPPA LEATHER</h3>",
+                                "text": "<h3>CUERO NAPPA</h3>",
                                 "width": "fit-content",
                                 "max_width": "normal",
                                 "alignment": "left",
@@ -5174,7 +5174,7 @@
                               "type": "text",
                               "name": "t:names.heading",
                               "settings": {
-                                "text": "<h3>A HEAVYWEIGHT SOFT OPTION</h3>",
+                                "text": "<h3>UNA OPCIÓN SUAVE Y RESISTENTE</h3>",
                                 "width": "fit-content",
                                 "max_width": "normal",
                                 "alignment": "left",
@@ -5217,7 +5217,7 @@
                               "type": "text",
                               "name": "t:names.text",
                               "settings": {
-                                "text": "<p>Our Nappa leather generally has a smoother finish than pebbled Virginia leather. It’s just as soft, pliable and easy to wear — and durable enough to hold its shape when put through its paces.</p>",
+                                "text": "<p>Nuestro cuero Nappa generalmente tiene un acabado más suave que el cuero Virginia perlado. Es igual de suave, flexible y fácil de usar, y lo suficientemente duradero para mantener su forma incluso en las condiciones más exigentes.</p>",
                                 "width": "fit-content",
                                 "max_width": "normal",
                                 "alignment": "left",
@@ -5539,7 +5539,7 @@
                               "type": "text",
                               "name": "t:names.text",
                               "settings": {
-                                "text": "<p>You can look after your Nappa leather with a combination of<a href=\"https://www.drmartens.com/uk/en_gb/p/AC787000\"><span style=\"text-decoration:underline\">Wonder Balsam</span></a>and<a href=\"https://www.drmartens.com/uk/en_gb/p/AC986000\"><span style=\"text-decoration:underline\">Dr. Martens Shoe Polish</span></a>— because even the heavyweight leathers deserve a bit of care.</p>",
+                                "text": "<p>Puedes cuidar tu cuero Nappa con una combinación de Wonder Balsam y Dr. Martens Shoe Polish — porque incluso los cueros más resistentes merecen un poco de cuidado.</p>",
                                 "width": "fit-content",
                                 "max_width": "normal",
                                 "alignment": "left",
@@ -5848,7 +5848,7 @@
                               "type": "text",
                               "name": "t:names.heading",
                               "settings": {
-                                "text": "<h3>QUILON LEATHER</h3>",
+                                "text": "<h3>CUERO QUILON</h3>",
                                 "width": "fit-content",
                                 "max_width": "normal",
                                 "alignment": "left",
@@ -5891,7 +5891,7 @@
                               "type": "text",
                               "name": "t:names.heading",
                               "settings": {
-                                "text": "<h3>INFUSED WITH HERITAGE</h3>",
+                                "text": "<h3>IMPREGNADO DE HERENCIA</h3>",
                                 "width": "fit-content",
                                 "max_width": "normal",
                                 "alignment": "left",
@@ -5934,7 +5934,7 @@
                               "type": "text",
                               "name": "t:names.text",
                               "settings": {
-                                "text": "<p>A pillar of our <a href=\"https://www.drmartens.com/uk/en_gb/made-in-england-footwear\"><span style=\"text-decoration:underline\">Made in England collection</span></a>. Quilon is a premium, heritage-inspired leather — dyed black or oxblood, with a buttery tan base colour that gives it a two-tone appearance.</p>",
+                                "text": "<p>Un pilar de nuestra colección Made in England. Quilon es un cuero premium inspirado en la herencia — teñido en negro u oxblood, con un color base marrón mantequilla que le da una apariencia bicolor.</p>",
                                 "width": "fit-content",
                                 "max_width": "normal",
                                 "alignment": "left",
@@ -6256,7 +6256,7 @@
                               "type": "text",
                               "name": "t:names.text",
                               "settings": {
-                                "text": "<p>Quilon leather has a textured finish called hair-cell, which gives it a vintage, character-rich finish that’s still clean and ready for you to make your own marks.<br/><br/>Quilon is still relatively stiff to start — so keep the<a href=\"https://www.drmartens.com/uk/en_gb/p/AC787000\"><span style=\"text-decoration:underline\">Wonder Balsam</span></a>handy for the first few weeks. And any other time your boots and shoes need a quick refresh.</p>",
+                                "text": "<p>El cuero Quilon tiene un acabado texturizado llamado hair-cell, que le da un acabado vintage lleno de carácter que sigue siendo limpio y listo para que hagas tus propias marcas.<br/><br/>Quilon sigue siendo relativamente rígido al principio, así que ten el Wonder Balsam a mano durante las primeras semanas. Y en cualquier otro momento en que tus botas y zapatos necesiten un rápido retoque.</p>",
                                 "width": "fit-content",
                                 "max_width": "normal",
                                 "alignment": "left",
@@ -6565,7 +6565,7 @@
                               "type": "text",
                               "name": "t:names.heading",
                               "settings": {
-                                "text": "<h3>NUBUCK LEATHER</h3>",
+                                "text": "<h3>CUERO NUBUCK</h3>",
                                 "width": "fit-content",
                                 "max_width": "normal",
                                 "alignment": "left",
@@ -6608,7 +6608,7 @@
                               "type": "text",
                               "name": "t:names.heading",
                               "settings": {
-                                "text": "<h3>BUTTERY SOFT</h3>",
+                                "text": "<h3>SUAVE COMO MANTEQUILLA</h3>",
                                 "width": "fit-content",
                                 "max_width": "normal",
                                 "alignment": "left",
@@ -6651,7 +6651,7 @@
                               "type": "text",
                               "name": "t:names.text",
                               "settings": {
-                                "text": "<p>Silky, pliable and full of character. Nubuck leather is made from the exterior of the hide, which is then sanded or buffed to create a velvet-like surface — which can be stamped to add a pebbled, embossed appearance. Because it’s created from the exterior of the hide, nubuck is generally thicker than suede — but it still needs to be carefully looked after. You can spray your nubuck boots and shoes with <a href=\"https://www.drmartens.com/uk/en_gb/ultra-shoe-protector-150ml-black/p/AC770000\"><span style=\"text-decoration:underline\">Dr. Martens Ultra Shoe Protector</span></a> and buff away any light scuffs with the soft side of a suede brush.</p>",
+                                "text": "<p>Sedoso, flexible y lleno de carácter. El cuero nubuck se fabrica a partir del exterior de la piel, que luego se lija o se cepilla para crear una superficie aterciopelada, que puede estampillarse para añadir una apariencia perlada y en relieve. Debido a que se crea a partir del exterior de la piel, el nubuck es generalmente más grueso que la gamuza, pero aún así requiere cuidados especiales. Puedes rociar tus botas y zapatos nubuck con Dr. Martens Ultra Shoe Protector y eliminar cualquier rasguño leve con el lado suave de un cepillo de gamuza.</p>",
                                 "width": "fit-content",
                                 "max_width": "normal",
                                 "alignment": "left",
@@ -6928,7 +6928,7 @@
                               "type": "text",
                               "name": "t:names.heading",
                               "settings": {
-                                "text": "<h3>SUEDE LEATHER</h3>",
+                                "text": "<h3>CUERO GAMUZA</h3>",
                                 "width": "fit-content",
                                 "max_width": "normal",
                                 "alignment": "left",
@@ -6971,7 +6971,7 @@
                               "type": "text",
                               "name": "t:names.heading",
                               "settings": {
-                                "text": "<h3>BIG ON TEXTURE</h3>",
+                                "text": "<h3>GRANDE EN TEXTURA</h3>",
                                 "width": "fit-content",
                                 "max_width": "normal",
                                 "alignment": "left",
@@ -7014,7 +7014,7 @@
                               "type": "text",
                               "name": "t:names.text",
                               "settings": {
-                                "text": "<p>Soft and supple from day one, suede is a versatile material which can easily add bold colour or unexpected texture to your outfit. It’s full of character and makes the perfect partner to our distinctive boots and shoes. Suede is unique because it’s made from the underside of the hide, making it soft and flexible. It also feels fuzzy to the touch — referred to as the “nap” — which can vary in length, resulting in a statement textured finish. ​The delicate nature of suede leather can make shoe care seem daunting — but we’ve put together our best tips and tricks for cleaning and maintaining it. Look no further than our <a href=\"https://www.drmartens.com/uk/en_gb/ultra-shoe-protector-150ml-black/p/AC770000\"><span style=\"text-decoration:underline\">suede care guide</span></a>.</p>",
+                                "text": "<p>Suave y flexible desde el primer día, la gamuza es un material versátil que puede agregar fácilmente colores audaces o texturas inesperadas a tu outfit. Está llena de carácter y es la compañera perfecta para nuestras botas y zapatos distintivos. La gamuza es única porque se fabrica a partir del reverso de la piel, lo que la hace suave y flexible. También tiene una textura aterciopelada al tacto, conocida como el \"nap\", que puede variar en longitud y resulta en un acabado texturizado muy llamativo. La naturaleza delicada del cuero gamuza puede hacer que el cuidado del calzado parezca abrumador, pero hemos reunido nuestros mejores consejos y trucos para limpiarla y mantenerla. Consulta nuestra guía de cuidado de gamuza.</p>",
                                 "width": "fit-content",
                                 "max_width": "normal",
                                 "alignment": "left",
@@ -7334,7 +7334,7 @@
                               "type": "text",
                               "name": "t:names.heading",
                               "settings": {
-                                "text": "<h3>RECLAIMED LEATHER. REMADE TO LAST</h3>",
+                                "text": "<h3>CUERO RECUPERADO. REHECHO PARA DURAR</h3>",
                                 "width": "fit-content",
                                 "max_width": "normal",
                                 "alignment": "left",
@@ -7377,7 +7377,7 @@
                               "type": "text",
                               "name": "t:names.text",
                               "settings": {
-                                "text": "<p>Leather offcuts transformed into an innovative material through milling, heat, pressure, water and a textile core.  Soft and supple straight from the box without compromising on durability. A lightweight material with a subtle textured finish.</p>",
+                                "text": "<p>Retazos de cuero transformados en un material innovador mediante molienda, calor, presión, agua y un núcleo textil. Suave y flexible desde el primer uso sin comprometer la durabilidad. Un material ligero con un acabado texturizado sutil.</p>",
                                 "width": "fit-content",
                                 "max_width": "normal",
                                 "alignment": "left",
@@ -7699,7 +7699,7 @@
                               "type": "text",
                               "name": "t:names.text",
                               "settings": {
-                                "text": "<p>Keep your Genix Nappa in the best possible condition by wiping off any dirt with a soft, damp cloth. We don’t recommend using our shoe care products on this material.</p>",
+                                "text": "<p>Mantén tu Genix Nappa en las mejores condiciones posibles limpiando cualquier suciedad con un paño suave y húmedo. No recomendamos usar nuestros productos de cuidado de calzado en este material.</p>",
                                 "width": "fit-content",
                                 "max_width": "normal",
                                 "alignment": "left",
