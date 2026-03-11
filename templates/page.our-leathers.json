@@ -958,7 +958,7 @@
                               "type": "text",
                               "name": "t:names.text",
                               "settings": {
-                                "text": "<p><a href=\"https://www.drmartens.com/uk/en_gb/unisex/ambassador-leather-boots-shoes/c/04001200\"><span style=\"text-decoration:underline\">COMPRA CUERO AMBASSADOR &gt;</span></a></p>",
+                                "text": "<p><a href=\"https://www.drmartens.com/uk/en_gb/unisex/ambassador-leather-boots-shoes/c/04001200\" title=\"COMPRA CUERO AMBASSADOR\"><span style=\"text-decoration:underline\">COMPRA CUERO AMBASSADOR &gt;</span></a></p>",
                                 "width": "fit-content",
                                 "max_width": "normal",
                                 "alignment": "left",
@@ -6420,7 +6420,7 @@
                 "accordion_row_jJGhYE": {
                   "type": "_accordion-row",
                   "settings": {
-                    "heading": "NUBUCK LEATHER",
+                    "heading": "CUERO NUBUCK",
                     "open_by_default": false,
                     "icon": "none",
                     "width": 12
@@ -6694,7 +6694,7 @@
                               "type": "text",
                               "name": "t:names.text",
                               "settings": {
-                                "text": "<p><a href=\"https://www.drmartens.com/uk/en_gb/c/04e30000?dmmainmaterial=leather&dmmainmaterial=nubuck\"><span style=\"text-decoration:underline\">SHOP NUBUCK LEATHER &gt;</span></a></p>",
+                                "text": "<p><a href=\"https://www.drmartens.com/uk/en_gb/c/04e30000?dmmainmaterial=leather&dmmainmaterial=nubuck\" title=\"COMPRAR CUERO NUBUCK\"><span style=\"text-decoration:underline\">COMPRAR CUERO NUBUCK &gt;</span></a></p>",
                                 "width": "fit-content",
                                 "max_width": "normal",
                                 "alignment": "left",
@@ -6783,7 +6783,7 @@
                 "accordion_row_wUcVzx": {
                   "type": "_accordion-row",
                   "settings": {
-                    "heading": "SUEDE LEATHER",
+                    "heading": "CUERO GAMUZA",
                     "open_by_default": false,
                     "icon": "none",
                     "width": 12
@@ -7057,7 +7057,7 @@
                               "type": "text",
                               "name": "t:names.text",
                               "settings": {
-                                "text": "<p><a href=\"https://www.drmartens.com/uk/en_gb/c/04e30000\"><span style=\"text-decoration:underline\">SHOP SUEDE LEATHER &gt;</span></a></p>",
+                                "text": "<p><a href=\"https://www.drmartens.com/uk/en_gb/c/04e30000\" title=\"COMPRAR CUERO GAMUZA\"><span style=\"text-decoration:underline\">COMPRAR CUERO GAMUZA &gt;</span></a></p>",
                                 "width": "fit-content",
                                 "max_width": "normal",
                                 "alignment": "left",
@@ -7420,7 +7420,7 @@
                               "type": "text",
                               "name": "t:names.text",
                               "settings": {
-                                "text": "<p><a href=\"https://www.drmartens.com/uk/en_gb/genix-nappa\"><span style=\"text-decoration:underline\">COMO SE HACE &gt;</span></a></p>",
+                                "text": "<p><a href=\"https://www.drmartens.com/uk/en_gb/genix-nappa\" title=\"COMO SE HACE\"><span style=\"text-decoration:underline\">COMO SE HACE &gt;</span></a></p>",
                                 "width": "fit-content",
                                 "max_width": "normal",
                                 "alignment": "left",
