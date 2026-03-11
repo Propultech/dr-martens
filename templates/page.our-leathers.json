@@ -4986,7 +4986,7 @@
                 "accordion_row_PV6tzD": {
                   "type": "_accordion-row",
                   "settings": {
-                    "heading": "NAPPA LEATHER",
+                    "heading": "CUERO NAPPA",
                     "open_by_default": false,
                     "icon": "none",
                     "width": 12
@@ -5260,7 +5260,7 @@
                               "type": "text",
                               "name": "t:names.text",
                               "settings": {
-                                "text": "<p><a href=\"https://www.drmartens.com/uk/en_gb/unisex/nappa-leather-boots-shoes/c/04ha8600\"><span style=\"text-decoration:underline\">SHOP NAPPA LEATHER &gt;</span></a></p>",
+                                "text": "<p><a href=\"https://www.drmartens.com/uk/en_gb/unisex/nappa-leather-boots-shoes/c/04ha8600\"><span style=\"text-decoration:underline\">COMPRAR CUERO NAPPA &gt;</span></a></p>",
                                 "width": "fit-content",
                                 "max_width": "normal",
                                 "alignment": "left",
@@ -5668,7 +5668,7 @@
                               "type": "button",
                               "name": "t:names.button",
                               "settings": {
-                                "label": "SHOP NAPPA LEATHER",
+                                "label": "COMPRAR CUERO NAPPA",
                                 "link": "shopify://collections/all",
                                 "open_in_new_tab": false,
                                 "style_class": "button",
@@ -5703,7 +5703,7 @@
                 "accordion_row_YMznQQ": {
                   "type": "_accordion-row",
                   "settings": {
-                    "heading": "QUILON LEATHER",
+                    "heading": "CUERO QUILON",
                     "open_by_default": false,
                     "icon": "none",
                     "width": 12
@@ -5977,7 +5977,7 @@
                               "type": "text",
                               "name": "t:names.text",
                               "settings": {
-                                "text": "<p><a href=\"https://www.drmartens.com/uk/en_gb/unisex/quilon-leather-boots-shoes/c/04ha8700\"><span style=\"text-decoration:underline\">SHOP QUILON LEATHER &gt;</span></a></p>",
+                                "text": "<p><a href=\"https://www.drmartens.com/uk/en_gb/unisex/quilon-leather-boots-shoes/c/04ha8700\"><span style=\"text-decoration:underline\">COMPRAR CUERO QUILON &gt;</span></a></p>",
                                 "width": "fit-content",
                                 "max_width": "normal",
                                 "alignment": "left",
@@ -6385,7 +6385,7 @@
                               "type": "button",
                               "name": "t:names.button",
                               "settings": {
-                                "label": "SHOP QUILON LEATHER",
+                                "label": "COMPRAR CUERO QUILON",
                                 "link": "shopify://collections/all",
                                 "open_in_new_tab": false,
                                 "style_class": "button",
