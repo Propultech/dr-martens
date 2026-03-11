@@ -9427,7 +9427,7 @@
             "corner_radius": 0,
             "visibility": "all",
             "padding-block-start": 0,
-            "padding-block-end": 40,
+            "padding-block-end": 30,
             "padding-inline-start": 0,
             "padding-inline-end": 0,
             "mobile_padding_override": true,
@@ -9444,7 +9444,7 @@
           "settings": {
             "text": "<p>Well-loved vintage or box-fresh — your DM’s need a bit of extra care from time to time. We’ve laid out how in a series of guides to ensure your Docs can keep up — wherever you take them.​</p>",
             "width": "100%",
-            "max_width": "normal",
+            "max_width": "none",
             "alignment": "center",
             "type_preset": "custom",
             "font": "var(--font-body--family)",
@@ -9486,7 +9486,7 @@
         "text_TrcjNx",
         "text_UwLyLd"
       ],
-      "name": "t:names.custom_section",
+      "name": "Sección | keep them",
       "settings": {
         "content_direction": "column",
         "vertical_on_mobile": true,
