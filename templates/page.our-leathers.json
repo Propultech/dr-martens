@@ -4269,7 +4269,7 @@
                 "accordion_row_fL7wh4": {
                   "type": "_accordion-row",
                   "settings": {
-                    "heading": "FELIX RUB OFF",
+                    "heading": "FÉLIX DESGASTE",
                     "open_by_default": false,
                     "icon": "none",
                     "width": 12
@@ -4543,7 +4543,7 @@
                               "type": "text",
                               "name": "t:names.text",
                               "settings": {
-                                "text": "<p><a href=\"https://www.drmartens.com/uk/en_gb/unisex/vegan/c/04060000\"><span style=\"text-decoration:underline\">SHOP VEGAN-FRIENDLY​ &gt;</span></a></p>",
+                                "text": "<p><a href=\"https://www.drmartens.com/uk/en_gb/unisex/vegan/c/04060000\"><span style=\"text-decoration:underline\">COMPRAR CUERO VEGANO​ &gt;</span></a></p>",
                                 "width": "fit-content",
                                 "max_width": "normal",
                                 "alignment": "left",
@@ -4951,7 +4951,7 @@
                               "type": "button",
                               "name": "t:names.button",
                               "settings": {
-                                "label": "SHOP VEGAN-FRIENDLY​",
+                                "label": "COMPRAR CUERO VEGANO",
                                 "link": "shopify://collections/all",
                                 "open_in_new_tab": false,
                                 "style_class": "button",
