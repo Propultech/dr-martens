@@ -390,7 +390,7 @@
         "gap": 0,
         "section_width": "full-width",
         "section_height": "",
-        "section_height_custom": 100,
+        "section_height_custom": 1,
         "enable_sticky_section": false,
         "sticky_section_offset_desktop": 0,
         "sticky_section_offset_mobile": 0,
