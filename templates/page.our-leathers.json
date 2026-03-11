@@ -359,10 +359,259 @@
         "padding-inline-start-mobile": 0,
         "padding-inline-end-mobile": 0
       }
+    },
+    "section_DHjpaa": {
+      "type": "section",
+      "blocks": {
+        "accordion_VydtCc": {
+          "type": "accordion",
+          "name": "t:names.accordion",
+          "settings": {
+            "icon": "plus",
+            "dividers": true,
+            "type_preset": "h3",
+            "inherit_color_scheme": true,
+            "color_scheme": "",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0,
+            "padding-block-start-mobile": 0,
+            "padding-block-end-mobile": 0,
+            "padding-inline-start-mobile": 0,
+            "padding-inline-end-mobile": 0
+          },
+          "blocks": {
+            "accordion_row_8rKwDM": {
+              "type": "_accordion-row",
+              "settings": {
+                "heading": "Política de devoluciones",
+                "open_by_default": true,
+                "icon": "none",
+                "width": 12
+              },
+              "blocks": {
+                "text_xJYmdg": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p>Nuestro objetivo es que cada cliente quede totalmente satisfecho con su compra. Si no es así, cuéntanoslo y haremos todo lo posible para solucionarlo.</p>",
+                    "width": "100%",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "rte",
+                    "font": "var(--font-body--family)",
+                    "weight": "",
+                    "font_size": "1rem",
+                    "font_size_mobile": "",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "font_stretch": "normal",
+                    "color": "var(--color-foreground)",
+                    "color_custom": "",
+                    "italic_color": "",
+                    "strong_color": "",
+                    "link_font_size": "",
+                    "link_font_size_mobile": "",
+                    "list_padding_inline_start": 40,
+                    "list_item_icon": "",
+                    "background": false,
+                    "line_highlight": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "visibility": "all",
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0,
+                    "mobile_padding_override": false,
+                    "padding-block-start-mobile": 0,
+                    "padding-block-end-mobile": 0,
+                    "padding-inline-start-mobile": 0,
+                    "padding-inline-end-mobile": 0
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "text_xJYmdg"
+              ]
+            },
+            "accordion_row_8hXbKe": {
+              "type": "_accordion-row",
+              "settings": {
+                "heading": "Envío",
+                "open_by_default": false,
+                "icon": "none",
+                "width": 20
+              },
+              "blocks": {
+                "text_CEcmxe": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p>Trabajaremos para enviar tu pedido lo antes posible. Cuando se envíe, recibirás un correo electrónico con más información. Los tiempos de entrega varían según tu ubicación.</p>",
+                    "width": "100%",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "rte",
+                    "font": "var(--font-body--family)",
+                    "weight": "",
+                    "font_size": "1rem",
+                    "font_size_mobile": "",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "font_stretch": "normal",
+                    "color": "var(--color-foreground)",
+                    "color_custom": "",
+                    "italic_color": "",
+                    "strong_color": "",
+                    "link_font_size": "",
+                    "link_font_size_mobile": "",
+                    "list_padding_inline_start": 40,
+                    "list_item_icon": "",
+                    "background": false,
+                    "line_highlight": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "visibility": "all",
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0,
+                    "mobile_padding_override": false,
+                    "padding-block-start-mobile": 0,
+                    "padding-block-end-mobile": 0,
+                    "padding-inline-start-mobile": 0,
+                    "padding-inline-end-mobile": 0
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "text_CEcmxe"
+              ]
+            },
+            "accordion_row_agNpk3": {
+              "type": "_accordion-row",
+              "settings": {
+                "heading": "Fabricación",
+                "open_by_default": false,
+                "icon": "none",
+                "width": 20
+              },
+              "blocks": {
+                "text_HGGd7p": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p>Nuestros productos se fabrican tanto localmente como globalmente. Seleccionamos cuidadosamente a nuestros socios de fabricación para garantizar alta calidad y un precio justo.</p>",
+                    "width": "100%",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "rte",
+                    "font": "var(--font-body--family)",
+                    "weight": "",
+                    "font_size": "1rem",
+                    "font_size_mobile": "",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "font_stretch": "normal",
+                    "color": "var(--color-foreground)",
+                    "color_custom": "",
+                    "italic_color": "",
+                    "strong_color": "",
+                    "link_font_size": "",
+                    "link_font_size_mobile": "",
+                    "list_padding_inline_start": 40,
+                    "list_item_icon": "",
+                    "background": false,
+                    "line_highlight": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "visibility": "all",
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0,
+                    "mobile_padding_override": false,
+                    "padding-block-start-mobile": 0,
+                    "padding-block-end-mobile": 0,
+                    "padding-inline-start-mobile": 0,
+                    "padding-inline-end-mobile": 0
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "text_HGGd7p"
+              ]
+            }
+          },
+          "block_order": [
+            "accordion_row_8rKwDM",
+            "accordion_row_8hXbKe",
+            "accordion_row_agNpk3"
+          ]
+        }
+      },
+      "block_order": [
+        "accordion_VydtCc"
+      ],
+      "name": "t:names.custom_section",
+      "settings": {
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "flex-start",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 12,
+        "section_width": "page-width",
+        "section_height": "small",
+        "section_height_custom": 50,
+        "enable_sticky_section": false,
+        "sticky_section_offset_desktop": 0,
+        "sticky_section_offset_mobile": 0,
+        "color_scheme": "",
+        "background_media": "none",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "background_image_visibility": "both",
+        "background_image_vertical_alignment": "center",
+        "background_image_horizontal_position": "center",
+        "background_image_max_height_desktop": "0",
+        "background_image_max_height_mobile": "0",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_radius": 0,
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "padding-block-start": 0,
+        "padding-block-end": 0,
+        "padding-inline-start": 0,
+        "padding-inline-end": 0,
+        "padding-block-start-mobile": 0,
+        "padding-block-end-mobile": 0,
+        "padding-inline-start-mobile": 0,
+        "padding-inline-end-mobile": 0
+      }
     }
   },
   "order": [
     "main",
-    "section_BfT6aG"
+    "section_BfT6aG",
+    "section_DHjpaa"
   ]
 }
