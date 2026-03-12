@@ -877,6 +877,9 @@
       "block_order": [
         "text_nE8Dwd"
       ],
+      "custom_css": [
+        ".size-guide-overlay__wrapper {height: 100%;}"
+      ],
       "name": "Sección | guía de tallas",
       "settings": {
         "content_direction": "column",
@@ -907,7 +910,7 @@
         "border_opacity": 100,
         "border_radius": 0,
         "toggle_overlay": true,
-        "overlay_color": "#101010",
+        "overlay_color": "#ffffff",
         "overlay_style": "solid",
         "gradient_direction": "to top",
         "padding-block-start": 0,
