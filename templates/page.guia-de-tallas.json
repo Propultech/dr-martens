@@ -1281,7 +1281,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<h2>DM'S SHOE SHAPES</h2>",
+            "text": "<h2>FORMAS DE CALZADO DM</h2>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "center",
@@ -1459,7 +1459,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h3>STANDARD</h3>",
+                    "text": "<h3>ESTÁNDAR</h3>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -1502,7 +1502,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<ul><li>Generous and a more rounded toe shape</li><li>Featured on Men’s and Unisex styles</li><li>Recommended for medium to wide feet</li><li><strong>TIP:</strong> For those with more narrow feet try adding an <a href=\"https://www.drmartens.com/us/en/accessories/shoecare-laces-and-insoles/shoe-care---cleaner/c/07597500?dmsubstyle=insoles\"><span style=\"text-decoration:underline\">insole</span></a></li></ul>",
+                    "text": "<ul><li>Punta amplia y redondeada.<br/>Disponible en modelos para hombre y unisex.</li><li>Recomendado para pies de ancho medio a ancho.</li><li><strong>CONSEJO</strong>: Para pies estrechos, prueba a añadir una plantilla.</li></ul>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -1651,7 +1651,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h3>STANDARD SLIM</h3>",
+                    "text": "<h3>ESTÁNDAR SLIM</h3>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -1694,7 +1694,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<ul><li>Slimmer overall silhouette</li><li>Featured on Women’s silhouettes</li><li>Recommended for medium to narrow feet</li><li><strong>TIP:</strong> For those with wider feet try our <a href=\"https://www.drmartens.com/us/en/unisex/soft-leather-footwear/c/04ha5000\"><span style=\"text-decoration:underline\">soft leather boots and shoes</span></a>, or try sizing up</li></ul>",
+                    "text": "<ul><li>Silueta general más delgada</li><li>Destacado en Siluetas de mujer</li><li>Recomendado para pies medianos a estrechos</li><li><strong>CONSEJO</strong>: Para quienes tienen pies más anchos, prueben nuestras botas y zapatos de cuero suave, o intenten elegir una talla más grande</li></ul>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -1843,7 +1843,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h3>HERITAGE</h3>",
+                    "text": "<h3>HERENCIA</h3>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -1886,7 +1886,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<ul><li>Our vintage, original tapered toe shape</li><li>Featured on our Vintage Made in England styles</li><li>Recommended for a range of feet</li></ul>",
+                    "text": "<ul><li>Nuestra forma de punta cónica original y vintage</li><li>Destacado en nuestro estilo Vintage Made in England</li><li>Recomendado para una variedad de pies</li></ul>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
