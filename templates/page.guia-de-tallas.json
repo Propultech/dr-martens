@@ -480,7 +480,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>SIZING FAQS</p>",
+                    "text": "<p><a href=\"#faq\" title=\"TAMAÑOS FAQS\">TAMAÑOS FAQS</a></p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "center",
@@ -1242,7 +1242,7 @@
         "vertical_alignment_flex_direction_column": "center",
         "gap": 0,
         "section_width": "page-width",
-        "section_height": "small",
+        "section_height": "",
         "section_height_custom": 50,
         "enable_sticky_section": false,
         "sticky_section_offset_desktop": 0,
@@ -2004,6 +2004,765 @@
         "padding-inline-start-mobile": 0,
         "padding-inline-end-mobile": 0
       }
+    },
+    "section_qzpn6b": {
+      "type": "section",
+      "blocks": {
+        "anchor_iwwjRe": {
+          "type": "anchor",
+          "name": "Anchor",
+          "settings": {
+            "anchor_id": "faq"
+          },
+          "blocks": {}
+        },
+        "text_9ajYAB": {
+          "type": "text",
+          "name": "t:names.heading",
+          "settings": {
+            "text": "<h3>TAMAÑOS FAQS</h3>",
+            "width": "100%",
+            "max_width": "normal",
+            "alignment": "center",
+            "type_preset": "custom",
+            "font": "var(--font-body--family)",
+            "weight": "800",
+            "font_size": "1.5rem",
+            "font_size_mobile": "",
+            "line_height": "tight",
+            "letter_spacing": "normal",
+            "case": "uppercase",
+            "wrap": "pretty",
+            "font_stretch": "extra-expanded",
+            "color": "var(--color-foreground)",
+            "color_custom": "",
+            "italic_color": "",
+            "strong_color": "",
+            "link_font_size": "",
+            "link_font_size_mobile": "",
+            "list_padding_inline_start": 40,
+            "list_item_icon": "",
+            "background": false,
+            "line_highlight": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "visibility": "all",
+            "padding-block-start": 30,
+            "padding-block-end": 30,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0,
+            "mobile_padding_override": true,
+            "padding-block-start-mobile": 30,
+            "padding-block-end-mobile": 30,
+            "padding-inline-start-mobile": 0,
+            "padding-inline-end-mobile": 0
+          },
+          "blocks": {}
+        },
+        "group_4EV8pU": {
+          "type": "group",
+          "name": "t:names.group",
+          "settings": {
+            "content_direction": "column",
+            "visibility": "",
+            "enable_slider": false,
+            "slider_on": "both",
+            "slider_scrollbar_color": "#FFDD00",
+            "vertical_on_mobile": true,
+            "horizontal_alignment": "flex-start",
+            "vertical_alignment": "center",
+            "align_baseline": false,
+            "horizontal_alignment_flex_direction_column": "flex-start",
+            "vertical_alignment_flex_direction_column": "center",
+            "gap": 12,
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "custom_height": 100,
+            "inherit_color_scheme": true,
+            "color_scheme": "",
+            "background_media": "none",
+            "video_position": "cover",
+            "background_image_position": "cover",
+            "background_image_visibility": "both",
+            "background_image_vertical_alignment": "center",
+            "background_image_horizontal_position": "center",
+            "background_image_max_height_desktop": "0",
+            "background_image_max_height_mobile": "0",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "toggle_overlay": false,
+            "overlay_color": "#00000026",
+            "overlay_style": "solid",
+            "gradient_direction": "to top",
+            "link": "",
+            "open_in_new_tab": false,
+            "placeholder": "",
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0,
+            "padding-block-start-mobile": 0,
+            "padding-block-end-mobile": 0,
+            "padding-inline-start-mobile": 0,
+            "padding-inline-end-mobile": 0,
+            "custom_css": ""
+          },
+          "blocks": {
+            "accordion_amPAcB": {
+              "type": "accordion",
+              "name": "t:names.accordion",
+              "settings": {
+                "icon": "caret",
+                "dividers": true,
+                "type_preset": "h3",
+                "inherit_color_scheme": true,
+                "color_scheme": "",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 55,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0,
+                "padding-block-start-mobile": 0,
+                "padding-block-end-mobile": 55,
+                "padding-inline-start-mobile": 0,
+                "padding-inline-end-mobile": 0
+              },
+              "blocks": {
+                "accordion_row_K7ThMP": {
+                  "type": "_accordion-row",
+                  "settings": {
+                    "heading": "¿Los DM son grandes o son del tamaño real?",
+                    "open_by_default": true,
+                    "icon": "none",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "text_FMnJne": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>The size of our boots, shoes and sandals can differ between silhouettes, but we’d say that most run true to size. If you’re looking for a wider fit with a more rounded toe, we’d suggest looking at men’s and unisex styles. Or if you want a narrower, more tapered fit, try our women’s styles. Customer reviews are always a good way to get a sense on fit, too. You can find them on most product pages.</p>",
+                        "width": "100%",
+                        "max_width": "none",
+                        "alignment": "left",
+                        "type_preset": "custom",
+                        "font": "var(--font-body--family)",
+                        "weight": "",
+                        "font_size": "1rem",
+                        "font_size_mobile": "",
+                        "line_height": "loose",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "font_stretch": "normal",
+                        "color": "var(--color-foreground)",
+                        "color_custom": "",
+                        "italic_color": "",
+                        "strong_color": "",
+                        "link_font_size": "",
+                        "link_font_size_mobile": "",
+                        "list_padding_inline_start": 40,
+                        "list_item_icon": "",
+                        "background": false,
+                        "line_highlight": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "visibility": "all",
+                        "padding-block-start": 10,
+                        "padding-block-end": 10,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0,
+                        "mobile_padding_override": true,
+                        "padding-block-start-mobile": 10,
+                        "padding-block-end-mobile": 10,
+                        "padding-inline-start-mobile": 0,
+                        "padding-inline-end-mobile": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text_FMnJne"
+                  ]
+                },
+                "accordion_row_XRDNBM": {
+                  "type": "_accordion-row",
+                  "settings": {
+                    "heading": "¿Cuál es la diferencia entre las tallas de calzado para hombres, mujeres y unisex?",
+                    "open_by_default": false,
+                    "icon": "none",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "text_qC6J7n": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>Women’s styles will generally say “Women’s” in the name and will have a slimmer and more tapered shape. Men’s and Unisex styles have a more rounded fit and wider footbed shape. <br/><br/><strong>Tip:</strong>Unisex styles can be identified by the size selection on the style's product page. If a size is Unisex, both Men’s and Women's sizing options appear.</p>",
+                        "width": "100%",
+                        "max_width": "none",
+                        "alignment": "left",
+                        "type_preset": "custom",
+                        "font": "var(--font-body--family)",
+                        "weight": "",
+                        "font_size": "1rem",
+                        "font_size_mobile": "",
+                        "line_height": "loose",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "font_stretch": "normal",
+                        "color": "var(--color-foreground)",
+                        "color_custom": "",
+                        "italic_color": "",
+                        "strong_color": "",
+                        "link_font_size": "",
+                        "link_font_size_mobile": "",
+                        "list_padding_inline_start": 40,
+                        "list_item_icon": "",
+                        "background": false,
+                        "line_highlight": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "visibility": "all",
+                        "padding-block-start": 10,
+                        "padding-block-end": 10,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0,
+                        "mobile_padding_override": true,
+                        "padding-block-start-mobile": 10,
+                        "padding-block-end-mobile": 10,
+                        "padding-inline-start-mobile": 0,
+                        "padding-inline-end-mobile": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text_qC6J7n"
+                  ]
+                },
+                "accordion_row_jMdNAy": {
+                  "type": "_accordion-row",
+                  "settings": {
+                    "heading": "¿Las Dr. Martens vienen en medias tallas?",
+                    "open_by_default": false,
+                    "icon": "none",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "text_HWCca6": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>Our shoes and boots are available in whole sizes only. You can use our size chart to find your best fit.<br/><br/><strong>Tip:</strong>If you normally wear a half size in women’s US sizes, we’d recommend sizing down. If you typically wear a half size in men’s US sizes, we’d recommend sizing up.</p>",
+                        "width": "100%",
+                        "max_width": "none",
+                        "alignment": "left",
+                        "type_preset": "custom",
+                        "font": "var(--font-body--family)",
+                        "weight": "",
+                        "font_size": "1rem",
+                        "font_size_mobile": "",
+                        "line_height": "loose",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "font_stretch": "normal",
+                        "color": "var(--color-foreground)",
+                        "color_custom": "",
+                        "italic_color": "",
+                        "strong_color": "",
+                        "link_font_size": "",
+                        "link_font_size_mobile": "",
+                        "list_padding_inline_start": 40,
+                        "list_item_icon": "",
+                        "background": false,
+                        "line_highlight": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "visibility": "all",
+                        "padding-block-start": 10,
+                        "padding-block-end": 10,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0,
+                        "mobile_padding_override": true,
+                        "padding-block-start-mobile": 10,
+                        "padding-block-end-mobile": 10,
+                        "padding-inline-start-mobile": 0,
+                        "padding-inline-end-mobile": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text_HWCca6"
+                  ]
+                },
+                "accordion_row_97fDtj": {
+                  "type": "_accordion-row",
+                  "settings": {
+                    "heading": "¿Qué pasa si estoy entre dos tallas?",
+                    "open_by_default": false,
+                    "icon": "none",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "text_7iKcg4": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>If your footwear is feeling roomy, but the size down is too small, you can customize the fit by adding an insole – this is equivalent to a half-size down. If you’d like to keep the roomier fit of the shoe but have the heel feel more snug, try attaching<a href=\"https://www.drmartens.com/us/en/heel-grips/p/AD034000\"><span style=\"text-decoration:underline\">heel grips</span></a>. These products are available on the<a href=\"https://www.drmartens.com/us/en/accessories/c/07000000?categories=globalproductcatalog_us2dcategories_us2daccessories_us2daccessories2dshoecare2dlaces2dinsoles_us2daccessories2dshoecare2dlaces2dinsoles2dshoecare2dcleaner\"><span style=\"text-decoration:underline\">Dr. Martens website</span></a>.</p>",
+                        "width": "100%",
+                        "max_width": "none",
+                        "alignment": "left",
+                        "type_preset": "custom",
+                        "font": "var(--font-body--family)",
+                        "weight": "",
+                        "font_size": "1rem",
+                        "font_size_mobile": "",
+                        "line_height": "loose",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "font_stretch": "normal",
+                        "color": "var(--color-foreground)",
+                        "color_custom": "",
+                        "italic_color": "",
+                        "strong_color": "",
+                        "link_font_size": "",
+                        "link_font_size_mobile": "",
+                        "list_padding_inline_start": 40,
+                        "list_item_icon": "",
+                        "background": false,
+                        "line_highlight": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "visibility": "all",
+                        "padding-block-start": 10,
+                        "padding-block-end": 10,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0,
+                        "mobile_padding_override": true,
+                        "padding-block-start-mobile": 10,
+                        "padding-block-end-mobile": 10,
+                        "padding-inline-start-mobile": 0,
+                        "padding-inline-end-mobile": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text_7iKcg4"
+                  ]
+                },
+                "accordion_row_4n4XaV": {
+                  "type": "_accordion-row",
+                  "settings": {
+                    "heading": "¿Cómo sé si estoy usando la talla correcta?",
+                    "open_by_default": false,
+                    "icon": "none",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "text_BtbPiV": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>Start by assessing the fit of your shoes while standing and walking. You’ll know you’re wearing the correct size if the widest portion of your foot is resting in the widest portion of the shoe. Everyone’s toes are shaped differently, but you want enough space for all of your toes to lay flat and not feel crunched against the front when you walk. It is normal for your heel to rise slightly in a new pair – you want your to be able to move naturally and prevent blisters. As you start to wear you pair more, the soles will start to flex with your foot.<br/><br/>The stiffer the leather, the longer it will take to break in your boots or shoes. You can find an overview of our leather variations here in our<a href=\"https://www.drmartens.com/us/en/guides/our-leathers\"><span style=\"text-decoration:underline\">leather guide</span></a>. If you are still breaking in your boots or shoes, give it some time; it will all be worth it.<br/><br/><strong>Tip:</strong>Some snugness is okay, but not necessary. Painful tightness can indicate the need for a different size or style. Try using our<a href=\"https://www.drmartens.com/us/en/wonder-balsam-shoe-protector-85ml/p/AC787000\"><span style=\"text-decoration:underline\">Wonder Balsam Shoe Protector</span></a>to protect, condition, clean, and help your new footwear shape to your feet.</p>",
+                        "width": "100%",
+                        "max_width": "none",
+                        "alignment": "left",
+                        "type_preset": "custom",
+                        "font": "var(--font-body--family)",
+                        "weight": "",
+                        "font_size": "1rem",
+                        "font_size_mobile": "",
+                        "line_height": "loose",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "font_stretch": "normal",
+                        "color": "var(--color-foreground)",
+                        "color_custom": "",
+                        "italic_color": "",
+                        "strong_color": "",
+                        "link_font_size": "",
+                        "link_font_size_mobile": "",
+                        "list_padding_inline_start": 40,
+                        "list_item_icon": "",
+                        "background": false,
+                        "line_highlight": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "visibility": "all",
+                        "padding-block-start": 10,
+                        "padding-block-end": 10,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0,
+                        "mobile_padding_override": true,
+                        "padding-block-start-mobile": 10,
+                        "padding-block-end-mobile": 10,
+                        "padding-inline-start-mobile": 0,
+                        "padding-inline-end-mobile": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text_BtbPiV"
+                  ]
+                },
+                "accordion_row_7NKhzc": {
+                  "type": "_accordion-row",
+                  "settings": {
+                    "heading": "¿Cuál es la mejor forma de enlazar mis DM?",
+                    "open_by_default": false,
+                    "icon": "none",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "text_xDMEKD": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>However you’d like to show off your style or is most comfortable! With a new pair, it may feel good to leave one or two sets of eyelets left open at the top. This keeps the top part of the shoe from feeling abrasive while also being laced high enough that you feel secure when you walk while they’re shaping to you. Some people like the look and feel of wrapping the laces around the ankle. If you’re still unsure, we put together a guide of our favorite<a href=\"https://www.drmartens.com/us/en/guides/how-to-lace-boots-shoes\"><span style=\"text-decoration:underline\">Ways to lace DM’s</span></a>.<a href=\"https://www.drmartens.com/us/en/c/07597600\"><span style=\"text-decoration:underline\">Shop our range of laces</span></a>to switch up your style and customize your look.<br/><br/><strong>Tip:</strong>We’d recommend re-lacing any new pair of shoes so that the aglet (tip of the lace) comes from the underside of the eyelet hole for a more secure fit.</p>",
+                        "width": "100%",
+                        "max_width": "none",
+                        "alignment": "left",
+                        "type_preset": "custom",
+                        "font": "var(--font-body--family)",
+                        "weight": "",
+                        "font_size": "1rem",
+                        "font_size_mobile": "",
+                        "line_height": "loose",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "font_stretch": "normal",
+                        "color": "var(--color-foreground)",
+                        "color_custom": "",
+                        "italic_color": "",
+                        "strong_color": "",
+                        "link_font_size": "",
+                        "link_font_size_mobile": "",
+                        "list_padding_inline_start": 40,
+                        "list_item_icon": "",
+                        "background": false,
+                        "line_highlight": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "visibility": "all",
+                        "padding-block-start": 10,
+                        "padding-block-end": 10,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0,
+                        "mobile_padding_override": true,
+                        "padding-block-start-mobile": 10,
+                        "padding-block-end-mobile": 10,
+                        "padding-inline-start-mobile": 0,
+                        "padding-inline-end-mobile": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text_xDMEKD"
+                  ]
+                },
+                "accordion_row_EyDVkz": {
+                  "type": "_accordion-row",
+                  "settings": {
+                    "heading": "¿Cuáles son los mejores DM para pies anchos?",
+                    "open_by_default": false,
+                    "icon": "none",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "text_8VJiyq": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>Our Unisex and Men’s standard fit footwear offers a wider and rounded toe shape, making it ideal for individuals with broader feet. Our Women’s standard fit styles will fit slightly smaller, and fit closer to traditional Women’s sizing. These styles have a narrower footbed. For example, if the 1460 Women’s Smooth Leather Lace-Up Boots feel too narrow, we suggest trying the 1460 Smooth Leather Lace-Up Boots in unisex sizing. Many people find that it offers that extra bit of space they need for the best fit.</p>",
+                        "width": "100%",
+                        "max_width": "none",
+                        "alignment": "left",
+                        "type_preset": "custom",
+                        "font": "var(--font-body--family)",
+                        "weight": "",
+                        "font_size": "1rem",
+                        "font_size_mobile": "",
+                        "line_height": "loose",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "font_stretch": "normal",
+                        "color": "var(--color-foreground)",
+                        "color_custom": "",
+                        "italic_color": "",
+                        "strong_color": "",
+                        "link_font_size": "",
+                        "link_font_size_mobile": "",
+                        "list_padding_inline_start": 40,
+                        "list_item_icon": "",
+                        "background": false,
+                        "line_highlight": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "visibility": "all",
+                        "padding-block-start": 10,
+                        "padding-block-end": 10,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0,
+                        "mobile_padding_override": true,
+                        "padding-block-start-mobile": 10,
+                        "padding-block-end-mobile": 10,
+                        "padding-inline-start-mobile": 0,
+                        "padding-inline-end-mobile": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text_8VJiyq"
+                  ]
+                },
+                "accordion_row_xJwPjk": {
+                  "type": "_accordion-row",
+                  "settings": {
+                    "heading": "¿Dónde puedo encontrar el tamaño de mis DM?",
+                    "open_by_default": false,
+                    "icon": "none",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "text_Xkydpe": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>Sizes will be marked inside the tongue of your original Dr. Martens and on the inside the ankle strap of most of our sandal styles. Remember that Made in England Styles will have the UK size listed and not the US size.</p>",
+                        "width": "100%",
+                        "max_width": "none",
+                        "alignment": "left",
+                        "type_preset": "custom",
+                        "font": "var(--font-body--family)",
+                        "weight": "",
+                        "font_size": "1rem",
+                        "font_size_mobile": "",
+                        "line_height": "loose",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "font_stretch": "normal",
+                        "color": "var(--color-foreground)",
+                        "color_custom": "",
+                        "italic_color": "",
+                        "strong_color": "",
+                        "link_font_size": "",
+                        "link_font_size_mobile": "",
+                        "list_padding_inline_start": 40,
+                        "list_item_icon": "",
+                        "background": false,
+                        "line_highlight": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "visibility": "all",
+                        "padding-block-start": 10,
+                        "padding-block-end": 10,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0,
+                        "mobile_padding_override": true,
+                        "padding-block-start-mobile": 10,
+                        "padding-block-end-mobile": 10,
+                        "padding-inline-start-mobile": 0,
+                        "padding-inline-end-mobile": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text_Xkydpe"
+                  ]
+                },
+                "accordion_row_eiGtCT": {
+                  "type": "_accordion-row",
+                  "settings": {
+                    "heading": "¿Qué pasa si estoy acostumbrado a las tallas europeas?",
+                    "open_by_default": false,
+                    "icon": "none",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "text_r9kHW8": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>Most wearers accustomed to the Euro size system will see the number they usually wear or one higher on the box when they get the correct US size. See our size chart above for the conversion from your European size to a US Women or US Men size.</p>",
+                        "width": "100%",
+                        "max_width": "none",
+                        "alignment": "left",
+                        "type_preset": "custom",
+                        "font": "var(--font-body--family)",
+                        "weight": "",
+                        "font_size": "1rem",
+                        "font_size_mobile": "",
+                        "line_height": "loose",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "font_stretch": "normal",
+                        "color": "var(--color-foreground)",
+                        "color_custom": "",
+                        "italic_color": "",
+                        "strong_color": "",
+                        "link_font_size": "",
+                        "link_font_size_mobile": "",
+                        "list_padding_inline_start": 40,
+                        "list_item_icon": "",
+                        "background": false,
+                        "line_highlight": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "visibility": "all",
+                        "padding-block-start": 10,
+                        "padding-block-end": 10,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0,
+                        "mobile_padding_override": true,
+                        "padding-block-start-mobile": 10,
+                        "padding-block-end-mobile": 10,
+                        "padding-inline-start-mobile": 0,
+                        "padding-inline-end-mobile": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text_r9kHW8"
+                  ]
+                },
+                "accordion_row_HfLpYY": {
+                  "type": "_accordion-row",
+                  "settings": {
+                    "heading": "¿Qué tipo de calcetines debo usar con mis nuevos DM?",
+                    "open_by_default": false,
+                    "icon": "none",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "text_EYYthd": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>We recommend you wear a sock that has a bit of cushion and is high enough that it meets the top of the footwear. Our<a href=\"https://www.drmartens.com/us/en/p/AC742001\"><span style=\"text-decoration:underline\">Double Doc sock</span></a>is a lined sock designed with extra cushion in all the right places. Pairing your footwear with these socks and<a href=\"https://www.drmartens.com/us/en/p/AC787000\"><span style=\"text-decoration:underline\">Wonder Balsam</span></a>is a great way to comfortably break in your DMs to suit you perfectly.</p>",
+                        "width": "100%",
+                        "max_width": "none",
+                        "alignment": "left",
+                        "type_preset": "custom",
+                        "font": "var(--font-body--family)",
+                        "weight": "",
+                        "font_size": "1rem",
+                        "font_size_mobile": "",
+                        "line_height": "loose",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "font_stretch": "normal",
+                        "color": "var(--color-foreground)",
+                        "color_custom": "",
+                        "italic_color": "",
+                        "strong_color": "",
+                        "link_font_size": "",
+                        "link_font_size_mobile": "",
+                        "list_padding_inline_start": 40,
+                        "list_item_icon": "",
+                        "background": false,
+                        "line_highlight": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "visibility": "all",
+                        "padding-block-start": 10,
+                        "padding-block-end": 10,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0,
+                        "mobile_padding_override": true,
+                        "padding-block-start-mobile": 10,
+                        "padding-block-end-mobile": 10,
+                        "padding-inline-start-mobile": 0,
+                        "padding-inline-end-mobile": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text_EYYthd"
+                  ]
+                }
+              },
+              "block_order": [
+                "accordion_row_K7ThMP",
+                "accordion_row_XRDNBM",
+                "accordion_row_jMdNAy",
+                "accordion_row_97fDtj",
+                "accordion_row_4n4XaV",
+                "accordion_row_7NKhzc",
+                "accordion_row_EyDVkz",
+                "accordion_row_xJwPjk",
+                "accordion_row_eiGtCT",
+                "accordion_row_HfLpYY"
+              ]
+            }
+          },
+          "block_order": [
+            "accordion_amPAcB"
+          ]
+        }
+      },
+      "block_order": [
+        "anchor_iwwjRe",
+        "text_9ajYAB",
+        "group_4EV8pU"
+      ],
+      "name": "Sección | FAQ",
+      "settings": {
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "flex-start",
+        "vertical_alignment_flex_direction_column": "flex-start",
+        "gap": 0,
+        "section_width": "page-width",
+        "section_height": "",
+        "section_height_custom": 50,
+        "enable_sticky_section": false,
+        "sticky_section_offset_desktop": 0,
+        "sticky_section_offset_mobile": 0,
+        "color_scheme": "",
+        "background_media": "none",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "background_image_visibility": "both",
+        "background_image_vertical_alignment": "center",
+        "background_image_horizontal_position": "center",
+        "background_image_max_height_desktop": "0",
+        "background_image_max_height_mobile": "0",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_radius": 0,
+        "toggle_overlay": true,
+        "overlay_color": "#ebebeb",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "padding-block-start": 0,
+        "padding-block-end": 0,
+        "padding-inline-start": 0,
+        "padding-inline-end": 0,
+        "padding-block-start-mobile": 0,
+        "padding-block-end-mobile": 0,
+        "padding-inline-start-mobile": 0,
+        "padding-inline-end-mobile": 0
+      }
     }
   },
   "order": [
@@ -2013,6 +2772,7 @@
     "section_NBnEHY",
     "section_qa8pWc",
     "section_tzHmQ3",
-    "section_cxNKqR"
+    "section_cxNKqR",
+    "section_qzpn6b"
   ]
 }
