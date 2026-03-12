@@ -5861,8 +5861,8 @@
                 "padding-block-end": 100,
                 "padding-inline-start": 20,
                 "padding-inline-end": 20,
-                "padding-block-start-mobile": 60,
-                "padding-block-end-mobile": 60,
+                "padding-block-start-mobile": 100,
+                "padding-block-end-mobile": 100,
                 "padding-inline-start-mobile": 20,
                 "padding-inline-end-mobile": 20,
                 "custom_css": ""
@@ -6041,8 +6041,8 @@
                 "padding-block-end": 100,
                 "padding-inline-start": 20,
                 "padding-inline-end": 20,
-                "padding-block-start-mobile": 60,
-                "padding-block-end-mobile": 60,
+                "padding-block-start-mobile": 100,
+                "padding-block-end-mobile": 100,
                 "padding-inline-start-mobile": 20,
                 "padding-inline-end-mobile": 20,
                 "custom_css": ""
@@ -6221,8 +6221,8 @@
                 "padding-block-end": 100,
                 "padding-inline-start": 20,
                 "padding-inline-end": 20,
-                "padding-block-start-mobile": 60,
-                "padding-block-end-mobile": 60,
+                "padding-block-start-mobile": 100,
+                "padding-block-end-mobile": 100,
                 "padding-inline-start-mobile": 20,
                 "padding-inline-end-mobile": 20,
                 "custom_css": ""
