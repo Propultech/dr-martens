@@ -137,6 +137,9 @@
               {%- endif %}
             </legend>
             {% if show_size_guide %}
+              {%- liquid
+                assign size_guide_modal_title = block_settings.size_guide_page.title | default: block_settings.size_guide_title | default: product_option.name
+              -%}
               <dialog-component class="variant-size-guide">
                 <div class="variant-size-guide__header">
                   <span class="variant-size-guide__title">{{ block_settings.size_guide_title | default: product_option.name | escape }}</span>
@@ -235,8 +238,9 @@
                   ref="dialog"
                   class="dialog-modal variant-size-guide__modal color-{{ settings.popover_color_scheme }}{% if block_settings.size_guide_modal_behavior == 'drawer' %} variant-size-guide__modal--drawer dialog-drawer dialog-drawer--right{% endif %}"
                   scroll-lock
-                  aria-label="{{ block_settings.size_guide_title | default: product_option.name | escape }}"
+                  aria-label="{{ size_guide_modal_title | escape }}"
                 >
+                  <h2 class="variant-size-guide__modal-title">{{ size_guide_modal_title | escape }}</h2>
                   <div class="rte variant-size-guide__modal-content">
                     {{ block_settings.size_guide_page.content }}
                   </div>
@@ -1072,6 +1076,18 @@
 
   .variant-size-guide__modal-content {
     padding-right: var(--padding-xl);
+  }
+
+  .variant-size-guide__modal-title {
+    margin: 0 0 16px;
+    color: var(--color-foreground);
+    font-family: var(--font-paragraph--family);
+    font-size: var(--font-size--xl);
+    font-weight: var(--font-accent--weight);
+    font-stretch: var(--font-accent--stretch);
+    line-height: 112.5%;
+    letter-spacing: .25px;
+    text-transform: uppercase;
   }
 
   .variant-size-guide__modal-close {
