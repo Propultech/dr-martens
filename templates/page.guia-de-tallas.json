@@ -1545,7 +1545,7 @@
                   "type": "button",
                   "name": "t:names.button",
                   "settings": {
-                    "label": "SHOP STANDARD FOOTWEAR",
+                    "label": "VER CALZADO ESTÁNDAR",
                     "link": "#",
                     "open_in_new_tab": false,
                     "style_class": "button",
@@ -1737,7 +1737,7 @@
                   "type": "button",
                   "name": "t:names.button",
                   "settings": {
-                    "label": "SHOP STANDARD SLIM",
+                    "label": "VER ESTÁNDAR SLIM",
                     "link": "#",
                     "open_in_new_tab": false,
                     "style_class": "button",
@@ -1929,7 +1929,7 @@
                   "type": "button",
                   "name": "t:names.button",
                   "settings": {
-                    "label": "SHOP HERITAGE STYLES",
+                    "label": "VER ESTILOS TRADICIONALES",
                     "link": "#",
                     "open_in_new_tab": false,
                     "style_class": "button",
