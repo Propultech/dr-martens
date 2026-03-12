@@ -2343,7 +2343,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<h1>THE REVIEWS ARE IN</h1>",
+            "text": "<h1>LAS OPINIONES HABLAN POR SÍ SOLAS</h1>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "center",
@@ -2537,7 +2537,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Classic 1460 boot. Runs a little stiffer but will wear for years to come. Always looks great with every outfit. Whether it's a skirt, dress, pants, or shorts. You can't go wrong wearing this boot.</p>",
+                    "text": "<p>Bota clásica 1460. Es un poco más rígida al principio, pero durará años. Se ve excelente con cualquier atuendo. Ya sea con falda, vestido, pantalones o shorts. No te equivocarás usando esta bota.</p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "center",
@@ -2771,7 +2771,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>The most comfortable and cute looking shoes ever!! I love how versatile they are by either wearing them with the strap and making them super comfortable to walk in or without the strap for a quick slip in when ur in a rush or running errands. Either way it’s always an eye catcher!! Every time I wear them I get the nicest compliments and questions as to where I got them from...I’d buy them over and over again and will definitely recommend them!!</p>",
+                    "text": "<p>¡Los zapatos más cómodos y lindos que he visto! Me encanta lo versátiles que son, puedo usarlos con la correa para tener máxima comodidad al caminar o sin ella para ponerlos rápidamente cuando tengo prisa o estoy haciendo mandados. De cualquier forma siempre llaman la atención. Cada vez que los uso recibo los mejores cumplidos y preguntas sobre dónde los conseguí... Los compraría una y otra vez y definitivamente los recomendaría.</p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "center",
@@ -3005,7 +3005,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Love these boots. My first pair are over 25 years old. They are just as comfortable as the day I bought them. Love the zipper on these for easy on and off.</p>",
+                    "text": "<p>Me encantan estas botas. Mi primer par tiene más de 25 años. Son tan cómodas como el día en que las compré. Me encanta el cierre de cremallera para ponérmelas y quitármelas fácilmente.</p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "center",
@@ -3239,7 +3239,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>These fit great. The leather is thick and rich but breaks in fast, conforms to your feet. Well made. The Dr. Marten Wonder Balsam really brings out the beautiful leather. Very happy with them</p>",
+                    "text": "<p>Estos zapatos se ajustan perfectamente. El cuero es grueso y de excelente calidad, pero se amolda rápidamente a tus pies. Están muy bien hechos. El Bálsamo Wonder de Dr. Martens realmente realza la belleza del cuero. Estoy muy satisfecho con ellos.</p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "center",
@@ -3512,7 +3512,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<h2>OUR BESTSELLERS</h2>",
+            "text": "<h2>NUESTROS BESTSELLERS</h2>",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "left",
@@ -3652,7 +3652,7 @@
               "type": "button",
               "name": "t:names.button",
               "settings": {
-                "label": "VER MEJOR VENDIDOS",
+                "label": "VER BESTSELLERS",
                 "link": "shopify://collections/all",
                 "open_in_new_tab": false,
                 "style_class": "button",
