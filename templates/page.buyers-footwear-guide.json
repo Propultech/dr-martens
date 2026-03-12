@@ -1702,7 +1702,7 @@
           "name": "t:names.button",
           "settings": {
             "label": "REGISTRATE",
-            "link": "shopify://collections/all",
+            "link": "https://shopify.com/authentication/78441513186/login?client_id=ca0d5ec4-40fc-46de-b2e9-173a4680e1bd&locale=es&redirect_uri=%2Fauthentication%2F78441513186%2Foauth%2Fauthorize%3F_cs%3D%26client_id%3Dca0d5ec4-40fc-46de-b2e9-173a4680e1bd%26locale%3Des%26nonce%3Dce07ca4a-412f-4621-961d-85fd19661aed%26redirect_uri%3Dhttps%253A%252F%252Fdrmartens-chile.myshopify.com%252Fcustomer_authentication%252Fcallback%26response_type%3Dcode%26scope%3Dopenid%2Bemail%2Bcustomer-account-api%253Afull%26state%3DhWN9m9m8e8rWBCgaYE9HZaCn&ui_hint=full",
             "open_in_new_tab": false,
             "style_class": "button",
             "width": "fit-content",
