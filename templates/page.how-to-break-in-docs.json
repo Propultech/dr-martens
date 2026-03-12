@@ -3238,7 +3238,7 @@
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<h1><strong>MYTH BUSTER: BREAK-IN EDITION</strong></h1>",
+                "text": "<h1><strong>DESMITIFICANDO: EDICIÓN BREAK-IN</strong></h1>",
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "center",
@@ -3281,7 +3281,7 @@
               "type": "text",
               "name": "t:names.text",
               "settings": {
-                "text": "<p><strong>We’ve heard all kinds of break-in tips over the last 6 decades. We asked an expert at our Cobbs Lane Factory to bust 3 myths we’ve seen all over our socials.</strong></p>",
+                "text": "<p><strong>Hemos escuchado todo tipo de consejos para el período de adaptación durante las últimas 6 décadas. Le pedimos a un experto de nuestra Fábrica Cobbs Lane que desmienta 3 mitos que hemos visto en todas nuestras redes sociales.</strong></p>",
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "center",
