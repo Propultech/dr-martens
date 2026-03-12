@@ -85,7 +85,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<h1>new to dM’s: a buying guide</h1>",
+            "text": "<h1>nuevo en dM: una guía de compra</h1>",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "left",
@@ -128,7 +128,7 @@
           "type": "text",
           "name": "t:names.text",
           "settings": {
-            "text": "<p>If you’re new to the brand, you’re in the right spot. Our footwear stands the test of time and is meant to last season after season. Let’s help you find your pair. Keep scrolling for more info on the boots and shoes that make us who we are.</p>",
+            "text": "<p>Si eres nuevo en la marca, estás en el lugar correcto. Nuestro calzado resiste el paso del tiempo y está diseñado para durar temporada tras temporada. Déjanos ayudarte a encontrar tu par. Sigue desplazándote para obtener más información sobre las botas y zapatos que nos definen.</p>",
             "width": "100%",
             "max_width": "none",
             "alignment": "left",
@@ -371,7 +371,7 @@
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<h2>START WITH OUR MOST ICONIC BOOT.</h2>",
+                "text": "<h2>COMIENZA CON NUESTRA BOTA MÁS ICÓNICA.</h2>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -551,7 +551,7 @@
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<h2>START WITH OUR MOST ICONIC BOOT.</h2>",
+                "text": "<h2>COMIENZA CON NUESTRA BOTA MÁS ICÓNICA.</h2>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -793,7 +793,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h2>THE 1460 BOOT</h2>",
+                    "text": "<h2>LA BOTA 1460</h2>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -836,7 +836,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Wondering which pair of Dr. Martens to buy? We’ve got you covered with The 1460 Boot. Start here when purchasing your first-ever solemate pair and get to know our legendary comfort and bounce from one of our icons that started it all.</p>",
+                    "text": "<p>¿No sabes qué par de Dr. Martens comprar? Te tenemos cubierto con The 1460 Boot. Comienza aquí cuando compres tu primer par y conoce nuestro legendario confort y rebote de uno de nuestros iconos que lo comenzó todo.</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -933,7 +933,7 @@
                       "type": "button",
                       "name": "t:names.button",
                       "settings": {
-                        "label": "SHOP 1460 BOOTS",
+                        "label": "VER LA BOTA 1460",
                         "link": "shopify://collections/all",
                         "open_in_new_tab": false,
                         "style_class": "button",
@@ -950,7 +950,7 @@
                       "type": "button",
                       "name": "t:names.button",
                       "settings": {
-                        "label": "DISCOVER THE 1460",
+                        "label": "DESCUBRE 1460",
                         "link": "shopify://pages/how-to-style-combat-boots",
                         "open_in_new_tab": false,
                         "style_class": "button-secondary",
@@ -1037,7 +1037,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<h2>OUR ORIGINALS</h2>",
+            "text": "<h2>NUESTROS CLÁSICOS</h2>",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "left",
@@ -1177,7 +1177,7 @@
               "type": "button",
               "name": "t:names.button",
               "settings": {
-                "label": "SHOP ORIGINALS",
+                "label": "VER CLÁSICOS",
                 "link": "shopify://collections/all",
                 "open_in_new_tab": false,
                 "style_class": "button",
@@ -1194,7 +1194,7 @@
               "type": "button",
               "name": "t:names.button",
               "settings": {
-                "label": "MEET OUR ICONS",
+                "label": "CONOCE NUESTROS ICONOS",
                 "link": "shopify://pages/icon-originals",
                 "open_in_new_tab": false,
                 "style_class": "button-secondary",
