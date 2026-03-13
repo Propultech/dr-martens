@@ -934,7 +934,7 @@
                       "name": "t:names.button",
                       "settings": {
                         "label": "VER LA BOTA 1460",
-                        "link": "shopify://collections/all",
+                        "link": "#",
                         "open_in_new_tab": false,
                         "style_class": "button",
                         "width": "fit-content",
@@ -1178,7 +1178,7 @@
               "name": "t:names.button",
               "settings": {
                 "label": "VER CLÁSICOS",
-                "link": "shopify://collections/all",
+                "link": "#",
                 "open_in_new_tab": false,
                 "style_class": "button",
                 "width": "fit-content",
@@ -3653,7 +3653,7 @@
               "name": "t:names.button",
               "settings": {
                 "label": "VER BESTSELLERS",
-                "link": "shopify://collections/all",
+                "link": "#",
                 "open_in_new_tab": false,
                 "style_class": "button",
                 "width": "fit-content",
@@ -4399,7 +4399,7 @@
                       "name": "t:names.button",
                       "settings": {
                         "label": "VER GUÍA DE SUELAS",
-                        "link": "shopify://collections/all",
+                        "link": "#",
                         "open_in_new_tab": false,
                         "style_class": "button",
                         "width": "fit-content",
@@ -4719,7 +4719,7 @@
               "name": "t:names.button",
               "settings": {
                 "label": "VER RECIEN LLEGADOS",
-                "link": "shopify://collections/all",
+                "link": "#",
                 "open_in_new_tab": false,
                 "style_class": "button",
                 "width": "fit-content",
