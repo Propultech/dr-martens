@@ -1031,7 +1031,7 @@
                   "name": "t:names.button",
                   "settings": {
                     "label": "VER CALCETINES",
-                    "link": "shopify://collections/all",
+                    "link": "#",
                     "open_in_new_tab": false,
                     "style_class": "button",
                     "width": "fit-content",
@@ -1720,7 +1720,7 @@
                   "name": "t:names.button",
                   "settings": {
                     "label": "VER WONDER BALSAM",
-                    "link": "shopify://collections/all",
+                    "link": "#",
                     "open_in_new_tab": false,
                     "style_class": "button",
                     "width": "fit-content",
@@ -2409,7 +2409,7 @@
                   "name": "t:names.button",
                   "settings": {
                     "label": "SHOP HEEL GRIPS",
-                    "link": "shopify://collections/all",
+                    "link": "#",
                     "open_in_new_tab": false,
                     "style_class": "button",
                     "width": "fit-content",
@@ -2934,7 +2934,7 @@
               "name": "t:names.button",
               "settings": {
                 "label": "VER CUIDADO DEL CALZADO",
-                "link": "shopify://collections/all",
+                "link": "#",
                 "open_in_new_tab": false,
                 "style_class": "button",
                 "width": "custom",
@@ -4161,7 +4161,7 @@
               "name": "t:names.button",
               "settings": {
                 "label": "COMPRAR ESTILOS POPULARES",
-                "link": "shopify://collections/all",
+                "link": "#",
                 "open_in_new_tab": false,
                 "style_class": "button",
                 "width": "custom",
