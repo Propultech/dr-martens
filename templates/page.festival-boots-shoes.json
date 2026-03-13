@@ -85,7 +85,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<h1>DM'S FESTIVAL GUIDE</h1>",
+            "text": "<h1>GUÍA DE FESTIVALES DE DM'S</h1>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "center",
@@ -128,7 +128,7 @@
           "type": "text",
           "name": "t:names.text",
           "settings": {
-            "text": "<h2>FESTIVAL BOOTS, SHOES, AND MORE.</h2>",
+            "text": "<h2>BOTAS FESTIVAL, ZAPATOS Y MÁS.</h2>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "center",
@@ -171,7 +171,7 @@
           "type": "button",
           "name": "t:names.button",
           "settings": {
-            "label": "SHOP FESTIVAL STYLES",
+            "label": "VER ESTILOS DE FESTIVAL",
             "link": "#",
             "open_in_new_tab": false,
             "style_class": "button",
@@ -241,7 +241,7 @@
           "type": "text",
           "name": "t:names.text",
           "settings": {
-            "text": "<p>Dr. Marten's footwear has long been a festival mainstay—on and off the stage. Our rave boots and concert-ready styles are durable enough for mud, dust, and every kind of terrain, so you can dance the weekend away.</p>",
+            "text": "<p>El calzado Dr. Martens ha sido un elemento fundamental en festivales durante años, tanto en el escenario como fuera de él. Nuestras botas para raves y estilos listos para conciertos son lo suficientemente duraderos para barro, polvo y todo tipo de terreno, para que puedas bailar todo el fin de semana.</p>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "center",
@@ -377,7 +377,7 @@
               "type": "_product-list-text",
               "name": "t:names.collection_title",
               "settings": {
-                "text": "<h2>OUR TOP FESTIVAL PICKS</h2>",
+                "text": "<h2>NUESTRAS MEJORES OPCIONES PARA FESTIVALES</h2>",
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "center",
@@ -747,7 +747,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h2>THE ORIGINAL FESTIVAL BOOT</h2>",
+                    "text": "<h2>LA BOTA FESTIVAL ORIGINAL</h2>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -790,7 +790,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<ul><li>Iconic, attention-grabbing silhouette</li><li>Durable, hard-wearing construction</li><li>Versatile enough to pair with any outfit</li></ul>",
+                    "text": "<ul><li>Silueta icónica y llamativa</li><li>Construcción duradera y resistente</li><li>Lo suficientemente versátil para combinar con cualquier atuendo</li></ul>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -833,7 +833,7 @@
                   "type": "button",
                   "name": "t:names.button",
                   "settings": {
-                    "label": "SHOP 1460 BOOTS",
+                    "label": "BOTA 1460",
                     "link": "shopify://collections/all",
                     "open_in_new_tab": false,
                     "style_class": "button",
@@ -1000,7 +1000,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<h2>Festival Outfit Inspiration</h2>",
+            "text": "<h2>Inspiración de Outfits para Festival</h2>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "center",
@@ -1043,7 +1043,7 @@
           "type": "text",
           "name": "t:names.text",
           "settings": {
-            "text": "<p>From your wildest fits to comfortable favorites, our rave boots and shoes amp up every look.</p>",
+            "text": "<p>Desde tus looks más atrevidos hasta tus favoritos cómodos, nuestras botas y zapatos para raves potencian cada estilo.</p>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "center",
@@ -1312,7 +1312,7 @@
               "type": "button",
               "name": "t:names.button",
               "settings": {
-                "label": "SHOP BOOTS",
+                "label": "VER BOTAS",
                 "link": "shopify://collections/all",
                 "open_in_new_tab": false,
                 "style_class": "button",
@@ -1329,7 +1329,7 @@
               "type": "button",
               "name": "t:names.button",
               "settings": {
-                "label": "SHOP SANDALS",
+                "label": "VER SANDALIAS",
                 "link": "shopify://collections/all",
                 "open_in_new_tab": false,
                 "style_class": "button",
@@ -1346,7 +1346,7 @@
               "type": "button",
               "name": "t:names.button",
               "settings": {
-                "label": "SHOP PLATFORMS",
+                "label": "VER PLATAFORMAS",
                 "link": "shopify://collections/all",
                 "open_in_new_tab": false,
                 "style_class": "button",
@@ -1467,7 +1467,7 @@
               "type": "_product-list-text",
               "name": "t:names.collection_title",
               "settings": {
-                "text": "<h2>COMFORT & SOFTER LEATHER</h2>",
+                "text": "<h2>COMODIDAD Y CUERO MÁS SUAVE</h2>",
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "left",
@@ -1498,7 +1498,7 @@
               "type": "text",
               "name": "t:names.text",
               "settings": {
-                "text": "<p>From easy-to-break-in soft leather variations to cushioned soles that protect your feet, these DM’s are the go-to for moshing, walking, and standing for long periods.</p>",
+                "text": "<p>Desde cueros suaves fáciles de adaptar hasta suelas acolchadas que protegen tus pies, estos DM's son la opción ideal para hacer mosh, caminar y estar de pie durante largos períodos.</p>",
                 "width": "100%",
                 "max_width": "none",
                 "alignment": "left",
@@ -1687,7 +1687,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<p><strong>Festival Footwear Tips</strong></p>",
+            "text": "<p>Consejos de Calzado para Festivales</p>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "center",
@@ -1865,7 +1865,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<p><strong>BEFORE YOU GO</strong></p>",
+                    "text": "<p><strong>ANTES DE QUE TE VAYAS</strong></p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -1908,7 +1908,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Set yourself up for success—and plenty of dancing. We recommend giving yourself a head start by buying before festival season is in full swing. Check out tips and tricks from our years of enduring the break-in.</p>",
+                    "text": "<p>Prepárate para el éxito—y para muchas horas de baile. Te recomendamos que te adelantes comprando antes de que la temporada de festivales esté en pleno apogeo. Descubre consejos y trucos de nuestros años de experiencia con el proceso de adaptación.</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -2057,7 +2057,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h3>FOOTWEAR SUPPORT</h3>",
+                    "text": "<h3>SOPORTE DE CALZADO</h3>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -2100,7 +2100,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Take the edge off fresh-out-of-the-box boots, shoes, and sandals with our durable Docs socks—made with built-in arch support and a new blister protection system in the lining.</p>",
+                    "text": "<p>Suaviza la experiencia de tus botas, zapatos y sandalias nuevos con nuestros calcetines Docs duraderos, diseñados con soporte de arco integrado y un nuevo sistema de protección contra ampollas en el forro.</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -2249,7 +2249,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<p><strong>AFTERCARE</strong></p>",
+                    "text": "<p><strong>CUIDADOS POSTERIORES</strong></p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -2292,7 +2292,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Festival season can leave your Docs looking a little sad. No matter what they've been through, restore them to their former glory with easy-to-use tools and tips. Read our care guides for information on bringing your DM's back to life.</p>",
+                    "text": "<p>La temporada de festivales puede dejar tus Docs luciendo un poco gastadas. Sin importar por qué hayan pasado, devuélveles su esplendor original con herramientas y consejos fáciles de usar. Lee nuestras guías de cuidado para obtener información sobre cómo revitalizar tus DM's.</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -2526,7 +2526,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h2>FESTIVAL BAGS</h2>",
+                    "text": "<h2>BOLSOS PARA FESTIVAL</h2>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -2569,7 +2569,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>There's more to festival season than footwear. From backpacks and satchels to our fan-favorite heart bag, complete your look with attitude (and plenty of room for essentials).</p>",
+                    "text": "<p>Hay más en la temporada de festivales que solo calzado. Desde mochilas y bolsos hasta nuestro icónico bolso corazón, completa tu look con actitud (y mucho espacio para lo esencial).</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -2612,7 +2612,7 @@
                   "type": "button",
                   "name": "t:names.button",
                   "settings": {
-                    "label": "SHOP BAGS",
+                    "label": "VER BOLSOS",
                     "link": "shopify://collections/all",
                     "open_in_new_tab": false,
                     "style_class": "button",
@@ -2778,7 +2778,7 @@
           "type": "button",
           "name": "t:names.button",
           "settings": {
-            "label": "SHOP FESTIVAL STYLES",
+            "label": "VER ESTILOS DE FESTIVAL",
             "link": "shopify://collections/all",
             "open_in_new_tab": false,
             "style_class": "button",
@@ -2795,7 +2795,7 @@
           "type": "button",
           "name": "t:names.button",
           "settings": {
-            "label": "MORE GUIDES",
+            "label": "MÁS GUÍAS",
             "link": "shopify://collections/all",
             "open_in_new_tab": false,
             "style_class": "button-secondary",
