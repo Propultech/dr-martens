@@ -2796,7 +2796,7 @@
           "name": "t:names.button",
           "settings": {
             "label": "MÁS GUÍAS",
-            "link": "shopify://collections/all",
+            "link": "#",
             "open_in_new_tab": false,
             "style_class": "button-secondary",
             "width": "fit-content",
