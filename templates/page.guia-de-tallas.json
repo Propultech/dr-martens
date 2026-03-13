@@ -3788,7 +3788,7 @@
         "rows_gap": 24,
         "icons_style": "chevron",
         "icons_shape": "none",
-        "section_width": "page-width",
+        "section_width": "full-width",
         "horizontal_alignment": "center",
         "gap": 0,
         "color_scheme": "scheme-50b797ac-0ce5-4b42-bd62-f6c27627d717",
