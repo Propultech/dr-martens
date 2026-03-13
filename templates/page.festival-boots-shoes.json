@@ -2144,7 +2144,7 @@
                   "name": "t:names.button",
                   "settings": {
                     "label": "VER CALCETAS",
-                    "link": "shopify://pages/buyers-footwear-guide",
+                    "link": "#",
                     "open_in_new_tab": false,
                     "style_class": "button",
                     "width": "custom",
